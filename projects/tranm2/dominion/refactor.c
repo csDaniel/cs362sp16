@@ -2,7 +2,7 @@
 # CS362 - Spring 2016
 
 # Refactor 5 cards including smithy and adventurer
-# so that cardEffect is replaced with each card's own function by introducing 5 new functions:
+# so that cardEffect is replaced with each cards own function by introducing 5 new functions:
 	- int smithy_effect(int currentPlayer, struct gameState *state, int handPos) i<=3 
 	- int adventurer_effect(int currentPlayer, struct gameState *state) drawntreasure<=2 
 	- int mine_effect(int choice1, int choice2, int currentPlayer, struct gameState *state, int handPos) discard trashed cards i == 0
