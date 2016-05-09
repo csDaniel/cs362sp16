@@ -1,0 +1,19 @@
+Eric Walters
+Brian Jeffrey Brown
+
+
+The testIsValid() function in UrlValidator is working by setting 
+up URLs and allowing any scheme. This means that the URL is not 
+required to have http, https, ftp, etc. It is testing 35,910 URLs, 
+which is the product of all the combinations testUrlScheme, testUrlAuthority, 
+testUrlPort, testPath, testUrlQuery.It is building the URLs by 
+cycling through the arrays of ResultPairs for testUrlScheme, 
+testUrlAuthority, testUrlPort, testPath, testUrlQuery to build 
+all combinations of URLs. A valid URL is “http://www.google.com” 
+and an invalid URL is “.aaa”. I think real world tests have similar 
+concepts to the tests that we have been using for unit and card tests. 
+However, I think that many real world tests are far more complex. 
+The reason these tests are more complex is because there are many 
+different variables affected throughout testing. Also, the results 
+may not be as cut-and-dry as we see with unit and card tests. 
+But, I think the overall concepts would remain the same.

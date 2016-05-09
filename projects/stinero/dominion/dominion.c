@@ -1198,6 +1198,8 @@ int adventurerPlay(int currentPlayer, int handPos, struct gameState *state) {
 		z = z - 1;
 	}
 	discardCard(handPos, state->whoseTurn, state, 0);
+	shuffle(currentPlayer, state);
+
 	return 0;
 }
 
