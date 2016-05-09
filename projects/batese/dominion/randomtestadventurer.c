@@ -11,6 +11,7 @@ Description: Random test for the adventurer card function in dominion.c
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 # define noiseLevel 1
 //Noise level 0 = no print statements
@@ -56,7 +57,8 @@ int main (int argc, char** argv) {
 		exit(1);
 	}*/
 	numTests = 20000;
-	PlantSeeds(7);
+	//PlantSeeds(7);
+	srand(time(NULL));
 
 	for (i = 1; i <= numTests; i++) {
 # if (noiseLevel > 0)
@@ -64,7 +66,7 @@ int main (int argc, char** argv) {
 # endif	
 		
 		// Set a random number of players
-		numPlayers = (Random() * 2) + 2;
+		numPlayers = (rand() % 3) + 2;
 		//printf("Seeds planted and numPlayers randomised to %d.\n", numPlayers);
 		
 		//Initialise gamestate
@@ -76,17 +78,17 @@ int main (int argc, char** argv) {
 		//Randomise hands and decks in some way
 		for (p = 0; p < numPlayers; p++) {
 			// Add random number of kingdom cards to deck
-			kingdomCardsToAdd = (Random() * 10);
+			kingdomCardsToAdd = (rand() % 11);
 			for (x = 0; x < kingdomCardsToAdd; x++) {
-				kingdomCardToAdd = k[(int) (Random() * 9)];
+				kingdomCardToAdd = k[(int) (rand() % 10)];
 				preGameState.deck[p][preGameState.deckCount[p]] = kingdomCardToAdd;
 				preGameState.deckCount[p]++;
 			}
 			//printf("Added kingdom cards to %d.\n", p);
 			// Add random number of other cards to deck
-			otherCardsToAdd = (Random() * 10);
+			otherCardsToAdd = (rand() % 11);
 			for (x = 0; x < otherCardsToAdd; x++) {
-				otherCardToAdd = otherCards[(int) (Random() * 9)];
+				otherCardToAdd = otherCards[(int) (rand() % 10)];
 				preGameState.deck[p][preGameState.deckCount[p]] = otherCardToAdd;
 				preGameState.deckCount[p]++;
 			}	
@@ -105,7 +107,7 @@ int main (int argc, char** argv) {
 			shuffle(p, &preGameState);
 			//printf("Player %d hand shuffled.\n", p);
 			// Draw random sized hand . this may need to be changed for a generic version
-			handSize = (Random() * 5);
+			handSize = (rand() % 6);
 			for (x = 0; x < handSize; x++) {
 				drawCard(p, &preGameState);
 			}
@@ -113,7 +115,7 @@ int main (int argc, char** argv) {
 		}
 
 		//Choose a random player to test card on
-		p = (Random() * (numPlayers - 1));
+		p = (rand() % (numPlayers));
 		//printf("Random player chosen %d.\n", p);
 		
 		//Make it this player's turn
@@ -126,14 +128,14 @@ int main (int argc, char** argv) {
 				break;
 			}
 			if (x == preGameState.handCount[p] - 1) { // Will only get inside this statement if there is no adventurer in hand
-				handPos = Random() * (preGameState.handCount[p] - 1);
+				handPos = rand() % (preGameState.handCount[p]);
 				preGameState.hand[p][handPos] = adventurer;
 			}
 		}
 		//printf("Card now in hand.\n");
 		
 		// Randomise number of cards left in deck to trigger any lines that involve shuffling
-		deckSize = Random() * preGameState.deckCount[p];
+		deckSize = rand() % (preGameState.deckCount[p] + 1);
 		while (preGameState.deckCount[p] > deckSize) {
 			preGameState.discard[p][preGameState.discardCount[p]] = preGameState.deck[p][preGameState.deckCount[p] - 1];
 			preGameState.discardCount[p]++;
