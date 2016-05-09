@@ -17,7 +17,7 @@
 
 /* hand# means index of a card in current active player's hand */
 
-enum CARD
+typedef enum
   {curse = 0,
    estate,
    duchy,
@@ -52,7 +52,7 @@ enum CARD
    salvager, /* choice1 = hand# to trash */
    sea_hag,
    treasure_map
-  };
+  } CARD;
 
 struct gameState {
   int numPlayers; //number of players
