@@ -35,6 +35,7 @@ void playFunction(int targetPlayer, int pos, struct gameState *state) {
 }
 
 int main() {
+    srand(time(NULL));
     int players;
     int cards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
     int seed;
@@ -44,7 +45,6 @@ int main() {
     int i;
     struct gameState game;
     struct gameState *state = &game;
-    initializeGame(players, cards, seed, &game);
     
     printf("TESTING random village card\n");
     
@@ -52,7 +52,7 @@ int main() {
         // 2-4 players
         players = random()%3 + 2;
         // random seed
-        seed = rand();
+        seed = random();
 
         // clear game
         memset(state, 0, sizeof(struct gameState));

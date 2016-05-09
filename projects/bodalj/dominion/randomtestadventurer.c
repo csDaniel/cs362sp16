@@ -24,6 +24,7 @@ void testAdventurer(struct gameState *state, int targetPlayer, int treasure1, in
 void checkPlayAdventurer(struct gameState *state, int targetPlayer);
 
 int main() {
+    srand(time(NULL));
     int players;
     int cards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
     int seed = 187;
@@ -39,7 +40,7 @@ int main() {
         // 2-4 players
         players = rand()%3 + 2;
         // random seed
-        seed = rand();
+        seed = random();
         
         // clear game
         memset(state, 0, sizeof(struct gameState));
