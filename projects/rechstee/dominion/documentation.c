@@ -55,4 +55,9 @@ updateCoins function
 
 //This function resets the coins to be added to the player's total and then tallies up the next set of treasures to be added from the player's hand.
 
+
+
+tests: updateCoins and scoreFor and numHandCount
+numHandCount difficulties: The second player's hand count is shared with the first player's. Solved this by telling the function that the hand has five cards as I believe
+the error was just due to the variable for the gamestate.
 */

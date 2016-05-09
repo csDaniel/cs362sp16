@@ -1,5 +1,7 @@
 Development Progress
 John Fodrocy
+Note: To make the test files, run the following command
+make randomtestall
 
 I started my development without any randomization and slowly added more.
 I think this is especially true in my Adventurer card tests.
