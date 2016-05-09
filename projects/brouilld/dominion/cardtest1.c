@@ -8,7 +8,7 @@
 #include "unittests.h"
 
 
-void testSmithyCard(){
+void testSmithyCard(int numOfRuns){
 
 	// Test Suite Setup: Test variables
 	int returnedValue = -50;

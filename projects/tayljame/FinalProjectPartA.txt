@@ -1,0 +1,52 @@
+﻿Miranda Leigh Weldon
+James Taylor
+Joe Cuellar
+April 26, 2016
+CS 362 Spring 2016
+Final Project - Part A
+ProjectPartA.txt
+
+
+Go through instructor video of explaining URL Validation testing. Explain testIsValid Function of UrlValidator test code. It is available under aburasali/UrlValidator folder. 
+UrlValidator is called setting up the UrlValidator object to be used for comparing parts of testObjects when iterating through the testUrl*** arrays and setting up the options for what is to be tested. 
+Two assertions are made using http://www.google.com and http://www.google.com/ to test successful instantiation of UrlValidator and its isValid() method. It then iterates through all combinations of 
+scheme, authority, port, testpath and query and evaluates the result pairs as it builds from the options given to the UrlValidator. Urls are found to be valid by sending them to isValid() and if they are, they get 
+printed to the console. 
+
+
+Give how many total number of urls it is testing. Also, explain how it is building all the urls. 
+        This test case builds 31,920 different URLs, 1,890 of which were valid. It builds these URLs by taking word/boolean pairs and creating a string to check for validity piece by piece. 
+		So for example, it can take a true value like “http://” and keep adding pieces until it comes across a piece that make the URL invalid. The resulting invalid URL will still be built but only URLs 
+		testing as true will be printed to the console.
+
+
+9 schemes * 19 authorities * 7 ports * 10 paths * 3 queries = 35,910 – 1 scheme(3990) = 31,920
+
+
+Give an example of valid url being tested and an invalid url being tested by testIsValid() method. 
+ 
+        A valid URL:
+                 http://www.google.com:80/test1?action=view
+				(true validations for each component of testUrlParts)
+				ftp://go.com/test1/file
+				(true validations for components including empty options for port and queries)
+
+
+        An invalid URL:                 
+				http/go.com
+				(http/ is invalid and returns false)
+				http://go.a
+				go.a returns false)
+
+
+UrlValidator code is a direct copy paste of apache commons url validator code. The test file/code is also direct copy paste of apache commons test code. Do you think that a real world test (URL Validator's testIsValid() 
+test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines.
+ 
+        Many of the concepts we have seen and used before appear in testIsValid(). It makes use of many assertions and conditionals to append parts of a URL to the base and print out valid URL strings. 
+		In terms of complexity, this project make use of classes/structures found in many different files, which we have had some experience coordinating while working on Dominion. 
+		The components of Dominion and the URLValidator interact very similarly. In both tests, an object is created, the test is run given various possible inputs expected, and then compared to what is expected.  The biggest 
+		issue is that there is much more potential for a lack of communication between people working on an open source project like Apache, and the patch system used in Apache Commons doesn’t provide much more safety than
+		Github’s version control. There is still a great risk that one person could overwrite everyone else’s work or otherwise introduce significant problems to the functioning code. 
+
+
+Submit a file called ProjectPartA.txt with your writeup. You can submit the file under the folder URLValidator within on ONID directory. (How to setup this folder will be explained soon.)
