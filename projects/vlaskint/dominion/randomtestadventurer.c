@@ -37,7 +37,7 @@ int main(){
 	for(w = 0; w < MAX_TESTS; w++){
         countTreasurebefore = 0;
         countTreasureafter = 0;
-        printf("\n\n\Test #: %d\n", w);
+        printf("\n\nTest #: %d\n", w);
         //random number of player from 2 to 4
 		players = (rand() % 3) + 2;
 		//randomize the seed
@@ -47,7 +47,7 @@ int main(){
 		initializeGame(players, k, randomSeed, G);
         //loop through all the players to ranomize their decks
 		for(player = 0; player < players; player++){
-            printf("\n\Player #: %d\n", player);
+            printf("\nPlayer #: %d\n", player);
 			//the test the card, I will run the following function:
 			//if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
             choice1 = rand() % 2;
