@@ -26,31 +26,34 @@ int main(int argc, char ** argv)
 	struct gameState G, testG;
 
 	//Generating player:
-	for(int counter; counter < 1000; counter++)
+	for(int counter = 0; counter < 1000; counter++)
 	{
 		int numPlayers = rand() % 4 + 1;
-		int thisPlayer = rand() % 4 + 1;
+		int thisPlayer = rand() % 4;
+		int seed = rand() % 500 + 500;
 
-		initializeGame(numPlayers, k, 1000, &G);
+		initializeGame(numPlayers, k, seed, &G);
 
 		memcpy(&testG, &G, sizeof(struct gameState));
+		count = G.handCount[thisPlayer];
+		printf("Hand count for G is: %d",count);
 		count = testG.handCount[thisPlayer];
+		printf("Hand count for testG is: %d",count);
 
 		for(int i = 0; i < count; i++)
 			testG.hand[thisPlayer][i] = estate;
 		for(int i = 0; i < 25; i++)
 			testG.supplyCount[i] = 10;
 
-		testG.hand[thisPlayer][rand() % 4 + 1] = gold;
-		testG.hand[thisPlayer][rand() % 4 + 1] = silver;
-		testG.hand[thisPlayer][rand() % 4 + 1] = copper;
+		testG.hand[thisPlayer][0] = gold;
+		testG.hand[thisPlayer][1] = silver;
+		testG.hand[thisPlayer][2] = copper;
 		testG.discardCount[thisPlayer] = 0;
 
-		out = Smithy(thisPlayer, 3, &testG);
+		out = Smithy(thisPlayer, rand() % 4, &testG);
 		printf("smithy function should return cost of smithy card : %d.\n",out);
 		assert(out==4);
 		printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
-
 		printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
 	}
 	return 0;
