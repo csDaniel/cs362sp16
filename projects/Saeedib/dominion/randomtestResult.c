@@ -7,14 +7,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: -1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -30,9 +33,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -40,14 +40,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -79,8 +79,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -123,13 +123,7 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -142,8 +136,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -160,23 +154,20 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -204,27 +195,15 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -235,17 +214,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -255,13 +225,7 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -279,15 +243,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -303,15 +261,12 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -325,11 +280,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -349,8 +301,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -360,6 +312,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -369,6 +324,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -397,14 +355,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -414,6 +372,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -424,24 +385,9 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -451,11 +397,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -477,9 +423,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -495,6 +438,12 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -505,9 +454,6 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -516,9 +462,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -537,9 +480,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -561,9 +501,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -574,6 +511,9 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -597,6 +537,9 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -639,15 +582,18 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -658,8 +604,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -673,8 +622,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -685,8 +634,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -694,14 +643,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -709,8 +661,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -726,9 +678,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -768,15 +717,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -790,8 +733,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -799,8 +742,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -829,17 +772,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -876,12 +813,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -901,14 +832,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -922,14 +847,11 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -942,9 +864,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -982,8 +901,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -1009,8 +931,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1018,8 +940,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1035,6 +957,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1047,6 +972,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1063,6 +991,9 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -1075,11 +1006,14 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1093,8 +1027,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1110,9 +1044,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1126,17 +1057,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1149,9 +1080,6 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1168,8 +1096,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1180,8 +1108,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1204,8 +1132,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1216,14 +1144,20 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1269,6 +1203,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1287,6 +1224,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1300,6 +1240,18 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -1315,17 +1267,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1336,8 +1285,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1345,8 +1294,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1363,17 +1315,14 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1402,18 +1351,24 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -1425,9 +1380,6 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1440,6 +1392,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1447,11 +1402,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -1486,8 +1444,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1498,6 +1456,9 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -1506,6 +1467,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1521,12 +1485,12 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -1537,11 +1501,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1557,6 +1527,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1588,8 +1561,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1627,11 +1603,17 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1651,11 +1633,11 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1672,14 +1654,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1689,16 +1674,10 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -1725,9 +1704,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1747,8 +1723,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1774,8 +1750,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1792,17 +1768,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1819,8 +1792,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1837,9 +1810,15 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -1851,9 +1830,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1881,6 +1857,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1890,9 +1869,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -1933,9 +1909,6 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
@@ -1945,26 +1918,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -1980,9 +1941,6 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2001,6 +1959,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2022,6 +1983,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2032,9 +1996,6 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -2046,6 +2007,9 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2059,8 +2023,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2074,8 +2038,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2092,8 +2056,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2112,6 +2076,12 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2125,8 +2095,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2134,8 +2104,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2146,11 +2116,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2161,11 +2134,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2187,9 +2166,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2202,12 +2178,18 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2230,8 +2212,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2248,20 +2230,23 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2274,6 +2259,12 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2295,6 +2286,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2308,8 +2302,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2335,8 +2329,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2344,8 +2338,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2356,17 +2350,38 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2395,8 +2410,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2422,6 +2437,9 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
@@ -2440,8 +2458,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2449,8 +2467,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2464,11 +2485,11 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2490,12 +2511,9 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2545,11 +2563,14 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2563,17 +2584,23 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2583,6 +2610,9 @@ New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2599,8 +2629,8 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2611,17 +2641,17 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2631,9 +2661,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2652,18 +2679,12 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2680,17 +2701,23 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2701,6 +2728,9 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -2721,6 +2751,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2760,12 +2793,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2776,8 +2803,8 @@ Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
 Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2790,9 +2817,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2811,18 +2835,12 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2842,6 +2860,9 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -2853,6 +2874,9 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2878,9 +2902,12 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -2889,9 +2916,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
@@ -2917,9 +2941,12 @@ Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
 Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
@@ -2931,24 +2958,15 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2961,9 +2979,6 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
@@ -2973,30 +2988,15 @@ New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
 New Hand count is: 6.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
-New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
 Discard count is: 0.
 Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
 New Hand count is: 1.
-Discard count is: 0.
-Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
 Discard count is: 0.
 
 
