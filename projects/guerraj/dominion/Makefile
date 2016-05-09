@@ -79,6 +79,9 @@ unittestresults.out: cardtest1.c cardtest2.c cardtest3.c cardtest4.c unittest1.c
 	gcov -b dominion.c >> unittestresults.out
 		
 randomtestcard.out: randomtestcard.c dominion.o rngs.o 
+	
+	echo "Program by James Guerra Result for running random test fpr cards:" > randomtestcard.out
+
 	echo "results for running randomtestcard.c" >> randomtestcard.out 
 	gcc -w -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
 	randomtestcard >> randomtestcard.out
