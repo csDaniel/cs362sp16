@@ -112,7 +112,6 @@ int checkResults (struct gameState* state, struct gameState* comparison) {
 		//printf("%d Before:%d\n",state->discardCount[currentPlayer],comparison->discardCount[currentPlayer]);
 		return 1;
 	}
-	//printf("Diff: %d\n",cRes->count);
 
     /* Test 3: Make sure hand count shows 2 additional cards */
 	/* Test 4: Make sure hand has 2 additional cards */
