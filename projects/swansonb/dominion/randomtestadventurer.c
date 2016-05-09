@@ -198,10 +198,10 @@ int main(int argc, char **argv) {
                 testsPassed++;
                 printf("(PASSED) \n");
             } else {
-                //printf("(FAILED) \n");
+                printf("(FAILED) \n");
                 // Debuging the reason for failed tests
 
-                printf("FAILED sameCards:  \n");
+/*                printf("FAILED sameCards:  \n");
                 int z = 0;
                 printf("COUNTS:\nbefore: {");
 
@@ -222,7 +222,7 @@ int main(int argc, char **argv) {
                 for (z=0; z< G.deckCount[curPlayer]; ++z) printf("%d,", G.deck[curPlayer][z]);
                 printf("}  discard: {");
                 for (z=0; z< G.discardCount[curPlayer]; ++z) printf("%d,", G.discard[curPlayer][z]);
-                printf("}\n");
+                printf("}\n");*/
 
             }
             testsRun += 1;

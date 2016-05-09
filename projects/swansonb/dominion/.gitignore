@@ -24,3 +24,4 @@ unittestresults.out
 *.gcno
 CMakeLists.txt
 *.out
+*.gcov
