@@ -29,7 +29,7 @@ int main() {
     int seed = 187;
     int trash = 1;
     int i;
-    int NUM_TESTS = 10;
+    int NUM_TESTS = 50;
     struct gameState game;
     struct gameState *state = &game;
 
