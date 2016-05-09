@@ -63,6 +63,8 @@ I guess I will temporarily remove my bug so the make file can run and it
 should still catch the other bug.
 
 It is still crashing and giving segmentation faults when I try to make it.
+I am not sure how to resolve this.  Related questions were asked on Piazza
+with no instructor response.
 
 
 
