@@ -18,10 +18,9 @@ Adventurer Card: Reveal/Draw cards from deck until you reveal/draw
 int checkAdventurer(struct gameState *post) {
   struct gameState pre;
   memcpy (&pre, post, sizeof(struct gameState));
-
   int r;
 	    
-  r = playAdventurerCard(post);
+  r = playAdventurer(post);
 
 	int treasCount = 0;
 	int currPlayer = whoseTurn( &pre );
@@ -55,34 +54,37 @@ int checkAdventurer(struct gameState *post) {
 	}
 
   assert (r == 0);
-  assert(memcmp(&pre, post, sizeof(struct gameState)) == 0);
+	if( (memcmp(&pre, post, sizeof(struct gameState)) == 0)){
+		printf( "Passed ");
+	} else {
+		printf( "Failed " ); 
+	}
+	return 0;
 }
 
 int main () {
 
-  int i, n, r, p, deckCount, discardCount, handCount;
+  int n, p;
 
   int k[10] = {adventurer, council_room, feast, gardens, mine,
 	       remodel, smithy, village, baron, great_hall};
-
   struct gameState G;
 
   printf ("Testing Adventurer.\n");
 
-  printf ("RANDOM TESTS.\n");
 
   SelectStream(2);
   PutSeed(3);
+  printf ("RANDOM TESTS.\n");
 
   for (n = 0; n < 2000; n++) {
-    for (i = 0; i < sizeof(struct gameState); i++) {
-      ((char*)&G)[i] = floor(Random() * 256);
-    }
-    p = floor(Random() * 2);
+	p = floor( Random() * MAX_PLAYERS );
+	initializeGame( p, k, 777, &G );
     G.deckCount[p] = floor(Random() * MAX_DECK);
     G.discardCount[p] = floor(Random() * MAX_DECK);
     G.handCount[p] = floor(Random() * MAX_HAND);
     checkAdventurer(&G);
+	printf( "Test %d \n", n );
   }
 
   printf ("ALL TESTS OK\n");
