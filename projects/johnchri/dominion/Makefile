@@ -71,6 +71,16 @@ unitcardtests: unittest1 unittest2 unittest3 unittest3 cardtest1 cardtest2 cardt
 	gcov -b cardtest4.c >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 
+randomtestadventurer: dominion.o rngs.o randomtestadventurer.c
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+
+randomtestcard: dominion.o rngs.o randomtestcard.c
+	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
+
+randomtests: randomtestadventurer randomtestcard
+	randomtestadventurer >> randomtestadventurer.out
+	randomtestcard >> randomtestcard.out
+
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
