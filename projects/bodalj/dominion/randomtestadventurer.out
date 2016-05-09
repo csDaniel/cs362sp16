@@ -1,18 +1,3 @@
--- randomtestadventurer results --
-TESTING adventurer card
-FAIL: [playAdventurer] We did not gain two treasure cards
-FAIL: [playAdventurer] Adventurer card was not discarded
-FAIL: [playAdventurer] We did not gain two treasure cards
-FAIL: [playAdventurer] Adventurer card was not discarded
-FAIL: [playAdventurer] We did not gain two treasure cards
-FAIL: [playAdventurer] Adventurer card was not discarded
-FAIL: [playAdventurer] We did not gain two treasure cards
-FAIL: [playAdventurer] Adventurer card was not discarded
-FAIL: [playAdventurer] We did not gain two treasure cards
-FAIL: [playAdventurer] Adventurer card was not discarded
-SUCCESS: [playAdventurer] No treasure cards gained
-SUCCESS: [playAdventurer] Adventurer card was discarded
-
 -- gcov for function 'playAdventurer' in randomtestadventurer --
 Function 'playAdventurer'
 Lines executed:100.00% of 18
@@ -93,9 +78,9 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:100.00% of 22
+Lines executed:95.45% of 22
 Branches executed:100.00% of 6
-Taken at least once:100.00% of 6
+Taken at least once:83.33% of 6
 Calls executed:100.00% of 1
 
 Function 'getWinners'
@@ -167,9 +152,9 @@ Taken at least once:100.00% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
-Lines executed:85.48% of 62
+Lines executed:95.16% of 62
 Branches executed:100.00% of 46
-Taken at least once:80.43% of 46
+Taken at least once:89.13% of 46
 Calls executed:100.00% of 5
 
 Function 'kingdomCards'
@@ -189,9 +174,69 @@ Taken at least once:100.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:21.91% of 566
+Lines executed:22.79% of 566
 Branches executed:20.05% of 419
-Taken at least once:17.42% of 419
+Taken at least once:18.14% of 419
 Calls executed:10.31% of 97
 Creating 'dominion.c.gcov'
+
+
+
+-- randomtestadventurer results --
+TESTING adventurer card
+Testing with treasures [silver] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+Testing with treasures [copper] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+Testing with treasures [silver] [gold]
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+Testing with treasures [silver] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+Testing with treasures [copper] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+Testing with treasures [silver] [silver]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+Testing with treasures [copper] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+Testing with treasures [silver] [silver]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+Testing with treasures [gold] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+Testing with treasures [gold] [copper]
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+Testing with treasures [gold] [gold]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 

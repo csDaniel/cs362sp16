@@ -3,15 +3,18 @@ rtc_out='randomtestcard.out'
 >$fout
 make clean
 make randomtestadventurer
-echo "-- randomtestadventurer results --" >> $fout
-randomtestadventurer >> $fout
-echo >> $fout
+randomtestadventurer &> /dev/null
 echo "-- gcov for function 'playAdventurer' in randomtestadventurer --" >> $fout
 gcov -fb dominion.c | grep -A 4 "^Function 'playAdventurer'" >> $fout
 echo >> $fout
 echo >> $fout
 echo "Total code coverage for all functions in dominion.c" >> $fout
 gcov -fb dominion.c >> $fout
+echo >> $fout
+echo >> $fout
+echo "-- randomtestadventurer results --" >> $fout
+randomtestadventurer >> $fout
+echo >> $fout
 
 >$rtc_out
 make clean
@@ -25,6 +28,3 @@ echo >> $rtc_out
 echo >> $rtc_out
 echo "Total code coverage for all functions in dominion.c" >> $rtc_out
 gcov -fb dominion.c >> $rtc_out
-
-echo $fout
-echo $rtc_out

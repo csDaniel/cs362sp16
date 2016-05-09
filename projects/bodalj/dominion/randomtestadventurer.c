@@ -20,91 +20,81 @@ char *getCardName(int card);
 void printHand(struct gameState *state, int player);
 int countCardInHand(struct gameState *state, int player, int card);
 int countTreasureInHand(struct gameState *state, int targetPlayer);
-void testAdventurer(struct gameState *state, int treasure1, int treasure2);
+void testAdventurer(struct gameState *state, int targetPlayer, int treasure1, int treasure2);
 void checkPlayAdventurer(struct gameState *state, int targetPlayer);
 
 int main() {
-    int players = 4;
+    int players;
     int cards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
     int seed = 187;
     int trash = 1;
-    int targetPlayer = 0;
     int i;
-    int iterations = 10;
-    int FOUND_BUG = 0;
+    int NUM_TESTS = 10;
     struct gameState game;
     struct gameState *state = &game;
-    initializeGame(players, cards, seed, &game);
 
     printf("TESTING adventurer card\n");
-    
-    testAdventurer(state, copper, copper);
-    initializeGame(players, cards, seed, &game);
-    testAdventurer(state, silver, silver);
-    initializeGame(players, cards, seed, &game);
-    testAdventurer(state, gold, gold);
-    // place two gold in deck, then top with other cards, and ensure that we will draw two gold
-    placeOnDeck(state, targetPlayer, gold);
-    placeOnDeck(state, targetPlayer, gold);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    placeOnDeck(state, targetPlayer, minion);
-    testAdventurer(state, tribute, tribute);    
-    
-    // add two treasure to deck, empty deck into discard pile, then check adventurer
-    initializeGame(players, cards, seed, &game);
-    int discardIndex = state->discardCount[targetPlayer];
-    state->discardCount[targetPlayer]+=state->deckCount[targetPlayer];
-    int dCount = state->deckCount[targetPlayer];
-    for (i = 0; i < dCount; i++) {
-        state->discard[targetPlayer][discardIndex] = state->deck[targetPlayer][i];
-        state->deckCount[targetPlayer]--;
-        discardIndex++;
-    }
-    checkPlayAdventurer(state, targetPlayer);
-    
-    // replace deck with non-treasure cards, play adventurer should just discard itself and not gain treasure
-    initializeGame(players, cards, seed, &game);
-    // fill deck with smithy
-    for (i = 0; i < state->deckCount[targetPlayer]; i++) {
-        state->deck[targetPlayer][i] = smithy;
-    }
-    
-    int oldCount = state->handCount[targetPlayer];
-    int oldPos[oldCount];
-    memcpy(oldPos, state->hand[targetPlayer], oldCount * sizeof(int));
-    // count treasure
-    int treasureCount = countTreasureInHand(state, targetPlayer);
-    // count adventurer 
-    int adventCount = countCardInHand(state, targetPlayer, adventurer);
-    // draw adventurer
-    int adventurerPos = drawSpecificCard(state, targetPlayer, adventurer);
-   
-    // play adventurer from previously acquired position
-    playAdventurer(targetPlayer, state);
-    
-    // check treasure count has not increased by 2
-    if (countTreasureInHand(state, targetPlayer) != treasureCount) {
-        printf("FAIL: [playAdventurer] We have gained or loss treasure cards\n");
-    }
-    else {
-        printf("SUCCESS: [playAdventurer] No treasure cards gained\n");
-    }
-    // check adventurer count is same before drawing adventurer and after playing him
-    if (countCardInHand(state, targetPlayer, adventurer) != adventCount) {
-        printf("FAIL: [playAdventurer] Adventurer card was not discarded\n");
-    }
-    else {
-        printf("SUCCESS: [playAdventurer] Adventurer card was discarded\n");
-    }
 
+    for (i = 0; i <= NUM_TESTS; i++) {
+        // 2-4 players
+        players = rand()%3 + 2;
+        // random seed
+        seed = rand();
+        
+        // clear game
+        memset(state, 0, sizeof(struct gameState));
+
+        // initialize game
+        initializeGame(players, cards, seed, &game);
+
+        // pick random player
+        int targetPlayer = rand()%3;
+
+        // pick random treasures
+        int treasure1;
+        treasure1 = rand()%3 + 1;
+        if (treasure1 == 1) {
+            treasure1 = copper;
+        }
+        else if (treasure1 == 2) {
+            treasure1 = silver;
+        }
+        else {
+            treasure1 = gold;
+        }
+
+        int treasure2;
+        treasure2 = rand()%3 + 1;
+        if (treasure2 == 1) {
+            treasure2 = copper;
+        }
+        else if (treasure2 == 2) {
+            treasure2 = silver;
+        }
+        else {
+            treasure2 = gold;
+        }
+
+        // test adventurer with random treasures
+        testAdventurer(state, targetPlayer, treasure1, treasure2);
+        // add two treasure to deck, empty deck into discard pile, then check adventurer
+        int discardIndex = state->discardCount[targetPlayer];
+        state->discardCount[targetPlayer]+=state->deckCount[targetPlayer];
+        int dCount = state->deckCount[targetPlayer];
+        int j;
+        for (j = 0; j < dCount; j++) {
+            state->discard[targetPlayer][discardIndex] = state->deck[targetPlayer][j];
+            state->deckCount[targetPlayer]--;
+            discardIndex++;
+        }
+        checkPlayAdventurer(state, targetPlayer);
+        // replace deck with non-treasure cards, play adventurer should just discard itself and not gain treasure
+        // fill deck with smithy
+        for (j = 0; j < state->deckCount[targetPlayer]; j++) {
+            state->deck[targetPlayer][j] = smithy;
+        }
+    }    
+    
     return 0;
 }
 
@@ -217,11 +207,11 @@ int countTreasureInHand(struct gameState *state, int targetPlayer) {
     return treasureCount;
 }
 
-void testAdventurer(struct gameState *state, int treasure1, int treasure2) {
-    int targetPlayer = 0;
+void testAdventurer(struct gameState *state, int targetPlayer, int treasure1, int treasure2) {
     // put two copper on top so that when we play adventurer they should be drawn
     placeOnDeck(state, targetPlayer, treasure1);
     placeOnDeck(state, targetPlayer, treasure2);
+    printf("Testing with treasures [%s] [%s]\n", getCardName(treasure1), getCardName(treasure2));
     // get card order and count before smithy
     checkPlayAdventurer(state, targetPlayer);
 
@@ -243,17 +233,17 @@ void checkPlayAdventurer(struct gameState *state, int targetPlayer) {
     
     // check treasure count has increased by 2
     if (countTreasureInHand(state, targetPlayer) != treasureCount + 2) {
-        printf("FAIL: [playAdventurer] We did not gain two treasure cards\n");
+        printf("FAIL: [playAdventurer] [player: %d] We did not gain two treasure cards\n", targetPlayer);
     }
     else {
-        printf("SUCCESS: [playAdventurer] Correct number of treasure cards gained\n");
+        printf("SUCCESS: [playAdventurer] [player: %d] Correct number of treasure cards gained\n", targetPlayer);
     }
     // check adventurer count is same before drawing adventurer and after playing him
     if (countCardInHand(state, targetPlayer, adventurer) != adventCount) {
-        printf("FAIL: [playAdventurer] Adventurer card was not discarded\n");
+        printf("FAIL: [playAdventurer] [player: %d] Adventurer card was not discarded\n", targetPlayer);
     }
     else {
-        printf("SUCCESS: [playAdventurer] Adventurer card was discarded\n");
+        printf("SUCCESS: [playAdventurer] [player: %d] Adventurer card was discarded\n", targetPlayer);
     }
     // check hand is 2 bigger than before drawing adventurer and after playing him
 
