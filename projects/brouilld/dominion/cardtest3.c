@@ -5,7 +5,7 @@
 #include "dominion.h"
 #include "dominion_helpers.h"
 
-void testCouncilRoomCard(){
+void testCouncilRoomCard(int numOfRuns){
 	// Test Suite Setup: Test variables
 	int returnedValue = -50;
 	int startingCount;
