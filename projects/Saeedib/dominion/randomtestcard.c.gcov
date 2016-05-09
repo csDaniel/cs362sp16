@@ -31,32 +31,35 @@
         -:   26:	struct gameState G, testG;
         -:   27:
         -:   28:	//Generating player:
-        2:   29:	for(int counter; counter < 1000; counter++)
+     2002:   29:	for(int counter = 0; counter < 1000; counter++)
         -:   30:	{
-    #####:   31:		int numPlayers = rand() % 4 + 1;
-    #####:   32:		int thisPlayer = rand() % 4 + 1;
-        -:   33:
-    #####:   34:		initializeGame(numPlayers, k, 1000, &G);
-        -:   35:
-    #####:   36:		memcpy(&testG, &G, sizeof(struct gameState));
-    #####:   37:		count = testG.handCount[thisPlayer];
-        -:   38:
-    #####:   39:		for(int i = 0; i < count; i++)
-    #####:   40:			testG.hand[thisPlayer][i] = estate;
-    #####:   41:		for(int i = 0; i < 25; i++)
-    #####:   42:			testG.supplyCount[i] = 10;
-        -:   43:
-    #####:   44:		testG.hand[thisPlayer][rand() % 4 + 1] = gold;
-    #####:   45:		testG.hand[thisPlayer][rand() % 4 + 1] = silver;
-    #####:   46:		testG.hand[thisPlayer][rand() % 4 + 1] = copper;
-    #####:   47:		testG.discardCount[thisPlayer] = 0;
-        -:   48:
-    #####:   49:		out = Smithy(thisPlayer, 3, &testG);
-    #####:   50:		printf("smithy function should return cost of smithy card : %d.\n",out);
-    #####:   51:		assert(out==4);
-    #####:   52:		printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
-        -:   53:
-    #####:   54:		printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
-        -:   55:	}
-        2:   56:	return 0;
-        -:   57:}
+     2000:   31:		int numPlayers = rand() % 4 + 1;
+     2000:   32:		int thisPlayer = rand() % 4;
+     2000:   33:		int seed = rand() % 500 + 500;
+        -:   34:
+     2000:   35:		initializeGame(numPlayers, k, seed, &G);
+        -:   36:
+     2000:   37:		memcpy(&testG, &G, sizeof(struct gameState));
+     2000:   38:		count = G.handCount[thisPlayer];
+     2000:   39:		printf("Hand count for G is: %d",count);
+     2000:   40:		count = testG.handCount[thisPlayer];
+     2000:   41:		printf("Hand count for testG is: %d",count);
+        -:   42:
+     4690:   43:		for(int i = 0; i < count; i++)
+     2690:   44:			testG.hand[thisPlayer][i] = estate;
+    52000:   45:		for(int i = 0; i < 25; i++)
+    50000:   46:			testG.supplyCount[i] = 10;
+        -:   47:
+     2000:   48:		testG.hand[thisPlayer][0] = gold;
+     2000:   49:		testG.hand[thisPlayer][1] = silver;
+     2000:   50:		testG.hand[thisPlayer][2] = copper;
+     2000:   51:		testG.discardCount[thisPlayer] = 0;
+        -:   52:
+     2000:   53:		out = Smithy(thisPlayer, rand() % 4, &testG);
+     2000:   54:		printf("smithy function should return cost of smithy card : %d.\n",out);
+     2000:   55:		assert(out==4);
+     2000:   56:		printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
+     2000:   57:		printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
+        -:   58:	}
+        2:   59:	return 0;
+        -:   60:}

@@ -44,9 +44,9 @@
     10000:   39:			testG.hand[thisPlayer][i] = estate;
     52000:   40:		for(int i = 0; i < 25; i++)
     50000:   41:			testG.supplyCount[i] = 10;
-     2000:   42:		testG.hand[thisPlayer][rand() % 2] = gold;	//3
-     2000:   43:		testG.hand[thisPlayer][rand() % 2+2] = silver;	//2
-     2000:   44:		testG.hand[thisPlayer][rand() % 2+4] = copper;	//1
+     2000:   42:		testG.hand[thisPlayer][0] = gold;	//3
+     2000:   43:		testG.hand[thisPlayer][1] = silver;	//2
+     2000:   44:		testG.hand[thisPlayer][2] = copper;	//1
      2000:   45:		testG.supplyCount[province] = rand() % 5 + 1;
         -:   46:
      2000:   47:		printf("\n\nTesting card: %s\n\n", UNITTEST);
@@ -56,14 +56,14 @@
      2000:   51:		updateCoins(thisPlayer,&testG,0);
      2000:   52:		out = testG.coins;
      2000:   53:		printf("This should return Adventurer new coins in card: %d (should be 6)\n",out);
-        -:   54:		//assert(out == 6);
+     2000:   54:		assert(out == 6);
      2000:   55:		out = Adventurer(thisPlayer,0,&testG,&G.hand);
-        -:   56:		//assert(out == 6);
+     2000:   56:		assert(out == 6);
      2000:   57:		printf("This should return the value of Adventurer card: %d\n",out);
      2000:   58:		out = updateCoins(thisPlayer,&testG,0);
      2000:   59:		out = testG.coins;
      2000:   60:		printf("This should return Adventurer new coins in card: %d (should be 8)\n",out);
-        -:   61:		//assert(out == 8);
+     2000:   61:		assert(out == 8);
      2000:   62:		printf("Test 1 Passed\n");
         -:   63:	}
         2:   64:	return 0;	//No bugs found
