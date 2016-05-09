@@ -1,7 +1,7 @@
 ************************   Documentation.c **************************************
 *smithy
 *Description:
-*This action card gets three cards from the draw pile and adds them to the player's hand *using a for loop and the drawCard function. Then, a card is discarded from the player's hand *using the discardCard function. Finally, 0 is returned.
+*This action card gets three cards from the draw pile and adds them to the player's hand *using a for loop and the drawCard function. Then, the card is discarded from the player's hand *using the discardCard function. Finally, 0 is returned.
 *
 *adventurer
 *Description:
