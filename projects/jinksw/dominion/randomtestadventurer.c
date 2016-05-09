@@ -15,42 +15,42 @@ Adventurer Card: Reveal/Draw cards from deck until you reveal/draw
 #define DEBUG 0
 #define NOISY_TEST 1
 
-int checkAdventurer(int p, struct gameState *post) {
+int checkAdventurer(struct gameState *post) {
   struct gameState pre;
   memcpy (&pre, post, sizeof(struct gameState));
 
   int r;
 	    
-  r = playAdventurerCard (post);
+  r = playAdventurerCard(post);
 
 	int treasCount = 0;
-	int currPlayer = whoseTurn( pre );
+	int currPlayer = whoseTurn( &pre );
 	int cardDrawn;
-	int temphand[MAXHAND];
+	int temphand[MAX_HAND];
 	int k = 0;
 	
 	while( treasCount < 2 ){
-		drawCard( currPlayer, pre ); //drawCard calls shuffle if empty
+		drawCard( currPlayer, &pre ); //drawCard calls shuffle if empty
 
-		if( pre->hand[currPlayer][pre->handCount[currPlayer]] == bronze ){
+		if( pre.hand[currPlayer][pre.handCount[currPlayer]] == copper ){
 			treasCount++;
 		}
-		else if( pre->hand[currPlayer][pre->handCount[currPlayer]] == silver ){
+		else if( pre.hand[currPlayer][pre.handCount[currPlayer]] == silver ){
 			treasCount++;
 		}
-		else if( pre->hand[currPlayer][pre->handCount[currPlayer]] == gold ){
+		else if( pre.hand[currPlayer][pre.handCount[currPlayer]] == gold ){
 			treasCount++;
 		} else {
 			//Remove non-treasure drawn cards from hand and put into temp hand
 			// to discard after turn
-			temphand[k] = pre->hand[currPlayer][pre->handCount[currPlayer]];
-			pre->handCount[currPlayer]--;
+			temphand[k] = pre.hand[currPlayer][pre.handCount[currPlayer]];
+			pre.handCount[currPlayer]--;
 		}
 	}
 
 	while( k>0 ){
-		pre->discardCount[currPlayer]++;
-		pre->discard[currPlayer][pre->discardCount[currPlayer]] = temphand[k];
+		pre.discardCount[currPlayer]++;
+		pre.discard[currPlayer][pre.discardCount[currPlayer]] = temphand[k];
 		k--;
 	}
 
