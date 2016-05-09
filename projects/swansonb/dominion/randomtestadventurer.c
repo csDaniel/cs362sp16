@@ -5,6 +5,7 @@
 #include <string.h>
 #include <math.h>
 #include <limits.h>
+#include <assert.h>
 
 
 const int RANDOM_MIN_DECK = 6;
@@ -70,7 +71,18 @@ void startTurnForPlayer(struct gameState *pState, int player, int* deck, int arr
 
 void getRandomDeck(struct randomDeck* deck){
     deck->deckSize = ((int) (Random() * (RANDOM_MAX_DECK - RANDOM_MIN_DECK + 1))) + RANDOM_MIN_DECK;
-    int numCoins = 1;
+    int numCoins;
+    int numCoinsBias = (int) (Random() * 5);
+    if (numCoinsBias < 2){
+        //edge cases 1, or 2 coins available
+        numCoins = numCoinsBias + 1;
+    } else if (numCoinsBias < 4) {
+        // random number of coins distributed in values greater than 2 and less than deckSize - 4
+        numCoins = (int) (Random() * (deck->deckSize - 2)) + 2;
+    } else {
+        // deck full of coin cards
+        numCoins = deck->deckSize;
+    }
 
     int i = 0;
     for (;i<deck->deckSize - numCoins;++i){
@@ -81,9 +93,30 @@ void getRandomDeck(struct randomDeck* deck){
         else deck->deck[i] = randomNumber + adventurer;  //first card after gold
     }
 
+    //append coin cards at end of deck
     for (; i<deck->deckSize; ++i){
-        deck->deck[i] = copper;
+        deck->deck[i] = copper + (int) (Random() * 3);
     }
+
+    int coinCoint = 0;
+    for(i=0; i<deck->deckSize; ++i){
+        coinCoint += isCoin(deck->deck[i]);
+    }
+    assert(coinCoint == numCoins);
+
+    //Shuffle coins into deck
+    for(i=deck->deckSize-1; deck->deckSize - i <= numCoins; --i){
+        int newIndex = (int) (Random() * deck->deckSize);
+        int temp = deck->deck[i];
+        deck->deck[i] = deck->deck[newIndex];
+        deck->deck[newIndex] = temp;
+    }
+
+    coinCoint = 0;
+    for(i=0; i<deck->deckSize; ++i){
+        coinCoint += isCoin(deck->deck[i]);
+    }
+    assert(coinCoint == numCoins);
 
 }
 
@@ -107,6 +140,7 @@ int main(int argc, char **argv) {
     int i,numInPlayersDeck;
     int curPlayer = 0;
     struct randomDeck testDeck;
+    int *counts = malloc(sizeof(int) * (treasure_map + 1));
 
     for (i=0; i<NUM_DECKS_TO_GENERATE; ++i){
 
@@ -164,7 +198,32 @@ int main(int argc, char **argv) {
                 testsPassed++;
                 printf("(PASSED) \n");
             } else {
-                printf("(FAILED) \n");
+                //printf("(FAILED) \n");
+                // Debuging the reason for failed tests
+
+                printf("FAILED sameCards:  \n");
+                int z = 0;
+                printf("COUNTS:\nbefore: {");
+
+                getCardCounts(counts, &before, curPlayer, treasure_map);
+                for (z=0; z<treasure_map; ++z) printf("%d,",counts[z]);
+                printf("}\n after: {");
+                getCardCounts(counts, &G, curPlayer, treasure_map);
+                for (z=0; z<treasure_map; ++z) printf("%d,",counts[z]);
+                printf( "}\n BEFORE:  hand: {");
+                for (z=0; z< before.handCount[curPlayer]; ++z) printf("%d,", before.hand[curPlayer][z]);
+                printf("}  deck: {");
+                for (z=0; z< before.deckCount[curPlayer]; ++z) printf("%d,", before.deck[curPlayer][z]);
+                printf("}  discard: {");
+                for (z=0; z< before.discardCount[curPlayer]; ++z) printf("%d,", before.discard[curPlayer][z]);
+                printf( "} \nAFTER:  hand: {");
+                for (z=0; z< G.handCount[curPlayer]; ++z) printf("%d,", G.hand[curPlayer][z]);
+                printf("}  deck: {");
+                for (z=0; z< G.deckCount[curPlayer]; ++z) printf("%d,", G.deck[curPlayer][z]);
+                printf("}  discard: {");
+                for (z=0; z< G.discardCount[curPlayer]; ++z) printf("%d,", G.discard[curPlayer][z]);
+                printf("}\n");
+
             }
             testsRun += 1;
 
