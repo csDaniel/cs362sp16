@@ -13,7 +13,10 @@ The random test will pick random hands and try to aswsign random gold values to 
 the results of the test runs are stored at randomtestResult.c
 
 according to last test results, adventurer with 100% coverage and mannages to return expected values
-The smithy coverage in first attempt covers only 21% of the code
+The smithy coverage in first attempt covers only 21% of the code. However further changes in code increased
+that to 100.00%
+
+The nsmithy card test happens 1000 times
 
 */
 
