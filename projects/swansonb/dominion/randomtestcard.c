@@ -129,7 +129,7 @@ int main(int argc, char **argv) {
             int match = 1;
             int z = 0;
             for (;z<drawnCards;++z){
-                match &= (G.hand[curPlayer][G.handCount[curPlayer] - 1 - z] == before.deck[curPlayer][before.deckCount[curPlayer] - 1 - z]);
+                match &= (G.hand[curPlayer][before.handCount[curPlayer] + z] == before.deck[curPlayer][before.deckCount[curPlayer] - 1 - z]);
             }
             printf("New cards in players hand are from top of their drawDeck");
             if (match){
@@ -140,6 +140,29 @@ int main(int argc, char **argv) {
             }
             testsRun += 1;
         }
+
+        //VERBOSE debuging of drawing
+/*
+        printf("%s","Before deck: {");
+        int z;
+        for (z=0; z < before.deckCount[curPlayer]; ++z){
+            printf("%d,",before.deck[curPlayer][z]);
+        }
+        printf("%s","} hand: {");
+        for (z=0; z < before.handCount[curPlayer]; ++z){
+            printf("%d,",before.hand[curPlayer][z]);
+        }
+        printf("%s","}\nafter  deck: {");
+        for (z=0; z < G.deckCount[curPlayer]; ++z){
+            printf("%d,",G.deck[curPlayer][z]);
+        }
+        printf("%s","} hand: {");
+        for (z=0; z < G.handCount[curPlayer]; ++z){
+            printf("%d,",G.hand[curPlayer][z]);
+        }
+        printf("%s","}\n");
+*/
+
 
         //rollback intentional changes to game state and check for any side-effects
         G.deckCount[curPlayer] = before.deckCount[curPlayer];
