@@ -28,9 +28,11 @@ int main() {
     int numPlayers = 2;
     int player = 0;
 	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
-	struct gameState T;
-    int fcount = 0;
-
+	struct gameState T, G;
+    int t1count = 0;
+    int t2count = 0;
+    int t3count = 0;
+    int t4count = 0;
 
     // Seed
     srand(time(NULL));
