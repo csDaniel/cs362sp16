@@ -16,6 +16,8 @@
  */
 
 
+import java.util.Scanner;
+
 import junit.framework.TestCase;
 
 
@@ -86,6 +88,7 @@ public class UrlValidatorTest extends TestCase {
       UrlValidator urlVal = new UrlValidator(null, null, options);
       assertTrue(urlVal.isValid("http://www.google.com"));
       assertTrue(urlVal.isValid("http://www.google.com/"));
+      int numtested = 2;
       int statusPerLine = 60;
       int printed = 0;
       if (printIndex)  {
@@ -94,7 +97,8 @@ public class UrlValidatorTest extends TestCase {
       do {
          StringBuffer testBuffer = new StringBuffer();
          boolean expected = true;
-         for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) {
+         for (int testPartsIndexIndex = 0; testPartsIndexIndex < testPartsIndex.length; ++testPartsIndexIndex) 
+         {
             int index = testPartsIndex[testPartsIndexIndex];
             ResultPair[] part = (ResultPair[]) testObjects[testPartsIndexIndex];
             testBuffer.append(part[index].item);
@@ -124,10 +128,13 @@ public class UrlValidatorTest extends TestCase {
                printed = 0;
             }
          }
+         numtested++;
       } while (incrementTestPartsIndex(testPartsIndex, testObjects));
       if (printStatus) {
-         System.out.println();
+
       }
+      System.out.println();
+      System.out.println(numtested);
    }
 
    public void testValidator202() {
