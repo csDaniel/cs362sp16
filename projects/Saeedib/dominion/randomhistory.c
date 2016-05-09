@@ -3,6 +3,18 @@
 //-Assignment 4
 /*
 
+- The makefile rule is: make randomtest
+- The file randomResults.c contains all the details about the output and coverage tests
+
+For generating the test we looked at the properties of the two cards:
+Smithy:
+	This car should return a value as its price and also it needs to make certain changes to deck of cards
+This changes could be monitored and tracked in order to assure that the code runs properly.
+
+Adventurer
+	This card similarly, affect the deck in a specific way. Those changes could be tracked and monitored
+in order to assure that the code runs properly. 
+
 The random test generates series of random values as player, card number and gold, silver and copper cards.
 The random test then checks and outputs the values and what is expected to be outputed.
 
