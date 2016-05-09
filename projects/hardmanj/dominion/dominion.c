@@ -778,7 +778,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
 	UseAdventurer(state);
-			
+	
     case council_room:
       //+4 Cards
 	  UseCouncilRoom(state,handPos);

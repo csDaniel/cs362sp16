@@ -20,7 +20,7 @@ int main() {
     int choice1 = 0;
     int choice2 = 0;
     int choice3 = 0;
-
+    int i, j, m;
     int newCards = 2;
     int discarded = 1;
     int minPlayers = 2;
@@ -36,10 +36,10 @@ int main() {
     int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
     sea_hag, tribute, smithy, council_room};
 
-	for (int i = minPlayers; i < MAX_PLAYERS + 1; i++) {
+	for (i = minPlayers; i < MAX_PLAYERS + 1; i++) {
             numPlayers = i;
 
-        for (int j = 0; j < 1000000; j++) {
+        for (j = 0; j < 1000000; j++) {
 
             int seed = floor(Random() * 1000);
             int handpos = floor(Random() * MAX_HAND);
@@ -84,13 +84,13 @@ int main() {
             int treasureBefore = 0;
             int treasureAfter = 0;
 
-            for (int i = 0; i < G.handCount[PlayerID]; i++) {
+            for (i = 0; i < G.handCount[PlayerID]; i++) {
                 if (G.hand[PlayerID][i] == copper || G.hand[PlayerID][i] == silver || G.hand[PlayerID][i] == gold) {
                     treasureBefore++;
                 }
             }
 
-            for (int i = 0; i < testG.handCount[PlayerID]; i++) {
+            for (i = 0; i < testG.handCount[PlayerID]; i++) {
                 if (testG.hand[PlayerID][i] == copper || testG.hand[PlayerID][i] == silver || testG.hand[PlayerID][i] == gold) {
                     treasureAfter++;
                 }
@@ -105,9 +105,9 @@ int main() {
              }
 
             //Random Test 3 - Other Players Are Unaffected by Player 1 Playing Adventurer
-            for (int k = 1; k < numPlayers; k++) {
+            for (m = 1; m < numPlayers; m++) {
 
-                PlayerID = k;
+                PlayerID = m;
                 int GDeckResults[27] = { 0 };
                 int testGDeckResults[27] = { 0 };
                 int GHandResults[27] = { 0 };
@@ -118,7 +118,7 @@ int main() {
                 int cardTotal;
 
 
-                for (int i = 0; i < G.deckCount[PlayerID]; i++) {
+                for (i = 0; i < G.deckCount[PlayerID]; i++) {
                     cardVal = G.deck[PlayerID][i];
                     GDeckResults[cardVal]++;
                 }
@@ -127,7 +127,6 @@ int main() {
                     cardVal = testG.deck[PlayerID][i];
                     testGDeckResults[cardVal]++;
                 }
-
 
                 /*
                 for (i = 0; i < G.handCount[PlayerID]; i++) {

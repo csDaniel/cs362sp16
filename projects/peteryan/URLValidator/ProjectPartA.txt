@@ -1,0 +1,32 @@
+Ryan Peters - peteryan
+James Wylie Guerra - guerraj
+Michael Loo - loom
+
+
+How testIsValid Works
+The function is passed an object array that contains arrays for the url part.  The arrays of url parts contain ResultPairs.  
+A ResultPair is a string for the url part and boolean indicating if it is a valid or invalid URL.  The URL parts used are 
+testUrlScheme, testUrlAuthority, testUrlPort, testUrlPath, and testUrlQuery.  testUrlScheme is the protocol, testUrlAuthoriey 
+is the IP address, testUrlPort is a port number, testUrlPath is the path to a web page, and testUrlQuery is query strings.  
+testIsValid constructs url strings by creating a StringBuilder and creates a string adding a scheme, authority, port, path, 
+and then a query.  The expected result is created by using bitwise &= with the boolean for each part used to create the string.  
+If all parts used are valid the expected result is true.  The url is passed to urlVal.isValid to test if the url is valid.  The 
+return value is a boolean and stored in result.  If result is true the url is printed to the screen.  If printStatus is true, 
+‘.’ will be printed if the result is the same as the expected result and ‘X’ if result and expected result are different.  The 
+function tests all combinations of testUrlScheme, testUrlAuthority, testUrlPort, testUrlPath, and testUrlQuery.  
+
+URLs Tested
+31920
+
+Valid URL
+http://www.google.com:80/test1?action=view
+
+Invalid URL
+http:go.a:-1/../
+
+This real world test is not much different than the unit test and card test that we have been doing for class.  It concept is 
+fairly straight-forward.  It builds url strings and gives the a boolean value for valid or invalid.  The url is passed to the 
+function that is tested and the result is compared to the expected results.  The unit test we have been doing follow the same 
+procedure; create input, pass input to function, and compare expected results and actual results.  The decision making for 
+strings and the loop control are a little more complex than what we have been doing.  The people who wrote the program have 
+more experience so they have the knowledge to make the test more concise by using more complex logic.

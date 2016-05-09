@@ -1,6 +1,14 @@
 ## Michael Hueter's CS362 folder
 hueterm | hueterm@oregonstate.edu | @mhueter
 
+#### Assignment 4 [8 May 2016]
+Generated random tests for adventurer and village cards. New files:
+
+1. randomtestadventurer.c
+2. randomtestcard.c
+3. randomhistory.c
+
+
 #### Assignment 3 [24 April 2016]
 Unit testing. New Files:
 

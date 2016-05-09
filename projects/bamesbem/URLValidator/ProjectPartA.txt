@@ -1,0 +1,49 @@
+
+Final Project: Part A
+CS 362
+
+Martha Gebremariam: gebremam
+Michael Bamesberger: bamesbem
+Evan Rechsteiner: rechstee
+
+
+
+Explain the testIsValid function
+
+The testIsValid function tests the isValid function of the URLValidator class. The IsValid function checks to see whether a URL is valid. It is passed a string value, then conducts 8 different tests. If any of the tests return false, the URL is not valid. If all tests pass, the function returns true, meaning the URL is valid. 
+
+The testIsValid function begins by instantiating a new instance of the URLValidator, and tests whether it finds www.google.com/ to be valid. Next, it enters a loop where it tests many different URL strings, then compares the test result against an expected result. If the two are not equal, then the function throws an error. 
+
+How many URLs does it test?
+
+In the isValid function, there are a number of helper functions that test different aspects of the URL. These helper functions include sValidScheme, isValidAuthority, isValidPath, isValidQuery and isValidFragment. isValidScheme, for example, tests whether the URL is using http or https, which are the two valid schemes the validators accepts. isValidAuthority tests whether the authority, or the combination of the hostname and port, is properly formatted. isValidPath looks at the path in the url, and tests whether it is valid. isValidQuery tests whether the query in the URL is a properly formatted string. Finally, isValidFragment tests whether there is a fragment or not. 
+
+Therefore, in our testIsValid function, we test many different URLs that actually test these helper functions. Below is an accounting of the number of URLs that are tested:
+Scheme: 9
+Authority: 19
+URL Port: 7
+Path: 10
+URL Query: 3
+
+Overall, that is 35910 URLs that are tested. 
+
+
+
+Explain how it is building the URLS
+A new StringBuffer class called testBuffer is created
+A boolean variable called expected is set to true
+For loop takes parts of the url at a time and appends it to testBuffer. It then checks validity of each part and ANDs result with expected. This updates the value of expected accordingly. If any of the parts are not valid, final value of expected out of for loop will be false.
+After for loop, testBuffer is cast as a string and then isValid function is called with the string as an argument. Then expected is compared with the output of isValid to confirm isValid function is returning what it is supposed to.
+
+
+Give an example of a valid URL being tested and an invalid URL being tested
+A proper url being tested would involve all of the conditions for the various parts of that url being correct. For example “https://www.foo.com/bar/web-directory” would be classified as being valid and for the test we would parse it and ensure that each portion meets it’s requirements and store that data in an object. Breaking this down we have the Protocol which is “https” but can also be “http”, a proper domain name with/without a proper sub-domain (i.e www or video.foo), potentially a port after the domain name (i.e :88) and then a path (/bar/web-directory). If all of these exist and meet their syntax requirements it would be valid. There’s also extra data stored in a query which is signified by what is written after a question mark at the end of the path. An example for this would be the parameters that signify which video you are displaying and the fragment at the very end (#00h00m01s) to show where in the video you want to watch. 
+In the case of an invalid url would be “http:///www.nocigar.com/nothing--2 seehere/” In this  url we have three cases that should make it invalid. We have three forward slashes, two dashes and spaces must be substituted with underscores. When checking each segment in our url object’s properties we must ensure that these preconditions are met after parsing it as a string. As a post condition we could potentially ensure that we could actually get data back, which in this case we wouldn’t. 
+
+
+Do you think that IsValid test is much different than the unit tests and card tests that we wrote, in terms of concepts and complexity? Explain.
+
+No. The multitude of tests in the testIsValid function is very similar to the unit tests we wrote for dominion. For both, a new Object of the class is created, then the tests are run. Then it compares the expected to the actual result to see whether the tests passed or failed. 
+
+
+
