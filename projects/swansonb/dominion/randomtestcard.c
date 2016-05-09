@@ -60,10 +60,8 @@ void getRandomDeck(struct randomDeck* deck){
 
     int i = 0;
     for (;i<deck->deckSize;++i){
-        //generate random number mapped to all available cards except coins;
-        int randomNumber = (int) (Random() * (treasure_map - 3));
-        if (randomNumber < copper) deck->deck[i] = randomNumber;
-        else deck->deck[i] = randomNumber + adventurer;  //first card after gold
+        //generate random number mapped to all available cards
+        deck->deck[i] = (int) (Random() * treasure_map);  //first card after gold
     }
 
     // Half the time have between 0-3 cards in players deck to test edge cases

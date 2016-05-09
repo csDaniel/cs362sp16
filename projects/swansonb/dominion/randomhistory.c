@@ -2,7 +2,9 @@
  Brandon Swanson
  Assignment 4  Random Testing
 
+ /////////////////////////////////////////////////////
  RandomtestingAdventurer.c:
+ /////////////////////////////////////////////////////
 
  Method for Testing:
  For testing the adventurer card I implemented methods for creating a random deck of cards for the player to draw from.
@@ -65,4 +67,51 @@
  behavior of the function has been more thoroughly tested then the measly number of hand generated testing arrays from
  my unit tests.
 
+
+ /////////////////////////////////////////////////////
+ RandomtestingCard.c:
+ /////////////////////////////////////////////////////
+
+ In this file I tested the playSmithy() function.
+
+ Method for Testing:
+ I used similar techniques for generating random game states, and checking that they didn't interfere with the operation
+ of the playSmithy function and the playSmithy function only affected the expected parts of the game state.
+ I also generated random decks that were were randomly distributed between the draw pile and discard pile.
+ Once again I used a bias to test for edge cases in which the draw pile did not contain sufficient cards and a shuffle
+ of the discard pile would be necessary, about half the time the draw pile would contain either 0,1,2,3 cards and the
+ other half it would contain a random amount.
+ I also added additional test to check if the cards in the players hand came from the top of their draw pile, but
+ Only if a shuffle of the discard was not necessary.
+
+ Findings:
+ There of course was the bug I introduced in the first assignment set, playSmithy transposes two int parameters of
+ discardCard function call,  handPos and curPlayer are switched which causes a segmentation fault in some of the testing
+ functions.  Those testing functions were adjusted to check for card values outside of the range of the counting arrays
+ and the randomly initialized game was more carefully controlled.  initializing all of the players handouts.
+ While the segfaults in discardCard() caused by the bug in smithy are certainly valuable testing information, It causes
+ only one test to be executed and because we are aware of the bugs I introduced I modified the tests to avoid halting as
+ a result of this bug.
+
+ I also introduced a bug into smithy that it would draw 4 cards instead of 3,  but in 4000 tests 993 of them only 3
+ cards were drawn even though the for loop calling drawCard must always execute 4 times.  In that case there must be
+ a bug in the draw card function.
+
+ Coverage:
+ File 'dominion.c'
+ Lines executed:14.91% of 570
+ Branches executed:9.11% of 417
+ Taken at least once:8.63% of 417
+ Calls executed:9.80% of 102
+ Creating 'dominion.c.gcov'
+
+ Function 'playSmithy'
+ Lines executed:100.00% of 7
+ Branches executed:100.00% of 2
+ Taken at least once:100.00% of 2
+ Calls executed:100.00% of 3
+
+ Once again the coverage of the playSmithy function has not increased.  The overall file coverage is much lower than
+ on the unit tests,  This is due to the fact that in the unit test the initializeGame and endTurn functions were used
+ to prepare a game state, but in these random tests the game state was generated entirely randomly.
  */
