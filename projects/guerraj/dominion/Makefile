@@ -78,7 +78,17 @@ unittestresults.out: cardtest1.c cardtest2.c cardtest3.c cardtest4.c unittest1.c
 	echo "code coverage for dominon.c:" >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 		
+randomtestcard.out: randomtestcard.c dominion.o rngs.o 
+	echo "results for running randomtestcard.c" >> randomtestcard.out 
+	gcc -w -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	randomtestcard >> randomtestcard.out
+	gcov -b randomtestcard.c >> randomtestcard.out
 
+randomtestadventure.out: randomtestadventure.c dominion.o rngs.o 
+	echo "results for running randomtestadventure.c" >> randomtestadventure.out 
+	gcc -w -o randomtestadventure -g randomtestadventure.c dominion.o rngs.o $(CFLAGS)
+	randomtestadventure >> randomtestadventure.out
+	gcov -b randomtestadventure.c >> randomtestadventure.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
