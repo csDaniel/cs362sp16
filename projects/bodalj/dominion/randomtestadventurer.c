@@ -78,6 +78,7 @@ int main() {
         // test adventurer with random treasures
         testAdventurer(state, targetPlayer, treasure1, treasure2);
         // add two treasure to deck, empty deck into discard pile, then check adventurer
+        initializeGame(players, cards, seed, &game);
         int discardIndex = state->discardCount[targetPlayer];
         state->discardCount[targetPlayer]+=state->deckCount[targetPlayer];
         int dCount = state->deckCount[targetPlayer];
@@ -88,10 +89,40 @@ int main() {
             discardIndex++;
         }
         checkPlayAdventurer(state, targetPlayer);
+        
         // replace deck with non-treasure cards, play adventurer should just discard itself and not gain treasure
+        initializeGame(players, cards, seed, &game);
         // fill deck with smithy
         for (j = 0; j < state->deckCount[targetPlayer]; j++) {
             state->deck[targetPlayer][j] = smithy;
+        }
+        
+        int oldCount = state->handCount[targetPlayer];
+        int oldPos[oldCount];
+        memcpy(oldPos, state->hand[targetPlayer], oldCount * sizeof(int));
+        // count treasure
+        int treasureCount = countTreasureInHand(state, targetPlayer);
+        // count adventurer 
+        int adventCount = countCardInHand(state, targetPlayer, adventurer);
+        // draw adventurer
+        int adventurerPos = drawSpecificCard(state, targetPlayer, adventurer);
+       
+        // play adventurer from previously acquired position
+        playAdventurer(targetPlayer, state);
+        
+        // check treasure count has not increased by 2
+        if (countTreasureInHand(state, targetPlayer) != treasureCount) {
+            printf("FAIL: [playAdventurer] [player: %d] We have gained or loss treasure cards\n", targetPlayer);
+        }
+        else {
+            printf("SUCCESS: [playAdventurer] [player: %d] No treasure cards gained\n", targetPlayer);
+        }
+        // check adventurer count is same before drawing adventurer and after playing him
+        if (countCardInHand(state, targetPlayer, adventurer) != adventCount) {
+            printf("FAIL: [playAdventurer] [player: %d] Adventurer card was not discarded\n", targetPlayer);
+        }
+        else {
+            printf("SUCCESS: [playAdventurer] [player: %d] Adventurer card was discarded\n", targetPlayer);
         }
     }    
     
