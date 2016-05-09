@@ -1253,7 +1253,7 @@ int playAdventurer(int currentPlayer, struct gameState *state){
      int temphand[MAX_HAND];
 
 while(drawntreasure<3){
-	if (state->deckCount[currentPlayer] <=1){//if the deck is empty we need to shuffle discard and add to deck - bug
+	if (state->deckCount[currentPlayer] <=1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
 	drawCard(currentPlayer, state);
