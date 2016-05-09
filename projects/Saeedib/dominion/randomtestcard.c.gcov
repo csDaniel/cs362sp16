@@ -45,8 +45,8 @@
      2000:   40:		count = testG.handCount[thisPlayer];
      2000:   41:		printf("Hand count for testG is: %d",count);
         -:   42:
-     4400:   43:		for(int i = 0; i < count; i++)
-     2400:   44:			testG.hand[thisPlayer][i] = estate;
+     4690:   43:		for(int i = 0; i < count; i++)
+     2690:   44:			testG.hand[thisPlayer][i] = estate;
     52000:   45:		for(int i = 0; i < 25; i++)
     50000:   46:			testG.supplyCount[i] = 10;
         -:   47:
