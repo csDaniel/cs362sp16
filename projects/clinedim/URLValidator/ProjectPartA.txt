@@ -1,0 +1,112 @@
+********** Group Memebers **********
+NAME                      ONID ID
+Marc Clinedinst           clinedim
+Connor Pacala             pacalac
+Eugene Andrew Pak         pake
+
+********** Project Part A **********
+In determining whether a particular URL is valid, the testIsValid function depends partly on the isValid function from the UrlValidator class.  The isValid function performs a series of checks on a string that is passed to the function to determine if the string represents a valid URL.  These checks are listed below:
+
+1.  The function compares the passed value to the special null value in the Java language; if the passed value is equal to this special value, the function returns false indicating that the URL is not valid.
+
+2.  The function compares the pass value to an ASCII pattern matcher; if any non-ASCII characters are in the URL, then the function returns false indicating that the URL is not valid.
+
+3.  The function parses the scheme from the passed value and makes sure that it is a valid scheme; if the scheme is not valid, then the function returns false indicating that the passed value is not a valid URL.
+
+4.  The function parses the authority (the username and password separated by a colon) from the URL and makes sure that it is valid; if the authority is not valid, then the function returns false indicating that the passed value is not a valid URL.
+
+5.  The function parses the path of the URL from the passed value and makes sure that it is valid; if the path is not valid, then the function returns false indicating that the passed value is not a valid URL.
+
+6.  The function parses the query string (preceded by the ? mark) from the passed value and makes sure that it is valid; if the query string is not valid, then the function returns false indicating that the passed value is not a valid URL.
+
+7.  The function parses the fragment (preceded by the # mark) from the passed value and makes sure that it is valid; if the fragment is not valid, then the function returns false indicating that the passed value is not a valid URL.
+
+If all of these checks pass, then the URL is considered valid.
+
+The UrlValidatorTest function tests URLs by building them from test a set of declared constants. It appears (when a count variable is added to the do-while loop) that the test runs 31920 times with a total of 1890 valid URLs being printed to the console. The pieces that URLs are built from are listed below:
+
+SCHEME: 
+"http://"
+"ftp://"
+"h3t://"
+"3ht://"
+"http:/"
+"http:"
+"http/"
+"://"
+
+AUTHORITY
+"go.com"
+"go.au"
+"0.0.0.0"
+"255.255.255.255"
+"256.256.256.256"
+"255.com"
+"1.2.3.4.5"
+"1.2.3.4."
+"1.2.3"
+".1.2.3.4"
+"go.a"
+"go.a1a"
+"go.cc"
+"go.1aa"
+"aaa."
+".aaa"
+"aaa"
+
+PORT
+":80"
+":65535"
+":0"
+""
+":-1"
+":65636"
+":65a"
+   
+PATH
+"/test1"
+"/t123"
+"/$23"
+"/.."
+"/../"
+"/test1/"
+""
+"/test1/file"
+"/..//file"
+"/test1//file"
+
+PATH OPTIONS
+"/test1"
+"/t123"
+"/$23"
+"/.."
+"/../"
+"/test1/"
+"/#"
+""
+"/test1/file"
+"/t123/file"
+"/$23/file"
+"/../file"
+"/..//file"
+"/test1//file"
+"/#/file"
+
+QUERY STRING
+"?action=view"
+"?action=edit&mode=up"
+
+Through each iteration of the testIsValid function, the test builds a new URL using the constants listed above. The new URL is passed to the isValid function, which performs the checks on the URL and determines whether or not the URL is valid.  Once the URL has been validated, a boolean value is returned indicating whether or not the URL is valid and, if the URL is valid, it is printed to the console.
+
+Below are some examples of URLs which would be determined to be valid:
+
+http://www.google.com
+http://www.yahoo.com
+http://www.example.com/sample/path?p=123
+
+Below are some examples of URLs which would be determined to be invalid:
+
+http
+//
+foobar.com
+http://.www.foobar.com

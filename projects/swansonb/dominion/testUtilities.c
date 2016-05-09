@@ -60,31 +60,27 @@ int playerHasSameCards(struct gameState* a, struct gameState* b, int player) {
     int countb[treasure_map+1];
     int i;
 
-    bzero(counta,sizeof(counta));
-    bzero(countb,sizeof(countb));
+    getCardCounts(counta, a, player, treasure_map);
+    getCardCounts(countb, b, player, treasure_map);
 
-    for (i=0; i < a->deckCount[player] || i < a->handCount[player] || i< a->discardCount[player] || i < a->playedCardCount; ++i){
-        if (i< a->deckCount[player])counta[a->deck[player][i]]++;
-        if (i< a->handCount[player])counta[a->hand[player][i]]++;
-        if (i< a->discardCount[player])counta[a->discard[player][i]]++;
-        if (i< a->playedCardCount) counta[a->playedCards[i]]++;
-    }
-
-    for (i=0; i < b->deckCount[player] || i < b->handCount[player] || i< b->discardCount[player] || i < b->playedCardCount; ++i){
-        if (i< b->deckCount[player])countb[b->deck[player][i]]++;
-        if (i< b->handCount[player])countb[b->hand[player][i]]++;
-        if (i< b->discardCount[player])countb[b->discard[player][i]]++;
-        if (i< b->playedCardCount) countb[b->playedCards[i]]++;
-    }
-
-/*    for (i=0; i<treasure_map; ++i){
-        printf("%i a:%d b:%d   %d\n", i, counta[i],countb[i], counta[i] ==countb[i]);
-    }*/
     for (i=0; i<treasure_map; ++i){
         if (counta[i] != countb[i]) return 0;
     }
 
     return 1;
+}
+
+void getCardCounts(int* count, struct gameState* g, int player, int numberOfCards){
+    int i;
+
+    for(i=0; i <numberOfCards; ++i) count[i] = 0;
+
+    for (i=0; i < g->deckCount[player] || i < g->handCount[player] || i< g->discardCount[player] || i < g->playedCardCount; ++i){
+        if (i< g->deckCount[player] && g->deck[player][i] >= 0 && g->deck[player][i] <= treasure_map)count[g->deck[player][i]]++;
+        if (i< g->handCount[player] && g->hand[player][i] >= 0 && g->hand[player][i] <= treasure_map)count[g->hand[player][i]]++;
+        if (i< g->discardCount[player] && g->discard[player][i] >= 0 && g->discard[player][i] <= treasure_map)count[g->discard[player][i]]++;
+        if (i< g->playedCardCount && g->playedCards[i] >= 0 && g->playedCards[i] <= treasure_map) count[g->playedCards[i]]++;
+    } 
 }
 
 void cpyDeck(int* dest, int* src, int n){

@@ -295,7 +295,6 @@ int buyCard(int supplyPos, struct gameState *state) {
     state->phase=1;
     //state->supplyCount[supplyPos]--;
     gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
-  
     state->coins = (state->coins) - (getCost(supplyPos));
     state->numBuys--;
     if (DEBUG)
@@ -667,7 +666,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      return playAdventurer(state);
+      return playAdventurer(state, handPos);
 			
     case council_room:
       //+4 Cards
@@ -1219,18 +1218,34 @@ int updateCoins(int player, struct gameState *state, int bonus)
   return 0;
 }
 
-int playAdventurer(struct gameState *state){
-  int currentPlayer= whoseTurn(state);
+int playAdventurer(struct gameState *state,int handPos){
+  int currentPlayer= state->whoseTurn;
   int drawntreasure = 0;
   int cardDrawn;
+  int shuffleCount = 0;
   int temphand[MAX_HAND];
-  int z, i;//temphand counter
+  int i;//temphand counter
+  int z = 0;
   while(drawntreasure<2){
-    if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-      shuffle(currentPlayer, state);
+    if (state->deckCount[currentPlayer] <1){
+      //if the deck is empty we need to shuffle discard and add to deck
+      if (shuffleCount <= 1){
+        //Move discard to deck
+        for (i = 0; i < state->discardCount[currentPlayer];i++){
+          state->deck[currentPlayer][i] = state->discard[currentPlayer][i];
+          state->discard[currentPlayer][i] = -1;
+        }
+
+        state->deckCount[currentPlayer] = state->discardCount[currentPlayer];
+        state->discardCount[currentPlayer] = 0;//Reset discard
+        shuffle(currentPlayer, state);
+        ++shuffleCount;
+        if (shuffleCount==2) break;
+      }
     }
-    drawCard(currentPlayer, state);
-    for (i=0 ; i<state->deckCount[currentPlayer] ; i++){
+    if (shuffleCount <2){
+      drawCard(currentPlayer, state);
+      cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
       if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
         drawntreasure++;
       else{
@@ -1244,6 +1259,7 @@ int playAdventurer(struct gameState *state){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
+  discardCard(handPos,currentPlayer,state,0);
   return 0;
 }
 
@@ -1252,9 +1268,6 @@ int playSmithy(struct gameState *state,int handPos){
       int currentPlayer = whoseTurn(state);
       int i;
       //+3 Cards
-      if (state->deckCount[currentPlayer]<3){
-        return -1;
-      }
       for (i = 0; i < 3; i++)
       {
         drawCard(currentPlayer, state);
@@ -1266,7 +1279,6 @@ int playSmithy(struct gameState *state,int handPos){
 
 int playGreatHall(struct gameState *state, int handPos){
       int currentPlayer = whoseTurn(state);
-      handPos = state->hand[currentPlayer][handPos];
       //+1 Card
       drawCard(currentPlayer, state);
       
@@ -1365,4 +1377,3 @@ int playSteward(struct gameState *state,int handPos,int choice1,int choice2,int 
 
 
 //end of dominion.c
-

@@ -21,6 +21,8 @@
 int main (int argc, char** argv) {
     printf ("---------- Testing councilRoomCard() ----------\n");
     int i, j, k;
+    i = j = k = 0;
+
     int handPos = 0;
     
     // Create a game

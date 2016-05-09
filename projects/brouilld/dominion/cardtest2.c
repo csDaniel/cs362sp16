@@ -24,7 +24,7 @@ void setup(struct gameState *state, int currentPlayer, int cardType){
 
 
 
-void testAdventurerCard(){
+void testAdventurerCard(int numOfRuns){
 
 	// Test Suite Setup: Test variables
 	int returnedValue = -50;

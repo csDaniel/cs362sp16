@@ -18,3 +18,10 @@ testDrawCard
 
 *test?.out
 unittestresults.out
+.idea/
+*.compile.*
+*.gcda
+*.gcno
+CMakeLists.txt
+*.out
+*.gcov

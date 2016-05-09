@@ -7,7 +7,7 @@
 #include "unitTestFramework.h"
 #include "unittests.h"
 
-void testGetCost(){
+void testGetCost(int numOfRuns){
 
 	int returnedValue = -50;
 

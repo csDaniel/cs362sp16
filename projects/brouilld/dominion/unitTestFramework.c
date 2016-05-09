@@ -1,20 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <signal.h>
 #include "unitTestFramework.h"
 
 #define PASS "\x1B[32m"
 #define FAIL "\x1B[31m"
 #define NORMALTEXT "\x1B[0m"
 
-
-void TestSuite(void (*toRun)(), char testName[])
+void TestSuite(void (*toRun)(), char testName[], int numOfRuns)
 {
 	testSeparate();
 
 	testInfoOutput(testName, "BEGIN");
 
-	toRun();
+	toRun(numOfRuns);
+
+	testInfoOutput(testName, "END");
+
+	testSeparate();
+}
+
+void TestSuiteRandom(void(*toRun)(), char testName[], int numOfRuns, int random1, int random2, int random3, int random4)
+{
+	testSeparate();
+
+	testInfoOutput(testName, "BEGIN");
+
+	toRun(numOfRuns, random1, random2, random3, random4);
 
 	testInfoOutput(testName, "END");
 
@@ -92,4 +105,8 @@ void testSeparate()
 	fprintf(doc, "    -------------------------------------------------------------\n");
 	fclose(doc);
 
+}
+
+int randomSetup(int min, int range){
+	return ((rand() % range) + min);
 }
