@@ -139,7 +139,7 @@ int main (int argc, char** argv) {
 			preGameState.discardCount[p]++;
 			preGameState.deckCount[p]--;
 		}	
-		//printf("Deck randomised.\n");		
+		printf("Deck randomised with size %d.\n", deckSize);		
 
 		//Save copy of gamestate
 		memcpy(&postGameState, &preGameState, sizeof(struct gameState));
