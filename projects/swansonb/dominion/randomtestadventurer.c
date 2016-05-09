@@ -126,7 +126,7 @@ int main(int argc, char **argv) {
     // Testing for playAdventurer function
     printf("--------------------------------------------------------------\n");
     printf("--------------------------------------------------------------\n");
-    printf("Testing dominion.c int playAdventurer()\n");
+    printf("Randomly Testing dominion.c int playAdventurer()\n");
     printf("--------------------------------------------------------------\n");
     printf("--------------------------------------------------------------\n");
 
@@ -140,7 +140,6 @@ int main(int argc, char **argv) {
     int i,numInPlayersDeck;
     int curPlayer = 0;
     struct randomDeck testDeck;
-    int *counts = malloc(sizeof(int) * (treasure_map + 1));
 
     for (i=0; i<NUM_DECKS_TO_GENERATE; ++i){
 

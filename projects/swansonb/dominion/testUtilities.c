@@ -76,10 +76,10 @@ void getCardCounts(int* count, struct gameState* g, int player, int numberOfCard
     for(i=0; i <numberOfCards; ++i) count[i] = 0;
 
     for (i=0; i < g->deckCount[player] || i < g->handCount[player] || i< g->discardCount[player] || i < g->playedCardCount; ++i){
-        if (i< g->deckCount[player])count[g->deck[player][i]]++;
-        if (i< g->handCount[player])count[g->hand[player][i]]++;
-        if (i< g->discardCount[player])count[g->discard[player][i]]++;
-        if (i< g->playedCardCount) count[g->playedCards[i]]++;
+        if (i< g->deckCount[player] && g->deck[player][i] >= 0 && g->deck[player][i] <= treasure_map)count[g->deck[player][i]]++;
+        if (i< g->handCount[player] && g->hand[player][i] >= 0 && g->hand[player][i] <= treasure_map)count[g->hand[player][i]]++;
+        if (i< g->discardCount[player] && g->discard[player][i] >= 0 && g->discard[player][i] <= treasure_map)count[g->discard[player][i]]++;
+        if (i< g->playedCardCount && g->playedCards[i] >= 0 && g->playedCards[i] <= treasure_map) count[g->playedCards[i]]++;
     } 
 }
 
