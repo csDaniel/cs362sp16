@@ -41,8 +41,8 @@ int main()
 	int countNum = 0;
 
 	//test vars
-	int randomSeed = 20000;
-	int numberOfTests = 2000;
+	int randomSeed = 10000;
+	int numberOfTests = 100;
 	int isValidDeck = 1;
 	int isValidDrawTreasure = 1;
 	int isValidDeckNonTreasure = 1;
@@ -57,14 +57,15 @@ int main()
 	int tempHand[MAX_HAND];
 	int startingDeckCount = 0;
 	int postDeckCount = 0;
+	int isAdventurer = 0;
 
 	//gamestate vars
 	int success;
 	int numPlayers = 2;
 
-	while(countNum < 10000){
+	while(countNum < numberOfTests){
 		if(DEBUGSET)
-			printf("\nRunning tests!");
+			printf("\nRunning test!\n");
 
 		isValidDeck = 1;
 		isValidDeckNonTreasure = 1;
@@ -74,25 +75,31 @@ int main()
 		postNonTreasureCount = 0;
 
 		//use of floor to ensure whole number after use of random number gen
-		randomSeed = floor(rand()*53202383);
-		numPlayers = floor((rand()*3) + 2);
+		numPlayers = ((rand() % 3) + 1);
 		
 		memset(&state, 23, sizeof(state));
 
 		//initialize game and check for success.
-		success = initializeGame(numPlayers, kingdomCards, randomSeed, &state);
-		if(success != 0)
-		{
-			perror("Failed gamestate initialization. Aborting tests");
-			exit(1);
-		}
+		initializeGame(numPlayers, kingdomCards, randomSeed, &state);
 
 		//random hand size for currentPlayer
-		state.handCount[currentPlayer] = floor(rand()* 10);
+		state.handCount[currentPlayer] = ((rand() % 10) + 1);
 		for(j = 0; j < state.handCount[currentPlayer]; j++)
 		{
-			state.hand[currentPlayer][j] = floor(rand()* 26);
+			state.hand[currentPlayer][j] = (rand() % 26);
+			if(state.hand[currentPlayer][j] == adventurer)
+			{
+				isAdventurer = 1;
+			}
 		}
+
+		if(isAdventurer)
+		{
+			printf("adventurer is present\n");
+		}
+
+		//Ensure that at least one card is the adventurer
+		//state.hand[currentPlayer][j] = adventurer;
 
 		i = j = k = p = 0;
 
@@ -110,6 +117,7 @@ int main()
 						totalNonTreasureCount++;
 					}
 			}
+
 
 		//backup gamestate for verification later
 		memcpy(&backGameState, &state, sizeof(struct gameState));
@@ -138,7 +146,7 @@ int main()
 			isValidDrawTreasure = 0;
 		}
 
-		if (!((totalNonTreasureCount -2) == postNonTreasureCount))
+		if (!(totalNonTreasureCount == postNonTreasureCount))
 		{
 			isValidDeckNonTreasure = 0;
 		}
@@ -153,8 +161,8 @@ int main()
 		if(isValidDeck == 0 || isValidDeckNonTreasure == 0)
 		{
 			printf("Test# %i\n", countNum + 1);
-			printf("Function Tested: cardAdventurer(%i, &state);\n", currentPlayer );
-			printf("Cards in starting hand: \n");
+			printf("\nFunction Tested: cardAdventurer(%i, &state);\n", currentPlayer );
+			printf("\nCards in starting hand: \n");
 			for(j = 0; j < backGameState.handCount[currentPlayer]; j++)
 			{
 				printf("%i, ", backGameState.hand[currentPlayer][j]);
@@ -162,9 +170,12 @@ int main()
 			printf("\n");
 			printf("Random Seed: %i\n", randomSeed);
 			printf("Failed Item(s): \n");
-			if(isValidDeck == 0 || isValidDeckNonTreasure == 0)
+			if(isValidDeck == 0)
 				{
 					printf("Invalid draw from deck. \n");
+				} 
+			if(isValidDeckNonTreasure == 0){
+					printf("Invalid nonTreasure count. \n");
 				}
 			numberOfFailures++;
 		} else {
