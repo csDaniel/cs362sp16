@@ -69,7 +69,6 @@ void testVPoints(struct gameState *state)
 
 return;
 
-
 }
 
 

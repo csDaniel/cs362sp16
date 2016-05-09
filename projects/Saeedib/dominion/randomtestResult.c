@@ -1,32 +1,12010 @@
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: -1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 0Hand count for testG is: 0smithy function should return cost of smithy card : 4.
+New Hand count is: 1.
+Discard count is: 0.
+Hand count for G is: 5Hand count for testG is: 5smithy function should return cost of smithy card : 4.
+New Hand count is: 6.
+Discard count is: 0.
 
 
-Testing card: Smithy
+Testing card: Adventurer
 
 Test 1: Checking the function.
-smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Test 1 failed, it needs to return: 7
-Test 2: Discard Pile.
-Discard count is: 0.
-Test 2 failed, discard count is not correct.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
 
 
-Testing card: Smithy
+Testing card: Adventurer
 
 Test 1: Checking the function.
-smithy function should return cost of smithy card : 4.
-New Hand count is: 6.
-Test 1 failed, it needs to return: 7
-Test 2: Discard Pile.
-Discard count is: 0.
-Test 2 failed, discard count is not correct.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
 ___________________________________________________
 Coverage: 
 File 'randomtestcard.c'
-Lines executed:93.75% of 32
+Lines executed:100.00% of 27
 Creating 'randomtestcard.c.gcov'
 
 File 'randomtestadventurer.c'
-Lines executed:93.75% of 32
+Lines executed:100.00% of 33
 Creating 'randomtestadventurer.c.gcov'
 
