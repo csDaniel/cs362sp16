@@ -3,7 +3,8 @@
 //-Assignment 4
 /*
 
-The makefile rule is: make randomtest
+- The makefile rule is: make randomtest
+- The file randomResults.c contains all the details about the output and coverage tests
 
 For generating the test we looked at the properties of the two cards:
 Smithy:
