@@ -7,7 +7,7 @@
 #include "unitTestFramework.h"
 #include "unittests.h"
 
-void testBuyCard(){
+void testBuyCard(int numOfRuns){
 
 	// Test Suite Setup: Test variables
 	int temp = -50;

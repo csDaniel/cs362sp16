@@ -1,6 +1,7 @@
 #include "rngs.h"
 #include <stdio.h>
 #include <stdlib.h> 
+#include <math.h>
 
 int main(int argc, char** argv) {
   if (argc < 3) {
@@ -23,5 +24,6 @@ int main(int argc, char** argv) {
       done = 1;
     }
   }
+  return 0;
 }
 
