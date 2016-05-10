@@ -7,20 +7,26 @@
 
 char inputChar()
 {
-	// container of all possible chars to test for
-	char *stringSet = "{([ ax]})";
 	// container for char to return
-	char a;
-
-	a = stringSet[rand() % strlen(stringSet)];
-
+	// ascii chars	32 - 125
+	char a = ' ' + (rand() % (126-32));
+	 
 	return a;
 }
 
 char *inputString()
 {
-	// just returns "reset"
-    return "reset";
+	char *stringSet = "rest";
+	char *value = (char *) malloc(sizeof(char) * 6);
+
+	// iterate through value[i], set random "rest" values.
+	int i = 0;
+	for (i = 0; i < 5; i++) {
+		value[i] = stringSet[rand() % strlen(stringSet)];
+	}
+	value[5] = '\0';
+
+	return value;
 }
 
 void testme()

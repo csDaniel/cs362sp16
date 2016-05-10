@@ -673,20 +673,20 @@ int playAdventurer(struct gameState *state) {
 		}
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-2];//top card of hand is most recently drawn card.
-		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
 		  drawntreasure++;
+    }
 		else{
       z++;
 		  temphand[z]=cardDrawn;
 		  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-
-	}
-      }
-    while(z>=0){
-	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-	z=z-1;
     }
-    return 0;
+  }
+  while(z>=0){
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    z=z-1;
+  }
+  return 0;
 }
 
 int playMine(struct gameState *state, int choice1, int choice2, int handPos) {
@@ -1366,6 +1366,15 @@ int updateCoins(int player, struct gameState *state, int bonus)
   state->coins += bonus;
 
   return 0;
+}
+
+
+/************************************************
+Start of function unit tests
+*************************************************/
+
+int testUpdateCoins(int player, struct gameState *state, int bonus) {
+  
 }
 
 

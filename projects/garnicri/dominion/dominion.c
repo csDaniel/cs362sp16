@@ -1327,6 +1327,7 @@ int rc_Minion(int currentPlayer, struct gameState *state, int handPos, int choic
 	    }
 				
 	  //draw 4
+	  int i;
 	  for (i = 0; i < 4; i++)
 	    {
 	      drawCard(currentPlayer, state);
@@ -1346,6 +1347,7 @@ int rc_Minion(int currentPlayer, struct gameState *state, int handPos, int choic
 			}
 							
 		      //draw 4
+			  int j;
 		      for (j = 0; j < 4; j++)
 			{
 			  drawCard(i, state);
@@ -1358,6 +1360,3 @@ int rc_Minion(int currentPlayer, struct gameState *state, int handPos, int choic
       return 0;
 }
 //******************************* end refactored code ******************************************
-
-//end of dominion.c
-

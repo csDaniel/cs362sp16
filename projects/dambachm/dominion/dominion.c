@@ -655,7 +655,7 @@ void playAdventurer(struct gameState *state) {
 		}
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];  //top card of hand is most recently drawn card.
-		if (cardDrawn == copper || cardDrawn == gold)
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 			drawntreasure++;
 		else {
 			temphand[z] = cardDrawn;
@@ -672,7 +672,7 @@ void playAdventurer(struct gameState *state) {
 void playSmithy(int currentPlayer, int handPos, struct gameState* state) {
 	//+3 Cards
 	int i;
-	for (i = 0; i <= 3; i++) {
+	for (i = 0; i < 3; i++) {
 		drawCard(currentPlayer, state);
 	}
 	//discard card from hand
@@ -770,7 +770,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      playAventurer(state);
+      playAdventurer(state);
       return 0;
 			
     case council_room:

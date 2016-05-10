@@ -27,7 +27,7 @@ enum CARD
    silver,
    gold,
 
-   adventurer,
+   adventurer, //7
    /* If no/only 1 treasure found, stop when full deck seen */
    council_room,
    feast, /* choice1 is supply # of card gained) */
@@ -51,7 +51,7 @@ enum CARD
    outpost,
    salvager, /* choice1 = hand# to trash */
    sea_hag,
-   treasure_map
+   treasure_map //26
   };
 
 struct gameState {
@@ -111,7 +111,7 @@ int smithPlay(int currentPlayer, int handPos, struct gameState *state);
 int remodelPlay(int currentPlayer,int choice1, int choice2, int handPos, struct gameState *state);
 int adventurerPlay(int currentPlayer, int handPos, struct gameState *state);
 int baronPlay(int currentPlayer, int choice1, int handPos, struct gameState *state);
-int seahagPlay(int currentPlayer, struct gameState *state);
+int seahagPlay(int currentPlayer, struct gameState *state, int handpos);
 
 int handCard(int handNum, struct gameState *state);
 /* enum value of indexed card in player's hand */

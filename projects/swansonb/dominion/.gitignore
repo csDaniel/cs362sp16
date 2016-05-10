@@ -13,7 +13,15 @@ badTestDrawCard
 
 testDrawCard
 
-*.gcda
-
-*.gcno
 /Debug/
+.settings/
+
+*test?.out
+unittestresults.out
+.idea/
+*.compile.*
+*.gcda
+*.gcno
+CMakeLists.txt
+*.out
+*.gcov
