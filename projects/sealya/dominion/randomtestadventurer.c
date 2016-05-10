@@ -23,16 +23,21 @@ hand are discarded.  The adventurer card itself should also be discarded.
 
 int main() {
 
-    int y,seed;
+    int i,j,y,seed, result;
     int handPos=0;
+    int bonus = 0;
     int numPlayers = 2;
+    int maxHandPos = 5;
     int player = 0;
+    int choice1 = 0, choice2 = 0, choice3 = 0;
 	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
-	struct gameState T, G;
-    int t1count = 0;
-    int t2count = 0;
-    int t3count = 0;
-    int t4count = 0;
+	struct gameState T,G;
+    int testACount = 0;
+    int testBCount = 0;
+    int testCCount = 0;
+    int everything[] = {curse, estate, duchy, province, copper, silver, adventurer,
+    council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall, minion,
+    steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, sea_hag, treasure_map};
 
     // Seed
     srand(time(NULL));
@@ -42,96 +47,71 @@ int main() {
 
     // run through 1,900 iterations with randomly seeded games
     // (190 iterations of outer loop, each of which have 10 inner iterations)
-    for(y = 0; y < 1900; y++){
+    for(y = 0; y < 200; y++){
 
         // Use a new random seed for each iteration to randomize game state initialized
-        seed = (rand() % 256);
+        seed = (rand() % 5000);
 
-        //Initialize game
-        initializeGame(numPlayers, k, seed, &T);
 
-        // Fill player's deck
-        T.deckCount[player] = 5;
-        T.deck[player][0] = smithy;
-        T.deck[player][1] = smithy;
-        T.deck[player][2] = smithy;
-        T.deck[player][3] = silver;
-        T.deck[player][4] = copper;
+        for (i = 0; i < numPlayers; i++) {
+                for (handPos = 0; handPos < maxHandPos; handPos++) {
 
-        //Set up player's hand.
-        T.handCount[player] = 1;
-        T.hand[player][0] = adventurer;
+            //Clean gamestates
+            memset(&T, 23, sizeof(struct gameState));
+            memset(&G, 23, sizeof(struct gameState));
 
-        // Set initial discard to zero
-        T.discardCount[player] = 0;
+            //Initialize game
+            initializeGame(numPlayers, k, seed, &T);
 
-        // Copy initial state T into G
-        memcpy(&G, &T, sizeof(struct gameState));
+            // Find current player, draw cards if needed
+            T.whoseTurn = i;
+            if (i != 0) {
+                  for (j = 0; j < 5; j++){
+                    drawCard(T.whoseTurn, &T);
+                  }
+            }
 
-        // Expected Results
-        int played = 4; // adventurer and 3 smithy cards on top of deck
-        int estHand = 2; // There should just be the 2 treasure cards
-        int estDeck = 0; // treasure to hand and others discarded
+            // Copy original game state T into G
+            memcpy(&G, &T, sizeof(struct gameState));
 
-        // Play adventurer card
-        adventurerCard(&G, player, handPos);
+            // Play adventurer card
+            result = cardEffect(adventurer, 0, 0, 0, &G, handPos, 0);
 
-        //Check cards both treasure
-        int card1 = handCard(0, &G);
-        int card2 = handCard(1, &G);
-        int areCoins = 1;
-        int counter = 2;
-        if ( (card1 < 4) || (card1 > 6) ){
-            areCoins = 0;
-            counter--;
+            // Fill player's deck
+            G.deckCount[player] = 5;
+            G.deck[player][0] = everything[(rand() % 26)];
+            G.deck[player][1] = everything[(rand() % 26)];
+            G.deck[player][2] = everything[(rand() % 26)];
+            G.deck[player][3] = silver;
+            G.deck[player][4] = copper;
+
+            //Set up player's hand.
+            G.handCount[player] = 1;
+            G.hand[player][0] = adventurer;
+
+            // Set initial discard to zero
+            G.discardCount[player] = 0;
+
+            // Check result
+            if (result != 0){
+                testACount++;
+            }
+
+            if (G.handCount[player] != T.handCount[player] + 2){
+                testBCount++;
+            }
+
+            if (G.deckCount[player] + G.discardCount[player] != T.deckCount[player] + T.discardCount[player] - 2){
+                testCCount++;
+            }
         }
-        if ( (card2 < 4) || (card2 > 6)){
-            areCoins = 0;
-            counter--;
-        }
-
-        // Print results
-        //printf("TEST 1: hand count = %d. Expected result = %d.\n", G.handCount[player], estHand);
-
-        // Error message if hand count not expected
-        if (G.handCount[player] != estHand){
-            //printf("TEST 1 FAILED!\n");
-            t1count++;
-        }
-
-        // Print results
-        //printf("TEST 2: played count = %d. Expected result = %d.\n", G.playedCardCount, played);
-
-        // Error message if played cards not expected
-        if (G.playedCardCount != played){
-            //printf("TEST 2 FAILED!\n");
-            t2count++;
-        }
-
-        // Print results
-        //printf("TEST 3: coins = %d. Expected result = %d.\n", counter, 2);
-
-        // Error message if new coins not as expected
-        if (areCoins == 0){
-            //printf("TEST 3 FAILED!\n");
-            t3count++;
-        }
-
-        // Print results
-        //printf("TEST 4: deck count = %d. Expected result = %d.\n", G.deckCount[player], estDeck);
-
-        // Error message if deck count not reduced as expected
-        if (G.deckCount[player] != estDeck){
-            //printf("TEST 4 FAILED!\n");
-            t4count++;
         }
     }
 
     // print results
-    printf("TEST #1 failed %d of 1900 tries\n", t1count);
-    printf("TEST #2 failed %d of 1900 tries\n", t2count);
-    printf("TEST #3 failed %d of 1900 tries\n", t3count);
-    printf("TEST #4 failed %d of 1900 tries\n", t4count);
+    printf("TEST A failed %d of 2000 tries\n", testACount);
+    printf("TEST B failed %d of 2000 tries\n", testBCount);
+    printf("TEST C failed %d of 2000 tries\n", testCCount);
 
     return 0;
 }
