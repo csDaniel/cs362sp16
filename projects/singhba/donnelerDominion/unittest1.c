@@ -1,20 +1,9 @@
-/**************************************************************************
-* Erin Donnelly
-* CS362 Software Engineering II
-* Assignment 3
-* Filename: unittest1.c
-* Description: Tests updateCoins function
-*
-* Lines to include in makefile:
-* unittest1: unittest1.c dominion.o rngs.o test_helpers.o
-*	gcc -o unittest1 -g  unittest1.c dominion.o rngs.o test_helpers.o $(CFLAGS) 
-*
-* Business Requirements:
-* 1 - Only update coins in the game state, nothing else should change
-* 2 - Coins only come from treasures in player's current hand or bonus pts
-* 3 - Adds 1 coin for each copper, 2 for each silver, 3 for each gold
-* 4 - No change to the victory card piles and kingdom card piles.
-**************************************************************************/		
+/* -----------------------------------------------------------------------
+ *
+ * unittest1: unittest1.c dominion.o rngs.o
+ *      gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
+ * -----------------------------------------------------------------------
+ */
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -22,106 +11,88 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
-#include "test_helpers.h"
-
-
-
-char *TESTFXN = "updateCoins()";
 
 int main() {
-	int seed = 1000;
-	int numPlayers = 2;
-	int maxBonus = 10;
-	int i, p, handCount, bonus;
-	int k[10] = {adventurer, council_room, feast, gardens, mine
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 10;
+    int p, handCount;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
-    struct gameState G, controlG;
+    struct gameState G;
+    int maxHandCount = 6;
+    // arrays of all coppers, silvers, and golds
+    int coppers[MAX_HAND];
+    int silvers[MAX_HAND];
+    int golds[MAX_HAND];
+    for (i = 0; i < MAX_HAND; i++)
+    {
+        coppers[i] = copper;
+        silvers[i] = silver;
+        golds[i] = gold;
+    }
 
-	int maxHandCount = 15;
-    
-	int coppers[maxHandCount];		// arrays of all coppers, silvers, and golds
-	int silvers[maxHandCount];
-	int golds[maxHandCount];
-	int adventurers[maxHandCount];
+    printf ("TESTING updateCoins():\n");
+    for (p = 0; p < numPlayer; p++)
+    {
+        for (handCount = 1; handCount <= maxHandCount; handCount++)
+        {
+            for (bonus = 0; bonus <= maxBonus; bonus++)
+            {
 
-	
-	for (i = 0; i < maxHandCount; i++) {
-		coppers[i] = copper;
-		silvers[i] = silver;
-		golds[i] = gold;
-		adventurers[i] = adventurer;
-	}
+                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
 
-	printf("----------------- Testing Function: %s ----------------\n", TESTFXN);
+                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+                initializeGame(numPlayer, k, seed, &G); // initialize a new game
+                G.handCount[p] = handCount;                 // set the number of cards on hand
+                memcpy(G.hand[p], coppers, sizeof(int) * handCount); // set all the cards to copper
+                updateCoins(p, &G, bonus);
 
-	for (p = 0; p < numPlayers; p++) {
-		for (handCount = 0; handCount <= maxHandCount; handCount++) {
-			for (bonus = 0; bonus <= maxBonus; bonus++) {
+                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 1 + bonus);
 
-				initializeGame(numPlayers, k, seed, &G);				// init a game state and player cards
-				G.handCount[p] = handCount;                 			// set no of cards on hand
+                assert(G.coins == handCount * 1 + bonus); // check if the number of coins is correct
 
-// ************************************** TEST 1 ****************************************************			
-				memcpy(G.hand[p], coppers, sizeof(int) * handCount); 	// set all cards to copper
-				memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
-				updateCoins(p, &G, bonus);
+                memcpy(G.hand[p], silvers, sizeof(int) * handCount); // set all the cards to silver
+                updateCoins(p, &G, bonus);
 
-				assert(G.coins == handCount * 1 + bonus); 		// check num coins for copper/bonus is correct
-				
-				for (i = 0; i < numPlayers; i++) {	// Check hand and deck of all players
-					checkHand(i, G, controlG);		// check hand hasnt changed
-					checkDeck(i, G, controlG);		// check deck hasnt changed
-				}
+                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
 
-				checkSupply(G, controlG);		// check supply hasnt changed
+                assert(G.coins == handCount * 2 + bonus); // check if the number of coins is correct
 
-// ************************************** TEST 2 ****************************************************	
-				memcpy(G.hand[p], silvers, sizeof(int) * handCount); 	// set all cards to silver
-				memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
-				updateCoins(p, &G, bonus);				
+                memcpy(G.hand[p], golds, sizeof(int) * handCount); // set all the cards to gold
+                updateCoins(p, &G, bonus);
 
-				assert(G.coins == handCount * 2 + bonus);		// check num coins for silver/bonus is correct
-				
-				for (i = 0; i < numPlayers; i++) {	// Check hand and deck of all players
-					checkHand(i, G, controlG);		// check hand hasnt changed
-					checkDeck(i, G, controlG);		// check deck hasnt changed
-				}
+                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
 
-				checkSupply(G, controlG);		// check supply hasnt changed
+                assert(G.coins == handCount * 3 + bonus); // check if the number of coins is correct
 
-// ************************************** TEST 3 ****************************************************	
-				memcpy(G.hand[p], golds, sizeof(int) * handCount); 		// set all cards to gold
-				memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
-				updateCoins(p, &G, bonus);			
+                /*Combination of cards */
 
-				assert(G.coins == handCount * 3 + bonus);		// check num coins for gold/bonus is correct
-				
-				for (i = 0; i < numPlayers; i++) {	// Check hand and deck of all players
-					checkHand(i, G, controlG);		// check hand hasnt changed
-					checkDeck(i, G, controlG);		// check deck hasnt changed
-				}
+                if((handCount % 2) == 0){
+                	memcpy(G.hand[p], golds, sizeof(int) * handCount/2); // set half cards to gold
+                	memcpy(G.hand[p] + handCount/2, silvers, sizeof(int) * handCount/2); // set half cards to silvers
+                	updateCoins(p, &G, bonus);
 
-				checkSupply(G, controlG);		// check supply hasnt changed
+                	printf("G.coins = %d, expected = %d\n", G.coins, (handCount/2) * 3 + (handCount/2) * 2 + bonus);
+                	assert(G.coins == (handCount/2) * 2 + (handCount/2) * 3 + bonus); // check if the number of coins is correct
+                }
 
-// ************************************** TEST 4 ****************************************************	
-				memcpy(G.hand[p], adventurers, sizeof(int) * handCount); 		// set all cards to gold
-				memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
-				updateCoins(p, &G, bonus);			
+                if((handCount % 3) == 0){
+                	memcpy(G.hand[p], golds, sizeof(int) * handCount/3); // set 1/3 cards to gold
+                	memcpy(G.hand[p] + handCount/3, coppers, sizeof(int) * handCount/3); // set 1/3 cards to copper
+                	memcpy(G.hand[p] + handCount/3 + handCount/3, silvers, sizeof(int) * handCount/3); // set 1/3 cards to silver
+                	updateCoins(p, &G, bonus);
 
-				assert(G.coins == bonus);		// check num coins for no treasures/bonus is correct
-				
-				for (i = 0; i < numPlayers; i++) {	// Check hand and deck of all players
-					checkHand(i, G, controlG);		// check hand hasnt changed
-					checkDeck(i, G, controlG);		// check deck hasnt changed
-				}
+                	printf("G.coins = %d, expected = %d\n", G.coins, (handCount/3) * 3 + (handCount/3) * 1 + (handCount/3) * 2 + bonus);
+                	assert(G.coins == (handCount/3) * 3 + (handCount/3) * 1 + (handCount/3) * 2 + bonus); // check if the number of coins is correct
+                }
+            }
+        }
+    }
 
-				checkSupply(G, controlG);		// check supply hasnt changed
-			}
-		}
-	}
+    printf("All tests passed!\n");
 
-	printf("\n >>>>>>>>>>>>>> SUCCESS: Testing complete %s <<<<<<<<<<<<<<\n\n", TESTFXN);
-	return 0;
+    return 0;
 }
-

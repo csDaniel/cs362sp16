@@ -1,166 +1,77 @@
+/*
+ * cardtest3.c
+ *
+ 
+ */
+
+/*
+ * Include the following lines in your makefile:
+ *
+ * cardtest3: cardtest3.c dominion.o rngs.o
+ *      gcc -o cardtest3 -g  cardtest3.c dominion.o rngs.o $(CFLAGS)
+ */
+
+
 #include "dominion.h"
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <time.h>
+#include "dominion_helpers.h"
 #include <string.h>
+#include <stdio.h>
+#include <assert.h>
+#include "rngs.h"
+#include <stdlib.h>
+
+#define TESTCARD "smithy"
+
+int main() {
+    int newCards = 0;
+    int discarded = 1;
+    int xtraActions = 0;
+    int shuffledCards = 0;
+    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+    int seed = 1000;
+    int numPlayers = 2;
+    int thisPlayer = 0; int secondPlayer = 1;
+    int xtraPlayedCard = 0;
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
+
+	// initialize a game state and player cards
+	initializeGame(numPlayers, k, seed, &G);
+
+	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+
+	// copy the game state to a test case
+	memcpy(&testG, &G, sizeof(struct gameState));
+	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+	printf("----------------- Player 0: %s ----------------\n", TESTCARD);
+	newCards = 3;
+	xtraActions = 0;
+	xtraPlayedCard= 1;
+	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+	printf("actions = %d, expected = %d\n", testG.numActions, G.numActions + xtraActions);
+	printf("playedcards = %d, expected = %d\n", testG.playedCardCount, G.playedCardCount + xtraPlayedCard);
+	assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
+	assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
+	assert(testG.numActions == G.numActions + xtraActions);
+	if(testG.playedCardCount != (G.playedCardCount + xtraPlayedCard)){
+		printf("FAIL: playedCardCount is wrong\n");
+	}
+
+	newCards = 0;
+	xtraActions = 0;
+	discarded = 0;
+	printf("----------------- Player 1: %s ----------------\n", TESTCARD);
+	printf("hand count = %d, expected = %d\n", testG.handCount[secondPlayer], G.handCount[secondPlayer] + newCards - discarded);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[secondPlayer], G.deckCount[secondPlayer] - newCards + shuffledCards);
+	printf("actions = %d, expected = %d\n", testG.numActions, G.numActions + xtraActions);
+	assert(testG.handCount[secondPlayer] == G.handCount[secondPlayer] + newCards - discarded);
+	assert(testG.deckCount[secondPlayer] == G.deckCount[secondPlayer] - newCards + shuffledCards);
+	assert(testG.numActions == G.numActions + xtraActions);
+
+	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 
 
-
-int main()
-{
-    const char* funcName = "cardEffect() on council_room";
-    struct gameState* game = newGame();
-    int* cardsInPlay = kingdomCards(adventurer, baron, smithy, mine, council_room, feast, steward, village, salvager, treasure_map);
-
-    if(initializeGame(2, cardsInPlay, time(NULL), game) == -1)
-    {
-        printf("Couldn't intialize game!\n");
-        exit(0);
-    }
-
-    int thisPlayer = whoseTurn(game);
-    int otherPlayer = whoseTurn(game)^1;
-
-    // Put a Smithy card in the player's hand
-    game->hand[thisPlayer][game->handCount[thisPlayer]-1] = council_room;
-
-    printf("**************Starting test on method: %s**************\n\n", funcName);
-    // Initial Test to see if there are unexpected changes to the game
-    struct gameState* initialState = malloc(sizeof(struct gameState));
-    memcpy(initialState, game, sizeof(struct gameState));
-
-    cardEffect(council_room, 0, 0, 0, game, game->handCount[thisPlayer]-1, 0);
-
-    /* Begin testing for unexpected changes in game state */
-
-    if( initialState->numPlayers != game->numPlayers )
-        printf("Error -%s changed the number of players!\n", funcName);
-
-    int i;        // There are 26 possible cards, make sure the same are still in play
-    for(i=0; i<=26; i++)
-    {
-        if( initialState->supplyCount[i] != game->supplyCount[i] )
-                printf("Error -%s changed the number of kingdom cards!\n", funcName);
-    }
-    for(i=0; i<=26; i++)
-    {
-        if(initialState->embargoTokens[i] != game->embargoTokens[i])
-            printf("Error -%s changed the Embargo Tokens in play!\n", funcName);
-    }
-    if( initialState->outpostPlayed != game->outpostPlayed)
-        printf("Error -%s changed the \"Outpost Played\" status!\n", funcName);
-    if( initialState->outpostTurn != game->outpostTurn)
-        printf("Error -%s changed the \"Outpost Turn\" status!\n", funcName);
-    if( initialState->whoseTurn != game->whoseTurn)
-        printf("Error -%s changed the whose turn it is!\n", funcName);
-    if( initialState->phase != game->phase)
-        printf("Error -%s changed the game phase!\n", funcName);
-    if( initialState->numActions != game->numActions)
-        printf("Error -%s changed the number of actions for this turn!\n", funcName);
-    if( initialState->coins != game->coins)
-        printf("Error -%s changed the \"coins\" variable!\n", funcName);
-    if( game->numBuys != initialState->numBuys + 1 )
-    {
-        if( game->numBuys == initialState->numBuys )
-            printf("Error -%s did NOT change the number of Buy phases available!\n", funcName);
-        else
-            printf("Error -%s incorrectly changed the number of Buy phases available!\n", funcName);
-    }
-
-    if( game->handCount[thisPlayer] != initialState->handCount[thisPlayer] + 3 )    // Draw 4, put council_room in playedCards, so only 3 total gained
-    {
-        if( game->handCount[thisPlayer] == initialState->handCount[thisPlayer])
-            printf("Error -%s did NOT change the number of cards in this player's hand!\n", funcName);
-        else
-            printf("Error -%s (incorrectly) changed the number of cards in this player's hand!\n", funcName);
-    }
-
-    if( game->handCount[otherPlayer] != initialState->handCount[otherPlayer] + 1 )
-    {
-        if( game->handCount[otherPlayer] == initialState->handCount[otherPlayer] )
-            printf("Error -%s did NOT change the number of cards in the other player's hand!\n", funcName);
-        else
-            printf("Error -%s incorrectly changed the number of cards in the other player's hand!\n", funcName);
-    }
-
-    // Only check up to the position where council_room was
-    for(i=0; i< initialState->handCount[thisPlayer] - 1; i++)
-    {
-        if( initialState->hand[thisPlayer][i] != game->hand[thisPlayer][i])
-            printf("Error -%s changed the cards in this player's hand!\n(If turn isn't changed)\n", funcName);
-    }
-    for(i=0; i<initialState->handCount[otherPlayer]; i++)
-    {
-        if( initialState->hand[otherPlayer][i] != game->hand[otherPlayer][i])
-            printf("Error -%s changed the cards in the other player's hand!\n(If turn isn't changed)\n", funcName);
-    }
-
-    if(game->deckCount[thisPlayer] != initialState->deckCount[thisPlayer] - 4 )
-    {
-        if(game->deckCount[thisPlayer] == initialState->deckCount[thisPlayer])
-            printf("Error -%s did NOT change the deck count for this player!\n", funcName);
-        else
-            printf("Error -%s (incorrectly) changed the deck count for this player!\n", funcName);
-    }
-
-    if(game->deckCount[otherPlayer] != initialState->deckCount[otherPlayer] - 1 )
-    {
-        if(game->deckCount[otherPlayer] == initialState->deckCount[otherPlayer])
-            printf("Error -%s did NOT change the deck count for the other player!\n", funcName);
-        else
-            printf("Error -%s (incorrectly) changed the deck count for the other player!\n", funcName);
-    }
-
-    // Only check up to the amount of cards in the new deck (after drawing)
-    for(i=0; i<game->deckCount[thisPlayer]; i++)
-    {
-        if(initialState->deck[thisPlayer][i] != game->deck[thisPlayer][i])
-            printf("Error -%s changed the contents of this player's deck!\n", funcName);
-    }
-    for(i=0; i<game->deckCount[otherPlayer]; i++)
-    {
-        if(initialState->deck[otherPlayer][i] != game->deck[otherPlayer][i])
-            printf("Error -%s changed the contents of the other player's deck!\n", funcName);
-    }
-
-    if(game->discardCount[thisPlayer] != initialState->discardCount[thisPlayer])
-        printf("Error -%s changed the count for this player's discard pile!\n", funcName);
-    if(initialState->discardCount[otherPlayer] != game->discardCount[otherPlayer])
-        printf("Error -%s changed the count of the other player's discard pile!\n", funcName);
-
-    for(i=0; i<game->discardCount[thisPlayer]; i++)
-    {
-        if( initialState->discard[thisPlayer][i] != game->discard[thisPlayer][i] )
-            printf("Error -%s changed the contents of this player's discard!\n", funcName);
-    }
-    for(i=0; i<game->discardCount[otherPlayer]; i++)
-    {
-        if(initialState->discard[otherPlayer][i] != game->discard[otherPlayer][i])
-            printf("Error -%s changed the contents of the other player's discard!\n", funcName);
-    }
-
-    if(initialState->playedCardCount != game->playedCardCount + 1)
-    {
-        if(initialState->playedCardCount == game->playedCardCount)
-            printf("Error -%s did NOT change the count of played cards!\n", funcName);
-        else
-            printf("Error -%s incorrectly changed the count of played cards!\n", funcName);
-    }
-
-    for(i=0; i<initialState->playedCardCount; i++)
-    {
-        if(initialState->playedCards[i] != game->playedCards[i])
-            printf("Error -%s changed the cards in the \"Played Cards\" stack!\n", funcName);
-    }
-
-    free(initialState);
-    initialState = NULL;
-
-    /* End testing for unexpected changes in game state */
-
-
-    free(game);
-    printf("\n\n********** End of test reached for function %s. Any errors found are shown above.**********\n", funcName);
-    return 0;
+	return 0;
 }
