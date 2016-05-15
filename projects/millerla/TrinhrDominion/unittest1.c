@@ -1,67 +1,45 @@
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 3
+Date: 4/22/2016
+*/
+
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-//This is a unit test for the updateCoins() function.
-//Input: int player --> current player
-//	 struct gamestate
-//	 int bonus --> bonus coins
-//Business Rules:
-//1. It needs to count the number of treasure cards
-//in the players hand and return the correct number.
-//2. If there is a bonus, it needs to correctly add the bonus
-//to the number of coins.
-//3. The rest of the game state needs to remain unchanged.
 
-int main () {
+//testing drawCard()
+int main() {
+	int seed = 1;//the seed for initializeGame
+    int numPlayer;
+	int players, j, returnVal;
+	int cardCount = 10;//the number of cards initially given to a player
+	
+    int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+    struct gameState game;
 
-  struct gameState expected, actual;
-  //Current Player
-  int player = 1;
-  //Number of Cards in Player's Hand.
-  int handCount = 5;
-
-  //Initialize Player 1's Hand Count to 5
-  expected.handCount[player] = handCount;
-  //Initialize Player's Hand to five cards.
-  expected.hand[player][0] = embargo;
-  expected.hand[player][1] = copper;
-  expected.hand[player][2] = village;
-  expected.hand[player][3] = silver;
-  expected.hand[player][4] = gold;
- 
-  int bonus = 3;
-  int treasure_cards = 6;
-  expected.coins = 0;
-  
-  //Set the expected Results.
-  //Coins = Bonus + Silver(2) + Copper(1) + Gold(3).
-  expected.coins = bonus + treasure_cards;
-  int expected_coins = expected.coins;
-
-  //Copy the game state to the pre game state test case.
-  memcpy(&actual, &expected, sizeof(struct gameState));
-
-  printf("EXPECTED COINS:%i  ACTUAL COINS:%i\n", expected.coins, actual.coins);
-  assert(memcmp(&expected, &actual, sizeof(struct gameState)) == 0);
-  printf("Both EXPECTED & ACTUAL GAME STATES ARE EQUIVALENT before calling the function.\n");
- 
-  printf("---Testing UpdateCoins()-----\n");
-  updateCoins(player, &actual, bonus);
-  int actual_coins = actual.coins;
-
-  //Check if the rest of the game state is affected.
-  actual.coins = expected.coins = 0;
-  assert(memcmp(&expected, &actual, sizeof(struct gameState)) == 0);
-  printf("Both EXPECTED & ACTUAL game states are equivalent after calling the function.\n");  
- 
-  //Check if the function returned the correct number of coins.
-  printf("EXPECTED COINS:%i  ACTUAL COINS:%i\n", expected_coins, actual_coins);
-  assert(expected_coins == actual_coins);
-
-  return 0;
-
+	printf ("Testing drawCard()\n\n");
+	
+	for(numPlayer = 2; numPlayer <= 4; numPlayer++) {//checking for all possible number of players (2-4)
+		initializeGame(numPlayer, cards, seed, &game);
+		for (players = 0; players < numPlayer; players++)//testing each player
+		{  
+			for (j = 0; j < cardCount; j++){//drawing all the cards from the deck
+				returnVal = drawCard(players, &game);
+				
+				if(game.handCount[players] != j + 1|| game.deckCount[players] != cardCount - j -1) {//checking that handcount is increased
+				printf("ERROR DRAWING FROM A NON-EMPTY DECK: total players: %i, player: %i, expected game.handCount: %i, expected game.deckCount: %i, actual game.handCount: %i, actual game.deckCount: %i\n\n", numPlayer, players, j + 1, cardCount - j -1, game.handCount[players], game.deckCount[players]);
+				}
+			}
+			
+			drawCard(players, &game);//drawing one more card than is in the deck 
+			if(game.handCount[players] != cardCount) {//checking that no more cards than exist in the deck are added
+				printf("ERROR DRAWING FROM AN EMPTY DECK: total players: %i player: %i, expected game.handCount: %i, expected game.deckCount = 0, actual game.handCount: %i, actual game.deckCount: %i\n", numPlayer, players, cardCount, game.handCount[players], game.deckCount[players]);
+			}
+		}
+	}
+	return 0;
 }
