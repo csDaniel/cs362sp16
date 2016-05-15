@@ -1,57 +1,54 @@
-/* unittest3.c
- * By Dave Martinez
- * martind2@oregonstate.edu
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 3
+Date: 4/23/2016
+*/
 
- * This tests the endTurn function.
- * - Does the player's hand get discarded?
- * - Is it the player + 1's turn?
- * - If player is last, does current player loop?
- * - Does new player have 5 cards?
- */
-
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
 
-
+//testing fullDeckCount()
 int main() {
-	// Game settings
-	int seed = 1000,
-		numPlayers = 2,
-		cards[10] = { adventurer, embargo, village, minion, mine, cutpurse,
-					  sea_hag, tribute, smithy, council_room };
-
-	// Game init
-	struct gameState G, testG;
-	initializeGame(numPlayers, cards, seed, &G);
-	memcpy(&testG, &G, sizeof(struct gameState));
+	int seed = 1;//the seed for initializeGame
+    int numPlayer;
+	int players, handCount, i, j;
+	int cardCount = 10;//the number of cards initially given to a player
+	int copperCount = 7;//the number of copper cards initially given to a player
+	int decksCount;
 	
-	printf("--------------- UNIT TEST 3 ---------------\n");
-	printf("----------- IS GAME OVER TESTS ------------\n");
+    int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+    struct gameState game;
 
-	printf("\nTEST 1: Does player 0's hand get discarded?\n");
-	endTurn(&G);
-	printf("G.handCount[0] = %d, expected 0\n", G.handCount[0]);
-	assert(G.handCount[0] == 0);
-
-	printf("\nTEST 2: Is it the next player's turn (1)?\n");
-	printf("G.whoseTurn = %d, expected 1\n", G.whoseTurn);
-	assert(G.whoseTurn == 1);
-
-	printf("\nTEST 3: If player is last, does turn loop back to zero?\n");
-	endTurn(&G);
-	printf("G.whoseTurn == %d, expected 0\n", G.whoseTurn);
-	assert(G.whoseTurn == 0);
-
-	printf("\nTEST 4: Does current player have 5 cards?\n");
-	printf("Current player hand count = %d, expected 5\n", G.handCount[G.whoseTurn]);
-	assert(G.handCount[G.whoseTurn] == 5);
-
-	printf("\n------------ ALL TESTS PASSED -------------\n");
-
+	printf ("Testing fullDeckCount():\n\n");
+	
+	for(numPlayer = 2; numPlayer <= 4; numPlayer++) {//checking for all possible number of players (2-4) {
+		initializeGame(numPlayer, cards, seed, &game); // initialize a new game
+		for (players = 0; players < numPlayer; players++)//drawing all cards for each player
+		{   
+			for (i = 0; i < cardCount; i++){//drawing entire deck
+			
+				drawCard(players, &game);//drawing a card
+				
+				decksCount = fullDeckCount(players, copper, &game);//counting the number of coppers total
+				if(decksCount != copperCount) {//confirming that the total number of cards counted is copperCount
+					printf("ERROR IN CARDS COUNTED: player: %i, expected copper count: %i, actual count: %i\n\n", players, copperCount, decksCount);
+				}
+				
+				decksCount = fullDeckCount(players, adventurer, &game);//counting the number of adventurer cards - which are in game but not drawn - total
+				if(decksCount != 0) {//confirming that the total number of cards counted is 0
+					printf("ERROR IN CARDS COUNTED: player: %i, expected adventurer, (which is available in this game), count: 0, actual count: %i\n\n", players, decksCount);
+				}
+				
+				decksCount = fullDeckCount(players, embargo, &game);//counting the number of adventurer cards - which are in game but not drawn - total
+				if(decksCount != 0) {//confirming that the total number of cards counted is 0
+					printf("ERROR IN CARDS COUNTED: player: %i, expected embargo, (which is not available in this game), count: 0, actual count: %i\n\n", players, decksCount);
+				}
+			}
+		}
+	}
 	return 0;
 }

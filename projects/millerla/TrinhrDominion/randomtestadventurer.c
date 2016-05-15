@@ -1,207 +1,98 @@
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 4
+Date: 5/4/2016
+*/
+
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-#include <math.h>
 #include <time.h>
-//This is a unit test for the card Adventurer function using randomtest.
-//int adventurerCard(struct gameState *state, int currentPlayer, int handPos);
-//Input: int currentplayer --> current player
-//	 struct gamestate
-//	 int handPos
-//Business Rules:
-//1. It needs to draw cards from the players own deck until
-//two treasure cards are revealed. 
-//2. The two treasure cards are added to the the player's hand.
+#include <stdlib.h>
 
-int main () {
+//testing Adventurer - reveal cards from deck until two treasure cards are found, then discard the other revealed cards
+int main() {
+	int randomRun = 1000000;//the number of times the random checker runs
+	int seed = 1;//the seed for initializeGame
+	int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};//used to initialize game - not cards for player playing adventurer
+    struct gameState game;//the game used
+	struct gameState preCardGame;//saved version of game	
+    int numPlayer, i, j, k, currentPlayer, returnVal;
+	int treasureCount = 0;//the number of gold, silver, or copper cards in play for the currentPlayer
 
-        //Set Random Generator.
-	srand(time(NULL));
- 	struct gameState pre,post;
-
- 	int i;
- 	int player;
-	int pass = 1;
-	int passCtr = 0;
-	int runs = 10000;
-	int failedTests[runs];
-	int testsCtr = 0;
-
- 	for(i = 0; i < runs; i++){
-
-        	printf("\nRANDOM GAME: %i\n",i);
-		//Set up a Random player:0,1,2,3
- 		player = floor( rand() % MAX_PLAYERS);
-		printf("CURRENT PLAYER: %i\n",player);
-
-		int deckCount = 0;
-		int discardCount = 0;
- 
-		//Randomize the card count in DECK, DISCARD AND HAND.
-		//Has to be at least four cards total between the two decks. 
-		while( deckCount + discardCount < 4 ){
-		
-			pre.deckCount[player] = floor( rand() % MAX_DECK);
-			printf("DECK COUNT: %i\n", pre.deckCount[player]);
-			pre.discardCount[player] = floor( rand() % MAX_DECK);
-			printf("DISCARD COUNT: %i\n", pre.discardCount[player]);
-			pre.handCount[player] = floor( rand() % MAX_HAND +1);
-			printf("HAND COUNT: %i\n", pre.handCount[player]);
-
-			deckCount = pre.deckCount[player];
-			discardCount = pre.discardCount[player];
-		}
-
-		//Randomize the cards in the DECK and DISCARD.
-		int i;
-		for( i = 0; i < deckCount; i++){
-			pre.deck[player][i] = village;
-		}
-
-		int j;
-		for( j = 0; j < discardCount; j++){
-			pre.discard[player][j] = village;
-		}
-
-		//Ensure there are at least two treasure cards in the combined decks.
-		//Randomize the position of the treasures. 
-		int firstPos;
-		int secPos;
-
-		//Randomize the treasure.
-		int randTres1 = floor( rand() % 3 );
-		int randTres2 = floor( rand() % 3 );
-		int treasure1;
-		int treasure2;
-
-		if(randTres1 == 0){
-			treasure1 = copper;
-		}else if(randTres1 == 1){
-			treasure1 = silver;
-		}else{
-			treasure1 = gold;
-		}
-
-		if(randTres2 == 0){
-			treasure2 = copper;
-		}else if(randTres2 == 1){
-			treasure2 = silver;
-		}else{
-			treasure2 = gold;
-		}
-
-		
-		if( pre.deckCount[player] > 1 ){
-			firstPos = floor( rand() % deckCount);	
-		}	
+	srand(time(NULL));//seeding rand
 	
-		if( pre.deckCount[player] > 1 ){
-			firstPos = floor( rand() % deckCount);	
-			secPos = floor( rand() % deckCount );
-		
-			while( firstPos == secPos ){
-				secPos = floor( rand() % deckCount );
-			}
-
-			pre.deck[player][firstPos] = treasure1;
-			printf("The first treasure card is at pos %i on the deck.\n", firstPos);	
-			pre.deck[player][secPos] = treasure2;
-			printf("The second treasure card is at pos %i on the deck.\n", secPos);
-
-		}else{
-			firstPos = floor( rand() % discardCount);	
-			secPos = floor( rand() % discardCount );
-		
-			while( firstPos == secPos ){
-				secPos = floor( rand() % discardCount );
-			}
-
-			pre.discard[player][firstPos] = treasure1;
-			printf("The first treasure card is at pos %i on the discard deck.\n", firstPos); 
-			pre.discard[player][secPos] = treasure2;
-			printf("The second treasure card is at pos %i on the discard deck.\n", secPos);
-		}
-
- 		memcpy( &post, &pre, sizeof(struct gameState));
-
-		//Call the function.
-		printf("Calling the function.\n");
-		
-		//Save the state of the game.
-		int returnVal = 0 ;
-		returnVal = adventurerCard(player, &post);
-/*
-		//Print the DECK.
-		for( i = 0; i < deckCount; i++){
-			printf("Pos%i DECK CARD#%i\n", i, pre.deck[player][i]);
-		}
-
-		for( j = 0; j < discardCount; j++){
-			printf("Pos%i DISCARD DECK CARD#%i\n", j, pre.discard[player][j]);
-		}
-
-*/
-		//Oracle Code: Check that it works.
-
-		//Check that the last two cards in the player's hand are treasure cards.
-		int postHC = post.handCount[player];
-		int lastCard = post.hand[player][postHC-1];
-		int seclastCard = post.hand[player][postHC-2];
+	printf ("Testing Adventurer:\n\n");
 	
-		if( lastCard == copper || lastCard == gold || lastCard == silver ){
-			if( seclastCard == copper || seclastCard == gold || seclastCard == silver ){
-				printf("The player has successfully drawn two treasure cards.\n");
-
-			}else{
-				printf("ERROR: The second to last in his hand is not a treasure card.\n");
-				pass = 0;	
-			}
-		}else{
-			printf("ERROR: The last card in hand is not a treasure card.\n");
-			pass = 0;
-		} 
+	for(i = 0; i < randomRun; i++) {
+		treasureCount = 0;
 		
-		//Check tht the handCount has only increased by two cards.
-		if( post.handCount[player] != 2 + pre.handCount[player] ){
-			printf("ERROR: POST HAND COUNT WAS NOT INCREMENTED BY TWO CARDS.\n");
-			pass = 0;	
+		numPlayer = 2+ rand()%3;//setting a random number of players between 2-4
+		currentPlayer = rand()%numPlayer;//getting the current player
+		
+		initializeGame(numPlayer, cards, seed, &game);//setting base game	
+		
+		game.handCount[currentPlayer] = rand()%MAX_HAND; //setting the hand count to random number between 0 and MAX_HAND
+		for(k = 0; k < game.handCount[currentPlayer] - 1; k++) {
+			game.hand[currentPlayer][k] = (enum CARD)(rand()%27);//adding one of the 27 random cards to the hand
 		}
-
-		printf("POST HAND COUNT: %i\n", post.handCount[player]);
+		
+		game.deckCount[currentPlayer] = rand()%MAX_DECK; //setting the deck count to random number between 0 and MAX_DECK
+		for(k = 0; k < game.deckCount[currentPlayer]; k++) {
+			game.deck[currentPlayer][k] = (enum CARD)(rand()%27);//adding one of the 27 random cards to the hand
+		}
+		
+		game.discardCount[currentPlayer] = rand()%MAX_DECK; //setting the discard count to random number between 0 and MAX_DECK
+		for(k = 0; k < game.discardCount[currentPlayer]; k++) {
+			game.discard[currentPlayer][k] = (enum CARD)(rand()%27);//adding one of the 27 random cards to the hand
+		}
+		
+		game.numActions = rand()%MAX_HAND;//setting the number of actions
+		game.hand[currentPlayer][game.handCount[currentPlayer] - 1] = adventurer;//setting the last card in hand of the currentPlayer to adventurer
+		game.whoseTurn = currentPlayer;	
+		
+		//counting the number of treasure cards in the deck and discard pile
+		for (j = 0; j < game.deckCount[currentPlayer]; j++)
+		{
+		  if (game.deck[currentPlayer][j] == gold) treasureCount++;
+		  if (game.deck[currentPlayer][j] == silver) treasureCount++;
+		  if (game.deck[currentPlayer][j] == silver) treasureCount++;
+		}
+		for (j = 0; j < game.discardCount[currentPlayer]; j++)
+		{
+		  if (game.discard[currentPlayer][j] == gold) treasureCount++;
+		  if (game.discard[currentPlayer][j] == silver) treasureCount++;
+		  if (game.discard[currentPlayer][j] == copper) treasureCount++;
+		}
 	
-		//Check that the game had no issues.
-		if(  returnVal != 0 ){
-			printf("ERROR:CALLED FN RETURNED AN ERROR.\n");
-			pass = 0;
+		memcpy(&preCardGame, &game, sizeof(struct gameState));//saving game
+		returnVal = playCard(game.handCount[currentPlayer] - 1, -1, -1, -1, &game);//playing the adventurer
+			
+		if(returnVal != 0 && game.numActions > 0) {//checking correct return value with valid game state
+			printf("ERROR IN RETURN VALUE: test: %i, expected return value: 0, actual return value: %i\n\n", i, returnVal);
 		}
-
-
-		//CHECK IF ALL TESTS PASSED.
-		if( pass == 1 ){
-			printf("ALL TESTS PASSED.\n");
-			passCtr++;
-		}else{
-			printf("ERROR: TEST(S) FAILED.\n");
-			failedTests[testsCtr] = i;
-			testsCtr++;
+		
+		if(treasureCount == 0 && returnVal == 0 && preCardGame.handCount[currentPlayer] - 1 != game.handCount[currentPlayer]) {// confirming there is a net of 1 card taken from hand when 0 treasure cards available
+			printf("ERROR IN NET NUMBER OF CARDS ADDED: test: %i, player: %i, treasure in game.deckCount and game.discardCount: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer] - 1, game.handCount[currentPlayer]);
 		}
-
-		//RESET THE PASS BOOLEAN.
-		pass = 1;	
-
-  	}
-
-	printf("%i passed out of  %i RUNS\n\n\n", passCtr, runs );
-	int k;
-	for( k = 0; k < testsCtr; k++){
-		printf("FAILED: RUN %i", failedTests[k]);
+		else if(treasureCount == 1 && returnVal == 0 && preCardGame.handCount[currentPlayer] != game.handCount[currentPlayer]) {// confirming there is a net of 0 cards added to hand when 1 treasure card is available
+			printf("ERROR IN NET NUMBER OF CARDS ADDED: test: %i, player: %i, treasure in game.deckCount and game.discardCount: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
+		}
+		else if(treasureCount >= 2 && returnVal == 0 && preCardGame.handCount[currentPlayer] + 1 != game.handCount[currentPlayer]) {// confirming there is a net of 1 card added to hand when 2 treasure cards available
+			printf("ERROR IN NET NUMBER OF CARDS ADDED: test: %i, player: %i, treasure in game.deckCount and game.discardCount: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer] + 1, game.handCount[currentPlayer]); //LAUREN
+		}
+		
+		if(game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer] > - 1 && treasureCount >= 1 && game.hand[currentPlayer][game.handCount[currentPlayer]-1] != copper && game.hand[currentPlayer][game.handCount[currentPlayer]-1] != silver && game.hand[currentPlayer][game.handCount[currentPlayer]-1] != gold) {//confirming that there is treasure cards at the end of the hand if a card has been added and there are available treasure cards
+			printf("ERROR IN MISSING TREASURE CARD AT END OF HAND: test: %i, player: %i, game.deckCount previously: %i, game.discardCount previously: %i, treasure in game.deckCount and game.discardCount: %i, CARD enum: %i, net game.handCount: %i\n\n", i,  currentPlayer, preCardGame.deckCount[currentPlayer], preCardGame.discardCount[currentPlayer], treasureCount, (int)game.hand[currentPlayer][game.handCount[currentPlayer]-1], game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer]);
+		}
+		
+		if(game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer] > 0 && treasureCount >= 2 && game.hand[currentPlayer][game.handCount[currentPlayer]-2] != copper && game.hand[currentPlayer][game.handCount[currentPlayer]-2] != silver && game.hand[currentPlayer][game.handCount[currentPlayer]-2] != gold) {//confirming that there is treasure cards at the end of the hand
+			printf("ERROR IN MISSING TREASURE CARD AT END OF HAND - 1: test: %i, player: %i, game.deckCount previously: %i, game.discardCount previously: %i, treasure in game.deckCount and game.discardCount: %i, CARD enum: %i, net game.handCount: %i\n\n", i,  currentPlayer, preCardGame.deckCount[currentPlayer], preCardGame.discardCount[currentPlayer], treasureCount, (int)game.hand[currentPlayer][game.handCount[currentPlayer]-2], game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer]);
+		}
+		
 	}
-	
 	return 0;
- 
-} 
-
+}

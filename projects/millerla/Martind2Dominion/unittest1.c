@@ -1,91 +1,45 @@
-/* unittest1.c
- * By Dave Martinez
- * martind2@oregonstate.edu
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 3
+Date: 4/22/2016
+*/
 
- * This tests the buyCard function.
- * 	- Does the function corectly determine whose turn it is? (yes)
- *	- If the player has no turns, does it allow the player to buy? (no)
- * 	- If there are no more cards of that type left, can it be purchased? (no)
- *	- If the player has no coin, can it be purchased? (no)
- * 	- Does the player have one less buy after purchasing? (yes)
- */
-
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
 
-
+//testing drawCard()
 int main() {
-	// Counters
-	int i;
-
-	// Game settings
-	int seed = 1000,
-		numPlayers = 2,
-		cards[10] = { adventurer, embargo, village, minion, mine, cutpurse,
-					  sea_hag, tribute, smithy, council_room };
-
-	// Game init
-	struct gameState G, testG;
-	initializeGame(numPlayers, cards, seed, &G);
-	memcpy(&testG, &G, sizeof(struct gameState));
+	int seed = 1;//the seed for initializeGame
+    int numPlayer;
+	int players, j, returnVal;
+	int cardCount = 10;//the number of cards initially given to a player
 	
-	printf("--------------- UNIT TEST 1 ---------------\n");
-	printf("------------- BUY CARD TESTS --------------\n");
+    int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+    struct gameState game;
 
-	printf("\nTEST 1: Player 0 has no buys, buyCard returns -1\n");
-
-	G.numBuys = 0;
-	i = buyCard(1, &G);
-	printf("buyCard returned %d\n", i);
-	assert(i == -1);
-
-	memcpy(&G, &testG, sizeof(struct gameState));
-
-	printf("\nTEST 2: Player 0 tries to draw card where none left\n");
-
-	G.supplyCount[1] = 0;
-	G.numBuys = 1;
-	i = buyCard(1, &G);
-	printf("buyCard returned %d\n", i);
-	assert(i == -1);
-
-	memcpy(&G, &testG, sizeof(struct gameState));
+	printf ("Testing drawCard()\n\n");
 	
-	printf("\nTEST 3: Player 0 doesn't have enough coin to purchase");
-
-	G.coins = 0;
-	i = buyCard(1, &G);
-	printf("buyCard returned %d\n", i);
-	assert(i == -1);
-
-	memcpy(&G, &testG, sizeof(struct gameState));
-
-	printf("\nTEST 4: Player 0 purchases adventurer card, +1 discardCount");
-	G.coins = 6;
-	testG.coins = 6;
-	i = buyCard(adventurer, &G);
-	printf("buyCard returned %d, discardCount: %d, expected: %d\n", i, G.discardCount[0], testG.discardCount[0] + 1);
-	assert(i == 0);
-	assert(G.discardCount[0] == testG.discardCount[0] + 1);
-
-	printf("\nTEST 5: Supply count for card 0 decremented by 1\n");
-	printf("Supply count for adventurer: %d, expected %d\n", G.supplyCount[adventurer], testG.supplyCount[adventurer] - 1);
-	assert(G.supplyCount[adventurer] == (testG.supplyCount[adventurer] - 1));
-
-	printf("\nTEST 6: Number of buys decremented by 1\n");
-	printf("Num of buys left: %d, expected %d\n", G.numBuys, testG.numBuys - 1);
-	assert(G.numBuys == testG.numBuys - 1);
-
-	printf("\nTEST 7: Amt. of coin has decremented.\n");
-	printf("Coin: %d, expected %d\n", G.coins, testG.coins - getCost(adventurer));
-	assert(G.coins == testG.coins - getCost(adventurer));
-
-	printf("\n--------------- ALL TESTS PASSED ---------------\n");
-
+	for(numPlayer = 2; numPlayer <= 4; numPlayer++) {//checking for all possible number of players (2-4)
+		initializeGame(numPlayer, cards, seed, &game);
+		for (players = 0; players < numPlayer; players++)//testing each player
+		{  
+			for (j = 0; j < cardCount; j++){//drawing all the cards from the deck
+				returnVal = drawCard(players, &game);
+				
+				if(game.handCount[players] != j + 1|| game.deckCount[players] != cardCount - j -1) {//checking that handcount is increased
+				printf("ERROR DRAWING FROM A NON-EMPTY DECK: total players: %i, player: %i, expected game.handCount: %i, expected game.deckCount: %i, actual game.handCount: %i, actual game.deckCount: %i\n\n", numPlayer, players, j + 1, cardCount - j -1, game.handCount[players], game.deckCount[players]);
+				}
+			}
+			
+			drawCard(players, &game);//drawing one more card than is in the deck 
+			if(game.handCount[players] != cardCount) {//checking that no more cards than exist in the deck are added
+				printf("ERROR DRAWING FROM AN EMPTY DECK: total players: %i player: %i, expected game.handCount: %i, expected game.deckCount = 0, actual game.handCount: %i, actual game.deckCount: %i\n", numPlayer, players, cardCount, game.handCount[players], game.deckCount[players]);
+			}
+		}
+	}
 	return 0;
 }

@@ -1,51 +1,55 @@
-/* cardtest1.c
- * By Dave Martinez
- * martind2@oregonstate.edu
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 3
+Date: 4/22/2016
+*/
 
- * This tests the playSmithy function.
- * - Does playing a smithy increase hand size by 3?
- * - Does smithy go to played cards?
- */
-
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include <stdlib.h>
 
-
+//testing Smithy
 int main() {
-	// Game settings
-	int seed = 1000,
-		numPlayers = 2,
-		cards[10] = { adventurer, embargo, village, minion, mine, cutpurse,
-					  sea_hag, tribute, smithy, council_room };
-
-	// Game init
-	struct gameState G, testG;
-	initializeGame(numPlayers, cards, seed, &G);
-	memcpy(&testG, &G, sizeof(struct gameState));
+	int seed = 1;//the seed for initializeGame
+    int numPlayer;
+	int returnVal, players, handCountBefore;
+	int cardCount = 10;//the number of cards initially given to a player
 	
-	printf("--------------- CARD TEST 4 ---------------\n");
-	printf("--------------- SMITHY TESTS --------------\n");
-
-	printf("\nTEST 1: Does playing a smithy increase hand size by 3?\n");
-	G.hand[0][ G.handCount[0] ] = smithy;
-    G.handCount[0]++;
-
-    playSmithy(&G, (G.handCount[0] - 1));
-    printf("Player 0's hand count = %d, expected %d\n", G.handCount[0], testG.handCount[0] + 3);
-    // assert(G.handCount[0] == (testG.handCount[0] + 3));
-
-    printf("\nTEST 2: Does smithy card go to played pile?\n");
-    printf("Player 0's played card count = %d, expected %d\n", G.playedCardCount, testG.playedCardCount + 1);
-    printf("Player 0's last played card = %d, expected %d\n", G.playedCards[G.playedCardCount - 1], smithy);
-    assert(G.playedCardCount == (testG.playedCardCount + 1));
-    assert(G.playedCards[G.playedCardCount - 1] == smithy);
-
-	printf("\n------------ ALL TESTS PASSED -------------\n");
-
+    int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+    struct gameState game;
+	
+	printf ("Testing Smithy:\n\n");
+	
+	for(numPlayer = 2; numPlayer <= 4; numPlayer++) {//checking for all possible number of players (2-4) {
+		
+		initializeGame(numPlayer, cards, seed, &game);
+		
+		for (players = 0; players < numPlayer; players++)//testing each player
+		{
+			game.hand[players][game.handCount[players]] = smithy;
+			game.handCount[players] = 1 + game.handCount[players];
+			handCountBefore = game.handCount[players];
+			game.whoseTurn = players;
+			
+			returnVal = playCard(game.handCount[players] - 1, -1, -1, -1, &game);//playing the smithy
+			game.numActions++;//counteract playCard
+			
+			if(game.handCount[players] != handCountBefore + 2) {//confirming that there is a net gain of 2
+				printf("ERROR IN CARDS RETURNED: player: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", players, handCountBefore + 2, game.handCount[players]);
+			}
+			
+			if(returnVal != 0) {
+				printf("ERROR IN RETURN VALUE: expected return value: 0, actual return value: %i\n\n", returnVal);
+			}
+		}
+	}
+	
+	
+	
+	
 	return 0;
 }
+

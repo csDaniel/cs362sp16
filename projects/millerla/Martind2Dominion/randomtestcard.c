@@ -1,104 +1,77 @@
-/* randomtestadventurer.c - a random tester for the Village card
-	By Dave Martinez, martind2@oregonstate.edu
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 4
+Date: 5/4/2016
 */
 
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
-
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
+#include <time.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <math.h>
 
-#define TEST_AMT 50
-
+//testing Village - +1 Card, +2 Action
 int main() {
-	// Counters
-	int i, j;
-
-	// Reporting
-	int test_results[3] = {0, 0, 0},
-		tests_passed = 0,
-		tests_failed = 0;
-
-	printf("RANDOM TEST: Village card\n");
-	printf("Test attempts: %d\n\n", TEST_AMT);
-	printf("--- BEGIN TEST OUTPUT ---\n");
-
-	for (i=0; i<TEST_AMT; i++) {
-		sleep(1);
-		struct gameState G, testG;
-		int p;
-		
-		// Random
-		PlantSeeds(-1);
-		SelectStream(0);
-		
-		// Random bytes
-		for (j=0; j<sizeof(struct gameState); j++) {
-			((char*)&G)[j] = floor(Random()*256);
-		}
-
-		// Preconditions
-		p = floor(Random() * 2);
-		G.whoseTurn = p;
-		G.deckCount[p] = floor(Random() * MAX_DECK);
-		G.playedCardCount = floor(Random() * MAX_DECK);
-		G.numActions = floor(Random() * 1000);
-		G.discardCount[p] = 0;
-		G.handCount[p] = floor(Random() * (G.deckCount[p] - 10));
-		for (j=0; j<G.handCount[p]; j++) {
-			G.hand[p][j] = floor(Random() * treasure_map);
-		}
-		for (j=0; j<G.deckCount[p]; j++) {
-			G.deck[p][j] = floor(Random() * treasure_map);
-		}
-
-		// Add adventurer to player's hand
-		G.hand[p][ G.handCount[p] ] = village;
-		G.handCount[p]++;
-
-		memcpy(&testG, &G, sizeof(struct gameState));
-		playVillage(&G, (G.handCount[p]-1));
-
-		// Test 1: increase hand size by one?
-		if (G.handCount[p] != testG.handCount[p] + 1) {
-			test_results[0] += 1;
-			tests_failed += 1;
-			printf("TEST 1 FAILED (%d): PLayer %d hand count = %d, expecting %d\n",
-				i+1, p, G.handCount[p], testG.handCount[p] + 2);
-		} else {
-			tests_passed += 1;
-		}
-
-		// Test 2: player has two additional actions?
-		if (G.numActions != testG.numActions + 2) {
-			test_results[1] += 1;
-			tests_failed += 1;
-			printf("TEST 2 FAILED (%d): Player %d actions = %d, expecting %d\n",
-				i+1, p, G.numActions, testG.numActions + 2);
-		} else {
-			tests_passed += 1;
-		}
-	}
-
-
-	printf("--- END TEST OUTPUT ---\n\n");
 	
-	printf("TEST RESULTS:\n");
-	printf("Tests passed: %d\n", tests_passed);
-	printf("Tests failed: %d\n", tests_failed);
-	printf("Which tests failed how many times?\n");
-	for (i=0; i<2; i++) {
-		printf("Test %d: %d\n", i+1, test_results[i]);
-	}
+	int randomRun = 2000000;//the number of times the random checker runs
+	int seed = 1;//the seed for initializeGame
+	int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};//used to initialize game - not cards for player playing village
+    struct gameState game;//the game used
+	struct gameState preCardGame;//saved version of game	
+    int numPlayer, i, j, k, currentPlayer, returnVal;
 
-	printf("\n--- END VILLAGE RANDOM TESTER ---\n\n");
+	srand(time(NULL));//seeding rand
+	
+	printf ("Testing Vilage:\n\n");
+	
+	for(i = 0; i < randomRun; i++) {
+		
+		numPlayer = 2+ rand()%3;//setting a random number of players between 2-4
+		currentPlayer = rand()%numPlayer;//getting the current player
+		
+		initializeGame(numPlayer, cards, seed, &game);//setting base game	
+		
+		game.handCount[currentPlayer] = rand()%MAX_HAND; //setting the hand count to random number between 0 and MAX_HAND
+		for(k = 0; k < game.handCount[currentPlayer] - 1; k++) {
+			game.hand[currentPlayer][k] = (enum CARD)(rand()%27);//adding one of the 27 random cards to the hand
+		}
+		
+		game.deckCount[currentPlayer] = rand()%MAX_DECK; //setting the deck count to random number between 0 and MAX_DECK
+		for(k = 0; k < game.deckCount[currentPlayer]; k++) {
+			game.deck[currentPlayer][k] = (enum CARD)(rand()%27);//adding one of the 27 random cards to the hand
+		}
+		
+		game.discardCount[currentPlayer] = rand()%MAX_DECK; //setting the discard count to random number between 0 and MAX_DECK
+		for(k = 0; k < game.discardCount[currentPlayer]; k++) {
+			game.discard[currentPlayer][k] = (enum CARD)(rand()%27);//adding one of the 27 random cards to the hand
+		}
+		
+		game.numActions = rand()%MAX_HAND;//setting the number of actions
+		game.hand[currentPlayer][game.handCount[currentPlayer] - 1] = village;//setting the last card in hand of the currentPlayer to village
+		game.whoseTurn = currentPlayer;
+		
+		memcpy(&preCardGame, &game, sizeof(struct gameState));//saving game
+		returnVal = playCard(game.handCount[currentPlayer] - 1, -1, -1, -1, &game);//playing the village
+		
+		if(returnVal != 0 && game.numActions > 0) {//checking correct return value with valid game state
+			printf("ERROR IN RETURN VALUE: test: %i, expected return value: 0, actual return value: %i\n\n", i, returnVal);
+		}
+		
+		if(returnVal == 0 && game.numActions != preCardGame.numActions + 1) {//checking that net number of actions added is 1 with valid game state
+			printf("ERROR IN NUMBER OF ACTIONS ADDED: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.numActions + 1, game.numActions);
+		}
+			
+		if(returnVal == 0 && game.handCount[currentPlayer] != preCardGame.handCount[currentPlayer] && preCardGame.deckCount[currentPlayer] + preCardGame.discardCount[currentPlayer] > 0) {//checking that net cards added to hand is 0 with valid game state - if there are enough cards in discard or deck piles
+			printf("ERROR IN NUMBER OF CARDS ADDED TO HAND: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
+		}
+		
+		if(returnVal == 0 && preCardGame.deckCount[currentPlayer] + preCardGame.discardCount[currentPlayer] == 0 && game.handCount[currentPlayer] != preCardGame.handCount[currentPlayer] - 1) {//checking there is a net of -1 cards in hand if there are no cards to add to the player's hand
+			printf("ERROR IN NET NUMBER OF CARDS ADDED TO HAND WHEN THERE ARE NO CARDS TO ADD: test: %i, player: %i, expected game.numActions: %i, actual game.numActions: %i\n\n", i+1, currentPlayer, preCardGame.handCount[currentPlayer] - 1, game.handCount[currentPlayer]);
+		}
+	}
 
 	return 0;
 }

@@ -1,61 +1,67 @@
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 3
+Date: 4/23/2016
+*/
+
+#include "rngs.h"
+#include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-//This is a unit test for the fullDeckCount() function.
-//Input:
-// fullDeckCount(int player, int card, struct gameState *state);
-/* Here deck = hand + discard + deck */
-//Business Rules:
-//1. It needs to count out the correct number of the full deck. 
-//2. The hand, discard, and deck amounts should not change. 
-//3. Rest of the game state is unchanged. 
-int main () {
 
-  int k[10] = {adventurer, council_room, feast, gardens, mine,
-	       remodel, smithy, village, baron, great_hall};
+//testing buyCard()
+int main() {
+	int seed = 1;//the seed for initializeGame
+    int numPlayer;
+	int players, handCount, i, j, tempCount;
+	int cardCount = 10;//the number of cards initially given to a player
+	
+    int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+    struct gameState game;
 
-  struct gameState expected, actual;
-  int numPlayers = 2;
-  int seed = 500;
-  int player = 1;  
-
-  initializeGame(numPlayers, k, seed, &actual);
-  int card = 1;
-  actual.handCount[player] = 3;
-  actual.hand[player][0] = card;
-  actual.hand[player][1] = card;
-  actual.hand[player][2] = card;
-
-  actual.deckCount[player] = 3;
-  actual.deck[player][0] = card;
-  actual.deck[player][1] = card;
-  actual.deck[player][2] = card;
-
-  actual.discardCount[player] = 3;
-  actual.discard[player][0] = card;
-  actual.discard[player][1] = card;
-  actual.discard[player][2] = card;
-
-  int fullDeck = 9;
-  //Copy the game state to the post game state test case.
-  memcpy(&expected, &actual, sizeof(struct gameState));
-  assert(memcmp(&actual, &expected, sizeof(struct gameState)) == 0);
-  printf("Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.\n");
-
-  assert( fullDeckCount(player, card, &actual) == fullDeck );
-  printf("The player's full deck count was calculated correctly.\n");
-  assert( expected.handCount[player] == actual.handCount[player] );
-  assert( expected.deckCount[player] == actual.deckCount[player] );
-  assert( expected.discardCount[player] == actual.discardCount[player] );
-  printf( "The player's hand, deck, discard count piles were not altered.\n");
-  assert(memcmp( &expected, &actual, sizeof(struct gameState)) == 0); 
-  printf("The game state was unaltered.\n");
-
-  return 0;
-
+	printf ("Testing buyCard():\n\n");
+	
+	for(numPlayer = 2; numPlayer <= 4; numPlayer++) {//checking for all possible number of players (2-4) {
+		initializeGame(numPlayer, cards, seed, &game); // initialize a new game
+		for (players = 0; players < numPlayer; players++)//drawing all cards for each player
+		{   
+			for (i = 0; i < cardCount; i++){//drawing entire deck
+				drawCard(players, &game);//drawing a card	
+			}
+			
+			game.numBuys = 1;
+			game.whoseTurn = players;
+			updateCoins(players, &game, 0);
+			buyCard(smithy, &game);//note:smithy cost 4, less than coppers originally given
+			
+			if(fullDeckCount(players, smithy, &game) != 1) {//checking that the user can buy an affordable card
+				printf("ERROR BUYING AFFORDABLE CARD: player: %i, buy: %i, expected cards after buy: %i, actual cards = %i\n\n", players, 1, 1, fullDeckCount(players, smithy, &game));
+				printf("user has in hand %i\n", game.handCount[players]);
+			}
+			
+			game.numBuys = 1;
+			game.whoseTurn = players;
+			buyCard(smithy, &game);//note:smithy cost 4, more than money left
+			
+			if(fullDeckCount(players, smithy, &game) != 1) {//checking that the user can't buy an unaffordable card
+				printf("ERROR BUYING UNAFFORDABLE CARD: player: %i, buy: %i, expected cards after buy: %i, actual cards = %i\n\n", players, 2, 1, fullDeckCount(players, smithy, &game));
+			}
+			
+			game.numBuys = 1;
+			game.whoseTurn = players;
+			
+			tempCount = game.supplyCount[smithy];
+			game.supplyCount[smithy] = 0;//removing smithy cards
+			buyCard(smithy, &game);
+			if(fullDeckCount(players, smithy, &game) != 1) {//checking that the user can't buy an absent
+				printf("ERROR BUYING ABSENT CARD: player: %i, buy: %i, expected cards after buy: %i, actual cards = %i\n\n", players, 3, 1, fullDeckCount(players, smithy, &game));
+			}
+			
+			game.supplyCount[smithy] = tempCount;//returning smithy cards
+			
+		}
+	}
+	return 0;
 }
-
-

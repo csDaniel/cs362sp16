@@ -1,96 +1,63 @@
+/*
+Name: Lauren Miller
+Class: CS362
+Assighnment: Assignment 3
+Date: 4/23/2016
+*/
+
+#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-//This is a unit test for the discardCard function.
-//Input:
-//int handPos --> Pos of card in Player's Hand to be Discarded.
-//int currentPlayer -> whose hand it is.
-//struct gameState *state-> state of the game.
-//int trashFlag -> 0 = not trashed 1 = trashed.
-//Business Rules:
-//1. Current Player's hand count is decrememnted by 1.
-//2. The card trashed is no longer in the current player's hand.
-//3. Handle correctly when the player has one card.
-//4. Handle correctly when the player has multiple cards in hand.
-int main () {
 
-  int k[10] = {adventurer, council_room, feast, gardens, mine,
-	       remodel, smithy, village, baron, great_hall};
+//testing discardCard()
+int main() {
+	int seed = 1;//the seed for initializeGame
+    int numPlayer;
+	int players, handCount, i, j;
+	int cardCount = 10;//the number of cards initially given to a player
+	int trashFlag;
+	int returnVal;
+	
+    int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+    struct gameState game;
+	
+	
+	printf ("Testing discardCard():\n\n");
+	
+	for(numPlayer = 2; numPlayer <= 4; numPlayer++) {//checking for all possible number of players (2-4) {
+		for(trashFlag = 0; trashFlag <= 1; trashFlag++){//checking for both values of trashFlag
+			
+			initializeGame(numPlayer, cards, seed, &game); // initialize a new game
+			for (players = 0; players < numPlayer; players++)//drawing all cards for each player
+			{  
+				for (i = 0; i < cardCount; i++){
+					drawCard(players, &game);
+				}
+			}
+			
+			for (players = 0; players < numPlayer; players++) {//checking discards for all players
+				for (handCount = cardCount - 1; handCount >= 0; handCount--) {//checking for entire hand of cards
 
-  struct gameState expected, actual;
-  int numPlayers = 2;
-  int seed = 500;
-  int player = 1;  
-
-  initializeGame(numPlayers, k, seed, &actual);
-
-  //Set Up Case
-  int handPos = 0;
-  int nottrashed = 0;  
- 
-  actual.handCount[player] = 1;
-  actual.hand[player][0] = baron;
-  actual.playedCardCount = 0;
-  //Copy the game state to the post game state test case.
-  memcpy(&expected, &actual, sizeof(struct gameState));
-  assert(memcmp(&actual, &expected, sizeof(struct gameState)) == 0);
-  printf("Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.\n");
-
-  //Expected Results.
-  expected.handCount[player] = actual.handCount[player] - 1;
-  expected.playedCardCount = actual.playedCardCount + 1;
-
-  if( discardCard(handPos, player, &actual, nottrashed) == 0){
-	printf(" The discardCard() was called successfully for a played card with one card left in the hand.\n");
-        assert( expected.handCount[player] == actual.handCount[player]);
-        printf(" EXPECTED HAND COUNT: %i ACTUAL HAND COUNT: %i\n", expected.handCount[player], actual.handCount[player]);
-        assert( expected.playedCardCount == actual.playedCardCount );
-        printf(" EXPECTED PLAYED CARD COUNT: %i ACTUAL PLAYED CARD COUNT: %i\n", expected.playedCardCount, actual.playedCardCount);
-        assert( actual.hand[player][handPos] != baron );
-        printf(" The card was successfully discarded from the player's hand.\n"); 
-  }else{
-	printf("The discardCard() failed to be called for a played card with one card left in the hand.i\n");
-  }
-
-  struct gameState expected2, actual2;
-  initializeGame(numPlayers, k, seed, &actual2);
-
-  //Set Up Case
-  int handPos1 = 1;
-  int trashed = 1;  
- 
-  actual2.handCount[player] = 2;
-  actual2.hand[player][0] = smithy;
-  actual2.hand[player][handPos1] = baron;
-  actual2.playedCardCount = 0;
- 
- //Copy the game state to the post game state test case.
-  memcpy(&expected2, &actual2, sizeof(struct gameState));
-  assert(memcmp(&actual2, &expected2, sizeof(struct gameState)) == 0);
-  printf("Both PRE & POST GAME STATES ARE EQUIVALENT before calling the function.\n");
-
-  //Expected Results.
-  expected2.handCount[player] = actual2.handCount[player] - 1;
-  expected2.playedCardCount = actual2.playedCardCount;
- 
-  if( discardCard(handPos1, player, &actual2, trashed) == 0 ){
-	printf("The discardCard() was called successfully for a nonplayed card with multiple cards in hand.\n");
-        assert( expected2.handCount[player] == actual2.handCount[player]);
-        printf(" EXPECTED HAND COUNT: %i ACTUAL HAND COUNT: %i\n", expected2.handCount[player], actual2.handCount[player]);
-        assert( expected2.playedCardCount == actual2.playedCardCount );
-        printf(" EXPECTED PLAYED CARD COUNT: %i ACTUAL PLAYED CARD COUNT: %i\n", expected2.playedCardCount, actual2.playedCardCount);
-        assert( actual2.hand[player][handPos1] != baron );
-        printf(" The card was successfully discarded from the player's hand.\n"); 
-
-  }else{
-	printf("The discardCard() failed to be calledi for a nonplayed card with multiple cards in hand.\n");
-  }
-
-
-  return 0;
-
+					returnVal = discardCard(handCount, players, &game, trashFlag);//discarding for the current player to their discard pile if 0, trashPile if 1
+					if(trashFlag == 0) {//if discarding card
+						if(game.handCount[players] != handCount || cardCount - handCount != game.discardCount[players]) {//checking that card is moved from hand to discard pile
+							printf("ERROR IN CARDS DISCARDED: player: %i, expected game.handCount: %i, expected game.discardCount: %i, actual game.handCount: %i, actual game.discardCount: %i\n\n", players, handCount, cardCount - handCount, game.handCount[players], game.discardCount[players]);
+						}
+					}
+					else {//if trashing card
+						if(game.handCount[players] != handCount || game.discardCount[players] != 0) {//checking that card is removed from hand and not added to discard pile
+							printf("ERROR IN CARDS TRASHED: player: %i, expected game.handCount: %i, expected game.discardCount: 0, actual game.handCount: %i, actual game.discardCount: %i\n\n", players, handCount, game.handCount[players], game.discardCount[players]);
+						}
+					}
+					
+					if(returnVal != 0) {
+						printf("ERROR IN RETURN VALUE: expected return value: 0, actual return value: %i\n\n", returnVal);
+					}
+				}
+			}
+		}
+	}
+	return 0;
 }
