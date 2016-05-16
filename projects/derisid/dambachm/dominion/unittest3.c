@@ -6,49 +6,41 @@
 #include "rngs.h"
 #include <stdlib.h>
 
-int main() {
-	struct gameState G;
-	int numPlayers = 1;
+int main()
+{
 	int seed = 1000;
-	int k[10] = { adventurer, embargo, village, minion, mine, cutpurse, sea_hag,
-			tribute, smithy, council_room };
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-	int player = 1;
-	int bonus = 4;
-	printf("Test for updateCoins\n");
-	G.handCount[player] = 20;
-	G.hand[player][0] = silver;
-	G.hand[player][1] = minion;
-	G.hand[player][2] = gold;
-	G.hand[player][3] = silver;
-	G.hand[player][4] = minion;
-	G.hand[player][5] = gold;
-	G.hand[player][6] = silver;
-	G.hand[player][7] = gold;
-	G.hand[player][8] = silver;
-	G.hand[player][9] = copper;
-	G.hand[player][10] = silver;
-	G.hand[player][11] = silver;
-	G.hand[player][12] = copper;
-	G.hand[player][13] = silver;
-	G.hand[player][14] = minion;
-	G.hand[player][15] = minion;
-	G.hand[player][16] = copper;
-	G.hand[player][17] = minion;
-	G.hand[player][18] = silver;
-	G.hand[player][19] = copper;
+    int numPlayer = 2;
+    int thisPlayer = 0;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
 
-	updateCoins(player, &G, bonus);
-	int coins = G.coins;
-	if (coins == 33) {
-		printf("Test passed!!!\n");
-	} else {
-		printf("Test failed!!\n");
-	}
-	printf("\n\n\n\n");
-	return 0;
+	struct gameState G, testG;
+
+	initializeGame(numPlayer, k, seed, &G);
+	memcpy(&testG, &G, sizeof(struct gameState));
+
+	printf("----------------- Testing function: whoseTurn() ----------------\n");
+
+	printf("----------- Test 1: Is it player 1's turn ----------\n");
+
+	testG.whoseTurn = thisPlayer;
+	if(whoseTurn(&testG) == 0)
+		printf("TEST PASSED\n");
+  	else
+    	printf("TEST FAILED\n");
+	
+	printf("----------- Test 2: Is it player 2's turn ----------\n");
+
+	thisPlayer = 1;
+	testG.whoseTurn = thisPlayer;
+	if(whoseTurn(&testG) == 1)
+		printf("TEST PASSED\n");
+  	else
+    	printf("TEST FAILED\n");
+
+printf("---------- whoseTurn unit testing completed. ----------\n\n");
+
+
+return 0;
+
 }
-
-
-

@@ -6,51 +6,43 @@
 #include "rngs.h"
 #include <stdlib.h>
 
-int main() {
-	struct gameState G;
-	int numPlayers = 1;
-	int over;
+int main()
+{
 	int seed = 1000;
-	int k[10] = { adventurer, embargo, village, minion, mine, cutpurse, sea_hag,
-			tribute, smithy, council_room };
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-	printf("Test for isGameOver\n");
+    int numPlayer = 2;
 
-	G.supplyCount[province] = 1;
-	int i;
-	for (i=0;i<25;i++) {
-		G.supplyCount[i] = i;
-	}
-	over = isGameOver(&G);
-	printf("1 province and all other supplies are greater than 0\n");
-	if (over == 1) {
-		printf("Test failed!!\n");
-	} else {
-		printf("Test passed!!!\n");
-	}
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
 
-	printf("Test with province equal to zero\n");
-	G.supplyCount[province] = 0;
-	over = isGameOver(&G);
-	if (over == 0) {
-		printf("Test failed!!\n");
-	} else {
-		printf("Test passed!!!\n");
-	}
+	struct gameState G, testG;
 
-	G.supplyCount[province] = 1;
-	G.supplyCount[3] = 0;
-	G.supplyCount[8] = 0;
-	printf("Test with a province card but three other cards are empty\n");
-	over = isGameOver(&G);
-	if (over == 0) {
-		printf("Test failed!!\n");
-	} else {
-		printf("Test passed!!!\n");
-	}
+	initializeGame(numPlayer, k, seed, &G);
+	memcpy(&testG, &G, sizeof(struct gameState));
 
-	printf("\n\n\n\n");
-	return 0;
+	printf("----------------- Testing function: playCard ----------------\n");
+
+
+	printf("----------- Test 1:  Checking playCard invocation refusal if numActions < 1 ----------\n");
+	testG.numActions = 0;
+
+	if(playCard(0, 0, 0, 0, &testG) == -1)
+		printf("TEST PASSED\n");
+	else
+	    printf("TEST FAILED\n");
+
+	printf("----------- Test 2:  Checking playCard compliance with available action ----------\n");
+
+	memcpy(&testG, &G, sizeof(struct gameState));
+
+	if(playCard(smithy, 0, 0, 0, &testG) == 0)
+		printf("TEST PASSED\n");
+	else
+	    printf("TEST FAILED\n");
+
+
+printf("---------- playCard unit testing completed. ----------\n\n");
+
+
+return 0;
+
 }
-

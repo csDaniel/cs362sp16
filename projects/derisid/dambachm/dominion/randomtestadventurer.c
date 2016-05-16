@@ -1,107 +1,179 @@
+//Random test for adventurerCard
+
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include <time.h>
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
-#include <time.h>
 
-int main() {
-	struct gameState G, testG;
-	int numPlayers = 1;
-	int treasury = 0;
-	int discardTreasury = 0;
-	int seed = 1000;
-	int k[10] = { adventurer, embargo, village, minion, mine, cutpurse, sea_hag,
-			tribute, smithy, council_room };
-	int numOfTests = 100;
-	int numOfCards = 10;
 
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
+int oracleTest(struct gameState* G, struct gameState* testG);
+
+int main()
+{
 	srand(time(NULL));
-	int player;
-	int firsttreasury;
-	int secondtreasury;
-	int i;
-	for (i = 0; i < numOfTests; i++) {
-		printf("Test Number %i\n", i);
-		treasury = 0;
-		discardTreasury = 0;
-		player = rand() % 4;
-		G.whoseTurn = player;
-		G.handCount[player] = 5;
-		G.deckCount[player] = rand() % 25;
-		int j;
-		for (j = 0; j < G.deckCount[player]; j++) {
-			int card = rand() % numOfCards;
-			G.deck[player][j] = card;
-			if ((card == copper) || (card == silver) || (card == gold)) {
-				treasury++;
-			}
-		}
-		G.discardCount[player] = rand() % 25;
-		for (j = 0; j < G.discardCount[player]; j++) {
-			int card = rand() % numOfCards;
-			G.discard[player][j] = card;
-			if ((card == copper) || (card == silver) || (card == gold)) {
-				discardTreasury++;
-			}
-		}
-		for (j = 0; j < G.handCount[player]; j++) {
-			int card = rand() % numOfCards;
-			G.hand[player][j] = card;
-		}
-		if (treasury + discardTreasury < 2) {
-			printf("Test Failed! Stuck in infinite loop!\n\n");
-			continue;
-		}
-		memcpy(&testG, &G, sizeof(struct gameState));
-		playAdventurer(&G);
-		int fewerDeckCards = 0;
-		int treas = 0;
-		for (j = testG.deckCount[player] - 1; j >= 0; j--) {
-			int card;
-			card = testG.deck[player][j];
-			if ((card == copper) || (card == silver) || (card == gold)) {
-				treas++;
-			} else {
-				fewerDeckCards++;
-			}
-			if (treas == 2) {
-				break;
-			}
-		}
+	int seed = 1000;
+    int numPlayer = 2;
+    struct gameState G, testG;
+    int cardCount;
+    int i, j, l;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
+	int coins[3] = {copper, silver, gold};
+	int numTests = 20;
+	int coinCount;
+	int thisPlayer = 0;
+	int coinGoesHere;
+	int randomCoin;
+	int oracleResults;
+	int randomCard;
 
-		if (treasury < 2) {
-			printf("Reshuffel required\n");
-			if ((G.handCount[player] == testG.handCount[player] + 2)) {
-				if (G.handCount[player] > 7) {
-					printf("Test Failed! Too many cards in hand\n");
-				} else {
-					printf("Test Passed\n");
-				}
-			} else {
-				printf("Test Failed! Expected hand count: %i, Actual hand count: %i\n",
-						testG.handCount[player] + treasury + discardTreasury, G.handCount[player]);
-			}
-		} else {
-			if ((G.handCount[player] != testG.handCount[player] + 2)) {
-				printf("Test Failed! Expected hand count: %i, Actual hand count: %i\n",
-						testG.handCount[player] + 2, G.handCount[player]);
-			} else if ((G.discardCount[player] != testG.discardCount[player] + fewerDeckCards)) {
-				printf("Test Failed! Expected discard count: %i, Actual discard count: %i\n",
-						testG.discardCount[player] + fewerDeckCards, G.discardCount[player]);
-			} else if ((G.deckCount[player] != testG.deckCount[player] - fewerDeckCards - 2)) {
-				printf("Test Failed! Expected deck count: %i, Actual deck count: %i\n",
-						testG.deckCount[player] - fewerDeckCards - 2, G.deckCount[player]);
-			} else {
-				printf("Test Passed!!!\n");
-			}
-		}
-		printf("\n");
+    //generate a random deck size and populate deck with random card choice
+    //generate random coin type and insert randomly into randomly generated deck
+
+    for(i = 0; i < numTests; i++)
+    {
+    	initializeGame(numPlayer, k, seed, &G);
+    	cardCount = (rand() % 30);
+    	for(j = 0; j < cardCount; j++)
+    	{
+    		randomCard = rand() % 10;
+    		G.deck[thisPlayer][j] = k[randomCard];
+    	}
+
+    	coinCount = rand() % (G.deckCount[thisPlayer] + 1);
+    	for(l = 0; l < coinCount; l++)
+    	{
+    		coinGoesHere = rand() % G.deckCount[thisPlayer];
+    		randomCoin = rand() % 3;
+    		G.deck[thisPlayer][coinGoesHere] = coins[randomCoin];
+    	}
+
+    	memcpy(&testG, &G, sizeof(struct gameState));
+
+    	oracleResults = oracleTest(&testG, &G);
+
+    	printf("\n\nTest iteration: %d, Number of Failures: %d\n\n", i+1, oracleResults);
+
+    	printf("---------- adventurerCard testing completed. ----------\n\n");
+
+    }
+
+
+return 0;
+
+}
+
+int oracleTest(struct gameState* G, struct gameState* testG)
+{
+
+    int thisPlayer = 0;
+    int cardsBeforeHand;
+    int z = 0;
+    int cardDrawn = 0;
+    int drawntreasure = 0;
+    int temphand[MAX_HAND];
+    int numFails = 0;
+    
+
+	printf("----------------- Testing Card: Adventurer ----------------\n");
+
+	printf("----------- Test 1:  Player hand card count should increase by 2 ----------\n");
+	cardsBeforeHand = testG->handCount[thisPlayer];
+	adventurerCard(drawntreasure, testG, thisPlayer, cardDrawn, z, temphand);
+	if(testG->handCount[thisPlayer] == cardsBeforeHand + 2)
+		printf("TEST PASSED \n");
+	else{
+		printf("TEST FAILED \n");
+		numFails++;
 	}
-	printf("\n");
-	return 0;
+	printf("----------- Test 2:  Deck count should decrease ----------\n");
+	if(testG->deckCount[thisPlayer] < G->deckCount[thisPlayer])
+		printf("TEST PASSED \n");
+	else
+	{
+		printf("TEST FAILED \n");		
+		numFails++;
+	}
+
+	printf("----------- Test 3:  Discard should increase or remain unchanged ----------\n");
+	if(testG->discardCount[thisPlayer] >= G->discardCount[thisPlayer])
+		printf("TEST PASSED \n");
+	else{
+		printf("TEST FAILED \n");
+		numFails++;
+	}
+	printf("----------- Test 4:  Difference in deck amt should reflect discard + 2 ----------\n");
+	if(testG->deckCount[thisPlayer] >= G->deckCount[thisPlayer])
+		printf("TEST PASSED \n");
+	else{
+		printf("TEST FAILED \n");
+		numFails++;
+	}
+
+	printf("----------- Test 5:  Opponents state should remain unchanged ----------\n");
+	
+	thisPlayer = 1;
+	
+	printf("--- Opponent handcount unchanged? ---\n");
+    if(testG->handCount[thisPlayer] == G->handCount[thisPlayer])
+    	printf("TEST PASSED\n");
+  	else{
+    	printf("TEST FAILED\n");
+    	numFails++;
+	}
+
+	int j;
+	printf("--- Opponent hand unchanged? ---\n");
+	for (j = 0; j < G->handCount[thisPlayer]; j++)
+  	{
+	    if(testG->hand[thisPlayer][j] == G->hand[thisPlayer][j])
+	      printf("TEST PASSED\n");
+	    else{
+	      printf("TEST FAILED\n");
+	  	  numFails++;
+	  	}
+  	}
+	printf("--- Opponent deckcount unchanged? ---\n");
+	if(testG->deckCount[thisPlayer] == G->deckCount[thisPlayer])
+	  printf("TEST PASSED\n");
+	else{
+	  printf("TEST FAILED\n");
+	  numFails++;
+	}
+
+	printf("--- Opponent deck unchanged? ---\n");
+	for (j = 0; j < G->deckCount[thisPlayer]; j++)
+	{
+	   	if(testG->deck[thisPlayer][j] == G->deck[thisPlayer][j])
+		   printf("TEST PASSED\n");
+		else{
+		   printf("TEST FAILED\n");
+		   numFails++;
+		}
+	}
+		
+	printf("--- Opponent discardcount unchanged? ---\n");
+	if(testG->discardCount[thisPlayer] == G->discardCount[thisPlayer])
+	  printf("TEST PASSED\n");
+	else{
+	  printf("TEST FAILED\n");
+	  numFails++;
+	}
+
+	printf("--- Opponent discard unchanged? ---\n");
+	for (j = 0; j < G->discardCount[thisPlayer]; j++)
+	{
+	    if(testG->discard[thisPlayer][j] == G->discard[thisPlayer][j])
+	      printf("TEST PASSED\n");
+	    else{
+	      printf("TEST FAILED\n");
+	  	  numFails++;
+	  	}
+	}
+
+ return numFails;
 }
