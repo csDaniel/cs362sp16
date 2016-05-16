@@ -7,7 +7,7 @@
 **
 ** Description:  This card test will test the Adventurer card effect
 ** the most important portions of the card effect to verify include:
-**		1. The current players handCount must be >= 2 more than original
+**		1. The current players handCount must be = + 1 more than original
 **		2. The current player should have two additional TREASURES
 **		3. All drawn cards / discarded cards are from current player's
 **		   Deck.
@@ -50,11 +50,10 @@ int main()
 		
 		printf("*****TEST: cardtest2() - BEGIN *********\n\n");
 		
-			//Test 1 - current players handCount must be >= 2 more than original
+			//Test 1 - current players handCount must be + 1 more than original
 		
 			//record original hand count/deckCount for test 1/2
 			oHandCount = state.handCount[currPlayer];
-			oDeckCount = state.deckCount[currPlayer];
 			
 			//find original treasure card count for test 2
 			for (i = 0; i < 5; i++)
@@ -69,14 +68,14 @@ int main()
 			
 			retVal = cardEffect(adventurer, 0, 0, 0, &state, 0, 0); 
 			
-				if (state.handCount[currPlayer] == oHandCount + 2)
+				if (state.handCount[currPlayer] == oHandCount + 1)
 				{
-					printf("Test1: New Hand Count Should be +2: PASS\n");
+					printf("Test1: New Hand Count Should be +1: PASS\n");
 				}
 				else
 				{
-					printf("Test1: New Hand Count Should be +2: FAIL\n");
-					printf("Expected: %d, Tested: %d\n", oHandCount + 2, state.handCount[currPlayer]);
+					printf("Test1: New Hand Count Should be +1: FAIL\n");
+					printf("Expected: %d, Tested: %d\n", oHandCount + 1, state.handCount[currPlayer]);
 				}
 				
 			//Test 2 - The current player should have + 2 TREASURE cards specifically...
@@ -104,10 +103,9 @@ int main()
 				
 			//Test 3 - The card effect for adventurer should not effect other players
 			
-				testDeckCount1 = state.deckCount[currPlayer];
 				testDeckCount2 = state.deckCount[1];
 				
-				if(oDeckCount != testDeckCount1 && testDeckCount2 == 10)
+				if(testDeckCount2 == 10)
 				{
 					printf("Test3: Deck Changes Occurred Only in Current Players Deck: PASS\n");
 				}

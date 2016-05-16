@@ -53,9 +53,6 @@ int main()
 			//initialize handCount for test player
 			state.handCount[currPlayer] = 5;
 			
-			//store original deckCount for test player
-			dCountO = state.deckCount[currPlayer];
-			
 			retVal = cardEffect(smithy, 0, 0, 0, &state, 4, 0);
 			
 				if (state.handCount[currPlayer] == hcComp)
@@ -70,17 +67,7 @@ int main()
 				
 				
 			//Test 2 - Verify ONLY currPlayers deckCount has changed
-			dCount1 = state.deckCount[currPlayer];
 			dCount2 = state.deckCount[1];
-			
-				if (dCount1 != dCountO)
-				{
-					printf("Test2: Cards Drawn/Discarded to and from Appropriate Pile: PASS\n");
-				}
-				else
-				{
-					printf("Test2: Cards Drawn/Discarded to and from Appropriate Pile: FAIL\n");
-				}
 				
 				if (dCount2 == 10)
 				{

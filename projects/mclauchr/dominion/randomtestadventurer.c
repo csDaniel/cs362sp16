@@ -197,7 +197,7 @@ int main()
 						
 						#if (NOISY_TEST == 1)
 							printf("SubTest2: +2 Current Player Treasure Cards FAILED at Iteration: %d\n", i);
-							printf("Expected: %d, Tested: %d\n", oTreasure, tTreasure);
+							printf("Expected: %d, Tested: %d\n", oTreasure + 2, tTreasure);
 						#endif
 					}
 					
@@ -256,7 +256,7 @@ int main()
 			printf("*****TEST: randomtestadventurer() - END *******\n\n");	
 			
 			printf("OVERALL RESULTS randomtestAdventurer:\n");
-			printf("SubTest 1 - +2 Cards for Current Player hand: \n");
+			printf("SubTest 1 - +1 Cards for Current Player hand: \n");
 			printf("Passed: %d, Failed: %d\n", tOneP, tOneF);
 			printf("SubTest 2 - +2 TREASURE Cards for Current Player: \n");
 			printf("Passed: %d, Failed: %d\n", tTwoP, tTwoF);
