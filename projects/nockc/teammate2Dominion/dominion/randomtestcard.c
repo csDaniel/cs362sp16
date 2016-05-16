@@ -94,7 +94,7 @@ int main()
 		int expNumAct = 0;
 		int newcard = 0;
         memcpy( &post, &previous, sizeof(struct gameState)); 
-        playVillage(turn, &post, 0);
+        playVillageCard(0, &post);
 #if (NOISY_TEST == 1)			
 		printf("\nTesting if hand count was unaltered\n");
 #endif

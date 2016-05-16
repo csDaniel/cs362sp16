@@ -92,7 +92,7 @@ int main()
 		int tmp3 = previous.discardCount[turn];
 		int tmp4 = previous.handCount[turn];
         memcpy( &post, &previous, sizeof(struct gameState)); 
-        playAdventurer( &post, turn );
+        playAdventurerCard( &post );
 #if (NOISY_TEST == 1)			
 		printf("\nTesting if hand count was increased by 2\n");
 #endif

@@ -65,7 +65,7 @@ int main()
             memcpy(previous.deck[turn], initdeck, sizeof(int) * 5);
 			/* The post game state will be a copy of the previous game state with tests ran on it */
             memcpy(&post, &previous, sizeof(struct gameState)); 
-            playAdventurer( &post, turn);
+            playAdventurerCard( &post);
 			tmp2 = previous.deckCount[turn];
 			tmp3 = previous.discardCount[turn];
 			tmp4 = previous.handCount[turn];
