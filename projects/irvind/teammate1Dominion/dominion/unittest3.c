@@ -1,60 +1,73 @@
-/*
-Unit test 3: whoseTurn()
-Aleksandr Balab
-CS 362 Spring 2016
-References: testUpdateCoins.c and cardTest4.c provided by instructor to use as examples and templates
-*/
-
+/*---------------------------------------
+* Brett Irvin
+* 4/20/16
+* CS362_400 Software Engineering II
+* Assignment 3--unittest3.c
+* Unit test for the isGameOver function
+*---------------------------------------*/
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 #include <assert.h>
-#include "rngs.h"
 
-int main(int argc, char const *argv[]) {
-    int seed = 1000;
-    int curPlayer;
-    int numPlayer = 2;
-    int p, r, turnRes, corRes;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState G;
-    int maxHandCount = 5;
+/*Citation: http://www.ultradominion.com/game-rules.php
+The game should end when:
+1. Provinces are depleted.
+2. 3 supply piles are depleted.
+*/
 
-	printf("==============================================\r\n");
-	printf("\n   Beginning testing for whoseTurn():\r\n");
-	printf("==============================================\r\n");
+int main() {
+	int seed = 1000;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
+    int numPlayers = 2;
+    int gameOver = 0;
+	int i = 0;
+	struct gameState G, testG;
 
-    for (p = 0; p < numPlayer; p++)	{
-    		for (curPlayer = 0; curPlayer <= numPlayer; curPlayer++) {
-    				printf("Testing %d players with player %d's turn\n", p, curPlayer);
-    				memset(&G, 23, sizeof(struct gameState));
-    				r = initializeGame(p, k, seed, &G);
-    				if (curPlayer == numPlayer) {
-    					G.whoseTurn = 0;
-    				}
-    				else {
-    					G.whoseTurn = curPlayer;
-    				}			
-
-    				turnRes = whoseTurn(&G);
-    				if (curPlayer == numPlayer) {
-    					corRes = 0;
-    					printf("turn =  %d, expected = %d \n", turnRes, corRes);
-    				}
-    				else {
-    					corRes = curPlayer;
-    					printf("turn =  %d, expected = %d \n", turnRes, corRes);
-					}
-    				if (turnRes == corRes) {
-    					printf("The turn is correct\n");
-    				}
-    				else {
-    					printf("The turn is not correct\n");
-    				}
-    		}
+    initializeGame(numPlayers, k, seed, &G);
+	
+	/*---------------------------------------------------------*/
+	printf("\n---Testing the isGameOver function:---\n");
+    memcpy(&testG, &G, sizeof(struct gameState));
+    printf("\nTest 1: Game ends when province cards are depleted.\n");
+    testG.supplyCount[province] = 0;
+    gameOver = isGameOver(&testG);
+    if (gameOver == 1) {
+        printf("Success: province cards triggered a game over condition.\n");
+    } 
+	else {
+        printf("Failure: province cards failed to trigger a game over condition.\n");
     }
-
+	/*---------------------------------------------------------*/
+	
+    printf("\nTest 2: Game over is triggered with three supply piles at 0.\n");
+    memcpy(&testG, &G, sizeof(struct gameState));
+    for (i = 0; i < 3; i++){
+		testG.supplyCount[i] = 0;
+	}
+    gameOver = isGameOver(&testG);
+    if (gameOver == 1)
+        printf("Success: three depleted supply piles triggered a game over condition.\n");
+    else 
+        printf("Failure: three depleted supply piles did not end the game.\n");
+	/*---------------------------------------------------------*/
+	
+	printf("\nTest 3: Duchy and estate cards do not trigger a game over condition.\n");
+    memcpy(&testG, &G, sizeof(struct gameState));
+    testG.supplyCount[estate] = 0;
+	testG.supplyCount[duchy] = 0;
+    gameOver = isGameOver(&testG);
+    if (gameOver == 0) {
+        printf("Success: game continued with duchy and estate cards depleted.\n");
+    } 
+	else {
+        printf("Failure: estate and duchy cards triggered a game over condition.\n");;
+    }
+	printf("\n---isGameOver test complete---\n\n");
 	return 0;
 }

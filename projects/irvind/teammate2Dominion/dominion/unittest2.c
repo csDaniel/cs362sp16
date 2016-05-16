@@ -1,64 +1,49 @@
+/*---------------------------------------
+* Brett Irvin
+* 4/20/16
+* CS362_400 Software Engineering II
+* Assignment 3--unittest2.c
+* Unit test for the shuffle function
+*---------------------------------------*/
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include "rngs.h"
+#include <string.h>
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
-
-// Dane Schoonover
-// Assignment 3
-// supplyCount()
-
-// This file tests the supplyCount() function. supplyCount() returns the remaining
-// number of the given card.
-
-// What to test:
-    // Count returned is not NULL
-    // Count returned is the correct count
-
-int supplyCountTest(int card, struct gameState *state){
-    
-    int supply = supplyCount(card, state);
-    
-    // TEST 1:
-    // Count returned is not NULL
-    if (!supply) {
-        printf ("supplyCount() test1: failed.\n");
-    }
-    else
-        printf ("supplyCount() test1: passed.\n");
-
-    // TEST 2:
-    // Count returned is not NULL
-    if (supply != state->supplyCount[card]) {
-        printf ("supplyCount() test2: failed.\n\n");
-    }
-    else {
-        printf("supplyCount() test2: passed.\n\n");
-    }
-    return 0;
-}
+#include <assert.h>
 
 
-int main (int argc, char** argv) {
-    printf ("---------- UnitTest2 supplyCount() ----------\n");
-    // Create a game
+int main() {
+    int i, j;
+    int seed = 1000;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy, council_room};
     int numPlayers = 2;
-    struct gameState G;
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    struct gameState G, testG;
     
-    // Initialize the game with 2 players; seed is '10'
-    initializeGame(numPlayers, k, 10, &G);
-    
-    // Set test cards
-    for (int i = treasure_map; i < 0; i--) {
-        G.supplyCount[i] = i;
-    }
-    
-    // Test supplyCount()
-    for (int j = 0; j < treasure_map+1; j++){
-        printf("Card %i:\n", j+1);
-        supplyCountTest(j, &G);
-    }
-    
-    
-    return 0;
+	// Initialize a new game 
+    initializeGame(numPlayers, k, seed, &G);
+    memcpy(&testG, &G, sizeof(struct gameState));
+    shuffle(0, &G);
+    shuffle(0, &testG);
+    printf("\n---Testing the shuffle function:---\n");
+	
+	for (j = 0; j < numPlayers; j++) {
+        printf("\nPlayer %d\n", j + 1);
+        printf("Unshuffled Deck: \n");
+        for (i = 0; i < testG.deckCount[0]; i++){
+            printf("%d ", testG.deck[0][i]);	
+        }
+        printf("\nShuffled Deck:\n");
+        for (i = 0; i < G.deckCount[0]; i++) {
+            printf("%d ", G.deck[0][i]);
+        }
+	}
+	
+	printf("\n---Shuffle test complete---\n\n");
+	return 0;
 }
+
+

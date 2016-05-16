@@ -1,137 +1,73 @@
+/*---------------------------------------
+* Brett Irvin
+* 4/20/16
+* CS362_400 Software Engineering II
+* Assignment 3--unittest3.c
+* Unit test for the isGameOver function
+*---------------------------------------*/
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include "rngs.h"
+#include <string.h>
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
+#include <assert.h>
 
-// Dane Schoonover
-// Assignment 3
-// scoreFor()
+/*Citation: http://www.ultradominion.com/game-rules.php
+The game should end when:
+1. Provinces are depleted.
+2. 3 supply piles are depleted.
+*/
 
-// This file tests the scoreFor() function. The scoreFor() function calculates
-// and returns a player's score using various critria such as hand cards, discarded
-// cards, and deck cards.
-
-// What to test:
-    // Correct scores from cards in handCount
-    // Correct scores from cards in discardCount
-    // Correct scores from cards in deckcount
-
-
-int main (int argc, char** argv) {
-    printf ("---------- Testing scoreFor() ----------\n");
-    // Create a game
+int main() {
+	int seed = 1000;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
     int numPlayers = 2;
-    struct gameState G;
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-    
-    // Initialize the game with 2 players; seed is '10'
-    initializeGame(numPlayers, k, 10, &G);
-    
-    // Cards for our tests
-    int cards[6] = {curse, estate, duchy, province, great_hall, gardens};
-    
-    // Default Player
-    G.whoseTurn = 0;
-    
-    // We need to populate the following sets: handCount, discardCount, and deckCount
-    // To ensure the right numbers are being tested in each set within scoreFor(),
-    // we need to use separate numbers for each set (this will catch the obvious bug
-    // in the 3rd for loop). In order to do this, we will simply use sizes
-    // 6, 12, and 18 for handCount, discardCount, and deckCount, respectively.
-    // These pile sizes will then be filled with the cards array, restarting from cards[0]
-    // at every 6th card.
-    
-    // Set the pile sizes:
-    G.handCount[G.whoseTurn] = 6;
-    G.discardCount[G.whoseTurn] = 12;
-    G.deckCount[G.whoseTurn] = 18;
-    
-    // Check counts:
-//    printf("handCount: %i\n", G.handCount[G.whoseTurn]);
-//    printf("discardCount: %i\n", G.discardCount[G.whoseTurn]);
-//    printf("deckCount: %i\n", G.deckCount[G.whoseTurn]);
+    int gameOver = 0;
+	int i = 0;
+	struct gameState G, testG;
 
-    
-    //*** Populate the piles ***//
-    // --------------------------------------------------------
-    // Hand
-    for (int i = 0; i < G.handCount[G.whoseTurn]; i++){
-        G.hand[G.whoseTurn][i] = cards[i];
+    initializeGame(numPlayers, k, seed, &G);
+	
+	/*---------------------------------------------------------*/
+	printf("\n---Testing the isGameOver function:---\n");
+    memcpy(&testG, &G, sizeof(struct gameState));
+    printf("\nTest 1: Game ends when province cards are depleted.\n");
+    testG.supplyCount[province] = 0;
+    gameOver = isGameOver(&testG);
+    if (gameOver == 1) {
+        printf("Success: province cards triggered a game over condition.\n");
+    } 
+	else {
+        printf("Failure: province cards failed to trigger a game over condition.\n");
     }
-    // Check hand
-//    printf("\nHand:\n");
-//    for (int i = 0; i < G.handCount[G.whoseTurn]; i++){
-//        printf("Card %i: %i\n",i, G.hand[G.whoseTurn][i]);
-//    }
-    // --------------------------------------------------------
-    // Discard
-    int count = 0;
-    for (int j = 0; j < (G.discardCount[G.whoseTurn] * 2); j++) {
-        
-        G.discard[G.whoseTurn][j] = cards[count];
-        
-        count++;
-        
-        // End of cards array, start over
-        if (count == 6)
-            count = 0;
-        
+	/*---------------------------------------------------------*/
+	
+    printf("\nTest 2: Game over is triggered with three supply piles at 0.\n");
+    memcpy(&testG, &G, sizeof(struct gameState));
+    for (i = 0; i < 3; i++){
+		testG.supplyCount[i] = 0;
+	}
+    gameOver = isGameOver(&testG);
+    if (gameOver == 1)
+        printf("Success: three depleted supply piles triggered a game over condition.\n");
+    else 
+        printf("Failure: three depleted supply piles did not end the game.\n");
+	/*---------------------------------------------------------*/
+	
+	printf("\nTest 3: Duchy and estate cards do not trigger a game over condition.\n");
+    memcpy(&testG, &G, sizeof(struct gameState));
+    testG.supplyCount[estate] = 0;
+	testG.supplyCount[duchy] = 0;
+    gameOver = isGameOver(&testG);
+    if (gameOver == 0) {
+        printf("Success: game continued with duchy and estate cards depleted.\n");
+    } 
+	else {
+        printf("Failure: estate and duchy cards triggered a game over condition.\n");;
     }
-    
-    // Check discard
-//    printf("\nDiscard:\n");
-//    for (int i = 0; i < G.discardCount[G.whoseTurn]; i++){
-//        printf("Card %i: %i\n",i, G.discard[G.whoseTurn][i]);
-//    }
-    // --------------------------------------------------------
-    // Deck
-    for (int k = 0; k < (G.deckCount[G.whoseTurn] * 3); k++) {
-        
-        G.deck[G.whoseTurn][k] = cards[count];
-        
-        count++;
-        
-        // End of cards array, start over
-        if (count == 6)
-            count = 0;
-        
-    }
-    
-    // Check deck
-//    printf("\nDeck:\n");
-//    for (int i = 0; i < G.deckCount[G.whoseTurn]; i++){
-//        printf("Card %i: %i\n",i, G.deck[G.whoseTurn][i]);
-//    }
-    // --------------------------------------------------------
-
-
-    // fullDeckCount = 36
-    // fullDeckCount / 10 = 3.6 = 3 (C integer division)
-    // hand:    13
-    // discard: 26
-    // deck:    39
-    // Expected score: 13 + 26 + 39 = 78
-    
-    printf ("Expected score is 78.\n");
-    int score = scoreFor(G.whoseTurn, &G);
-    printf ("Actual score is %i.\n", score);
-    
-    if (score == 78)
-        printf("scoreFor() test passed.\n");
-    else
-        printf("scoreFor() test failed.\n");
-
-    return 0;
+	printf("\n---isGameOver test complete---\n\n");
+	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,80 +1,71 @@
+/*---------------------------------------
+* Brett Irvin
+* 4/20/16
+* CS362_400 Software Engineering II
+* Assignment 3--unittest4.c
+* Unit test for the numHandCards function
+*---------------------------------------*/
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include "rngs.h"
+#include <string.h>
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
+#include <assert.h>
 
-// Dane Schoonover
-// Assignment 3
-// isGameOver() test
-
-// This file tests the isGameOver() function. isGameOver() determines if the game is
-// over by checking the number of empty provinces and supply piles.
-
-// What to test:
-    // Immediately after game initialization
-    // 3 empty piles of action cards
-    // 2 empty piles of action cards
-    // 1 empty pile of action cards
-    // 1 empty pile of province cards
-
-int main (int argc, char** argv) {
-    printf ("---------- Testing isGameOver() ----------\n");
-    // Create a game
+int main() 
+{
+    int i, j;
+    int seed = 1000;
     int numPlayers = 2;
-    struct gameState G;
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-    
-    // Initialize the game with 2 players; seed is '10'
-    initializeGame(numPlayers, k, 10, &G);
-    
-    
-    // TEST 1:
-    // Immediately after game initialization
-    if(!isGameOver(&G))
-        printf ("isGameOver() test1: passed.\n");
-    else
-        printf ("isGameOver() test1: failed.\n");
+    int expectedCount;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy, council_room};
+	struct gameState G, testG;	
 
-    
-    // Create 3 empty piles and test.
-    G.supplyCount[adventurer] = 0;
-    G.supplyCount[council_room] = 0;
-    G.supplyCount[feast] = 0;
-    
-    
-    // TEST 2:
-    // 3 empty piles of action cards
-    if(isGameOver(&G))
-        printf ("isGameOver() test2: passed.\n");
-    else
-        printf ("isGameOver() test2: failed.\n");
-
-    
-    // TEST 3:
-    // 2 empty piles of action cards
-    G.supplyCount[adventurer] = 1;
-    if(!isGameOver(&G))
-        printf ("isGameOver() test3: passed.\n");
-    else
-        printf ("isGameOver() test3: failed.\n");
-
-    
-    // TEST 4:
-    // 1 empty pile of action cards
-    G.supplyCount[council_room] = 1;
-    if(!isGameOver(&G))
-        printf ("isGameOver() test4: passed.\n");
-    else
-        printf ("isGameOver() test4: failed.\n");
-
-
-    // TEST 5:
-    // 1 empty pile of province cards
-    G.supplyCount[province] = 0;
-    if(isGameOver(&G))
-        printf ("isGameOver() test5: passed.\n");
-    else
-        printf ("isGameOver() test5: failed.\n");
-
+    initializeGame(numPlayers, k, seed, &G);
+	
+	/*---------------------------------------------------------*/
+    printf("\n---Testing the numHandCards function:---\n");
+	memcpy(&testG, &G, sizeof(struct gameState));
+	printf("Test 1: Adding Cards\n");
+    for (i = 0; i < numPlayers; i++) {
+        printf("Player %d\n", i + 1);
+        expectedCount = 5;
+        for (j = 0; j < 5; j++){
+            if (numHandCards(&G) == expectedCount + j) {
+                printf("Cards in hand: %d, Expected: %d\n", numHandCards(&G), expectedCount + j);
+				printf("Success: Card count matches what was expected.\n\n");
+			}	
+            else {
+                printf("Cards in hand: %d, Expected: %d\n", numHandCards(&G), expectedCount + j);
+				printf("Failure: Card count does not match expected count.\n");
+			}	
+            drawCard(whoseTurn(&G), &G);
+        }
+        endTurn(&G);
+    }
+	
+	/*---------------------------------------------------------*/
+    printf("Test 2: Discarding Cards\n");
+	memcpy(&testG, &G, sizeof(struct gameState));
+    for (i = 0; i < numPlayers; i++) {
+        printf("Player %d\n", i + 1);
+        expectedCount = 5;
+        for (j = 0; j < 5; j++) {
+            if (numHandCards(&G) == expectedCount - j) {
+                printf("Cards in hand: %d, Expected: %d\n", numHandCards(&G), expectedCount - j);
+				printf("\nSuccess: Card count matches what was expected.\n");	
+			}	
+            else {
+                printf("Cards in hand: %d, Expected: %d\n", numHandCards(&G), expectedCount - j);
+				printf("Failure: Card count does not match expected count.\n");
+			}	
+            discardCard(0, i, &G, 0);
+        }
+        endTurn(&G);
+    }
+    printf("\n---numHandCards test complete---\n\n");
     return 0;
 }

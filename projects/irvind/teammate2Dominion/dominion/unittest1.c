@@ -1,70 +1,94 @@
+/*---------------------------------------
+* Brett Irvin
+* 4/20/16
+* CS362_400 Software Engineering II
+* Assignment 3--unittest1.c
+* Unit test for updateCoins function
+*---------------------------------------*/
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include "rngs.h"
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-// Dane Schoonover
-// Assignment 3
-// handCard() test
+/* The updateCoins function needs to:
+1. Reset the coin count.
+2. Add up the value of the treasure cards in each player's hand.
+3. Add in any bonus.
+*/
 
-// This file tests the handCard() function. The purpose of the handCard() function is
-// to return the card in the given player's (whoseTurn) hand based on the given
-// hand position (handPos).
-
-// What to test:
-    // Card returned is not NULL
-    // Card returned is the correct card
-
-int handCardTest(int handPos, struct gameState *state){
-    
-    int correctCard = state->hand[state->whoseTurn][handPos];
-    int playerCard = 0;
-    playerCard = handCard(handPos, state);
-    
-    // TEST 1:
-    // Card returned is not NULL
-    if (!playerCard) {
-        printf ("handCard() test1: failed.\n");
-    }
-    else {
-        printf ("hardCard() test1: passed.\n");
-    }
-
-    // TEST 2:
-    // Card returned is the correct card
-    if (correctCard != playerCard){
-        printf ("handCard() test2: failed.\n\n");
-    }
-    else {
-        printf ("handCard() test2: passed.\n\n");
-    }
-    return 0;
-}
-
-
-int main (int argc, char** argv) {
-    printf ("---------- UnitTest1: handCard() ----------\n");
-    // Create a game
+int main() {
+    int i, p;
+    int seed = 1000;
     int numPlayers = 2;
+    int maxBonus = 10;
+    int handCount;
+    int bonus;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
     struct gameState G;
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-    
-    // Initialize the game with 2 players; seed is '10'
-    initializeGame(numPlayers, k, 10, &G);
-    
-    // Default Player
-    G.whoseTurn = 0;
-    
-    // For each player
-    for (int p = 0; p < numPlayers; p++){
-        printf("Player %i:\n", p+1);
-        // For each card in the player's hand
-        for (int c = 0; c < G.handCount[p]; c++ ){
-            printf("Card %i:\n", c+1);
-            // Test handCard()
-            handCardTest(c, &G);
-        }
-        endTurn(&G);
+    int maxHandCount = 5;
+    int coppers[MAX_HAND];
+    int silvers[MAX_HAND];
+    int golds[MAX_HAND];
+
+    for (i = 0; i < MAX_HAND; i++) {
+        coppers[i] = copper;
+        silvers[i] = silver;
+        golds[i] = gold;
     }
+
+    printf("\n---Testing the updateCoins function:---\n");
+
+    for (p = 0; p < numPlayers; p++) {
+        for (handCount = 1; handCount <= maxHandCount; handCount++) {
+            for (bonus = 0; bonus <= maxBonus; bonus++) {
+                printf ("Player %d has %d treasure card(s) and a bonus of %d.\n", p, handCount, bonus);
+                memset(&G, 23, sizeof(struct gameState));
+				initializeGame(numPlayers, k, seed, &G);
+                G.handCount[p] = handCount;
+				/*---------------------------------------------------------*/
+                
+				printf("\nTest 1: Testing with Gold treasure cards:\n");
+				memcpy(G.hand[p], golds, sizeof(int) * handCount);
+                updateCoins(p, &G, bonus);
+                printf ("G.coins = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
+                if(G.coins != handCount * 3 + bonus){
+					printf("Failure: Incorrect coin count.\n");
+				}
+				else {
+					printf("Success: coins updated correctly.\n");
+				}	
+				/*---------------------------------------------------------*/
+				
+				printf("\nTest 2: Testing with Silver treasure cards:\n");
+				memcpy(G.hand[p], silvers, sizeof(int) * handCount);
+                updateCoins(p, &G, bonus);
+                printf ("G.coins = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
+				if(G.coins != handCount * 2 + bonus){
+					printf("Failure: Incorrect coin count.\n");
+				}
+				else {
+					printf("Success: coins updated correctly.\n");
+				}
+				/*---------------------------------------------------------*/
+				
+				printf("\nTest 3: Testing Copper treasure cards:\n");
+				memcpy(G.hand[p], coppers, sizeof(int) * handCount);
+                updateCoins(p, &G, bonus);
+                printf ("G.coins = %d, expected = %d\n", G.coins, handCount * 1 + bonus);
+				if(G.coins != handCount * 1 + bonus){
+					printf("Failure: Incorrect coin count.\n");
+				}
+				else { 
+					printf("Success: coins updated correctly.\n");
+				}	
+            }
+        }
+    }
+    printf("\n---updateCoins test complete---\n\n");
     return 0;
 }
