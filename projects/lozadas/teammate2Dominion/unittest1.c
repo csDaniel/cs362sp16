@@ -1,130 +1,94 @@
-// Ellard Gerritsen van der Hoop
-// Unit Test 1- Dominion
-//
-// use gcc -o unittest1 unittest1.c dominion.c rngs.c 
-//
-// This test will look at the endTurn() function within dominion
-//
-//
-//
-//
-
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*Unit Test # 1
+*updateCoins() 
+*Reference:testUpdateCoins.c  
+*Test description:
+*Calculate the number of player coins for a hand of 5 with copper,silver.gold treasure cards and bonus points 0 to 5 
+* -----------------------------------------------------------------------
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
 #include "rngs.h"
-#include <math.h>
 
+int main() {
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 5;
+    int p, r, handCount;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+    int maxHandCount = 5;
+    // arrays of all coppers, silvers, and golds
+    int coppers[MAX_HAND];
+    int silvers[MAX_HAND];
+    int golds[MAX_HAND];
+    for (i = 0; i < MAX_HAND; i++)
+    {
+        coppers[i] = copper;
+        silvers[i] = silver;
+        golds[i] = gold;
+    }
 
-//Set NOISY_TEST to 1 to show printfs from output
-#define NOISY_TEST 1
+	handCount=5;
+    printf ("Unit Test #1 \n");
+    printf ("TESTING updateCoins():\n");
+    for (p = 0; p < numPlayer; p++)
+    {
+            for (bonus = 0; bonus <= maxBonus; bonus++)
+            {
+                printf("Test player %d with %d COPPER treasure card(s) and %d bonus.\n", p, handCount, bonus);
+                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+                G.handCount[p] = handCount;                 // set the number of cards on hand
+                memcpy(G.hand[p], coppers, sizeof(int) * handCount); // set all the cards to copper
+                updateCoins(p, &G, bonus);
+				if(G.coins==handCount * 1 + bonus)
+				{
+					printf("PASS:test = %d, expected = %d\n", G.coins, handCount * 1 + bonus);
 
+				}
+				else
+				{
+					printf("FAIL:test = %d, expected = %d\n", G.coins, handCount * 1 + bonus);
 
-int main()
-{
-	int numPlayers = 2;
-	struct gameState state;
-	int seed = 1000;
-	int previousPlayer = 0;
-	int currentPlayer = 0;
-	
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, feast};
+				}
+                printf("Test player %d with %d SILVER treasure card(s) and %d bonus.\n", p, handCount, bonus);
+				memcpy(G.hand[p], silvers, sizeof(int) * handCount); // set all the cards to silver
+                updateCoins(p, &G, bonus);
+				if(G.coins==handCount * 2 + bonus)
+				{
+					printf("PASS:test = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
 
-	int totalBugs = 0;
+				}
+				else
+				{
+					printf("FAIL:test = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
 
+				}
+                printf("Test player %d with %d GOLD treasure card(s) and %d bonus.\n", p, handCount, bonus);
+                memcpy(G.hand[p], golds, sizeof(int) * handCount); // set all the cards to gold
+                updateCoins(p, &G, bonus);
+				if(G.coins==handCount * 3 + bonus)
+				{
+					printf("PASS:test = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
 
+				}
+				else
+				{
+					printf("FAIL:test = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
 
+				}
+            }
+    }
 
+    printf("End Unit Test #1\n");
 
-
-	initializeGame(numPlayers, k, seed, &state);
-
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Unit Test 1- endTurn()\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
-
-	printf("Game is initialized. First turn begins\n");		
-
-	if (NOISY_TEST == 1){
-	printf("Current Player: %d   Expected Player: %d \n", whoseTurn(&state), currentPlayer);
-	}
-
-	if (whoseTurn(&state) != currentPlayer){
-		totalBugs++;
-	}
-	
-	//Current player should be 0
-	endTurn(&state);
-	currentPlayer = 1;
-	
-	printf("Turn ended. Next turn begins\n");
-	if (NOISY_TEST == 1){
-	printf("Curent Player: %d   Expected Player: %d\n", whoseTurn(&state), currentPlayer);
-	}
-
-	//Current player should be 1, with previousPlayer now 0
-
-	if (whoseTurn(&state) != currentPlayer){
-		totalBugs++;
-		
-	}
-	
-	printf("Checking HandCount\n");
-	//Checks to see if handCount is 0 for player who just went
-	if (state.handCount[previousPlayer] != 0){
-		totalBugs++; 
-	}	
-
-	if (NOISY_TEST == 1){
-	
-		printf("Cards in Hand: %d   Expected: 0\n", state.handCount[previousPlayer]);
-	}
-
-
-	endTurn(&state);
-	previousPlayer = 1;
-	currentPlayer = 0;
-	
-	printf("Turn ended. Next turn begins\n");
-	if (NOISY_TEST == 1){
-		printf("Current Player: %d   Expected Player: %d\n", whoseTurn(&state), currentPlayer);
-	}
-
-	if (whoseTurn(&state) != currentPlayer){
-		totalBugs++;
-	}
-
-	if (state.handCount[previousPlayer] != 0){
-		totalBugs++; 
-	
-	}
-
-	printf("Checking HandCount\n");
-	if (NOISY_TEST == 1){
-		printf("Cards in Hand: %d  Expected: 0\n", state.handCount[previousPlayer]);
-	}
-
-	if (totalBugs == 0){
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("endTurn() Function - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("endTurn() Function - FAIL\n");
-		printf("Total Bugs: %d", totalBugs);
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-
-
-
-
-
-
-
-
-
+    return 0;
 }

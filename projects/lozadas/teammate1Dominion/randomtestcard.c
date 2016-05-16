@@ -1,102 +1,123 @@
-/******************************************************
-Name: Shawn Seibert
-File: randomtestcard.c
-Date: 4/27/2016
-Purpose: This program runs a series of random tests on
-the smithy card.
-******************************************************/
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*Assignment #4
+*CS 362
+*Reference:testUpdateCoins.c cardtest4.c testDrawCard.c 
+*Test Council Room card
+* -----------------------------------------------------------------------
+ */
 #include "dominion.h"
-#include "rngs.h"
+#include "dominion_helpers.h"
+#include <string.h>
 #include <stdio.h>
-#include <math.h>
-#include <time.h>
-#include <stdlib.h>
 #include <assert.h>
-
-#define MAX_TESTS 300
-
-//This randomly tests Adventurer
-
+#include "rngs.h"
+#include <stdlib.h>
+#include <time.h>
 int main() {
-
-	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy};
-
-	int i, gameInit, cardEff, players, player, handCount, deckCount, discardCount, seed, numAction;
-	int testsFailed = 0;
-	int testsPassed = 0;
-	int oldCoinCount = 0, newCoinCount = 0;
-	struct gameState gs;
-	printf("***Runnings Random Smithy Test***\n");
-
+    int newCards = 0;
+    int discarded = 1;
+    int shuffledCards = 0;
+	int treasure=0, expected=0;
+    int i, j, tcounter,p;
+    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+    int failure=0,success=0; 
+	int remove1, remove2;
+    int seed = 0;
+    int extraCoins=2;
+	int numPlayers = 0;
+    int thisPlayer = 0;
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
+	int numTests=500;
 	srand(time(NULL));
-	for (i = 0; i < MAX_TESTS; i++) {
-
-		printf("<------------- Test %d ------------------>*\n", i);
-		players = 2 + (rand() % 3); //Set players between 2 and 4
-		printf("Current player: %d\n", players);
-
-		player = rand() % players;
-
-		seed = rand();		//pick random seed
-		printf("Seed: %d\n", seed);
-		gameInit = initializeGame(players, k, seed, &gs);	//initialize gsamestate
-		assert(gameInit == 0);
-		gs.whoseTurn = player;
-
-		//Initiate valid state variables
-		gs.deckCount[player] = 10 + (rand() % 400); 
-		deckCount = gs.deckCount[player];
-		gs.discardCount[player] = rand() % (deckCount);
-		gs.handCount[player] = rand() % MAX_HAND;
-		//Minus one to handCount to account for the smithy card about to be played
-		handCount = gs.handCount[player]-1;
-		printf("Current Hand Count: %d\n", handCount);
-
-
-
-		cardEff = cardEffect(smithy, 0, 0, 0, &gs, 0, NULL);
-		assert(cardEff == 0);
+	
+	printf("*****************Randon Testing Council Room Card******************\n\n");
+	for (tcounter=0; tcounter< numTests; tcounter++)
+	{	
+		//struct gameState G, testG;
+		treasure=0;
+		expected=0;		
+	
+		//Randomly select game seed. 	
+		seed=rand();
+			
+		//Randomly set the number of players.
+		numPlayers=rand()%3+2;	
 		
-		if( (handCount + 3) != gs.handCount[player]){
-			testsFailed++;
-			handCount = gs.handCount[player];
-			printf("After Hand Count is: %d\n", handCount);
-			printf("TEST FAILED: Two cards were not discarded.\n");
-			
-			
-		}
-		else{
-			handCount = gs.handCount[player];
-			printf("After Hand Count is: %d\n", handCount);
-			printf("TEST PASSED: Player discarded two cards.\n");
-			testsPassed++;
-		}
-		printf("<-------------Test %d Completed. -------------->\n", i);
-		printf("\n\n\n");
-	}
+		//Clear memory previus game test
+		memset(&G,23,sizeof(struct gameState)); 		
+		memset(&testG,23,sizeof(struct gameState)); 		
+	
+		// initialize a game state and player cards
+		initializeGame(numPlayers, k, seed, &G);
 
+		//Randomly set player deck,hand, and discard piles
+		for(p=0; p< numPlayers; p++)
+		{
+	    	G.deckCount[p] = floor(Random() * MAX_DECK);
+    		G.discardCount[p] = floor(Random() * MAX_DECK);
+    		G.handCount[p] = floor(Random() * MAX_HAND);
+		}
+		thisPlayer=0;
+		G.whoseTurn= thisPlayer;	
+			
+		// copy the game state to a test case
+		memcpy(&testG, &G, sizeof(struct gameState));
+		
+		cardEffect(council_room, choice1, choice2, choice3, &testG, handpos, &bonus);
+		
+		newCards=4;
 
-	printf("Final Results.\n");
-	printf("Number of passed tests: %d\n", testsPassed);
-	printf("Number of failed tests: %d\n", testsFailed);
+		printf("Test 1: player draws four cards from deck\n");
+		//Determine the number of treasure cards in player hand for testG game  
+		if (testG.handCount[thisPlayer]==G.handCount[thisPlayer]+ newCards -discarded)
+		{
+			printf("PASS: test = %d, expected = %d\n",testG.handCount[thisPlayer],G.handCount[thisPlayer]+ newCards -discarded);
+			success++;
+		}
+		else
+		{
+			printf("FAIL: test = %d, expected = %d\n",testG.handCount[thisPlayer],G.handCount[thisPlayer]+ newCards -discarded);
+			failure++;
+		}		
+		printf("Test 2: One buy is added to the game state\n");
+		//Determine if the number of cards in deck is reduced by at least two cards. 
+		if (testG.numBuys==G.numBuys + 1)
+		{	
+			printf("PASS: test = %d, expected = %d\n",testG.numBuys,G.numBuys + 1);
+			success++;
+		}
+		else
+		{	
+			printf("FAIL: test = %d, expected = %d\n",testG.numBuys,G.numBuys + 1);
+			failure++;
+		}
+		printf("Test 3:Each other player in game draws one card.\n");
+		//Determine if the number of cards in deck is reduced by at least two cards. 
+		for (p=0; p<numPlayers; p++)		
+		{
+			if (p!=thisPlayer)
+			{
+				if(testG.handCount[p]==G.handCount[p]+ 1)
+				{
+					printf("PASS: test = %d, expected = %d\n",testG.handCount[p],G.handCount[p]+ 1);	
+					success++;
+				}
+				else
+				{
+					printf("FAIL: test = %d, expected = %d\n",testG.handCount[p],G.handCount[p]+ 1);	
+					failure++;
+				}		
+			} 
+		}
+	}	
+	printf("\nTesting complete \n\n");
+	printf("\n*********************Final test results*************************\n");
+	printf(" \n Failures:%d, Successes: %d \n",failure,success);
+	printf("\n***************************************************************\n");
 	return 0;
 }
 
-/*
-int smithyCard(int handPos, int currentPlayer, struct gameState *state)
-{
-	int i = 0;
-      //+3 Cards
-      for (i = 0; i <= 3; i++) //Use i <= 3
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
-		
-}
 
-*/

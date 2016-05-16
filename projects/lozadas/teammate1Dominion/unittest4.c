@@ -1,186 +1,96 @@
-//Shawn Seibert
-//Unit test 4
-//fullDeckCount()
-//gcc unittest4.c dominion.c rngs.c -o unittest4 -lm
-
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*Unit Test # 4 
+*fullDeckCount() 
+*Reference:testUpdateCoins.c  
+*Test description:
+*Determine if correct deck count for an specific card on player deck,hand and discard 
+*-----------------------------------------------------------------------
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
+#include <string.h>
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
+#include <assert.h>
+#include "rngs.h"
 
-
-int main()
-{
-	
-	int player = 1;
-	struct gameState state, testState;
-	int bonus;
-	int i;
-	int iterator = 1;
-	int seed = 100;
-	int numPlayers = 2;
-	int count = 0;
-	int card = 10;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
-				smithy, council_room};
-
-
-	printf("-----------------Unit Test 4-1 ----------------------\n");	
-	printf("--------------- fullDeckCount() ----------------------\n");
-	printf("Test 1: Set deck count equal to 10.\n");
-	memcpy(&testState, &state, sizeof(struct gameState));
-	
-	testState.deckCount[player] = 10;
-	for (i = 0; i < testState.deckCount[player]; i++)
-	{
-		testState.deck[player][i] = card;
-	}
-	
-	for (i = 0; i < testState.deckCount[player]; i++)
+int main() {
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 5;
+    int p, r, handCount;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+    int maxHandCount = 5;
+    int adventurerc[MAX_HAND];
+    for (i = 0; i < MAX_HAND; i++)
     {
-      
-	  if (testState.deck[player][i] == card) 
-	  {
-		  count++;
-		  
-	  }
-    }
-/*
-  for (i = 0; i < testState.handCount[player]; i++)
-    {
-      if (testState.hand[player][i] == card) count++;
+        adventurerc[i] = adventurer;
     }
 
-  for (i = 0; i < testState.discardCount[player]; i++)
+	handCount=5;
+    printf ("Unit Test #4\n");
+    printf ("TESTING fullDeckCount():\n");
+    for (p = 0; p < numPlayer; p++)
     {
-      if (testState.discard[player][i] == card) count++;
-    }
-	*/
+            for (handCount = 0; handCount <= maxHandCount; handCount++)
+            {
+                printf("Test player %d with %d adventurer card(s) in hand\n", p, handCount);
+                // clear the game state
+				memset(&G, 23, sizeof(struct gameState));  
+				// initialize a new game 
+                r = initializeGame(numPlayer, k, seed, &G); 
+                G.handCount[p] = handCount;               
+				memcpy(G.hand[p],adventurerc, sizeof(int) * handCount); 
+                
+				fullDeckCount(p,adventurer,&G);
+				if(fullDeckCount(p,adventurer,&G)== handCount)
+				{
+					printf("PASS:test = %d, expected = %d\n", fullDeckCount(p,adventurer,&G),handCount);
+				}
+				else
+				{
+					printf("FAIL:test = %d, expected = %d\n", fullDeckCount(p,adventurer,&G),handCount);
 
-	printf("COUNT: %d\n", count);
-	
-	if(count == 10)
-	{
-		printf("Test 1: Passed.\n");
-	}
-	else
-	{
-		printf("Test 1: Failed.\n");
-	}
-	count = 0;
-	
-	printf("-----------------Unit Test 4-2 ----------------------\n");	
-	printf("--------------- fullDeckCount() ----------------------\n");
-	printf("Test 2: Set hand count equal to 6.\n");
-	memcpy(&testState, &state, sizeof(struct gameState));
-	/*
-	testState.deckCount[player] = 10;
-	for (i = 0; i < testState.deckCount[player]; i++)
-	{
-		testState.deck[player][i] = card;
-	}
-	
-	for (i = 0; i < testState.deckCount[player]; i++)
-    {
-      
-	  if (testState.deck[player][i] == card) 
-	  {
-		  count++;
-		  
-	  }
-    }
-  */
-  testState.handCount[player] = 6;
-  for (i = 0; i < testState.handCount[player]; i++)
-  {
-     testState.hand[player][i] = card;
-  }
-	
-  for (i = 0; i < testState.handCount[player]; i++)
-  {
-      if (testState.hand[player][i] == card) count++;
-  }
-  /*
-  for (i = 0; i < testState.discardCount[player]; i++)
-    {
-      if (testState.discard[player][i] == card) count++;
-    }
-	*/
+				}
+                printf("Test player %d with %d adventurer card(s) in hand and in deck\n", p, handCount);
+                G.deckCount[p] = handCount;               
+				memcpy(G.deck[p],adventurerc, sizeof(int) * handCount); 
+                
+				fullDeckCount(p,adventurer,&G);
+				if(fullDeckCount(p,adventurer,&G)== 2*handCount)
+				{
+					printf("PASS:test = %d, expected = %d\n", fullDeckCount(p,adventurer,&G),2*handCount);
+				}
+				else
+				{
+					printf("FAIL:test = %d, expected = %d\n", fullDeckCount(p,adventurer,&G),2*handCount);
 
-	printf("COUNT: %d\n", count);
-	
-	if(count == 6)
-	{
-		printf("Test 2: Passed.\n");
-	}
-	else
-	{
-		printf("Test 2: Failed.\n");
-	}
-	count = 0;
-	
-	printf("-----------------Unit Test 4-3 ----------------------\n");	
-	printf("--------------- fullDeckCount() ----------------------\n");
-	printf("Test 3: Set discard count equal to 12.\n");
-	memcpy(&testState, &state, sizeof(struct gameState));
-	/*
-	testState.deckCount[player] = 10;
-	for (i = 0; i < testState.deckCount[player]; i++)
-	{
-		testState.deck[player][i] = card;
-	}
-	
-	for (i = 0; i < testState.deckCount[player]; i++)
-    {
-      
-	  if (testState.deck[player][i] == card) 
-	  {
-		  count++;
-		  
-	  }
+				}
+
+                printf("Test player %d with %d adventurer card(s) in hand, in deck, and in discard \n", p, handCount);
+                G.discardCount[p] = handCount;               
+				memcpy(G.discard[p],adventurerc, sizeof(int) * handCount); 
+                
+				fullDeckCount(p,adventurer,&G);
+				if(fullDeckCount(p,adventurer,&G)== 3*handCount)
+				{
+					printf("PASS:test = %d, expected = %d\n", fullDeckCount(p,adventurer,&G),3*handCount);
+				}
+				else
+				{
+					printf("FAIL:test = %d, expected = %d\n", fullDeckCount(p,adventurer,&G),3*handCount);
+
+				}
+
+
+            }
     }
 
-  testState.handCount[player] = 6;
-  for (i = 0; i < testState.handCount[player]; i++)
-  {
-     testState.hand[player][i] = card;
-  }
-	
-  for (i = 0; i < testState.handCount[player]; i++)
-  {
-      if (testState.hand[player][i] == card) count++;
-  }
-  */
-  testState.discardCount[player] = 12;
-  
-  for (i = 0; i < testState.discardCount[player]; i++)
-	{
-	  testState.discard[player][i] = card;
-	}
-  
-  for (i = 0; i < testState.discardCount[player]; i++)
-    {
-      if (testState.discard[player][i] == card)
-	  {
-		  count++;
-	  }
-    }
-	
+    printf("End Unit Test #4\n");
 
-	printf("COUNT: %d\n", count);
-	
-	if(count == 12)
-	{
-		printf("Test 3: Passed.\n");
-	}
-	else
-	{
-		printf("Test 3: Failed.\n");
-	}
-	count = 0;
-	
-	
-  return 0;
+    return 0;
 }

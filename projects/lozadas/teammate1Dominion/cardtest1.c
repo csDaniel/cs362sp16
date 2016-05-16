@@ -1,80 +1,91 @@
-//Shawn Seibert
-//Card Test 1
-//adventureCard() 
-//gcc cardtest1.c dominion.c rngs.c -o cardtest1 -lm
-
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*cardTest #1 
+*smithy() 
+*Reference:testUpdateCoins.c cardtest4.c 
+*Test description:
+*Ensure current player draws three cards from his own pile,no state change in other players 
+* -----------------------------------------------------------------------
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
+#include <string.h>
 #include <stdio.h>
-#include <math.h>
+#include <assert.h>
+#include "rngs.h"
 #include <stdlib.h>
 
-int main()
-{
-	int player = 1;
-	struct gameState state, testState;
-	int bonus;
-	int checkCardDraw;
-	int seed = 100;
-	int numPlayers = 2;
-	int drawTotal = 3;
-	int loopCount = 0;
-	int drawntreasure = 0;
-	int cardDrawn = 0;
-	int currentPlayer = 1;
-	int handPos = 0;
-	int i = 0;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
-				smithy, council_room};
-	int temphand[MAX_HAND];
-	int z = 0;			
+int main() {
+    int newCards = 0;
+    int discarded = 1;
+    int xtraCoins = 0;
+    int shuffledCards = 0;
 
-	printf("-------------------ADVENTURE CARD TEST ---------------------\n");
-	memcpy(&testState, &state, sizeof(struct gameState));
-	initializeGame(numPlayers, k, seed, &testState);
-	while(drawntreasure < 2){
-	if (testState.deckCount[currentPlayer] <1)
-	{//if the deck is empty we need to shuffle discard and add to deck
-	  shuffle(currentPlayer, &testState);
-	}
-	testState.handCount[currentPlayer] = 4;
-	printf("TESTING TOP CARD OF HAND\n");
-	drawCard(currentPlayer, &testState);
-	checkCardDraw = testState.handCount[currentPlayer];
-	sleep(3);
-	printf("Current top card: %d\n", checkCardDraw);
+    int i, j, m;
+    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+    int remove1, remove2;
+    int seed = 1000;
+    int numPlayers = 2;
+    int thisPlayer = 0;
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
 
-	cardDrawn = testState.hand[currentPlayer][testState.handCount[currentPlayer]]-1;//top card of hand is most recently drawn card.
-	printf("Current new top card: %d\n", cardDrawn);
-	if ((checkCardDraw-1) == cardDrawn)
+	// initialize a game state and player cards
+	initializeGame(numPlayers, k, seed, &G);
+
+	printf("Testing smithy()\n");
+
+	// copy the game state to a test case
+	memcpy(&testG, &G, sizeof(struct gameState));
+	choice1 = 1;
+	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+
+	newCards = 3;
+	xtraCoins = 0;
+
+	printf("Test 1: player 0 draws the correct number of cards (3 cards)\n");
+	if (testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded)
 	{
-		printf("Test Passed: Card Drawn is top card.\n", i);
+		printf("PASS: test = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	}
 	else
 	{
-		printf("Test Failed: Card Drawn is not top card.\n", i);
-		break;
+		printf("FAIL: test = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	}
-	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	{	
-		printf("Draw Treasure: \n");
-		drawntreasure++;
+	
+	printf("Test 1: correct number of cards in player 0 deck (1 card discarted)\n");
+	if (testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards)
+	{
+		printf("PASS: test = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
 	}
 	else
 	{
-		printf("Temp Hand: \n");
-	  temphand[z]=cardDrawn;
-	  testState.handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-	  z++;
+		printf("FAIL: test = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
 	}
-   }
-      while(z-1>=0)
-	  {
-		checkCardDraw = testState.discard[currentPlayer][testState.discardCount[currentPlayer]++];
+	printf("Test 2: player 0 draws cards from the correct pile\n");
+	if (testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards)
+	{
+		printf("PASS: test = %d, expected = %d\n", testG.deckCount[thisPlayer],G.deckCount[thisPlayer] - newCards);
+	}
+	else
+	{
+		printf("FAIL: test = %d, expected = %d\n", testG.deckCount[thisPlayer],G.deckCount[thisPlayer] - newCards);
+	}
+	printf("Test 3: player 1 deck remains unchanged\n");
+	if (testG.deckCount[1] == G.deckCount[1] )
+	{
+		printf("PASS: test = %d, expected = %d\n",testG.deckCount[1],G.deckCount[1]);
+	}
+	else
+	{
+		printf("FAIL: test = %d, expected = %d\n",testG.deckCount[1],G.deckCount[1]);
+	}
 
-		testState.discard[currentPlayer][testState.discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-		z=z-1;
-      }
-      return 0;
+	
+	printf("\nTesting complete \n\n");
+
+	return 0;
 }
+
+

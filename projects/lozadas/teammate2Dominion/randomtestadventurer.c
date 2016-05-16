@@ -1,284 +1,134 @@
-/***********************************************************************
-* Class:  CS 362 - Software Engineering II 
-* Author:  Ellard Gerritsen
-* File:  randomtestadventurer.c
-************************************************************************/
-
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*Assignment #4
+*CS 362
+*Reference:testUpdateCoins.c cardtest4.c testDrawCard.c 
+*Test description:
+*1.Test player hand contains two treasure cards after drawing adventurer card.
+*2.Test if deck was decreased by 2.
+*3.Test other player hand remains unchanged.
+* -----------------------------------------------------------------------
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
-#include <stdio.h>
 #include <string.h>
-#include <math.h>
+#include <stdio.h>
+#include <assert.h>
+#include "rngs.h"
 #include <stdlib.h>
-#include <time.h> 
-
-
-
-
-
-int main()
-{
-	//set the random seed and pick the kingdom cards we are going to use 
-	int seed;
-	int kingdom[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, great_hall, smithy}; 
+#include <time.h>
+int main() {
+    int newCards = 0;
+    int discarded = 1;
+    int shuffledCards = 0;
+	int treasure=0, expected=0;
+    int i, j, tcounter,p;
+    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+    int failure=0,success=0; 
+	int remove1, remove2;
+    int seed = 0;
+    int extraCoins=2;
+	int numPlayers = 0;
+    int thisPlayer = 0;
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
+	int numTests=100;
+	srand(time(NULL));
 	
+	printf("*****************Randon Testing Adventurer Card******************\n\n");
+	for (tcounter=0; tcounter< numTests; tcounter++)
+	{	
+		//struct gameState G, testG;
+		treasure=0;
+		expected=0;		
 	
-	//declare initial and test states
-	struct gameState State;
-	struct gameState testState;
-	
-	//declare iterators
-	int i = 0;
-	int j = 0;
-	int k = 0;
-
-	
-	srand(time(0));
-	
-	int numberOfPlayers;
-	int currentPlayer;
-	
-	int StateTreasureCards; //this will be the State unchanged treasure Cards
-	int testTreasureCards;  //this will be the testState treasure Cards
-	
-
-	
-	//total number of tests and the test trackers
-	int testCount = 500;  //change this if you want more tests
-	int test1Pass = 0,
-		test2Pass = 0,
-		test3Pass = 0,
-		test4Pass = 0;
-	
-	int test1Fail = 0,
-		test2Fail = 0,
-		test3Fail = 0,
-		test4Fail = 0;
-		
-	//keep a tally of the total number of bugs
-	int totalBugs = 0;
-		
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("! randomtestadventurer               !\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n");
+		//Randomly select game seed. 	
+		seed=rand();
 			
+		//Randomly set the number of players.
+		numPlayers=rand()%3+2;	
+		
+		//Clear memory previus game test
+		memset(&G,23,sizeof(struct gameState)); 		
+		memset(&testG,23,sizeof(struct gameState)); 		
+	
+		// initialize a game state and player cards
+		initializeGame(numPlayers, k, seed, &G);
 
-	//Iterating over total count of tests
-	for (i = 0; i < testCount; i++)
-	{
-//		memset(&State, 0, sizeof(struct gameState));
-//		memset(&testState, 0, sizeof(struct gameState));
-
-		
-		//setting player amount between 2 and 3
-		if (rand() % 2 == 0)
-			numberOfPlayers = 2;
-		else
-			numberOfPlayers = 3;
-		
-		
-		
-		seed = rand();
-		
-		///this begins the game with the specified parameters 
-		initializeGame(numberOfPlayers, kingdom, seed, &State);
-		currentPlayer = whoseTurn(&State);
-	
-			//we need to generate the deck, cards in players hand, as well as, discard
-			for (j = 0; j < numberOfPlayers; j++)
-			{
-				
-				
-				
-				
-				State.deckCount[j] = floor(Random() * MAX_DECK);
-				for (k = 0; k < State.deckCount[j]; k++)
-				{
-					State.deck[j][k] = floor(Random()  * treasure_map);
-				}
-				
-				
-	
-				State.handCount[j] = floor(Random() * MAX_HAND);
-				for (k = 0; k < State.handCount[j]; k++)
-				{
-					State.hand[j][k] =  floor(Random()  * treasure_map);
-				}
-			
-				//give a guaranteed adventurer 
-				State.hand[j][0] = adventurer;
-	
-				
-				State.discardCount[j] = floor(Random() * MAX_DECK);
-				for (k = 0; k < State.discardCount[j]; k++)
-				{
-					State.discard[j][k] = floor(Random()  * treasure_map);
-				}
-			}
-			
-			
-		
-		
-		// We memcpy so that we can look at the differences
-		// between the changed testState that will undergo the changes
-		// and State 
-		memcpy(&testState, &State, sizeof(struct gameState));
-		
-		
-		//Remember that the refactored version of Adventurer has an issue with the treasureCards
-	
-		StateTreasureCards = 0;
-		
-		for (j = 0; j < State.handCount[currentPlayer]; j++)
+		//Randomly set player deck,hand, and discard piles
+		for(p=0; p< numPlayers; p++)
 		{
-			
-			
-			if (State.hand[currentPlayer][j] == copper || State.hand[currentPlayer][j] == silver || State.hand[currentPlayer][j] == gold)
-			{
-				StateTreasureCards++;
-			}
+	    	G.deckCount[p] = floor(Random() * MAX_DECK);
+    		G.discardCount[p] = floor(Random() * MAX_DECK);
+    		G.handCount[p] = floor(Random() * MAX_HAND);
 		}
+		thisPlayer=0;
+		G.whoseTurn= thisPlayer;	
+			
+		// copy the game state to a test case
+		memcpy(&testG, &G, sizeof(struct gameState));
 		
-		//since we are testing the adventurer card, we need to call it of course
-		cardEffect(adventurer, 0, 0, 0, &testState, 0, 0); 
-		
-		
-		testTreasureCards = 0;
-		
-		for (j = 0; j < testState.handCount[currentPlayer]; j++)
+		cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
+		printf("Test 1: player draws two treasury cards from deck\n");
+		//Determine the number of treasure cards in player hand for testG game  
+		for(i=0;i<testG.handCount[thisPlayer];i++)
 		{
-			
-			
-			if (testState.hand[currentPlayer][j] == copper || testState.hand[currentPlayer][j] == silver || testState.hand[currentPlayer][j] == gold)
-			{
-				testTreasureCards++;
-			}
+			if (testG.hand[thisPlayer][i]==copper|| testG.hand[thisPlayer][i]== silver|| testG.hand[thisPlayer][i]==gold)
+				treasure++;
 		}
-		
-		
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		/****************************TEST 1***************************/
-		//We check to see if the treasures we correctly added
-					
-		if (testTreasureCards == StateTreasureCards + 2)
+		//Determine number of treasure cards in	player hand for G game
+		for(i=0;i<G.handCount[thisPlayer];i++)
 		{
-			test1Pass++;
+			if (G.hand[thisPlayer][i]==copper|| G.hand[thisPlayer][i]== silver|| G.hand[thisPlayer][i]==gold)
+				expected++;
+		}
+		//Compare number of expected treasure cards in hand with actual number of treasure cards in players hand.
+		if (treasure == expected+extraCoins)
+		{
+			printf("PASS: test = %d, expected = %d\n",treasure,expected + extraCoins);
+			success++;
 		}
 		else
 		{
-			test1Fail++;
-			totalBugs++;
-			
-			printf("TEST 1 ERROR: Treasure Card Count off on Iteration %d\n", i);
-			printf("Actual: %d             Expected: %d     \n", testTreasureCards, StateTreasureCards);
+			printf("FAIL: test = %d, expected = %d\n",treasure,expected + extraCoins);
+			failure++;
 		}
-		
-		/****************************TEST 2***************************/
-		//Check Supply Counts 
-		
-		
-		if (State.supplyCount[copper] == testState.supplyCount[copper])
-			totalBugs++;
-		if (State.supplyCount[silver] == testState.supplyCount[silver])
-			totalBugs++;
-		if (State.supplyCount[gold] == testState.supplyCount[gold])
-			totalBugs++;	
-		
-		if (State.supplyCount[copper] != testState.supplyCount[copper] || State.supplyCount[silver] != testState.supplyCount[silver] || State.supplyCount[gold] != testState.supplyCount[gold]){
-			totalBugs++;
-			test2Fail++;
-			printf("TEST 2 ERROR: Supply Count shouldnt have changed for copper,silver,gold. Failed on Iteration %d\n", i);
-
-		}
-		else
-			test2Pass++;
-	
-
-
-
-		/****************************TEST 3***************************/
-		int test3Bugs = 0;
-		
-		for (j = 1; j < numberOfPlayers; j++)
+		printf("Test 2: determine if deck count is decreased by at least 2 cards\n");
+		//Determine if the number of cards in deck is reduced by at least two cards. 
+		if (testG.deckCount[thisPlayer]<=G.deckCount[thisPlayer]-2)
 		{
-		
-			if (testState.deckCount[j] != State.deckCount[j])
-			{
-				test3Bugs++;
-			}
+			printf("PASS: test = %d <= expected = %d\n",testG.deckCount[thisPlayer],G.deckCount[thisPlayer]-2);
+			success++;
+		}		
+		else
+		{
+			printf("FAIL: test = %d > expected = %d\n",testG.deckCount[thisPlayer],G.deckCount[thisPlayer]-2);
+			failure++;
 		}	
-		
-
-		if(test3Bugs != 0)
+		printf("Test 3: determine if other players hands remain unchanged.\n");
+		//Loop over players in game and determine if hand remains intact after adventurer card is drawn by thisPlayer
+		for (p=0; p<numPlayers; p++)		
 		{
-			test3Fail++;
-			printf("TEST 3 ERROR: Other Player's Deck Count Changed on  Iteration: %d\n", i);
-			
-			for (j = 1; j < numberOfPlayers; j++)
+			if (p!=thisPlayer)
 			{
-		
-				if (testState.deckCount[j] != State.deckCount[j])
-				{	
-					printf("Actual : %d                 Expected: %d \n", testState.deckCount[j], State.deckCount[j]);
+				if(testG.handCount[p]==G.handCount[p])
+				{
+					printf("PASS: test = %d , expected = %d\n",testG.handCount[p],G.handCount[p]);
+					success++;
 				}
-			}	
-		
-
-
-			totalBugs++;
-			
-			
+				else
+				{
+					printf("PASS: test = %d , expected = %d\n",testG.handCount[p],G.handCount[p]);
+					failure++;
+				}		
+			} 
 		}
-		else
-		{
-			test3Pass++;
-			
-			
-		
-			
-		}
-		
-		
-		
-		/****************************TEST 4***************************/
-		//since two cards where drawn, we expect 1 cards more in then hand of the current Player. 
-		//  Handcount - 1 used card + 2 drawn treasures 
-	
-		if (testState.handCount[currentPlayer] == State.handCount[currentPlayer] + 1)
-		{
-			test4Pass++;
-		}
-		else
-		{
-			test4Fail++;
-			totalBugs++;
-			printf("TEST 4 ERROR: Hand Count is off on Iteration %d\n", i);
-			printf("Actual:   %d                       Expected: %d\n", testState.handCount[currentPlayer], State.handCount[currentPlayer]+1);
-		}
-		
-		
-	}
-				
-			printf("--------------randomtestadventurer() Results --------------\n\n");	
-			
-			if (totalBugs != 0)
-				printf("TEST FAILED\n");
-			else
-				printf("TEST PASSED\n");
-			
-			printf("Test 1  \n");
-			printf("Amount Passed: %d, Failed: %d\n", test1Pass, test1Fail);
-			printf("Test 2  \n");
-			printf("Amount Passed: %d, Failed: %d\n", test2Pass, test2Fail);
-			printf("Test 3 \n");
-			printf("Amount Passed: %d, Failed: %d\n", test3Pass, test3Fail);
-			printf("Test 4 \n");
-			printf("Amount Passed: %d, Failed: %d\n\n", test4Pass, test4Fail);
-			
-			
-			
-	
+	}	
+	printf("\nTesting complete \n\n");
+	printf("\n*********************Final test results*************************\n");
+	printf(" \n Failures:%d, Successes: %d \n",failure,success);
+	printf("\n***************************************************************\n");
 	return 0;
 }
+

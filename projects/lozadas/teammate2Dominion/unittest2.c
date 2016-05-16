@@ -1,159 +1,88 @@
-//Ellard Gerritsen van der Hoop
-//CS362 Unit Test 2
-//
-//Testing updateCoins function from dominion_helper
-//
-//
-
-
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*Unit Test # 2 
+*isGameOver() 
+*Reference:testUpdateCoins.c and carditest4.c  
+*Test description:
+*Determine if the game is over after game initialization, stack of province cards is empty, if three supply cards are empty 
+* -----------------------------------------------------------------------
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 #include <string.h>
+#include <stdio.h>
+#include <assert.h>
+#include "rngs.h"
 
+int main() {
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 5;
+    int p, r, handCount;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G,testG;
+    int maxHandCount = 5;
+    
+	printf ("Unit Test #2 \n");
+    printf ("TESTING isGameOver():\n");
 
+	//Clear Game state and initialize new game  
+     memset(&G, 23, sizeof(struct gameState));   // clear the game state
+     r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
 
-#define NOISY_TEST 1
+	//Copy game state to a test state 
+	memcpy(&testG,&G,sizeof(struct gameState));
 
-
-int main()
-{
-	int numPlayers = 2;
-	struct gameState state, testState;
-	int seed = 1000;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, feast};
-
-	int goldCards = 0;
-	int silverCards = 0;
-	int copperCards = 0;
-	int totalAmount = 0;
-	int bonus = 4;
-	int currentPlayer = 0;
-	int i = 0;
-	initializeGame(numPlayers, k , seed, &state);
-	memcpy(&testState, &state, sizeof (struct gameState));
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Unit Test 2- updateCoins Function\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
-
-
-	printf("Testing updateCoins function to see if amount is updated properly\n");
-	updateCoins(currentPlayer, &state, bonus);
-	printf("updateCoins function called\n");
-	printf("Loop checking math of updateCoins\n");
-
-	//-----------------------------------Test 1------------------------------------/
-
-	//Essentially we do our own loop and compare it to the functions amount
-	for (i = 0; i < state.handCount[currentPlayer]; i++)
+	printf ("TESTING if game is over after game initialization:\n");
+	if(isGameOver(&testG)==isGameOver(&G))	
 	{
-		if (state.hand[currentPlayer][i] == gold)
-		{
-			
-			goldCards += 1;
-		}
-	
-		if (state.hand[currentPlayer][i] == silver)
-		{
-		
-			silverCards += 1;
-		}
-
-		if (state.hand[currentPlayer][i] == copper)
-		{
-			copperCards += 1;
-		}
-		
-
+		printf("PASS:test: %d, expected:%d \n",isGameOver(&testG),isGameOver(&G)); 	
 	}
-	printf("Total Amount is being calculated\n");
-	totalAmount = (copperCards * 1) + (silverCards * 2) + (goldCards * 3) + bonus;
-	
-	if (NOISY_TEST == 1){
-		printf("Amount of coins: %d     Expected: %d\n", state.coins, totalAmount);
-	}
-
-	if (totalAmount != state.coins)
+	else
 	{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 1  - FAIL\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		
+		printf("FAIL:test: %d, expected:%d \n",isGameOver(&testG),isGameOver(&G)); 	
 	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 1  - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-
-	///-------------------------------Test 2-------------------------------------------------/
-	//In this test we put cards that we specify in the hand of P1
-
-	printf("\n\n      Test 2: Lets add our own treasure cards in \n");
-	testState.hand[currentPlayer][0] = copper; 
-	testState.hand[currentPlayer][1] = silver;
-	testState.hand[currentPlayer][2] = gold;
-	testState.hand[currentPlayer][3] = silver; 
-	testState.hand[currentPlayer][4] = gold;
-
-	printf("Testing updateCoins function to see if amount is updated properly\n");
-	updateCoins(currentPlayer, &testState, bonus);
-	printf("updateCoins function called\n");
-	printf("Loop checking math of updateCoins\n");
-	
-	goldCards =0;
-	silverCards=0;
-	copperCards = 0;
-
-	//Essentially we do our own loop and compare it to the functions amount
-	for (i = 0; i < testState.handCount[currentPlayer]; i++)
+	printf ("TESTING if game is over when stack of Province cards is empty:\n");
+	testG.supplyCount[province]=0;
+	if(isGameOver(&testG)!=isGameOver(&G))	
 	{
-		if (testState.hand[currentPlayer][i] == gold)
-		{
-			
-			goldCards += 1;
-		}
-	
-		if (testState.hand[currentPlayer][i] == silver)
-		{
-		
-			silverCards += 1;
-		}
-
-		if (testState.hand[currentPlayer][i] == copper)
-		{
-			copperCards += 1;
-		}
-		
-
+		printf("PASS:test: %d, expected:%d \n",isGameOver(&testG),!isGameOver(&G)); 	
 	}
-	printf("Total Amount is being calculated\n");
-	totalAmount = (copperCards * 1) + (silverCards * 2) + (goldCards * 3) + bonus;
-	
-	if (NOISY_TEST == 1){
-		printf("Amount of coins: %d     Expected: %d\n", testState.coins, totalAmount);
-	}
-
-	if (totalAmount != testState.coins)
+	else
 	{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 2  - FAIL\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		
+		printf("FAIL:test: %d, expected:%d \n",isGameOver(&testG),!isGameOver(&G)); 	
 	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 2  - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+	
+	printf ("TESTING if game is over when 1 supply pile is empty:\n");
+	//Clear Game state and initialize new game 
+    memset(&testG, 23, sizeof(struct gameState));   // clear the game state
+    r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	testG.supplyCount[village]=0;
+	
+	if(isGameOver(&testG)==isGameOver(&G))	
+	{
+		printf("PASS:test: %d, expected:%d \n",isGameOver(&testG),isGameOver(&G)); 	
 	}
+	else
+	{
+		printf("FAIL:test: %d, expected:%d \n",isGameOver(&testG),isGameOver(&G)); 	
+	}
+	printf ("TESTING if game is over when 3 supply piles are empty:\n");
+	//Clear Game state and initialize new game 
+	testG.supplyCount[gardens]=0;
+	testG.supplyCount[mine]=0;
+	if(isGameOver(&testG)!=isGameOver(&G))	
+	{
+		printf("PASS:test: %d, expected:%d \n",isGameOver(&testG),!isGameOver(&G)); 	
+	}
+	else
+	{
+		printf("FAIL:test: %d, expected:%d \n",isGameOver(&testG),!isGameOver(&G)); 	
+	}
+    printf("End Unit Test #2\n");
 
-
-
-
-
-
-	return 0;
+    return 0;
 }

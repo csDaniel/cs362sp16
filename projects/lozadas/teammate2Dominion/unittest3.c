@@ -1,322 +1,79 @@
-//Ellard Gerritsen van der Hoop
-//CS362 Unit Test 3
-//getCost function
-//
-
-
+/* -----------------------------------------------------------------------
+*Name: Suyana Lozada 
+*Unit Test # 3 
+*scoreFor() 
+*Reference:testUpdateCoins.c  
+*Test description:
+*Ensure the score for handCount, discardCount, and deck hands is accurrate 
+* -----------------------------------------------------------------------
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <assert.h>
 #include "rngs.h"
-#include <math.h>
 
-
-
-#define NOISY_TEST 1
-
-int main()
-{
-
-	int deck[27]= {curse, estate, duchy, province, copper, silver, gold, adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall, minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, sea_hag, treasure_map};
-
-	int totalBugs = 0;
+int main() {
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 5;
+    int p, r;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+	int expected=24;
+	int MAX_COUNT=5;   
+	int deckCount=5,handCount=5,discardCount=5;	
 	
+    printf ("Unit Test #3 \n");
+    printf ("TESTING scorFor():\n");
+    for (p = 0; p < numPlayer; p++)
+    {
+     	printf("Test scoreFor player %d.\n", p );
+    
+        memset(&G, 23, sizeof(struct gameState));   // clear the game state
+        r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+        G.handCount[p] = handCount;                 
+        G.deckCount[p] = deckCount;                
+        G.discardCount[p] = discardCount;              
+		//Set cards to test deck,hand,and discard
+		//Initialize test hand,discard, and deck cards. 	
+		G.hand[p][0]=curse;
+		G.hand[p][1]=estate;
+		G.hand[p][2]=curse;
+		G.hand[p][3]=province;
+		G.hand[p][4]=great_hall;
+		G.hand[p][5]=gardens;
+	    
+		G.discard[p][0]=curse;
+		G.discard[p][1]=estate;
+		G.discard[p][2]=estate;
+		G.discard[p][3]=province;
+		G.discard[p][4]=great_hall;
+		G.discard[p][5]=gardens;
 
-	//Checking the values of all cards in the deck 
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Unit Test 3 - getCost()\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
+		G.deck[p][0]=curse;
+		G.deck[p][1]=estate;
+		G.deck[p][2]=duchy;
+		G.deck[p][3]=province;
+		G.deck[p][4]=great_hall;
+		G.deck[p][5]=duchy;
+		if(scoreFor(p,&G)==expected)
+		{
+			printf("PASS:test = %d, expected = %d\n", scoreFor(p,&G),expected);
 
+		}
+		else
+		{
+			printf("FAIL:test = %d, expected = %d\n", scoreFor(p,&G),expected);
 
-	printf("This test is going to check that the Cost Values of all Cards is correct\n");
-	
+		}
+   	}
 
-	if (getCost(deck[0] != 0))
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Curse cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");		
-	if (getCost(deck[1]) != 2)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Estate cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[2]) != 5)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Duchy cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[3]) != 8)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Province cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[4]) != 0)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Copper cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[5]) != 3)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Silver cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[6]) != 6)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Gold cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[7]) != 6)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Adventurer cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[8]) != 5)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Council room cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[9]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Feast cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[10]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Gardens cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[11]) != 5)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Mine cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");if (getCost(deck[12]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Remodel cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[13]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Smithy cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[14]) != 3)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Village cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[15]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Baron cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
- 	if (getCost(deck[16]) != 3)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Great hall cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[17]) != 5)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Minion cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[18]) != 3)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Steward cost issue\n");
+    printf("End Unit Test #3\n");
 
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[19]) != 5)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Tribute cost issue\n");
-
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[20]) != 3)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Ambassador cost issue\n");
-
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[21]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Cutpurse cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[22]) != 2)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Embargo cost issue\n");
-
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[23]) != 5)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Outpost cost issue\n");
-
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[24]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Salvager cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[25]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Sea hag cost issue\n");
-	}
-	else
-		printf("Cost is good for this card\n)");
-	if (getCost(deck[26]) != 4)
-	{
-		totalBugs++;
-		
-		if (NOISY_TEST == 1)
-			printf("Treasure map cost issue\n");
-
-	}
-	else
-		printf("Cost is good for this card\n)");
-
-
-	if (totalBugs != 0)
-	{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("Number of Bugs: %d\n", totalBugs);
-		printf("getCost() function - FAIL\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		
-	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("getCost() function - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-	return 0;
+    return 0;
 }
