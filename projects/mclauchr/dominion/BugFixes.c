@@ -164,6 +164,19 @@ least coverage of all my tests, and that I found a bug that I
 did not introduce, makes me feel less confident that I have 
 fixed the bug 100%.  More testing would be needed to improve
 my level of confidence.
+
+I performed my random testing on testAdventurer and found 
+that my fix was able to reduce the amount of failures found
+from previous testing, but not all the time.  I found that 
+high expected values, tended to produce errors with handCount
+and that an error with +2 treasure cards would show up 
+approximately 10% of the time.  This lead me to the notion
+that my testing, may not be adequate, which I previously 
+made note of in my discussion of coverage for this card
+effect. In the future I would plan on modifying my cardtest
+to include more specialized cases, such as no more treasure
+cards exists in the player's deck to be drawn.  As well as no
+cards exists in the player's deck to be drawn.
 *************************************************************/
 
 

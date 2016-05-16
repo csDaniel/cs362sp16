@@ -157,10 +157,10 @@ int main()
 					}
 	
 					
-					//SubTest1.1 AND the players deckCount remains Unchanged.
+					//SubTest1.1 AND the players deckCount is - 1
 					testVal = testState.deckCount[currPlayer];
 					
-					if (testVal == initState.deckCount[currPlayer])
+					if (testVal == initState.deckCount[currPlayer] - 1)
 					{
 						tOnePB++;
 					}
@@ -169,8 +169,8 @@ int main()
 						tOneFB++;
 						
 						#if (NOISY_TEST == 1)
-							printf("SubTest1.1: Players Overall deckCount Unchanged, FAILED at Iteration: %d\n", i);
-							printf("Expected: %d, Tested: %d\n", initState.deckCount[currPlayer], testVal);
+							printf("SubTest1.1: Players Overall deckCount - 1, FAILED at Iteration: %d\n", i);
+							printf("Expected: %d, Tested: %d\n", initState.deckCount[currPlayer] - 1, testVal);
 						#endif
 					}
 					

@@ -51,7 +51,8 @@ int main()
 		printf("*****TEST: cardtest2() - BEGIN *********\n\n");
 		
 			//Test 1 - current players handCount must be + 1 more than original
-		
+			state.hand[currPlayer][0] = adventurer;
+			
 			//record original hand count
 			oHandCount = state.handCount[currPlayer];
 			
