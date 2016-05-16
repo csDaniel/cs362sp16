@@ -40,6 +40,7 @@ Bugs Found, Teammate 1 - Alex Balab/balaba
 
 		
 ---Randomtestcard results---:
+	The Smithy card tests returned incorrect counts for the hand, deck, and discount.
 
 
 ---Randomtestadventurer results---:
