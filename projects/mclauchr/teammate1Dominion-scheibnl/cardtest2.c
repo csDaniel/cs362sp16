@@ -7,7 +7,7 @@
 **
 ** Description:  This card test will test the Adventurer card effect
 ** the most important portions of the card effect to verify include:
-**		1. The current players handCount must be >= 2 more than original
+**		1. The current players handCount must be = + 1 more than original
 **		2. The current player should have two additional TREASURES
 **		3. All drawn cards / discarded cards are from current player's
 **		   Deck.
@@ -69,14 +69,14 @@ int main()
 			
 			retVal = cardEffect(adventurer, 0, 0, 0, &state, 0, 0); 
 			
-				if (state.handCount[currPlayer] == oHandCount + 2)
+				if (state.handCount[currPlayer] == oHandCount + 1)
 				{
 					printf("Test1: New Hand Count Should be +2: PASS\n");
 				}
 				else
 				{
 					printf("Test1: New Hand Count Should be +2: FAIL\n");
-					printf("Expected: %d, Tested: %d\n", oHandCount + 2, state.handCount[currPlayer]);
+					printf("Expected: %d, Tested: %d\n", oHandCount + 1, state.handCount[currPlayer]);
 				}
 				
 			//Test 2 - The current player should have + 2 TREASURE cards specifically...
