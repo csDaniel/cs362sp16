@@ -63,7 +63,7 @@ int main()
             memcpy(previous.deck[turn], initdeck, sizeof(int) * 5);
 			/* The post game state will be a copy of the previous game state with tests ran on it */
             memcpy(&post, &previous, sizeof(struct gameState)); 
-            playSmithy(turn, &post, 0);
+            smithyPlay(0, &post);
 #if (NOISY_TEST == 1)			
 			printf("\nTesting if hand count was increased by 2\n");
 #endif			
