@@ -1,158 +1,186 @@
-//Ellard Gerritsen van der Hoop
-//CS362 Unit Test 4
-//
-//supplyCount test
-//
-//
-//
-
-
+//Shawn Seibert
+//Unit test 4
+//fullDeckCount()
+//gcc unittest4.c dominion.c rngs.c -o unittest4 -lm
 
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
-
+#include <stdlib.h>
 
 
 int main()
 {
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Unit Test 4: supplyCount Function\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
-
-	struct gameState state;
+	
+	int player = 1;
+	struct gameState state, testState;
+	int bonus;
+	int i;
+	int iterator = 1;
+	int seed = 100;
 	int numPlayers = 2;
-	int currentPlayer = 0;
-	int seed = 1000;
-	int k[10] = {adventurer, smithy, gardens, feast, village, baron, great_hall, council_room, remodel, mine};
-	int totalBugs = 0;
-	int expected = 0;
-	
-	initializeGame(numPlayers, k , seed, &state);
-	
-	expected = 10;
-	printf("Test 1 -  Smithy Card\n");
-	printf("Checking amount of Smithys in Supply\n");
-	printf("Amount: %d    Expected: %d\n", supplyCount(smithy, &state), expected);	
+	int count = 0;
+	int card = 10;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+				smithy, council_room};
 
-	printf("Gaining card - smithy\n");
-	expected--;
-	gainCard(smithy, &state, 2, currentPlayer);
-	printf("Amount of Smithy's in Supply: %d     Expected: %d\n", supplyCount(smithy, &state), expected);
+
+	printf("-----------------Unit Test 4-1 ----------------------\n");	
+	printf("--------------- fullDeckCount() ----------------------\n");
+	printf("Test 1: Set deck count equal to 10.\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
 	
-	if (supplyCount(smithy, &state) != expected)
+	testState.deckCount[player] = 10;
+	for (i = 0; i < testState.deckCount[player]; i++)
 	{
-		totalBugs++;
+		testState.deck[player][i] = card;
 	}
-
-	expected = 10;
-	printf("Test 2 -  Feast Card\n");
-	printf("Checking amount of Feast in Supply\n");
-	printf("Amount: %d    Expected: %d\n", supplyCount(feast, &state), expected);	
-
-	printf("Gaining card - feast\n");
-	expected--;
-	gainCard(feast, &state, 2, currentPlayer);
-	printf("Amount of feasts in Supply: %d     Expected: %d\n", supplyCount(feast, &state), expected);
 	
-	if (supplyCount(feast, &state) != expected)
+	for (i = 0; i < testState.deckCount[player]; i++)
+    {
+      
+	  if (testState.deck[player][i] == card) 
+	  {
+		  count++;
+		  
+	  }
+    }
+/*
+  for (i = 0; i < testState.handCount[player]; i++)
+    {
+      if (testState.hand[player][i] == card) count++;
+    }
+
+  for (i = 0; i < testState.discardCount[player]; i++)
+    {
+      if (testState.discard[player][i] == card) count++;
+    }
+	*/
+
+	printf("COUNT: %d\n", count);
+	
+	if(count == 10)
 	{
-		totalBugs++;
+		printf("Test 1: Passed.\n");
 	}
-
-	expected = 8;
-	printf("Test 3 -  Garden Card\n");
-	printf("Checking amount of Gardens in Supply\n");
-	printf("Amount: %d    Expected: %d\n", supplyCount(gardens, &state), expected);	
-
-	printf("Gaining card - garden\n");
-	expected--;
-	gainCard(gardens, &state, 2, currentPlayer);
-	printf("Amount of gardens in Supply: %d     Expected: %d\n", supplyCount(gardens, &state), expected);
-	
-	if (supplyCount(gardens, &state) != expected)
+	else
 	{
-		totalBugs++;
+		printf("Test 1: Failed.\n");
 	}
-
+	count = 0;
 	
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Number of Players is now increased to 3\n\n");
-	numPlayers = 3;
-
-	initializeGame(numPlayers, k , seed, &state);
-	
-	expected = 10;
-	printf("Test 1 -  Smithy Card\n");
-	printf("Checking amount of Smithys in Supply\n");
-	printf("Amount: %d    Expected: %d\n", supplyCount(smithy, &state), expected);	
-
-	printf("Gaining card - smithy\n");
-	expected--;
-	gainCard(smithy, &state, 2, currentPlayer);
-	printf("Amount of Smithy's in Supply: %d     Expected: %d\n", supplyCount(smithy, &state), expected);
-	
-	if (supplyCount(smithy, &state) != expected)
+	printf("-----------------Unit Test 4-2 ----------------------\n");	
+	printf("--------------- fullDeckCount() ----------------------\n");
+	printf("Test 2: Set hand count equal to 6.\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
+	/*
+	testState.deckCount[player] = 10;
+	for (i = 0; i < testState.deckCount[player]; i++)
 	{
-		totalBugs++;
+		testState.deck[player][i] = card;
 	}
-
-	expected = 10;
-	printf("Test 2 -  Feast Card\n");
-	printf("Checking amount of Feast in Supply\n");
-	printf("Amount: %d    Expected: %d\n", supplyCount(feast, &state), expected);	
-
-	printf("Gaining card - feast\n");
-	expected--;
-	gainCard(feast, &state, 2, currentPlayer);
-	printf("Amount of feasts in Supply: %d     Expected: %d\n", supplyCount(feast, &state), expected);
 	
-	if (supplyCount(feast, &state) != expected)
+	for (i = 0; i < testState.deckCount[player]; i++)
+    {
+      
+	  if (testState.deck[player][i] == card) 
+	  {
+		  count++;
+		  
+	  }
+    }
+  */
+  testState.handCount[player] = 6;
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+     testState.hand[player][i] = card;
+  }
+	
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+      if (testState.hand[player][i] == card) count++;
+  }
+  /*
+  for (i = 0; i < testState.discardCount[player]; i++)
+    {
+      if (testState.discard[player][i] == card) count++;
+    }
+	*/
+
+	printf("COUNT: %d\n", count);
+	
+	if(count == 6)
 	{
-		totalBugs++;
+		printf("Test 2: Passed.\n");
 	}
-
-	expected = 12;
-	printf("Test 3 -  Garden Card\n");
-	printf("Checking amount of Gardens in Supply\n");
-	printf("Amount: %d    Expected: %d\n", supplyCount(gardens, &state), expected);	
-
-	printf("Gaining card - garden\n");
-	expected--;
-	gainCard(gardens, &state, 2, currentPlayer);
-	printf("Amount of gardens in Supply: %d     Expected: %d\n", supplyCount(gardens, &state), expected);
-	
-	if (supplyCount(gardens, &state) != expected)
+	else
 	{
-		totalBugs++;
+		printf("Test 2: Failed.\n");
+	}
+	count = 0;
+	
+	printf("-----------------Unit Test 4-3 ----------------------\n");	
+	printf("--------------- fullDeckCount() ----------------------\n");
+	printf("Test 3: Set discard count equal to 12.\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
+	/*
+	testState.deckCount[player] = 10;
+	for (i = 0; i < testState.deckCount[player]; i++)
+	{
+		testState.deck[player][i] = card;
 	}
 	
+	for (i = 0; i < testState.deckCount[player]; i++)
+    {
+      
+	  if (testState.deck[player][i] == card) 
+	  {
+		  count++;
+		  
+	  }
+    }
 
-
-
-
-
-
-
-
-
-
-	if (totalBugs != 0){
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("supplyCount function - FAIL\n");
-		printf("Total Bugs: %d\n", totalBugs);
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+  testState.handCount[player] = 6;
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+     testState.hand[player][i] = card;
+  }
+	
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+      if (testState.hand[player][i] == card) count++;
+  }
+  */
+  testState.discardCount[player] = 12;
+  
+  for (i = 0; i < testState.discardCount[player]; i++)
+	{
+	  testState.discard[player][i] = card;
 	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("supplyCount function - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+  
+  for (i = 0; i < testState.discardCount[player]; i++)
+    {
+      if (testState.discard[player][i] == card)
+	  {
+		  count++;
+	  }
+    }
+	
+
+	printf("COUNT: %d\n", count);
+	
+	if(count == 12)
+	{
+		printf("Test 3: Passed.\n");
 	}
-
-
-
-	return 0; 
+	else
+	{
+		printf("Test 3: Failed.\n");
+	}
+	count = 0;
+	
+	
+  return 0;
 }

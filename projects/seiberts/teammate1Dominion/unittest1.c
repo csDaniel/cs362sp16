@@ -1,130 +1,215 @@
-// Ellard Gerritsen van der Hoop
-// Unit Test 1- Dominion
-//
-// use gcc -o unittest1 unittest1.c dominion.c rngs.c 
-//
-// This test will look at the endTurn() function within dominion
-//
-//
-//
-//
+//Shawn Seibert
+//Unit test 1
+//updateCoins()
+//Purpose: Test updateCoins by modifying the players hand
+//		   and modifying the values of the coins.
+//gcc unittest1.c dominion.c rngs.c -o unittest1 -lm
 
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
+#include <stdio.h>
 #include <math.h>
-
-
-//Set NOISY_TEST to 1 to show printfs from output
-#define NOISY_TEST 1
-
+#include <stdlib.h>
 
 int main()
 {
+	int player = 1;
+	struct gameState state, testState;
+	int bonus;
+	int i;
+	int seed = 100;
 	int numPlayers = 2;
-	struct gameState state;
-	int seed = 1000;
-	int previousPlayer = 0;
-	int currentPlayer = 0;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+				smithy, council_room};
+
+
+	printf("-----------------Unit Test 1-1 ----------------------\n");	
+	printf("--------------- updateCoins() ----------------------\n");
+
+	// ----------- TEST 1: coins = 0  --------------
+	printf("TEST 1: Copper coins equal to 1\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
 	
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, feast};
-
-	int totalBugs = 0;
-
-
-
-
-
-
-	initializeGame(numPlayers, k, seed, &state);
-
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Unit Test 1- endTurn()\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
-
-	printf("Game is initialized. First turn begins\n");		
-
-	if (NOISY_TEST == 1){
-	printf("Current Player: %d   Expected Player: %d \n", whoseTurn(&state), currentPlayer);
+  //reset coin count
+   testState.coins = 0;
+  
+  testState.handCount[player] = 3;
+  for (i = 0; i < 3; i++)
+  {
+	  testState.hand[player][i] = copper;
+  }
+  
+ printf("Number of Copper Cards: %d\n", testState.handCount[player]);
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+    if (testState.hand[player][i] == copper)
+	{
+	  testState.coins += 1;
 	}
-
-	if (whoseTurn(&state) != currentPlayer){
-		totalBugs++;
+      else if (testState.hand[player][i] == silver)
+	{
+	  testState.coins += 2;
 	}
-	
-	//Current player should be 0
-	endTurn(&state);
-	currentPlayer = 1;
-	
-	printf("Turn ended. Next turn begins\n");
-	if (NOISY_TEST == 1){
-	printf("Curent Player: %d   Expected Player: %d\n", whoseTurn(&state), currentPlayer);
-	}
-
-	//Current player should be 1, with previousPlayer now 0
-
-	if (whoseTurn(&state) != currentPlayer){
-		totalBugs++;
-		
-	}
-	
-	printf("Checking HandCount\n");
-	//Checks to see if handCount is 0 for player who just went
-	if (state.handCount[previousPlayer] != 0){
-		totalBugs++; 
+      else if (testState.hand[player][i] == gold)
+	{
+	  testState.coins += 3;
 	}	
+  }	
 
-	if (NOISY_TEST == 1){
+  //add bonus
+  testState.coins += bonus;
+  printf("Copper coin total: %d\n", testState.coins);
+  if (testState.coins == 3)
+  {
+	  printf("Test 1 passed.\n");
+  }
+  else
+  {
+	  printf("Test 1 failed.\n");
+  }
+  testState.coins = 0;
+  
+  printf("-----------------Unit Test 1-2 ----------------------\n");	
+  printf("--------------- updateCoins() ----------------------\n");
+
+	// ----------- TEST 1: coins = 0  --------------
+	printf("TEST 2: Silver coins equal to 2\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
 	
-		printf("Cards in Hand: %d   Expected: 0\n", state.handCount[previousPlayer]);
+  //reset coin count
+   testState.coins = 0;
+  
+  testState.handCount[player] = 3;
+  for (i = 0; i < 3; i++)
+  {
+	  testState.hand[player][i] = silver;
+  }
+  
+ printf("Number of Silver Cards: %d\n", testState.handCount[player]);
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+    if (testState.hand[player][i] == copper)
+	{
+	  testState.coins += 1;
 	}
+      else if (testState.hand[player][i] == silver)
+	{
+	  testState.coins += 2;
+	}
+      else if (testState.hand[player][i] == gold)
+	{
+	  testState.coins += 3;
+	}	
+  }	
 
+  //add bonus
+  testState.coins += bonus;
+  printf("Silver coin total: %d\n", testState.coins);
+  if (testState.coins == 6)
+  {
+	  printf("Test 2 passed.\n");
+  }
+  else
+  {
+	  printf("Test 2 failed.\n");
+  }
+  testState.coins = 0;
+  
+  printf("-----------------Unit Test 1-3 ----------------------\n");	
+  printf("--------------- updateCoins() ----------------------\n");
 
-	endTurn(&state);
-	previousPlayer = 1;
-	currentPlayer = 0;
+	// ----------- TEST 1: coins = 0  --------------
+	printf("TEST 3: Gold coins equal to 3\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
 	
-	printf("Turn ended. Next turn begins\n");
-	if (NOISY_TEST == 1){
-		printf("Current Player: %d   Expected Player: %d\n", whoseTurn(&state), currentPlayer);
+  //reset coin count
+   testState.coins = 0;
+  
+  testState.handCount[player] = 3;
+  for (i = 0; i < 3; i++)
+  {
+	  testState.hand[player][i] = gold;
+  }
+  
+  printf("Number of Gold Cards: %d\n", testState.handCount[player]);
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+    if (testState.hand[player][i] == copper)
+	{
+	  testState.coins += 1;
 	}
-
-	if (whoseTurn(&state) != currentPlayer){
-		totalBugs++;
+      else if (testState.hand[player][i] == silver)
+	{
+	  testState.coins += 2;
 	}
+      else if (testState.hand[player][i] == gold)
+	{
+	  testState.coins += 3;
+	}	
+  }	
 
-	if (state.handCount[previousPlayer] != 0){
-		totalBugs++; 
+  //add bonus
+  testState.coins += bonus;
+  printf("Gold coin total: %d\n", testState.coins);
+  if (testState.coins == 9)
+  {
+	  printf("Test 3 passed.\n");
+  }
+  else
+  {
+	  printf("Test 3 failed.\n");
+  }
+  testState.coins = 0;
+  
+  printf("-----------------Unit Test 1-4 ----------------------\n");	
+  printf("--------------- updateCoins() ----------------------\n");
+
+	// ----------- TEST 1: coins = 0  --------------
+	printf("TEST 4: Set copper to 5, silver to 10, gold to 15\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
 	
+  //reset coin count
+   testState.coins = 0;
+  testState.handCount[player] = 3;
+  testState.hand[player][0] = copper;
+  testState.hand[player][1] = silver;
+  testState.hand[player][2] = gold;
+  
+  printf("Total number cards: %d\n", testState.handCount[player]);
+  for (i = 0; i < testState.handCount[player]; i++)
+  {
+    if (testState.hand[player][i] == copper)
+	{
+	  testState.coins += 5;
 	}
-
-	printf("Checking HandCount\n");
-	if (NOISY_TEST == 1){
-		printf("Cards in Hand: %d  Expected: 0\n", state.handCount[previousPlayer]);
+      else if (testState.hand[player][i] == silver)
+	{
+	  testState.coins += 10;
 	}
+      else if (testState.hand[player][i] == gold)
+	{
+	  testState.coins += 15;
+	}	
+  }	
 
-	if (totalBugs == 0){
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("endTurn() Function - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("endTurn() Function - FAIL\n");
-		printf("Total Bugs: %d", totalBugs);
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-
-
-
-
-
-
-
-
-
+  //add bonus
+  testState.coins += bonus;
+  printf("All coin total: %d\n", testState.coins);
+  if (testState.coins == 30)
+  {
+	  printf("Test 4 passed.\n");
+  }
+  else
+  {
+	  printf("Test 4 failed.\n");
+  }
+  testState.coins = 0;
+  
+  
+  
+  
+  return 0;
 }
