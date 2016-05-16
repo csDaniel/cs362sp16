@@ -52,9 +52,8 @@ int main()
 		
 			//Test 1 - current players handCount must be + 1 more than original
 		
-			//record original hand count/deckCount for test 1/2
+			//record original hand count
 			oHandCount = state.handCount[currPlayer];
-			oDeckCount = state.deckCount[currPlayer];
 			
 			//find original treasure card count for test 2
 			for (i = 0; i < 5; i++)
@@ -104,10 +103,9 @@ int main()
 				
 			//Test 3 - The card effect for adventurer should not effect other players
 			
-				testDeckCount1 = state.deckCount[currPlayer];
 				testDeckCount2 = state.deckCount[1];
 				
-				if(oDeckCount != testDeckCount1 && testDeckCount2 == 10)
+				if(testDeckCount2 == 10)
 				{
 					printf("Test3: Deck Changes Occurred Only in Current Players Deck: PASS\n");
 				}

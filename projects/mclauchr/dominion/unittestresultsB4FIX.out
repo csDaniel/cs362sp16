@@ -179,17 +179,16 @@ SMITHY!!!
 
 Test1: Appropriate Cards Add/Subtract (+3 - 1 = +2) Total: FAIL
 Expected: 7, Test: 8
-Test2: Cards Drawn/Discarded to and from Appropriate Pile: PASS
 Test2: Other Players Discard Pile NOT Affected: PASS
 Test3: Card Effect for Smithy Returned Successfully: PASS
 
 *****TEST: cardtest1() - END ***********
 
 File 'cardtest1.c'
-Lines executed:87.88% of 33
-Branches executed:100.00% of 8
-Taken at least once:50.00% of 8
-Calls executed:73.33% of 15
+Lines executed:89.29% of 28
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:76.92% of 13
 Creating 'cardtest1.c.gcov'
 
 ************************************
@@ -198,8 +197,7 @@ Creating 'cardtest1.c.gcov'
 ADVENTURER!!!
 *****TEST: cardtest2() - BEGIN *********
 
-Test1: New Hand Count Should be +2: FAIL
-Expected: 7, Tested: 6
+Test1: New Hand Count Should be +1: PASS
 Test2: Current Player has +2 Treasure Cards: FAIL
 Expected: 6, Tested: 5
 Test3: Deck Changes Occurred Only in Current Players Deck: PASS
@@ -208,10 +206,10 @@ Test5: Card Effect for Adventurer Returned Successfully when Deck Count = 0: PAS
 *****TEST: cardtest2() - END ***********
 
 File 'cardtest2.c'
-Lines executed:82.35% of 51
-Branches executed:100.00% of 28
-Taken at least once:64.29% of 28
-Calls executed:73.68% of 19
+Lines executed:79.59% of 49
+Branches executed:100.00% of 26
+Taken at least once:65.38% of 26
+Calls executed:68.42% of 19
 Creating 'cardtest2.c.gcov'
 
 ************************************
@@ -221,8 +219,8 @@ GREAT_HALL!!!
 *****TEST: cardtest3() - BEGIN *********
 
 Test1: Players New Hand Count Should be Same(+1-1): PASS
-Test1b: Current Players Deck Count Remains Unchanged: FAIL
-Expected: 5, Tested: 4
+Test1b: + 1 card discarded to played cards: FAIL
+Expected: 1, Tested: 0
 Test2: Num Actions + 1: PASS
 Test3: Other Players Deck Count Remains Unchanged: PASS
 Test4: Card Effect for Great_Hall Returned Successfully: PASS
@@ -243,8 +241,8 @@ EMBARGO!!!
 
 Test1: +2 Coins Added to Player State: FAIL
 Expected: 6, Tested: 5
-Test2: Card is trashed when discarded, deckCount - 1: FAIL
-Expected: 4, Tested: 5
+Test2: Card is trashed when discarded: FAIL
+Expected: 0, Tested: 1
 Test3: Embargo Token for Choice1 Increased: PASS
 Test4: Other Players Deck Count Remains Unchanged: PASS
 Test5: Card Effect for Embargo Returned Successfully: PASS
