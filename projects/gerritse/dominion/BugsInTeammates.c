@@ -8,62 +8,100 @@ BugInTeammates.c
 
 /*******************************Teammate 1: Shawn Seibert**********************************************/
 
-
-Card Test 1(Smithy):   FAILED
-
-	-The number of cards drawn appears to be off by 1 for the player.
-
-Card Test 2(Adventurer): FAILED
-
-	- Number of cards drawn is off and thus the hand count for the player is off. For some reason this number was even negative. 
-		Card in hand: -196          Expected: 6
-
-	
-Card Test 3(Council Card): FAILED
-
-	-Number of cards in hand off by 1
-	-Incorrect number of buys
-		Number of Buys: 1           Expected: 2
+Bug Report 1:
 
 
+Title: Incorrect number of cards drawn for Smithy
+Product: dominion.c
+Classification: Serious bug that alters game
 
-Card Test 4(Cutpurse): PASSED
+Description: During testing, the players hand count was off 
+			when playing the smithy card. 
 
-	-No bugs were found here 
-
-	
-Unit Test 1(endTurn()):   PASSED
-	
-	-No bugs were found here 
-
-Unit Test 2(updateCoins()): PASSED
-	
-	-No bugs were found here 
+Reproduction: This bug can be reproduced each time 
 
 
-Unit Test 3(getCost()): PASSED
-	
-	-No bugs were found here 
+Steps:
+		1.) Initialize deck
+		2.) Play smithy card
+		3.) Player draws 4 cards instead of 3 
+		4.) No further actions
+		
+Steps to Reproduce: Play the smithy card and compare test State versus game State for hand count 
+Actual Results: 4 cards drawn by player
+Expected Results: 3 card drawn by player
 
 
-Unit Test 4(supplyCount()):	PASSED
-	
-	-No bugs were found here 	
+Relevant Test Snippet:
 
-RandomTestCard(Council Room): FAILED
-
-	-The hand count is off for all the iterations
-	-The number of buys seems to be incorrect for all the iterations 
-	- All other tests passed
+AFTER CARD EFFECT- Smithy
+Number of Cards Drawn: 8    Expected: 7
+ERROR: Hand Count is off for Player 1
 
 
+////////////////////////////////////////
 
-RandomTestAdventurer: FAILED
+Bug Report 2:
 
-	- Treasure Card Count is off on all iterations. 
-	- Hand count appears to be off on all iterations by 1. 
-	- All other tests passed
+Title: Incorrect number of cards drawn for Adventurer
+Product: dominion.c
+Classification: Serious bug that alters game
 
+Description: During testing, the amount of cards in the players hands
+			was drastically off from the expected result when playing 
+			the adventurer card. 
+
+Reproduction: This bug can be reproduced each time 
+
+
+Steps:
+		1.) Initialize deck
+		2.) Play Adventurer card
+		3.) Player draws cards until 2 drawn treasures are reached
+		4.) No further actions
+		
+Steps to Reproduce: Play the adventurer card and compare test State versus game State for hand count 
+Actual Results: -196 Cards in hand for Player 1
+Expected Results: 6 Cards in hand for Player 1
+
+
+Relevant Test Snippet:
+
+AFTER CARD EFFECT- Adventurer
+Cards in hand: -196               Expected:6
+ERROR: hand Count is off for Player 1
+
+////////////////////////////////////////////
+Bug Report 3:   
+
+Title: Incorrect Number of Cards drawn for Council Card
+Product: dominion.c
+Classification: Serious bug that alters game
+
+Description: During testing, I found that upon playing the council card,
+			the number of cards in the current players hands exceeded the amount
+			it should have been.
+
+Reproduction: This bug can be reproduced each time 
+
+
+Steps:
+		1.) Initialize deck
+		2.) Play Council card
+		3.) Player draws cards 
+		4.) Player receives a buy 
+		5.) No futher actions
+
+Steps to Reproduce: Play the council card and compare test State versus game State for hand count 
+Actual Results: 9 Cards in hand for Player 1
+Expected Results: 8 Cards in hand for Player 1
+
+
+Relevant Test Snippet:
+
+AFTER CARD EFFECT- Council Room 
+Cards in hand: 9               Expected:8
+ERROR: hand Count is off for Player 1
 
 
 
@@ -73,60 +111,103 @@ RandomTestAdventurer: FAILED
 
 /*******************************Teammate 2: Suyana Lozada**********************************************/
 
-Card Test 1(Smithy):   FAILED
+Bug Report 1:
 
-	-The number of cards drawn appears to be off by 1 for the player.
 
-Card Test 2(Adventurer): FAILED
+Title: Incorrect number of cards drawn for Smithy
+Product: dominion.c
+Classification: Serious bug that alters game
 
-	- Number of cards drawn is off and thus the hand count for the player is off.
-		Card in hand: 8       Expected: 6
+Description: During testing, I found that the smithy card resulted in an 
+			incorrect number of cards to be added to players hand 
+
+Reproduction: This bug can be reproduced each time 
+
+
+Steps:
+		1.) Initialize deck
+		2.) Play smithy card
+		3.) Player draws 2 cards instead of 3 
+		4.) No further actions
+		
+Steps to Reproduce: Play the smithy card and compare test State versus game State for hand count 
+Actual Results: 6 cards drawn by player
+Expected Results: 7 card drawn by player
+
+
+Relevant Test Snippet:
+
+AFTER CARD EFFECT- Smithy
+Number of Cards Drawn: 6   Expected: 7
+ERROR: Hand Count is off for Player 1
+
+///////////////////////////////////////////
+
+Bug Report 2:
+
+Title: Incorrect number of cards drawn for Adventurer
+Product: dominion.c
+Classification: Serious bug that alters game
+
+Description: During testing, I found that the adventurer card is adding to many cards to 
+			the hand for the current player. 
+
+Reproduction: This bug can be reproduced each time 
+
+
+Steps:
+		1.) Initialize deck
+		2.) Play Adventurer card
+		3.) Player draws cards until 2 drawn treasures are reached
+		4.) No further actions
+		
+Steps to Reproduce: Play the adventurer card and compare test State versus game State for hand count 
+Actual Results: 8 Cards in hand for Player 1
+Expected Results: 6 Cards in hand for Player 1
+
+
+Relevant Test Snippet:
+
+AFTER CARD EFFECT- Adventurer
+Cards in hand: 8              Expected:6
+ERROR: hand Count is off for Player 1
+
+///////////////////////////////////////////////////
+
+Bug Report 3:
+
+Title: Incorrect number of copper cards in hand for Player and Opponent after Cutpurse
+Product: dominion.c
+Classification: Serious bug that alters game
+
+Description: During testing, I found that a copper card is not being added to the players hand upon use
+			of cutpurse card. I also found that the opponent is not losing one of their copper cards
+
+Reproduction: This bug can be reproduced each time 
+
+
+Steps:
+		1.) Initialize deck
+		2.) Play Cutpurse card
+		3.) Player receives a copper card
+		4.) No further actions
+		
+Steps to Reproduce: Play the cutpurse card and compare test State versus game State for hand count 
+Actual Results: 3 Copper Cards in hand for Player 1                4 Copper Cards in hand for Player 2 
+Expected Results: 4 Copper Cards in hand for Player 1				5 Copper Cards in hand for Player2
+
+
+Relevant Test Snippet:
+
+AFTER CARD EFFECT- Cutpurse
+Number of Copper Cards: 3		Expected: 4
+ERROR: Copper Card Count is off for Player 1
+	
+Number of Copper Cards: 5		Expected: 4
+EROR: Copper Card Count is off for Player 2 
+
+
+
 
 	
 
-Card Test 3(Council Card): FAILED
-
-	-Number of cards in hand off by 1:
-		Cards in Hand:9				Expected: 8 
-
-
-
-Card Test 4(Cutpurse): FAILED
-
-	-Copper Cards in hand changed for P1
-		Number of Copper Cards: 3		Expected: 4
-
-	-One copper card should have been removed from P2
-		Number of Copper Cards: 5		Expected: 4
-	
-Unit Test 1(endTurn()):   PASSED
-	
-	-No bugs were found here 
-
-Unit Test 2(updateCoins()): PASSED
-	
-	-No bugs were found here 
-
-
-Unit Test 3(getCost()): PASSED
-	
-	-No bugs were found here 
-
-
-Unit Test 4(supplyCount()):	PASSED
-	
-	-No bugs were found here 
-	
-
-RandomTestCard(Council Room): FAILED
-
-	-The hand count is off for all the iterations
-	-All other tests passed
-
-
-
-RandomTestAdventurer: FAILED
-
-	- Treasure Card Count is off on all iterations. 
-	- Hand count appears to be off on all iterations by 1. 
-	- All other tests passed
