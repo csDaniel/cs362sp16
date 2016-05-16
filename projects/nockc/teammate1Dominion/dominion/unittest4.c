@@ -1,117 +1,165 @@
+/* Unit Test 4 for updateCoins 
+   Tests for:
+    - correctly sums up the coin values for treasure cards and bonus (1 for copper, 2 for silver, 3 for gold), 
+    - correctly returns a 0 for a hand with no coins and no bonus, 
+	- correctly returns bonus for a hand with no coins and a bonus,
+*/
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
 #include "rngs.h"
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
 
-int main(){
-    int result;
-    int k[10] = {adventurer, feast, gardens, mine, remodel, smithy, village, baron, sea_hag, province};
-    int numPlayers = 2;
-    struct gameState G;
-    memset(&G, 0, sizeof(struct gameState));   // clear the game state
-    initializeGame(numPlayers, k, 10, &G); //initialize game
+#define NOISY_TEST 1
 
-    printf ("------------------TESTING fullDeckCount():--------------------\n\n");
+int gamestatecheck(struct gameState *previous, struct gameState *post, int p);
 
-    //test at the beginning of the game, no cards gained
-    printf ("Test with no cards gained.\n");
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 0){
-        printf ("PASS. EXPECTED: 0. ACTUAL: %d.\n\n", result);
+int main()
+{
+   
+    int seed = 1000;
+    int kingdomCards[10] = { tribute, adventurer, council_room, baron, mine, remodel, feast, smithy, village, sea_hag };
+	struct gameState previous; 
+    struct gameState post; 
+    int i, j, r, h, p, b, x, z;
+	int finalfail = 0;
+    int finalpass = 0;
+	int ran;
+	int coppers[MAX_HAND];
+    int silvers[MAX_HAND];
+    int golds[MAX_HAND];
+	int cards[MAX_HAND];
+    for ( i = 0; i < MAX_HAND; i++ ) 
+	{
+        coppers[i] = copper;
+        silvers[i] = silver;
+        golds[i] = gold;
+	}
+	/* Test every possible combination of players (1 to 2), treasure cards (1 - 10), and bonus values up to 10 */
+	for ( p = 0; p < 2; p++ ) 
+	{
+        for ( h = 1; h <= 10; h++ )  
+		{
+            for ( b = 0; b <= 10; b++) 
+			{
+#if (NOISY_TEST == 1)				
+				printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, h, b );
+#endif				
+                /* Reset game state and start a new game for current combination */
+				memset(&post, 23, sizeof(struct gameState));
+                initializeGame( 2, kingdomCards, seed, &post ); 
+				/* First test for a hand of coppers */
+				post.handCount[p] = h;                
+                memcpy( post.hand[p], coppers, sizeof(int) * h ); 
+                updateCoins( p, &post, b );
+				if ( post.coins != (h + b) )
+				{
+#if (NOISY_TEST == 1)
+					printf("Test Result: Fail. actual coin count: %d, expected coin count: %d\r\n", post.coins, (h + b) );
+#endif	
+					finalfail++;
+				}
+				else 
+				{
+#if (NOISY_TEST == 1)
+					printf("Test Result: Pass. actual coin count: %d, expected coin count: %d\r\n", post.coins, (h + b) );
+#endif
+					finalpass++;
+				}
+				/* Next test for a hand of silvers */
+                memcpy( post.hand[p], silvers, sizeof(int) * h ); 
+                updateCoins( p, &post, b );
+				if ( post.coins != ( ( 2 * h ) + b) )
+				{
+#if (NOISY_TEST == 1)
+					printf("Test Result: Fail. actual coin count: %d, expected coin count: %d\r\n", post.coins, ( ( 2 * h ) + b) );
+#endif	
+					finalfail++;
+				}
+				else 
+				{
+#if (NOISY_TEST == 1)
+					printf("Test Result: Pass. actual coin count: %d, expected coin count: %d\r\n", post.coins, ( ( 2 * h ) + b) );
+#endif
+					finalpass++;
+				}
+				/* Next test for a hand of golds */
+                memcpy( post.hand[p], golds, sizeof(int) * h ); 
+                updateCoins( p, &post, b );
+				if ( post.coins != ( ( 3 * h ) + b) )
+				{
+#if (NOISY_TEST == 1)
+					printf("Test Result: Fail. actual coin count: %d, expected coin count: %d\r\n", post.coins, ( ( 3 * h ) + b) );
+#endif	
+					finalfail++;
+				}
+				else 
+				{
+#if (NOISY_TEST == 1)
+					printf("Test Result: Pass. actual coin count: %d, expected coin count: %d\r\n", post.coins, ( ( 3 * h ) + b) );
+#endif
+					finalpass++;
+				}
+			}
+        }
     }
-    else{
-        printf ("FAIL. EXPECTED: 0. ACTUAL: %d.\n\n", result);
-    }
-
-    //test with cards in deck, no in hand, no in discard
-    printf ("Test with a card in player's deck.\n");
-    G.deckCount[0] = 1;
-    G.deck[0][0] = adventurer;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 1){
-        printf ("PASS. EXPECTED: 1. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 1. ACTUAL: %d.\n\n", result);
-    }
-
-    //test with cards in deck, in hand, no in discard
-    printf ("Test with a card in player's deck and hand.\n");
-    G.handCount[0] = 1;
-    G.hand[0][0] = adventurer;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 2){
-        printf ("PASS. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-
-    //test with cards in deck, in hand, in discard
-    printf ("Test with a card in player's deck and hand.\n");
-    G.discardCount[0] = 1;
-    G.discard[0][0] = adventurer;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 3){
-        printf ("PASS. EXPECTED: 3. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 3. ACTUAL: %d.\n\n", result);
-    }
-
-    //test with cards no cards in deck, one in hand, one in discard
-    printf ("Test with a card in player's discard and hand.\n");
-    G.deckCount[0] = 0;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 2){
-        printf ("PASS. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-
-    //test with cards no cards in deck, no in hand, one in discard
-    printf ("Test with a card in player's discard and hand.\n");
-    G.handCount[0] = 0;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 1){
-        printf ("PASS. EXPECTED: 1. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 1. ACTUAL: %d.\n\n", result);
-    }
-
-    //test with cards one card in deck, no in hand, one in discard
-    printf ("Test with a card in player's discard and hand.\n");
-    G.deckCount[0] = 1;
-    G.deck[0][0] = adventurer;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 2){
-        printf ("PASS. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-
-    //test for adventurer count with other cards in deck, in hand, in discard
-    printf ("Test with other card in player's discard, hand and deck.\n");
-    G.handCount[0] = 2;
-    G.deckCount[0] = 1;
-    G.discardCount[0] = 2;
-    G.hand[0][1] = smithy;
-    G.deck[0][0] = smithy;
-    G.discard[0][1] = smithy;
-    result = fullDeckCount(0, adventurer, &G);
-    if(result == 2){
-        printf ("PASS. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-    else{
-        printf ("FAIL. EXPECTED: 2. ACTUAL: %d.\n\n", result);
-    }
-
-    printf("---------------------------------------------------------\n");
-
+#if (NOISY_TEST == 1)	
+	/* returns a 0 for a hand with no coins and no bonus */
+	printf("Testing for a hand with no treasure cards and no bonus\n");
+#endif
+	b = 0;
+	previous.hand[0][0] = kingdomCards[1];
+	previous.hand[0][1] = kingdomCards[2];
+	previous.hand[0][2] = kingdomCards[3];
+	previous.hand[0][3] = kingdomCards[4];
+	previous.hand[0][4] = kingdomCards[5];
+	previous.hand[0][5] = kingdomCards[6];
+	post.hand[0][0] = kingdomCards[1];
+	post.hand[0][1] = kingdomCards[2];
+	post.hand[0][2] = kingdomCards[3];
+	post.hand[0][3] = kingdomCards[4];
+	post.hand[0][4] = kingdomCards[5];
+	post.hand[0][5] = kingdomCards[6];
+	updateCoins( 0, &post, b ); 
+	if ( post.coins != 0 )
+	{
+#if (NOISY_TEST == 1)
+		printf("Test Result: Fail. actual coin count: %d, expected coin count: 0\r\n", post.coins );
+#endif	
+		finalfail++;
+	}
+	else 
+	{
+#if (NOISY_TEST == 1)
+		printf("Test Result: Pass. actual coin count: %d, expected coin count: 0\r\n", post.coins );
+#endif
+		finalpass++;
+	}	
+	#if (NOISY_TEST == 1)	
+	/* returns a 0 for a hand with no coins and no bonus */
+	printf("Testing for a hand with no treasure cards and a bonus\n");
+#endif
+	b = 10;
+	updateCoins( 0, &post, b ); 
+	if ( post.coins != 10 )
+	{
+#if (NOISY_TEST == 1)
+		printf("Test Result: Fail. actual coin count: %d, expected coin count: 10\r\n", post.coins );
+#endif	
+		finalfail++;
+	}
+	else 
+	{
+#if (NOISY_TEST == 1)
+		printf("Test Result: Pass. actual coin count: %d, expected coin count: 10\r\n", post.coins );
+#endif
+		finalpass++;
+	}
+	printf("Final tally for Unit Test 4 (Update Coins):\nPass: %d\nFailures: %d\r\n", finalpass, finalfail );
     return 0;
 }
+
+
+
+

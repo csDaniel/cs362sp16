@@ -1,199 +1,294 @@
-/**********************************************************************
-CS362-400
-Assignment 4
-File: randomtestadventurer.c
-Author: Tatsiana Clifton
-Date: 5/3/2016
-Description: Random testing of the adventurer card
-***********************************************************************/
-
+/* Random Test for Adventurer
+`* Previous game state: playing 2-4 player Dominion game, Adventurer card is played
+ * Tests will cover:
+ *   - if hand count was increased by 2
+ *   - if adventurer remains in hand after playing
+ *   - if 2 treasure cards were added
+ *   - if Adventurer card is discarded
+ *   - if deck count is decreased by at least 2
+ *   - other player has no game state change 
+ *   - same deck count
+ *   - same hand count
+ *   - same discard count	
+ *   - same cards in hand
+ *   - same cards in deck
+ *   - same cards in discard
+ *   - no game state change	
+ *   - same players
+ *   - same supply count for each card
+ *   - same embargo token count for each card
+ *   - same outposed played 
+ *   - same outpost turn
+ *   - same whose turn
+ *   - same phase
+ *   - same number of actions
+ *   - same number buys
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
 
-#define TESTCARD "adventurer"
-#define MAX_TEST 5000
+#define NOISY_TEST 0
 
-int main() {
-    srand(time(NULL));
+int cardExists(int turn, struct gameState *state, int target);
 
-    //declare variables to hold count of failed tests
-    int failTreasure = 0;
-    int failCards = 0;
-    int failDeck = 0;
-    int failDeckOthers = 0;
-    int failHand = 0;
-    int failPlay = 0;
-    int failVictory = 0;
-    int failKingdom = 0;
-
-    int treasureBefore, treasureAfter;
-
-    //game cards
-    int k[10] = {adventurer, council_room, feast, gardens, mine,
-	       remodel, smithy, village, baron, great_hall};
-
-    struct gameState G;    //hold everything about the initial game
-    memset(&G, 0, sizeof(struct gameState));   // clear the initial game state
-    struct gameState testG;    //hold everything about the game after adventurer was played
-    memset(&testG, 0, sizeof(struct gameState));   // clear the game state
-
-    printf("-------------- Running Random Testing of %s Card -------------\n", TESTCARD);
-    //run tests MAX_TEST times
-    int i, p;
-    for(i = 0; i < MAX_TEST; i++){
-        int numPlayers, player, seed;
-        //set randomly number of players between 2 and 4
-        numPlayers = rand()%3 + 2;
-        //set randomly seed
-        seed = rand();
-        //initialize game
-        initializeGame(numPlayers, k, seed, &G);
-        //pick a current player
-        player = 0;
-        G.whoseTurn = player;
-        //randomly set deck count, hand count, discard count
-        for (p = 0; p < numPlayers; p++){
-            G.deckCount[p] = floor(Random() * MAX_DECK);
-            G.discardCount[p] = floor(Random() * MAX_DECK);
-            G.handCount[p] = floor(Random() * MAX_HAND);
-        }
-
-        //copy initial game state to be used for testing
-        memcpy(&testG, &G, sizeof(struct gameState));
-
-        int b, card;
-        treasureBefore = 0;
-        for(b = 0; b < G.handCount[player]; b++){
-            card = G.hand[player][b];
-            if (card >= 4 && card <= 6) {
-                treasureBefore++;
+int main()
+{
+    int startgame, turn, i, j, r, p, x, pos, card, diff;
+    int players = 2;
+    int seed = rand();
+    int kingdomCards[10] = { gardens, adventurer, council_room, baron, mine, remodel, feast, smithy, village, great_hall };
+	struct gameState previous;
+	struct gameState post; 
+    int testruns = 1000; 
+    int finalfail = 0;
+   	srand(time(NULL));
+	/* Looping through amount of test runs */
+    for (i = 0; i < testruns; i++){
+        printf("Test %d\n", i);
+	    seed = rand();
+		players = ( rand() % 3 ) + 2;
+		/* Start with a new game */
+		memset(&previous, 23, sizeof(struct gameState));   
+        startgame = initializeGame(players, kingdomCards, seed, &previous); 
+		/* Total number of cards in deck and discard should be less than MAXDECK and hand should be less than MAXHAND from better card draw.c */
+		for (turn = 0; turn < players; turn++){
+			previous.deckCount[turn] = floor(Random() * MAX_DECK);
+            previous.discardCount[turn] = floor(Random() * MAX_DECK);
+            previous.handCount[turn] = floor(Random() * MAX_HAND);
+			/* Select random cards for deck, discard and hand */
+            for ( j = 0; j < previous.deckCount[turn]; j++ ){
+                previous.deck[turn][j] = floor( Random() *treasure_map );
             }
-        }
-        //play card
-        adventurerPlay(&testG);
-
-        //count treasure after adventurer was played
-        int a;
-        treasureAfter = 0;
-        for (a = 0; a < testG.handCount[player]; a++){
-            card = testG.hand[player][a];
-            if (card >= 4 && card <= 6){
-                treasureAfter++;
+            for ( j = 0; j < previous.discardCount[turn]; j++ ){
+                previous.discard[turn][j] = floor( Random() *treasure_map );
             }
-        }
-
-        //check that number of treasure cards was increased by 2
-        if (treasureAfter - treasureBefore != 2){
-           failTreasure++;
-        }
-
-        //check that number of cards in hand was increased by 2
-        if (testG.handCount[player] != (G.handCount[player] + 2)){
-           failCards++;
-        }
-
-        //check that number of cards in deck was decreased by 2
-        if (G.deckCount[player] != (G.deckCount[player] - 2)){
-           failDeck++;
-        }
-
-        //check others players deck; should be unchanged
-        int d;
-        for (d = 1; d < numPlayers; d++){
-            if(testG.deckCount[d] != G.deckCount[d]){
-                failDeckOthers++;
+            for ( j = 0; j < previous.handCount[turn]; j++ ){
+                previous.hand[turn][j] = floor( Random() *treasure_map );
             }
-        }
-
-        //check others players hands; should be unchanged
-        int h;
-        for (h = 1; h < numPlayers; h++){
-            if(testG.handCount[h] != G.handCount[h]){
-                failHand++;
+			/* Make sure adventurer is in the player hand */
+            int adventurerexist = -1;
+            for ( j = 0; j < previous.handCount[turn]; j++ ){
+                card = previous.hand[turn][j];
+                if ( card == adventurer ){
+                    adventurerexist = j;
+					break;
+                }
             }
+			/* If its not in the hand put it in the hand in a random position */
+            if ( adventurerexist == -1 ){
+                pos = floor( Random() * previous.handCount[turn] );
+                previous.hand[turn][pos] = adventurer;
+            }
+		}
+		/* Selct random player, make a copy of GS to run test on, player adventure card */
+		turn = rand() % players; 
+		int tmp2 = previous.deckCount[turn];
+		int tmp3 = previous.discardCount[turn];
+		int tmp4 = previous.handCount[turn];
+        memcpy( &post, &previous, sizeof(struct gameState)); 
+        playAdventurer( &post, turn );
+#if (NOISY_TEST == 1)			
+		printf("\nTesting if hand count was increased by 2\n");
+#endif
+		/* When Adventurer is played, it adds two cards to the players hand. */               
+		r = post.handCount[turn]; 
+		/* If hand count of post state is 2 more than previous state, this test is passed */
+        if ( r != previous.handCount[turn] + 2 ){
+            finalfail++;
         }
+#if (NOISY_TEST == 1)
+        printf("Test Result: actual handCount: %d, expected handCount: %d\r\n", r, previous.handCount[turn] + 2);
+		printf("\nTesting if adventurer remains in hand after playing\n");
+#endif           
+		/* When adventurer is played, it should leave hand  */ 
+        r = cardExists( turn, &post, adventurer );
+		/* If adventurer is not in hand then it pass */
+        if ( r != -1 ){
+            finalfail++;
+        }
+#if (NOISY_TEST == 1)
+        if (r != -1){
+            printf("Test Result: Fail. Adventurer still in hand after playing\r\n");
+        }
+		printf("\nTesting if 2 treasure cards were added\n");	
+#endif           
+        /* When playing Adventurer, 2 treasure cards should be added last */
+		if( (( post.hand[turn][post.handCount[turn] - 2] != copper ) && ( post.hand[turn][post.handCount[turn] - 2] != silver ) && 
+		(post.hand[turn][post.handCount[turn] - 2] != gold )) && (( post.hand[turn][post.handCount[turn] - 1] != copper ) && ( post.hand[turn][post.handCount[turn] - 1] != silver ) && 
+		(post.hand[turn][post.handCount[turn] - 1] != gold ))){
+			finalfail++;
+		}
+#if (NOISY_TEST == 1)
+        if( (( post.hand[turn][post.handCount[turn] - 2] != copper ) && ( post.hand[turn][post.handCount[turn] - 2] != silver ) && 
+		(post.hand[turn][post.handCount[turn] - 2] != gold )) && (( post.hand[turn][post.handCount[turn] - 1] != copper ) && ( post.hand[turn][post.handCount[turn] - 1] != silver ) && 
+		(post.hand[turn][post.handCount[turn] - 1] != gold ))){
+			printf("Added non treasure card instead of treasure cards failed\n"); 
+		}
+		printf("\nTesting if Adventurer card is discarcded\n");	
+#endif
+        /* Council Room card should be discarded after playing so it should be at the top of the discard pile */ 
+        if(post.playedCards[post.playedCardCount - 1] != adventurer ){
+			finalfail++;
+		}
+#if (NOISY_TEST == 1)
+        if ( post.playedCards[post.playedCardCount - 1] != adventurer ){
+			printf("Adventurer discard test failed\n");
+		}
+		printf("\nTesting deck count is decreased by at least 2\n");			
+#endif   
+		/* If post state deck count didn't decreasse by 2 its fail */
+		r = post.deckCount[turn];
+        if ( (tmp2 - 2) < r  ){
+            finalfail++;
+			
+        }
+#if (NOISY_TEST == 1)
+        if( (tmp2 - 2) < r  ){
+			printf("Test Result: Fail. Deck count not decreased by at least 2\r\n");
+			printf("Test Result: actual deckCount: %d, expected deckCount: %d\r\n", r, (tmp2 - 2));
+		}
+		printf("\nTesting if total number of cards is same\n");			
+#endif   
+		/* Current player's adventurer should not affect other play's game state */
+		if ( ( post.deckCount[turn] + post.handCount[turn] + post.discardCount[turn] ) != ( previous.deckCount[turn] + previous.handCount[turn] + previous.discardCount[turn] ) ){
+			diff = ( ( post.deckCount[turn] + post.handCount[turn] + post.discardCount[turn] ) - ( previous.deckCount[turn] + previous.handCount[turn] + previous.discardCount[turn] ) );
+			finalfail++; 
+		}
+#if (NOISY_TEST == 1)
+		if ( ( post.deckCount[turn] + post.handCount[turn] + post.discardCount[turn] ) != ( previous.deckCount[turn] + previous.handCount[turn] + previous.discardCount[turn] ) ){
+			printf("Test Result: Fail. total card number changed by %d\r\n", diff );
+		}
+		printf("\nTesting other player hasn't had his hand count alterned\n");			
+#endif   
+		/* Current player's adventurer should not affect other play's game state */
+		for ( p = 0; p < players; p++ )	{
+			if ( p != turn ){
+				if( previous.handCount[p] != post.handCount[p] ){
+						finalfail++;  
+					}
+#if (NOISY_TEST == 1)
+					if (previous.handCount[p] != post.handCount[p]  ){
+						printf("Test Result: Fail. Current player's playing adventurer changed other player's hand count\n");
+						printf("Test Result: actual handCount: %d, expected handCount: %d\r\n", post.handCount[p],  previous.handCount[p]  );
+					}
+					printf("\nTesting other player hasn't had his deck count alterned\n");
+#endif
+					if( previous.deckCount[p] != post.deckCount[p] ){
+						finalfail++;
+					}
+#if (NOISY_TEST == 1)
+					if ( previous.deckCount[p] != post.deckCount[p] ){
+						printf("Test Result: Fail. Current player's playing adventurer changed other player's deck count\n");
+						printf("Test Result: actual deckCount: %d, expected deckCount: %d\r\n", post.deckCount[p], previous.deckCount[p] );
+					}
+					printf("\nTesting other player hasn't had his discard count alterned\n");
+#endif
+					if ( post.discardCount[p] != previous.discardCount[p] ){
+						finalfail++;
+					}
+#if (NOISY_TEST == 1)
+					if ( post.discardCount[p] != previous.discardCount[p] ){
+						printf("Test Result: Fail. Current player's playing adventurer changed other player's discard count\n");
+						printf("Test Result: actual discardCount: %d, expected discardCount: %d\r\n", post.discardCount[p], previous.discardCount[p] );
+					}
+#endif
+				}
+			}
+#if (NOISY_TEST == 1)			
+			printf("\nTesting general game state changes\n");
+#endif
+			if ( post.numPlayers != previous.numPlayers ){
+                finalfail++;  
+			}
+#if (NOISY_TEST == 1)
+			if ( post.numPlayers != previous.numPlayers ){
+				printf("Test Result: Fail. Number of players changed\n");
+			}
+#endif	
+			if ( post.outpostPlayed != previous.outpostPlayed ){
+                finalfail++;
+			}				
+#if (NOISY_TEST == 1)
+			if ( post.outpostPlayed != previous.outpostPlayed ){
+				printf("Test Result: Fail. Outpost played changed\n");
+			}
+#endif
+			if ( post.outpostTurn != previous.outpostTurn ){
+                finalfail++;
+			}				
+#if (NOISY_TEST == 1)
+			if ( post.outpostTurn != previous.outpostTurn ){
+				printf("Test Result: Fail. Outpost turn changed\n");
+			}
+#endif
+			if ( post.whoseTurn != previous.whoseTurn ){
+                finalfail++;  
+			}
+#if (NOISY_TEST == 1)
+			if ( post.whoseTurn != previous.whoseTurn ){
+				printf("Test Result: Fail. Whose turn changed\n");
+			}
+#endif
+			if ( post.phase != previous.phase ){
+                finalfail++;
+			}
+#if (NOISY_TEST == 1)
+			if ( post.phase != previous.phase ){
+				printf("Test Result: Fail. Phase changed\n");
+			}
+#endif
+			if ( post.numActions != ( previous.numActions ) ){
+                finalfail++;  
+			}
+#if (NOISY_TEST == 1)
+			if ( post.numActions != ( previous.numActions )){
+				printf("Test Result: Fail. Num actions didnt decrease bt 1\n");
+			}
+#endif
+			if ( post.numBuys != previous.numBuys ){
+                finalfail++;  
+			}
+#if (NOISY_TEST == 1)
+			if ( post.numBuys != previous.numBuys ){
+				printf("Test Result: Fail. Num buys changed\n");
+			}
+#endif
+			for ( x = 0; x < treasure_map + 1; x++ ){
+				if ( post.supplyCount[x] != previous.supplyCount[x] ){
+					finalfail++;
+#if (NOISY_TEST == 1)
+					printf("Test Result: Fail. Supply count changed for a card\n");
+#endif
+				}
+				if ( post.embargoTokens[x] != previous.embargoTokens[x] ){
+					finalfail++;
+#if (NOISY_TEST == 1)
+					printf("Test Result: Fail. Embargo token changed for a card\n");
+#endif
+				}
+			}	
+        }
+    printf("Final tally for Card Test 2 ( Adventurer ):\nFail: %d\r\n", finalfail );
+    return 0;
+}
 
-        //check that play count was increased by 1
-        if (testG.playedCardCount != G.playedCardCount+1){
-           failPlay++;
-        }
 
-        //check that victory pile was unchanged
-        if (testG.supplyCount[estate] != G.supplyCount[estate]){
-           failVictory++;
+int cardExists(int turn, struct gameState *state, int target){
+    int cardexists = -1;
+    int loopsize = state->handCount[turn];
+	int i;
+    for (i = 0; i < loopsize; i++)
+    {
+        if (state->hand[turn][i] == target)
+        {
+                 cardexists = i;
         }
-        if (testG.supplyCount[duchy] != G.supplyCount[duchy]){
-           failVictory++;
-        }
-        if (testG.supplyCount[province] != G.supplyCount[province]){
-           failVictory++;
-        }
-
-        //check that kingdom pile was unchanged
-        if (testG.supplyCount[adventurer] != G.supplyCount[adventurer]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[council_room] != G.supplyCount[council_room]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[feast] != G.supplyCount[feast]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[gardens] != G.supplyCount[gardens]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[mine] != G.supplyCount[mine]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[remodel] != G.supplyCount[remodel]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[smithy] != G.supplyCount[smithy]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[village] != G.supplyCount[village]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[baron] != G.supplyCount[baron]){
-           failKingdom++;
-        }
-        if (testG.supplyCount[great_hall] != G.supplyCount[great_hall]){
-           failKingdom++;
-        }
-
     }
-    printf("Number of performed tests: %d.\n\n", MAX_TEST);
-
-    printf("Test that number of treasure cards in hand is increased by 2\n");
-    printf("Number of FAILED tests: %d.\n\n", failTreasure);
-
-    printf("Test that number of cards in hand is increased by 2\n");
-    printf("Number of FAILED tests: %d.\n\n", failCards);
-
-    printf("Test that number of cards in deck is decreased by 2\n");
-    printf("Number of FAILED tests: %d.\n\n", failDeck);
-
-    printf("Test if other player's deck count was unchanged \n");
-    printf("Number of FAILED tests: %d.\n\n", failDeckOthers);
-
-    printf("Test if other player's hand count was unchanged \n");
-    printf("Number of FAILED tests: %d.\n\n", failHand);
-
-    printf("Test if played count was increased by 1 \n");
-    printf("Number of FAILED tests: %d.\n\n", failPlay);
-
-    printf("Test that victory card pile was not changed \n");
-    printf("Number of FAILED tests: %d.\n\n", failVictory);
-
-    printf("Test that kingdom card pile was not changed \n");
-    printf("Number of FAILED tests: %d.\n\n", failKingdom);
-
-	return 0;
+    return cardexists;
 }
