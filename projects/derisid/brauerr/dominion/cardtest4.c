@@ -1,5 +1,4 @@
-//cardtest4.c for dominion assignment 4
-//test for council_room
+//Test for council_roomCard
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -7,76 +6,71 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include <stdlib.h>
 
-//business rules
-//number of buys for player should be incremented
-//exactly four cards should be added to hand
-//four cards gone from deck
-//other players should have one card added to their hands
-//other players should have one card less in their decks
+int main()
+{
+	int seed = 1000;
+    int numPlayer = 2;
+    int thisPlayer = 0;
+    int handPos = 0;
+    int i = 0;
+    int cardsBeforeHand;
+    int cardsBeforeDeck;
+    int buysBeforePlay;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
 
-int main () {
-  
-  int i, n, r, p, deckCount, discardCount, handCount;
-  int k[10] = {adventurer, council_room, feast, gardens, mine,
-	  remodel, smithy, village, treasure_map, great_hall};
+	struct gameState G, testG;
+    printf("----------------- Testing Card: Council Room ----------------\n");
 
-  struct gameState *G;
-  G = newGame();
-  
-  printf("Starting cardtest4 for council room\n");
-  
-  //start game with 3 players
-  initializeGame(3, k, 3, G);
-  int p2Hand = G->handCount[1];
-  int p2Deck = G->deckCount[1];
-  int p3Hand = G->handCount[2];
-  int p3Deck = G->deckCount[2];
-  
-  //add council room to p1 hand
-  G->hand[0][G->handCount[0]] = council_room;
-  G->handCount[0]++;
-  
-  int p1Hand = G->handCount[0];
-  int p1Deck = G->deckCount[0];
-  int p1Buys = G->numBuys;
-  
-  printf("Testing that number of buys are incremented\n");
-  if (playCard(G->handCount[0] - 1, 0, 0, 0, G) == 0) {
-    if (G->numBuys == p1Buys + 1) {
-      printf("SUCCESS\n"); 
-    } else {
-      printf("FAIL\n");
-    }
-  } else {
-    printf("FAIL\n");
-  }
-  
-  printf("Testing that four cards added to hand minus played card\n");
-  if (G->handCount[0] == p1Hand + 3) {
-    printf("SUCCESS\n");
-  } else {
-    printf("FAIL\n");
-  }
-  
-  printf("Testing that four cards removed from deck\n");
-  if (G->deckCount[0] == p1Deck - 4) {
-    printf("SUCCESS\n");
-  } else {
-    printf("FAIL\n");
-  }
-  
-  printf("Testing that other players have one more card drawn\n");
-  if (G->handCount[1] == p2Hand + 1 && G->deckCount[1] == p2Deck - 1) {
-    if (G->handCount[2] == p3Hand + 1 && G->deckCount[2] == p3Deck - 1) {
-      printf("SUCCESS\n");
-    } else {
-      printf("FAIL P3, %d%d%d%d\n", G->handCount[2], p3Hand, G->deckCount[2], p3Deck);
-    }
-  } else {
-    printf("FAIL P2, %d%d%d%d\n", G->handCount[1], p2Hand, G->deckCount[1], p2Deck);
-  }
-  
-  
-  return 0;
+	initializeGame(numPlayer, k, seed, &G);
+	
+    printf("----------- Test 1:  Player should have 4+ cards ----------\n");
+
+    memcpy(&testG, &G, sizeof(struct gameState));
+    cardsBeforeHand = testG.handCount[thisPlayer];
+    cardsBeforeDeck = testG.deckCount[thisPlayer];
+    buysBeforePlay = testG.numBuys + 1;
+    council_roomCard(&testG, handPos, thisPlayer, i);
+
+    if(testG.handCount[thisPlayer] == (cardsBeforeHand + 4))
+        printf("TEST PASSED\n");
+    else
+        printf("TEST FAILED\n");
+
+    printf("----------- Test 2:  Deck should have -4 cards ----------\n");
+
+    if(testG.deckCount[thisPlayer] == (cardsBeforeDeck - 4))
+        printf("TEST PASSED\n");
+    else
+        printf("TEST FAILED\n");
+
+
+    printf("----------- Test 3:  Player should have increased number of buys ----------\n");
+
+    if(testG.numBuys == buysBeforePlay)
+        printf("TEST PASSED\n");
+    else
+        printf("TEST FAILED\n");
+
+    printf("----------- Test 4:  Opponent should have drawn another card ----------\n");
+    thisPlayer = 1;
+    if(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + 1)
+        printf("TEST PASSED\n");
+    else
+        printf("TEST FAILED\n");
+
+    printf("----------- Test 5:  Player should have discarded played card ----------\n");
+    thisPlayer = 0;
+    if(testG.discardCount[thisPlayer] == G.discardCount[thisPlayer] + 1)
+        printf("TEST PASSED\n");
+    else
+        printf("TEST FAILED\n");
+
+
+    printf("---------- council_roomCard testing completed. ----------\n\n");
+
+ return 0;
+
 }

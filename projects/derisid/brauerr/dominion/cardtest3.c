@@ -1,5 +1,4 @@
-//cardtest3.c for dominion assignment 3
-//test is for village
+//Test for treasure_mapCard
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -7,76 +6,127 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include <stdlib.h>
 
-//business rules
-//number of actions should increase by one
-//one card should be added to hand
-//number of cards in deck should be decreased by one or 
-  //deck should be shuffled if zero cards were in the deck before drawing
-  //and cards in deck should equal discard minus one
+int main()
+{
+	int seed = 1000;
+    int numPlayer = 2;
+    int thisPlayer = 0;
+    int handPos = 0;
+    int i = 0;
+    int index = 0;
+    int r;
+    int j;
 
-int main () {
-  
-  int i, n, r, p, deckCount, discardCount, handCount;
-  int k[10] = {adventurer, council_room, feast, gardens, mine,
-	  remodel, smithy, village, treasure_map, great_hall};
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+			sea_hag, tribute, smithy, council_room};
 
-  struct gameState *G;
-  G = newGame();
-  
-  printf("Starting cardtest3 for village card\n");
-  
-  //start game with 2 players
-  initializeGame(2, k, 2, G);
- 
-  
-  //add village to player ones hand
-  G->hand[0][G->handCount[0]] = village;
-  G->handCount[0]++;
-  
-  int p1HandCount = G->handCount[0];
-  int p1DeckCount = G->deckCount[0];
-  int p1DiscardCount = G->discardCount[0];
-  int p1Coins = G->coins;
-  int p1Actions = G->numActions;
-  
-  //discard Deck
-  for (i = 0; i < G->deckCount[0]; i++) {
-    G->discard[0][i] = G->deck[0][i];
-    G->deck[0][i] = -1;
-    G->discardCount[0]++;
-  }
-  G->deckCount[0] = 0;
-  
-  int p1Cards = G->deckCount[0] + G->discardCount[0];
-  
-  printf("Testing that discard will be shuffled if no cards in deck\n");
-  if (playCard(G->handCount[0] - 1, 0, 0, 0, G) == 0) {
-    printf("SUCCESS\n");
-  } else {
-    printf("FAIL\n");
-  }
-  
-  printf("Testing that number of cards in deck has decreased by one\n");
-  if (G->deckCount[0] == p1Cards - 1) {
-    printf("SUCCESS\n");
-  } else {
-    printf("FAIL - currentCards: %d, original cards: %d\n", G->deckCount[0], p1Cards);
-  }
-  
-  printf("Testing that number of cards in hand has stayed the same\n");
-  if (G->handCount[0] == p1HandCount) {
-    printf("SUCCESS\n");
-  } else {
-    printf("FAIL\n");
-  }
-  
-  printf("Testing that number of actions has increased by one\n");
-  if (G->numActions == p1Actions + 1) {
-    printf("SUCCESS\n");
-  } else {
-    printf("FAIL - currentActions: %d, original: %d\n", G->numActions, p1Actions);
-  }
-  
-  return 0;
+	struct gameState G, testG;
+
+	initializeGame(numPlayer, k, seed, &G);
+	memcpy(&testG, &G, sizeof(struct gameState));
+
+	printf("----------------- Testing Card: Treasure Map ----------------\n");
+
+	printf("----------- Test 1:  Check for another treasure map ----------\n");
+	testG.hand[thisPlayer][0] = treasure_map;
+	r = treasure_mapCard(index, &testG, thisPlayer, i, handPos);
+
+	if(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer])
+		printf("TEST PASSED\n");
+	else
+		printf("TEST FAILED \n");
+
+	printf("----------- Test 2:  Trash treasure card ----------\n");
+	if(testG.playedCards[testG.playedCardCount - 1] != treasure_map)
+		printf("TEST PASSED\n");
+	else
+		printf("TEST FAILED \n");
+
+	printf("----------- Test 3:  One map found returns -1  ----------\n");
+	if(r == -1)
+		printf("TEST PASSED\n");
+	else
+		printf("TEST FAILED \n");
+
+	printf("----------- Test 4a:  2 maps and 4 gold  ----------\n");
+	memcpy(&testG, &G, sizeof(struct gameState));
+	testG.hand[thisPlayer][0] = treasure_map;
+	testG.hand[thisPlayer][1] = treasure_map;
+	r = treasure_mapCard(index, &testG, thisPlayer, i, handPos);
+	for (j = testG.deckCount[thisPlayer] - 1; j >= testG.deckCount[thisPlayer] - 4; j--)
+	{
+		if(testG.deck[thisPlayer][j] == gold)
+			printf("TEST PASSED\n");
+		else
+			printf("TEST FAILED \n");
+	}
+
+	printf("----------- Test 4b:  2 maps trashed  ----------\n");
+	if(testG.playedCards[testG.playedCardCount - 1] != treasure_map)
+		printf("TEST PASSED\n");
+	else
+		printf("TEST FAILED \n");
+	if(testG.playedCards[testG.playedCardCount - 2] != treasure_map)
+		printf("TEST PASSED\n");
+	else
+		printf("TEST FAILED \n");
+
+	printf("----------- Test 4c:  Returns 1 if two treasuremaps  ----------\n");
+	if (r == 1)
+		printf("TEST PASSED\n");
+	else
+		printf("TEST FAILED \n");
+
+	printf("----------- Test 5:  Opponents state should remain unchanged ----------\n");
+	thisPlayer = 1;
+	printf("--- Opponent handcount unchanged? ---\n");
+    if(testG.handCount[thisPlayer] == G.handCount[thisPlayer])
+    	printf("TEST PASSED\n");
+  	else
+    	printf("TEST FAILED\n");
+	
+	//int j;
+	printf("--- Opponent hand unchanged? ---\n");
+	for (j = 0; j < G.handCount[thisPlayer]; j++)
+  	{
+	    if(testG.hand[thisPlayer][j] == G.hand[thisPlayer][j])
+	      printf("TEST PASSED\n");
+	    else
+	      printf("TEST FAILED\n");
+  	}
+	printf("--- Opponent deckcount unchanged? ---\n");
+	  if(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer])
+	    printf("TEST PASSED\n");
+	  else
+	    printf("TEST FAILED\n");
+
+	printf("--- Opponent deck unchanged? ---\n");
+	for (j = 0; j < G.deckCount[thisPlayer]; j++)
+	{
+	   	if(testG.deck[thisPlayer][j] == G.deck[thisPlayer][j])
+		   printf("TEST PASSED\n");
+		else
+		   printf("TEST FAILED\n");
+	}
+		
+	printf("--- Opponent discardcount unchanged? ---\n");
+	  if(testG.discardCount[thisPlayer] == G.discardCount[thisPlayer])
+	    printf("TEST PASSED\n");
+	  else
+	    printf("TEST FAILED\n");
+
+	printf("--- Opponent discard unchanged? ---\n");
+	for (j = 0; j < G.discardCount[thisPlayer]; j++)
+	{
+	    if(testG.discard[thisPlayer][j] == G.discard[thisPlayer][j])
+	      printf("TEST PASSED\n");
+	    else
+	      printf("TEST FAILED\n");
+	}
+
+	printf("---------- treasure_mapCard testing completed. ----------\n\n");
+
+ return 0;
 }
