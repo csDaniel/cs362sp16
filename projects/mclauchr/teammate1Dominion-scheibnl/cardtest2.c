@@ -50,7 +50,7 @@ int main()
 		
 		printf("*****TEST: cardtest2() - BEGIN *********\n\n");
 		
-			//Test 1 - current players handCount must be >= 2 more than original
+			//Test 1 - current players handCount must be + 1 more than original
 		
 			//record original hand count/deckCount for test 1/2
 			oHandCount = state.handCount[currPlayer];
@@ -71,11 +71,11 @@ int main()
 			
 				if (state.handCount[currPlayer] == oHandCount + 1)
 				{
-					printf("Test1: New Hand Count Should be +2: PASS\n");
+					printf("Test1: New Hand Count Should be +1: PASS\n");
 				}
 				else
 				{
-					printf("Test1: New Hand Count Should be +2: FAIL\n");
+					printf("Test1: New Hand Count Should be +1: FAIL\n");
 					printf("Expected: %d, Tested: %d\n", oHandCount + 1, state.handCount[currPlayer]);
 				}
 				

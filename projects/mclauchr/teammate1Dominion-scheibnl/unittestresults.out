@@ -198,7 +198,7 @@ Creating 'cardtest1.c.gcov'
 ADVENTURER!!!
 *****TEST: cardtest2() - BEGIN *********
 
-Test1: New Hand Count Should be +2: FAIL
+Test1: New Hand Count Should be +1: FAIL
 Expected: 6, Tested: 7
 Test2: Current Player has +2 Treasure Cards: PASS
 Test3: Deck Changes Occurred Only in Current Players Deck: PASS
