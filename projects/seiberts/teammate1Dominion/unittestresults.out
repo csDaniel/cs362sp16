@@ -114,21 +114,25 @@ Calls executed:83.33% of 18
 Creating 'unittest4.c.gcov'
 
 -------------------ADVENTURE CARD TEST ---------------------
+
+Test 1: 
 Test Passed: Card Drawn is top card.
 COPPER 4 | SILVER 5 | GOLD 6 
 Test Passed: Draw Treasure: 4
+
+Test 2: 
 Test Passed: Card Drawn is top card.
 COPPER 4 | SILVER 5 | GOLD 6 
 Test Failed: Draw Treasure: 5
 File 'cardtest1.c'
-Lines executed:79.07% of 43
+Lines executed:80.43% of 46
 Creating 'cardtest1.c.gcov'
 
 File 'cardtest1.c'
-Lines executed:79.07% of 43
+Lines executed:80.43% of 46
 Branches executed:88.89% of 18
 Taken at least once:50.00% of 18
-Calls executed:70.00% of 10
+Calls executed:72.73% of 11
 Creating 'cardtest1.c.gcov'
 
 -------------------SMITHY CARD TEST---------------------
