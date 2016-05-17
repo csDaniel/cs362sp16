@@ -6,3 +6,6 @@ unittest1
 unittest2
 unittest3
 unittest4
+*.project
+*.classpath
+projects/hiteda/URLValidator/bin/.settings/org.eclipse.jdt.core.prefs
