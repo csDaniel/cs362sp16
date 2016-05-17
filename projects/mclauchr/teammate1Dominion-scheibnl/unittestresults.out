@@ -179,17 +179,16 @@ SMITHY!!!
 
 Test1: Appropriate Cards Add/Subtract (+3 - 1 = +2) Total: FAIL
 Expected: 7, Test: 8
-Test2: Cards Drawn/Discarded to and from Appropriate Pile: PASS
 Test2: Other Players Discard Pile NOT Affected: PASS
 Test3: Card Effect for Smithy Returned Successfully: PASS
 
 *****TEST: cardtest1() - END ***********
 
 File 'cardtest1.c'
-Lines executed:87.88% of 33
-Branches executed:100.00% of 8
-Taken at least once:50.00% of 8
-Calls executed:73.33% of 15
+Lines executed:89.29% of 28
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:76.92% of 13
 Creating 'cardtest1.c.gcov'
 
 ************************************
@@ -207,9 +206,9 @@ Test5: Card Effect for Adventurer Returned Successfully when Deck Count = 0: PAS
 *****TEST: cardtest2() - END ***********
 
 File 'cardtest2.c'
-Lines executed:80.39% of 51
-Branches executed:100.00% of 28
-Taken at least once:64.29% of 28
+Lines executed:80.00% of 50
+Branches executed:100.00% of 26
+Taken at least once:65.38% of 26
 Calls executed:68.42% of 19
 Creating 'cardtest2.c.gcov'
 
@@ -220,18 +219,17 @@ GREAT_HALL!!!
 *****TEST: cardtest3() - BEGIN *********
 
 Test1: Players New Hand Count Should be Same(+1-1): PASS
-Test1b: Current Players Deck Count Remains Unchanged: FAIL
-Expected: 5, Tested: 4
+Test1b: + 1 card discarded to played cards: PASS
 Test2: Num Actions + 1: PASS
 Test3: Other Players Deck Count Remains Unchanged: PASS
 Test4: Card Effect for Great_Hall Returned Successfully: PASS
 *****TEST: cardtest3() - END ***********
 
 File 'cardtest3.c'
-Lines executed:77.14% of 35
+Lines executed:74.29% of 35
 Branches executed:100.00% of 10
 Taken at least once:50.00% of 10
-Calls executed:57.89% of 19
+Calls executed:52.63% of 19
 Creating 'cardtest3.c.gcov'
 
 ************************************
@@ -241,8 +239,7 @@ EMBARGO!!!
 *****TEST: cardtest4() - BEGIN *********
 
 Test1: +2 Coins Added to Player State: PASS
-Test2: Card is trashed when discarded, deckCount - 1: FAIL
-Expected: 4, Tested: 5
+Test2: Card is trashed when discarded: PASS
 Test3: Embargo Token for Choice1 Increased: PASS
 Test4: Other Players Deck Count Remains Unchanged: PASS
 Test5: Card Effect for Embargo Returned Successfully: PASS
@@ -251,10 +248,10 @@ Test6: Caught Inappropriate Choice 1 Parameter: PASS
 *****TEST: cardtest4() - END ***********
 
 File 'cardtest4.c'
-Lines executed:79.55% of 44
+Lines executed:77.27% of 44
 Branches executed:100.00% of 12
 Taken at least once:50.00% of 12
-Calls executed:62.50% of 24
+Calls executed:58.33% of 24
 Creating 'cardtest4.c.gcov'
 
 ************************************

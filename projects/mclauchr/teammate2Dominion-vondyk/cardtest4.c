@@ -36,8 +36,8 @@ int main()
 	int rSeed = 100;
 	int kCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy}; 
 	int retVal;
-	int oDeckCount;
-	int testDeckCount1;
+	int oPlayed;
+	int testPlayed;
 	int testDeckCount2;
 	int oCoins;
 	int tCoins;
@@ -50,7 +50,7 @@ int main()
 		retVal = initializeGame(pNum, kCards, rSeed, &state);
 		
 		//store all original data
-		oDeckCount = state.deckCount[currPlayer];
+		oPlayed = state.playedCardCount;
 		oETokens = state.embargoTokens[smithy];
 		oCoins = state.coins;
 		
@@ -78,16 +78,16 @@ int main()
 				
 			//Test 2 - Verify that the embargo coins is trashed.
 			
-				testDeckCount1 = state.deckCount[currPlayer];
+				testPlayed = state.playedCardCount;
 				
-				if (testDeckCount1 == oDeckCount - 1)
+				if (testPlayed == oPlayed)
 				{
-					printf("Test2: Card is trashed when discarded, deckCount - 1: PASS\n");
+					printf("Test2: Card is trashed when discarded: PASS\n");
 				}
 				else
 				{
-					printf("Test2: Card is trashed when discarded, deckCount - 1: FAIL\n");
-					printf("Expected: %d, Tested: %d\n", oDeckCount - 1, state.deckCount[currPlayer]);
+					printf("Test2: Card is trashed when discarded: FAIL\n");
+					printf("Played Card Count Expected: %d, Tested: %d\n", oPlayed, testPlayed);
 				}
 				
 			//Test 3 - Verify that the embargo token for smithy is increased
@@ -116,7 +116,7 @@ int main()
 				else
 				{
 					printf("Test4: Other Players Deck Count Remains Unchanged: FAIL\n");
-					printf("Expected: 10, Tested: %d\n", oDeckCount, state.deckCount[1]);
+					printf("Expected: 10, Tested: %d\n", 10, state.deckCount[1]);
 				}
 				
 				

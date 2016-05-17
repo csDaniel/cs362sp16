@@ -51,8 +51,9 @@ int main()
 		printf("*****TEST: cardtest2() - BEGIN *********\n\n");
 		
 			//Test 1 - current players handCount must be + 1 more than original
-		
-			//record original hand count/deckCount for test 1/2
+			state.hand[currPlayer][0] = adventurer;
+			
+			//record original hand count
 			oHandCount = state.handCount[currPlayer];
 			
 			//find original treasure card count for test 2
