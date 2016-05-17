@@ -75,12 +75,12 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	cardtest1 >> unittestresults.out
 	echo "" >> unittestresults.out
 	
-	echo "--------------------------------------------" >> unittestresults.out
-	echo "cardtest2" >> unittestresults.out
-	echo "--------------------------------------------" >> unittestresults.out
-	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
-	cardtest2 >> unittestresults.out
-	echo "" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	echo "cardtest2" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+#	cardtest2 >> unittestresults.out
+#	echo "" >> unittestresults.out
 	
 	echo "--------------------------------------------" >> unittestresults.out
 	echo "cardtest3" >> unittestresults.out
@@ -89,12 +89,12 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	cardtest3 >> unittestresults.out
 	echo "" >> unittestresults.out
 	
-	echo "--------------------------------------------" >> unittestresults.out
-	echo "cardtest4" >> unittestresults.out
-	echo "--------------------------------------------" >> unittestresults.out
-	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
-	cardtest4 >> unittestresults.out
-	echo "" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	echo "cardtest4" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+#	cardtest4 >> unittestresults.out
+#	echo "" >> unittestresults.out
 	
 	echo "--------------------------------------------" >> unittestresults.out
 	echo "gcov results" >> unittestresults.out
@@ -103,7 +103,7 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 
 randomtestresults:
 	make randomtestcard.out
-	make randomtestadventurer.out
+#	make randomtestadventurer.out
 
 randomtestcard.out: randomtestcard.c dominion.o rngs.o
 	echo "--------------------------------------------" > randomtestcard.out
@@ -122,27 +122,27 @@ randomtestcard.out: randomtestcard.c dominion.o rngs.o
 	echo "--------------------------------------------" >> randomtestcard.out
 	gcov -f -b dominion.c >> randomtestcard.out
 	
-randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
-	echo "--------------------------------------------" > randomtestadventurer.out
-	echo "Stramel CS362 Assignment 3 Random Test Adventurer Results" >> randomtestadventurer.out
-	echo "--------------------------------------------" >> randomtestadventurer.out
-	echo "" >> randomtestadventurer.out
-	
-	echo "--------------------------------------------" >> randomtestadventurer.out
-	echo "randomtestadventurer" >> randomtestadventurer.out
-	echo "--------------------------------------------" >> randomtestadventurer.out
-	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
-	randomtestadventurer >> randomtestadventurer.out
-	echo "" >> randomtestadventurer.out
-	echo "--------------------------------------------" >> randomtestadventurer.out
-	echo "gcov results" >> randomtestadventurer.out
-	echo "--------------------------------------------" >> randomtestadventurer.out
-	gcov -f -b dominion.c >> randomtestadventurer.out
+#randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
+#	echo "--------------------------------------------" > randomtestadventurer.out
+#	echo "Stramel CS362 Assignment 3 Random Test Adventurer Results" >> randomtestadventurer.out
+#	echo "--------------------------------------------" >> randomtestadventurer.out
+#	echo "" >> randomtestadventurer.out
+#	
+#	echo "--------------------------------------------" >> randomtestadventurer.out
+#	echo "randomtestadventurer" >> randomtestadventurer.out
+#	echo "--------------------------------------------" >> randomtestadventurer.out
+#	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+#	randomtestadventurer >> randomtestadventurer.out
+#	echo "" >> randomtestadventurer.out
+#	echo "--------------------------------------------" >> randomtestadventurer.out
+#	echo "gcov results" >> randomtestadventurer.out
+#	echo "--------------------------------------------" >> randomtestadventurer.out
+#	gcov -f -b dominion.c >> randomtestadventurer.out
 	
 alltests:
 	make unittestresults.out
 	make randomtestcard.out
-	make randomtestadventurer.out
+#	make randomtestadventurer.out
 
 clean:
 	rm -f *.out *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so

@@ -180,7 +180,9 @@ int main(int argc, char *argv[]) {
     memcpy(copy, state, sizeof(struct gameState));
 
     // run the test
-    r = smithyCardEffect(pn, hp, state);
+    //r = smithyCardEffect(pn, hp, state);
+    r = drawSmithy(state, 1, 1); // refactored to match Diana's function call
+
     calls++;
 
     // -------------------------------------------------------------------------

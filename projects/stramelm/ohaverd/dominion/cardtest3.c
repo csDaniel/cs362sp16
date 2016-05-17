@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
   memcpy(copy, state, sizeof(struct gameState));
 
   // use council_room card for player 2 (index 1), hand posiition 0
-  int r = council_roomCardEffect(1, 3, state);
+  //int r = council_roomCardEffect(1, 3, state);
+  int r = drawCouncilRoom(state, 3, 1); // refactored to match Diana's function call
 
   // -------------------------------------------------------------------------------------
   // REQT: FUNCTION SUCCESSFULLY COMPLETES

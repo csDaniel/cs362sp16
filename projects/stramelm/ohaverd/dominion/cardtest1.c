@@ -22,7 +22,8 @@ int main(int argc, char *argv[]) {
   memcpy(copy, state, sizeof(struct gameState));
 
   // use smithy card for player 2 (index 1), hand posiition 0
-  int r = smithyCardEffect(1, 1, state);
+  //int r = smithyCardEffect(1, 1, state);
+  int r = drawSmithy(state, 1, 1); // refactored to match Diana's function call
 
   // -------------------------------------------------------------------------------------
   // REQT: FUNCTION SUCCESSFULLY COMPLETES
