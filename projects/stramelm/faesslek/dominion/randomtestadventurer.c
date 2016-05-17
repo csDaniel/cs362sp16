@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
   //int maxBytes = 32;
   int np, pn; // number of players, player number
   int i, j, k, changed, seed, card;
-  int r, calls = 0; // result of test smithy, number of calls to smithy
+  int calls = 0; // result of test smithy, number of calls to smithy
   int pass[] = {0, 0, 0, 0, 0, 0, 0}, fail[] = {0, 0, 0, 0, 0, 0, 0}, t; // test
   int before, after; // ints used to assess pass/fail criteria
 
@@ -179,13 +179,17 @@ int main(int argc, char *argv[]) {
     memcpy(copy, state, sizeof(struct gameState));
 
     // run the test
-    r = adventurerCardEffect(pn, state);
+    //r = adventurerCardEffect(pn, state);
+    adventurerCardEffect(state, pn); // refactored to match Kelby's function call
+
     calls++;
 
     // -------------------------------------------------------------------------
     // REQT #1: FUNCTION SUCCESSFULLY COMPLETES
     // -------------------------------------------------------------------------
     t++;
+    
+    /*
     if (r == 0) { pass[t]++; } else {
       fail[t]++;
       if (fail[t] == 1) { // first failure of this test
@@ -197,6 +201,7 @@ int main(int argc, char *argv[]) {
         //printMemory(state, sizeof(*state), maxBytes);
       }
     }
+    */
 
     // -------------------------------------------------------------------------
     // REQT #2: CURRENT PLAYER SHOULD REC'V 3 CARDS,

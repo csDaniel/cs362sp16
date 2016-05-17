@@ -82,19 +82,19 @@ unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c
 	cardtest2 >> unittestresults.out
 	echo "" >> unittestresults.out
 	
-	echo "--------------------------------------------" >> unittestresults.out
-	echo "cardtest3" >> unittestresults.out
-	echo "--------------------------------------------" >> unittestresults.out
-	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
-	cardtest3 >> unittestresults.out
-	echo "" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	echo "cardtest3" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+#	cardtest3 >> unittestresults.out
+#	echo "" >> unittestresults.out
 	
-	echo "--------------------------------------------" >> unittestresults.out
-	echo "cardtest4" >> unittestresults.out
-	echo "--------------------------------------------" >> unittestresults.out
-	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
-	cardtest4 >> unittestresults.out
-	echo "" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	echo "cardtest4" >> unittestresults.out
+#	echo "--------------------------------------------" >> unittestresults.out
+#	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
+#	cardtest4 >> unittestresults.out
+#	echo "" >> unittestresults.out
 	
 	echo "--------------------------------------------" >> unittestresults.out
 	echo "gcov results" >> unittestresults.out

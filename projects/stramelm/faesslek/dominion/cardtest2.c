@@ -54,11 +54,14 @@ int main(int argc, char *argv[]) {
   memcpy(copy, state, sizeof(struct gameState));
 
   // use adventurer card for player 2 (index 1)
-  int r = adventurerCardEffect(1, state);
+  //int r = adventurerCardEffect(1, state);
+  adventurerCardEffect(state, 1); // refactored to match Kelby's function call
 
   // -------------------------------------------------------------------------------------
   // REQT: FUNCTION SUCCESSFULLY COMPLETES
   // -------------------------------------------------------------------------------------
+  
+  /*
   if (r == 0) {
     printf("PASS");
   }
@@ -66,6 +69,7 @@ int main(int argc, char *argv[]) {
     printf("FAIL");
   }
   printf("ED: CARD EXECUTION\n");
+  */
 
   // -------------------------------------------------------------------------------------
   // REQT: CURRENT PLAYER SHOULD REC'V 2 TOTAL CARDS, BUT ADVENTURER TO BE DISCARDED, NET 1
