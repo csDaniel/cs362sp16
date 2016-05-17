@@ -8,11 +8,11 @@ TESTING updateCoins():
  >>>>> SUCCESS: Testing complete UPDATE_COINS <<<<<
 
 File 'unittest1.c'
-Lines executed:65.69% of 137
+Lines executed:65.44% of 136
 Creating 'unittest1.c.gcov'
 
 File 'unittest1.c'
-Lines executed:65.69% of 137
+Lines executed:65.44% of 136
 Branches executed:83.67% of 98
 Taken at least once:46.94% of 98
 Calls executed:39.53% of 43
@@ -22,7 +22,7 @@ unittest2.c:
 -------------------------UNITTEST2--------------------------------
 Starting unittest2
 TESTING drawCard():
-
+player = 0, count = 5, deckCounter - 1 = 26player = 1, count = 0, deckCounter - 1 = 26
  >>>>> SUCCESS: Testing complete DRAW_CARD <<<<<
 
 File 'unittest2.c'
@@ -40,10 +40,22 @@ unittest3.c:
 --------------------------UNITTEST3------------------------------
 Starting unittest3
 TESTING discardCard():
-Error found in DISCARD_CARD, 0
-	post G->playedCardCount = 1  testPlayedCardCount = 1
+Error found in DISCARD_CARD, 4
+	post G->playedCardCount = 1  testPlayedCardCount = 0
 	post G->handCount[player] = 0  testHandPosition = 0
 	post testTrashFlag = 0 Player = 0
+
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 387389207 pre.numBuys = 387389207
+	post.NumAction = 387389207 pre.NumActions = 387389207
+	post.Coins = 387389207 pre.Coins = 387389207
+	post.HandCount = 0  pre.HandCount = 0
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 10 pre.deckCount[p] = 10
+Error found in DISCARD_CARD, 0
+	post G->playedCardCount = 0  testPlayedCardCount = 1
+	post G->handCount[player] = 0  testHandPosition = 0
+	post testTrashFlag = 1 Player = 0
 
 	post.whoseTurn = 0 pre.whoseTurn = 0
 	post.numBuys = 387389207 pre.numBuys = 387389207
@@ -56,14 +68,14 @@ Error found in DISCARD_CARD, 0
  >>>>> FAILURES DETECTED: Examine test cases DISCARD_CARD <<<<<
 
 File 'unittest3.c'
-Lines executed:70.18% of 114
+Lines executed:71.93% of 114
 Creating 'unittest3.c.gcov'
 
 File 'unittest3.c'
-Lines executed:70.18% of 114
-Branches executed:75.56% of 90
-Taken at least once:47.78% of 90
-Calls executed:57.50% of 40
+Lines executed:71.93% of 114
+Branches executed:77.78% of 90
+Taken at least once:52.22% of 90
+Calls executed:60.00% of 40
 Creating 'unittest3.c.gcov'
 
 unittest4.c:
@@ -95,7 +107,7 @@ Error found in smithy 3
 	preCall.hand[p][cardPosition] = 387389207
 	post.playedCardCount = 1 pre.playedCardCount = 0
 	post.playCards[0] = 13 pre.playedCards[0] = 387389207
-	post.discardCount[p] = 0 pre.discardCount[p] = 0
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
 	post.deckCount[p] = 7 pre.deckCount[p] = 7
 	smithy card = 13 Player = 0
 
@@ -215,47 +227,104 @@ Creating 'cardtest2.c.gcov'
 
 cardtest3.c:
 ----------------- Testing Card: village ----------------
+Error found in village, 5
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 2 pre.NumActions = 2
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 387389207
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 14 pre.playedCards[0] = 14
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 9
+	treasure = 14 Player = 1
 
- >>>>> SUCCESS: Testing complete village <<<<<
+
+ >>>>> FAILURES DETECTED: Examine test cases village <<<<<
 
 File 'cardtest3.c'
-Lines executed:54.87% of 113
+Lines executed:69.03% of 113
 Creating 'cardtest3.c.gcov'
 
 File 'cardtest3.c'
-Lines executed:54.87% of 113
-Branches executed:82.50% of 80
-Taken at least once:45.00% of 80
-Calls executed:23.81% of 42
+Lines executed:69.03% of 113
+Branches executed:77.50% of 80
+Taken at least once:43.75% of 80
+Calls executed:57.14% of 42
 Creating 'cardtest3.c.gcov'
 
 cardtest4.c:
 ----------------- Testing Card: great_hall ----------------
+ERROR noVictoryCardChanges
+Error found in great_hall, 8
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 1 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 16
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 16 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 10
+	treasure = 16 Player = 1
 
- >>>>> SUCCESS: Testing complete great_hall <<<<<
+Error found in great_hall, 5
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 1 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 16
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 16 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 10
+	treasure = 16 Player = 1
+
+Error found in great_hall, 6
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 387389207
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 16 pre.playedCards[0] = 16
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 9
+	treasure = 16 Player = 1
+
+
+ >>>>> FAILURES DETECTED: Examine test cases great_hall <<<<<
 
 File 'cardtest4.c'
-Lines executed:54.31% of 116
+Lines executed:72.41% of 116
 Creating 'cardtest4.c.gcov'
 
 File 'cardtest4.c'
-Lines executed:54.31% of 116
-Branches executed:81.40% of 86
-Taken at least once:44.19% of 86
-Calls executed:26.67% of 45
+Lines executed:72.41% of 116
+Branches executed:76.74% of 86
+Taken at least once:45.35% of 86
+Calls executed:64.44% of 45
 Creating 'cardtest4.c.gcov'
 
 dominion.c:
 --------------------DOMINION CODE COVERAGE--------------------
 File 'dominion.c'
-Lines executed:36.24% of 574
+Lines executed:39.43% of 563
 Creating 'dominion.c.gcov'
 
 File 'dominion.c'
-Lines executed:36.24% of 574
-Branches executed:38.06% of 423
-Taken at least once:30.97% of 423
-Calls executed:20.00% of 95
+Lines executed:39.43% of 563
+Branches executed:44.15% of 419
+Taken at least once:34.84% of 419
+Calls executed:21.88% of 96
 Creating 'dominion.c.gcov'
 
 dominion.c:
