@@ -1,0 +1,11 @@
+Result for running Random Adventurer Card Unit tests:
+randomtestadventurer.c:
+****RANDOM TESTING: adventurer Card****
+adventurer: PASS adventurer discards itself when played
+adventurer: PASS correctly increments handCount and decrements deckCount when played
+adventurer: PASS only shuffles when deck count is 0
+All tests passed!
+File 'dominion.c'
+Lines executed:25.40% of 563
+Creating 'dominion.c.gcov'
+

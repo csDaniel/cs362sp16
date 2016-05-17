@@ -63,13 +63,31 @@ I guess I will temporarily remove my bug so the make file can run and it
 should still catch the other bug.
 
 It is still crashing and giving segmentation faults when I try to make it.
+I am not sure how to resolve this.  Related questions were asked on Piazza
+with no instructor response.
 
+I re-wrote randomtestadventurer.c so it compiles.  It has 3 minimum tests
+and the following output is produced:
 
+Testing Adventurer card:
+TEST A failed 2000 of 2000 tries
+TEST B failed 2000 of 2000 tries
+TEST C failed 2000 of 2000 tries
 
+Function 'adventurerCard'
+Lines executed:94.12% of 17
+Branches executed:100.00% of 12
+Taken at least once:75.00% of 12
+Calls executed:50.00% of 2
+...
+File 'dominion.c'
+Lines executed:20.74% of 564
+Branches executed:24.22% of 417
+Taken at least once:15.83% of 417
+Calls executed:10.53% of 95
 
-
-
-
+The fails are expected due to the numerous errors with this card, including
+discard issues and my errors, discussed in refactor.c
 
 
 

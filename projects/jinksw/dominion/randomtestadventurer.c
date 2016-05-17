@@ -11,6 +11,7 @@ Adventurer Card: Reveal/Draw cards from deck until you reveal/draw
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include "interface.h"
 
 #define DEBUG 0
 #define NOISY_TEST 1
@@ -18,10 +19,9 @@ Adventurer Card: Reveal/Draw cards from deck until you reveal/draw
 int checkAdventurer(struct gameState *post) {
   struct gameState pre;
   memcpy (&pre, post, sizeof(struct gameState));
-
-  int r;
+  int r, i;
 	    
-  r = playAdventurerCard(post);
+  r = playAdventurer(post);
 
 	int treasCount = 0;
 	int currPlayer = whoseTurn( &pre );
@@ -55,33 +55,53 @@ int checkAdventurer(struct gameState *post) {
 	}
 
   assert (r == 0);
-  assert(memcmp(&pre, post, sizeof(struct gameState)) == 0);
+	if( (memcmp(&pre, post, sizeof(struct gameState)) == 0)){
+		printf( "***Passed /n");
+	} else {
+		printf( "***Failed /n" );
+		printf( "   Discard Count Test: %d, Function: %d \n", pre.discardCount[currPlayer],  post->discardCount[currPlayer] );
+		printf( "   Cards in Discard Test: " );
+		printDiscard( currPlayer, &pre );
+		printf( "   Cards in Discard Function: " );
+		printDiscard( currPlayer, post );
+		printf( "   Hand Count Test: %d, Function: %d \n", pre.handCount[currPlayer],  post->handCount[currPlayer] );
+		printf( "   Cards in Hand Test: " );
+		printHand( currPlayer, &pre );
+		printf( "   Cards in Hand Function: " );
+		printHand( currPlayer, post );
+		printf( "   Deck Count Test: %d, Function: %d \n", pre.deckCount[currPlayer],  post->deckCount[currPlayer] );
+		printf( "   Cards in Deck Test: " );
+		printDeck( currPlayer, &pre );
+		printf( "   Cards in Deck Function: " );
+		printDeck( currPlayer, post );
+		printf( "   Coin Count Test: %d, Function: %d \n ", countHandCoins( currPlayer, &pre),  countHandCoins( currPlayer, post ) );
+	}
+	
+	return 0;
 }
 
 int main () {
 
-  int i, n, r, p, deckCount, discardCount, handCount;
+  int n, p;
 
   int k[10] = {adventurer, council_room, feast, gardens, mine,
 	       remodel, smithy, village, baron, great_hall};
-
   struct gameState G;
 
   printf ("Testing Adventurer.\n");
 
-  printf ("RANDOM TESTS.\n");
 
   SelectStream(2);
   PutSeed(3);
+  printf ("RANDOM TESTS.\n");
 
   for (n = 0; n < 2000; n++) {
-    for (i = 0; i < sizeof(struct gameState); i++) {
-      ((char*)&G)[i] = floor(Random() * 256);
-    }
-    p = floor(Random() * 2);
+	p = floor( Random() * MAX_PLAYERS );
+	initializeGame( p, k, 777, &G );
     G.deckCount[p] = floor(Random() * MAX_DECK);
     G.discardCount[p] = floor(Random() * MAX_DECK);
     G.handCount[p] = floor(Random() * MAX_HAND);
+	printf( "Test %d \n", n );
     checkAdventurer(&G);
   }
 
