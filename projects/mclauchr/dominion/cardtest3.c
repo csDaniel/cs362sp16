@@ -8,7 +8,7 @@
 ** Description: card test for great_hall card. For this card we must
 ** look at these important features of the card effect:
 **		1. Verify that a single additional card is added to the current
-**		   players hand, and then discarded back to the players deck
+**		   players hand, and then discarded as a played card
 **		2. Verify that the number of actions has been incremented
 **		3. Verify that no other players decks have been altered.
 **		4. Verify that the cardEffect for great_hall returns 0
@@ -33,8 +33,8 @@ int main()
 	int kCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy}; 
 	int retVal;
 	int oHandCount;
-	int oDeckCount;
-	int testDeckCount1;
+	int oPlayed;
+	int testPlayed;
 	int testDeckCount2;
 	int oNumActions;
 	int tNumActions;
@@ -51,7 +51,7 @@ int main()
 		
 			//record original hand count/deckCount for test 1/2
 			oHandCount = state.handCount[currPlayer];
-			oDeckCount = state.deckCount[currPlayer];
+			oPlayed = state.playedCardCount;
 			oNumActions = state.numActions;
 			
 				retVal = cardEffect(great_hall, 0, 0, 0, &state, 0, 0); 
@@ -69,17 +69,17 @@ int main()
 				
 			//Test 1 continued - Verify that the player's decks remains unchanged in total
 			
-				testDeckCount1 = state.deckCount[currPlayer];
+				testPlayed = state.playedCardCount;
 				testDeckCount2 = state.deckCount[1];
 				
-				if (testDeckCount1 == oDeckCount)
+				if (oPlayed + 1 == state.playedCardCount)
 				{
-					printf("Test1b: Current Players Deck Count Remains Unchanged: PASS\n");
+					printf("Test1b: + 1 card discarded to played cards: PASS\n");
 				}
 				else
 				{
-					printf("Test1b: Current Players Deck Count Remains Unchanged: FAIL\n");
-					printf("Expected: %d, Tested: %d\n", oDeckCount, state.deckCount[currPlayer]);
+					printf("Test1b: + 1 card discarded to played cards: FAIL\n");
+					printf("Expected: %d, Tested: %d\n", oPlayed + 1, state.playedCardCount);
 				}
 				
 			//Test 2 - verify numActions +1
@@ -103,7 +103,7 @@ int main()
 				else
 				{
 					printf("Test3: Other Players Deck Count Remains Unchanged: FAIL\n");
-					printf("Expected: 10, Tested: %d\n", oDeckCount, state.deckCount[1]);
+					printf("Expected: 10, Tested: %d\n", 10, state.deckCount[1]);
 				}
 				
 		

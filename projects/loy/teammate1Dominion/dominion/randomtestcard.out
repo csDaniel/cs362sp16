@@ -1,0 +1,12 @@
+Result for running Random Dominion (Mine) Card Unit tests:
+randomtestcard.c:
+****RANDOM TESTING: mine Card****
+mine: PASS mine discards itself when played
+mine: PASS fails when choice2 is 3$ or greater in cost than choice1
+mine: PASS fails when choice2 card is invalid card enumeration
+mine: PASS fails when choice1 card is not a treasure card
+All tests passed!
+File 'dominion.c'
+Lines executed:29.66% of 563
+Creating 'dominion.c.gcov'
+
