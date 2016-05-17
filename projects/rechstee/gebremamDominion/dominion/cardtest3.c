@@ -32,7 +32,7 @@ printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 // ----------- TEST 1:1 = +1 action --------------printf("TEST 1: +3 cards\n");
 // copy the game state to a test case 
 memcpy(&testG, &G, sizeof(struct gameState));  
-cardEffect(great_hall, choice1, choice2, choice3, &testG, handpos, &bonus);
+greatHallRefactored(handpos, thisPlayer, &testG);
 newCards = 1; 
 discarded = 0;
 xtraCoins = 0;

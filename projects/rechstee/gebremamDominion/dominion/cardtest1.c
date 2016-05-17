@@ -30,7 +30,7 @@ printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 // ----------- TEST 1: choice1 = 1 = +2 cards --------------printf("TEST 1: choice1 = 1 = +2 cards\n");
 // copy the game state to a test case 
 memcpy(&testG, &G, sizeof(struct gameState));  
-playAdventurer( &testG, thisPlayer, drawnTreasure, cardDrawn,temphand, i);     
+adventurerRefactored(drawnTreasure, &testG, thisPlayer, i, temphand);    
 newCards = 2; 
 xtraCoins = 0; 
 printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards);
