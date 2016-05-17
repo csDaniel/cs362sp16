@@ -22,7 +22,6 @@
 #include "rngs.h"
 #include <stdlib.h>
 #include "interface.h"
-#include "interface.c"
 
 
 #define TESTCARD "adventurer"

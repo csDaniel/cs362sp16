@@ -68,5 +68,15 @@ unittestresults.out: dominion.o rngs.o unittest1.c unittest2.c unittest3.c unitt
 	unittest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	
+randomtestcard.out: dominion.o rngs.o randomtestcard.c
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	randomtestcard >> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	
+randomtestadventurer.out: dominion.o rngs.o randomtestadventurer.c
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe unittest1 unittest1.exe *.gcov *.gcda *.gcno *.so

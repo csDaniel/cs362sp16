@@ -8,7 +8,7 @@
 #include "unittests.h"
 
 
-void testUpdateCoins()
+void testUpdateCoins(int numOfRuns)
 {
 	// Test Suite Setup: Test variables
 	struct gameState *currentState = newGame();

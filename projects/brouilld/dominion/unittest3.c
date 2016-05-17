@@ -21,7 +21,7 @@ void removeCard(int currentPlayer, struct gameState *currentState)
 	currentState->handCount[currentPlayer]--;
 }
 
-void testPlayCard(){
+void testPlayCard(int numOfRuns){
 
 	// Test Suite Setup: Test variables
 	int count;
