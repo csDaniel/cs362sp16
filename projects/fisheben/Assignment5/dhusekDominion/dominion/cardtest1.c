@@ -110,9 +110,10 @@ int main() {
                 preCall.whoseTurn = p;
 				//set hand sizeof
 				preCall.handCount[p] = i;
+                preCall.playedCardCount = 0;
+                preCall.trashCount = 0;
 			    preCall.deckCount[p] = NO_SMITHY_CARDS_TOTAL;                
                 preCall.discardCount[p] = 0;
-                preCall.playedCardCount = 0;
                 memcpy(preCall.hand[p], noSmithyCards, sizeof(int) * NO_SMITHY_CARDS_TOTAL);
             	//add smithy card into correct position
                 preCall.hand[p][cardPosition] = smithy;

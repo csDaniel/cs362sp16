@@ -156,7 +156,6 @@ int main() {
 			preCall.whoseTurn = p;	//set turn
 			preCall.discardCount[p] = 0;
 			preCall.deckCount[p] = 0;
-            preCall.playedCardCount = 0;
             memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
 			updateCoins(p, &postCall, bonus);
 			
