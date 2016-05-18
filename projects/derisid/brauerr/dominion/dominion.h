@@ -137,5 +137,9 @@ int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 */
 
+//starting David A5 cardtest refactoring
+void adventurerCard(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int z, int temphand[]);
+void smithyCard(int currentPlayer, struct gameState *state, int handPos, int i);
+
 
 #endif
