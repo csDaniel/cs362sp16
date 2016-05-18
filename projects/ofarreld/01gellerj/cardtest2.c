@@ -4,162 +4,74 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-#include "interface.h"
-#include "testkit.h"
+#include <stdlib.h>
 
-#define VERBOSE 1
+#include "testHelper.h"
+
+#define TESTCARD "Great_Hall"
 
 int main() {
-    struct gameState G1, G2;
-    int i = 0;
-    int numPlayers = 2;
-    int seed = 1;
-    int player1 = 0;
-    int player2 = 1;
-    int bonus = 0;
-    int handPos = 0;
-    int c1 = 0, c2 = 0, c3 = 0;
-    int kingdomCards[10] = {
-            adventurer,
-            gardens,
-            embargo,
-            village,
-            minion,
-            mine,
-            cutpurse,
-            sea_hag,
-            tribute,
-            smithy
-    };
+	int newCards = 0;
+	int discarded = 1;
+	int newCoins = 0;
+	int shuffledCards = 0;
 
-    initializeGame(numPlayers, kingdomCards, seed, &G1);
-    G1.hand[player1][handPos] = adventurer;
-    memcpy(&G2, &G1, sizeof(struct gameState));
+	int a, b, c;
+	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+	int remove1, remove2;
+	int seed = 1000;
+	int numPlayers = 2;
+	int thisPlayer = 0;
+	int otherPlayer = 1;
 
-    printf("Testing ADVENTURER...\n");
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy, council_room};
+	
+	initializeGame(numPlayers, k, seed, &G);  
+	printf("\t Testing Card: %s \n", TESTCARD);
+	
+	// boot up the perfect version
+	memcpy(&testG, &G, sizeof(struct gameState));
+	
+	// Test 01 -----------------------------------------------------------------
+	// Coints += $2  Buys +1 
+	printf("Test 01: +1 card, +1 action \n");
+	
+	// setup test environment
+	memcpy(&testG, &G, sizeof(struct gameState));	
+	cardEffect(great_hall, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    // simulate a Adventurer being played
-    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
+	// Test 01	
+	newCoins = 0;
+	newCards = 1;
+	a = 1;
 
-    printf("\nCheck new card #1 is a treasure card...\n");
-    int card1 = G2.hand[player1][G2.handCount[player1] - 1];
-    printf("Card #1 is %d, expected 4, 5, or 6...", card1);
-    if ((card1 == copper) | (card1 == silver) | (card1 == gold)) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
+	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], 
+		G.handCount[thisPlayer] + newCards - discarded);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], 
+		G.handCount[thisPlayer] - newCards + shuffledCards);
+	printf("coins = %d, expected = %d\n", testG.coins, G.coins + newCoins);
+	printf("player actions = %d, expected = %d\n", testG.numActions, G.numActions + 1);
+	
+	if (testG.handCount[thisPlayer] != G.handCount[thisPlayer] + newCards- discarded) {
+		errorMessage("handCount does not match");
+	}
+	if (testG.deckCount[thisPlayer] != G.deckCount[thisPlayer] - newCards + shuffledCards){ 
+		errorMessage("deckCount does not match");
+  	}
+	if (testG.coins != G.coins + newCoins) {
+		errorMessage("coins do not match");
+	}
+	if (testG.numActions != (G.numActions + a)) {
+		errorMessage("player's actions do not match");
+	}	
+	
+	genericTest(G, testG, otherPlayer, 0);
+	
+	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 
-    printf("\nCheck new card #2 is a treasure card...\n");
-    int card2 = G2.hand[player1][G2.handCount[player1] - 2];
-    printf("Card #2 is %d, expected 4, 5, or 6...", card2);
-    if ((card2 == copper) | (card2 == silver) | (card2 == gold)) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    printf("\nCheck that hand count is incremented by 2 (+2 new treasure cards)...\n");
-    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
-           G2.handCount[player1]);
-    // make sure the new hand count is +2. two new treasure cards should be gained.
-    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    // ensure new cards came from player 1's deck
-    printf("\nCheck new treasure cards came from player 1's deck...");
-    int diffSupplies[MAX_DECK];
-    diffDeckSupply(&G1, &G2, player1, diffSupplies);
-    int copperDiff = diffSupplies[copper];
-    int silverDiff = diffSupplies[silver];
-    int goldDiff = diffSupplies[gold];
-    int netDiff = copperDiff + silverDiff + goldDiff;
-    printf("\nNet difference in deck treasure card supply is %d, expected 2...", netDiff);
-    if (netDiff == 2) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    // ensure player 2's hand was not modified
-    printf("\nCheck player 2 hand is untouched...");
-    if (handIsUntouched(&G1, &G2, player2) == 1) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    // ensure player 2's deck was not modified
-    printf("\nCheck player 2 deck is untouched...");
-    if (deckIsUntouched(&G1, &G2, player2) == 1) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    // ensure kingdom pile was not modified
-    printf("\nCheck kingdom pile is untouched...");
-    if (kingdomPileIsUntouched(&G1, &G2) == 1) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    // ensure victory pile was not modified
-    printf("\nCheck victory pile is untouched...");
-    if (victoryPileIsUntouched(&G1, &G2) == 1) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    printf("\nCheck that copper treasure cards are gained by adventurer...\n");
-    memcpy(&G2, &G1, sizeof(struct gameState));
-    for (i = 0; i < G2.deckCount[player1]; i++) {
-        G2.deck[player1][i] = copper;
-    }
-    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
-    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
-           G2.handCount[player1]);
-    // make sure the new hand count is +2. two new treasure cards should be gained.
-    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    printf("\nCheck that silver treasure cards are gained by adventurer...\n");
-    memcpy(&G2, &G1, sizeof(struct gameState));
-    for (i = 0; i < G2.deckCount[player1]; i++) {
-        G2.deck[player1][i] = silver;
-    }
-    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
-    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
-           G2.handCount[player1]);
-    // make sure the new hand count is +2. two new treasure cards should be gained.
-    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    printf("\nCheck that gold treasure cards are gained by adventurer...\n");
-    memcpy(&G2, &G1, sizeof(struct gameState));
-    for (i = 0; i < G2.deckCount[player1]; i++) {
-        G2.deck[player1][i] = gold;
-    }
-    cardEffect(adventurer, c1, c2, c3, &G2, handPos, &bonus);
-    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
-           G2.handCount[player1]);
-    // make sure the new hand count is +2. two new treasure cards should be gained.
-    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
-        printf("PASSED.\n");
-    } else {
-        printf("FAILED.\n");
-    }
-
-    return 0;
+  return 0;
 }
+
+
