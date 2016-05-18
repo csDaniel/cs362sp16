@@ -70,7 +70,6 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	gcov -b dominion.c >> unittestresults.out
 	./cardtest4 >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
-	cat >> unittestresults.out
 
 randomtestcard: randomtestcard.c dominion.o rngs.o
 	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)	

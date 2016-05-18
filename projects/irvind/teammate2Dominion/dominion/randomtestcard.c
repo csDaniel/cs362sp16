@@ -91,9 +91,9 @@ int main() {
 	}
 	
 	// Current player's discard pile should be unaltered
-	printf("discard count = %d   expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer] - 3);
-    if(G.discardCount[thisPlayer] - 3 != testG.discardCount[thisPlayer]){  
-        printf("FAIL: deck count did not decrease by 3.\n");
+	printf("discard count = %d   expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer]);
+    if(G.discardCount[thisPlayer] != testG.discardCount[thisPlayer]){  
+        printf("FAIL: discard count was altered .\n");
 	}
 	/*---------------------------------------------------------*/
 	
