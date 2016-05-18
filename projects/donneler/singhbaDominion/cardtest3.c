@@ -1,16 +1,21 @@
-/*
- * cardtest3.c
- *
- 
- */
-
-/*
- * Include the following lines in your makefile:
- *
- * cardtest3: cardtest3.c dominion.o rngs.o
- *      gcc -o cardtest3 -g  cardtest3.c dominion.o rngs.o $(CFLAGS)
- */
-
+/**************************************************************************
+* Erin Donnelly
+* CS362 Software Engineering II
+* Assignment 3
+* Filename: cardtest3.c
+* Description: Tests playEmbargo function
+*
+* Lines to include in makefile:
+*
+* Business Requirements:
+* 1 - Current player get +2 coins.
+* 2 - An embargo token gets added to the to supply pile. (When a player buys a card, he 
+* 		gains a Curse card per Embargo token on that pile.)
+* 3 - No change to any player's hand or deck.
+* 4 - No change to the victory card piles and kingdom card piles.
+* 5 - Check embargo card got discarded.
+* 6 - Cant place embargo on a supply pile that is depleted.
+**************************************************************************/		
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -19,59 +24,101 @@
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
+#include "test_helpers.h"
 
-#define TESTCARD "smithy"
+
+char *TESTCARD = "playEmbargo()";
 
 int main() {
-    int newCards = 0;
-    int discarded = 1;
-    int xtraActions = 0;
-    int shuffledCards = 0;
-    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-    int seed = 1000;
-    int numPlayers = 2;
-    int thisPlayer = 0; int secondPlayer = 1;
-    int xtraPlayedCard = 0;
-	struct gameState G, testG;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, council_room};
+	int seed = 1000;
+	int numPlayers = 2;
+	int i, p, handCount, r;
+	int k[10] = {adventurer, embargo, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G, controlG;
 
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
+	int maxDeckCount = 100;
+	int maxHandCount = 15;
+    
+	int coppers[maxDeckCount];		// arrays of all coppers, silvers, and golds
+	int adventurers[maxDeckCount];
+
+	for (i = 0; i < maxDeckCount; i++) {
+		coppers[i] = copper;
+		adventurers[i] = adventurer;
+	}
 
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
-	// copy the game state to a test case
-	memcpy(&testG, &G, sizeof(struct gameState));
-	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
-	printf("----------------- Player 0: %s ----------------\n", TESTCARD);
-	newCards = 3;
-	xtraActions = 0;
-	xtraPlayedCard= 1;
-	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
-	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
-	printf("actions = %d, expected = %d\n", testG.numActions, G.numActions + xtraActions);
-	printf("playedcards = %d, expected = %d\n", testG.playedCardCount, G.playedCardCount + xtraPlayedCard);
-	assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
-	assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
-	assert(testG.numActions == G.numActions + xtraActions);
-	if(testG.playedCardCount != (G.playedCardCount + xtraPlayedCard)){
-		printf("FAIL: playedCardCount is wrong\n");
+	for (p = 0; p < numPlayers; p++) {
+		for (handCount = 1; handCount <= maxHandCount; handCount++) {
+			
+			// TEST 1 ******************************************************************************
+			printf("TEST 1 *****************************************************************\n");
+			initializeGame(numPlayers, k, seed, &G);				// init a game state and player cards
+			G.whoseTurn = p;
+			G.handCount[p] = handCount;
+			G.hand[p][handCount - 1] = embargo;
+			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
+
+			playEmbargo(p, &G, handCount - 1, 0);			// call playEmbargo with current player
+
+			// Check current player get +2 coins.
+			if (G.coins != controlG.coins + 2) {
+				printf("Coins = %d, Expected Coins = %d\n", G.coins, controlG.coins + 2);
+			}
+
+			// Check an embargo token gets added to the to supply pile.
+			if (G.embargoTokens[0] != controlG.embargoTokens[0] + 1) {
+				printf("Embargo tokens = %d, Expected = %d\n", G.embargoTokens[0], controlG.embargoTokens[0] + 1);
+			}
+
+			// Check no change to any other player's hand or deck.
+			for (i = 0; i < numPlayers; i++) {
+				checkDeck(i, G, controlG);		// check deck of all players
+
+				if(i != p) {		// check hand of all others players
+					checkHand(i, G, controlG);
+				}
+			}
+
+			// Check no change to the victory card piles and kingdom card piles.
+			checkSupply(G, controlG);
+
+			// Check embargo card was discarded.
+			if((G.hand[p][handCount - 1] == embargo) && (G.discardCount[p] == controlG.discardCount[p])) {
+				printf("\tEmbargo was not discarded.\n");
+			}
+
+			// TEST 2 ******************************************************************************
+			printf("TEST 2 *****************************************************************\n");
+			// Check depeleted supply pile
+			initializeGame(numPlayers, k, seed, &G);				// init a game state and player cards
+			G.whoseTurn = p;
+			G.handCount[p] = handCount;
+			G.hand[p][handCount - 1] = embargo;
+			G.supplyCount[1] = 0;										//no supply left
+			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
+
+			r = playEmbargo(p, &G, handCount - 1, 1);			// call playEmbargo with current player
+
+			if (r == 0) {
+				printf("playEmbargo returned successfully, but choosen supply Pile was empty.\n");
+			}
+			// Check current player get 0 coins.
+			if (G.coins != controlG.coins) {
+				printf("\tCoins = %d, Expected Coins = %d\n", G.coins, controlG.coins);
+			}
+
+			// Check no embargo token gets added to the to supply pile.
+			if (G.embargoTokens[1] != controlG.embargoTokens[1]) {
+				printf("\tEmbargo tokens = %d, Expected = %d\n", G.embargoTokens[1], controlG.embargoTokens[1]);
+			}
+	
+		}
 	}
 
-	newCards = 0;
-	xtraActions = 0;
-	discarded = 0;
-	printf("----------------- Player 1: %s ----------------\n", TESTCARD);
-	printf("hand count = %d, expected = %d\n", testG.handCount[secondPlayer], G.handCount[secondPlayer] + newCards - discarded);
-	printf("deck count = %d, expected = %d\n", testG.deckCount[secondPlayer], G.deckCount[secondPlayer] - newCards + shuffledCards);
-	printf("actions = %d, expected = %d\n", testG.numActions, G.numActions + xtraActions);
-	assert(testG.handCount[secondPlayer] == G.handCount[secondPlayer] + newCards - discarded);
-	assert(testG.deckCount[secondPlayer] == G.deckCount[secondPlayer] - newCards + shuffledCards);
-	assert(testG.numActions == G.numActions + xtraActions);
-
-	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
-
-
+	printf("\n >>>>>>>>>>>>>> SUCCESS: Testing complete %s <<<<<<<<<<<<<<\n\n", TESTCARD);
 	return 0;
 }
+
