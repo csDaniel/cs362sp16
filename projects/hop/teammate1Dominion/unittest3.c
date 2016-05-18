@@ -1,62 +1,65 @@
-// CS 362
-// Assignment 3 unittest3.c
-// Hong Lin
-// Unit test for getCost()
-
-
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
+#include "dominion.h"
+#include "dominion_helpers.h"
 #include "rngs.h"
 
-#define PRINTS 1
+int main(){
 
-int main() {
-    int i, j, l, r;
-    int seed = 2000;
-    int numPlayer = 3;
-    int maxBonus = 10;
-    int cards[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    int cardsCost[10] = {6, 5, 4, 4, 5
-               , 4, 4, 3, 4, 3};
-    struct gameState game;
-    int maxHandCount = 5;
+   struct gameState state, saveState;
+   int numCardsToDraw = 5;
+   int numPlayers = 2, j = 0;
+   int kingdom[10] = {council_room, mine, gardens, feast, ambassador, tribute, 
+                     steward, minion, sea_hag, treasure_map};
+   int seed = 788;
 
-    i = 0;
-    printf ("TESTING getCost():\n");
-    for (i = 1; i <= numPlayer; i++)
-    {
-        for (j = 0; j < 10; j++)
-        {
-            
-            memset(&game, 23, sizeof(struct gameState));   // clear the game state
-            r = initializeGame(numPlayer, cards, seed, &game); // initialize a new game
-            assert(r != -1); //check if initializeGame success
-            game.handCount[i] = j;                 // set the number of cards on hand
-            memcpy(game.hand[i], cards, sizeof(int) * j); // set all the cards to non-treasure card
+   initializeGame(numPlayers, kingdom, seed, &state);
+   int currentPlayer = state.whoseTurn;
+   // Remove cards drawn from player
+   for (j = 0 ; j < 5 ; ++j){
+      discardCard(j, currentPlayer, &state,0);
+   }
+   // Save the state as-is
+   memcpy(&saveState, &state, sizeof(struct gameState));
+   
+   /* business requirements
+      
+      description: testing drawCard(int player, struct gameState *state), which
+      places a card in player's hand.
 
-#if (PRINTS == 1)
-            printf("---------Test for player %d .---------\n",i);
-#endif
-            
-            l = getCost(cards[j]);
-#if (PRINTS == 1)
-            printf("check if the costs are the same...\n");
-#endif
-#if (PRINTS == 1)
-            printf("cost = %d, expected = %d", l, cardsCost[j]);
-#endif
-            assert(l == cardsCost[j]);
-#if (PRINTS == 1)
-            printf("...PASSED\n");
-#endif
-        }
-    }
+      1. Draw 5 cards. Current player should receive exactly 5 cards.
+      2. Cards should have been drawn from player's pile.
+      3. No state changes should occur for the other player.  
 
-    printf("All tests passed!\n");
+      end requirements*/
+   printf("<----------BEGIN unittest3-drawCard()---------->\n\n");
+   printf(" Initial deck count: %i\n", state.deckCount[currentPlayer]);
 
-    return 0;
+// ----------------- TEST 1 ---------------------------------------------------
+   printf(" TEST 1: Verify cards are drawn and placed into player's hand.\n");
+   // Draw 5 cards.
+   for (j = 0 ; j < numCardsToDraw ; ++j){
+      drawCard(currentPlayer, &state);
+      printf("    card %i is of type: %i, expected: type != -1\n", j, state.hand[currentPlayer][j]);
+      assert(state.hand[currentPlayer][j] != -1);
+   }
+
+   printf("    Number of cards in hand: %i, expected: %i\n", state.handCount[currentPlayer], numCardsToDraw);
+   assert(state.handCount[currentPlayer] == numCardsToDraw);
+
+// ----------------- TEST 2 ---------------------------------------------------
+   printf("\n");
+   printf(" TEST 2: Cards should have been drawn from player's deck.\n");
+   printf("   deck count = %i, expected = %i\n", state.deckCount[currentPlayer], saveState.deckCount[currentPlayer] - numCardsToDraw);
+   assert( state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - numCardsToDraw ); 
+
+// ----------------- TEST 3 ---------------------------------------------------
+   printf("\n");
+   printf(" TEST 3: No state changes should occur to other player.\n");
+   printf("    deck count = %i, expected = %i\n", state.deckCount[!currentPlayer], saveState.deckCount[!currentPlayer]);
+   assert( saveState.deckCount[!currentPlayer] == state.deckCount[!currentPlayer] );
+   printf("\n<----------END unittest3-drawCard()---------->\n\n");
+
+   return 0;
 }

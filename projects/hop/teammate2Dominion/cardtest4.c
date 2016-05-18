@@ -1,63 +1,90 @@
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
+#include "dominion.h"
+#include "dominion_helpers.h"
 #include "rngs.h"
-#include <stdlib.h>
-
-#define TESTFUNCTION "steward cardEffect"
 
 int main(){
-    struct gameState og, tg;
-    int k[10] = {adventurer, smithy, great_hall, village, mine, minion, council_room, gardens, feast, baron};
-    int seed = 999;
-    int num_players = 3;
-    int result;
-    initializeGame(num_players, k, seed, &og);
-    memcpy(&tg, &og, sizeof(struct gameState));
-    printf(">>> testing %s \n", TESTFUNCTION);
-    int player = whoseTurn(&tg);
-    tg.hand[player][0] = steward;
 
-    // +2 cards
-    result = cardEffect(steward, 1, 0, 0, &tg, 0, 0);
-    printf("%d cards in hand, expecting %d\n", tg.handCount[player], og.handCount[player] + 2 - 1);
-    assert(tg.handCount[player] == og.handCount[player] + 2 - 1);
-    printf("%d coins, expecting %d\n", tg.coins, og.coins);
-    assert(tg.coins == og.coins);
-    printf("%s returned %d, expecting 0\n", TESTFUNCTION, result);
-    assert(result == 0);
+   struct gameState state, saveState;
+   int numPlayers = 2, i;
+   int handPos = 0, choice1 = 0, choice2 = 0, choice3 = 0;
+   int *bonus = NULL;
+   int newCards = 0, discard = 0, addActions = 0;
+   int kingdom[10] = {council_room, adventurer, gardens, mine, ambassador,  
+                     remodel, great_hall, embargo, sea_hag, outpost};
+   int seed = 1020;
 
-    // reset state
-    memcpy(&tg, &og, sizeof(struct gameState));
-    tg.hand[player][0] = steward;
+   initializeGame(numPlayers, kingdom, seed, &state);
+   int currentPlayer = state.whoseTurn;
+   // Save the state as-is
+   memcpy(&saveState, &state, sizeof(struct gameState));
+   /* business requirements
+      
+      description: testing village card, 
 
-    // +2 coins
-    result = cardEffect(steward, 2, 0, 0, &tg, 0, 0);
-    printf("%d cards in hand, expecting %d\n", tg.handCount[player], og.handCount[player] - 1);
-    assert(tg.handCount[player] == og.handCount[player] - 1);
-    printf("%d coins, expecting %d\n", tg.coins, og.coins + 2);
-    assert(tg.coins == og.coins + 2);
-    printf("%s returned %d, expecting 0\n", TESTFUNCTION, result);
-    assert(result == 0);
+      1. Hand should have 1 extra card minus this one that's played. There
+         should also be two additional actions allowed.
+      2. Number of buys or coins should not change.
+      3. No state change should occur for other players.
+      4. No state change should occur to the victory and kingdom card piles.
 
-    // reset state
-    memcpy(&tg, &og, sizeof(struct gameState));
-    tg.hand[player][0] = steward;
+      end requirements*/
+   printf("<----------BEGIN cardtest4-village card---------->\n\n");
+   printf("Initial deck count: %i\n",state.deckCount[currentPlayer]);
+   printf("Initial hand count: %i\n", state.handCount[currentPlayer]);
 
-    // trash 2 cards
-    result = cardEffect(steward, 3, 0, 0, &tg, 0, 0);
-    printf("%d cards in hand, expecting %d\n", tg.handCount[player], og.handCount[player] - 2 - 1);
-    assert(tg.handCount[player] == og.handCount[player] - 2 - 1);
-    printf("%d coins, expecting %d\n", tg.coins, og.coins);
-    assert(tg.coins == og.coins);
-    printf("%s returned %d, expecting 0\n", TESTFUNCTION, result);
-    assert(result == 0);
-    printf("%d cards discarded, expecting %d\n", tg.discardCount[player], og.discardCount[player]);
-    assert(tg.discardCount[player] == og.discardCount[player]);
+// ----------------- TEST 1 ---------------------------------------------------
+   printf("\n");
+   printf(" TEST 1: Hand should have +1 card minus this card. Current\n");
+   printf("         player should also have +2 actions.\n");
+   newCards = 1;
+   discard = 1;
+   addActions = 2;
+   cardEffect(village, choice1, choice2, choice3, &state, handPos, bonus);  
+   printf("    hand count = %i, expected = %i\n", state.handCount[currentPlayer], saveState.handCount[currentPlayer] + newCards - discard);  
+   printf("    deck count = %i, expected = %i\n", state.deckCount[currentPlayer], saveState.deckCount[currentPlayer] - newCards);
+   printf("    action count = %i, expected = %i\n", state.numActions, saveState.numActions + addActions);
+   assert(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard);
+   assert(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards);
+   assert(state.numActions == saveState.numActions + addActions);
 
- 
-    printf(">>> end of %s test \n\n", TESTFUNCTION);
-    return 0;
+// ----------------- TEST 2 ---------------------------------------------------
+   printf("\n");
+   printf(" TEST 2: Number of buys or coins should not change\n");
+   printf("    buy count = %i, expected = %i\n", state.numBuys, saveState.numBuys);
+   printf("    coin count = %i, expected = %i\n", state.coins, saveState.coins);
+   assert(state.numBuys == saveState.numBuys);
+   assert(state.coins == saveState.coins);
+
+// ----------------- TEST 3 ---------------------------------------------------
+   printf("\n");
+   printf(" TEST 3: No state change should occur for other players.\n");
+   printf("    deck count = %i, expected = %i\n", state.deckCount[!currentPlayer], saveState.deckCount[!currentPlayer]);
+   printf("    discard pile count = %i, expected %i\n", state.discardCount[!currentPlayer], saveState.discardCount[!currentPlayer]);
+   assert(saveState.deckCount[!currentPlayer] == state.deckCount[!currentPlayer]);
+
+// ----------------- TEST 4 ---------------------------------------------------
+   printf("\n");
+   printf(" TEST 4: No state change should occur to victory and kingdom cards piles.\n");
+   printf("    estate count = %i, expected = %i\n", state.supplyCount[estate], saveState.supplyCount[estate]);
+   printf("    duchy count = %i, expected = %i\n", state.supplyCount[duchy], saveState.supplyCount[duchy]);
+   printf("    province count = %i, expected = %i\n", state.supplyCount[province], saveState.supplyCount[province]);
+   
+   for( i = adventurer; i <= treasure_map; ++i){
+      printf("    kingdomCard '%i' count = %i, expected = %i\n", i, state.supplyCount[i], saveState.supplyCount[i]);
+   }
+
+   assert(saveState.supplyCount[estate] == state.supplyCount[estate]);
+   assert(saveState.supplyCount[duchy] == state.supplyCount[duchy]);
+   assert(saveState.supplyCount[province] == state.supplyCount[province]);
+   for( i = adventurer; i <= treasure_map; ++i){
+      assert(saveState.supplyCount[i] == state.supplyCount[i]);
+   }
+   printf("\n");
+   printf("<----------END cardtest4-village card---------->\n\n");
+
+   return 0;
 }
+
