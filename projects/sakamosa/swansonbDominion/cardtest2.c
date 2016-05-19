@@ -11,16 +11,16 @@ int main(){
 //compare returned value to correct value for each card type
     struct gameState T;
     int i, total_cards;
-    int playerCount = T.handCount[0];
-    int opponentCount = T.handCount[1];
-    int playerDiscard = T.discardCount[0];
-    int opponentDiscard = T.discardCount[1];
     int beg_count, end_count = 0;
     int k[10] = {gardens, adventurer, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
 
     initializeGame(2, k, 5, &T);
     T.hand[0][0] = adventurer;
+    int playerCount = T.handCount[0];
+    int opponentCount = T.handCount[1];
+    int playerDiscard = T.discardCount[0];
+    int opponentDiscard = T.discardCount[1];
     total_cards = T.handCount[0] + T.deckCount[0] + T.discardCount[0];
 
     //count current treasure cards in hand
@@ -32,11 +32,14 @@ int main(){
         }
     }
     //Play the adventurer card for the Test state player 0, position 0
-    playAdventurer(&T, 0, 0);
+   // playAdventurer(&T, 0, 0);
+    //refactor to match alisha's function
+   cardEffect(adventurer, 0, 0, 0, &T, 0, 0);
    
     //check that two cards have added and one discarded
     if(T.handCount[0] != playerCount + 1){
         printf("FAIL incorrect number of cards in player hand\n");
+        printf("Hand count = %d, was %d\n", T.handCount[0], playerCount);
     }
 
     //check that the treasure count has increased by 2

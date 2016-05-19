@@ -11,10 +11,6 @@ int main(){
 //compare returned value to correct value for each card type
     struct gameState T;
     int total_cards;
-    int playerCount = T.handCount[0];
-    int opponentCount = T.handCount[1];
-    int playerDiscard = T.discardCount[0];
-    int opponentDiscard = T.discardCount[1];
     int k[10] = {gardens, adventurer, embargo, village, minion, mine, cutpurse,
             sea_hag, tribute, smithy};
     
@@ -22,6 +18,10 @@ int main(){
 
     T.hand[0][0] = great_hall;
     T.outpostPlayed = 0;
+    int playerCount = T.handCount[0];
+    int opponentCount = T.handCount[1];
+    int playerDiscard = T.discardCount[0];
+    int opponentDiscard = T.discardCount[1];
     total_cards = T.handCount[0] + T.deckCount[0] + T.discardCount[0];
 
     cardEffect(outpost, 0, 0, 0, &T, 0, 0);

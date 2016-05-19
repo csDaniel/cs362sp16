@@ -40,12 +40,14 @@ int main(){
     }
     
     //Test basic count when deck is empty
-    if(fullDeckCount(1, gardens, &T) != 1){
+    int emptyCount = fullDeckCount(1, gardens, &T);
+    if(emptyCount != 1){
         printf("FAIL incorrect count when deck empty\n");
+        printf("Count should be '1' for discarded gardens card but is %d.\n", emptyCount);
     }
     
     //Test that there are no unexpected changes to state
-    if (T.deckCount[0] != 0 || T.discardCount[0] != 2){
+    if (T.deckCount[0] != 3 || T.discardCount[0] != 2){
             printf("FAIL change to deckCount when deck empty\n");
     }
     

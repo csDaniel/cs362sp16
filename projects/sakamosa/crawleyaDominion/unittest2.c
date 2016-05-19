@@ -73,6 +73,7 @@ int main(){
 
   //check each player has correct number of cards in deck
   if(T.deckCount[0] != 10 || T.deckCount[1] != 10){
+      printf("Player 1 deck count: %d Player 2 deck count: %d\n", T.deckCount[0], T.deckCount[1]);
       printf("FAIL incorrect number of cards in deck\n");
   }
   printf("**********************TESTS COMPLETE*************************\n\n");
