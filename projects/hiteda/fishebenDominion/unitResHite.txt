@@ -11,6 +11,36 @@ Error: kingdomCards() did not catch invalid values
 2 tests failed
 
 Testing complete!
+Function 'myTribute'
+Lines executed:0.00% of 42
+Branches executed:0.00% of 32
+Taken at least once:0.00% of 32
+Calls executed:0.00% of 3
+
+Function 'mySmithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'myRemodel'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 5
+
+Function 'myFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'myAdventurer'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 2
+
 Function 'updateCoins'
 Lines executed:0.00% of 11
 Branches executed:0.00% of 8
@@ -24,45 +54,16 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:0.00% of 15
+Lines executed:0.00% of 13
 Branches executed:0.00% of 6
 Taken at least once:0.00% of 6
 No calls
 
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:0.00% of 5
-No branches
-Calls executed:0.00% of 2
-
-Function 'playSmithy'
-Lines executed:0.00% of 5
-Branches executed:0.00% of 2
-Taken at least once:0.00% of 2
-Calls executed:0.00% of 2
-
-Function 'playAdventurer'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 3
-
 Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
+Lines executed:0.00% of 166
+Branches executed:0.00% of 139
+Taken at least once:0.00% of 139
+Calls executed:0.00% of 52
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -145,7 +146,7 @@ Taken at least once:0.00% of 8
 Calls executed:0.00% of 2
 
 Function 'initializeGame'
-Lines executed:0.00% of 63
+Lines executed:0.00% of 62
 Branches executed:0.00% of 46
 Taken at least once:0.00% of 46
 Calls executed:0.00% of 5
@@ -167,10 +168,10 @@ Taken at least once:0.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:2.29% of 568
+Lines executed:2.29% of 567
 Branches executed:0.00% of 417
 Taken at least once:0.00% of 417
-Calls executed:0.00% of 101
+Calls executed:0.00% of 95
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
@@ -201,6 +202,36 @@ Faulty game state, invalid card values:
 Error: initializeGame() failed to catch the invalid card set
 7 tests failed
 Tests completed!
+Function 'myTribute'
+Lines executed:0.00% of 42
+Branches executed:0.00% of 32
+Taken at least once:0.00% of 32
+Calls executed:0.00% of 3
+
+Function 'mySmithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'myRemodel'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 5
+
+Function 'myFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'myAdventurer'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 2
+
 Function 'updateCoins'
 Lines executed:63.64% of 11
 Branches executed:50.00% of 8
@@ -214,45 +245,16 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:0.00% of 15
+Lines executed:0.00% of 13
 Branches executed:0.00% of 6
 Taken at least once:0.00% of 6
 No calls
 
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:0.00% of 5
-No branches
-Calls executed:0.00% of 2
-
-Function 'playSmithy'
-Lines executed:0.00% of 5
-Branches executed:0.00% of 2
-Taken at least once:0.00% of 2
-Calls executed:0.00% of 2
-
-Function 'playAdventurer'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 3
-
 Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
+Lines executed:0.00% of 166
+Branches executed:0.00% of 139
+Taken at least once:0.00% of 139
+Calls executed:0.00% of 52
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -335,7 +337,7 @@ Taken at least once:87.50% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
-Lines executed:98.41% of 63
+Lines executed:98.39% of 62
 Branches executed:100.00% of 46
 Taken at least once:95.65% of 46
 Calls executed:100.00% of 5
@@ -357,10 +359,10 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:19.89% of 568
+Lines executed:19.75% of 567
 Branches executed:15.35% of 417
 Taken at least once:13.91% of 417
-Calls executed:6.93% of 101
+Calls executed:7.37% of 95
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
@@ -2368,6 +2370,36 @@ Checking player 2's deck...
 Checking player 3's deck...
 0 tests failed.
 Testing complete!
+Function 'myTribute'
+Lines executed:0.00% of 42
+Branches executed:0.00% of 32
+Taken at least once:0.00% of 32
+Calls executed:0.00% of 3
+
+Function 'mySmithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'myRemodel'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 5
+
+Function 'myFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'myAdventurer'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 2
+
 Function 'updateCoins'
 Lines executed:0.00% of 11
 Branches executed:0.00% of 8
@@ -2381,45 +2413,16 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:0.00% of 15
+Lines executed:0.00% of 13
 Branches executed:0.00% of 6
 Taken at least once:0.00% of 6
 No calls
 
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:0.00% of 5
-No branches
-Calls executed:0.00% of 2
-
-Function 'playSmithy'
-Lines executed:0.00% of 5
-Branches executed:0.00% of 2
-Taken at least once:0.00% of 2
-Calls executed:0.00% of 2
-
-Function 'playAdventurer'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 3
-
 Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
+Lines executed:0.00% of 166
+Branches executed:0.00% of 139
+Taken at least once:0.00% of 139
+Calls executed:0.00% of 52
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -2502,7 +2505,7 @@ Taken at least once:87.50% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
-Lines executed:0.00% of 63
+Lines executed:0.00% of 62
 Branches executed:0.00% of 46
 Taken at least once:0.00% of 46
 Calls executed:0.00% of 5
@@ -2524,10 +2527,10 @@ Taken at least once:50.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:3.87% of 568
+Lines executed:3.88% of 567
 Branches executed:2.88% of 417
 Taken at least once:2.16% of 417
-Calls executed:1.98% of 101
+Calls executed:2.11% of 95
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
@@ -2535,6 +2538,36 @@ unittest4
 Testing fullDeckCount()...
 0 tests failed!
 Testing complete!
+Function 'myTribute'
+Lines executed:0.00% of 42
+Branches executed:0.00% of 32
+Taken at least once:0.00% of 32
+Calls executed:0.00% of 3
+
+Function 'mySmithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'myRemodel'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 5
+
+Function 'myFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'myAdventurer'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 2
+
 Function 'updateCoins'
 Lines executed:0.00% of 11
 Branches executed:0.00% of 8
@@ -2548,45 +2581,16 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:0.00% of 15
+Lines executed:0.00% of 13
 Branches executed:0.00% of 6
 Taken at least once:0.00% of 6
 No calls
 
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:0.00% of 5
-No branches
-Calls executed:0.00% of 2
-
-Function 'playSmithy'
-Lines executed:0.00% of 5
-Branches executed:0.00% of 2
-Taken at least once:0.00% of 2
-Calls executed:0.00% of 2
-
-Function 'playAdventurer'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 3
-
 Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
+Lines executed:0.00% of 166
+Branches executed:0.00% of 139
+Taken at least once:0.00% of 139
+Calls executed:0.00% of 52
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -2669,7 +2673,7 @@ Taken at least once:0.00% of 8
 Calls executed:0.00% of 2
 
 Function 'initializeGame'
-Lines executed:0.00% of 63
+Lines executed:0.00% of 62
 Branches executed:0.00% of 46
 Taken at least once:0.00% of 46
 Calls executed:0.00% of 5
@@ -2691,19 +2695,48 @@ Taken at least once:0.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:2.11% of 568
+Lines executed:2.12% of 567
 Branches executed:2.88% of 417
 Taken at least once:2.88% of 417
-Calls executed:0.00% of 101
+Calls executed:0.00% of 95
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
 cardtest1
 Testing playSmithy()...
-Error: Player 1 did not move 3 cards from deck to hand and discard one from hand
-Handcount: 8 vs 7  deckCount: 1 vs 2  discardCount: 5 vs 5
+Error: playedCardCount is 0 instead of 1
 1 tests failed!
 Testing completed!
+Function 'myTribute'
+Lines executed:0.00% of 42
+Branches executed:0.00% of 32
+Taken at least once:0.00% of 32
+Calls executed:0.00% of 3
+
+Function 'mySmithy'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'myRemodel'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 5
+
+Function 'myFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'myAdventurer'
+Lines executed:0.00% of 15
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 2
+
 Function 'updateCoins'
 Lines executed:0.00% of 11
 Branches executed:0.00% of 8
@@ -2717,45 +2750,16 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:73.33% of 15
+Lines executed:69.23% of 13
 Branches executed:100.00% of 6
 Taken at least once:50.00% of 6
 No calls
 
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:0.00% of 5
-No branches
-Calls executed:0.00% of 2
-
-Function 'playSmithy'
-Lines executed:100.00% of 5
-Branches executed:100.00% of 2
-Taken at least once:100.00% of 2
-Calls executed:100.00% of 2
-
-Function 'playAdventurer'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 3
-
 Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
+Lines executed:0.00% of 166
+Branches executed:0.00% of 139
+Taken at least once:0.00% of 139
+Calls executed:0.00% of 52
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -2838,7 +2842,7 @@ Taken at least once:0.00% of 8
 Calls executed:0.00% of 2
 
 Function 'initializeGame'
-Lines executed:0.00% of 63
+Lines executed:0.00% of 62
 Branches executed:0.00% of 46
 Taken at least once:0.00% of 46
 Calls executed:0.00% of 5
@@ -2860,10 +2864,10 @@ Taken at least once:0.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:4.75% of 568
+Lines executed:4.41% of 567
 Branches executed:2.40% of 417
 Taken at least once:1.44% of 417
-Calls executed:1.98% of 101
+Calls executed:2.11% of 95
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
@@ -2874,180 +2878,43 @@ Player's hand: { adventurer, copper, copper, steward, tribute }
 Player's discard pile: { copper, copper, copper, copper, copper }
 
 Calling playAdventurer...
+Error: deckCount is 3 instead of 2
+Error: discardCount is 5 instead of 6
 Calling playAdventurer() again...
-Error: deckCount is 4 instead of 2
-Error: handCount is 7 instead of 7
-Error: discardCount is 2 instead of 6
+Error: deckCount is 1 instead of 2
+Error: discardCount is 5 instead of 6
 Testing complete!
-3 errors found.
-Function 'updateCoins'
-Lines executed:0.00% of 11
-Branches executed:0.00% of 8
-Taken at least once:0.00% of 8
-No calls
-
-Function 'gainCard'
-Lines executed:0.00% of 13
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 1
-
-Function 'discardCard'
-Lines executed:73.33% of 15
-Branches executed:100.00% of 6
-Taken at least once:50.00% of 6
-No calls
-
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
+4 errors found.
+Function 'myTribute'
+Lines executed:0.00% of 42
+Branches executed:0.00% of 32
+Taken at least once:0.00% of 32
 Calls executed:0.00% of 3
 
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:0.00% of 5
-No branches
-Calls executed:0.00% of 2
-
-Function 'playSmithy'
+Function 'mySmithy'
 Lines executed:0.00% of 5
 Branches executed:0.00% of 2
 Taken at least once:0.00% of 2
 Calls executed:0.00% of 2
 
-Function 'playAdventurer'
-Lines executed:100.00% of 18
-Branches executed:100.00% of 12
-Taken at least once:91.67% of 12
-Calls executed:100.00% of 3
-
-Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
-
-Function 'getCost'
-Lines executed:0.00% of 30
-Branches executed:0.00% of 28
-Taken at least once:0.00% of 28
-No calls
-
-Function 'drawCard'
-Lines executed:95.45% of 22
-Branches executed:100.00% of 6
-Taken at least once:83.33% of 6
-Calls executed:100.00% of 1
-
-Function 'getWinners'
-Lines executed:0.00% of 24
-Branches executed:0.00% of 22
-Taken at least once:0.00% of 22
-Calls executed:0.00% of 2
-
-Function 'scoreFor'
-Lines executed:0.00% of 24
-Branches executed:0.00% of 42
-Taken at least once:0.00% of 42
-Calls executed:0.00% of 3
-
-Function 'isGameOver'
-Lines executed:0.00% of 10
-Branches executed:0.00% of 8
-Taken at least once:0.00% of 8
-No calls
-
-Function 'endTurn'
-Lines executed:0.00% of 20
+Function 'myRemodel'
+Lines executed:0.00% of 11
 Branches executed:0.00% of 6
 Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'whoseTurn'
-Lines executed:0.00% of 2
-No branches
-No calls
-
-Function 'fullDeckCount'
-Lines executed:0.00% of 9
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-No calls
-
-Function 'supplyCount'
-Lines executed:0.00% of 2
-No branches
-No calls
-
-Function 'handCard'
-Lines executed:0.00% of 3
-No branches
-Calls executed:0.00% of 1
-
-Function 'numHandCards'
-Lines executed:0.00% of 2
-No branches
-Calls executed:0.00% of 1
-
-Function 'buyCard'
-Lines executed:0.00% of 13
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 4
-
-Function 'playCard'
-Lines executed:0.00% of 14
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 3
-
-Function 'shuffle'
-Lines executed:100.00% of 16
-Branches executed:100.00% of 8
-Taken at least once:100.00% of 8
-Calls executed:100.00% of 2
-
-Function 'initializeGame'
-Lines executed:0.00% of 63
-Branches executed:0.00% of 46
-Taken at least once:0.00% of 46
 Calls executed:0.00% of 5
 
-Function 'kingdomCards'
-Lines executed:0.00% of 13
-No branches
-No calls
+Function 'myFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
 
-Function 'newGame'
-Lines executed:100.00% of 3
-No branches
-No calls
+Function 'myAdventurer'
+Lines executed:80.00% of 15
+Branches executed:100.00% of 10
+Taken at least once:70.00% of 10
+Calls executed:50.00% of 2
 
-Function 'compare'
-Lines executed:83.33% of 6
-Branches executed:100.00% of 4
-Taken at least once:75.00% of 4
-No calls
-
-File 'dominion.c'
-Lines executed:13.03% of 568
-Branches executed:8.63% of 417
-Taken at least once:7.19% of 417
-Calls executed:5.94% of 101
-Creating 'dominion.c.gcov'
-
------------------------------------------------------------
-cardtest3
-Testing playVillage()...
-Error: playedCardCount is 0 instead of 1
-Testing complete!
-1 errors found.
 Function 'updateCoins'
 Lines executed:0.00% of 11
 Branches executed:0.00% of 8
@@ -3061,45 +2928,16 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:73.33% of 15
-Branches executed:100.00% of 6
-Taken at least once:50.00% of 6
-No calls
-
-Function 'playCouncil_Room'
-Lines executed:0.00% of 9
+Lines executed:0.00% of 13
 Branches executed:0.00% of 6
 Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
-
-Function 'playFeast'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 10
-Taken at least once:0.00% of 10
-Calls executed:0.00% of 7
-
-Function 'playVillage'
-Lines executed:100.00% of 5
-No branches
-Calls executed:100.00% of 2
-
-Function 'playSmithy'
-Lines executed:0.00% of 5
-Branches executed:0.00% of 2
-Taken at least once:0.00% of 2
-Calls executed:0.00% of 2
-
-Function 'playAdventurer'
-Lines executed:0.00% of 18
-Branches executed:0.00% of 12
-Taken at least once:0.00% of 12
-Calls executed:0.00% of 3
+No calls
 
 Function 'cardEffect'
-Lines executed:0.00% of 198
-Branches executed:0.00% of 169
-Taken at least once:0.00% of 169
-Calls executed:0.00% of 58
+Lines executed:0.00% of 166
+Branches executed:0.00% of 139
+Taken at least once:0.00% of 139
+Calls executed:0.00% of 52
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -3182,7 +3020,7 @@ Taken at least once:0.00% of 8
 Calls executed:0.00% of 2
 
 Function 'initializeGame'
-Lines executed:0.00% of 63
+Lines executed:0.00% of 62
 Branches executed:0.00% of 46
 Taken at least once:0.00% of 46
 Calls executed:0.00% of 5
@@ -3204,9 +3042,9 @@ Taken at least once:0.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:4.75% of 568
-Branches executed:1.92% of 417
-Taken at least once:0.96% of 417
-Calls executed:1.98% of 101
+Lines executed:4.06% of 567
+Branches executed:2.88% of 417
+Taken at least once:1.92% of 417
+Calls executed:1.05% of 95
 Creating 'dominion.c.gcov'
 
