@@ -3,13 +3,13 @@
 
 int addTreasureCard(int player, struct gameState *state, int tCard);
 int clearHand(int player, struct gameState *state);
-void testUpdateCoins();
-void testGetCost();
-void testPlayCard();
-void testBuyCard();
-void testSmithyCard();
-void testAdventurerCard();
-void testCouncilRoomCard();
-void testVillageCard();
+void testUpdateCoins(int numOfRuns);
+void testGetCost(int numOfRuns);
+void testPlayCard(int numOfRuns);
+void testBuyCard(int numOfRuns);
+void testSmithyCard(int numOfRuns);
+void testAdventurerCard(int numOfRuns);
+void testCouncilRoomCard(int numOfRuns);
+void testVillageCard(int numOfRuns);
 
 #endif

@@ -1275,7 +1275,8 @@ int smithyFunction(int handPos, int currentPlayer, struct gameState *state)
 	int i = 0;
 	
 	    //+3 Cards
-		for (i = 0; i <= 3; i++)
+		//changed the <= to just < to remove bug
+		for (i = 0; i < 3; i++)
 		{
 			drawCard(currentPlayer, state);
 		}
@@ -1298,7 +1299,10 @@ int adventurerFunction(int handPos, int currentPlayer, struct gameState *state)
 	int	drawntreasure = 0;
 	int	z = 0;	//this is the counter for the temp hand
 		
-		while(drawntreasure<1)
+		//bugfix - adventurer card was not being discarded..only non treasure cards from tempHand
+		discardCard(handPos, currentPlayer, state, 0);
+		
+		while(drawntreasure<2)
 		{
 			if (state->deckCount[currentPlayer] <1)
 			{
@@ -1326,6 +1330,7 @@ int adventurerFunction(int handPos, int currentPlayer, struct gameState *state)
 			// discard all cards in play that have been drawn
 			z=z-1;
 		}
+		
     return 0;
 }
 
@@ -1342,7 +1347,7 @@ int great_hallFunction(int handPos, int currentPlayer, struct gameState *state)
 		state->numActions++;
 			
 		//discard card from hand
-		discardCard(handPos, currentPlayer, state, 1);
+		discardCard(handPos, currentPlayer, state, 0);
       
 	return 0;
 }
@@ -1355,7 +1360,7 @@ int great_hallFunction(int handPos, int currentPlayer, struct gameState *state)
 int embargoFunction(int handPos, int currentPlayer, struct gameState *state, int choice1)
 {
 	//+2 Coins
-    state->coins++;
+    state->coins = (state->coins) + 2;
 			
 		//see if selected pile is in play
 		if ( state->supplyCount[choice1] == -1 )
@@ -1367,7 +1372,7 @@ int embargoFunction(int handPos, int currentPlayer, struct gameState *state, int
 		state->embargoTokens[choice1]++;
 			
 		//trash card
-		discardCard(handPos, currentPlayer, state, 0);	
+		discardCard(handPos, currentPlayer, state, 1);	
 		
     return 0;
 }

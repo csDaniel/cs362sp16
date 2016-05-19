@@ -8,11 +8,11 @@ TESTING updateCoins():
  >>>>> SUCCESS: Testing complete UPDATE_COINS <<<<<
 
 File 'unittest1.c'
-Lines executed:65.44% of 136
+Lines executed:65.69% of 137
 Creating 'unittest1.c.gcov'
 
 File 'unittest1.c'
-Lines executed:65.44% of 136
+Lines executed:65.69% of 137
 Branches executed:83.67% of 98
 Taken at least once:46.94% of 98
 Calls executed:39.53% of 43
@@ -85,18 +85,32 @@ Creating 'unittest4.c.gcov'
 
 cardtest1.c:
 ----------------- Testing Card: smithy ----------------
+Error found in smithy 3
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 0 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 3  pre.HandCount = 3
+	postCall.hand[p][cardPosition] = 387389207  testHandPosition = 0
+	preCall.hand[p][cardPosition] = 387389207
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 13 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 0 pre.discardCount[p] = 0
+	post.deckCount[p] = 7 pre.deckCount[p] = 7
+	smithy card = 13 Player = 0
 
- >>>>> SUCCESS: Testing complete smithy <<<<<
+
+ >>>>> FAILURES DETECTED: Examine test cases smithy <<<<<
 
 File 'cardtest1.c'
-Lines executed:56.19% of 105
+Lines executed:71.70% of 106
 Creating 'cardtest1.c.gcov'
 
 File 'cardtest1.c'
-Lines executed:56.19% of 105
-Branches executed:91.18% of 68
-Taken at least once:51.47% of 68
-Calls executed:27.50% of 40
+Lines executed:71.70% of 106
+Branches executed:85.29% of 68
+Taken at least once:50.00% of 68
+Calls executed:62.50% of 40
 Creating 'cardtest1.c.gcov'
 
 cardtest2.c:
@@ -157,34 +171,6 @@ Error found in adventurer, 5
 	post.deckCount[p] = 8 pre.deckCount[p] = 10
 	treasure = 7 Player = 0
 
-Error found in adventurer, 6
-	post.whoseTurn = 0 pre.whoseTurn = 0
-	post.numBuys = 0 pre.numBuys = 0
-	post.NumAction = 0 pre.NumActions = 0
-	post.Coins = 0 pre.Coins = 0
-	post.HandCount = 7  pre.HandCount = 5
-	z = 0  
-	preCall.hand[p][z] = 4
-	post.playedCardCount = 0 pre.playedCardCount = 0
-	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
-	post.discardCount[p] = 0 pre.discardCount[p] = 0
-	post.deckCount[p] = 8 pre.deckCount[p] = 10
-	treasure = 3 Player = 0
-
-Error found in adventurer, 7
-	post.whoseTurn = 0 pre.whoseTurn = 0
-	post.numBuys = 0 pre.numBuys = 0
-	post.NumAction = 0 pre.NumActions = 0
-	post.Coins = 0 pre.Coins = 0
-	post.HandCount = 7  pre.HandCount = 5
-	z = 0  
-	preCall.hand[p][z] = 4
-	post.playedCardCount = 0 pre.playedCardCount = 0
-	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
-	post.discardCount[p] = 0 pre.discardCount[p] = 0
-	post.deckCount[p] = 8 pre.deckCount[p] = 10
-	treasure = 3 Player = 0
-
 Error found in adventurer, 8
 	post.whoseTurn = 0 pre.whoseTurn = 0
 	post.numBuys = 0 pre.numBuys = 0
@@ -195,36 +181,36 @@ Error found in adventurer, 8
 	preCall.hand[p][z] = 4
 	post.playedCardCount = 0 pre.playedCardCount = 0
 	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
-	post.discardCount[p] = 0 pre.discardCount[p] = 8
-	post.deckCount[p] = 8 pre.deckCount[p] = 0
+	post.discardCount[p] = 8 pre.discardCount[p] = 8
+	post.deckCount[p] = 0 pre.deckCount[p] = 0
 	treasure = 3 Player = 0
 
 Error found in adventurer, 12
-	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.whoseTurn = 1 pre.whoseTurn = 1
 	post.numBuys = 0 pre.numBuys = 0
 	post.NumAction = 0 pre.NumActions = 0
 	post.Coins = 0 pre.Coins = 0
-	post.HandCount = 7  pre.HandCount = 5
+	post.HandCount = -2  pre.HandCount = 0
 	z = 0  
-	preCall.hand[p][z] = 4
+	preCall.hand[p][z] = 387389207
 	post.playedCardCount = 0 pre.playedCardCount = 0
 	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
-	post.discardCount[p] = 0 pre.discardCount[p] = 0
-	post.deckCount[p] = 8 pre.deckCount[p] = 10
-	treasure = 3 Player = 0
+	post.discardCount[p] = 12 pre.discardCount[p] = 0
+	post.deckCount[p] = 0 pre.deckCount[p] = 10
+	treasure = 3 Player = 1
 
 
  >>>>> FAILURES DETECTED: Examine test cases adventurer <<<<<
 
 File 'cardtest2.c'
-Lines executed:82.61% of 161
+Lines executed:80.12% of 161
 Creating 'cardtest2.c.gcov'
 
 File 'cardtest2.c'
-Lines executed:82.61% of 161
-Branches executed:73.58% of 106
-Taken at least once:49.06% of 106
-Calls executed:73.08% of 52
+Lines executed:80.12% of 161
+Branches executed:69.81% of 106
+Taken at least once:45.28% of 106
+Calls executed:69.23% of 52
 Creating 'cardtest2.c.gcov'
 
 cardtest3.c:
@@ -262,13 +248,15 @@ Creating 'cardtest4.c.gcov'
 dominion.c:
 --------------------DOMINION CODE COVERAGE--------------------
 File 'dominion.c'
-Lines executed:35.21% of 568
+Lines executed:36.24% of 574
 Creating 'dominion.c.gcov'
 
 File 'dominion.c'
-Lines executed:35.21% of 568
-Branches executed:37.65% of 417
-Taken at least once:29.98% of 417
-Calls executed:18.75% of 96
+Lines executed:36.24% of 574
+Branches executed:38.06% of 423
+Taken at least once:30.97% of 423
+Calls executed:20.00% of 95
 Creating 'dominion.c.gcov'
 
+dominion.c:
+dominion.c:

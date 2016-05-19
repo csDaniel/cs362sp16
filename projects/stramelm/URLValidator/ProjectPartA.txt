@@ -34,10 +34,25 @@ testIsValid() is an overloaded function
 how many total URLs is it testing?
 -------------------------------
 
-On the surface the answer would appear to be 9*19*7*10*3 = 35910.
-However, when we inserted a counter it was only 8*19*7*10*3 = 31920.
-The code doesn't test the URL's starting with empty strings (which is the last
-element in testUrlScheme[]).
+On the surface the answer would appear to be 9*19*7*10*3 = 35910.  That is the
+number of combinations of possible URL's given the five arrays of ResultPair[]
+objects that the code starts with.
+
+However, when we inserted a counter it was only 8*19*7*10*3 = 31920.  This is
+the number of URL's that showed up in a file that we were writing to.
+
+When the code reaches the last index in testUrlScheme, where the value is an
+empty string, the first URL tested using this empty string prefix is
+"www.google.com:80/test1?action=view".  In this case the value of "expected" is
+true, but when the URL is actually tested using the urlVal.isValid() method
+the returned value "result" is false.
+
+A couple of lines later assertEquals() is called.  The assertion fails because
+expected != result and the code throws an assertion - ending the program.  At
+this point the final 1*19*7*10*3 = 3990 URL's are not tested.
+
+To be more exact, it's (31920 + 1) URL's that are testing, because that last one
+causes the failed assertion and it's (3990 - 1) that aren't tested.
 
 -------------------------------
 give an example of a valid URL being tested
