@@ -10,6 +10,8 @@
 * 2 - No change to the other player's hand or deck.
 * 3 - No change to the victory card piles and kingdom card piles.
 * 4 - Discard smithy card after playing it.
+*
+* int smithyEffect(struct gameState *state, int handPos)
 **************************************************************************/	
 
 #include "dominion.h"
@@ -90,7 +92,8 @@ int main() {
 
 		memcpy(&controlG, &G, sizeof(struct gameState));		// copy game state to test case
 
-		playSmithy(p, &G, smithyPos);							// call playSmithy w current player
+		//playSmithy(p, &G, smithyPos);							// call playSmithy w current player
+		smithyEffect(&G, smithyPos);
 
 		passedTest = smithyTestOracle(testNum, p, smithyPos, G, controlG);
 

@@ -2699,47 +2699,15 @@ Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
 cardtest1
------------------ Testing Card: smithy ----------------
-Current game state compared with expected state:
-	hand count = 8, expected = 7
-	deck count = 1, expected = 2
-	coins = 4, expected = 4
-
-Testing: Current player should receive exactly 3 cards.
-	**FAILED**: Current player drew 1 too many cards.
-
-Testing: Current player's deck should be 3 cards smaller.
-	**FAILED**: Current player drew 1 too many cards.
-
-Testing: Current player should receive exactly zero coins.
-	PASSED: Current player has the correct number of coins.
-
-Testing: Current player should draw 3 cards from his own deck.
-	PASSED: Cards were drawn from the correct player's deck.
-
-Testing: No state change should occur for other players.
-	PASSED: No state change has occured for the other player.
-
-Testing: No state change should occur for the victory card piles.
-	PASSED: No state change has occured for the victory card piles.
-
-Testing: No state change should occur for the treasure card piles.
-	PASSED: No state change has occured for the treasure card piles.
-
-Testing: No state change should occur for the kingdom card piles.
-	PASSED: No state change has occured for the victory card piles.
-
-Testing: Current player's discard pile should have Smithy on top.
-	**FAILED**: The current player's test discard pile is empty.
-
- >>>>> SUCCESS: Testing complete smithy <<<<<
-	3 tests **FAILED**.
-	6 tests PASSED.
-
+Testing playSmithy()...
+Error: Player 1 did not move 3 cards from deck to hand and discard one from hand
+Handcount: 8 vs 7  deckCount: 1 vs 2  discardCount: 5 vs 5
+1 tests failed!
+Testing completed!
 Function 'updateCoins'
-Lines executed:81.82% of 11
-Branches executed:100.00% of 8
-Taken at least once:75.00% of 8
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
 No calls
 
 Function 'gainCard'
@@ -2784,10 +2752,10 @@ Taken at least once:0.00% of 12
 Calls executed:0.00% of 3
 
 Function 'cardEffect'
-Lines executed:3.54% of 198
-Branches executed:13.61% of 169
-Taken at least once:1.18% of 169
-Calls executed:3.45% of 58
+Lines executed:0.00% of 198
+Branches executed:0.00% of 169
+Taken at least once:0.00% of 169
+Calls executed:0.00% of 58
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -2826,7 +2794,7 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 3
 
 Function 'whoseTurn'
-Lines executed:100.00% of 2
+Lines executed:0.00% of 2
 No branches
 No calls
 
@@ -2837,7 +2805,7 @@ Taken at least once:0.00% of 12
 No calls
 
 Function 'supplyCount'
-Lines executed:100.00% of 2
+Lines executed:0.00% of 2
 No branches
 No calls
 
@@ -2864,16 +2832,16 @@ Taken at least once:0.00% of 10
 Calls executed:0.00% of 3
 
 Function 'shuffle'
-Lines executed:93.75% of 16
-Branches executed:100.00% of 8
-Taken at least once:87.50% of 8
-Calls executed:100.00% of 2
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
 
 Function 'initializeGame'
-Lines executed:80.95% of 63
-Branches executed:91.30% of 46
-Taken at least once:73.91% of 46
-Calls executed:100.00% of 5
+Lines executed:0.00% of 63
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
 
 Function 'kingdomCards'
 Lines executed:0.00% of 13
@@ -2881,70 +2849,41 @@ No branches
 No calls
 
 Function 'newGame'
-Lines executed:0.00% of 3
+Lines executed:100.00% of 3
 No branches
 No calls
 
 Function 'compare'
-Lines executed:83.33% of 6
-Branches executed:100.00% of 4
-Taken at least once:75.00% of 4
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:20.25% of 568
-Branches executed:22.78% of 417
-Taken at least once:13.91% of 417
-Calls executed:10.89% of 101
+Lines executed:4.75% of 568
+Branches executed:2.40% of 417
+Taken at least once:1.44% of 417
+Calls executed:1.98% of 101
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
 cardtest2
------------------ Testing Card: adventurer ----------------
-Current game state compared with expected state:
-	hand count = 6, expected = 6
-	deck count = 1, expected = 1
-	coins = 4, expected = 7
+Testing playAdventurer()...
+Player's deck: { estate, smithy, gold, copper, adventurer }
+Player's hand: { adventurer, copper, copper, steward, tribute }
+Player's discard pile: { copper, copper, copper, copper, copper }
 
-Testing: Current player should receive exactly 2 treasure cards.
-	PASSED: Current player received the correct number of treasure cards.
-
-Testing: Current player's deck should be 4 cards smaller.
-	PASSED: Current player's deck contains the correct number of cards.
-
-Testing: Current player should receive exactly 2 coins.
-	**FAILED**: Current player has 3 too few coins.
-
-Testing: Current player should draw treasure cards from his own deck.
-	PASSED: Treasure cards were drawn from the correct player's deck.
-
-Testing: No state change should occur for other players.
-	PASSED: No state change has occured for the other player.
-
-Testing: No state change should occur for the victory card piles.
-	PASSED: No state change has occured for the victory card piles.
-
-Testing: No state change should occur for the treasure card piles.
-	PASSED: No state change has occured for the treasure card piles.
-
-Testing: No state change should occur for the kingdom card piles.
-	PASSED: No state change has occured for the victory card piles.
-
-Testing: Current player's discard pile should have Adventurer on top.
-	**FAILED**: The last card in current player's discard pile is not Adventurer.
-
-Testing: Current player's discard pile should have all non-treasure revealed cards below Adventurer in correct order.
-	**FAILED**: The second card in current player's discard pile is not Feast.
-	**FAILED**: The third card in current player's discard pile is not Village.
-
- >>>>> SUCCESS: Testing complete adventurer <<<<<
-	4 tests **FAILED**.
-	7 tests PASSED.
-
+Calling playAdventurer...
+Calling playAdventurer() again...
+Error: deckCount is 4 instead of 2
+Error: handCount is 7 instead of 7
+Error: discardCount is 2 instead of 6
+Testing complete!
+3 errors found.
 Function 'updateCoins'
-Lines executed:81.82% of 11
-Branches executed:100.00% of 8
-Taken at least once:75.00% of 8
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
 No calls
 
 Function 'gainCard'
@@ -2983,16 +2922,16 @@ Taken at least once:0.00% of 2
 Calls executed:0.00% of 2
 
 Function 'playAdventurer'
-Lines executed:94.44% of 18
+Lines executed:100.00% of 18
 Branches executed:100.00% of 12
-Taken at least once:83.33% of 12
-Calls executed:66.67% of 3
+Taken at least once:91.67% of 12
+Calls executed:100.00% of 3
 
 Function 'cardEffect'
-Lines executed:3.54% of 198
-Branches executed:13.61% of 169
-Taken at least once:1.18% of 169
-Calls executed:3.45% of 58
+Lines executed:0.00% of 198
+Branches executed:0.00% of 169
+Taken at least once:0.00% of 169
+Calls executed:0.00% of 58
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -3001,10 +2940,10 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:36.36% of 22
-Branches executed:33.33% of 6
-Taken at least once:16.67% of 6
-Calls executed:0.00% of 1
+Lines executed:95.45% of 22
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 1
 
 Function 'getWinners'
 Lines executed:0.00% of 24
@@ -3031,7 +2970,7 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 3
 
 Function 'whoseTurn'
-Lines executed:100.00% of 2
+Lines executed:0.00% of 2
 No branches
 No calls
 
@@ -3042,7 +2981,7 @@ Taken at least once:0.00% of 12
 No calls
 
 Function 'supplyCount'
-Lines executed:100.00% of 2
+Lines executed:0.00% of 2
 No branches
 No calls
 
@@ -3069,16 +3008,16 @@ Taken at least once:0.00% of 10
 Calls executed:0.00% of 3
 
 Function 'shuffle'
-Lines executed:93.75% of 16
+Lines executed:100.00% of 16
 Branches executed:100.00% of 8
-Taken at least once:87.50% of 8
+Taken at least once:100.00% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
-Lines executed:80.95% of 63
-Branches executed:91.30% of 46
-Taken at least once:73.91% of 46
-Calls executed:100.00% of 5
+Lines executed:0.00% of 63
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
 
 Function 'kingdomCards'
 Lines executed:0.00% of 13
@@ -3086,7 +3025,7 @@ No branches
 No calls
 
 Function 'newGame'
-Lines executed:0.00% of 3
+Lines executed:100.00% of 3
 No branches
 No calls
 
@@ -3097,59 +3036,22 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:22.36% of 568
-Branches executed:25.18% of 417
-Taken at least once:15.83% of 417
-Calls executed:10.89% of 101
+Lines executed:13.03% of 568
+Branches executed:8.63% of 417
+Taken at least once:7.19% of 417
+Calls executed:5.94% of 101
 Creating 'dominion.c.gcov'
 
 -----------------------------------------------------------
 cardtest3
------------------ Testing Card: village ----------------
-Current game state compared with expected state:
-	hand count = 5, expected = 5
-	deck count = 4, expected = 4
-	actions = 3, expected = 3
-	buys = 1, expected = 1
-
-Testing: Current player should receive exactly 1 card.
-	PASSED: Current player received the correct number of cards.
-
-Testing: Current player's deck should be 1 card smaller.
-	PASSED: Current player's deck contains the correct number of cards.
-
-Testing: Current player should receive 2 additional actions.
-	PASSED: Current player has the correct number of actions.
-
-Testing: Current player should receive no additional buys.
-	PASSED: Current player has the correct number of buys.
-
-Testing: Current player should draw 1 card from his own deck.
-	PASSED: Card was drawn from the correct player's deck.
-
-Testing: No state change should occur for other players.
-	PASSED: No state change has occured for the other player.
-
-Testing: No state change should occur for the victory card piles.
-	PASSED: No state change has occured for the victory card piles.
-
-Testing: No state change should occur for the treasure card piles.
-	PASSED: No state change has occured for the treasure card piles.
-
-Testing: No state change should occur for the kingdom card piles.
-	PASSED: No state change has occured for the kingdom card piles.
-
-Testing: Current player's discard pile should have Village on top.
-	**FAILED**: The current player's test discard pile is empty.
-
- >>>>> SUCCESS: Testing complete village <<<<<
-	1 tests **FAILED**.
-	9 tests PASSED.
-
+Testing playVillage()...
+Error: playedCardCount is 0 instead of 1
+Testing complete!
+1 errors found.
 Function 'updateCoins'
-Lines executed:81.82% of 11
-Branches executed:100.00% of 8
-Taken at least once:75.00% of 8
+Lines executed:0.00% of 11
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
 No calls
 
 Function 'gainCard'
@@ -3194,10 +3096,10 @@ Taken at least once:0.00% of 12
 Calls executed:0.00% of 3
 
 Function 'cardEffect'
-Lines executed:3.54% of 198
-Branches executed:13.61% of 169
-Taken at least once:1.18% of 169
-Calls executed:3.45% of 58
+Lines executed:0.00% of 198
+Branches executed:0.00% of 169
+Taken at least once:0.00% of 169
+Calls executed:0.00% of 58
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -3236,7 +3138,7 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 3
 
 Function 'whoseTurn'
-Lines executed:100.00% of 2
+Lines executed:0.00% of 2
 No branches
 No calls
 
@@ -3247,7 +3149,7 @@ Taken at least once:0.00% of 12
 No calls
 
 Function 'supplyCount'
-Lines executed:100.00% of 2
+Lines executed:0.00% of 2
 No branches
 No calls
 
@@ -3274,16 +3176,16 @@ Taken at least once:0.00% of 10
 Calls executed:0.00% of 3
 
 Function 'shuffle'
-Lines executed:93.75% of 16
-Branches executed:100.00% of 8
-Taken at least once:87.50% of 8
-Calls executed:100.00% of 2
+Lines executed:0.00% of 16
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+Calls executed:0.00% of 2
 
 Function 'initializeGame'
-Lines executed:80.95% of 63
-Branches executed:91.30% of 46
-Taken at least once:73.91% of 46
-Calls executed:100.00% of 5
+Lines executed:0.00% of 63
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 5
 
 Function 'kingdomCards'
 Lines executed:0.00% of 13
@@ -3291,20 +3193,20 @@ No branches
 No calls
 
 Function 'newGame'
-Lines executed:0.00% of 3
+Lines executed:100.00% of 3
 No branches
 No calls
 
 Function 'compare'
-Lines executed:83.33% of 6
-Branches executed:100.00% of 4
-Taken at least once:75.00% of 4
+Lines executed:0.00% of 6
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:20.25% of 568
-Branches executed:22.30% of 417
-Taken at least once:13.43% of 417
-Calls executed:10.89% of 101
+Lines executed:4.75% of 568
+Branches executed:1.92% of 417
+Taken at least once:0.96% of 417
+Calls executed:1.98% of 101
 Creating 'dominion.c.gcov'
 
