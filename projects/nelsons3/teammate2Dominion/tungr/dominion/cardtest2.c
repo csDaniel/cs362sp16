@@ -22,7 +22,7 @@ int main () {
     cardEffect(adventurer, 0, 0, 0, &game, 0, 0);
     printf("\nending hand count Player: %d\n", game.handCount[0]);
     newHand = game.handCount[0];
-    assert(newHand = oldHand+2-1);
+    assert(newHand = oldHand+2);
     printf("\nunit Test: Adventurer test successful \n");
 return 0;
 }
