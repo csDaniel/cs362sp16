@@ -1,61 +1,133 @@
-//Assignment #3 - Joseph Cuellar
-//CS - 362
-//This is to test discardCard() to see if it can discard a card 
-//from the player's hand to the played pile. IF trashed its value becomes -1.
+/*
+ * Miranda Weldon
+ * April 22, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * unittest1.c
+ */
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
-const int MAX_CARD_COUNT = 10;
-
-int main(){
-	// vars
-	int numberOfPlayers, currentPlayer, handPosition, trashFlag;
-	struct gameState postGameState; 
-	int playedCardCount = 0;
-	
-	//set up random number generator
-	SelectStream(2);
-	PutSeed(3);
-	printf("START - Running discardCard() unittest1.\n");
-	// TEST the max amount of players, each player that is playing, and each card
-	for(numberOfPlayers = 2; numberOfPlayers <= MAX_PLAYERS; numberOfPlayers++) {
-		for(currentPlayer = 0;  currentPlayer < numberOfPlayers; currentPlayer++){
-			for(handPosition = 0; handPosition < MAX_CARD_COUNT; handPosition++){
-				int i;
-				for (i = 0; i < sizeof(struct gameState); i++) {
-					((char*)&postGameState)[i] = floor(Random() * 256);
-				}
-				postGameState.numPlayers = numberOfPlayers;
-				postGameState.playedCardCount = playedCardCount;
-				postGameState.handCount[currentPlayer] = MAX_CARD_COUNT;
-				trashFlag = floor(Random()*2);
-				
-				struct gameState preGameState;
-				memcpy(&preGameState, &postGameState, sizeof(struct gameState));
-				int functionOutput = discardCard(handPosition, currentPlayer, &postGameState, trashFlag);
-				
-				if( trashFlag < 1){
-					preGameState.playedCardCount++;
-				}
-				preGameState.handCount[currentPlayer]--;
-				
-				if(functionOutput != 0){
-					printf("ERROR! discardCard() failed.\n\n");
-				}
-				else if(preGameState.playedCardCount != postGameState.playedCardCount){
-					printf("ERROR! Played card counts are NOT equal.\n\n");
-				}
-				else if(preGameState.handCount[currentPlayer] != postGameState.handCount[currentPlayer]){
-					printf("ERROR! Player hand counts are NOT equal.\n\n");
-				}
-			}
-		}
-	 }
-	 printf ("STOP - Running discardCard() unittest1.\n\n");
-	 return 0;
+//function to print results of isGameOver test
+void isGameOverTest(int option, int tagGameOver){
+	//case where game should not be over
+	if(option == 0){
+		if(tagGameOver == 0)
+			printf("\tNo - Test Pass\n");
+		else if(tagGameOver == 1)
+			printf("\tYes - Test Fail\n");
+		else
+			printf("\tERROR - Test Fail\n");
+	}
+	//case where game should be over
+	else if(option == 1){
+		if(tagGameOver == 1)
+			printf("\tYes - Test Pass\n");
+		else if(tagGameOver == 0)
+			printf("\tNo - Test Fail\n");
+		else
+			printf("\tERROR - Test Fail\n");
+	}
+	else
+		printf("\tERROR in isGameOverTest\n");
 }
+
+//main function
+int main(){
+	//declare variables
+	int tagGameOver = -1, numPlayers = 3, seed = 1000;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, salvager, remodel, sea_hag, mine, cutpurse, ambassador, great_hall, smithy};
+
+	//start up original game and create a copy
+	initializeGame(numPlayers, k, seed, &Game);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	printf("Testing isGameOver()\n\n");
+
+	//test if game over at beginning of game
+	tagGameOver = isGameOver(&testGame);
+	printf("Beginning of Game: Expected No\n");
+
+	//game shouldn't be over
+	isGameOverTest(0, tagGameOver);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test if game is over when province pile is empty
+	testGame.supplyCount[province] = 0;
+	tagGameOver = isGameOver(&testGame);
+	printf("Province Pile Empty: Expected Yes\n");
+
+	//game should be over
+	isGameOverTest(1, tagGameOver);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test if game is over when 2 other estate piles are empty
+	testGame.supplyCount[duchy] = 0;
+	testGame.supplyCount[estate] = 0;
+	tagGameOver = isGameOver(&testGame);
+	printf("Two Estate Piles Empty: Expected No\n");
+
+	//game shouldn't be over
+	isGameOverTest(0, tagGameOver);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test if game is over when 3 kingdom card piles are empty
+	testGame.supplyCount[feast] = 0;
+	testGame.supplyCount[salvager] = 0;
+	testGame.supplyCount[smithy] = 0;
+	tagGameOver = isGameOver(&testGame);
+	printf("Three Kingdom Card Piles Empty: Expected Yes\n");
+
+	//game should be over
+	isGameOverTest(1, tagGameOver);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test if game is over when 2 kingdom card piles are empty
+	testGame.supplyCount[feast] = 0;
+	testGame.supplyCount[salvager] = 0;
+	tagGameOver = isGameOver(&testGame);
+	printf("Two Kingdom Card Piles Empty: Expected No\n");
+
+	//game shouldn't be over
+	isGameOverTest(0, tagGameOver);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test if game is over when 4 kingdom card piles are empty
+	testGame.supplyCount[feast] = 0;
+	testGame.supplyCount[salvager] = 0;
+	testGame.supplyCount[smithy] = 0;
+	testGame.supplyCount[remodel] = 0;
+	tagGameOver = isGameOver(&testGame);
+	printf("Four Kingdom Card Piles Empty: Expected Yes\n");
+
+	//game should be over
+	isGameOverTest(1, tagGameOver);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test when 3 empty pile are from different supply types
+	testGame.supplyCount[sea_hag] = 0;
+	testGame.supplyCount[curse] = 0;
+	testGame.supplyCount[province] = 0;
+	tagGameOver = isGameOver(&testGame);
+	printf("Sea Hag, Curse, Province Empty: Expected Yes\n");
+
+	//game should be over
+	isGameOverTest(1, tagGameOver);
+
+	//zero if no errors
+	return 0;
+}
+

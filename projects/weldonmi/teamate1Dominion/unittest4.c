@@ -1,118 +1,60 @@
-//Assignment #3 - Joseph Cuellar
-//CS - 362
-//Test to see if the player is able to buy a card 
+/*
+ * Miranda Weldon
+ * April 24, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * unittest4.c
+ */
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
-int BuyCardTEST(int currentPlayer, int currentCard, struct gameState *postGameState, int testState);
+//main function
+int main (){
+	//declare variables
+	int i, numPlayers = 3, seed = 1000;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, salvager, remodel, sea_hag, mine, cutpurse, ambassador, great_hall, smithy};
 
-int main(){
-	int currentPlayer = 0;
-	int testState, currentCard;
-	struct gameState postGameState;
-	
-	SelectStream(2);
-	PutSeed(3);
-	printf ("START - Running buyCard() unittest4.\n\n");
-	
-	int i;
-	for (i = 0; i < sizeof(struct gameState); i++) { 
-		((char*)&postGameState)[i] = floor(Random() * 256);
-	}
-	
-	int j;
-	for(j = 0; j <= treasure_map; j++){
-		postGameState.supplyCount[j] = 5;
+	//start up original game and create a copy
+	initializeGame(numPlayers, k, seed, &Game);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	printf("Testing numHandCards()\n\n");
+
+	//check card count for each player
+	printf("Beginning of Game:\n");
+	for(i = 0; i < numPlayers; i++){
+		//printf("\tPlayer %d:\n\tExpected Card Count: 5\n\tActual Card Count: %d\n", i, numHandCards(&testGame));
+		printf("\tPlayer %d:\n\tExpected Card Count: %d\n\tActual Card Count: %d\n", i, testGame.handCount[i], numHandCards(&testGame));
+		if(numHandCards(&testGame) == 5)
+			printf("\t\tTest Pass\n");
+		else
+			printf("\t\tTest Fail\n");
+		testGame.whoseTurn++;
 	}
 
-	postGameState.numPlayers 					= 2;
-	postGameState.whoseTurn 					= currentPlayer;
-	postGameState.deck[currentPlayer][0] 		= gold; 
-	postGameState.deckCount[currentPlayer] 		= 1;
-	postGameState.hand[currentPlayer][0] 		= silver; 
-	postGameState.handCount[currentPlayer] 		= 1;
-	postGameState.discard[currentPlayer][0] 	= copper; 
-	postGameState.discardCount[currentPlayer] 	= 1;
-	postGameState.coins = 5000;
-	postGameState.numBuys = 0;
+	memcpy(&testGame, &Game, sizeof(struct gameState));
 
-	testState = 1;
-	BuyCardTEST(currentPlayer, gold, &postGameState, testState);
-	
-	int k;
-	for(k = 0; k < 100; k++){
-		currentCard = floor(Random() * treasure_map) + 1;
-		postGameState.numBuys = 1000;
-		postGameState.supplyCount[currentCard] = 0;
-		testState = 2;
-		BuyCardTEST(currentPlayer, currentCard, &postGameState, testState);
+	//get rid of 1 card from two players hands (2 total) then retest
+	printf("After Getting Rid of 1 Card from 2/3 Players' Hands:\n");
+	testGame.hand[0][0] = -1;	//gets rid of first card for first player
+	testGame.hand[1][0] = -1;	//gets rid of first card for second player
+	for(i = 0; i < numPlayers; i++){
+		//printf("\tPlayer %d:\n\tExpected Card Count: 5\n\tActual Card Count: %d\n", i, numHandCards(&testGame));
+		printf("\tPlayer %d:\n\tExpected Card Count: %d\n\tActual Card Count: %d\n", i, testGame.handCount[i], numHandCards(&testGame));
+		if(numHandCards(&testGame) == 5)
+			printf("\t\tTest Pass\n");
+		else
+			printf("\t\tTest Fail\n");
+		testGame.whoseTurn++;
 	}
-	
-	for(j = 0; j <= treasure_map; j++){
-		postGameState.supplyCount[j] = 100;
-	}
-	
-	postGameState.coins = 0;
-	testState = 3;
-	BuyCardTEST(currentPlayer, province, &postGameState, testState);
 
-	for(k = 0; k < 100; k++){
-		currentCard = floor(Random() * sea_hag) + 1;
-		postGameState.coins = 50;
-		testState = 0;
-		BuyCardTEST(currentPlayer, currentCard, &postGameState, testState);
-	}
-	printf ("STOP - Running buyCard() unittest4.\n\n");
-	return 0;
-}
-
-int BuyCardTEST(int currentPlayer, int currentCard, struct gameState *postGameState, int testState){
-	struct gameState preGameState;
-	memcpy(&preGameState, postGameState, sizeof(struct gameState));
-	
-	int functionOutput = buyCard(currentCard, postGameState);
-	
-	preGameState.handCount[currentPlayer]++;
-	preGameState.coins = preGameState.coins - getCost(currentCard);
-	preGameState.numBuys--;
-	preGameState.supplyCount[currentCard]--;
-	
-	if(testState == 1) {
-		if(functionOutput != -1)	{
-			printf("ERROR! numBuys should be 0.\n");
-		}
-	}
-	else if(testState == 2){
-		if(functionOutput != -1)	{
-			printf("ERROR! supplyCount should be 0.\n");
-		}
-	}
-	else if(testState == 3){
-		if(functionOutput != -1){
-			printf("ERROR! coins should be less than cost.\n");
-		}
-	}
-	else if(functionOutput != 0 ){
-		printf("ERROR! buyCard QUIT.\n");
-	}
-	else{
-		if(postGameState->handCount[currentPlayer] != preGameState.handCount[currentPlayer]){
-			printf("ERROR! The hand count did not increase with buy.\n");
-		}
-		if(postGameState->coins != preGameState.coins){
-			printf("ERROR! Coins did not decrease with the cost of the card.\n");
-		}
-		if(postGameState->numBuys != preGameState.numBuys){
-			printf("ERROR! numBuys did not decrease.\n");
-		}
-		if(postGameState->supplyCount[currentCard] != preGameState.supplyCount[currentCard]){
-			printf("ERROR! supply count did not decrease.\n");
-		}
-	}
+	//zero if no errors
 	return 0;
 }
