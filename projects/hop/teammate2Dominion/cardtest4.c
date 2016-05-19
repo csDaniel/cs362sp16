@@ -48,14 +48,16 @@ int main(){
    printf("    action count = %i, expected = %i\n", state.numActions, saveState.numActions + addActions);
    assert(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard);
    assert(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards);
-   assert(state.numActions == saveState.numActions + addActions);
+   if(!(state.numActions == saveState.numActions + addActions))
+		printf("		assertion failed.\n");
 
 // ----------------- TEST 2 ---------------------------------------------------
    printf("\n");
    printf(" TEST 2: Number of buys or coins should not change\n");
    printf("    buy count = %i, expected = %i\n", state.numBuys, saveState.numBuys);
    printf("    coin count = %i, expected = %i\n", state.coins, saveState.coins);
-   assert(state.numBuys == saveState.numBuys);
+   if(!(state.numBuys == saveState.numBuys))
+		printf("		assertion failed.\n");
    assert(state.coins == saveState.coins);
 
 // ----------------- TEST 3 ---------------------------------------------------
@@ -76,7 +78,8 @@ int main(){
       printf("    kingdomCard '%i' count = %i, expected = %i\n", i, state.supplyCount[i], saveState.supplyCount[i]);
    }
 
-   assert(saveState.supplyCount[estate] == state.supplyCount[estate]);
+   if(!(saveState.supplyCount[estate] == state.supplyCount[estate]))
+		printf("		assertion failed.\n");
    assert(saveState.supplyCount[duchy] == state.supplyCount[duchy]);
    assert(saveState.supplyCount[province] == state.supplyCount[province]);
    for( i = adventurer; i <= treasure_map; ++i){

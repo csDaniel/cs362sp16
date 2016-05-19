@@ -15,7 +15,6 @@ int main(){
    int kingdom[10] = {adventurer, baron, gardens, feast, ambassador, remodel, 
                      great_hall, minion, sea_hag, treasure_map};
    int seed = 1001;
-
    initializeGame(numPlayers, kingdom, seed, &state);
    int currentPlayer = state.whoseTurn;
    // Save the state as-is
@@ -42,16 +41,16 @@ int main(){
    discard = 1;
    printf("    hand count = %i, expected %i\n", state.handCount[currentPlayer], saveState.handCount[currentPlayer] + newCards - discard);  
    // Assertion will fail, turning off and will report in bug1.c
-   //assert(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard);
-   printf("    ASSERTION FAILS\n");
+   if(!(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard))
+		printf("    ASSERTION FAILS\n");
 
 // ----------------- TEST 2 ---------------------------------------------------
    printf("\n");
    printf(" TEST 2: 3 Cards should come from own pile.\n");
    printf("    deck count = %i, expected %i\n", state.deckCount[currentPlayer], saveState.deckCount[currentPlayer] - newCards);
    // assertion will fail, turning it off and will report in bug1.c
-   // assert(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards);
-   printf("    ASSERTION FAILS.\n");
+   if(!(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards))
+		printf("    ASSERTION FAILS.\n");
 
 // ----------------- TEST 3 ---------------------------------------------------
    printf("\n");

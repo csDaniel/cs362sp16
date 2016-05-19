@@ -49,8 +49,8 @@ int main(){
    printf("\n");
    printf(" TEST 2: Up to 2 Cards should come from own pile.\n");
    printf("    deck count = %i, %i <= expected <= %i\n", state.deckCount[currentPlayer], saveState.deckCount[currentPlayer] - newCards, saveState.deckCount[currentPlayer]);
-   //assert(state.deckCount[currentPlayer] <= saveState.deckCount[currentPlayer] && state.deckCount[currentPlayer] >= saveState.deckCount[currentPlayer] - newCards);
-   printf("    ASSERTION FAILS.\n");
+   if(!(state.deckCount[currentPlayer] <= saveState.deckCount[currentPlayer] && state.deckCount[currentPlayer] >= saveState.deckCount[currentPlayer] - newCards))
+		printf("    ASSERTION FAILS.\n");
 
 // ----------------- TEST 3 ---------------------------------------------------
    printf("\n");

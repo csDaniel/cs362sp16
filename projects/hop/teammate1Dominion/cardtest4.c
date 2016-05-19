@@ -48,7 +48,8 @@ int main(){
    printf("    action count = %i, expected = %i\n", state.numActions, saveState.numActions + addActions);
    assert(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard);
    assert(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards);
-   assert(state.numActions == saveState.numActions + addActions);
+   if (!(state.numActions == saveState.numActions + addActions))
+		printf("		assertion fails!\n");
 
 // ----------------- TEST 2 ---------------------------------------------------
    printf("\n");
