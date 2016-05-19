@@ -77,22 +77,6 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 unittest5 cardtest1
 	gcov -b dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
-randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
-	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.c rngs.c -lm $(CFLAGS)
-
-randomtestadventurer.out: randomtestadventurer dominion.o rngs.o
-	./randomtestadventurer &> randomtestadventurer.out
-	gcov -b dominion.c >> randomtestadventurer.out
-	cat dominion.c.gcov >> randomtestadventurer.out
-
-randomtestcard: randomtestcard.c dominion.o rngs.o
-	gcc -o randomtestcard -g randomtestcard.c dominion.c rngs.c -lm $(CFLAGS)
-
-randomtestcard.out: randomtestcard dominion.o rngs.o
-	./randomtestcard &> randomtestcard.out
-	gcov -b dominion.c >> randomtestcard.out
-	cat dominion.c.gcov >> randomtestcard.out
-
 TESTS: cardtest4 dominion.o rngs.o
 	./cardtest4 &> test
 	gcov -b dominion.c >> test
