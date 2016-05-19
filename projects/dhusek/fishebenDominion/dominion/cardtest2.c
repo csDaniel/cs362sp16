@@ -1,5 +1,5 @@
 /*
- * cardtest3.c
+ * cardtest2.c
  *
  */
 
@@ -12,13 +12,12 @@
 #include <stdlib.h>
 #include "interface.h"
 
-#define TESTCARD "village"
+#define TESTCARD "adventurer"
 
 int main() {
     int newCards = 0;
     int discarded = 1;
-    int extraActions = 0;
-    int extraBuys = 0;
+    int extraCoins = 0;
     int shuffledCards = 0;
     
     int i;
@@ -32,12 +31,14 @@ int main() {
         sea_hag, tribute, smithy, council_room};
     int GnewHandCount;
     int GnewDeckCount;
-    int GnewActionCount;
-    int GnewBuyCount;
+    int GnewCoins;
     int GdeckCount;
+    int GtempHandSize;
     int num;
-    int card1;
-    int deckCard1;
+    int GnumTreasureCards = 0;
+    int expectedTreasureCards = 0;
+    int testNumTreasureCards = 0;
+    int card1, card2;
     int errorCount = 0;
     int failedTests = 0;
     int passedTests = 0;
@@ -52,50 +53,76 @@ int main() {
     
     printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
     
-    // set card in position 0 to Village
-    G.hand[thisPlayer][handpos] = village;
+    // set card in position 0 to adventurer
+    G.hand[thisPlayer][handpos] = adventurer;
+    //printHand(thisPlayer, &G);
+    // count treasure cards in G hand
+    for(i = 0; i < G.handCount[thisPlayer]; i++) {
+        if(G.hand[thisPlayer][i] == copper || G.hand[thisPlayer][i] == silver ||
+           G.hand[thisPlayer][i] == gold) {
+            GnumTreasureCards++;
+        }
+    }
+    expectedTreasureCards = GnumTreasureCards + 2;
+    
     GdeckCount = G.deckCount[thisPlayer];
+    //printf("GdeckCount: %d\n", GdeckCount);
+    
+    // set first 4 cards in deck
+    G.deck[thisPlayer][GdeckCount - 1] = feast;
+    G.deck[thisPlayer][GdeckCount - 2] = gold;
+    G.deck[thisPlayer][GdeckCount - 3] = village;
+    G.deck[thisPlayer][GdeckCount - 4] = silver;
+    //printDeck(thisPlayer, &G);
+    GtempHandSize = 2;
+    
     
     // copy the game state to a test case
     memcpy(&testG, &G, sizeof(struct gameState));
     
-    // play village card in testG game
-    cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
+    // play adventurer card in testG game
+    cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
+    //printHand(thisPlayer, &testG);
     
-    newCards = 1;
-    extraActions = 2;
-    extraBuys = 0;
+    newCards = 2;
+    extraCoins = GOLD_VALUE + SILVER_VALUE;
     GnewHandCount = G.handCount[thisPlayer] + newCards - discarded;
-    GnewDeckCount = GdeckCount - newCards + shuffledCards;
-    GnewActionCount = G.numActions + extraActions;
-    GnewBuyCount = G.numBuys + extraBuys;
+    GnewDeckCount = GdeckCount - newCards - GtempHandSize + shuffledCards;
+    GnewCoins = G.coins + extraCoins;
+    
+    // count treasure cards in testG hand
+    for(i = 0; i < testG.handCount[thisPlayer]; i++) {
+        if(testG.hand[thisPlayer][i] == copper || testG.hand[thisPlayer][i] == silver ||
+           testG.hand[thisPlayer][i] == gold) {
+            testNumTreasureCards++;
+        }
+    }
     
     printf("Current game state compared with expected state:\n");
     printf("\thand count = %d, expected = %d\n", testG.handCount[thisPlayer], GnewHandCount);
     printf("\tdeck count = %d, expected = %d\n", testG.deckCount[thisPlayer], GnewDeckCount);
-    printf("\tactions = %d, expected = %d\n", testG.numActions, GnewActionCount);
-    printf("\tbuys = %d, expected = %d\n", testG.numBuys, GnewBuyCount);
+    printf("\tcoins = %d, expected = %d\n", testG.coins, GnewCoins);
     printf("\n");
     
-    // ----------- Current player should receive exactly 1 card --------------
-    printf("Testing: Current player should receive exactly 1 card.\n");
-    if(testG.handCount[thisPlayer] != GnewHandCount) {
-        if(testG.handCount[thisPlayer] < GnewHandCount) {
-            num = GnewHandCount - testG.handCount[thisPlayer];
-            printf("\t**FAILED**: Current player drew %d too few cards.\n\n", num);
+    // ----------- Current player should receive exactly 2 treasure cards --------------
+    printf("Testing: Current player should receive exactly 2 treasure cards.\n");
+    if(testNumTreasureCards != expectedTreasureCards) {
+        if(testNumTreasureCards < expectedTreasureCards) {
+            num = expectedTreasureCards - testNumTreasureCards;
+            printf("\t**FAILED**: Current player drew %d too few treasure cards.\n\n", num);
             failedTests++;
-        } else { // Current player drew too many cards
-            num = testG.handCount[thisPlayer] - GnewHandCount;
-            printf("\t**FAILED**: Current player drew %d too many cards.\n\n", num);
+        } else { // Current player drew too many treasure cards
+            num = testNumTreasureCards - expectedTreasureCards;
+            printf("\t**FAILED**: Current player drew %d too many treasure cards.\n\n", num);
             failedTests++;
         }
     } else {
-        printf("\tPASSED: Current player received the correct number of cards.\n\n");
+        printf("\tPASSED: Current player received the correct number of treasure cards.\n\n");
         passedTests++;
     }
     
-    // ----------- Current player's deck should be 1 card smaller --------------
-    printf("Testing: Current player's deck should be 1 card smaller.\n");
+    // ----------- Current player's deck should be 4 cards smaller --------------
+    printf("Testing: Current player's deck should be 4 cards smaller.\n");
     if(testG.deckCount[thisPlayer] != GnewDeckCount) {
         if(testG.deckCount[thisPlayer] < GnewDeckCount) {
             num = GnewDeckCount - testG.deckCount[thisPlayer];
@@ -111,50 +138,44 @@ int main() {
         passedTests++;
     }
     
-    // ----------- Current player should receive 2 additional actions --------------
-    printf("Testing: Current player should receive 2 additional actions.\n");
-    if(testG.numActions != GnewActionCount) {
-        if(testG.numActions < GnewActionCount) {
-            num = GnewActionCount - testG.numActions;
-            printf("\t**FAILED**: Current player has %d too few actions.\n\n", num);
-            failedTests++;
-        } else { // Current player has too many actions
-            num = testG.numActions - GnewActionCount;
-            printf("\t**FAILED**: Current player has %d too many actions.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player has the correct number of actions.\n\n");
-        passedTests++;
-    }
+    // ----------- Current player should receive exactly 5 coins --------------
+//    printf("Testing: Current player should receive exactly 5 coins.\n");
+//    if(testG.coins != GnewCoins) {
+//        if(testG.coins < GnewCoins) {
+//            num = GnewCoins - testG.coins;
+//            printf("\t**FAILED**: Current player has %d too few coins.\n\n", num);
+//            failedTests++;
+//        } else { // Current player has too many coins
+//            num = testG.coins - GnewCoins;
+//            printf("\t**FAILED**: Current player has %d too many coins.\n\n", num);
+//            failedTests++;
+//        }
+//    } else {
+//        printf("\tPASSED: Current player has the correct number of coins.\n\n");
+//        passedTests++;
+//    }
     
-    // ----------- Current player should receive no additional buys --------------
-    printf("Testing: Current player should receive no additional buys.\n");
-    if(testG.numBuys != GnewBuyCount) {
-        if(testG.numBuys < GnewBuyCount) {
-            num = GnewBuyCount - testG.numBuys;
-            printf("\t**FAILED**: Current player has %d too few buys.\n\n", num);
-            failedTests++;
-        } else { // Current player has too many buys
-            num = testG.numBuys - GnewBuyCount;
-            printf("\t**FAILED**: Current player has %d too many buys.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player has the correct number of buys.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- Current player should draw 1 card from his own deck --------------
-    printf("Testing: Current player should draw 1 card from his own deck.\n");
-    card1 = testG.hand[thisPlayer][handpos]; // since last card is swapped with Village's position when it is discarded
-    deckCard1 = G.deck[thisPlayer][G.deckCount[thisPlayer] - 1];
-    if(card1 != deckCard1) {
-        printf("\t**FAILED**: The card was not drawn from the current player's deck.\n\n");
+    // ----------- Current player should draw treasure cards from his own deck --------------
+    printf("Testing: Current player should draw treasure cards from his own deck.\n");
+    errorCount = 0;
+    card1 = testG.hand[thisPlayer][testG.handCount[thisPlayer] - 1];
+    card2 = testG.hand[thisPlayer][handpos]; // since last card is swapped with Adventurer's position when it is discarded
+    if(card1 != G.deck[thisPlayer][GdeckCount - 2]) {
+        printf("\t**FAILED**: The first treasure card was not drawn from the current player's deck.\n");
         failedTests++;
-    } else {
-        printf("\tPASSED: Card was drawn from the correct player's deck.\n\n");
+        errorCount++;
+    }
+    if(card2 != G.deck[thisPlayer][GdeckCount - 4]) {
+        printf("\t**FAILED**: The second treasure card was not drawn from the current player's deck.\n");
+        failedTests++;
+        errorCount++;
+    }
+    
+    if(errorCount == 0) {
+        printf("\tPASSED: Treasure cards were drawn from the correct player's deck.\n\n");
         passedTests++;
+    } else {
+        printf("\n");
     }
     
     // ----------- No state change should occur for other players. --------------
@@ -247,24 +268,50 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occurred for the kingdom card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the victory card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");
     }
     
-    // ----------- Current player's discard pile should have Village on top --------------
-    printf("Testing: Current player's discard pile should have Village on top.\n");
+    // ----------- Current player's discard pile should have Adventurer on top --------------
+    printf("Testing: Current player's discard pile should have Adventurer on top.\n");
     if(testG.discardCount[thisPlayer] > 0) {
-        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 1] != village) {
-            printf("\t**FAILED**: The last card in current player's discard pile is not Village.\n\n");
+        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 1] != adventurer) {
+            printf("\t**FAILED**: The last card in current player's discard pile is not Adventurer.\n\n");
             failedTests++;
         } else {
-            printf("\tPASSED: The last card in current player's discard pile is Village.\n\n");
+            printf("\tPASSED: The last card in current player's discard pile is Adventurer.\n\n");
             passedTests++;
         }
     } else {
-        printf("\t**FAILED**: The current player's test discard pile is empty.\n\n");
+        printf("\t**FAILED**: The current player's test discard pile does not contain Adventurer on top.\n\n");
+        failedTests++;
+    }
+    
+    // ----------- Current player's discard pile should have all non-treasure revealed cards below Adventurer in correct order --------------
+    printf("Testing: Current player's discard pile should have all non-treasure revealed cards below Adventurer in correct order.\n");
+    errorCount = 0;
+    if(testG.discardCount[thisPlayer] > 0) {
+        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 2] != feast) {
+            printf("\t**FAILED**: The second card in current player's discard pile is not Feast.\n");
+            failedTests++;
+            errorCount++;
+        }
+        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 3] != village) {
+            printf("\t**FAILED**: The third card in current player's discard pile is not Village.\n");
+            failedTests++;
+            errorCount++;
+        }
+        
+        if(errorCount == 0) {
+            printf("\tPASSED: The non-treasure revealed cards are in the correct spots in the discard pile.\n\n");
+            passedTests++;
+        } else {
+            printf("\n");
+        }
+    } else {
+        printf("\t**FAILED**: The current player's test discard pile does not contain the correct cards.\n\n");
         failedTests++;
     }
     
