@@ -157,7 +157,7 @@ int main(int argc, char **argv) {
             copyGameState(&before,&G);
             printf("Random Adventurer test #:%d : %d    Coins Available in Player's Deck and Discard:%d\n",
                    i,numInPlayersDeck, numCoinsInPlayersDeckAndDiscard(&G, curPlayer));
-            playAdventurer(&G, G.handCount[curPlayer]-1);
+            playAdventurer(&G, G.whoseTurn, G.handCount[curPlayer]-1);
 
             printf("Player's hand has 2 new coin cards ");
             if (G.handCount[curPlayer] == before.handCount[curPlayer]+1 &&

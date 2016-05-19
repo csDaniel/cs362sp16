@@ -136,6 +136,8 @@ int playSeahag(struct gameState *state, int currentPlayer);
 int playSalvager(struct gameState *state, int currentPlayer, int handPos, int selectedcard);
 int playEmbargo(struct gameState *state, int currentPlayer, int handPos, int pileChoice);
 
+//Added for SwansonB unit test
+int compare(const void* a, const void* b);
 
 
 #endif

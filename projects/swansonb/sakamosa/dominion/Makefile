@@ -55,13 +55,7 @@ unittestresults.out: unittest*.c cardtest*.c testUtilities.c dominion.o rngs.o
 	
 	gcc -o cardtest2.out cardtest2.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./cardtest2.out >> unittestresults.out
-	
-	gcc -o cardtest3.out cardtest3.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
-	./cardtest3.out >> unittestresults.out
-	
-	gcc -o cardtest4.out cardtest4.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
-	./cardtest4.out >> unittestresults.out
-	
+
 	gcov dominion.c -f -b >> unittestresults.out
 
 randomtestcard.out: randomtestcard.c testUtilities.c dominion.o rngs.o

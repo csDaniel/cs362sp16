@@ -1,145 +1,585 @@
-*********************BEGIN UNIT TESTS OF GETCOST()*********************
-
-
-Passed 27 of 27 card tests
-Passed invalid card test
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:88.24% of 17
-Branches executed:100.00% of 6
-Taken at least once:66.67% of 6
-Calls executed:75.00% of 8
-
-File 'unittest1.c'
-Lines executed:88.24% of 17
-Branches executed:100.00% of 6
-Taken at least once:66.67% of 6
-Calls executed:75.00% of 8
-Creating 'unittest1.c.gcov'
-
-*********************BEGIN UNIT TESTS OF INITIALIZEGAME()*********************
-
-FAIL incorrect number of cards in deck
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:69.70% of 33
-Branches executed:94.12% of 34
-Taken at least once:47.06% of 34
-Calls executed:37.50% of 16
-
-File 'unittest2.c'
-Lines executed:69.70% of 33
-Branches executed:94.12% of 34
-Taken at least once:47.06% of 34
-Calls executed:37.50% of 16
-Creating 'unittest2.c.gcov'
-
-*********************BEGIN UNIT TESTS OF BUYCARD()*********************
-
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:64.29% of 28
-Branches executed:77.78% of 18
-Taken at least once:38.89% of 18
-Calls executed:38.46% of 13
-
-File 'unittest3.c'
-Lines executed:64.29% of 28
-Branches executed:77.78% of 18
-Taken at least once:38.89% of 18
-Calls executed:38.46% of 13
-Creating 'unittest3.c.gcov'
-
-*********************BEGIN UNIT TESTS OF FULLDECKCOUNT()*********************
-
-FAIL change to deckCount when deck empty
-**********************TESTS COMPLETE*************************
-
-*********************BEGIN UNIT TESTS OF SMITHY*********************
-
-FAIL incorrect number of cards in player deck
-FAIL incorrect number of cards in player hand
-FAIL incorrect number of cards in player discard pile
-FAIL total player cards is incorrect
-FAIL smithy removed from opponents deck
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:74.29% of 35
-Branches executed:100.00% of 20
-Taken at least once:50.00% of 20
-Calls executed:52.94% of 17
-
-File 'cardtest1.c'
-Lines executed:74.29% of 35
-Branches executed:100.00% of 20
-Taken at least once:50.00% of 20
-Calls executed:52.94% of 17
-Creating 'cardtest1.c.gcov'
-
-*********************BEGIN UNIT TESTS OF ADVENTURER*********************
-
-FAIL incorrect number of cards in player hand
-FAIL two treasure cards were not added to hand
-FAIL incorrect number of cards in player discard pile
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:91.67% of 36
-Branches executed:100.00% of 28
-Taken at least once:64.29% of 28
-Calls executed:70.00% of 10
-
-File 'cardtest2.c'
-Lines executed:91.67% of 36
-Branches executed:100.00% of 28
-Taken at least once:64.29% of 28
-Calls executed:70.00% of 10
-Creating 'cardtest2.c.gcov'
-
-*********************BEGIN UNIT TESTS OF GREAT HALL*********************
-
-FAIL incorrect number of cards in player hand
-FAIL incorrect number of cards in player discard pile
-FAIL total player cards is incorrect
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:88.46% of 26
-Branches executed:100.00% of 12
-Taken at least once:50.00% of 12
-Calls executed:70.00% of 10
-
-File 'cardtest3.c'
-Lines executed:88.46% of 26
-Branches executed:100.00% of 12
-Taken at least once:50.00% of 12
-Calls executed:70.00% of 10
-Creating 'cardtest3.c.gcov'
-
-*********************BEGIN UNIT TESTS OF OUTPOST*********************
-
-FAIL incorrect number of cards in player hand
-FAIL incorrect number of cards in player discard pile
-FAIL total player cards is incorrect
-**********************TESTS COMPLETE*************************
-
-Function 'main'
-Lines executed:88.46% of 26
-Branches executed:100.00% of 12
-Taken at least once:50.00% of 12
-Calls executed:70.00% of 10
-
-File 'cardtest4.c'
-Lines executed:88.46% of 26
-Branches executed:100.00% of 12
-Taken at least once:50.00% of 12
-Calls executed:70.00% of 10
-Creating 'cardtest4.c.gcov'
-
+Result for running dominion tests:
+--------------------------------------------------------------
+--------------------------------------------------------------
+Testing dominion.c int shuffle()
+--------------------------------------------------------------
+--------------------------------------------------------------
+requesting to shuffle empty deck, expected -1 return and game state unaffected 
+Shuffle returned -1 (PASSED)
+Game state is unaffected after error return (PASSED)
+Game 0, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 0, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 1, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 2, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 0 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 1 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 2 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Game 3, Player 3 after shuffle 
+Players deck contains the same cards(PASSED) 
+Deck is in a different order after shuffle (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+90 of 98 tests passed
+--------------------------------------------------------------
+--------------------------------------------------------------
+Testing dominion.c int drawCard()
+--------------------------------------------------------------
+--------------------------------------------------------------
+drawing from empty deck and empty discard
+function returns error (PASSED) 
+Game State Unaffected (PASSED) 
+drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it
+Discard deck is shuffled and moved to player deck (PASSED) 
+Player has one new card in hand (PASSED) 
+deck and new card in had are composed of the same cards that were in discard pile before reshuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it
+Discard deck is shuffled and moved to player deck (PASSED) 
+Player has one new card in hand (PASSED) 
+deck and new card in had are composed of the same cards that were in discard pile before reshuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it
+Discard deck is shuffled and moved to player deck (PASSED) 
+Player has one new card in hand (PASSED) 
+deck and new card in had are composed of the same cards that were in discard pile before reshuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it
+Discard deck is shuffled and moved to player deck (PASSED) 
+Player has one new card in hand (PASSED) 
+deck and new card in had are composed of the same cards that were in discard pile before reshuffle (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Card from top of players deck was placed in players hand (PASSED) 
+player hand count increased and deck count decreased (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+78 of 78 tests passed
+--------------------------------------------------------------
+--------------------------------------------------------------
+Testing dominion.c int endTurn()
+--------------------------------------------------------------
+--------------------------------------------------------------
+calling end turn for player 0:
+Game has advanced to next player (1)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 1:
+Game has advanced to next player (2)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 2:
+Game has advanced to next player (3)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 3:
+Game has advanced to next player (0)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 0:
+Game has advanced to next player (1)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 1:
+Game has advanced to next player (2)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 2:
+Game has advanced to next player (3)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 3:
+Game has advanced to next player (0)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 0:
+Game has advanced to next player (1)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 1:
+Game has advanced to next player (2)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 2:
+Game has advanced to next player (3)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 3:
+Game has advanced to next player (0)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 0:
+Game has advanced to next player (1)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 1:
+Game has advanced to next player (2)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 2:
+Game has advanced to next player (3)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 3:
+Game has advanced to next player (0)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 0:
+Game has advanced to next player (1)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 1:
+Game has advanced to next player (2)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 2:
+Game has advanced to next player (3)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+calling end turn for player 3:
+Game has advanced to next player (0)  (PASSED) 
+current player has 5 cards in hand from their deck (PASSED) 
+previous players discard now contains cards from played pile (FAILED) 
+previous players discard now contains cards from their hand (PASSED) 
+Previous players cards in hand and played cards have been placed in their discard pile (and no more) (FAILED) 
+60 of 100 tests passed
+----------------------------------------------------------------
+--------------------------------------------------------------
+Testing dominion.c int gainCard()
+--------------------------------------------------------------
+--------------------------------------------------------------
+Attempting to gain card not in use in current game
+gainCard returned -1 (PASSED)
+Game state is unaffected after error return (PASSED)
+Attempting to gain card with depleted supply
+gainCard returned -1 (PASSED)
+Game state is unaffected after error return (PASSED)
+gaining card to players discard
+Card has been removed from supply (PASSED) 
+Card has been moved to player's discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players deck
+Card has been removed from supply (PASSED) 
+Card has been moved to player's deck (PASSED) 
+The rest of the gameState was unaffected (FAILED) 
+gaining card to players hand
+Card has been removed from supply (PASSED) 
+Card has been moved to player's hand (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players discard
+Card has been removed from supply (PASSED) 
+Card has been moved to player's discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players deck
+Card has been removed from supply (PASSED) 
+Card has been moved to player's deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players hand
+Card has been removed from supply (PASSED) 
+Card has been moved to player's hand (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players discard
+Card has been removed from supply (PASSED) 
+Card has been moved to player's discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players deck
+Card has been removed from supply (PASSED) 
+Card has been moved to player's deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players hand
+Card has been removed from supply (PASSED) 
+Card has been moved to player's hand (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+gaining card to players discard
+Card has been removed from supply (PASSED) 
+Card has been moved to player's discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+33 of 34 tests passed
+--------------------------------------------------------------
+--------------------------------------------------------------
+Testing dominion.c int playSmithy()
+--------------------------------------------------------------
+--------------------------------------------------------------
+Playing smithy card player: 0  testRound: 0
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 1
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 2
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 3
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 4
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 5
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 6
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 7
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 8
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 9
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 10
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 11
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 12
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 13
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 14
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 15
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 16
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 17
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 18
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 19
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 20
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 21
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 22
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 23
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 24
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 25
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 2  testRound: 26
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 3  testRound: 27
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 0  testRound: 28
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+Playing smithy card player: 1  testRound: 29
+current player has drawn 3 new cards (FAILED) 
+hands in players cards came from their deck or discard piles (FAILED) 
+The rest of the gameState was unaffected (PASSED) 
+30 of 90 tests passed
+--------------------------------------------------------------
+--------------------------------------------------------------
+Testing dominion.c int playAdventurer()
+--------------------------------------------------------------
+--------------------------------------------------------------
+Test #:0 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Drawn cards from deck other than 2 coins have been put in discard (FAILED) 
+Only the necessary amount of cards were drawn from deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test #:1 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Drawn cards from deck other than 2 coins have been put in discard (FAILED) 
+Only the necessary amount of cards were drawn from deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test #:2 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Drawn cards from deck other than 2 coins have been put in discard (FAILED) 
+Only the necessary amount of cards were drawn from deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test #:3 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Drawn cards from deck other than 2 coins have been put in discard (FAILED) 
+Only the necessary amount of cards were drawn from deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test #:4 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Drawn cards from deck other than 2 coins have been put in discard (FAILED) 
+Only the necessary amount of cards were drawn from deck (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test that require player to shuffle #:0 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Player still has same card in deck/hand/discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test that require player to shuffle #:1 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Player still has same card in deck/hand/discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test that require player to shuffle #:2 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Player still has same card in deck/hand/discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test that require player to shuffle #:3 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Player still has same card in deck/hand/discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+Test that require player to shuffle #:4 playing adventurer card
+Player's hand has 2 new coin cards (FAILED) 
+Player still has same card in deck/hand/discard (PASSED) 
+The rest of the gameState was unaffected (PASSED) 
+20 of 35 tests passed
 Function 'playSeahag'
 Lines executed:0.00% of 8
 Branches executed:0.00% of 4
@@ -159,10 +599,10 @@ Taken at least once:0.00% of 2
 Calls executed:0.00% of 1
 
 Function 'playAdventurer'
-Lines executed:94.12% of 17
-Branches executed:66.67% of 12
-Taken at least once:50.00% of 12
-Calls executed:50.00% of 2
+Lines executed:100.00% of 17
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+Calls executed:100.00% of 2
 
 Function 'playSmithy'
 Lines executed:100.00% of 5
@@ -171,39 +611,39 @@ Taken at least once:100.00% of 2
 Calls executed:100.00% of 2
 
 Function 'updateCoins'
-Lines executed:81.82% of 11
+Lines executed:100.00% of 11
 Branches executed:100.00% of 8
-Taken at least once:75.00% of 8
+Taken at least once:100.00% of 8
 No calls
 
 Function 'gainCard'
-Lines executed:0.00% of 13
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 1
+Lines executed:100.00% of 13
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 1
 
 Function 'discardCard'
-Lines executed:84.62% of 13
+Lines executed:69.23% of 13
 Branches executed:100.00% of 6
-Taken at least once:66.67% of 6
+Taken at least once:50.00% of 6
 No calls
 
 Function 'cardEffect'
-Lines executed:6.90% of 203
-Branches executed:12.99% of 177
-Taken at least once:2.26% of 177
-Calls executed:8.33% of 60
+Lines executed:0.00% of 203
+Branches executed:0.00% of 177
+Taken at least once:0.00% of 177
+Calls executed:0.00% of 60
 
 Function 'getCost'
-Lines executed:100.00% of 30
-Branches executed:100.00% of 28
-Taken at least once:100.00% of 28
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:77.27% of 22
+Lines executed:100.00% of 22
 Branches executed:100.00% of 6
-Taken at least once:66.67% of 6
+Taken at least once:100.00% of 6
 Calls executed:100.00% of 1
 
 Function 'getWinners'
@@ -225,10 +665,10 @@ Taken at least once:0.00% of 8
 No calls
 
 Function 'endTurn'
-Lines executed:0.00% of 20
-Branches executed:0.00% of 6
-Taken at least once:0.00% of 6
-Calls executed:0.00% of 3
+Lines executed:100.00% of 20
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 3
 
 Function 'whoseTurn'
 Lines executed:100.00% of 2
@@ -236,9 +676,9 @@ No branches
 No calls
 
 Function 'fullDeckCount'
-Lines executed:88.89% of 9
-Branches executed:83.33% of 12
-Taken at least once:66.67% of 12
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
 No calls
 
 Function 'supplyCount'
@@ -257,10 +697,10 @@ No branches
 Calls executed:0.00% of 1
 
 Function 'buyCard'
-Lines executed:61.54% of 13
-Branches executed:100.00% of 6
-Taken at least once:83.33% of 6
-Calls executed:50.00% of 4
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
 
 Function 'playCard'
 Lines executed:0.00% of 14
@@ -275,9 +715,9 @@ Taken at least once:100.00% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
-Lines executed:87.10% of 62
+Lines executed:88.71% of 62
 Branches executed:95.65% of 46
-Taken at least once:82.61% of 46
+Taken at least once:80.43% of 46
 Calls executed:100.00% of 5
 
 Function 'kingdomCards'
@@ -291,15 +731,15 @@ No branches
 No calls
 
 Function 'compare'
-Lines executed:83.33% of 6
+Lines executed:100.00% of 6
 Branches executed:100.00% of 4
-Taken at least once:75.00% of 4
+Taken at least once:100.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:35.24% of 559
-Branches executed:36.69% of 417
-Taken at least once:27.82% of 417
-Calls executed:18.95% of 95
+Lines executed:31.84% of 559
+Branches executed:24.46% of 417
+Taken at least once:22.06% of 417
+Calls executed:16.84% of 95
 Creating 'dominion.c.gcov'
 
