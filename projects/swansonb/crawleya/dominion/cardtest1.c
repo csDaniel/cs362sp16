@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
 
         copyGameState(&before,&G);
         printf("Playing smithy card player: %d  testRound: %d\n",curPlayer, i);
-        playSmithy(&G,0);
+        doSmithy(&G,0, curPlayer);
         copyGameState(&after,&G);
 
         printf("current player has drawn 3 new cards ");

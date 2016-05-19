@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
 
         G.hand[curPlayer][G.handCount[curPlayer]++] = adventurer;
         copyGameState(&before,&G);
-        playAdventurer(&G, G.handCount[curPlayer]-1);
+        doAdventurer(&G, G.handCount[curPlayer]-1, curPlayer);
         printf("Test #:%d playing adventurer card\n",i);
         printf("Player's hand has 2 new coin cards ");
         if (G.handCount[curPlayer] == before.handCount[curPlayer]+1 &&
@@ -172,7 +172,7 @@ int main(int argc, char **argv) {
 
         G.hand[curPlayer][G.handCount[curPlayer]++] = adventurer;
         copyGameState(&before,&G);
-        playAdventurer(&G, G.handCount[curPlayer]-1);
+        doAdventurer(&G, G.handCount[curPlayer]-1, curPlayer);
         printf("Test that require player to shuffle #:%d playing adventurer card\n",i);
         printf("Player's hand has 2 new coin cards ");
         if (G.handCount[curPlayer] == before.handCount[curPlayer]+1 &&

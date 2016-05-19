@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
         //after play players hand should have 4 extra card in hand and 1 extra Buy
         // all other players should have drawn a card
 
-        playCouncil_Room(&G, G.handCount[curPlayer]-1);
+        doCouncilRoom(&G, G.handCount[curPlayer]-1, curPlayer);
         copyGameState(&after,&G);
         printf("TestNumber:%d  Playing Council\n",i);
         printf("Player has 1 more buy");

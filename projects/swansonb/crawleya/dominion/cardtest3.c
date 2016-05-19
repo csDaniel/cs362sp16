@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
         copyGameState(&before,&G);
         //after play players hand should have 1 extra card in hand and 2 extra actions
 
-        playVillage(G, G.handCount[curPlayer]-1);
+        doVillage(&G, G.handCount[curPlayer]-1, curPlayer);
         copyGameState(&after,&G);
         printf("TestNumber:%d  Playing Village\n",i);
         printf("Player has 2 more actions ");
