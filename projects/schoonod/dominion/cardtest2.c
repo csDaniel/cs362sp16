@@ -17,6 +17,8 @@
 int main (int argc, char** argv) {
     printf ("---------- Testing adventurerCard() ----------\n");
     int initialHandCount, initialDeckCount, z, cardDrawn;
+    z = 0;
+    cardDrawn = 0;
     int drawnTreasure = 0;
     int temphand[MAX_HAND];
     int handPos = 0;
@@ -51,7 +53,8 @@ int main (int argc, char** argv) {
     
     // TEST 2:
     // Check that all drawn cards are treasure cards
-    for (int i = 0; i < 2; i++){
+    int i;
+    for (i = 0; i < 2; i++){
         if (G.hand[G.whoseTurn][G.handCount[G.whoseTurn] - 1 - i] == copper ||
             G.hand[G.whoseTurn][G.handCount[G.whoseTurn] - 1 - i] == silver ||
             G.hand[G.whoseTurn][G.handCount[G.whoseTurn] - 1 - i] == gold)

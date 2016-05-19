@@ -80,7 +80,7 @@ int main () {
 	  r = initializeGame(2, k, 1, &G);
 	  G.deckCount[p] = deckCount;
 	  memset(G.deck[p], 0, sizeof(int) * deckCount);
-	  G.discardCount[p] = discardCount;
+	  G.discardCount[p]= discardCount;
 	  memset(G.discard[p], 0, sizeof(int) * discardCount);
 	  G.handCount[p] = handCount;
 	  memset(G.hand[p], 0, sizeof(int) * handCount);

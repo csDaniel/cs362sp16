@@ -1,0 +1,33 @@
+362 Final Project Part A
+Brianna Carter
+Trent Richardson
+Jarrad Favre
+
+
+* Explain testIsValid Function of UrlValidator test code.
+* Give how many total number of urls it is testing.
+*  Explain how it is building all the urls.
+* Give an example of valid url being tested and an invalid url being tested by testIsValid() method.
+* Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different
+  than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines.
+
+
+The function testIsValid() makes two calls.  First, it calls testIsValid(Object[] testObjects, long options).
+An object array is passed in as the first parameter.  This object is used to form the test URLs.
+This object consists of five arrays: testUrlScheme, testUrlAuthority, testUrlPort, testPath, and testUrlQuery. These
+arrays make up the five parts of a URL and each element in the array has a boolean value that is set to true or false
+depending on what the expected result would be. The second parameter is the option that determines which URL scheme
+will be considered valid for the test, this is set to allow all correctly formatted schemes to pass validation.
+The function then asserts that isValid() is returning the expected result of two known URLs: http://www.google.com
+and http://www.google.com/.  These should return as valid URLs.  Next, in a loop, the URLs are built from the testURL
+object. The URL pieces are converted to a string and pieced together to form a complete URL, each element in an array
+is paired with each element from the four other arrays, creating 35,910 different URLs (calculated by multiplying the
+total number of options from the five arrays together [9x19x7x10x3]). The newly completed URL is passed to isValid().
+This function will check the URL and store the result in a Boolean variable.  If the result is true, the URL is printed
+to the console.  Finally, the URL result is compared to the expected result.  If the values are the same, the test passes.
+An example of a valid URL being tested is http://go.com.  An example of an invalid URL being tested is http/go.a.
+Overall, testIsValid() is not very different from the tests we have previously written in the class.  Although it is
+conceptually similar to our unit tests, it is not considered random testing.  The method of testing that testIsValid()
+is using is pairwise or combinatorial testing.  The testing is more complex than what we have used in our Dominion project.
+Dominion is a simple program that is self-contained, whereas URLValidator is quite complex and uses a number of external libraries.
+The input possibilities of URLValidator are also much more complex.

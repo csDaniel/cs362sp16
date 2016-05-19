@@ -1,0 +1,4837 @@
+START - Running discardCard() unittest1.
+STOP - Running discardCard() unittest1.
+
+START - Running shuffle() unittest1.
+END - Running shuffle() unittest1.
+
+START - Running isGameOver() unittest4.
+
+STOP - Running isGameOver() unittest4.
+
+START - Running buyCard() unittest4.
+
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+ERROR! The hand count did not increase with buy.
+STOP - Running buyCard() unittest4.
+
+START - Running callSmithyCard().
+
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+ERROR! handCount is incorrect.
+ERROR! deckCount is incorrect.
+STOP - Running callSmithyCard().
+
+START - Running callAdventurerCard().
+
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+ERROR! post total is not 2 treasure cards less than pre total. 
+ERROR! pre hand count does not equal post hand count. 
+STOP - Running callAdventurerCard().
+
+File 'dominion.c'
+Lines executed:21.65% of 559
+Branches executed:17.75% of 417
+Taken at least once:15.83% of 417
+Calls executed:10.64% of 94
+Creating 'dominion.c.gcov'
+
+        -:    0:Source:dominion.c
+        -:    0:Graph:dominion.gcno
+        -:    0:Data:dominion.gcda
+        -:    0:Runs:6
+        -:    0:Programs:6
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+function compare called 43618 returned 100% blocks executed 100%
+    43618:    8:int compare(const void* a, const void* b) {
+    43618:    9:  if (*(int*)a > *(int*)b)
+branch  0 taken 49% (fallthrough)
+branch  1 taken 51%
+    21283:   10:    return 1;
+    22335:   11:  if (*(int*)a < *(int*)b)
+branch  0 taken 48% (fallthrough)
+branch  1 taken 52%
+    10648:   12:    return -1;
+    11687:   13:  return 0;
+        -:   14:}
+        -:   15:
+function newGame called 0 returned 0% blocks executed 0%
+    #####:   16:struct gameState* newGame() {
+    #####:   17:  struct gameState* g = malloc(sizeof(struct gameState));
+    #####:   18:  return g;
+        -:   19:}
+        -:   20:
+function kingdomCards called 0 returned 0% blocks executed 0%
+    #####:   21:int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
+        -:   22:		  int k8, int k9, int k10) {
+    #####:   23:  int* k = malloc(10 * sizeof(int));
+    #####:   24:  k[0] = k1;
+    #####:   25:  k[1] = k2;
+    #####:   26:  k[2] = k3;
+    #####:   27:  k[3] = k4;
+    #####:   28:  k[4] = k5;
+    #####:   29:  k[5] = k6;
+    #####:   30:  k[6] = k7;
+    #####:   31:  k[7] = k8;
+    #####:   32:  k[8] = k9;
+    #####:   33:  k[9] = k10;
+    #####:   34:  return k;
+        -:   35:}
+        -:   36:
+function initializeGame called 0 returned 0% blocks executed 0%
+    #####:   37:int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
+        -:   38:		   struct gameState *state) {
+        -:   39:
+        -:   40:  int i;
+        -:   41:  int j;
+        -:   42:  int it;
+        -:   43:  //set up random number generator
+    #####:   44:  SelectStream(1);
+call    0 never executed
+    #####:   45:  PutSeed((long)randomSeed);
+call    0 never executed
+        -:   46:
+        -:   47:  //check number of players
+    #####:   48:  if (numPlayers > MAX_PLAYERS || numPlayers < 2)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   49:    {
+    #####:   50:      return -1;
+        -:   51:    }
+        -:   52:
+        -:   53:  //set number of players
+    #####:   54:  state->numPlayers = numPlayers;
+        -:   55:
+        -:   56:  //check selected kingdom cards are different
+    #####:   57:  for (i = 0; i < 10; i++)
+branch  0 never executed
+branch  1 never executed
+        -:   58:    {
+    #####:   59:      for (j = 0; j < 10; j++)
+branch  0 never executed
+branch  1 never executed
+        -:   60:        {
+    #####:   61:	  if (j != i && kingdomCards[j] == kingdomCards[i])
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   62:	    {
+    #####:   63:	      return -1;
+        -:   64:	    }
+        -:   65:        }
+        -:   66:    }
+        -:   67:
+        -:   68:
+        -:   69:  //initialize supply
+        -:   70:  ///////////////////////////////
+        -:   71:
+        -:   72:  //set number of Curse cards
+    #####:   73:  if (numPlayers == 2)
+branch  0 never executed
+branch  1 never executed
+        -:   74:    {
+    #####:   75:      state->supplyCount[curse] = 10;
+        -:   76:    }
+    #####:   77:  else if (numPlayers == 3)
+branch  0 never executed
+branch  1 never executed
+        -:   78:    {
+    #####:   79:      state->supplyCount[curse] = 20;
+        -:   80:    }
+        -:   81:  else
+        -:   82:    {
+    #####:   83:      state->supplyCount[curse] = 30;
+        -:   84:    }
+        -:   85:
+        -:   86:  //set number of Victory cards
+    #####:   87:  if (numPlayers == 2)
+branch  0 never executed
+branch  1 never executed
+        -:   88:    {
+    #####:   89:      state->supplyCount[estate] = 8;
+    #####:   90:      state->supplyCount[duchy] = 8;
+    #####:   91:      state->supplyCount[province] = 8;
+        -:   92:    }
+        -:   93:  else
+        -:   94:    {
+    #####:   95:      state->supplyCount[estate] = 12;
+    #####:   96:      state->supplyCount[duchy] = 12;
+    #####:   97:      state->supplyCount[province] = 12;
+        -:   98:    }
+        -:   99:
+        -:  100:  //set number of Treasure cards
+    #####:  101:  state->supplyCount[copper] = 60 - (7 * numPlayers);
+    #####:  102:  state->supplyCount[silver] = 40;
+    #####:  103:  state->supplyCount[gold] = 30;
+        -:  104:
+        -:  105:  //set number of Kingdom cards
+    #####:  106:  for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
+branch  0 never executed
+branch  1 never executed
+        -:  107:    {
+    #####:  108:      for (j = 0; j < 10; j++)           		//loop chosen cards
+branch  0 never executed
+branch  1 never executed
+        -:  109:	{
+    #####:  110:	  if (kingdomCards[j] == i)
+branch  0 never executed
+branch  1 never executed
+        -:  111:	    {
+        -:  112:	      //check if card is a 'Victory' Kingdom card
+    #####:  113:	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  114:		{
+    #####:  115:		  if (numPlayers == 2){
+branch  0 never executed
+branch  1 never executed
+    #####:  116:		    state->supplyCount[i] = 8;
+        -:  117:		  }
+    #####:  118:		  else{ state->supplyCount[i] = 12; }
+        -:  119:		}
+        -:  120:	      else
+        -:  121:		{
+    #####:  122:		  state->supplyCount[i] = 10;
+        -:  123:		}
+    #####:  124:	      break;
+        -:  125:	    }
+        -:  126:	  else    //card is not in the set choosen for the game
+        -:  127:	    {
+    #####:  128:	      state->supplyCount[i] = -1;
+        -:  129:	    }
+        -:  130:	}
+        -:  131:
+        -:  132:    }
+        -:  133:
+        -:  134:  ////////////////////////
+        -:  135:  //supply intilization complete
+        -:  136:
+        -:  137:  //set player decks
+    #####:  138:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  139:    {
+    #####:  140:      state->deckCount[i] = 0;
+    #####:  141:      for (j = 0; j < 3; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  142:	{
+    #####:  143:	  state->deck[i][j] = estate;
+    #####:  144:	  state->deckCount[i]++;
+        -:  145:	}
+    #####:  146:      for (j = 3; j < 10; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  147:	{
+    #####:  148:	  state->deck[i][j] = copper;
+    #####:  149:	  state->deckCount[i]++;
+        -:  150:	}
+        -:  151:    }
+        -:  152:
+        -:  153:  //shuffle player decks
+    #####:  154:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  155:    {
+    #####:  156:      if ( shuffle(i, state) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  157:	{
+    #####:  158:	  return -1;
+        -:  159:	}
+        -:  160:    }
+        -:  161:
+        -:  162:  //draw player hands
+    #####:  163:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  164:    {
+        -:  165:      //initialize hand size to zero
+    #####:  166:      state->handCount[i] = 0;
+    #####:  167:      state->discardCount[i] = 0;
+        -:  168:      //draw 5 cards
+        -:  169:      // for (j = 0; j < 5; j++)
+        -:  170:      //	{
+        -:  171:      //	  drawCard(i, state);
+        -:  172:      //	}
+        -:  173:    }
+        -:  174:
+        -:  175:  //set embargo tokens to 0 for all supply piles
+    #####:  176:  for (i = 0; i <= treasure_map; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  177:    {
+    #####:  178:      state->embargoTokens[i] = 0;
+        -:  179:    }
+        -:  180:
+        -:  181:  //initialize first player's turn
+    #####:  182:  state->outpostPlayed = 0;
+    #####:  183:  state->phase = 0;
+    #####:  184:  state->numActions = 1;
+    #####:  185:  state->numBuys = 1;
+    #####:  186:  state->playedCardCount = 0;
+    #####:  187:  state->whoseTurn = 0;
+    #####:  188:  state->handCount[state->whoseTurn] = 0;
+        -:  189:  //int it; move to top
+        -:  190:
+        -:  191:  //Moved draw cards to here, only drawing at the start of a turn
+    #####:  192:  for (it = 0; it < 5; it++){
+branch  0 never executed
+branch  1 never executed
+    #####:  193:    drawCard(state->whoseTurn, state);
+call    0 never executed
+        -:  194:  }
+        -:  195:
+    #####:  196:  updateCoins(state->whoseTurn, state, 0);
+call    0 never executed
+        -:  197:
+    #####:  198:  return 0;
+        -:  199:}
+        -:  200:
+function shuffle called 415 returned 100% blocks executed 94%
+      415:  201:int shuffle(int player, struct gameState *state) {
+        -:  202:
+        -:  203:
+        -:  204:  int newDeck[MAX_DECK];
+      415:  205:  int newDeckPos = 0;
+        -:  206:  int card;
+        -:  207:  int i;
+        -:  208:
+      415:  209:  if (state->deckCount[player] < 1)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  210:    return -1;
+      415:  211:  qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare);
+call    0 returned 100%
+        -:  212:  /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
+        -:  213:
+    12198:  214:  while (state->deckCount[player] > 0) {
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+    11368:  215:    card = floor(Random() * state->deckCount[player]);
+call    0 returned 100%
+    11368:  216:    newDeck[newDeckPos] = state->deck[player][card];
+    11368:  217:    newDeckPos++;
+   139038:  218:    for (i = card; i < state->deckCount[player]-1; i++) {
+branch  0 taken 92%
+branch  1 taken 8% (fallthrough)
+   127670:  219:      state->deck[player][i] = state->deck[player][i+1];
+        -:  220:    }
+    11368:  221:    state->deckCount[player]--;
+        -:  222:  }
+    11783:  223:  for (i = 0; i < newDeckPos; i++) {
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+    11368:  224:    state->deck[player][i] = newDeck[i];
+    11368:  225:    state->deckCount[player]++;
+        -:  226:  }
+        -:  227:
+      415:  228:  return 0;
+        -:  229:}
+        -:  230:
+function playCard called 0 returned 0% blocks executed 0%
+    #####:  231:int playCard(int handPos, int choice1, int choice2, int choice3, struct gameState *state)
+        -:  232:{
+        -:  233:  int card;
+    #####:  234:  int coin_bonus = 0; 		//tracks coins gain from actions
+        -:  235:
+        -:  236:  //check if it is the right phase
+    #####:  237:  if (state->phase != 0)
+branch  0 never executed
+branch  1 never executed
+        -:  238:    {
+    #####:  239:      return -1;
+        -:  240:    }
+        -:  241:
+        -:  242:  //check if player has enough actions
+    #####:  243:  if ( state->numActions < 1 )
+branch  0 never executed
+branch  1 never executed
+        -:  244:    {
+    #####:  245:      return -1;
+        -:  246:    }
+        -:  247:
+        -:  248:  //get card played
+    #####:  249:  card = handCard(handPos, state);
+call    0 never executed
+        -:  250:
+        -:  251:  //check if selected card is an action
+    #####:  252:  if ( card < adventurer || card > treasure_map )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  253:    {
+    #####:  254:      return -1;
+        -:  255:    }
+        -:  256:
+        -:  257:  //play card
+    #####:  258:  if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  259:    {
+    #####:  260:      return -1;
+        -:  261:    }
+        -:  262:
+        -:  263:  //reduce number of actions
+    #####:  264:  state->numActions--;
+        -:  265:
+        -:  266:  //update coins (Treasure cards may be added with card draws)
+    #####:  267:  updateCoins(state->whoseTurn, state, coin_bonus);
+call    0 never executed
+        -:  268:
+    #####:  269:  return 0;
+        -:  270:}
+        -:  271:
+function buyCard called 202 returned 100% blocks executed 100%
+      202:  272:int buyCard(int supplyPos, struct gameState *state) {
+        -:  273:  int who;
+        -:  274:  if (DEBUG){
+        -:  275:    printf("Entering buyCard...\n");
+        -:  276:  }
+        -:  277:
+        -:  278:  // I don't know what to do about the phase thing.
+        -:  279:
+      202:  280:  who = state->whoseTurn;
+        -:  281:
+      202:  282:  if (state->numBuys < 1){
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  283:    if (DEBUG)
+        -:  284:      printf("You do not have any buys left\n");
+        1:  285:    return -1;
+      201:  286:  } else if (supplyCount(supplyPos, state) <1){
+call    0 returned 100%
+branch  1 taken 50% (fallthrough)
+branch  2 taken 50%
+        -:  287:    if (DEBUG)
+        -:  288:      printf("There are not any of that type of card left\n");
+      100:  289:    return -1;
+      101:  290:  } else if (state->coins < getCost(supplyPos)){
+call    0 returned 100%
+branch  1 taken 1% (fallthrough)
+branch  2 taken 99%
+        -:  291:    if (DEBUG)
+        -:  292:      printf("You do not have enough money to buy that. You have %d coins.\n", state->coins);
+        1:  293:    return -1;
+        -:  294:  } else {
+      100:  295:    state->phase=1;
+        -:  296:    //state->supplyCount[supplyPos]--;
+      100:  297:    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+call    0 returned 100%
+        -:  298:
+      100:  299:    state->coins = (state->coins) - (getCost(supplyPos));
+call    0 returned 100%
+      100:  300:    state->numBuys--;
+        -:  301:    if (DEBUG)
+        -:  302:      printf("You bought card number %d for %d coins. You now have %d buys and %d coins.\n", supplyPos, getCost(supplyPos), state->numBuys, state->coins);
+        -:  303:  }
+        -:  304:
+        -:  305:  //state->discard[who][state->discardCount[who]] = supplyPos;
+        -:  306:  //state->discardCount[who]++;
+        -:  307:
+      100:  308:  return 0;
+        -:  309:}
+        -:  310:
+function numHandCards called 0 returned 0% blocks executed 0%
+    #####:  311:int numHandCards(struct gameState *state) {
+    #####:  312:  return state->handCount[ whoseTurn(state) ];
+call    0 never executed
+        -:  313:}
+        -:  314:
+function handCard called 0 returned 0% blocks executed 0%
+    #####:  315:int handCard(int handPos, struct gameState *state) {
+    #####:  316:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  317:  return state->hand[currentPlayer][handPos];
+        -:  318:}
+        -:  319:
+function supplyCount called 301 returned 100% blocks executed 100%
+      301:  320:int supplyCount(int card, struct gameState *state) {
+      301:  321:  return state->supplyCount[card];
+        -:  322:}
+        -:  323:
+function fullDeckCount called 0 returned 0% blocks executed 0%
+    #####:  324:int fullDeckCount(int player, int card, struct gameState *state) {
+        -:  325:  int i;
+    #####:  326:  int count = 0;
+        -:  327:
+    #####:  328:  for (i = 0; i < state->deckCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  329:    {
+    #####:  330:      if (state->deck[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  331:    }
+        -:  332:
+    #####:  333:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  334:    {
+    #####:  335:      if (state->hand[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  336:    }
+        -:  337:
+    #####:  338:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  339:    {
+    #####:  340:      if (state->discard[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  341:    }
+        -:  342:
+    #####:  343:  return count;
+        -:  344:}
+        -:  345:
+function whoseTurn called 0 returned 0% blocks executed 0%
+    #####:  346:int whoseTurn(struct gameState *state) {
+    #####:  347:  return state->whoseTurn;
+        -:  348:}
+        -:  349:
+function endTurn called 0 returned 0% blocks executed 0%
+    #####:  350:int endTurn(struct gameState *state) {
+        -:  351:  int k;
+        -:  352:  int i;
+    #####:  353:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+        -:  354:
+        -:  355:  //Discard hand
+    #####:  356:  for (i = 0; i < state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  357:    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
+    #####:  358:    state->hand[currentPlayer][i] = -1;//Set card to -1
+        -:  359:  }
+    #####:  360:  state->handCount[currentPlayer] = 0;//Reset hand count
+        -:  361:
+        -:  362:  //Code for determining the player
+    #####:  363:  if (currentPlayer < (state->numPlayers - 1)){
+branch  0 never executed
+branch  1 never executed
+    #####:  364:    state->whoseTurn = currentPlayer + 1;//Still safe to increment
+        -:  365:  }
+        -:  366:  else{
+    #####:  367:    state->whoseTurn = 0;//Max player has been reached, loop back around to player 1
+        -:  368:  }
+        -:  369:
+    #####:  370:  state->outpostPlayed = 0;
+    #####:  371:  state->phase = 0;
+    #####:  372:  state->numActions = 1;
+    #####:  373:  state->coins = 0;
+    #####:  374:  state->numBuys = 1;
+    #####:  375:  state->playedCardCount = 0;
+    #####:  376:  state->handCount[state->whoseTurn] = 0;
+        -:  377:
+        -:  378:  //int k; move to top
+        -:  379:  //Next player draws hand
+    #####:  380:  for (k = 0; k < 5; k++){
+branch  0 never executed
+branch  1 never executed
+    #####:  381:    drawCard(state->whoseTurn, state);//Draw a card
+call    0 never executed
+        -:  382:  }
+        -:  383:
+        -:  384:  //Update money
+    #####:  385:  updateCoins(state->whoseTurn, state , 0);
+call    0 never executed
+        -:  386:
+    #####:  387:  return 0;
+        -:  388:}
+        -:  389:
+function isGameOver called 5 returned 100% blocks executed 100%
+        5:  390:int isGameOver(struct gameState *state) {
+        -:  391:  int i;
+        -:  392:  int j;
+        -:  393:
+        -:  394:  //if stack of Province cards is empty, the game ends
+        5:  395:  if (state->supplyCount[province] == 0)
+branch  0 taken 20% (fallthrough)
+branch  1 taken 80%
+        -:  396:    {
+        1:  397:      return 1;
+        -:  398:    }
+        -:  399:
+        -:  400:  //if three supply pile are at 0, the game ends
+        4:  401:  j = 0;
+      104:  402:  for (i = 0; i < 25; i++)
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+        -:  403:    {
+      100:  404:      if (state->supplyCount[i] == 0)
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+        -:  405:	{
+        5:  406:	  j++;
+        -:  407:	}
+        -:  408:    }
+        4:  409:  if ( j >= 3)
+branch  0 taken 25% (fallthrough)
+branch  1 taken 75%
+        -:  410:    {
+        1:  411:      return 1;
+        -:  412:    }
+        -:  413:
+        3:  414:  return 0;
+        -:  415:}
+        -:  416:
+function scoreFor called 0 returned 0% blocks executed 0%
+    #####:  417:int scoreFor (int player, struct gameState *state) {
+        -:  418:
+        -:  419:  int i;
+    #####:  420:  int score = 0;
+        -:  421:  //score from hand
+    #####:  422:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  423:    {
+    #####:  424:      if (state->hand[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  425:      if (state->hand[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  426:      if (state->hand[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  427:      if (state->hand[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  428:      if (state->hand[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  429:      if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  430:    }
+        -:  431:
+        -:  432:  //score from discard
+    #####:  433:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  434:    {
+    #####:  435:      if (state->discard[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  436:      if (state->discard[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  437:      if (state->discard[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  438:      if (state->discard[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  439:      if (state->discard[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  440:      if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  441:    }
+        -:  442:
+        -:  443:  //score from deck
+    #####:  444:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  445:    {
+    #####:  446:      if (state->deck[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  447:      if (state->deck[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  448:      if (state->deck[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  449:      if (state->deck[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  450:      if (state->deck[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  451:      if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  452:    }
+        -:  453:
+    #####:  454:  return score;
+        -:  455:}
+        -:  456:
+function getWinners called 0 returned 0% blocks executed 0%
+    #####:  457:int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+        -:  458:  int i;
+        -:  459:  int j;
+        -:  460:  int highScore;
+        -:  461:  int currentPlayer;
+        -:  462:
+        -:  463:  //get score for each player
+    #####:  464:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  465:    {
+        -:  466:      //set unused player scores to -9999
+    #####:  467:      if (i >= state->numPlayers)
+branch  0 never executed
+branch  1 never executed
+        -:  468:	{
+    #####:  469:	  players[i] = -9999;
+        -:  470:	}
+        -:  471:      else
+        -:  472:	{
+    #####:  473:	  players[i] = scoreFor (i, state);
+call    0 never executed
+        -:  474:	}
+        -:  475:    }
+        -:  476:
+        -:  477:  //find highest score
+    #####:  478:  j = 0;
+    #####:  479:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  480:    {
+    #####:  481:      if (players[i] > players[j])
+branch  0 never executed
+branch  1 never executed
+        -:  482:	{
+    #####:  483:	  j = i;
+        -:  484:	}
+        -:  485:    }
+    #####:  486:  highScore = players[j];
+        -:  487:
+        -:  488:  //add 1 to players who had less turns
+    #####:  489:  currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  490:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  491:    {
+    #####:  492:      if ( players[i] == highScore && i > currentPlayer )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  493:	{
+    #####:  494:	  players[i]++;
+        -:  495:	}
+        -:  496:    }
+        -:  497:
+        -:  498:  //find new highest score
+    #####:  499:  j = 0;
+    #####:  500:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  501:    {
+    #####:  502:      if ( players[i] > players[j] )
+branch  0 never executed
+branch  1 never executed
+        -:  503:	{
+    #####:  504:	  j = i;
+        -:  505:	}
+        -:  506:    }
+    #####:  507:  highScore = players[j];
+        -:  508:
+        -:  509:  //set winners in array to 1 and rest to 0
+    #####:  510:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  511:    {
+    #####:  512:      if ( players[i] == highScore )
+branch  0 never executed
+branch  1 never executed
+        -:  513:	{
+    #####:  514:	  players[i] = 1;
+        -:  515:	}
+        -:  516:      else
+        -:  517:	{
+    #####:  518:	  players[i] = 0;
+        -:  519:	}
+        -:  520:    }
+        -:  521:
+    #####:  522:  return 0;
+        -:  523:}
+        -:  524:
+function drawCard called 1000 returned 100% blocks executed 92%
+     1000:  525:int drawCard(int player, struct gameState *state)
+        -:  526:{	int count;
+        -:  527:  int deckCounter;
+     1000:  528:  if (state->deckCount[player] <= 0){//Deck is empty
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  529:
+        -:  530:    //Step 1 Shuffle the discard pile back into a deck
+        -:  531:    int i;
+        -:  532:    //Move discard to deck
+      398:  533:    for (i = 0; i < state->discardCount[player];i++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      397:  534:      state->deck[player][i] = state->discard[player][i];
+      397:  535:      state->discard[player][i] = -1;
+        -:  536:    }
+        -:  537:
+        1:  538:    state->deckCount[player] = state->discardCount[player];
+        1:  539:    state->discardCount[player] = 0;//Reset discard
+        -:  540:
+        -:  541:    //Shufffle the deck
+        1:  542:    shuffle(player, state);//Shuffle the deck up and make it so that we can draw
+call    0 returned 100%
+        -:  543:
+        -:  544:    if (DEBUG){//Debug statements
+        -:  545:      printf("Deck count now: %d\n", state->deckCount[player]);
+        -:  546:    }
+        -:  547:
+        1:  548:    state->discardCount[player] = 0;
+        -:  549:
+        -:  550:    //Step 2 Draw Card
+        1:  551:    count = state->handCount[player];//Get current player's hand count
+        -:  552:
+        -:  553:    if (DEBUG){//Debug statements
+        -:  554:      printf("Current hand count: %d\n", count);
+        -:  555:    }
+        -:  556:
+        1:  557:    deckCounter = state->deckCount[player];//Create a holder for the deck count
+        -:  558:
+        1:  559:    if (deckCounter == 0)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  560:      return -1;
+        -:  561:
+        1:  562:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
+        1:  563:    state->deckCount[player]--;
+        1:  564:    state->handCount[player]++;//Increment hand count
+        -:  565:  }
+        -:  566:
+        -:  567:  else{
+      999:  568:    int count = state->handCount[player];//Get current hand count for player
+        -:  569:    int deckCounter;
+        -:  570:    if (DEBUG){//Debug statements
+        -:  571:      printf("Current hand count: %d\n", count);
+        -:  572:    }
+        -:  573:
+      999:  574:    deckCounter = state->deckCount[player];//Create holder for the deck count
+      999:  575:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
+      999:  576:    state->deckCount[player]--;
+      999:  577:    state->handCount[player]++;//Increment hand count
+        -:  578:  }
+        -:  579:
+     1000:  580:  return 0;
+        -:  581:}
+        -:  582:
+function getCost called 403 returned 100% blocks executed 93%
+      403:  583:int getCost(int cardNumber)
+        -:  584:{
+      403:  585:  switch( cardNumber )
+branch  0 taken 0%
+branch  1 taken 2%
+branch  2 taken 3%
+branch  3 taken 6%
+branch  4 taken 4%
+branch  5 taken 4%
+branch  6 taken 6%
+branch  7 taken 4%
+branch  8 taken 7%
+branch  9 taken 2%
+branch 10 taken 6%
+branch 11 taken 4%
+branch 12 taken 4%
+branch 13 taken 5%
+branch 14 taken 1%
+branch 15 taken 5%
+branch 16 taken 2%
+branch 17 taken 3%
+branch 18 taken 5%
+branch 19 taken 4%
+branch 20 taken 3%
+branch 21 taken 4%
+branch 22 taken 3%
+branch 23 taken 4%
+branch 24 taken 3%
+branch 25 taken 4%
+branch 26 taken 1%
+branch 27 taken 0%
+        -:  586:    {
+        -:  587:    case curse:
+    #####:  588:      return 0;
+        -:  589:    case estate:
+        9:  590:      return 2;
+        -:  591:    case duchy:
+       14:  592:      return 5;
+        -:  593:    case province:
+       24:  594:      return 8;
+        -:  595:    case copper:
+       18:  596:      return 0;
+        -:  597:    case silver:
+       17:  598:      return 3;
+        -:  599:    case gold:
+       25:  600:      return 6;
+        -:  601:    case adventurer:
+       17:  602:      return 6;
+        -:  603:    case council_room:
+       29:  604:      return 5;
+        -:  605:    case feast:
+        9:  606:      return 4;
+        -:  607:    case gardens:
+       24:  608:      return 4;
+        -:  609:    case mine:
+       15:  610:      return 5;
+        -:  611:    case remodel:
+       15:  612:      return 4;
+        -:  613:    case smithy:
+       19:  614:      return 4;
+        -:  615:    case village:
+        6:  616:      return 3;
+        -:  617:    case baron:
+       20:  618:      return 4;
+        -:  619:    case great_hall:
+        7:  620:      return 3;
+        -:  621:    case minion:
+       14:  622:      return 5;
+        -:  623:    case steward:
+       20:  624:      return 3;
+        -:  625:    case tribute:
+       18:  626:      return 5;
+        -:  627:    case ambassador:
+       11:  628:      return 3;
+        -:  629:    case cutpurse:
+       15:  630:      return 4;
+        -:  631:    case embargo:
+       13:  632:      return 2;
+        -:  633:    case outpost:
+       15:  634:      return 5;
+        -:  635:    case salvager:
+       11:  636:      return 4;
+        -:  637:    case sea_hag:
+       15:  638:      return 4;
+        -:  639:    case treasure_map:
+        3:  640:      return 4;
+        -:  641:    }
+        -:  642:
+    #####:  643:  return -1;
+        -:  644:}
+        -:  645:
+        -:  646:
+        -:  647:
+function adventurer_ref called 0 returned 0% blocks executed 0%
+    #####:  648:int adventurer_ref(struct gameState* state, int currentPlayer)
+        -:  649:{
+    #####:  650:    int drawntreasure =0;
+        -:  651:    int cardDrawn;
+        -:  652:    int temphand[MAX_HAND];
+    #####:  653:    int z = 0;
+        -:  654:
+    #####:  655:    while(drawntreasure<2){
+branch  0 never executed
+branch  1 never executed
+    #####:  656:	if (state->deckCount[currentPlayer] >1){//if the deck is empty we need to shuffle discard and add to deck
+branch  0 never executed
+branch  1 never executed
+    #####:  657:	  shuffle(currentPlayer, state);
+call    0 never executed
+        -:  658:	}
+    #####:  659:	drawCard(currentPlayer, state);
+call    0 never executed
+    #####:  660:	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+    #####:  661:	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  662:	  drawntreasure++;
+        -:  663:	else{
+    #####:  664:	  temphand[z]=cardDrawn;
+    #####:  665:	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+    #####:  666:	  z++;
+        -:  667:	}
+        -:  668:      }
+    #####:  669:      while(z-1>=0){
+branch  0 never executed
+branch  1 never executed
+    #####:  670:	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    #####:  671:	z=z-1;
+        -:  672:      }
+    #####:  673:      return 0;
+        -:  674:}
+function council_room_ref called 0 returned 0% blocks executed 0%
+    #####:  675:int council_room_ref(struct gameState* state, int currentPlayer)
+        -:  676:{
+    #####:  677:      int i = 0;
+        -:  678:
+        -:  679:      //+4 Cards
+    #####:  680:      for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  681:	{
+    #####:  682:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -:  683:	}
+        -:  684:
+        -:  685:      //+1 Buy
+    #####:  686:      state->numBuys++;
+        -:  687:
+        -:  688:      //Each other player draws a card
+    #####:  689:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  690:	{
+    #####:  691:	  if ( i != currentPlayer )
+branch  0 never executed
+branch  1 never executed
+        -:  692:	    {
+    #####:  693:	      drawCard(i, state);
+call    0 never executed
+        -:  694:	    }
+        -:  695:	}
+        -:  696:
+    #####:  697:    return 0;
+        -:  698:}
+function gardens_ref called 0 returned 0% blocks executed 0%
+    #####:  699:int gardens_ref()
+        -:  700:{
+        -:  701:
+    #####:  702:    return 0;
+        -:  703:}
+function smithy_ref called 500 returned 100% blocks executed 100%
+      500:  704:int smithy_ref(struct gameState* state, int currentPlayer, int handPos)
+        -:  705:{
+      500:  706:      int i=0;
+        -:  707:
+        -:  708:      //+3 Cards
+     1500:  709:      for (i = 1; i < 3; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:  710:	{
+     1000:  711:	  drawCard(currentPlayer, state);
+call    0 returned 100%
+        -:  712:	}
+        -:  713:
+        -:  714:      //discard card from hand
+      500:  715:      discardCard(handPos, currentPlayer, state, 0);
+call    0 returned 100%
+      500:  716:      return 0;
+        -:  717:}
+        -:  718:
+function great_hall_ref called 0 returned 0% blocks executed 0%
+    #####:  719:int great_hall_ref(struct gameState* state, int currentPlayer, int handPos)
+        -:  720:{
+        -:  721:    //+1 Card
+    #####:  722:      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  723:
+        -:  724:      //+1 Actions
+    #####:  725:      state->numActions++;
+        -:  726:
+        -:  727:      //discard card from hand
+    #####:  728:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  729:      return 0;
+        -:  730:}
+        -:  731:
+        -:  732:
+        -:  733:
+        -:  734:
+        -:  735:
+        -:  736:
+        -:  737:
+function cardEffect called 0 returned 0% blocks executed 0%
+    #####:  738:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+        -:  739:{
+        -:  740:  int i;
+        -:  741:  int j;
+        -:  742:  int k;
+        -:  743:  int x;
+        -:  744:  int index;
+    #####:  745:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  746:  int nextPlayer = currentPlayer + 1;
+        -:  747:
+    #####:  748:  int tributeRevealedCards[2] = {-1, -1};
+        -:  749:  int temphand[MAX_HAND];// moved above the if statement
+        -:  750://  int drawntreasure=0;//adventure card
+        -:  751://  int cardDrawn;//adventure card
+        -:  752://  int z = 0;// this is the counter for the temp hand
+    #####:  753:  if (nextPlayer > (state->numPlayers - 1)){
+branch  0 never executed
+branch  1 never executed
+    #####:  754:    nextPlayer = 0;
+        -:  755:  }
+        -:  756:
+        -:  757:
+        -:  758:  //uses switch to select card and perform actions
+    #####:  759:  switch( card )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+branch 20 never executed
+        -:  760:    {
+        -:  761:    case adventurer:
+    #####:  762:        return adventurer_ref(state, currentPlayer);
+call    0 never executed
+        -:  763:
+        -:  764:    case council_room:
+    #####:  765:        return council_room_ref(state, currentPlayer);
+call    0 never executed
+        -:  766:
+        -:  767:      //put played card in played card pile
+        -:  768:      discardCard(handPos, currentPlayer, state, 0);
+        -:  769:
+        -:  770:      return 0;
+        -:  771:
+        -:  772:    case feast:
+        -:  773:      //gain card with cost up to 5
+        -:  774:      //Backup hand
+    #####:  775:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  776:	temphand[i] = state->hand[currentPlayer][i];//Backup card
+    #####:  777:	state->hand[currentPlayer][i] = -1;//Set to nothing
+        -:  778:      }
+        -:  779:      //Backup hand
+        -:  780:
+        -:  781:      //Update Coins for Buy
+    #####:  782:      updateCoins(currentPlayer, state, 5);
+call    0 never executed
+    #####:  783:      x = 1;//Condition to loop on
+    #####:  784:      while( x == 1) {//Buy one card
+branch  0 never executed
+branch  1 never executed
+    #####:  785:	if (supplyCount(choice1, state) <= 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  786:	  if (DEBUG)
+        -:  787:	    printf("None of that card left, sorry!\n");
+        -:  788:
+        -:  789:	  if (DEBUG){
+        -:  790:	    printf("Cards Left: %d\n", supplyCount(choice1, state));
+        -:  791:	  }
+        -:  792:	}
+    #####:  793:	else if (state->coins < getCost(choice1)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  794:	  printf("That card is too expensive!\n");
+call    0 never executed
+        -:  795:
+        -:  796:	  if (DEBUG){
+        -:  797:	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
+        -:  798:	  }
+        -:  799:	}
+        -:  800:	else{
+        -:  801:
+        -:  802:	  if (DEBUG){
+        -:  803:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  804:	  }
+        -:  805:
+    #####:  806:	  gainCard(choice1, state, 0, currentPlayer);//Gain the card
+call    0 never executed
+    #####:  807:	  x = 0;//No more buying cards
+        -:  808:
+        -:  809:	  if (DEBUG){
+        -:  810:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  811:	  }
+        -:  812:
+        -:  813:	}
+        -:  814:      }
+        -:  815:
+        -:  816:      //Reset Hand
+    #####:  817:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  818:	state->hand[currentPlayer][i] = temphand[i];
+    #####:  819:	temphand[i] = -1;
+        -:  820:      }
+        -:  821:      //Reset Hand
+        -:  822:
+    #####:  823:      return 0;
+        -:  824:
+        -:  825:    case gardens:
+    #####:  826:      return gardens_ref();
+call    0 never executed
+        -:  827:
+        -:  828:    case mine:
+    #####:  829:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  830:
+    #####:  831:      if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  832:	{
+    #####:  833:	  return -1;
+        -:  834:	}
+        -:  835:
+    #####:  836:      if (choice2 > treasure_map || choice2 < curse)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  837:	{
+    #####:  838:	  return -1;
+        -:  839:	}
+        -:  840:
+    #####:  841:      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  842:	{
+    #####:  843:	  return -1;
+        -:  844:	}
+        -:  845:
+    #####:  846:      gainCard(choice2, state, 2, currentPlayer);
+call    0 never executed
+        -:  847:
+        -:  848:      //discard card from hand
+    #####:  849:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  850:
+        -:  851:      //discard trashed card
+    #####:  852:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  853:	{
+    #####:  854:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  855:	    {
+    #####:  856:	      discardCard(i, currentPlayer, state, 0);
+call    0 never executed
+    #####:  857:	      break;
+        -:  858:	    }
+        -:  859:	}
+        -:  860:
+    #####:  861:      return 0;
+        -:  862:
+        -:  863:    case remodel:
+    #####:  864:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  865:
+    #####:  866:      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  867:	{
+    #####:  868:	  return -1;
+        -:  869:	}
+        -:  870:
+    #####:  871:      gainCard(choice2, state, 0, currentPlayer);
+call    0 never executed
+        -:  872:
+        -:  873:      //discard card from hand
+    #####:  874:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  875:
+        -:  876:      //discard trashed card
+    #####:  877:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  878:	{
+    #####:  879:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  880:	    {
+    #####:  881:	      discardCard(i, currentPlayer, state, 0);
+call    0 never executed
+    #####:  882:	      break;
+        -:  883:	    }
+        -:  884:	}
+        -:  885:
+        -:  886:
+    #####:  887:      return 0;
+        -:  888:
+        -:  889:    case smithy:
+    #####:  890:        return smithy_ref(state, currentPlayer, handPos);
+call    0 never executed
+        -:  891:    case village:
+        -:  892:      //+1 Card
+    #####:  893:      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  894:
+        -:  895:      //+2 Actions
+    #####:  896:      state->numActions = state->numActions + 2;
+        -:  897:
+        -:  898:      //discard played card from hand
+    #####:  899:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  900:      return 0;
+        -:  901:
+        -:  902:    case baron:
+    #####:  903:      state->numBuys++;//Increase buys by 1!
+    #####:  904:      if (choice1 > 0){//Boolean true or going to discard an estate
+branch  0 never executed
+branch  1 never executed
+    #####:  905:	int p = 0;//Iterator for hand!
+    #####:  906:	int card_not_discarded = 1;//Flag for discard set!
+    #####:  907:	while(card_not_discarded){
+branch  0 never executed
+branch  1 never executed
+    #####:  908:	  if (state->hand[currentPlayer][p] == estate){//Found an estate card!
+branch  0 never executed
+branch  1 never executed
+    #####:  909:	    state->coins += 4;//Add 4 coins to the amount of coins
+    #####:  910:	    state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
+    #####:  911:	    state->discardCount[currentPlayer]++;
+    #####:  912:	    for (;p < state->handCount[currentPlayer]; p++){
+branch  0 never executed
+branch  1 never executed
+    #####:  913:	      state->hand[currentPlayer][p] = state->hand[currentPlayer][p+1];
+        -:  914:	    }
+    #####:  915:	    state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
+    #####:  916:	    state->handCount[currentPlayer]--;
+    #####:  917:	    card_not_discarded = 0;//Exit the loop
+        -:  918:	  }
+    #####:  919:	  else if (p > state->handCount[currentPlayer]){
+branch  0 never executed
+branch  1 never executed
+        -:  920:	    if(DEBUG) {
+        -:  921:	      printf("No estate cards in your hand, invalid choice\n");
+        -:  922:	      printf("Must gain an estate if there are any\n");
+        -:  923:	    }
+    #####:  924:	    if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  925:	      gainCard(estate, state, 0, currentPlayer);
+call    0 never executed
+    #####:  926:	      state->supplyCount[estate]--;//Decrement estates
+    #####:  927:	      if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  928:		isGameOver(state);
+call    0 never executed
+        -:  929:	      }
+        -:  930:	    }
+    #####:  931:	    card_not_discarded = 0;//Exit the loop
+        -:  932:	  }
+        -:  933:
+        -:  934:	  else{
+    #####:  935:	    p++;//Next card
+        -:  936:	  }
+        -:  937:	}
+        -:  938:      }
+        -:  939:
+        -:  940:      else{
+    #####:  941:	if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  942:	  gainCard(estate, state, 0, currentPlayer);//Gain an estate
+call    0 never executed
+    #####:  943:	  state->supplyCount[estate]--;//Decrement Estates
+    #####:  944:	  if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  945:	    isGameOver(state);
+call    0 never executed
+        -:  946:	  }
+        -:  947:	}
+        -:  948:      }
+        -:  949:
+        -:  950:
+    #####:  951:      return 0;
+        -:  952:
+        -:  953:    case great_hall:
+    #####:  954:      return great_hall_ref(state,currentPlayer, handPos );
+call    0 never executed
+        -:  955:
+        -:  956:    case minion:
+        -:  957:      //+1 action
+    #####:  958:      state->numActions++;
+        -:  959:
+        -:  960:      //discard card from hand
+    #####:  961:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  962:
+    #####:  963:      if (choice1)		//+2 coins
+branch  0 never executed
+branch  1 never executed
+        -:  964:	{
+    #####:  965:	  state->coins = state->coins + 2;
+        -:  966:	}
+        -:  967:
+    #####:  968:      else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+branch  0 never executed
+branch  1 never executed
+        -:  969:	{
+        -:  970:	  //discard hand
+    #####:  971:	  while(numHandCards(state) > 0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  972:	    {
+    #####:  973:	      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  974:	    }
+        -:  975:
+        -:  976:	  //draw 4
+    #####:  977:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  978:	    {
+    #####:  979:	      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  980:	    }
+        -:  981:
+        -:  982:	  //other players discard hand and redraw if hand size > 4
+    #####:  983:	  for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  984:	    {
+    #####:  985:	      if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -:  986:		{
+    #####:  987:		  if ( state->handCount[i] > 4 )
+branch  0 never executed
+branch  1 never executed
+        -:  988:		    {
+        -:  989:		      //discard hand
+    #####:  990:		      while( state->handCount[i] > 0 )
+branch  0 never executed
+branch  1 never executed
+        -:  991:			{
+    #####:  992:			  discardCard(handPos, i, state, 0);
+call    0 never executed
+        -:  993:			}
+        -:  994:
+        -:  995:		      //draw 4
+    #####:  996:		      for (j = 0; j < 4; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  997:			{
+    #####:  998:			  drawCard(i, state);
+call    0 never executed
+        -:  999:			}
+        -: 1000:		    }
+        -: 1001:		}
+        -: 1002:	    }
+        -: 1003:
+        -: 1004:	}
+    #####: 1005:      return 0;
+        -: 1006:
+        -: 1007:    case steward:
+    #####: 1008:      if (choice1 == 1)
+branch  0 never executed
+branch  1 never executed
+        -: 1009:	{
+        -: 1010:	  //+2 cards
+    #####: 1011:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1012:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1013:	}
+    #####: 1014:      else if (choice1 == 2)
+branch  0 never executed
+branch  1 never executed
+        -: 1015:	{
+        -: 1016:	  //+2 coins
+    #####: 1017:	  state->coins = state->coins + 2;
+        -: 1018:	}
+        -: 1019:      else
+        -: 1020:	{
+        -: 1021:	  //trash 2 cards in hand
+    #####: 1022:	  discardCard(choice2, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1023:	  discardCard(choice3, currentPlayer, state, 1);
+call    0 never executed
+        -: 1024:	}
+        -: 1025:
+        -: 1026:      //discard card from hand
+    #####: 1027:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1028:      return 0;
+        -: 1029:
+        -: 1030:    case tribute:
+    #####: 1031:      if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
+branch  0 never executed
+branch  1 never executed
+    #####: 1032:	if (state->deckCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1033:	  tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1034:	  state->deckCount[nextPlayer]--;
+        -: 1035:	}
+    #####: 1036:	else if (state->discardCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1037:	  tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];
+    #####: 1038:	  state->discardCount[nextPlayer]--;
+        -: 1039:	}
+        -: 1040:	else{
+        -: 1041:	  //No Card to Reveal
+        -: 1042:	  if (DEBUG){
+        -: 1043:	    printf("No cards to reveal\n");
+        -: 1044:	  }
+        -: 1045:	}
+        -: 1046:      }
+        -: 1047:
+        -: 1048:      else{
+    #####: 1049:	if (state->deckCount[nextPlayer] == 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1050:	  for (i = 0; i < state->discardCount[nextPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1051:	    state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
+    #####: 1052:	    state->deckCount[nextPlayer]++;
+    #####: 1053:	    state->discard[nextPlayer][i] = -1;
+    #####: 1054:	    state->discardCount[nextPlayer]--;
+        -: 1055:	  }
+        -: 1056:
+    #####: 1057:	  shuffle(nextPlayer,state);//Shuffle the deck
+call    0 never executed
+        -: 1058:	}
+    #####: 1059:	tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1060:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1061:	state->deckCount[nextPlayer]--;
+    #####: 1062:	tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1063:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1064:	state->deckCount[nextPlayer]--;
+        -: 1065:      }
+        -: 1066:
+    #####: 1067:      if (tributeRevealedCards[0] == tributeRevealedCards[1]){//If we have a duplicate card, just drop one
+branch  0 never executed
+branch  1 never executed
+    #####: 1068:	state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
+    #####: 1069:	state->playedCardCount++;
+    #####: 1070:	tributeRevealedCards[1] = -1;
+        -: 1071:      }
+        -: 1072:
+    #####: 1073:      for (i = 0; i <= 2; i ++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1074:	if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1075:	  state->coins += 2;
+        -: 1076:	}
+        -: 1077:
+    #####: 1078:	else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####: 1079:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1080:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1081:	}
+        -: 1082:	else{//Action Card
+    #####: 1083:	  state->numActions = state->numActions + 2;
+        -: 1084:	}
+        -: 1085:      }
+        -: 1086:
+    #####: 1087:      return 0;
+        -: 1088:
+        -: 1089:    case ambassador:
+    #####: 1090:      j = 0;		//used to check if player has enough cards to discard
+        -: 1091:
+    #####: 1092:      if (choice2 > 2 || choice2 < 0)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1093:	{
+    #####: 1094:	  return -1;
+        -: 1095:	}
+        -: 1096:
+    #####: 1097:      if (choice1 == handPos)
+branch  0 never executed
+branch  1 never executed
+        -: 1098:	{
+    #####: 1099:	  return -1;
+        -: 1100:	}
+        -: 1101:
+    #####: 1102:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1103:	{
+    #####: 1104:	  if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -: 1105:	    {
+    #####: 1106:	      j++;
+        -: 1107:	    }
+        -: 1108:	}
+    #####: 1109:      if (j < choice2)
+branch  0 never executed
+branch  1 never executed
+        -: 1110:	{
+    #####: 1111:	  return -1;
+        -: 1112:	}
+        -: 1113:
+        -: 1114:      if (DEBUG)
+        -: 1115:	printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
+        -: 1116:
+        -: 1117:      //increase supply count for choosen card by amount being discarded
+    #####: 1118:      state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
+        -: 1119:
+        -: 1120:      //each other player gains a copy of revealed card
+    #####: 1121:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1122:	{
+    #####: 1123:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1124:	    {
+    #####: 1125:	      gainCard(state->hand[currentPlayer][choice1], state, 0, i);
+call    0 never executed
+        -: 1126:	    }
+        -: 1127:	}
+        -: 1128:
+        -: 1129:      //discard played card from hand
+    #####: 1130:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -: 1131:
+        -: 1132:      //trash copies of cards returned to supply
+    #####: 1133:      for (j = 0; j < choice2; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1134:	{
+    #####: 1135:	  for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1136:	    {
+    #####: 1137:	      if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
+branch  0 never executed
+branch  1 never executed
+        -: 1138:		{
+    #####: 1139:		  discardCard(i, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1140:		  break;
+        -: 1141:		}
+        -: 1142:	    }
+        -: 1143:	}
+        -: 1144:
+    #####: 1145:      return 0;
+        -: 1146:
+        -: 1147:    case cutpurse:
+        -: 1148:
+    #####: 1149:      updateCoins(currentPlayer, state, 2);
+call    0 never executed
+    #####: 1150:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1151:	{
+    #####: 1152:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1153:	    {
+    #####: 1154:	      for (j = 0; j < state->handCount[i]; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1155:		{
+    #####: 1156:		  if (state->hand[i][j] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1157:		    {
+    #####: 1158:		      discardCard(j, i, state, 0);
+call    0 never executed
+    #####: 1159:		      break;
+        -: 1160:		    }
+    #####: 1161:		  if (j == state->handCount[i])
+branch  0 never executed
+branch  1 never executed
+        -: 1162:		    {
+    #####: 1163:		      for (k = 0; k < state->handCount[i]; k++)
+branch  0 never executed
+branch  1 never executed
+        -: 1164:			{
+        -: 1165:			  if (DEBUG)
+        -: 1166:			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+        -: 1167:			}
+    #####: 1168:		      break;
+        -: 1169:		    }
+        -: 1170:		}
+        -: 1171:
+        -: 1172:	    }
+        -: 1173:
+        -: 1174:	}
+        -: 1175:
+        -: 1176:      //discard played card from hand
+    #####: 1177:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -: 1178:
+    #####: 1179:      return 0;
+        -: 1180:
+        -: 1181:
+        -: 1182:    case embargo:
+        -: 1183:      //+2 Coins
+    #####: 1184:      state->coins = state->coins + 2;
+        -: 1185:
+        -: 1186:      //see if selected pile is in play
+    #####: 1187:      if ( state->supplyCount[choice1] == -1 )
+branch  0 never executed
+branch  1 never executed
+        -: 1188:	{
+    #####: 1189:	  return -1;
+        -: 1190:	}
+        -: 1191:
+        -: 1192:      //add embargo token to selected supply pile
+    #####: 1193:      state->embargoTokens[choice1]++;
+        -: 1194:
+        -: 1195:      //trash card
+    #####: 1196:      discardCard(handPos, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1197:      return 0;
+        -: 1198:
+        -: 1199:    case outpost:
+        -: 1200:      //set outpost flag
+    #####: 1201:      state->outpostPlayed++;
+        -: 1202:
+        -: 1203:      //discard card
+    #####: 1204:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1205:      return 0;
+        -: 1206:
+        -: 1207:    case salvager:
+        -: 1208:      //+1 buy
+    #####: 1209:      state->numBuys++;
+        -: 1210:
+    #####: 1211:      if (choice1)
+branch  0 never executed
+branch  1 never executed
+        -: 1212:	{
+        -: 1213:	  //gain coins equal to trashed card
+    #####: 1214:	  state->coins = state->coins + getCost( handCard(choice1, state) );
+call    0 never executed
+call    1 never executed
+        -: 1215:	  //trash card
+    #####: 1216:	  discardCard(choice1, currentPlayer, state, 1);
+call    0 never executed
+        -: 1217:	}
+        -: 1218:
+        -: 1219:      //discard card
+    #####: 1220:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1221:      return 0;
+        -: 1222:
+        -: 1223:    case sea_hag:
+    #####: 1224:      for (i = 0; i < state->numPlayers; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1225:	if (i != currentPlayer){
+branch  0 never executed
+branch  1 never executed
+    #####: 1226:	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+    #####: 1227:	  state->discardCount[i]++;
+    #####: 1228:	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+        -: 1229:	}
+        -: 1230:      }
+    #####: 1231:      return 0;
+        -: 1232:
+        -: 1233:    case treasure_map:
+        -: 1234:      //search hand for another treasure_map
+    #####: 1235:      index = -1;
+    #####: 1236:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1237:	{
+    #####: 1238:	  if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1239:	    {
+    #####: 1240:	      index = i;
+    #####: 1241:	      break;
+        -: 1242:	    }
+        -: 1243:	}
+    #####: 1244:      if (index > -1)
+branch  0 never executed
+branch  1 never executed
+        -: 1245:	{
+        -: 1246:	  //trash both treasure cards
+    #####: 1247:	  discardCard(handPos, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1248:	  discardCard(index, currentPlayer, state, 1);
+call    0 never executed
+        -: 1249:
+        -: 1250:	  //gain 4 Gold cards
+    #####: 1251:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1252:	    {
+    #####: 1253:	      gainCard(gold, state, 1, currentPlayer);
+call    0 never executed
+        -: 1254:	    }
+        -: 1255:
+        -: 1256:	  //return success
+    #####: 1257:	  return 1;
+        -: 1258:	}
+        -: 1259:
+        -: 1260:      //no second treasure_map found in hand
+    #####: 1261:      return -1;
+        -: 1262:    }
+        -: 1263:
+    #####: 1264:  return -1;
+        -: 1265:}
+        -: 1266:
+function discardCard called 590 returned 100% blocks executed 89%
+      590: 1267:int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+        -: 1268:{
+        -: 1269:
+        -: 1270:  //if card is not trashed, added to Played pile
+      590: 1271:  if (trashFlag < 1)
+branch  0 taken 93% (fallthrough)
+branch  1 taken 7%
+        -: 1272:    {
+        -: 1273:      //add card to played pile
+      548: 1274:      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos];
+      548: 1275:      state->playedCardCount++;
+        -: 1276:    }
+        -: 1277:
+        -: 1278:  //set played card to -1
+      590: 1279:  state->hand[currentPlayer][handPos] = -1;
+        -: 1280:
+        -: 1281:  //remove card from player's hand
+      590: 1282:  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+branch  0 taken 2% (fallthrough)
+branch  1 taken 98%
+        -: 1283:    {
+        -: 1284:      //reduce number of cards in hand
+        9: 1285:      state->handCount[currentPlayer]--;
+        -: 1286:    }
+      581: 1287:  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1288:    {
+        -: 1289:      //reduce number of cards in hand
+    #####: 1290:      state->handCount[currentPlayer]--;
+        -: 1291:    }
+        -: 1292:  else
+        -: 1293:    {
+        -: 1294:      //replace discarded card with last card in hand
+      581: 1295:      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+        -: 1296:      //set last card to -1
+      581: 1297:      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+        -: 1298:      //reduce number of cards in hand
+      581: 1299:      state->handCount[currentPlayer]--;
+        -: 1300:    }
+        -: 1301:
+      590: 1302:  return 0;
+        -: 1303:}
+        -: 1304:
+function gainCard called 100 returned 100% blocks executed 70%
+      100: 1305:int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
+        -: 1306:{
+        -: 1307:  //Note: supplyPos is enum of choosen card
+        -: 1308:
+        -: 1309:  //check if supply pile is empty (0) or card is not used in game (-1)
+      100: 1310:  if ( supplyCount(supplyPos, state) < 1 )
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+        -: 1311:    {
+    #####: 1312:      return -1;
+        -: 1313:    }
+        -: 1314:
+        -: 1315:  //added card for [whoseTurn] current player:
+        -: 1316:  // toFlag = 0 : add to discard
+        -: 1317:  // toFlag = 1 : add to deck
+        -: 1318:  // toFlag = 2 : add to hand
+        -: 1319:
+      100: 1320:  if (toFlag == 1)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1321:    {
+    #####: 1322:      state->deck[ player ][ state->deckCount[player] ] = supplyPos;
+    #####: 1323:      state->deckCount[player]++;
+        -: 1324:    }
+      100: 1325:  else if (toFlag == 2)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1326:    {
+    #####: 1327:      state->hand[ player ][ state->handCount[player] ] = supplyPos;
+    #####: 1328:      state->handCount[player]++;
+        -: 1329:    }
+        -: 1330:  else
+        -: 1331:    {
+      100: 1332:      state->discard[player][ state->discardCount[player] ] = supplyPos;
+      100: 1333:      state->discardCount[player]++;
+        -: 1334:    }
+        -: 1335:
+        -: 1336:  //decrease number in supply pile
+      100: 1337:  state->supplyCount[supplyPos]--;
+        -: 1338:
+      100: 1339:  return 0;
+        -: 1340:}
+        -: 1341:
+function updateCoins called 0 returned 0% blocks executed 0%
+    #####: 1342:int updateCoins(int player, struct gameState *state, int bonus)
+        -: 1343:{
+        -: 1344:  int i;
+        -: 1345:
+        -: 1346:  //reset coin count
+    #####: 1347:  state->coins = 0;
+        -: 1348:
+        -: 1349:  //add coins for each Treasure card in player's hand
+    #####: 1350:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1351:    {
+    #####: 1352:      if (state->hand[player][i] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1353:	{
+    #####: 1354:	  state->coins += 1;
+        -: 1355:	}
+    #####: 1356:      else if (state->hand[player][i] == silver)
+branch  0 never executed
+branch  1 never executed
+        -: 1357:	{
+    #####: 1358:	  state->coins += 2;
+        -: 1359:	}
+    #####: 1360:      else if (state->hand[player][i] == gold)
+branch  0 never executed
+branch  1 never executed
+        -: 1361:	{
+    #####: 1362:	  state->coins += 3;
+        -: 1363:	}
+        -: 1364:    }
+        -: 1365:
+        -: 1366:  //add bonus
+    #####: 1367:  state->coins += bonus;
+        -: 1368:
+    #####: 1369:  return 0;
+        -: 1370:}
+        -: 1371:
+        -: 1372://end of dominion.c
+        -: 1373:
+File 'unittest1.c'
+Lines executed:88.89% of 27
+Branches executed:100.00% of 16
+Taken at least once:81.25% of 16
+Calls executed:70.00% of 10
+Creating 'unittest1.c.gcov'
+
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://Assignment #3 - Joseph Cuellar
+        -:    2://CS - 362
+        -:    3://This is to test discardCard() to see if it can discard a card 
+        -:    4://from the player's hand to the played pile. IF trashed its value becomes -1.
+        -:    5:#include "dominion.h"
+        -:    6:#include "dominion_helpers.h"
+        -:    7:#include <string.h>
+        -:    8:#include <stdio.h>
+        -:    9:#include <assert.h>
+        -:   10:#include "rngs.h"
+        -:   11:#include <math.h>
+        -:   12:
+        -:   13:const int MAX_CARD_COUNT = 10;
+        -:   14:
+function main called 1 returned 100% blocks executed 90%
+        1:   15:int main(){
+        -:   16:	// vars
+        -:   17:	int numberOfPlayers, currentPlayer, handPosition, trashFlag;
+        -:   18:	struct gameState postGameState; 
+        1:   19:	int playedCardCount = 0;
+        -:   20:	
+        -:   21:	//set up random number generator
+        1:   22:	SelectStream(2);
+call    0 returned 100%
+        1:   23:	PutSeed(3);
+call    0 returned 100%
+        1:   24:	printf("START - Running discardCard() unittest1.\n");
+call    0 returned 100%
+        -:   25:	// TEST the max amount of players, each player that is playing, and each card
+        4:   26:	for(numberOfPlayers = 2; numberOfPlayers <= MAX_PLAYERS; numberOfPlayers++) {
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+       12:   27:		for(currentPlayer = 0;  currentPlayer < numberOfPlayers; currentPlayer++){
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+       99:   28:			for(handPosition = 0; handPosition < MAX_CARD_COUNT; handPosition++){
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+        -:   29:				int i;
+  2367090:   30:				for (i = 0; i < sizeof(struct gameState); i++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+  2367000:   31:					((char*)&postGameState)[i] = floor(Random() * 256);
+call    0 returned 100%
+        -:   32:				}
+       90:   33:				postGameState.numPlayers = numberOfPlayers;
+       90:   34:				postGameState.playedCardCount = playedCardCount;
+       90:   35:				postGameState.handCount[currentPlayer] = MAX_CARD_COUNT;
+       90:   36:				trashFlag = floor(Random()*2);
+call    0 returned 100%
+        -:   37:				
+        -:   38:				struct gameState preGameState;
+       90:   39:				memcpy(&preGameState, &postGameState, sizeof(struct gameState));
+       90:   40:				int functionOutput = discardCard(handPosition, currentPlayer, &postGameState, trashFlag);
+call    0 returned 100%
+        -:   41:				
+       90:   42:				if( trashFlag < 1){
+branch  0 taken 53% (fallthrough)
+branch  1 taken 47%
+       48:   43:					preGameState.playedCardCount++;
+        -:   44:				}
+       90:   45:				preGameState.handCount[currentPlayer]--;
+        -:   46:				
+       90:   47:				if(functionOutput != 0){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   48:					printf("ERROR! discardCard() failed.\n\n");
+call    0 never executed
+        -:   49:				}
+       90:   50:				else if(preGameState.playedCardCount != postGameState.playedCardCount){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   51:					printf("ERROR! Played card counts are NOT equal.\n\n");
+call    0 never executed
+        -:   52:				}
+       90:   53:				else if(preGameState.handCount[currentPlayer] != postGameState.handCount[currentPlayer]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   54:					printf("ERROR! Player hand counts are NOT equal.\n\n");
+call    0 never executed
+        -:   55:				}
+        -:   56:			}
+        -:   57:		}
+        -:   58:	 }
+        1:   59:	 printf ("STOP - Running discardCard() unittest1.\n\n");
+call    0 returned 100%
+        1:   60:	 return 0;
+        -:   61:}
+File 'unittest2.c'
+Lines executed:86.96% of 23
+Branches executed:100.00% of 16
+Taken at least once:81.25% of 16
+Calls executed:70.00% of 10
+Creating 'unittest2.c.gcov'
+
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://Assignment #3 - Joseph Cuellar
+        -:    2://CS - 362
+        -:    3://This is to test shuffle() and see if cards are properly shuffled
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include <string.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include <assert.h>
+        -:    9:#include "rngs.h"
+        -:   10:#include <math.h>
+        -:   11:
+        -:   12:const int CARDS_TO_PLAY[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+        -:   13:
+function main called 1 returned 100% blocks executed 90%
+        1:   14:int main(){
+        -:   15:	int numberOfcurrentPlayers, currentPlayer, deckCount;
+        -:   16:	struct gameState postGameState; 
+        -:   17:
+        1:   18:	SelectStream(2);
+call    0 returned 100%
+        1:   19:	PutSeed(3);
+call    0 returned 100%
+        1:   20:	printf("START - Running shuffle() unittest1.\n");
+call    0 returned 100%
+        -:   21:	
+        4:   22:	for(numberOfcurrentPlayers = 2; numberOfcurrentPlayers <= MAX_PLAYERS; numberOfcurrentPlayers++){
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+       12:   23:		for(currentPlayer = 0;  currentPlayer < numberOfcurrentPlayers; currentPlayer++){
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+      423:   24:			for(deckCount = 4; deckCount < 50; deckCount++) 
+branch  0 taken 98%
+branch  1 taken 2% (fallthrough)
+        -:   25:			{
+        -:   26:				int i;
+ 10888614:   27:				for (i = 0; i < sizeof(struct gameState); i++) { 
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+ 10888200:   28:					((char*)&postGameState)[i] = floor(Random() * 256);
+call    0 returned 100%
+        -:   29:				}
+        -:   30:				
+        -:   31:				int j;
+    11385:   32:				for(j = 0; j < deckCount; j++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+    10971:   33:					int card = floor(Random() * 10);
+call    0 returned 100%
+    10971:   34:					postGameState.deck[currentPlayer][j] = CARDS_TO_PLAY[card];
+        -:   35:				}
+        -:   36:				
+      414:   37:				postGameState.numPlayers = numberOfcurrentPlayers;
+      414:   38:				postGameState.deckCount[currentPlayer] = deckCount;
+        -:   39:				
+        -:   40:				struct gameState preGameState;
+      414:   41:				memcpy(&preGameState, &postGameState, sizeof(struct gameState));
+        -:   42:				
+      414:   43:				if(shuffle(currentPlayer, &postGameState) != 0){
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   44:					printf("ERROR! shuffle failed.\n\n");
+call    0 never executed
+        -:   45:				}
+      414:   46:				else if(preGameState.deckCount[currentPlayer] != postGameState.deckCount[currentPlayer]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   47:					printf("ERROR! Deck counts are NOT equal.\n\n");
+call    0 never executed
+        -:   48:				}
+      414:   49:				else if(memcmp(&preGameState.deck[currentPlayer], postGameState.deck[currentPlayer], sizeof(int) * preGameState.deckCount[currentPlayer]) == 0){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   50:					printf("ERROR! Deck failed to shuffle.\n");
+call    0 never executed
+        -:   51:				}
+        -:   52:			}
+        -:   53:		}
+        -:   54:	}
+        1:   55:	printf ("END - Running shuffle() unittest1.\n\n");
+call    0 returned 100%
+        1:   56:	return 0;
+        -:   57:}
+File 'unittest3.c'
+Lines executed:94.12% of 34
+Branches executed:100.00% of 20
+Taken at least once:90.00% of 20
+Calls executed:81.82% of 11
+Creating 'unittest3.c.gcov'
+
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://Assignment #3 - Joseph Cuellar
+        -:    2://CS - 362
+        -:    3://Test to see if the game is over
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include <string.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include <assert.h>
+        -:    9:#include "rngs.h"
+        -:   10:#include <math.h>
+        -:   11:
+        -:   12:const int SUPPLY_COUNT = 5;
+        -:   13:
+        -:   14:int IsGameOverTEST(struct gameState *postGameState);
+        -:   15:
+function main called 1 returned 100% blocks executed 100%
+        1:   16:int main(){
+        -:   17:	struct gameState postGameState;
+        -:   18:	int provincesCount;
+        -:   19:	
+        1:   20:	SelectStream(2);
+call    0 returned 100%
+        1:   21:	PutSeed(3);
+call    0 returned 100%
+        1:   22:	printf ("START - Running isGameOver() unittest4.\n\n");
+call    0 returned 100%
+        -:   23:	
+        -:   24:	int i;
+        4:   25:	for(provincesCount = 0; provincesCount < 3; provincesCount++){
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+    78903:   26:		for (i = 0; i < sizeof(struct gameState); i++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+    78900:   27:			((char*)&postGameState)[i] = floor(Random() * 256);
+call    0 returned 100%
+        -:   28:		}
+        3:   29:		postGameState.supplyCount[province] = provincesCount;
+        3:   30:		IsGameOverTEST(&postGameState);
+call    0 returned 100%
+        -:   31:	}
+        -:   32:	
+        -:   33:	int j;
+       28:   34:	for(j = 0; j <= treasure_map; j++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:   35:		postGameState.supplyCount[j] = SUPPLY_COUNT;
+        -:   36:	}
+        -:   37:	
+        1:   38:	postGameState.supplyCount[copper] = 0;
+        1:   39:	postGameState.supplyCount[silver] = 0;
+        1:   40:	postGameState.supplyCount[gold] = 0;
+        -:   41:	
+        1:   42:	IsGameOverTEST(&postGameState);
+call    0 returned 100%
+        -:   43:	
+        -:   44:
+       28:   45:	for(j = 0; j <= treasure_map; j++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:   46:		postGameState.supplyCount[j] = SUPPLY_COUNT;
+        -:   47:	}
+        1:   48:	postGameState.supplyCount[silver] = 0;
+        1:   49:	postGameState.supplyCount[gold] = 0;
+        1:   50:	IsGameOverTEST(&postGameState);
+call    0 returned 100%
+        -:   51:	
+        1:   52:	printf ("STOP - Running isGameOver() unittest4.\n\n");
+call    0 returned 100%
+        1:   53:	return 0;
+        -:   54:}
+        -:   55:
+function IsGameOverTEST called 5 returned 100% blocks executed 87%
+        5:   56:int IsGameOverTEST(struct gameState *postGameState){
+        -:   57:	int suppliesAvailable, card;
+        5:   58:	int functionOutput = isGameOver(postGameState);
+call    0 returned 100%
+        -:   59:	
+        5:   60:	if(postGameState->supplyCount[province] == 0){
+branch  0 taken 20% (fallthrough)
+branch  1 taken 80%
+        1:   61:		if(functionOutput != 1)	{
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   62:			printf("ERROR! supplyCount was 0 and isGameOver failed.\n\n");
+call    0 never executed
+        -:   63:		}
+        -:   64:	}
+        -:   65:	else{
+        4:   66:		suppliesAvailable = 0;
+      112:   67:		for(card = 0; card <= treasure_map; card++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+      108:   68:			if(postGameState->supplyCount[card] == 0){
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+        5:   69:				suppliesAvailable++;
+        -:   70:			}
+        -:   71:		}
+        -:   72:		
+        4:   73:		if(suppliesAvailable >= 3 && functionOutput !=1){
+branch  0 taken 25% (fallthrough)
+branch  1 taken 75%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:   74:			printf("ERROR! 3 supply counts were empty and isGameOver failed.\n\n");
+call    0 never executed
+        -:   75:		}
+        -:   76:	}
+        5:   77:	return 0;
+        -:   78:}
+File 'unittest4.c'
+Lines executed:89.39% of 66
+Branches executed:100.00% of 32
+Taken at least once:75.00% of 32
+Calls executed:66.67% of 21
+Creating 'unittest4.c.gcov'
+
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://Assignment #3 - Joseph Cuellar
+        -:    2://CS - 362
+        -:    3://Test to see if the player is able to buy a card 
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include <string.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include <assert.h>
+        -:    9:#include "rngs.h"
+        -:   10:#include <math.h>
+        -:   11:
+        -:   12:int BuyCardTEST(int currentPlayer, int currentCard, struct gameState *postGameState, int testState);
+        -:   13:
+function main called 1 returned 100% blocks executed 100%
+        1:   14:int main(){
+        1:   15:	int currentPlayer = 0;
+        -:   16:	int testState, currentCard;
+        -:   17:	struct gameState postGameState;
+        -:   18:	
+        1:   19:	SelectStream(2);
+call    0 returned 100%
+        1:   20:	PutSeed(3);
+call    0 returned 100%
+        1:   21:	printf ("START - Running buyCard() unittest4.\n\n");
+call    0 returned 100%
+        -:   22:	
+        -:   23:	int i;
+    26301:   24:	for (i = 0; i < sizeof(struct gameState); i++) { 
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+    26300:   25:		((char*)&postGameState)[i] = floor(Random() * 256);
+call    0 returned 100%
+        -:   26:	}
+        -:   27:	
+        -:   28:	int j;
+       28:   29:	for(j = 0; j <= treasure_map; j++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:   30:		postGameState.supplyCount[j] = 5;
+        -:   31:	}
+        -:   32:
+        1:   33:	postGameState.numPlayers 					= 2;
+        1:   34:	postGameState.whoseTurn 					= currentPlayer;
+        1:   35:	postGameState.deck[currentPlayer][0] 		= gold; 
+        1:   36:	postGameState.deckCount[currentPlayer] 		= 1;
+        1:   37:	postGameState.hand[currentPlayer][0] 		= silver; 
+        1:   38:	postGameState.handCount[currentPlayer] 		= 1;
+        1:   39:	postGameState.discard[currentPlayer][0] 	= copper; 
+        1:   40:	postGameState.discardCount[currentPlayer] 	= 1;
+        1:   41:	postGameState.coins = 5000;
+        1:   42:	postGameState.numBuys = 0;
+        -:   43:
+        1:   44:	testState = 1;
+        1:   45:	BuyCardTEST(currentPlayer, gold, &postGameState, testState);
+call    0 returned 100%
+        -:   46:	
+        -:   47:	int k;
+      101:   48:	for(k = 0; k < 100; k++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      100:   49:		currentCard = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+      100:   50:		postGameState.numBuys = 1000;
+      100:   51:		postGameState.supplyCount[currentCard] = 0;
+      100:   52:		testState = 2;
+      100:   53:		BuyCardTEST(currentPlayer, currentCard, &postGameState, testState);
+call    0 returned 100%
+        -:   54:	}
+        -:   55:	
+       28:   56:	for(j = 0; j <= treasure_map; j++){
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+       27:   57:		postGameState.supplyCount[j] = 100;
+        -:   58:	}
+        -:   59:	
+        1:   60:	postGameState.coins = 0;
+        1:   61:	testState = 3;
+        1:   62:	BuyCardTEST(currentPlayer, province, &postGameState, testState);
+call    0 returned 100%
+        -:   63:
+      101:   64:	for(k = 0; k < 100; k++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      100:   65:		currentCard = floor(Random() * sea_hag) + 1;
+call    0 returned 100%
+      100:   66:		postGameState.coins = 50;
+      100:   67:		testState = 0;
+      100:   68:		BuyCardTEST(currentPlayer, currentCard, &postGameState, testState);
+call    0 returned 100%
+        -:   69:	}
+        1:   70:	printf ("STOP - Running buyCard() unittest4.\n\n");
+call    0 returned 100%
+        1:   71:	return 0;
+        -:   72:}
+        -:   73:
+function BuyCardTEST called 202 returned 100% blocks executed 73%
+      202:   74:int BuyCardTEST(int currentPlayer, int currentCard, struct gameState *postGameState, int testState){
+        -:   75:	struct gameState preGameState;
+      202:   76:	memcpy(&preGameState, postGameState, sizeof(struct gameState));
+        -:   77:	
+      202:   78:	int functionOutput = buyCard(currentCard, postGameState);
+call    0 returned 100%
+        -:   79:	
+      202:   80:	preGameState.handCount[currentPlayer]++;
+      202:   81:	preGameState.coins = preGameState.coins - getCost(currentCard);
+call    0 returned 100%
+      202:   82:	preGameState.numBuys--;
+      202:   83:	preGameState.supplyCount[currentCard]--;
+        -:   84:	
+      202:   85:	if(testState == 1) {
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        1:   86:		if(functionOutput != -1)	{
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   87:			printf("ERROR! numBuys should be 0.\n");
+call    0 never executed
+        -:   88:		}
+        -:   89:	}
+      201:   90:	else if(testState == 2){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+      100:   91:		if(functionOutput != -1)	{
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   92:			printf("ERROR! supplyCount should be 0.\n");
+call    0 never executed
+        -:   93:		}
+        -:   94:	}
+      101:   95:	else if(testState == 3){
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        1:   96:		if(functionOutput != -1){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   97:			printf("ERROR! coins should be less than cost.\n");
+call    0 never executed
+        -:   98:		}
+        -:   99:	}
+      100:  100:	else if(functionOutput != 0 ){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  101:		printf("ERROR! buyCard QUIT.\n");
+call    0 never executed
+        -:  102:	}
+        -:  103:	else{
+      100:  104:		if(postGameState->handCount[currentPlayer] != preGameState.handCount[currentPlayer]){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+      100:  105:			printf("ERROR! The hand count did not increase with buy.\n");
+call    0 returned 100%
+        -:  106:		}
+      100:  107:		if(postGameState->coins != preGameState.coins){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  108:			printf("ERROR! Coins did not decrease with the cost of the card.\n");
+call    0 never executed
+        -:  109:		}
+      100:  110:		if(postGameState->numBuys != preGameState.numBuys){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  111:			printf("ERROR! numBuys did not decrease.\n");
+call    0 never executed
+        -:  112:		}
+      100:  113:		if(postGameState->supplyCount[currentCard] != preGameState.supplyCount[currentCard]){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  114:			printf("ERROR! supply count did not decrease.\n");
+call    0 never executed
+        -:  115:		}
+        -:  116:	}
+      202:  117:	return 0;
+        -:  118:}
+File 'cardtest1.c'
+Lines executed:97.62% of 42
+Branches executed:100.00% of 20
+Taken at least once:85.00% of 20
+Calls executed:94.74% of 19
+Creating 'cardtest1.c.gcov'
+
+        -:    0:Source:cardtest1.c
+        -:    0:Graph:cardtest1.gcno
+        -:    0:Data:cardtest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://Joseph Cuellar
+        -:    2://CS - 362
+        -:    3://TEST - Smithy Card 
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include <string.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include <assert.h>
+        -:    9:#include "rngs.h"
+        -:   10:#include <math.h>
+        -:   11:
+        -:   12:int SmithyTEST(struct gameState *post, int handPos);
+        -:   13:
+function main called 1 returned 100% blocks executed 100%
+        1:   14:int main(){
+        1:   15:	int player = 0;
+        -:   16:	struct gameState postGameState;
+        -:   17:	int i, j, k, l, m, n, handPos;
+        -:   18:	
+    26301:   19:	for (i = 0; i < sizeof(struct gameState); i++) { 
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+    26300:   20:		((char*)&postGameState)[i] = floor(Random() * 256);
+call    0 returned 100%
+        -:   21:	}
+        -:   22:	
+        1:   23:	SelectStream(2);
+call    0 returned 100%
+        1:   24:	PutSeed(3);
+call    0 returned 100%
+        1:   25:	printf ("START - Running callSmithyCard().\n\n");
+call    0 returned 100%
+        -:   26:	
+        1:   27:	postGameState.whoseTurn = player;
+      501:   28:	for(k = 0; k < 500; k++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      500:   29:		postGameState.handCount[player] = floor(Random() * MAX_HAND)+1;
+call    0 returned 100%
+      500:   30:		postGameState.deckCount[player] = floor(Random() * MAX_DECK);
+call    0 returned 100%
+      500:   31:		postGameState.discardCount[player] = floor(Random() * MAX_DECK);
+call    0 returned 100%
+      500:   32:		postGameState.playedCardCount = floor(Random() * MAX_DECK);
+call    0 returned 100%
+        -:   33:		
+   122528:   34:		for(l = 0; l < postGameState.handCount[player]; l++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   122028:   35:			postGameState.hand[player][l] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   36:		}
+        -:   37:		
+   127720:   38:		for(j = 0; j < postGameState.discardCount[player]; j++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   127220:   39:			postGameState.discard[player][j] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   40:		}
+        -:   41:
+   124343:   42:		for(m = 0; m < postGameState.deckCount[player]; m++)	{
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   123843:   43:			postGameState.deck[player][m] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   44:		}
+   125247:   45:		for(n = 0; n < postGameState.playedCardCount; n++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   124747:   46:			postGameState.playedCards[n] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   47:		}
+        -:   48:		
+      500:   49:		handPos = floor(Random() * postGameState.handCount[player]);
+call    0 returned 100%
+      500:   50:		postGameState.hand[player][handPos] = smithy;
+        -:   51:		
+      500:   52:		SmithyTEST(&postGameState, handPos);
+call    0 returned 100%
+        -:   53:	}
+        -:   54:	
+        1:   55:	printf ("STOP - Running callSmithyCard().\n\n");
+call    0 returned 100%
+        1:   56:	return 0;
+        -:   57:}
+        -:   58:
+function SmithyTEST called 500 returned 100% blocks executed 92%
+      500:   59:int SmithyTEST(struct gameState *post, int handPos){
+      500:   60:	int player = post->whoseTurn;
+        -:   61:	struct gameState preGameState;
+      500:   62:	memcpy(&preGameState, post, sizeof(struct gameState));
+        -:   63:	
+      500:   64:	smithy_ref(post, player, handPos);
+call    0 returned 100%
+        -:   65:	
+      500:   66:	preGameState.handCount[player] = preGameState.handCount[player] + 2;
+      500:   67:	preGameState.playedCardCount++;
+        -:   68:	
+      500:   69:	if(preGameState.deckCount[player] < 3){
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        2:   70:		preGameState.deckCount[player] = preGameState.deckCount[player] + preGameState.discardCount[player] - 3;
+        -:   71:	}
+        -:   72:	else{
+      498:   73:		preGameState.deckCount[player] = preGameState.deckCount[player] - 3;
+        -:   74:	}
+        -:   75:	
+      500:   76:	if(post->handCount[player] != preGameState.handCount[player]){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+      500:   77:		printf("ERROR! handCount is incorrect.\n");
+call    0 returned 100%
+        -:   78:	}
+      500:   79:	if(post->deckCount[player] != preGameState.deckCount[player]){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+      500:   80:		printf("ERROR! deckCount is incorrect.\n");
+call    0 returned 100%
+        -:   81:	}
+      500:   82:	if(post->playedCardCount != preGameState.playedCardCount){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   83:		printf("ERROR! playedCardCount is incorrect.\n");
+call    0 never executed
+        -:   84:	}
+        -:   85:	
+      500:   86:	return 0;
+        -:   87:}
+File 'cardtest2.c'
+Lines executed:97.67% of 43
+Branches executed:100.00% of 32
+Taken at least once:90.63% of 32
+Calls executed:93.33% of 15
+Creating 'cardtest2.c.gcov'
+
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://Joseph Cuellar
+        -:    2://CS - 362
+        -:    3://TEST - Adventurer Card 
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include <string.h>
+        -:    7:#include <stdio.h>
+        -:    8:#include <assert.h>
+        -:    9:#include "rngs.h"
+        -:   10:#include <math.h>
+        -:   11:
+        -:   12:int AdventurerTEST(struct gameState *postGameState);
+        -:   13:
+function main called 1 returned 100% blocks executed 100%
+        1:   14:int main()
+        -:   15:{
+        1:   16:	int player = 0;
+        1:   17:	int numTests = 500;
+        -:   18:	int i, j, k, m, n;
+        -:   19:	struct gameState postGameState;
+        -:   20:
+    26301:   21:	for (i = 0; i < sizeof(struct gameState); i++) { 
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+    26300:   22:		((char*)&postGameState)[i] = floor(Random() * 256);
+call    0 returned 100%
+        -:   23:	}
+        -:   24:	
+        1:   25:	postGameState.whoseTurn = player;
+        1:   26:	SelectStream(2);
+call    0 returned 100%
+        1:   27:	PutSeed(3);
+call    0 returned 100%
+        1:   28:	printf ("START - Running callAdventurerCard().\n\n");
+call    0 returned 100%
+        -:   29:	
+      501:   30:	for(k = 0; k < numTests; k++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+      500:   31:		postGameState.handCount[player] = floor(Random() * MAX_HAND)+1;
+call    0 returned 100%
+      500:   32:		postGameState.deckCount[player] = floor(Random() * MAX_DECK);
+call    0 returned 100%
+      500:   33:		postGameState.discardCount[player] = floor(Random() * MAX_DECK);
+call    0 returned 100%
+   126202:   34:		for(m = 0; m < postGameState.handCount[player]; m++)	{
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   125702:   35:			postGameState.hand[player][m] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   36:		}
+        -:   37:		
+   125420:   38:		for(j = 0; j < postGameState.discardCount[player]; j++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   124920:   39:			postGameState.discard[player][j] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   40:		}
+        -:   41:
+   119643:   42:		for(n = 0; n < postGameState.deckCount[player]; n++)	{
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   119143:   43:			postGameState.deck[player][n] = floor(Random() * treasure_map) + 1;
+call    0 returned 100%
+        -:   44:		}
+      500:   45:		AdventurerTEST(&postGameState);
+call    0 returned 100%
+        -:   46:	}
+        1:   47:	printf ("STOP - Running callAdventurerCard().\n\n");
+call    0 returned 100%
+        1:   48:	return 0;
+        -:   49:}
+        -:   50:
+function AdventurerTEST called 500 returned 100% blocks executed 95%
+      500:   51:int AdventurerTEST(struct gameState *postGameState){
+      500:   52:	int player = postGameState->whoseTurn;
+        -:   53:	int preTreasure, postTreasure;
+        -:   54:	int i, j;
+        -:   55:	int card;
+        -:   56:	struct gameState pre;
+      500:   57:	memcpy(&pre, postGameState, sizeof(struct gameState));
+        -:   58:	
+        -:   59:	//callAdventurerCard(postGameState, player );
+      500:   60:	int preTotal = pre.deckCount[player] + pre.discardCount[player] - 2;
+      500:   61:	int postTotal = postGameState->deckCount[player] + postGameState->discardCount[player];
+      500:   62:	if(postTotal != preTotal)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:   63:	{
+      500:   64:		printf("ERROR! post total is not 2 treasure cards less than pre total. \n");
+call    0 returned 100%
+        -:   65:	}
+        -:   66:
+      500:   67:	pre.handCount[player] =  pre.handCount[player]+2;
+      500:   68:	if(postGameState->handCount[player] != pre.handCount[player]){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+      500:   69:		printf("ERROR! pre hand count does not equal post hand count. \n");
+call    0 returned 100%
+        -:   70:	}
+        -:   71:	
+   127202:   72:	for(i = 0; i < pre.handCount[player]; i++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   126702:   73:		card = pre.hand[player][i];
+   126702:   74:		if (card == copper || card == silver || card == gold)
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+branch  4 taken 4% (fallthrough)
+branch  5 taken 96%
+    14663:   75:			preTreasure++;
+        -:   76:	}
+   126202:   77:	for(j = 0; j < postGameState->handCount[player]; j++){
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+   125702:   78:		card = postGameState->hand[player][j];
+   125702:   79:		if (card == copper || card == silver || card == gold)
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+branch  4 taken 4% (fallthrough)
+branch  5 taken 96%
+    14555:   80:			postTreasure++;
+        -:   81:	}
+        -:   82:	
+      500:   83:	if(!(postTreasure > preTreasure)){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   84:		printf("ERROR! Not enough treasure cards added to hand. \n");
+call    0 never executed
+        -:   85:	}
+      500:   86:	return 0;
+        -:   87:}

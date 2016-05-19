@@ -1,0 +1,142 @@
+Result for running random test:
+--------------------------------------------------------------------
+randomtestadventurer.c:
+-------------------------RANDOM TESTER ADVENTURER---------------------------------
+----------------- Testing Card: adventurer ----------------
+Error found in adventurer, 1
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 206  pre.HandCount = 205
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 15 pre.discardCount[p] = 15
+	post.deckCount[p] = 474 pre.deckCount[p] = 474
+	treasure cards in deck = 134 Player = 0
+
+Error found in adventurer, 4
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 206  pre.HandCount = 205
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 15 pre.discardCount[p] = 15
+	post.deckCount[p] = 474 pre.deckCount[p] = 474
+	treasure cards in deck = 134 Player = 0
+
+Error found in adventurer, 6
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 206  pre.HandCount = 205
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 15 pre.discardCount[p] = 15
+	post.deckCount[p] = 474 pre.deckCount[p] = 474
+	treasure cards in deck = 134 Player = 0
+
+Error found in adventurer, 7
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 206  pre.HandCount = 205
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 15 pre.discardCount[p] = 15
+	post.deckCount[p] = 474 pre.deckCount[p] = 474
+	treasure cards in deck = 134 Player = 0
+
+ERROR noVictoryCardChanges
+Error found in adventurer, 10
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 364  pre.HandCount = 363
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 0
+	post.discardCount[p] = 43 pre.discardCount[p] = 43
+	post.deckCount[p] = 170 pre.deckCount[p] = 170
+	treasure cards in deck = 59 Player = 0
+
+ERROR noPlayerStateChanges HANDCOUNT's off
+Error found in adventurer, 9
+	post.whoseTurn = 3 pre.whoseTurn = 3
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 216  pre.HandCount = 215
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 19 pre.discardCount[p] = 19
+	post.deckCount[p] = 479 pre.deckCount[p] = 479
+	treasure cards in deck = 132 Player = 3
+
+Error found in adventurer, 5
+	post.whoseTurn = 3 pre.whoseTurn = 3
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 337  pre.HandCount = 336
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 7
+	post.discardCount[p] = 149 pre.discardCount[p] = 149
+	post.deckCount[p] = 212 pre.deckCount[p] = 212
+	treasure cards in deck = 63 Player = 3
+
+Error found in adventurer, 2
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 62  pre.HandCount = 61
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 13
+	post.discardCount[p] = 23 pre.discardCount[p] = 28
+	post.deckCount[p] = 449 pre.deckCount[p] = 444
+	treasure cards in deck = 1 Player = 1
+
+ERROR noDominionCardChanges
+Error found in adventurer, 11
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 62  pre.HandCount = 61
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 13
+	post.discardCount[p] = 23 pre.discardCount[p] = 28
+	post.deckCount[p] = 449 pre.deckCount[p] = 444
+	treasure cards in deck = 1 Player = 1
+
+Random testing complete.
+Executed 300000 random tests.
+ >>>>> FAILURES DETECTED: Examine test cases adventurer <<<<<
+
+File 'randomtestadventurer.c'
+Lines executed:91.48% of 176
+Creating 'randomtestadventurer.c.gcov'
+
+File 'randomtestadventurer.c'
+Lines executed:91.48% of 176
+Branches executed:87.50% of 128
+Taken at least once:76.56% of 128
+Calls executed:85.71% of 63
+Creating 'randomtestadventurer.c.gcov'
+
+File 'dominion.c'
+Lines executed:41.11% of 574
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:41.11% of 574
+Branches executed:47.04% of 423
+Taken at least once:42.08% of 423
+Calls executed:23.16% of 95
+Creating 'dominion.c.gcov'
+

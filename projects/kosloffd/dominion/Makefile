@@ -43,6 +43,21 @@ cardtest2.o: dominion.o rngs.o
 cardtest3.o: dominion.o rngs.o
 cardtest4.o: dominion.o rngs.o
 
+randomtestadventurer.o: dominion.o rngs.o
+randomtestcard.o: dominion.o rngs.o
+
+randomtestadventurer.out: randomtestadventurer.o dominion.o rngs.o
+	gcc -o rtadventurer randomtestadventurer.o dominion.o rngs.o $(CFLAGS)
+	./rtadventurer 100000 > randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+
+randomtestcard.out: randomtestcard.o dominion.o rngs.o
+	gcc -o rtcouncil randomtestcard.o dominion.o rngs.o $(CFLAGS)
+	./rtcouncil 100000 > randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+
 unittestresults.out: unittest1.o unittest2.o unittest3.o unittest4.o \
 					cardtest1.o cardtest2.o cardtest3.o cardtest4.o dominion.o rngs.o
 	> unittestresults.out
@@ -72,4 +87,4 @@ unittestresults.out: unittest1.o unittest2.o unittest3.o unittest4.o \
 
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so test* ctest* unittestresults.out
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so test* ctest* unittestresults.out randomtestadventurer.out randomtestcard.out
