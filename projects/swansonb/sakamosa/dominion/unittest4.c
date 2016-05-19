@@ -1,56 +1,138 @@
-#include "dominion.h" 
-#include "dominion_helpers.h"  
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
+#include "testUtilities.h"
+#include <string.h>
 
-//testing of fullDeckCount function
+int main(int argc, char **argv) {
 
-int main(){
-    printf("*********************BEGIN UNIT TESTS OF FULLDECKCOUNT()*********************\n\n");
-    int i;
-    struct gameState T;
-    T.deckCount[0] = 3;
-    T.discardCount[0] = 2;
-    T.deckCount[1] = 0;
-    T.discardCount[1] = 2;
-    
-    T.deck[0][0] = gardens;
-    T.deck[0][1] = gardens;
-    T.deck[0][2] = gardens;
-    
-    T.discard[0][0] = adventurer;
-    T.discard[0][1] = gardens;
-    
-    T.discard[1][0] = sea_hag;
-    T.discard[1][1] = gardens;
-    
-    //Test basic count
-    if(fullDeckCount(0, gardens, &T) != 4){
-        printf("FAIL incorrect count\n");
+    // Testing for gainCard function
+    printf("----------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
+    printf("Testing dominion.c int gainCard()\n");
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
+
+
+    char* toFlags[3] = {"discard","deck", "hand"};
+    int seed = 500;
+    int res;
+    int testsRun = 0;
+    int testsPassed = 0;
+    int numPlayers = 4;
+    struct gameState G, before;
+    int i, toFlag, card, ammountChange, newCard;
+    int curPlayer = 0;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+         sea_hag, tribute, smithy, council_room};
+
+    initializeGame(numPlayers, k, seed, &G);
+
+    // test gaining cards not in use in game
+    printf("Attempting to gain card not in use in current game\n");
+    copyGameState(&before, &G);
+    res = gainCard(outpost, &G, 1, curPlayer);
+    if (res == -1){
+        testsPassed += 1;
+        printf("gainCard returned -1 (PASSED)\n");
+    } else {
+        printf("gainCard did not return error (FAILED)\n");
     }
-    
-    //Test that there are no unexpected changes to state
-    if (T.deckCount[0] != 3 || T.discardCount[0] != 2){
-            printf("FAIL change to deckCount\n");
+    testsRun++;
+
+    if (equalGameStates(&G,&before)){
+        testsPassed += 1;
+        printf("Game state is unaffected after error return (PASSED)\n");
+    } else {
+        printf("Game state was affected (FAILED)\n");
     }
-    for(i = 0; i < T.deckCount[0]; i++){
-        if(T.deck[0][i] != gardens){
-            printf("FAIL altered state of deck\n");    
+    testsRun++;
+
+    //test gaining card that is depleted
+    G.supplyCount[adventurer] = 0;
+    copyGameState(&before, &G);
+    printf("Attempting to gain card with depleted supply\n");
+    res = gainCard(adventurer, &G, 1, curPlayer);
+    if (res == -1){
+        testsPassed += 1;
+        printf("gainCard returned -1 (PASSED)\n");
+    } else {
+        printf("gainCard did not return error (FAILED)\n");
+    }
+    testsRun++;
+
+    if (equalGameStates(&G,&before)){
+        testsPassed += 1;
+        printf("Game state is unaffected after error return (PASSED)\n");
+    } else {
+        printf("Game state was affected (FAILED)\n");
+    }
+    testsRun++;
+    G.supplyCount[adventurer] = 3;
+
+
+    //attempt drawing each available kingdomCard, to each different place
+    for(i=0; i<10;++i){
+        toFlag = i%3;
+        card = k[i];
+
+        if(G.supplyCount[card] == 0) G.supplyCount[card] = 1;
+        copyGameState(&before,&G);
+        gainCard(card, &G, toFlag, curPlayer);
+        printf("gaining card to players %s\n", toFlags[toFlag]);
+
+        printf("Card has been removed from supply ");
+        if (before.supplyCount[card] - G.supplyCount[card] == 1){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
         }
+        testsRun += 1;
+
+        if (toFlag == 0){
+            ammountChange = G.discardCount[curPlayer] - before.discardCount[curPlayer];
+            newCard = G.discard[curPlayer][before.discardCount[curPlayer]];
+        } else if (toFlag == 1){
+            ammountChange = G.deckCount[curPlayer] - before.deckCount[curPlayer];
+            newCard = G.deck[curPlayer][before.deckCount[curPlayer]];
+        } else {
+            ammountChange = G.handCount[curPlayer] - before.handCount[curPlayer];
+            newCard = G.hand[curPlayer][before.handCount[curPlayer]];
+        }
+
+        printf("Card has been moved to player's %s ", toFlags[toFlag]);
+        if (ammountChange == 1 && newCard == card){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        if (toFlag == 0){
+            G.discardCount[curPlayer]-=1;
+            G.discard[curPlayer][G.discardCount[curPlayer]] = before.discard[curPlayer][G.discardCount[curPlayer]];
+        } else if (toFlag == 1){
+            G.deckCount[curPlayer]-=1;
+            G.deck[curPlayer][G.deckCount[curPlayer]] = before.discard[curPlayer][G.deckCount[curPlayer]];
+        } else {
+            G.handCount[curPlayer]-=1;
+            G.hand[curPlayer][G.handCount[curPlayer]] = before.hand[curPlayer][G.handCount[curPlayer]];
+        }
+        G.supplyCount[card]+=1;
+
+        printf("The rest of the gameState was unaffected ");
+        if (equalGameStates(&before, &G) != 0){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
     }
-    
-    //Test basic count when deck is empty
-    if(fullDeckCount(1, gardens, &T) != 1){
-        printf("FAIL incorrect count when deck empty\n");
-    }
-    
-    //Test that there are no unexpected changes to state
-    if (T.deckCount[0] != 0 || T.discardCount[0] != 2){
-            printf("FAIL change to deckCount when deck empty\n");
-    }
-    
-    printf("**********************TESTS COMPLETE*************************\n\n");
+
+
+    printf("%d of %d tests passed\n",testsPassed, testsRun);
+
     return 0;
 }
-    
-    

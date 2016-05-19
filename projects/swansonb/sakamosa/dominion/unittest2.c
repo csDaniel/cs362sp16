@@ -1,81 +1,176 @@
-#include "dominion.h" 
-#include "dominion_helpers.h"  
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdlib.h>
+#include "testUtilities.h"
+#include <string.h>
 
-//testing of initializeGame function
+int main(int argc, char **argv) {
 
-int main(){
-    printf("*********************BEGIN UNIT TESTS OF INITIALIZEGAME()*********************\n\n");
-    
-    struct gameState T;
-   // int bad_k1[10] = {adventurer, bad, embargo, village, minion, mine, cutpurse,
-   //        sea_hag, tribute, smithy};
-    int bad_k2[10] = {adventurer, smithy, embargo, village, minion, mine, cutpurse,
-           sea_hag, tribute, smithy};
-    int good_k[10] = {gardens, adventurer, embargo, village, minion, mine, cutpurse,
-           sea_hag, tribute, smithy};
+    // Testing for drawCard function
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
+    printf("Testing dominion.c int drawCard()\n");
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
 
-    //REMOVED BECAUSE GETS CAUGHT AT COMPILE TIME
-    //Test against bad kingdom cards
-    //if(initializeGame(2, bad_k1, 5, &T) != -1)
-    //    {printf("FAIL Did not catch bad kingdom card\n");}
- 
-    //Test against repeat kingdomCards
-    if(initializeGame(2, bad_k2, 5, &T) != -1)
-        {printf("FAIL Did not catch repeat kingdom card\n");}
-    
-    //Test against bad number of players
-    if(initializeGame(-1, good_k, 5, &T) != -1)
-        {printf("FAIL Did not catch invalid number of players\n");}
-    
-    //Initialize good game
-    if(initializeGame(2, good_k, 5, &T) == -1)
-        {printf("FAIL Returned -1 on correct input\n");}
- 
- //check numplayers
- if(T.numPlayers != 2){
-     printf("FAIL number of players does not equal 2\n");
- }
+    const int TESTS_TO_RUN = 20;
 
-//check number of curse cards
- if(T.supplyCount[curse] != 10){
-     printf("FAIL number of curse cards is incorrect\n");
- }
+    int seed = 1000;
+    int cardToBeDrawn;
+    int *placeForNewCard;
+    int testsRun = 0;
+    int testsPassed = 0;
+    int numPlayers = 4;
+    struct gameState G, before, after;
+    int i;
+    int curPlayer = 0;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+                sea_hag, tribute, smithy, council_room};
 
- //check number of Victory cards
-  
-  if(T.supplyCount[estate] != 8 ||
-      T.supplyCount[duchy] != 8 ||
-      T.supplyCount[province] != 8)
-      {
-          printf("FAIL number of Victory cards is incorrect\n");
-      }
-    
-  //check number of Treasure cards
-  if(T.supplyCount[copper] != 46 ||
-  T.supplyCount[silver] != 40 ||
-  T.supplyCount[gold] != 30){
-      printf("FAIL number of Treasure cards is incorrect\n");
-  }
+    initializeGame(numPlayers, k, seed, &G);
+    G.deckCount[curPlayer] = 0;
+    G.discardCount[curPlayer] = 0;
+    copyGameState(&before, &G);
 
-  //check number of Kingdom cards
-  if(T.supplyCount[gardens] != 8){
-      printf("FAIL incorrect Victory card settings\n");
-  }
-  if(T.supplyCount[great_hall] != -1){
-      printf("FAIL did not set unused card to -1\n");
-  }
-  if(T.supplyCount[adventurer] != 10 ||
-  T.supplyCount[sea_hag] != 10){
-      printf("FAIL did not correctly set supply counts\n");
-  }
+    printf("drawing from empty deck and empty discard\n");
+    int res = drawCard(curPlayer, &G);
+    printf("function returns error ");
+    if (res == -1){
+       testsPassed++;
+       printf("(PASSED) \n");
+    } else {
+       printf("(FAILED) \n");
+    }
+    testsRun += 1;
 
-  //check each player has correct number of cards in deck
-  if(T.deckCount[0] != 10 || T.deckCount[1] != 10){
-      printf("FAIL incorrect number of cards in deck\n");
-  }
-  printf("**********************TESTS COMPLETE*************************\n\n");
-  
-  return 0;
+    printf("Game State Unaffected ");
+    if (equalGameStates(&before, &G)){
+       testsPassed++;
+       printf("(PASSED) \n");
+    } else {
+       printf("(FAILED) \n");
+    }
+    testsRun += 1;
+
+    //testing empty deck branch
+    initializeGame(numPlayers, k, seed, &G);
+
+    for (curPlayer=0; curPlayer < numPlayers; ++curPlayer){
+        //empty player deck to discard
+        while(G.deckCount[curPlayer]){
+            G.discard[curPlayer][G.discardCount[curPlayer]] = G.deck[curPlayer][G.deckCount[curPlayer]-1];
+            G.discardCount[curPlayer]++;
+            G.deckCount[curPlayer]--;
+        }
+    }
+
+    copyGameState(&before,&G);
+
+    for (curPlayer=0; curPlayer < numPlayers; ++curPlayer){
+        //draw from empty deck
+        printf("drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it\n");
+        drawCard(curPlayer, &G);
+
+        printf("Discard deck is shuffled and moved to player deck ");
+        if (G.deckCount[curPlayer] == before.discardCount[curPlayer] - 1
+                && G.discardCount[curPlayer] == 0){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("Player has one new card in hand ");
+        if (G.handCount[curPlayer] == before.handCount[curPlayer] + 1 ){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("deck and new card in had are composed of the same cards that were in discard pile before reshuffle ");
+        G.deck[curPlayer][G.deckCount[curPlayer]] = G.hand[curPlayer][G.handCount[curPlayer]-1];
+        G.deckCount[curPlayer]++;
+        if (cardArraysAreEqual(before.discard[curPlayer], before.discardCount[curPlayer],
+                G.deck[curPlayer], G.deckCount[curPlayer])){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        //rollback intentional changes to game state and check for any side-effects
+        G.deckCount[curPlayer] = before.deckCount[curPlayer];
+        G.handCount[curPlayer] = before.handCount[curPlayer];
+        G.discardCount[curPlayer] = before.discardCount[curPlayer];
+        cpyDeck(G.hand[curPlayer], before.hand[curPlayer], MAX_HAND);
+        cpyDeck(G.discard[curPlayer], before.discard[curPlayer], MAX_DECK);
+        cpyDeck(G.deck[curPlayer], before.deck[curPlayer], MAX_DECK);
+        printf("The rest of the gameState was unaffected ");
+        if (equalGameStates(&before, &G)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+    }
+
+    //test under draw from deck branch
+    initializeGame(numPlayers,k,seed,&G);
+
+    for (i=0; i<TESTS_TO_RUN; ++i){
+        curPlayer = i%numPlayers;
+
+        copyGameState(&before,&G);
+        cardToBeDrawn = G.deck[curPlayer][G.deckCount[curPlayer]-1];
+        placeForNewCard = G.hand[curPlayer] + G.handCount[curPlayer];
+
+        drawCard(curPlayer,&G);
+        copyGameState(&after,&G);
+
+        printf("Card from top of players deck was placed in players hand ");
+        if (*placeForNewCard == cardToBeDrawn){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("player hand count increased and deck count decreased ");
+        if (G.handCount[curPlayer] == before.handCount[curPlayer] + 1
+            && G.deckCount[curPlayer] == before.deckCount[curPlayer] - 1){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+
+        //rollback intentional changes to game state and check for any side-effects
+        G.deckCount[curPlayer] = before.deckCount[curPlayer];
+        G.handCount[curPlayer] = before.handCount[curPlayer];
+        cpyDeck(G.hand[curPlayer], before.hand[curPlayer], MAX_HAND);
+        cpyDeck(G.deck[curPlayer], before.deck[curPlayer], MAX_DECK);
+        printf("The rest of the gameState was unaffected ");
+        if (equalGameStates(&before, &G)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        copyGameState(&G,&after);
+    }
+
+
+    printf("%d of %d tests passed\n",testsPassed, testsRun);
+
+    return 0;
 }

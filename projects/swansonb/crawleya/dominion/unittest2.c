@@ -1,184 +1,176 @@
-/* -----------------------------------------------------------------------
- * Alisha Crawley-Davis
- * CS 362 Assn 3
- * 4/24/2016
- * unittest2.c
- * Test of getCost() function of dominion.c
- * Based on template provided in class for writing unit tests for
- * dominion-base
- *
- * Include the following lines in makefile:
- *
- * unittest2: unittest2.c dominion.o rngs.o
- *     gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
- * -----------------------------------------------------------------------
- */
-
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
+#include <stdlib.h>
+#include "testUtilities.h"
+#include <string.h>
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
+int main(int argc, char **argv) {
 
-// set Max number of unique cards that have costs associtaed with them
-#define MAX_CARDS 27
+    // Testing for drawCard function
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
+    printf("Testing dominion.c int drawCard()\n");
+    printf("--------------------------------------------------------------\n");
+    printf("--------------------------------------------------------------\n");
 
-//Recall CARD is an enum with curse=0, estate=1, duchy, province, copper, silver, gold,
-//adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall,
-//minion, steward, tribute, ambassador, cutpurse, embargo, outpost, salvager, sea_hag,
-//treasure_map
-//NOTE if any cards are added or removed, or the order changed, this unit test will need to be updated
+    const int TESTS_TO_RUN = 20;
 
-int main() {
-    //Set up the game
-    int i;
     int seed = 1000;
-    int numPlayer = 2;
-    int r;
-    int k[10] = {treasure_map, salvager, embargo, ambassador, steward,
-                great_hall, village, remodel, mine, feast};
-    struct gameState G;
-    memset(&G, 23, sizeof(struct gameState));   // clear the game state
-    r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-    assert (r == 0); //Make sure game is initialized correctly
-    
-    //Test getCost()
-    //Input of tested function: card
-    //Return of tested function: cost of card
+    int cardToBeDrawn;
+    int *placeForNewCard;
+    int testsRun = 0;
     int testsPassed = 0;
-    int testsCompleted = 0;
+    int numPlayers = 4;
+    struct gameState G, before, after;
+    int i;
+    int curPlayer = 0;
+    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+                sea_hag, tribute, smithy, council_room};
 
-   //The expected cost of each card, numbers from Dominion documentation
-    int realCost[MAX_CARDS] = {0, 2, 5, 8, 0, 3, 6, 6, 5, 4, 4, 5, 4, 4, 3, 4, 3, 5, 3, 5, 3, 4, 2, 5, 4, 4, 4};
+    initializeGame(numPlayers, k, seed, &G);
+    G.deckCount[curPlayer] = 0;
+    G.discardCount[curPlayer] = 0;
+    copyGameState(&before, &G);
 
-    printf("----------TESTING getCost() FUNCTION----------:\n");
-
-   for (i = -1; i < MAX_CARDS+1; i++)
-    {
-        testsCompleted++;
-        switch (i)
-        {
-            case curse:
-                printf("Testing curse card:\t\t ");
-                break;
-            case estate:
-                printf("Testing estate card:\t\t ");
-                break;
-            case duchy:
-                printf("Testing duchy card:\t\t ");
-                break;
-            case province:
-                printf("Testing province card:\t\t ");
-                break;
-            case copper:
-                printf("Testing copper card:\t\t ");
-                break;
-            case silver:
-                printf("Testing silver card:\t\t ");
-                break;
-            case gold:
-                printf("Testing gold card:\t\t ");
-                break;
-            case adventurer:
-                printf("Testing adventurer card:\t ");
-                break;
-            case council_room:
-                printf("Testing council room card:\t ");
-                break;
-            case feast:
-                printf("Testing feast card:\t\t ");
-                break;
-            case gardens:
-                printf("Testing gardens card:\t\t ");
-                break;
-            case mine:
-                printf("Testing mine card:\t\t ");
-                break;
-            case remodel:
-                printf("Testing remodel card:\t\t ");
-                break;
-            case smithy:
-                printf("Testing smithy card:\t\t ");
-                break;
-            case village:
-                printf("Testing village card:\t\t ");
-                break;
-            case baron:
-                printf("Testing baron card:\t\t ");
-                break;
-            case great_hall:
-                printf("Testing great hall card:\t ");
-                break;
-            case minion:
-                printf("Testing minion card:\t\t ");
-                break;
-            case steward:
-                printf("Testing steward card:\t\t ");
-                break;
-            case tribute:
-                printf("Testing tribute card:\t\t ");
-                break;
-            case ambassador:
-                printf("Testing ambassador card:\t ");
-                break;
-            case cutpurse:
-                printf("Testing cutpurse card:\t\t ");
-                break;
-            case embargo:
-                printf("Testing embargo card:\t\t ");
-                break;
-            case outpost:
-                printf("Testing outpost card:\t\t ");
-                break;
-            case salvager:
-                printf("Testing salvager card:\t\t ");
-                break;
-            case sea_hag:
-                printf("Testing sea hag card:\t\t ");
-                break;
-            case treasure_map:
-                printf("Testing treasure map card:\t ");
-                break;
-            case -1:
-                printf("Testing illegal low value:\t ");
-                break;
-            case MAX_CARDS:
-                printf("Testing illegal high value:\t ");
-                break;
-        }
-        if (i > -1 && i < MAX_CARDS)
-        {
-            if (getCost(i) == realCost[i])
-            {
-                printf("PASS: ");
-                testsPassed++;
-            }
-            else
-                printf("FAIL: ");
-            printf("Expected %d, got %d\n", realCost[i], getCost(i));
-        }
-        else
-        {
-            if (getCost(i) == -1)
-            {
-                printf("PASS: ");
-                testsPassed++;
-            }
-            else
-                printf("FAIL: ");
-            printf("Expected %d, got %d\n", -1, getCost(i));
-        }
-        //Make sure game state did not change
-            
+    printf("drawing from empty deck and empty discard\n");
+    int res = drawCard(curPlayer, &G);
+    printf("function returns error ");
+    if (res == -1){
+       testsPassed++;
+       printf("(PASSED) \n");
+    } else {
+       printf("(FAILED) \n");
     }
-    if (testsPassed == testsCompleted)
-        printf("All tests passed!\n");
-    else
-        printf("%d out of %d tests passed.\n", testsPassed, testsCompleted);
-    printf("----------FINISHED TESTING getCost() FUNCTION----------:\n\n");
+    testsRun += 1;
+
+    printf("Game State Unaffected ");
+    if (equalGameStates(&before, &G)){
+       testsPassed++;
+       printf("(PASSED) \n");
+    } else {
+       printf("(FAILED) \n");
+    }
+    testsRun += 1;
+
+    //testing empty deck branch
+    initializeGame(numPlayers, k, seed, &G);
+
+    for (curPlayer=0; curPlayer < numPlayers; ++curPlayer){
+        //empty player deck to discard
+        while(G.deckCount[curPlayer]){
+            G.discard[curPlayer][G.discardCount[curPlayer]] = G.deck[curPlayer][G.deckCount[curPlayer]-1];
+            G.discardCount[curPlayer]++;
+            G.deckCount[curPlayer]--;
+        }
+    }
+
+    copyGameState(&before,&G);
+
+    for (curPlayer=0; curPlayer < numPlayers; ++curPlayer){
+        //draw from empty deck
+        printf("drawing from empty deck, expecting entire discard pile to be moved to deck and card drawn from it\n");
+        drawCard(curPlayer, &G);
+
+        printf("Discard deck is shuffled and moved to player deck ");
+        if (G.deckCount[curPlayer] == before.discardCount[curPlayer] - 1
+                && G.discardCount[curPlayer] == 0){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("Player has one new card in hand ");
+        if (G.handCount[curPlayer] == before.handCount[curPlayer] + 1 ){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("deck and new card in had are composed of the same cards that were in discard pile before reshuffle ");
+        G.deck[curPlayer][G.deckCount[curPlayer]] = G.hand[curPlayer][G.handCount[curPlayer]-1];
+        G.deckCount[curPlayer]++;
+        if (cardArraysAreEqual(before.discard[curPlayer], before.discardCount[curPlayer],
+                G.deck[curPlayer], G.deckCount[curPlayer])){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        //rollback intentional changes to game state and check for any side-effects
+        G.deckCount[curPlayer] = before.deckCount[curPlayer];
+        G.handCount[curPlayer] = before.handCount[curPlayer];
+        G.discardCount[curPlayer] = before.discardCount[curPlayer];
+        cpyDeck(G.hand[curPlayer], before.hand[curPlayer], MAX_HAND);
+        cpyDeck(G.discard[curPlayer], before.discard[curPlayer], MAX_DECK);
+        cpyDeck(G.deck[curPlayer], before.deck[curPlayer], MAX_DECK);
+        printf("The rest of the gameState was unaffected ");
+        if (equalGameStates(&before, &G)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+    }
+
+    //test under draw from deck branch
+    initializeGame(numPlayers,k,seed,&G);
+
+    for (i=0; i<TESTS_TO_RUN; ++i){
+        curPlayer = i%numPlayers;
+
+        copyGameState(&before,&G);
+        cardToBeDrawn = G.deck[curPlayer][G.deckCount[curPlayer]-1];
+        placeForNewCard = G.hand[curPlayer] + G.handCount[curPlayer];
+
+        drawCard(curPlayer,&G);
+        copyGameState(&after,&G);
+
+        printf("Card from top of players deck was placed in players hand ");
+        if (*placeForNewCard == cardToBeDrawn){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        printf("player hand count increased and deck count decreased ");
+        if (G.handCount[curPlayer] == before.handCount[curPlayer] + 1
+            && G.deckCount[curPlayer] == before.deckCount[curPlayer] - 1){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+
+        //rollback intentional changes to game state and check for any side-effects
+        G.deckCount[curPlayer] = before.deckCount[curPlayer];
+        G.handCount[curPlayer] = before.handCount[curPlayer];
+        cpyDeck(G.hand[curPlayer], before.hand[curPlayer], MAX_HAND);
+        cpyDeck(G.deck[curPlayer], before.deck[curPlayer], MAX_DECK);
+        printf("The rest of the gameState was unaffected ");
+        if (equalGameStates(&before, &G)){
+            testsPassed++;
+            printf("(PASSED) \n");
+        } else {
+            printf("(FAILED) \n");
+        }
+        testsRun += 1;
+
+        copyGameState(&G,&after);
+    }
+
+
+    printf("%d of %d tests passed\n",testsPassed, testsRun);
+
     return 0;
 }
