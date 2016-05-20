@@ -1,7 +1,11 @@
 Summary:
 
 Unit tests, card tests, and random tests were ran against my teammates: Hong Lin and Jordan White's 
-implementation of Dominion.
+implementation of Dominion. I refactored cardtest3.c to adapt to the card selection "council_room."  
+Other cardtests were compatible with Hong's selection of modifications. Jordan's modification to
+Dominion were 4/5 cards similar to mine, therefore, I was able to trace bugs using the unit test,
+card tests, and random tests that I've developed over the past weeks. The following are the four
+bugs I found in Hong and Jordan's implementation and they have been reported to them.
 
 
 Bug Reports:
