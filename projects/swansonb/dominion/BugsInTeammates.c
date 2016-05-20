@@ -34,9 +34,25 @@
 
  Bugs in sakamosa's implementations:
 
- I found 2 bugs in playAdventurer
+ I found 3 bugs in playAdventurer
+
+ The first bug was that instead of the two discovered coin cards being added to the players hand they were added to
+ the discard pile for that player. with no change to the players hand.
+ The tests that check that two coin cards were added to the players hand and the test that checked if the other drawn
+ cards were added to the players discard pile both failed in every test
+ Looking at the source the error seems to be code that used to be in an else statement for placing the drawn card in a
+ temp pile to be discarded instead was inside the if statement causing only the coin cards to be placed in the discard
+ and the other cards to be lost from the game state
+
  The other bug was discovered in the random tests, that uncovered in my own implementation that the function would
- infinitely loop if there were 0 treasure cards available in the
+ infinitely loop if there were 0 treasure cards available in the players draw and discard pile combined,  but not if
+ there were at least one.  In sakamosa's implementation the function also loops infinitely on anything less than 2 as my
+ running my random tests on her implementation uncovered.
+
+ The final bug is one that was present in the original implementation and is still present in this implementation and
+ that is that the played adventurer card is not discarded.  This was discovered by examining the game state on function
+ enter and exit in GDB and also highlighted by my IDE providing a warning that the variable representing the hand
+ position of the card being played (handPos) was not used in this function.
 
 
  Bugs filed with teammates
@@ -246,6 +262,56 @@ Other Information
 -----------------
 
 
+
+==============================
+Teammate: sakamosa
+
+Bug #5
+Title:
+
+Class:
+
+Date: 5/19/2016
+Reported By: Brandon Swanson
+Email: swansonb@oregonstate.edu
+
+Product: Dominion                   Version: ?
+Platform: Unix                      Version: Flip
+
+Is it reproducible: Yes
+
+Description
+===========
+
+
+Steps to Produce/Reproduce
+--------------------------
+1. Initialize a 2-player game.
+2.
+
+
+Expected Results
+----------------
+
+
+
+Actual Results
+--------------
+
+
+
+Workarounds
+-----------
+N/A
+
+
+Attachments
+-----------
+N/A
+
+
+Other Information
+-----------------
 
 
  */
