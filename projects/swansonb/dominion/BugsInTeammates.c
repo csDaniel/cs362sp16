@@ -22,7 +22,7 @@
  if statement was meant to exclude the current player from the draw 1 each loop but instead exclusively included the
  current player.
 
- I found a bugs in the doAdventurer function discovered by the failed tests:
+ I found a bug in the doAdventurer function discovered by the failed tests:
  Player's hand has 2 new coin cards (FAILED)
  Investigating further it turned out that in fact the hand did have two new coin cards but the tests failed because it
  depended on the played card also being discarded.  after using this test to find bugs I think it would be better if
@@ -61,9 +61,9 @@
 Teammate: crawleya
 
 Bug #1
-Title:
+Title: doCouncilRoom fails to draw correct number of cards
 
-Class:
+Class: Game Rules Broken
 
 Date: 5/19/2016
 Reported By: Brandon Swanson
@@ -76,20 +76,30 @@ Is it reproducible: Yes
 
 Description
 ===========
+When a player plays the council room, via the doCouncilRoom() function the player 1 to many cards afterwards and the other players have failed to draw any cards
 
 
 Steps to Produce/Reproduce
 --------------------------
-1. Initialize 2 player game
-2.
+1. Initialize 4 player game
+2. Output contents and size of all players hands
+3. call doCouncilRoom() with initialized game state and player 1
+4. Output and observe new size and contents of all players hands
 
 
 Expected Results
 ----------------
-
+councilRoom card is discarded
+current player has 1 more buy available
+current player has 4 new cards (hand size increased by 3) from their draw pile
+other players have 1 new card in their hands from their own decks
 
 Actual Results
 --------------
+councilRoom card is discarded (success)
+current player has 1 more buy available (success)
+current player has 5 new cards from their draw pile
+other players have not drawn a card
 
 
 Workarounds
@@ -104,7 +114,7 @@ N/A
 
 Other Information
 -----------------
-
+This problem seems to be related to the inverted conditional statement on line# 695
 
 
 
@@ -112,9 +122,127 @@ Other Information
 Teammate: crawleya
 
 Bug #2
-Title:
+Title: Adventurer card fails to discard played card
 
-Class:
+Class: Game Rules Broken
+
+Date: 5/19/2016
+Reported By: Brandon Swanson
+Email: swansonb@oregonstate.edu
+
+Product: Dominion                   Version: ?
+Platform: Unix                      Version: Flip
+
+Is it reproducible: Yes
+
+Description
+===========
+After the current player plays the adventurer card using the doAdventurer() function their hand
+is not changed but cards are removed from their draw/discard pile.
+
+
+Steps to Produce/Reproduce
+--------------------------
+1. Initialize 2 player game
+2. Output contents and size of all players hands
+3. call doAdventurer() with the gameState, and current player
+4. Output and observe new size and contents of all players hands
+
+
+Expected Results
+----------------
+players hand contains one less adventurer card
+the players hand has 2 new coin cards
+the total number of cards and contents of their hand/deck/discared/played card have remained the same
+
+
+Actual Results
+--------------
+players hand contains the same number of adventurer cards (failed)
+the players hand has 2 new coin cards
+the total number of cards and contents of their hand/deck/discared/played card have remained the same
+
+
+Workarounds
+-----------
+N/A
+
+
+Attachments
+-----------
+N/A
+
+
+Other Information
+-----------------
+
+
+
+==============================
+Teammate: sakamosa
+
+Bug #3
+Title: Adventurer card fails to place treasure cards in players hand
+
+Class: Game Rules Broken
+
+Date: 5/19/2016
+Reported By: Brandon Swanson
+Email: swansonb@oregonstate.edu
+
+Product: Dominion                   Version: ?
+Platform: Unix                      Version: Flip
+
+Is it reproducible: Yes
+
+Description
+===========
+After the current player plays the adventurer card using the playAdventurer() function their hand
+is not changed but cards are removed from their draw/discard pile.
+
+
+Steps to Produce/Reproduce
+--------------------------
+1. Initialize 2 player game
+2. Output contents and size of all players hands
+3. call playAdventurer() with the gameState, and current player
+4. Output and observe new size and contents of all players hands
+
+
+Expected Results
+----------------
+the players hand has 2 new coin cards
+the total number of cards and contents of their hand/deck/discared/played card have remained the same
+
+
+Actual Results
+--------------
+The players hand size has not increased
+the total number of cards in the players hand/deck/discared/played has decreased
+
+
+Workarounds
+-----------
+N/A
+
+
+Attachments
+-----------
+N/A
+
+
+Other Information
+-----------------
+Calling this function not only fails to draw 2 new coin cards for the player but permanantly removes cards from that players pool of cards
+
+
+==============================
+Teammate: sakamosa
+
+Bug #4
+Title: Infinite loop in adventurer function when player has less than 2 coin cards total in their deck/discard piles 
+
+Class: Causes Program to "freeze"
 
 Date: 5/19/2016
 Reported By: Brandon Swanson
@@ -132,110 +260,9 @@ Description
 Steps to Produce/Reproduce
 --------------------------
 1. Initialize 2 player game
-2.
-
-
-Expected Results
-----------------
-
-
-Actual Results
---------------
-
-
-Workarounds
------------
-N/A
-
-
-Attachments
------------
-N/A
-
-
-Other Information
------------------
-
-
-
-
-==============================
-Teammate: sakamosa
-
-Bug #3
-Title:
-
-Class:
-
-Date: 5/19/2016
-Reported By: Brandon Swanson
-Email: swansonb@oregonstate.edu
-
-Product: Dominion                   Version: ?
-Platform: Unix                      Version: Flip
-
-Is it reproducible: Yes
-
-Description
-===========
-
-
-Steps to Produce/Reproduce
---------------------------
-1. Initialize a 2-player game.
-2.
-
-
-Expected Results
-----------------
-
-
-
-Actual Results
---------------
-
-
-
-Workarounds
------------
-N/A
-
-
-Attachments
------------
-N/A
-
-
-Other Information
------------------
-
-
-
-==============================
-Teammate: sakamosa
-
-Bug #4
-Title:
-
-Class:
-
-Date: 5/19/2016
-Reported By: Brandon Swanson
-Email: swansonb@oregonstate.edu
-
-Product: Dominion                   Version: ?
-Platform: Unix                      Version: Flip
-
-Is it reproducible: Yes
-
-Description
-===========
-
-
-Steps to Produce/Reproduce
---------------------------
-1. Initialize a 2-player game.
-2.
+2. Output contents and size of all players hands
+3. call playAdventurer() with the gameState, and current player
+4. Output and observe new size and contents of all players hands
 
 
 Expected Results
@@ -267,9 +294,9 @@ Other Information
 Teammate: sakamosa
 
 Bug #5
-Title:
+Title: Adventurer card fails to discard played card
 
-Class:
+Class: Game Rules Broken
 
 Date: 5/19/2016
 Reported By: Brandon Swanson
@@ -282,22 +309,29 @@ Is it reproducible: Yes
 
 Description
 ===========
+After the current player plays the adventurer card using the doAdventurer() function their hand
+is not changed but cards are removed from their draw/discard pile.
 
 
 Steps to Produce/Reproduce
 --------------------------
-1. Initialize a 2-player game.
-2.
+1. Initialize 2 player game
+2. Output contents and size of all players hands
+3. call doAdventurer() with the gameState, and current player
+4. Output and observe new size and contents of all players hands
 
 
 Expected Results
 ----------------
-
+players hand contains one less adventurer card
+the players hand has 2 new coin cards
+the total number of cards and contents of their hand/deck/discared/played card have remained the same
 
 
 Actual Results
 --------------
-
+players hand contains the same number of adventurer cards (failed)
+(other eroneous behavior noted on bug #3)
 
 
 Workarounds
