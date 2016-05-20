@@ -1,79 +1,131 @@
-/* -----------------------------------------------------------------------
-*Name: Suyana Lozada 
-*Unit Test # 3 
-*scoreFor() 
-*Reference:testUpdateCoins.c  
-*Test description:
-*Ensure the score for handCount, discardCount, and deck hands is accurrate 
-* -----------------------------------------------------------------------
- */
+//Shawn Seibert
+//Unit test 3
+//discardCard()
+//gcc unittest3.c dominion.c rngs.c -o unittest3 -lm
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
 #include "rngs.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
-int main() {
-    int i;
-    int seed = 1000;
-    int numPlayer = 2;
-    int maxBonus = 5;
-    int p, r;
-    int bonus;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState G;
-	int expected=24;
-	int MAX_COUNT=5;   
-	int deckCount=5,handCount=5,discardCount=5;	
+
+int main()
+{
+
+int handPos = 9;
+int currentPlayer = 1;
+struct gameState state, testState; 
+int trashFlag;
+int seed = 100;
+int numPlayers = 2;
+ testState.playedCardCount = 10;
+int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+			smithy, council_room};
+
+printf("-----------------Unit Test 3-1 ----------------------\n");	
+printf("--------------- discardCard() ----------------------\n");
+printf("Test 1: Set players hand count to 10 cards and remove one\n");
+memcpy(&testState, &state, sizeof(struct gameState));
+initializeGame(2, k, seed, &testState);
+testState.handCount[currentPlayer] = 10;
 	
-    printf ("Unit Test #3 \n");
-    printf ("TESTING scorFor():\n");
-    for (p = 0; p < numPlayer; p++)
+  //if card is not trashed, added to Played pile 
+  if (trashFlag < 1)
     {
-     	printf("Test scoreFor player %d.\n", p );
-    
-        memset(&G, 23, sizeof(struct gameState));   // clear the game state
-        r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-        G.handCount[p] = handCount;                 
-        G.deckCount[p] = deckCount;                
-        G.discardCount[p] = discardCount;              
-		//Set cards to test deck,hand,and discard
-		//Initialize test hand,discard, and deck cards. 	
-		G.hand[p][0]=curse;
-		G.hand[p][1]=estate;
-		G.hand[p][2]=curse;
-		G.hand[p][3]=province;
-		G.hand[p][4]=great_hall;
-		G.hand[p][5]=gardens;
-	    
-		G.discard[p][0]=curse;
-		G.discard[p][1]=estate;
-		G.discard[p][2]=estate;
-		G.discard[p][3]=province;
-		G.discard[p][4]=great_hall;
-		G.discard[p][5]=gardens;
+      //add card to played pile
+      testState.playedCards[testState.playedCardCount] = testState.hand[currentPlayer][handPos]; 
+      testState.playedCardCount++;
+    }
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer]);
+  //set played card to -1
+  testState.hand[currentPlayer][handPos] = -1;
 
-		G.deck[p][0]=curse;
-		G.deck[p][1]=estate;
-		G.deck[p][2]=duchy;
-		G.deck[p][3]=province;
-		G.deck[p][4]=great_hall;
-		G.deck[p][5]=duchy;
-		if(scoreFor(p,&G)==expected)
-		{
-			printf("PASS:test = %d, expected = %d\n", scoreFor(p,&G),expected);
+  //remove card from player's hand
+  if ( handPos == (testState.handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+    {
+      //reduce number of cards in hand
+      printf("Remove 1 card.\n");
+	  testState.handCount[currentPlayer]--;
+    }
+  else if ( testState.handCount[currentPlayer] == 1 ) //only one card in hand
+    {
+      //reduce number of cards in hand
+	  printf("Remove last card.\n");
+      testState.handCount[currentPlayer]--;
+    }
+  else 	
+    {
+      //replace discarded card with last card in hand
+      testState.hand[currentPlayer][handPos] = testState.hand[currentPlayer][ (testState.handCount[currentPlayer] - 1)];
+      //set last card to -1
+      testState.hand[currentPlayer][testState.handCount[currentPlayer] - 1] = -1;
+      //reduce number of cards in hand
+      testState.handCount[currentPlayer]--;
+    }
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer]);
+	
+	if (testState.handCount[currentPlayer] == 9)
+	{
+		printf("Test 1: Passed.\n");
+	}
+	else
+	{
+		printf("Test 1: Failed.\n");
+	}
 
-		}
-		else
-		{
-			printf("FAIL:test = %d, expected = %d\n", scoreFor(p,&G),expected);
+printf("-----------------Unit Test 3-2 ----------------------\n");	
+printf("--------------- discardCard() ----------------------\n");
+printf("Test 2: Set players hand count to 1 cards and remove one\n");	
+memcpy(&testState, &state, sizeof(struct gameState));
+initializeGame(2, k, seed, &testState);
+testState.handCount[currentPlayer] = 1;
+	
+  //if card is not trashed, added to Played pile 
+  if (trashFlag < 1)
+    {
+      //add card to played pile
+      testState.playedCards[testState.playedCardCount] = testState.hand[currentPlayer][handPos]; 
+      testState.playedCardCount++;
+    }
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer]);
+  //set played card to -1
+  testState.hand[currentPlayer][handPos] = -1;
 
-		}
-   	}
+  //remove card from player's hand
+  if ( handPos == (testState.handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+    {
+      //reduce number of cards in hand
+        printf("Remove 1 card.\n");
+	  testState.handCount[currentPlayer]--;
+    }
+  else if ( testState.handCount[currentPlayer] == 1 ) //only one card in hand
+    {
+      //reduce number of cards in hand
+       printf("Remove last card.\n");
+	  testState.handCount[currentPlayer]--;
+    }
+  else 	
+    {
+      //replace discarded card with last card in hand
+      testState.hand[currentPlayer][handPos] = testState.hand[currentPlayer][ (testState.handCount[currentPlayer] - 1)];
+      //set last card to -1
+      testState.hand[currentPlayer][testState.handCount[currentPlayer] - 1] = -1;
+      //reduce number of cards in hand
+      testState.handCount[currentPlayer]--;
+    }
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer]);
+	
+	if (testState.handCount[currentPlayer] == 0)
+	{
+		printf("Test 2: Passed.\n");
+	}
+	else
+	{
+		printf("Test 2: Failed.\n");
+	}
 
-    printf("End Unit Test #3\n");
 
-    return 0;
+  return 0;
 }

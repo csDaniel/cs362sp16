@@ -1,0 +1,90 @@
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:#define DEBUG 0
+        -:    9:#define NOISY_TEST 1
+        -:   10:
+function checkSupplyCount called 2000 returned 100% blocks executed 60%
+        -:   11:int checkSupplyCount(int p, struct gameState *post, int handCount) {
+        -:   12:    struct gameState pre;
+     2000:   13:    memcpy (&pre, post, sizeof(struct gameState));
+        -:   14:    
+     2000:   15:    int backupSupply = pre.supplyCount[1];
+        -:   16:    
+     4000:   17:    assert(supplyCount(1, &pre) == backupSupply);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   18:      
+     4000:   19:    assert(memcmp(&pre, post, sizeof(struct gameState)) == 0);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   20:    
+        -:   21:    
+     2000:   22:}
+        -:   23:
+function main called 1 returned 0% blocks executed 81%
+        -:   24:int main () {
+        -:   25:    
+        -:   26:    int i, n, r, p, deckCount, discardCount, handCount;
+        -:   27:    
+        1:   28:    int k[10] = {adventurer, council_room, feast, gardens, mine,
+        -:   29:	       remodel, smithy, village, baron, great_hall};
+        -:   30:    
+        -:   31:    struct gameState G;
+        -:   32:    
+        1:   33:    printf ("Testing supplyCount.\n");
+        -:   34:    
+        1:   35:    printf ("RANDOM TESTS.\n");
+        -:   36:    
+        1:   37:    SelectStream(2);
+        1:   38:    PutSeed(3);
+        -:   39:    
+     4002:   40:    for (n = 0; n < 2000; n++) {
+branch  0 taken 99%
+branch  1 taken 1%
+105204000:   41:        for (i = 0; i < sizeof(struct gameState); i++) {
+branch  0 taken 99%
+branch  1 taken 1%
+ 52600000:   42:            ((char*)&G)[i] = floor(Random() * 256);
+ 52600000:   43:        }
+     2000:   44:        p = floor(Random() * 2);
+     2000:   45:        G.deckCount[p] = floor(Random() * MAX_DECK);
+     2000:   46:        G.discardCount[p] = floor(Random() * MAX_DECK);
+     2000:   47:        G.handCount[p] = floor(Random() * MAX_HAND);
+     2000:   48:        checkSupplyCount(p, &G, handCount);
+     2000:   49:    }
+        -:   50:    
+        1:   51:    printf ("ALL TESTS OK\n");
+        -:   52:    
+        1:   53:    exit(0);
+        -:   54:    
+        -:   55:    printf ("SIMPLE FIXED TESTS.\n");
+        -:   56:    for (p = 0; p < 2; p++) {
+        -:   57:        for (deckCount = 0; deckCount < 5; deckCount++) {
+        -:   58:            for (discardCount = 0; discardCount < 5; discardCount++) {
+        -:   59:                for (handCount = 0; handCount < 5; handCount++) {
+        -:   60:                    memset(&G, 23, sizeof(struct gameState));
+        -:   61:                    r = initializeGame(2, k, 1, &G);
+        -:   62:                    G.deckCount[p] = deckCount;
+        -:   63:                    memset(G.deck[p], 0, sizeof(int) * deckCount);
+        -:   64:                    G.discardCount[p] = discardCount;
+        -:   65:                    memset(G.discard[p], 0, sizeof(int) * discardCount);
+        -:   66:                    G.handCount[p] = handCount;
+        -:   67:                    memset(G.hand[p], 0, sizeof(int) * handCount);
+        -:   68:                    checkSupplyCount(p, &G, handCount);
+        -:   69:                }
+        -:   70:            }
+        -:   71:        }
+        -:   72:    }
+        -:   73:    
+        -:   74:    return 0;
+    #####:   75:}

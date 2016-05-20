@@ -1,159 +1,134 @@
-//Ellard Gerritsen van der Hoop
-//CS362 Unit Test 2
-//
-//Testing updateCoins function from dominion_helper
-//
-//
-
-
+//Shawn Seibert
+//Unit test 2
+//scoreFor()
+// gcc unittest2.c dominion.c rngs.c -o unittest2 -lm
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
-#include <string.h>
-
-
-
-#define NOISY_TEST 1
+#include <stdlib.h>
 
 
 int main()
 {
-	int numPlayers = 2;
+	int supplyPos, i;
+	int score = 0;
 	struct gameState state, testState;
-	int seed = 1000;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, feast};
+	int toFlag;
+	int player;
+	int seed = 100;
+	int numPlayers = 2;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+				smithy, council_room};
 
-	int goldCards = 0;
-	int silverCards = 0;
-	int copperCards = 0;
-	int totalAmount = 0;
-	int bonus = 4;
-	int currentPlayer = 0;
-	int i = 0;
-	initializeGame(numPlayers, k , seed, &state);
-	memcpy(&testState, &state, sizeof (struct gameState));
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Unit Test 2- updateCoins Function\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
+	printf("-----------------Unit Test 2-1 ----------------------\n");	
+	printf("----------------- scoreFor() ----------------------\n");
+	printf("Test 1: Score From Hand with 10 estate cards\n");
 
+	memcpy(&testState, &state, sizeof(struct gameState));	 
 
-	printf("Testing updateCoins function to see if amount is updated properly\n");
-	updateCoins(currentPlayer, &state, bonus);
-	printf("updateCoins function called\n");
-	printf("Loop checking math of updateCoins\n");
-
-	//-----------------------------------Test 1------------------------------------/
-
-	//Essentially we do our own loop and compare it to the functions amount
-	for (i = 0; i < state.handCount[currentPlayer]; i++)
-	{
-		if (state.hand[currentPlayer][i] == gold)
+	testState.handCount[player] = 10;
+	  for (i = 0; i < testState.handCount[player]; i++)
+	  {
+		  testState.hand[player][i] = estate;
+	  }
+	//score from hand
+	for (i = 0; i < testState.handCount[player]; i++)
 		{
-			
-			goldCards += 1;
+		  if (testState.hand[player][i] == curse) { score = score - 1; };
+		  if (testState.hand[player][i] == estate) { score = score + 1; };
+		  if (testState.hand[player][i] == duchy) { score = score + 3; };
+		  if (testState.hand[player][i] == province) { score = score + 6; };
+		  if (testState.hand[player][i] == great_hall) { score = score + 1; };
+		  if (testState.hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, &testState) / 10 ); };
 		}
+
+		 printf("SCORE: %d\n", score);
+		 printf("Calculated Score: 10\n");
+		 if (score == 10)
+		 {
+			 printf("Test 1: Passed.\n");
+		 }
+		 else
+		 {
+			  printf("Test 1: Failed.\n");
+		 }
+		 score = 0;
+		 
+		 
+	printf("-----------------Unit Test 2-2 ----------------------\n");	
+	printf("----------------- scoreFor() ----------------------\n");
+	printf("Test 2: Score From Discard with 10 province cards\n");
+
+	memcpy(&testState, &state, sizeof(struct gameState));	 
+
+	testState.discardCount[player] = 10;
 	
-		if (state.hand[currentPlayer][i] == silver)
+	  for (i = 0; i < testState.discardCount[player]; i++)
+	  {
+		  testState.discard[player][i] = province;
+	  }
+	  //score from discard
+	  for (i = 0; i < testState.discardCount[player]; i++)
 		{
-		
-			silverCards += 1;
+		  if (testState.discard[player][i] == curse) { score = score - 1; };
+		  if (testState.discard[player][i] == estate) { score = score + 1; };
+		  if (testState.discard[player][i] == duchy) { score = score + 3; };
+		  if (testState.discard[player][i] == province) { score = score + 6; };
+		  if (testState.discard[player][i] == great_hall) { score = score + 1; };
+		  if (testState.discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, &testState) / 10 ); };
 		}
-
-		if (state.hand[currentPlayer][i] == copper)
-		{
-			copperCards += 1;
-		}
-		
-
-	}
-	printf("Total Amount is being calculated\n");
-	totalAmount = (copperCards * 1) + (silverCards * 2) + (goldCards * 3) + bonus;
+  printf("Test SCORE: %d\n", score);
+  printf("Calculated Score: 60\n");
+		 if (score == 60)
+		 {
+			 printf("Test 2: Passed.\n");
+		 }
+		 else
+		 {
+			  printf("Test 2: Failed.\n");
+		 }
+		 score = 0;
+		 
 	
-	if (NOISY_TEST == 1){
-		printf("Amount of coins: %d     Expected: %d\n", state.coins, totalAmount);
-	}
+	printf("-----------------Unit Test 2-3 ----------------------\n");	
+	printf("----------------- scoreFor() ----------------------\n");
+	printf("Test 3: Score From Deck with 10 Great Hall cards\n");
 
-	if (totalAmount != state.coins)
-	{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 1  - FAIL\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		
-	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 1  - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
+	memcpy(&testState, &state, sizeof(struct gameState));	 
 
-	///-------------------------------Test 2-------------------------------------------------/
-	//In this test we put cards that we specify in the hand of P1
-
-	printf("\n\n      Test 2: Lets add our own treasure cards in \n");
-	testState.hand[currentPlayer][0] = copper; 
-	testState.hand[currentPlayer][1] = silver;
-	testState.hand[currentPlayer][2] = gold;
-	testState.hand[currentPlayer][3] = silver; 
-	testState.hand[currentPlayer][4] = gold;
-
-	printf("Testing updateCoins function to see if amount is updated properly\n");
-	updateCoins(currentPlayer, &testState, bonus);
-	printf("updateCoins function called\n");
-	printf("Loop checking math of updateCoins\n");
+	testState.discardCount[player] = 10;
 	
-	goldCards =0;
-	silverCards=0;
-	copperCards = 0;
-
-	//Essentially we do our own loop and compare it to the functions amount
-	for (i = 0; i < testState.handCount[currentPlayer]; i++)
-	{
-		if (testState.hand[currentPlayer][i] == gold)
-		{
-			
-			goldCards += 1;
-		}
-	
-		if (testState.hand[currentPlayer][i] == silver)
-		{
-		
-			silverCards += 1;
-		}
-
-		if (testState.hand[currentPlayer][i] == copper)
-		{
-			copperCards += 1;
-		}
-		
-
-	}
-	printf("Total Amount is being calculated\n");
-	totalAmount = (copperCards * 1) + (silverCards * 2) + (goldCards * 3) + bonus;
-	
-	if (NOISY_TEST == 1){
-		printf("Amount of coins: %d     Expected: %d\n", testState.coins, totalAmount);
-	}
-
-	if (totalAmount != testState.coins)
-	{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 2  - FAIL\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		
-	}
-	else{
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("updateCoins Test 2  - PASS\n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-
-
-
-
-
-
-	return 0;
+	  for (i = 0; i < testState.discardCount[player]; i++)
+	  {
+		  testState.deck[player][i] = great_hall;
+	  }	
+		 
+		 //score from deck
+  for (i = 0; i < testState.discardCount[player]; i++)
+    {
+      if (testState.deck[player][i] == curse) { score = score - 1; };
+      if (testState.deck[player][i] == estate) { score = score + 1; };
+      if (testState.deck[player][i] == duchy) { score = score + 3; };
+      if (testState.deck[player][i] == province) { score = score + 6; };
+      if (testState.deck[player][i] == great_hall) { score = score + 1; };
+      if (testState.deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, &state) / 10 ); };
+    }
+  printf("Test SCORE: %d\n", score);
+  printf("Calculated Score: 10\n");
+		 if (score == 10)
+		 {
+			 printf("Test 3: Passed.\n");
+		 }
+		 else
+		 {
+			  printf("Test 3: Failed.\n");
+		 }
+		 score = 0;
+		 
+		 
+		 
+		 
+  return 0;
 }
