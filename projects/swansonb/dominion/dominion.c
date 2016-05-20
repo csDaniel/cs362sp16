@@ -1227,7 +1227,7 @@ int playAdventurer(struct gameState *state, int handPos) {
     int temphand[MAX_HAND];
     int tempCount = 0;
 
-    while(drawCardsRemaining){
+    while(drawCardsRemaining && (state->deckCount[currentPlayer] + state->discardCount[currentPlayer])){
         if (!state->deckCount[currentPlayer]){//if the deck is empty we need to shuffle discard and add to deck
             shuffle(currentPlayer, state);
         }
@@ -1342,7 +1342,7 @@ int playFeast(struct gameState *state, int handPos, int choice1) {
 
     //Reset Hand
     for (i = 0; i <= state->handCount[currentPlayer]; i++){
-        state->hand[currentPlayer][i] = temphand[tempHandIndex];
+        state->hand[currentPlayer][i] = temphand[i];
     }
 
     //Trash Card

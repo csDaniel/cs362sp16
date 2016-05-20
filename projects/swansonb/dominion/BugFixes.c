@@ -117,9 +117,20 @@ total cards for player 1: 10
 
 
 
+ Fixing Bugs I Introduced
+ ------------------------------------------------------
 
-
-
+ I corrected the problem I spotted when originally implementing adventurer
+ where if the players deck and discard contained 0 coin cards it would loop
+ infinitely. I changed the loop conditional for drawing cards from
+ while(drawCardsRemaining)
+ to
+ while(drawCardsRemaining &&
+       (state->deckCount[currentPlayer] + state->discardCount[currentPlayer]))
+ The function will now stop iterating after the deck and discard pile have
+ been exhausted.  I adjusted my random tester for the the adventurer card to
+ include test cases with no coin cards in the players deck or discard to
+ confirm that the bug had been fixed.
 
 
  */
