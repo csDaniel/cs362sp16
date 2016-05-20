@@ -1243,7 +1243,6 @@ int playAdventurer(struct gameState *state) {
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
       drawntreasure++;
     else{
-      drawntreasure--;
       temphand[z]=cardDrawn;
       state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
       z++;
@@ -1262,7 +1261,7 @@ int playSmithy(struct gameState *state, int handPos) {
   //+3 Cards
   int currentPlayer = whoseTurn(state),
       i;
-  for (i = 0; i < 5; i++)
+  for (i = 0; i < 3; i++)
   {
     drawCard(currentPlayer, state);
   }
@@ -1279,7 +1278,7 @@ int playVillage(struct gameState *state, int handPos) {
   drawCard(currentPlayer, state);
   
   //+2 Actions
-  state->numActions = state->numActions + 1;
+  state->numActions = state->numActions + 2;
 
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
@@ -1301,7 +1300,7 @@ int playFeast(struct gameState *state, int choice1) {
   //Backup hand
 
   //Update Coins for Buy
-  // updateCoins(currentPlayer, state, 5);
+  updateCoins(currentPlayer, state, 5);
   x = 1;//Condition to loop on
   while( x == 1) {//Buy one card
     if (supplyCount(choice1, state) <= 0){
@@ -1359,7 +1358,7 @@ int playCouncil_Room(struct gameState *state, int handPos) {
   //Each other player draws a card
   for (i = 0; i < state->numPlayers; i++)
   {
-    if ( i != currentPlayer && currentPlayer != 0)
+    if ( i != currentPlayer)
       {
         drawCard(i, state);
       }
