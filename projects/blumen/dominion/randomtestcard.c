@@ -56,7 +56,7 @@ void randomtestcard() {
     int trialNumber;
     int seed = 0;
 
-    for (trialNumber = 0; trialNumber < 3; trialNumber++) {
+    for (trialNumber = 0; trialNumber < 100000; trialNumber++) {
 
         // Set & save random seed
         printf("----------------- Generating random input: %s trial number %d ----------------\n", TESTCARD, trialNumber);
