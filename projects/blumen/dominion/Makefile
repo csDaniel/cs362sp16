@@ -46,4 +46,4 @@ runtests: testSuite
 	gcov -b -c dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 	
-unittestresults.out: playdom player testSuite runtests
+unittestresults.out: playdom player testSuite runtests clean
