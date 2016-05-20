@@ -737,7 +737,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return playSmithy(state, handPos);
 		
     case village:
-      return playVillage(*state, handPos);
+      return playVillage(state, handPos);
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -1263,20 +1263,18 @@ int playSmithy(struct gameState *state, int handPos) {
 
     //+3 Cards
     int i;
-    for (i = 0; i <= CARDS_TO_DRAW; ++i)
+    for (i = 0; i < CARDS_TO_DRAW; ++i)
     {
         drawCard(currentPlayer, state);
     }
 
     //discard card from hand
-    discardCard(currentPlayer, handPos, state, 0);
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;
 
 }
 
-int playVillage(struct gameState stat, int handPos) {
-
-    struct gameState *state = &stat;
+int playVillage(struct gameState* state, int handPos) {
 
     int currentPlayer = whoseTurn(state);
 
