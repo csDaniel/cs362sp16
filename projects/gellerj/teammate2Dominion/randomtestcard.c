@@ -1,173 +1,237 @@
-/*
-Alex Samuel
-Assignment 4
-randomtestcard.c
-Random Tester for smithy card
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <assert.h>
+#include "testkit.h"
+
+int randrange(int low, int high) {
+    return rand() % (high - low + 1) + low;
+}
 
 int main() {
-    srand (time(NULL));
 
-    int choice1 = 0;
-    int choice2 = 0;
-    int choice3 = 0;
-    int i, j, m;
-    int newCards = 3;
-    int discarded = 1;
-    int minPlayers = 2;
-    int numPlayers = 0;
-    int PlayerID = 0;
-    int errorFlag1 = 0;
-    int errorFlag2 = 0;
-    int errorFlag3 = 0;
-    int counter = 0;
+    srand(time(NULL));
 
-	struct gameState G, testG;
+    struct gameState G1, G2;
+    int i = 0;
+    int j = 0;
+    int numPlayers;
+    int seed;
+    int player1 = 0;
+    int player2 = 1;
+    int bonus = 0;
+    int handPos = 0;
+    int c1 = 0, c2 = 0, c3 = 0;
+    int kingdomCards[10] = {
+            adventurer,
+            gardens,
+            embargo,
+            village,
+            minion,
+            mine,
+            cutpurse,
+            sea_hag,
+            tribute,
+            smithy
+    };
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
+    // loop control and pass/fail flags
+    int test = 1;
+    int passes = 0;
+    int failures = 0;
+    int localPass = 1;
+    int localFail = 0;
+    int deckCount = 1;
+    int handCount = 1;
+    int discardCount = 1;
+    int randomCard = 16;
 
-	for (i = minPlayers; i < MAX_PLAYERS + 1; i++) {
-            numPlayers = i;
+    // run 500 tests
+    for (test = 1; test <= 500; test++) {
 
-        for (j = 0; j < 1000000; j++) {
+        // if sub-tests fail, entire unit test fails
+        localPass = 1;
+        localFail = 0;
 
-            int seed = floor(Random() * 1000);
-            int handpos = floor(Random() * MAX_HAND);
-            int bonus = floor(Random() * 1000);
+        printf("------------------------\n");
+        printf("GREAT HALL: RUNNING RANDOM TEST CASE #%d...\n", test);
 
-            int seed1C = floor(Random() * 1000);
-            int seed2C = floor(Random() * 1000);
-            int seed3C = floor(Random() * 1000);
+        // use random configurations to initialize game
+        numPlayers = (rand() % (MAX_PLAYERS - 1)) + 2;
+        seed = (rand() % 50) + 1;
 
-            if (seed1C % 2 == 0) {
-                choice1 = 1;
-            }
+        // initialize a fresh game
+        bzero(&G1, sizeof(struct gameState));
+        initializeGame(numPlayers, kingdomCards, seed, &G1);
 
-            if (seed2C % 2 == 0) {
-                choice2 = 1;
-            }
+        // random number of game actions
+        G1.numActions = randrange(0, 1000);
 
-            if (seed3C % 2 == 0) {
-                choice3 = 1;
-            }
-
-            //Initializes game and copies game state to test case
-            initializeGame(numPlayers, k, seed, &G);
-            memcpy(&testG, &G, sizeof(struct gameState));
-
-            PlayerID = whoseTurn(&testG);
-
-            cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
-
-            //Random Test 1 - Testing smithy - +3 Cards Added to Player's Hand
-            //Test fails because of bug introduced in refactor.c where 4 cards are drawn instead of 3
-            if (testG.handCount[PlayerID] != (G.handCount[PlayerID] + newCards - discarded)) {
-                errorFlag1 = 1;
-            }
-
-            //Random Test 2 - Other Players Are Unaffected by Player 1 Playing Smithy
-            for (m = 1; m < numPlayers; m++) {
-
-                PlayerID = m;
-                int GDeckResults[27] = { 0 };
-                int testGDeckResults[27] = { 0 };
-                int GHandResults[27] = { 0 };
-                int testGHandResults[27] = { 0 };
-                int Deckdifference[27] = { 0 };
-                int Handdifference[27] = { 0 };
-                int cardVal;
-                int cardTotal;
-
-
-                for (i = 0; i < G.deckCount[PlayerID]; i++) {
-                    cardVal = G.deck[PlayerID][i];
-                    GDeckResults[cardVal]++;
+        // random hands, decks, and discard piles for each player
+        for (i = 0; i < numPlayers; i++) {
+            handCount = randrange(1, 15);
+            deckCount = randrange(0, 15);
+            discardCount = randrange(0, 15);
+            G1.handCount[i] = handCount;
+            G1.deckCount[i] = deckCount;
+            G1.discardCount[i] = discardCount;
+            for (j = 0; j < handCount; j++) {
+                // don't add any great hall cards to this hand
+                while (randomCard == 16) {
+                    randomCard = randrange(0, 26);
                 }
-
-                for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-                    cardVal = testG.deck[PlayerID][i];
-                    testGDeckResults[cardVal]++;
-                }
-
-                /*
-                for (i = 0; i < G.handCount[PlayerID]; i++) {
-                    cardVal = G.hand[PlayerID][i];
-                    GHandResults[cardVal]++;
-                }
-
-
-                for (i = 0; i < testG.handCount[PlayerID]; i++) {
-                    cardVal = testG.hand[PlayerID][i];
-                    testGHandResults[cardVal]++;
-                }
-                */
-
-
-                //no difference in hand totals because hands are only drawn at start if turn,
-                //see dominion.c, line 197
-
-                //Compares whether any change to Player 2 hand or deck
-                if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
-                    memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-                        //printf("\n\nRANDOM TEST 3 HAS PASSED\n\n");
-                }
-                else {
-                    errorFlag3 = 1;
-                }
-
-                memset(GDeckResults, 0, 27 * (sizeof GDeckResults[0]) );
-                memset(testGDeckResults, 0, 27 * (sizeof testGDeckResults[0]) );
-                memset(GHandResults, 0, 27 * (sizeof GHandResults[0]) );
-                memset(testGHandResults, 0, 27 * (sizeof testGHandResults[0]) );
-                memset(Deckdifference, 0, 27 * (sizeof Deckdifference[0]) );
-                memset(Handdifference, 0, 27 * (sizeof Handdifference[0]) );
-
+                G1.hand[i][j] = randrange(0, 26);
             }
-
-            memset(&G, 23, sizeof(struct gameState));
-            memset(&testG, 23, sizeof(struct gameState));
-
-            if(counter == 0) {
-                printf("RANDOM TESTING IN PROGRESS...");
+            randomCard = 16;
+            for (j = 0; j < deckCount; j++) {
+                while (randomCard == 16) {
+                    randomCard = randrange(0, 26);
+                }
+                G1.deck[i][j] = randrange(0, 26);
             }
-            else if(counter % 10000 == 0) {
-                printf(".");
+            randomCard = 16;
+            for (j = 0; j < discardCount; j++) {
+                while (randomCard == 16) {
+                    randomCard = randrange(0, 26);
+                }
+                G1.discard[i][j] = randrange(0, 26);
             }
+        }
 
-            counter++;
+        // insert a great gall card randomly into the player's deck
+        handPos = randrange(0, G1.handCount[player1] - 1);
+        G1.hand[player1][handPos] = great_hall;
+
+        printf("RANDOM CONFIG: PLAYERS: %d, SEED: %d, HANDPOS: %d\n\n", numPlayers, seed, handPos);
+
+        // make a copy of the state, play the card in the new state
+        // the two copies are used for state comparisons to determine pass/fail
+        memcpy(&G2, &G1, sizeof(struct gameState));
+        cardEffect(great_hall, c1, c2, c3, &G2, handPos, &bonus);
+
+        printf("Check that hand count is incremented by 0 (+1 new draw cards, -1 discard)...\n");
+        printf("Initial hand count was %d, new hand count is %d, expected %d...", G1.handCount[player1],
+               G2.handCount[player1], G1.handCount[player1]);
+        // make sure the new hand count is +0
+        if (G1.deckCount[player1] == 0 && G1.discardCount[player1] == 0) {
+            if (G2.handCount[player1] == G1.handCount[player1] - 1) {
+                printf("PASSED.\n");
+            } else {
+                printf("FAILED.\n");
+                localFail = 1;
+            }
+        } else {
+            if (G2.handCount[player1] == G1.handCount[player1]) {
+                printf("PASSED.\n");
+            } else {
+                printf("FAILED.\n");
+                localFail = 1;
+            }
+        }
+
+        printf("Check number of actions was incremented by 1...\n");
+        printf("Initial action count was %d, new action count is %d, expected %d...", G1.numActions,
+               G2.numActions, G1.numActions + 1);
+        if (G2.numActions == G1.numActions + 1) {
+            printf("PASSED.\n");
+        } else {
+            printf("FAILED.\n");
+            localFail = 1;
+        }
+
+
+        // ensure new cards came from player 1's deck or discard
+        printf("Check new card came from player 1's deck or discard...");
+        int newHandCard = G2.hand[player1][handPos];
+        if (G1.deckCount[player1] > 0) {
+            int oldDeckCard = G1.deck[player1][G1.deckCount[player1] - 1];
+            printf("\nNew deck card is %d, expected %d...", newHandCard, oldDeckCard);
+            if (newHandCard == oldDeckCard) {
+                printf("PASSED.\n");
+            } else {
+                printf("FAILED.\n");
+                localFail = 1;
+            }
+        } else {
+            int newDeckCount = G2.deckCount[player1];
+            int oldDiscardCount = G1.discardCount[player1];
+            printf("\nOld discard count was %d, new deck count is %d, expected %d...", oldDiscardCount, newDeckCount,
+                   oldDiscardCount -1);
+            if (oldDiscardCount == 0 && newDeckCount == 0) {
+                printf("PASSED.\n");
+            } else if (oldDiscardCount - 1 == newDeckCount) {
+                printf("PASSED.\n");
+            } else {
+                printf("FAILED.\n");
+                localFail = 1;
+            }
 
         }
 
-	}
+
+        // ensure great hall was discarded from hand
+        printf("Check great hall was discarded from player's hand...\n");
+        int supplyBefore = countHandSupply(&G1, player1, great_hall);
+        int supplyAfter = countHandSupply(&G2, player1, great_hall);
+        printf("Great Hall supply count was %d, new count is %d, expected <= %d...", supplyBefore, supplyAfter,
+               supplyBefore);
+        if (supplyAfter <= (supplyBefore)) {
+            printf("PASSED.\n");
+        } else {
+            printf("FAILED.\n");
+            localFail = 1;
+        }
+
+        // ensure other players' hands/decks were not modified
+        for (i = 1; i < numPlayers; i++) {
+            printf("Check player %d hand is untouched...", i + 1);
+            if (handIsUntouched(&G1, &G2, i) == 1) {
+                printf("PASSED.\n");
+            } else {
+                printf("FAILED.\n");
+                localFail = 1;
+            }
+            printf("Check player %d deck is untouched...", i + 1);
+            if (deckIsUntouched(&G1, &G2, i) == 1) {
+                printf("PASSED.\n");
+            } else {
+                printf("FAILED.\n");
+                localFail = 1;
+            }
+        }
+
+        // ensure kingdom pile was not modified
+        printf("Check kingdom pile is untouched...");
+        if (kingdomPileIsUntouched(&G1, &G2) == 1) {
+            printf("PASSED.\n");
+        } else {
+            printf("FAILED.\n");
+            localFail = 1;
+        }
 
 
-    printf("\n\nRANDOM TEST 1: Testing smithy - +3 Cards Added to Player's Hand\n");
-    if (errorFlag1 > 0) {
-        printf("RANDOM TEST 1 HAS FAILED\n\n");
+        // ensure victory pile was not modified
+        printf("Check victory pile is untouched...");
+        if (victoryPileIsUntouched(&G1, &G2) == 1) {
+            printf("PASSED.\n");
+        } else {
+            printf("FAILED.\n");
+            localFail = 1;
+        }
+
+
+        // if any of the sub-tests failed, mark this whole unit test as a failure
+        if (localFail == 1) {
+            failures++;
+        } else {
+            passes++;
+        }
+
     }
-    else {
-        printf("RANDOM TEST 1 HAS PASSED\n\n");
-    }
 
-    printf("RANDOM TEST 2: Testing smithy - Other Players Are Unaffected by Player 1 Playing Smithy\n");
-    if (errorFlag2 > 0) {
-        printf("RANDOM TEST 2 HAS FAILED\n\n");
-    }
-    else {
-        printf("RANDOM TEST 2 HAS PASSED\n\n");
-    }
-
-
+    printf("\n\nTESTS: %d\tPASSED: %d\tFAILED: %d\n\n", --test, passes, failures);
 
     return 0;
 }

@@ -1,234 +1,90 @@
-/*
-Alex Samuel
-Assignment 3
-unittest4.c
-Tests scoreFor() Function
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
-
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
+#include "rngs.h"
+#include "interface.h"
+#include "testkit.h"
 
 int main() {
-
+    struct gameState G1, G2;
+    int i = 0;
+    int tempDeck[MAX_DECK];
     int numPlayers = 2;
-    int PlayerID = 0;
-    int seed = 2;
-    int i;
-    int errorFlag = 0;
-	struct gameState G, testG;
+    int seed = 1;
+    int player1 = 0;
+    int player2 = 1;
+    int sameCardCount = 0;
+    int kingdomCards[10] = {
+            adventurer,
+            gardens,
+            embargo,
+            village,
+            minion,
+            mine,
+            cutpurse,
+            sea_hag,
+            tribute,
+            smithy
+    };
 
-	int manualScoreResult = 0;
-	int ScoreForResult = 0;
-    int cardScore;
-    int ScoreTotal;
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-    SelectStream(8);
-    PutSeed(9);
+    printf("Testing shuffle():\n");
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
+    // make a copy of the deck so we can test that it is shuffled
+    for (i = 0; i < G2.deckCount[0]; i++) {
+        tempDeck[i] = G2.deck[0][i];
+    }
 
-    printf("TEST 1: Testing scoreFor() - Normal Card Distribution\n");
+    printf("\nTest player 1's deck is shuffled...\n");
 
-    initializeGame(numPlayers, k, seed, &G);
-    memcpy(&testG, &G, sizeof(struct gameState));
+    printf("Player 1's deck before shuffle:\n");
+    printDeck(player1, &G2);
 
-    int totalCards = testG.handCount[PlayerID] + testG.deckCount[PlayerID] + testG.discardCount[PlayerID];
+    shuffle(player1, &G2);
 
-    //Calculates the total number of victory points in players hand
-    for (i = 0; i < testG.handCount[PlayerID]; i++) {
-        if (testG.hand[PlayerID][i] == curse) {
-                --manualScoreResult;
-        }
-        else if (testG.hand[PlayerID][i] == estate) {
-                ++manualScoreResult;
-        }
-        else if (testG.hand[PlayerID][i] == duchy) {
-                manualScoreResult = manualScoreResult + 3;
-        }
-        else if (testG.hand[PlayerID][i] == province) {
-                manualScoreResult = manualScoreResult + 6;
-        }
-        else if (testG.hand[PlayerID][i] == great_hall) {
-                ++manualScoreResult;
-        }
-        else if (testG.hand[PlayerID][i] == gardens) {
-                manualScoreResult = manualScoreResult + (( totalCards ) / 10 );
+    printf("Player 1's deck after shuffle:\n");
+    printDeck(player1, &G2);
+
+    // count how many cards are still in the same position
+    for (i = 0; i < G2.deckCount[player1]; i++) {
+        if (G2.deck[player1][i] == tempDeck[i]) {
+            sameCardCount++;
         }
     }
 
-    //Calculates the total number of victory points in players deck pile
-    for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-        if (testG.deck[PlayerID][i] == curse) {
-                --manualScoreResult;
-        }
-        else if (testG.deck[PlayerID][i] == estate) {
-                ++manualScoreResult;
-        }
-        else if (testG.deck[PlayerID][i] == duchy) {
-                manualScoreResult = manualScoreResult + 3;
-        }
-        else if (testG.deck[PlayerID][i] == province) {
-                manualScoreResult = manualScoreResult + 6;
-        }
-        else if (testG.deck[PlayerID][i] == great_hall) {
-                ++manualScoreResult;
-        }
-        else if (testG.deck[PlayerID][i] == gardens) {
-                manualScoreResult = manualScoreResult + (( totalCards ) / 10 );
-        }
+    printf("Number of cards in same position = %d, expected != %d...", sameCardCount, G2.deckCount[player1]);
+
+    if (sameCardCount != G2.deckCount[player1]) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-//Calculates the total number of victory points in players discard
-    for (i = 0; i < testG.discardCount[PlayerID]; i++) {
-        if (testG.discard[PlayerID][i] == curse) {
-                --manualScoreResult;
-        }
-        else if (testG.discard[PlayerID][i] == estate) {
-                ++manualScoreResult;
-        }
-        else if (testG.discard[PlayerID][i] == duchy) {
-                manualScoreResult = manualScoreResult + 3;
-        }
-        else if (testG.discard[PlayerID][i] == province) {
-                manualScoreResult = manualScoreResult + 6;
-        }
-        else if (testG.discard[PlayerID][i] == great_hall) {
-                ++manualScoreResult;
-        }
-        else if (testG.discard[PlayerID][i] == gardens) {
-                manualScoreResult = manualScoreResult + (( totalCards ) / 10 );
+    printf("\nTest player 1 card counts are still the same (no cards lost or gained)...");
+    int diffSupplies[MAX_HAND];
+    int flag = 0;
+    diffHandSupply(&G1, &G2, player1, diffSupplies);
+    for (i = 0; i < G2.handCount[player1]; i++) {
+        if (diffSupplies[i] != 0) {
+            flag = 1;
         }
     }
-
-    ScoreForResult = scoreFor(PlayerID, &testG);
-
-    printf("Total Score from scoreFor()= %d, Expected Total Score = %d\n", ScoreForResult, manualScoreResult);
-
-    if(ScoreForResult != manualScoreResult) {
-        printf("TEST 1 HAS FAILED\n\n");
-        errorFlag = 1;
+    if (flag == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    printf("TEST 2: Testing scoreFor() - Random Card Distribution\n");
-
-    int cards[] = {curse, estate, duchy, province, copper, silver, gold, adventurer, council_room, feast, gardens,
-    mine, remodel, smithy, village, baron, great_hall, minion, steward, tribute, ambassador, cutpurse, embargo, outpost,
-    salvager, sea_hag, treasure_map};
-
-    memset(&G, 23, sizeof(struct gameState));
-    memset(&testG, 23, sizeof(struct gameState));
-    manualScoreResult = 0;
-    ScoreForResult = 0;
-    totalCards = 0;
-
-    initializeGame(numPlayers, k, seed, &G);
-    memcpy(&testG, &G, sizeof(struct gameState));
-
-    G.handCount[PlayerID] = MAX_HAND;
-    G.deckCount[PlayerID] = MAX_DECK;
-    G.discardCount[PlayerID] = MAX_DECK;
-    int cardIndex;
-
-//These for loops randomly assign cards to player's hand, deck, and discard pile
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        cardIndex = floor(Random() * 27); //generates a random value between 0 and 27
-        G.hand[PlayerID][i] = cards[cardIndex]; //randomly assigns a card to the hand
-    }
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        cardIndex = floor(Random() * 27);
-        G.deck[PlayerID][i] = cards[cardIndex];
-    }
-
-    for (i = 0; i < G.discardCount[PlayerID]; i++) {
-        cardIndex = floor(Random() * 27);
-        G.discard[PlayerID][i] = cards[cardIndex];
-    }
-
-    totalCards = G.handCount[PlayerID] + G.deckCount[PlayerID] + G.discardCount[PlayerID];
-
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        if (G.hand[PlayerID][i] == curse) {
-                --manualScoreResult;
-        }
-        else if (G.hand[PlayerID][i] == estate) {
-                ++manualScoreResult;
-        }
-        else if (G.hand[PlayerID][i] == duchy) {
-                manualScoreResult = manualScoreResult + 3;
-        }
-        else if (G.hand[PlayerID][i] == province) {
-                manualScoreResult = manualScoreResult + 6;
-        }
-        else if (G.hand[PlayerID][i] == great_hall) {
-                ++manualScoreResult;
-        }
-        else if (G.hand[PlayerID][i] == gardens) {
-                manualScoreResult = manualScoreResult + (( totalCards ) / 10 );
-        }
-    }
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        if (G.deck[PlayerID][i] == curse) {
-                --manualScoreResult;
-        }
-        else if (G.deck[PlayerID][i] == estate) {
-                ++manualScoreResult;
-        }
-        else if (G.deck[PlayerID][i] == duchy) {
-                manualScoreResult = manualScoreResult + 3;
-        }
-        else if (G.deck[PlayerID][i] == province) {
-                manualScoreResult = manualScoreResult + 6;
-        }
-        else if (G.deck[PlayerID][i] == great_hall) {
-                ++manualScoreResult;
-        }
-        else if (G.deck[PlayerID][i] == gardens) {
-                manualScoreResult = manualScoreResult + (( totalCards ) / 10 );
-        }
-    }
-
-    for (i = 0; i < G.discardCount[PlayerID]; i++) {
-        if (G.discard[PlayerID][i] == curse) {
-                --manualScoreResult;
-        }
-        else if (G.discard[PlayerID][i] == estate) {
-                ++manualScoreResult;
-        }
-        else if (G.discard[PlayerID][i] == duchy) {
-                manualScoreResult = manualScoreResult + 3;
-        }
-        else if (G.discard[PlayerID][i] == province) {
-                manualScoreResult = manualScoreResult + 6;
-        }
-        else if (G.discard[PlayerID][i] == great_hall) {
-                ++manualScoreResult;
-        }
-        else if (G.discard[PlayerID][i] == gardens) {
-                manualScoreResult = manualScoreResult + (( totalCards ) / 10 );
-        }
-    }
-
-    ScoreForResult = scoreFor(PlayerID, &G);
-
-    printf("Total Score from scoreFor()= %d, Expected Total Score = %d\n", ScoreForResult, manualScoreResult);
-
-    if(ScoreForResult != manualScoreResult) {
-        printf("TEST 2 HAS FAILED\n\n");
-        errorFlag = 1;
-    }
-
-    if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
+    // ensure player 2's deck was not modified
+    printf("\nCheck player 2 deck is untouched...");
+    if (deckIsUntouched(&G1, &G2, player2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
     return 0;

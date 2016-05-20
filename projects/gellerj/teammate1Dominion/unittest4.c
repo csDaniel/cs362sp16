@@ -4,129 +4,89 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
-#include <math.h>
-
-#include "testHelper.h"
-
-#define TESTCARD "updateCoinst"
+#include "interface.h"
+#include "testkit.h"
 
 int main() {
+    struct gameState G1, G2;
+    int i = 0;
+    int tempDeck[MAX_DECK];
+    int numPlayers = 2;
+    int seed = 1;
+    int player1 = 0;
+    int player2 = 1;
+    int sameCardCount = 0;
+    int kingdomCards[10] = {
+            adventurer,
+            gardens,
+            embargo,
+            village,
+            minion,
+            mine,
+            cutpurse,
+            sea_hag,
+            tribute,
+            smithy
+    };
 
-	int newCards = 0;
-	int discarded = 1;
-	int newCoins = 0;
-	int shuffledCards = 0;
-	int bonus = 0;
-	int seed = 1000;
-	int numPlayers = 2;
-	int thisPlayer = 0;
-	int otherPlayer = 1;
-	int a = 0;
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-	struct gameState G, testG;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-		sea_hag, tribute, smithy, council_room};
-	
-	initializeGame(numPlayers, k, seed, &G);
-	// set hand to estates:
-	printf("handCount: %d\n", G.handCount[thisPlayer]);
-	while (a < 5) {
-		G.hand[thisPlayer][a] = estate;
-		a++;
-	}
-	updateCoins(thisPlayer, &G, 0);
+    printf("Testing shuffle():\n");
 
-	printf("\t Testing Card: %s \n", TESTCARD);
-	// boot up the perfect version
-	memcpy(&testG, &G, sizeof(struct gameState));
+    // make a copy of the deck so we can test that it is shuffled
+    for (i = 0; i < G2.deckCount[0]; i++) {
+        tempDeck[i] = G2.deck[0][i];
+    }
 
+    printf("\nTest player 1's deck is shuffled...\n");
 
-//int updateCoins(int player, struct gameState *state, int bonus)
+    printf("Player 1's deck before shuffle:\n");
+    printDeck(player1, &G2);
 
-	// Test 01 -----------------------------------------------------------------
-	linePrint();
-	printf("Test 01: one copper to hand\n");
-	memcpy(&testG, &G, sizeof(struct gameState));
+    shuffle(player1, &G2);
 
-	newCoins = 1;
-	testG.hand[thisPlayer][0] = copper;
-	updateCoins(thisPlayer, &testG, 0);
-	
-	printf("Testing coin with one copper in hand...\t");
-	if (testG.coins != (G.coins + newCoins)) {
-		printf("ERROR\n");
-		printf("Player coins: %d, expected: %d\n", testG.coins, (G.coins + newCoins));
-	} else {
-		printf("PASS\n");
-	}
-	genericTest(G, testG, otherPlayer, 0);
+    printf("Player 1's deck after shuffle:\n");
+    printDeck(player1, &G2);
 
-	// Test 02 -----------------------------------------------------------------
-	linePrint();
-	printf("Test 02: one silver to hand\n");
-	memcpy(&testG, &G, sizeof(struct gameState));
+    // count how many cards are still in the same position
+    for (i = 0; i < G2.deckCount[player1]; i++) {
+        if (G2.deck[player1][i] == tempDeck[i]) {
+            sameCardCount++;
+        }
+    }
 
-	newCoins = 2;
-	testG.hand[thisPlayer][0] = silver;
-	updateCoins(thisPlayer, &testG, 0);
-	
-	printf("Testing coin with one silver in hand...\t");
-	if (testG.coins != (G.coins + newCoins)) {
-		printf("ERROR\n");
-		printf("Player coins: %d, expected: %d\n", testG.coins, (G.coins + newCoins));
-	} else {
-		printf("PASS\n");
-	}
-	genericTest(G, testG, otherPlayer, 0);
+    printf("Number of cards in same position = %d, expected != %d...", sameCardCount, G2.deckCount[player1]);
 
+    if (sameCardCount != G2.deckCount[player1]) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-	// Test 03 -----------------------------------------------------------------
-	linePrint();
-	printf("Test 03: one gold to hand\n");
-	memcpy(&testG, &G, sizeof(struct gameState));
+    printf("\nTest player 1 card counts are still the same (no cards lost or gained)...");
+    int diffSupplies[MAX_HAND];
+    int flag = 0;
+    diffHandSupply(&G1, &G2, player1, diffSupplies);
+    for (i = 0; i < G2.handCount[player1]; i++) {
+        if (diffSupplies[i] != 0) {
+            flag = 1;
+        }
+    }
+    if (flag == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-	newCoins = 3;
-	testG.hand[thisPlayer][0] = gold;
-	updateCoins(thisPlayer, &testG, 0);
-	
-	printf("Testing coin with one silver in hand...\t");
-	if (testG.coins != (G.coins + newCoins)) {
-		printf("ERROR\n");
-		printf("Player coins: %d, expected: %d\n", testG.coins, (G.coins + newCoins));
-	} else {
-		printf("PASS\n");
-	}
-	genericTest(G, testG, otherPlayer, 0);
+    // ensure player 2's deck was not modified
+    printf("\nCheck player 2 deck is untouched...");
+    if (deckIsUntouched(&G1, &G2, player2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
-	// Test 04 -----------------------------------------------------------------
-	linePrint();
-	printf("Test 04: one gold to hand and -1 bonus\n");
-	memcpy(&testG, &G, sizeof(struct gameState));
+    return 0;
 
-	newCoins = 3;
-	bonus = -1;
-	testG.hand[thisPlayer][0] = gold;
-	updateCoins(thisPlayer, &testG, bonus);
-	
-	printf("Testing coin with one silver in hand...\t");
-	if (testG.coins != (G.coins + newCoins + bonus)) {
-		printf("ERROR\n");
-		printf("Player coins: %d, expected: %d\n", testG.coins, (G.coins + newCoins + bonus));
-	} else {
-		printf("PASS\n");
-	}
-	genericTest(G, testG, otherPlayer, 0);
-
-
-
-
-
-
-	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
-	return 0;
 }
-
-
-
-

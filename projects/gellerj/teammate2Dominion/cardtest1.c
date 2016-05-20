@@ -1,120 +1,99 @@
-/*
-Alex Samuel
-Assignment 3
-cardtest1.c
-Tests for smithy card
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
-#include <assert.h>
+#include "rngs.h"
+#include "testkit.h"
 
 int main() {
-    int newCards = 3;
-    int discarded = 1;
+    struct gameState G1, G2;
     int numPlayers = 2;
-    int PlayerID = 0;
-    int seed = 638;
-    int i;
-    int errorFlag = 0;
-	struct gameState G, testG;
+    int seed = 1;
+    int player1 = 0;
+    int player2 = 1;
+    int bonus = 0;
+    int handPos = 0;
+    int c1 = 0, c2 = 0, c3 = 0;
+    int kingdomCards[10] = {
+            adventurer,
+            gardens,
+            embargo,
+            village,
+            minion,
+            mine,
+            cutpurse,
+            sea_hag,
+            tribute,
+            smithy
+    };
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    G1.hand[player1][handPos] = smithy;
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-	printf("TEST 1: Testing smithy - +3 Cards Added to Player's Hand\n");
+    printf("Testing SMITHY...\n");
 
-	//Initializes game and copies game state to test case
-	initializeGame(numPlayers, k, seed, &G);
-	memcpy(&testG, &G, sizeof(struct gameState));
+    // simulate a Smithy being played
+    cardEffect(smithy, c1, c2, c3, &G2, handPos, &bonus);
 
-	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-
-	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
-
-	printf("Player hand count = %d, expected hand count= %d\n", testG.handCount[PlayerID], G.handCount[PlayerID] + newCards - discarded);
-
-    //printf("\n%d,%d, %d, %d\n", testG.handCount[PlayerID], testG.deckCount[PlayerID], testG.discardCount[PlayerID], testG.playedCardCount);
-
-	if (testG.handCount[PlayerID] != (G.handCount[PlayerID] + newCards - discarded)) {
-        printf("TEST 1 HAS FAILED\n\n");
-        errorFlag = 1;
-     }
-
-    //Test will fail due to bug introduced in earlier assignment, see refactor.c
-
-    printf("TEST 2: Player 2 Is Unaffected by Player 1 Playing Smithy\n");
-    PlayerID = 1;
-	int GDeckResults[27] = { 0 };
-	int testGDeckResults[27] = { 0 };
-    int GHandResults[27] = { 0 };
-	int testGHandResults[27] = { 0 };
-	int Deckdifference[27] = { 0 };
-	int Handdifference[27] = { 0 };
-    int cardVal;
-    int cardTotal;
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        cardVal = G.deck[PlayerID][i];
-        GDeckResults[cardVal]++;
+    printf("\nTest that hand count is incremented by 2 (+3 new cards, -1 existing smithy)...\n");
+    printf("Initial hand count was %d, new hand count is %d, expected 7...", G1.handCount[player1],
+           G2.handCount[player1]);
+    // make sure the new hand count is +2. three cards should be gained and the smithy should
+    // be discarded for a net gain of two cards.
+    if (G2.handCount[player1] == G1.handCount[player1] + 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        cardVal = G.hand[PlayerID][i];
-        GHandResults[cardVal]++;
+    // ensure player 2's hand was not modified
+    printf("\nCheck player 2 hand is untouched...");
+    if (handIsUntouched(&G1, &G2, player2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-        cardVal = testG.deck[PlayerID][i];
-        testGDeckResults[cardVal]++;
+    // ensure player 2's deck was not modified
+    printf("\nCheck player 2 deck is untouched...");
+    if (deckIsUntouched(&G1, &G2, player2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    for (i = 0; i < testG.handCount[PlayerID]; i++) {
-        cardVal = testG.hand[PlayerID][i];
-        testGHandResults[cardVal]++;
+    // ensure new cards came from player 1's deck
+    printf("\nCheck new cards came from player 1's deck...\n");
+    printf("Deck count was %d, new deck count is %d, expected 2...", G1.deckCount[player1], G2.deckCount[player1]);
+    if (G1.deckCount[player1] - 3 == G2.deckCount[player1]) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    printf("Player 2 Deck Totals Before Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", GDeckResults[i]);
+    // ensure kingdom pile was not modified
+    printf("\nCheck kingdom pile is untouched...");
+    if (kingdomPileIsUntouched(&G1, &G2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    printf("\n\n");
-
-    printf("Player 2 Deck Totals After Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", testGDeckResults[i]);
+    // ensure victory pile was not modified
+    printf("\nCheck victory pile is untouched...");
+    if (victoryPileIsUntouched(&G1, &G2) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    printf("\n\n");
-
-    printf("Player 2 Hand Totals Before Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", GHandResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Hand Totals After Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", testGHandResults[i]);
-    }
-
-    //no difference in hand totals because hands are only drawn at start if turn,
-    //see dominion.c, line 197
-
-    //Compares whether any change to Player 2 hand or deck
-    if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
-        memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-            printf("\n\nTEST 2 HAS PASSED\n\n");
-    }
-
-
-    if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
+    // ensure card was last card played
+    printf("\nCheck smithy card was added to played pile...");
+    if (cardWasPlayed(&G2, smithy, G2.playedCardCount) == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
     return 0;

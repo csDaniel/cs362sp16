@@ -1,150 +1,104 @@
-/*
-Alex Samuel
-Assignment 3
-unittest2.c
-Tests fullDeckCount() function
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
-
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
+#include "rngs.h"
 
 int main() {
-
+    struct gameState G1, G2;
     int numPlayers = 2;
-    int PlayerID = 0;
-    int seed = 2;
-    int i;
-	struct gameState G, testG;
+    int seed = 1;
+    int player1 = 0;
+    int result = -1;
+    int kingdomCards[10] = {
+            adventurer,
+            gardens,
+            embargo,
+            village,
+            minion,
+            mine,
+            cutpurse,
+            sea_hag,
+            tribute,
+            smithy
+    };
 
-	int manualCountResults[27] = { 0 };
-	int fdcResults[27] = { 0 };
-    int cardVal;
-    int cardTotal;
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-    SelectStream(4);
-    PutSeed(5);
+    printf("Testing gainCard():\n");
 
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, council_room};
-
-    printf("TEST 1: Testing fullDeckCount() - Normal Card Distribution\n");
-
-    initializeGame(numPlayers, k, seed, &G);
-    memcpy(&testG, &G, sizeof(struct gameState));
-
-    for (i = 0; i < testG.handCount[PlayerID]; i++) {
-        cardVal = testG.hand[PlayerID][i];
-        manualCountResults[cardVal]++;
+    printf("\nTest card is not gained if supply count equals zero...\n");
+    G2.supplyCount[smithy] = 0;
+    result = gainCard(smithy, &G2, 1, player1);
+    printf("Return value = %d, expected -1...", result);
+    if (result == -1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-        cardVal = testG.deck[PlayerID][i];
-        manualCountResults[cardVal]++;
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest card gained is added to deck...\n");
+    gainCard(smithy, &G2, 1, player1);
+    int lastDeckCard = G2.deck[player1][G2.deckCount[player1] - 1];
+    printf("Last card in deck = %d, expected 13 (smithy)...", lastDeckCard);
+    if (lastDeckCard == smithy) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+    printf("Player 1 deck count = %d, expected %d...", G2.deckCount[player1], G1.deckCount[player1] + 1);
+    if (G2.deckCount[player1] == G1.deckCount[player1] + 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    for (i = 0; i < testG.discardCount[PlayerID]; i++) {
-        cardVal = testG.discard[PlayerID][i];
-        manualCountResults[cardVal]++;
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest card gained is added to hand...\n");
+    gainCard(smithy, &G2, 2, player1);
+    int lastHandCard = G2.hand[player1][G2.handCount[player1] - 1];
+    printf("Last card in hand = %d, expected 13 (smithy)...", lastHandCard);
+    if (lastHandCard == smithy) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+    printf("P1 hand count = %d, expected %d...", G2.handCount[player1], G1.handCount[player1] + 1);
+    if (G2.handCount[player1] == G1.handCount[player1] + 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    for (i = 0; i < 27; i++) {
-        cardTotal = fullDeckCount(PlayerID, i, &G);
-        fdcResults[i] = cardTotal;
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest card gained is added to discard...\n");
+    gainCard(smithy, &G2, 0, player1);
+    int lastDiscardCard = G2.discard[player1][G2.discardCount[player1] - 1];
+    printf("Last card in hand = %d, expected %d...", lastDiscardCard, smithy);
+    if (lastDiscardCard == smithy) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+    printf("Player 1 discard count = %d, expected 1...", G2.discardCount[player1]);
+    if (G2.discardCount[player1] == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    printf("TOTALS\n\n");
-
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", manualCountResults[i]);
-    }
-
-    printf("\n\n");
-
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", fdcResults[i]);
-    }
-
-    if (memcmp(manualCountResults, fdcResults, sizeof(fdcResults)) == 0) {
-            printf("\n\nTEST 1 COMPLETED SUCCESSFULLY");
-    }
-
-    printf ("\n\nTEST 2: Testing fullDeckCount() - Random Card Distribution\n");
-
-    // array containing all 27 card possibilities
-    int cards[] = {curse, estate, duchy, province, copper, silver, gold, adventurer, council_room, feast, gardens,
-    mine, remodel, smithy, village, baron, great_hall, minion, steward, tribute, ambassador, cutpurse, embargo, outpost,
-    salvager, sea_hag, treasure_map};
-
-    memset(&G, 23, sizeof(struct gameState));
-    memset(&testG, 23, sizeof(struct gameState));
-    memset(manualCountResults, 0, sizeof manualCountResults);
-    memset(fdcResults, 0, sizeof fdcResults);
-
-    initializeGame(numPlayers, k, seed, &G);
-    //memcpy(&testG, &G, sizeof(struct gameState));
-
-    G.handCount[PlayerID] = MAX_HAND;
-    G.deckCount[PlayerID] = MAX_DECK;
-    G.discardCount[PlayerID] = MAX_DECK;
-    int cardIndex;
-
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        cardIndex = floor(Random() * 27); //generates a random value between 0 and 27
-        G.hand[PlayerID][i] = cards[cardIndex]; //randomly assigns a card to the hand
-    }
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        cardIndex = floor(Random() * 27);
-        G.deck[PlayerID][i] = cards[cardIndex];
-    }
-
-    for (i = 0; i < G.discardCount[PlayerID]; i++) {
-        cardIndex = floor(Random() * 27);
-        G.discard[PlayerID][i] = cards[cardIndex];
-    }
-
-
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        cardVal = G.hand[PlayerID][i];
-        manualCountResults[cardVal]++;
-    }
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        cardVal = G.deck[PlayerID][i];
-        manualCountResults[cardVal]++;
-    }
-
-    for (i = 0; i < G.discardCount[PlayerID]; i++) {
-        cardVal = G.discard[PlayerID][i];
-        manualCountResults[cardVal]++;
-    }
-
-    for (i = 0; i < 27; i++) {
-        cardTotal = fullDeckCount(PlayerID, i, &G);
-        fdcResults[i] = cardTotal;
-    }
-
-    printf("TOTALS\n\n");
-
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", manualCountResults[i]);
-    }
-
-    printf("\n\n");
-
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", fdcResults[i]);
-    }
-
-    if (memcmp(manualCountResults, fdcResults, sizeof(fdcResults)) == 0) {
-            printf("\n\nTEST 2 COMPLETED SUCCESSFULLY\n\n");
+    printf("\nTest supply pile count is decremented...\n");
+    printf("Supply count = %d, expected %d...", G2.supplyCount[smithy], G1.supplyCount[smithy] - 1);
+    if (G2.supplyCount[smithy] == G1.supplyCount[smithy] - 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
     return 0;

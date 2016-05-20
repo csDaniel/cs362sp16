@@ -1,110 +1,108 @@
-/*
-Alex Samuel
-Assignment 3
-unittest3.c
-Tests isGameOver() function
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
-
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
+#include "rngs.h"
 
 int main() {
-
+    struct gameState G1, G2;
     int numPlayers = 2;
-    int PlayerID = 0;
-    int seed = 2;
-    int i;
-    int errorFlag = 0;
-	struct gameState G, testG;
+    int seed = 1;
+    int result = -1;
+    int kingdomCards[10] = {
+            adventurer,
+            gardens,
+            embargo,
+            village,
+            minion,
+            mine,
+            cutpurse,
+            sea_hag,
+            tribute,
+            smithy
+    };
 
-    SelectStream(6);
-    PutSeed(7);
+    initializeGame(numPlayers, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
+    printf("Testing whoseTurn():\n");
 
-    printf ("TEST 1: Testing isGameOver() - Province Check\n");
-
-    //Initializes game
-    initializeGame(numPlayers, k, seed, &G);
-
-    //Copies gamestate into a test gamestate
-    memcpy(&testG, &G, sizeof(struct gameState));
-
-    int provinceNum;
-
-    //This loop randomly assigns the number of provinces to supplyCount
-    for (i = 0; i < 1000; i++) {
-        provinceNum = floor(Random() * 3);
-        testG.supplyCount[province] = provinceNum;
-
-//If the supply count count = 0, isGameOver should indicate the game should end
-        if (testG.supplyCount[province] == 0) {
-            if (isGameOver(&testG) != 1) {
-                printf("TEST 1 HAS FAILED\n\n");
-                errorFlag = 1;
-            }
-        }
-
-//If the supply count is greater than 0, isGameOver should indicate the game should continue
-        else {
-            if (isGameOver(&testG) != 0) {
-                printf("TEST 1 HAS FAILED\n\n");
-                errorFlag = 1;
-            }
-        }
+    printf("\nTest player 1 has first turn in 2-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    printf("TEST 2: Testing isGameOver() - Supply Piles Empty\n");
+    endTurn(&G2);
 
-    int supplyEmpty;
-    int supplyIndex;
-    int j, pp;
-
-    memset(&G, 23, sizeof(struct gameState));
-    memset(&testG, 23, sizeof(struct gameState));
-    initializeGame(numPlayers, k, seed, &G);
-    memcpy(&testG, &G, sizeof(struct gameState));
-
-    supplyEmpty = floor(Random() * 25);
-
-    for (i = 0; i < 10000; i++) {
-        int m = 0;
-        supplyEmpty = floor(Random() * 25);
-        for (j = 0; j < supplyEmpty; j++) {
-            supplyIndex = floor(Random() * 25);
-            testG.supplyCount[supplyIndex] = 0;
-        }
-
-        for (pp = 0; pp < 25; pp++) {
-            if (testG.supplyCount[pp] == 0) {
-                m++;
-            }
-
-        }
-        if (m >= 3) {
-            if (isGameOver(&testG) != 1) {
-                printf("TEST 2 HAS FAILED\n\n");
-                errorFlag = 1;
-            }
-        }
-        else if (testG.supplyCount[province] == 0 && isGameOver(&testG) != 0) {
-            printf("TEST 4 HAS FAILED\n\n");
-            errorFlag = 1;
-        }
+    printf("\nTest player 1 has second turn in 2-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 1...", result);
+    if (result == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
-    if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
+    endTurn(&G2);
+
+    printf("\nTest player 2 has third turn in 2-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
     }
 
+    initializeGame(3, kingdomCards, seed, &G1);
+    memcpy(&G2, &G1, sizeof(struct gameState));
+
+    printf("\nTest player 1 has first turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    endTurn(&G2);
+
+    printf("\nTest player 2 has second turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 1...", result);
+    if (result == 1) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    endTurn(&G2);
+
+    printf("\nTest player 3 has third turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 2...", result);
+    if (result == 2) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
+
+    endTurn(&G2);
+
+    printf("\nTest player 1 has fourth turn in 3-player game...\n");
+    result = whoseTurn(&G2);
+    printf("Turn = %d, expected 0...", result);
+    if (result == 0) {
+        printf("PASSED.\n");
+    } else {
+        printf("FAILED.\n");
+    }
 
     return 0;
 

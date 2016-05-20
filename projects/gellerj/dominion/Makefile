@@ -29,7 +29,7 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-testkit.o: testkit.h testkit.c
+testkit.o: testkit.h testkit.c dominion.o
 	gcc -c testkit.c -g $(CFLAGS)
 
 unittest1: unittest1.c dominion.o testkit.o
