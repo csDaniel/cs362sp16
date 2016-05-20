@@ -1,0 +1,106 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:#define DEBUG 0
+        -:    9:#define NOISY_TEST 1
+        -:   10:
+function checkNumHandCards called 2000 returned 100% blocks executed 60%
+        -:   11:int checkNumHandCards(int p, struct gameState *post) {
+        -:   12:    struct gameState pre;
+     2000:   13:    memcpy (&pre, post, sizeof(struct gameState));
+        -:   14:    
+     2000:   15:    int whoseTurnBackup = pre.whoseTurn;
+        -:   16:    
+     2000:   17:    pre.whoseTurn = 0;
+        -:   18:    
+        -:   19:    
+        -:   20:    //int playerhandcountBackup = pre.handCount[p];
+     2000:   21:    int player1handcountBackup = pre.handCount[0];
+        -:   22:    
+        -:   23:    
+        -:   24:    
+        -:   25:    
+     2000:   26:    pre.handCount[0] = 1;
+        -:   27:    
+        -:   28:    //printf("XXX:%d\n", numHandCards(&pre));
+        -:   29:    
+     4000:   30:    assert(numHandCards(&pre) == 1);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   31:    
+     2000:   32:    pre.handCount[0] = player1handcountBackup;
+        -:   33:    
+     2000:   34:    pre.whoseTurn = whoseTurnBackup;
+        -:   35:    
+     4000:   36:    assert(memcmp(&pre, post, sizeof(struct gameState)) == 0);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   37:    
+     2000:   38:}
+        -:   39:
+function main called 1 returned 0% blocks executed 81%
+        -:   40:int main () {
+        -:   41:    
+        -:   42:    int i, n, r, p, deckCount, discardCount, handCount;
+        -:   43:    
+        1:   44:    int k[10] = {adventurer, council_room, feast, gardens, mine,
+        -:   45:	       remodel, smithy, village, baron, great_hall};
+        -:   46:    
+        -:   47:    struct gameState G;
+        -:   48:    
+        1:   49:    printf ("Testing numHandCards.\n");
+        -:   50:    
+        1:   51:    printf ("RANDOM TESTS.\n");
+        -:   52:    
+        1:   53:    SelectStream(2);
+        1:   54:    PutSeed(3);
+        -:   55:    
+     4002:   56:    for (n = 0; n < 2000; n++) {
+branch  0 taken 99%
+branch  1 taken 1%
+105204000:   57:        for (i = 0; i < sizeof(struct gameState); i++) {
+branch  0 taken 99%
+branch  1 taken 1%
+ 52600000:   58:            ((char*)&G)[i] = floor(Random() * 256);
+ 52600000:   59:        }
+     2000:   60:        p = floor(Random() * 2);
+     2000:   61:        G.deckCount[p] = floor(Random() * MAX_DECK);
+     2000:   62:        G.discardCount[p] = floor(Random() * MAX_DECK);
+     2000:   63:        G.handCount[p] = floor(Random() * MAX_HAND);
+     2000:   64:        checkNumHandCards(p, &G);
+     2000:   65:    }
+        -:   66:    
+        1:   67:    printf ("ALL TESTS OK\n");
+        -:   68:    
+        1:   69:    exit(0);
+        -:   70:    
+        -:   71:    printf ("SIMPLE FIXED TESTS.\n");
+        -:   72:    for (p = 0; p < 2; p++) {
+        -:   73:        for (deckCount = 0; deckCount < 5; deckCount++) {
+        -:   74:            for (discardCount = 0; discardCount < 5; discardCount++) {
+        -:   75:                for (handCount = 0; handCount < 5; handCount++) {
+        -:   76:                    memset(&G, 23, sizeof(struct gameState));
+        -:   77:                    r = initializeGame(2, k, 1, &G);
+        -:   78:                    G.deckCount[p] = deckCount;
+        -:   79:                    memset(G.deck[p], 0, sizeof(int) * deckCount);
+        -:   80:                    G.discardCount[p] = discardCount;
+        -:   81:                    memset(G.discard[p], 0, sizeof(int) * discardCount);
+        -:   82:                    G.handCount[p] = handCount;
+        -:   83:                    memset(G.hand[p], 0, sizeof(int) * handCount);
+        -:   84:                    checkNumHandCards(p, &G);
+        -:   85:                }
+        -:   86:            }
+        -:   87:        }
+        -:   88:    }
+        -:   89:    
+        -:   90:    return 0;
+    #####:   91:}

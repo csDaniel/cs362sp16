@@ -41,7 +41,58 @@ public class UrlValidatorTest extends TestCase {
    public void testManualTest()
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   System.out.println(urlVal.isValid("http://www.amazon.com"));
+	   
+	   System.out.println("Testing: http://www.amazon.com | Should be true");
+	   if(urlVal.isValid("http://www.amazon.com") == true)
+	   {
+		   System.out.println("Test Passed");
+	   }
+	   else
+	   {
+		   System.out.println("Test Failed");
+	   }
+	   
+	   System.out.println("Testing: https://www.google.com | Should be true");
+	   if(urlVal.isValid("https://www.google.com") == true)
+	   {
+		   System.out.println("Test Passed");
+	   }
+	   else
+	   {
+		   System.out.println("Test Failed");
+	   }
+	   
+	   System.out.println("Testing: https://///www.google.com | Should be false");
+	   if(urlVal.isValid("https://///www.google.com") == false)
+	   {
+		   System.out.println("Test Passed");
+	   }
+	   else
+	   {
+		   System.out.println("Test Failed");
+	   }
+
+	   System.out.println("Testing: ftp://www.google.com | Should be false");
+	   if(urlVal.isValid("ftp://www.google.com") == true)
+	   {
+		   System.out.println("Test Passed");
+	   }
+	   else
+	   {
+		   System.out.println("Test Failed");
+	   }
+	   
+	   System.out.println("Testing: fttp://www.google.com | Should be false");
+	   if(urlVal.isValid("fttp://www.google.com") == false)
+	   {
+		   System.out.println("Test Passed");
+	   }
+	   else
+	   {
+		   System.out.println("Test Failed");
+	   }
+	   
+	   
 	   
 	   
    }
