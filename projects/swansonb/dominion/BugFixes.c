@@ -92,6 +92,32 @@ in the playedCard pile.
 
  sakamosa Bug #2
  -------------------------
+ To investigate this bug I wrote a unit test that could check the behavior
+ described in that bug.  unitTest5.c I replicated the steps described in the
+ bug and initialized a game with 2 players.  the bug was not specific about
+ if the players had a mismatch of cards in their deck or total so i wrote
+ a test that would output the size and contents of each players deck,hand and
+ discard piles.
+
+ This is the output of that unit test:
+Game is initialized
+player 0 has 5 cards in their deck: {1,4,4,4,4,}
+player 0 has 5 cards in their hand: {4,4,1,1,4,}
+player 0 has 0 cards in their discard: {}
+total cards for player 0: 10
+----------------------------------------------
+player 1 has 10 cards in their deck: {4,1,1,4,4,4,4,4,1,4,}
+player 1 has 0 cards in their hand: {}
+player 1 has 0 cards in their discard: {}
+total cards for player 1: 10
+
+ It appears that there is in fact not a bug, after initializing each players
+ deck the function also initializes first players turn and there is a for loop
+ that draws 5 cards into the first players hand.
+
+
+
+
 
 
 
