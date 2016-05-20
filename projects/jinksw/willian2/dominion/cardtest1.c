@@ -30,7 +30,6 @@ int playSmithyCard(struct gameState* state, int handPos) {
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
-#include "interface.h"
 
 #define TESTCARD "smithy"
 
@@ -50,7 +49,6 @@ int main() {
 		int failFlag = 0;
 		int passCount = 0;
 		int tests = 4;
-		char *cardName;
 	
 		struct gameState G, testG;
 		int k[10] = {smithy, embargo, village, minion, mine, cutpurse,
@@ -231,14 +229,12 @@ int main() {
 	printf("Player turn = %d, expected = %d\n", testG.whoseTurn, G.whoseTurn );
 	printf("Kingdom cards = ");
 	for( i=0; i< 10; i++ ){ 
-		cardNumToName( kTest[i], cardName );
 	printf( "Post\n" );
-		printf( "(%s = %d)", cardName, testG.supplyCount[i] );
+		printf( "(Card in test:%d, Count= %d)", kTest[i], testG.supplyCount[i] );
 	}
 	printf(", expected = ");
 	for( i=0; i< 10; i++ ){
-		cardNumToName( k[i], cardName );
-		printf( "(%s = %d)", cardName, G.supplyCount[i] );
+		printf( "(Expected card: %d, count to equal: %d)", k[i], G.supplyCount[i] );
 	}
 	
 	//Tests
@@ -272,13 +268,11 @@ int main() {
 	}
 	for( i=0; i< 10; i++ ){
 		if( !( kTest[i] == k[i] ) ){
-			cardNumToName( k[i], cardName );
-			printf( "Test 4 Failed:Kingdom card %s changed to enum %d \n", cardName, kTest[i] );
+			printf( "Test 4 Failed:Kingdom card %d changed to enum %d \n", k[i], kTest[i] );
 			failFlag = 1;
 		}
 		if( !( testG.supplyCount[i] == G.supplyCount[i] ) ){
-			cardNumToName( k[i], cardName );
-			printf( "Test 4 Failed:Supply count %d for %s changed to %d \n", G.supplyCount[i], cardName, testG.supplyCount[i] );
+			printf( "Test 4 Failed:Supply count %d for card %d changed to %d \n", G.supplyCount[i], k[i], testG.supplyCount[i] );
 			failFlag = 1;
 		}
 

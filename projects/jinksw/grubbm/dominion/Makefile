@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS  = -g -Wall -coverage -fpic -lm
 
-all: unittest1 unittest2 unittest3 unittest4 test1 test2 test3 test4
+all: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 
 unittest1:  unittest1.o dominion.o rngs.o 
 	$(CC) $(CFLAGS) -o unittest1 unittest1.o dominion.o rngs.o 
@@ -23,10 +23,10 @@ cardtest2: cardtest2.o dominion.o rngs.o
 	$(CC) $(CFLAGS) -o cardtest2 cardtest2.o dominion.o rngs.o 
 	
 cardtest3: cardtest3.o dominion.o rngs.o
-	$(CC) $(CFLAGS) -o cardtest3 ctest3.o dominion.o rngs.o 
+	$(CC) $(CFLAGS) -o cardtest3 cardtest3.o dominion.o rngs.o 
 	
 cardtest4: cardtest4.o dominion.o rngs.o
-	$(CC) $(CFLAGS) -o cardtest4 ctest4.o dominion.o rngs.o 
+	$(CC) $(CFLAGS) -o cardtest4 cardtest4.o dominion.o rngs.o 
 
 unittest1.o:  unittest1.c rngs.h dominion.h dominion_helpers.h
 	$(CC) $(CFLAGS) -c unittest1.c	
@@ -61,25 +61,8 @@ rngs.o:  rngs.c rngs.h
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 
-testDrawCard: testDrawCard.c dominion.o rngs.o
-	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
-
-badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
-	gcc -o badTestDrawCard -g  badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
-
-testBuyCard: testDrawCard.c dominion.o rngs.o
-	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
-
-testAll: dominion.o testSuite.c
-	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
-
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
-
-runtests: testDrawCard 
-	./testDrawCard &> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS) 	
@@ -115,7 +98,7 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 
 	
 ucTest:
-	./unittest1 &> unittestresults.out
+	./unittest1 > unittestresults.out
 	./unittest2 >> unittestresults.out
 	./unittest3 >> unittestresults.out
 	./unittest4 >> unittestresults.out
