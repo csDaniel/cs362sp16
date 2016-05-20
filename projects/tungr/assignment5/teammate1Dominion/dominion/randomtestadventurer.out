@@ -1,0 +1,573 @@
+* * * * * * * * * * * RANDOMTESTADVENTURER * * * * * * * * * * *
+---Random Testing Adventurer Card START---
+
+initializing game with 4 players and state of 9
+player 1 gets deck size of 7
+ feast  |  silver  |  embargo  |  silver  |  embargo  |  adventurer  |  village  | 
+player 1 gets discard size of 35
+ ambassador  |  embargo  |  treasure_map  |  smithy  |  gardens  |  duchy  |  gold  |  copper  |  gold  |  duchy  |  copper  |  great_hall  |  sea_hag  |  village  |  mine  |  council_room  |  sea_hag  |  copper  |  smithy  |  village  |  outpost  |  copper  |  steward  |  cutpurse  |  duchy  |  gardens  |  steward  |  curse  |  village  |  tribute  |  treasure_map  |  treasure_map  |  feast  |  curse  |  outpost  | 
+player 1 gets hand size of 34
+ tribute  |  silver  |  sea_hag  |  sea_hag  |  outpost  |  feast  |  silver  |  province  |  duchy  |  curse  |  sea_hag  |  minion  |  feast  |  curse  |  council_room  |  minion  |  salvager  |  minion  |  smithy  |  silver  |  council_room  |  ambassador  |  copper  |  steward  |  remodel  |  curse  |  salvager  |  great_hall  |  council_room  |  adventurer  |  outpost  |  embargo  |  estate  |  adventurer  | 
+Treasures Before: 4
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 1 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 6
+	TREASURE COUNT PASS
+player 2 gets deck size of 5
+ baron  |  treasure_map  |  village  |  province  |  embargo  | 
+player 2 gets discard size of 12
+ adventurer  |  province  |  tribute  |  great_hall  |  estate  |  treasure_map  |  ambassador  |  baron  |  tribute  |  smithy  |  embargo  |  adventurer  | 
+player 2 gets hand size of 44
+ gardens  |  mine  |  tribute  |  council_room  |  treasure_map  |  minion  |  silver  |  mine  |  council_room  |  mine  |  embargo  |  ambassador  |  village  |  great_hall  |  ambassador  |  baron  |  sea_hag  |  salvager  |  feast  |  council_room  |  council_room  |  copper  |  silver  |  ambassador  |  minion  |  steward  |  gardens  |  outpost  |  embargo  |  council_room  |  village  |  adventurer  |  smithy  |  remodel  |  tribute  |  cutpurse  |  outpost  |  feast  |  great_hall  |  salvager  |  remodel  |  outpost  |  outpost  |  gold  | 
+Treasures Before: 4
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 0 handPosition = 1
+	RETURN VALUE FAIL
+Treasures After: 4
+	TREASURE COUNT FAIL
+player 3 gets deck size of 12
+ gardens  |  great_hall  |  feast  |  salvager  |  silver  |  sea_hag  |  sea_hag  |  ambassador  |  duchy  |  adventurer  |  curse  |  salvager  | 
+player 3 gets discard size of 31
+ sea_hag  |  great_hall  |  ambassador  |  minion  |  village  |  village  |  estate  |  gardens  |  province  |  salvager  |  ambassador  |  smithy  |  salvager  |  sea_hag  |  village  |  remodel  |  outpost  |  silver  |  estate  |  remodel  |  remodel  |  tribute  |  province  |  minion  |  treasure_map  |  sea_hag  |  sea_hag  |  treasure_map  |  remodel  |  silver  |  curse  | 
+player 3 gets hand size of 34
+ duchy  |  great_hall  |  minion  |  salvager  |  treasure_map  |  copper  |  feast  |  curse  |  province  |  adventurer  |  village  |  great_hall  |  remodel  |  village  |  ambassador  |  minion  |  minion  |  salvager  |  steward  |  silver  |  council_room  |  outpost  |  outpost  |  province  |  adventurer  |  gold  |  council_room  |  feast  |  smithy  |  treasure_map  |  province  |  tribute  |  treasure_map  |  remodel  | 
+Treasures Before: 3
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 0 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 3
+	TREASURE COUNT FAIL
+player 4 gets deck size of 31
+ outpost  |  gold  |  mine  |  remodel  |  curse  |  ambassador  |  copper  |  embargo  |  mine  |  silver  |  estate  |  steward  |  estate  |  cutpurse  |  tribute  |  baron  |  silver  |  council_room  |  duchy  |  tribute  |  smithy  |  minion  |  adventurer  |  gardens  |  treasure_map  |  gold  |  village  |  sea_hag  |  tribute  |  remodel  |  gold  | 
+player 4 gets discard size of 33
+ salvager  |  copper  |  ambassador  |  cutpurse  |  cutpurse  |  duchy  |  remodel  |  estate  |  gold  |  embargo  |  remodel  |  smithy  |  silver  |  minion  |  steward  |  curse  |  treasure_map  |  smithy  |  council_room  |  ambassador  |  silver  |  cutpurse  |  duchy  |  gold  |  minion  |  salvager  |  minion  |  adventurer  |  duchy  |  gold  |  great_hall  |  treasure_map  |  village  | 
+player 4 gets hand size of 49
+ tribute  |  steward  |  village  |  treasure_map  |  cutpurse  |  salvager  |  treasure_map  |  ambassador  |  great_hall  |  baron  |  smithy  |  baron  |  minion  |  steward  |  baron  |  outpost  |  steward  |  province  |  great_hall  |  copper  |  outpost  |  embargo  |  ambassador  |  steward  |  gardens  |  council_room  |  province  |  province  |  embargo  |  curse  |  embargo  |  treasure_map  |  tribute  |  copper  |  remodel  |  mine  |  cutpurse  |  mine  |  baron  |  great_hall  |  adventurer  |  great_hall  |  copper  |  great_hall  |  baron  |  feast  |  council_room  |  sea_hag  |  adventurer  | 
+Treasures Before: 3
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 1 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 3
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 3
+Times Return Value Passes: 0
+Times Return Value Passes: 4
+initializing game with 3 players and state of 4
+player 1 gets deck size of 14
+ village  |  gold  |  mine  |  minion  |  baron  |  outpost  |  steward  |  great_hall  |  gold  |  minion  |  silver  |  salvager  |  estate  |  tribute  | 
+player 1 gets discard size of 43
+ great_hall  |  baron  |  baron  |  baron  |  province  |  minion  |  great_hall  |  embargo  |  copper  |  copper  |  salvager  |  steward  |  duchy  |  baron  |  sea_hag  |  embargo  |  treasure_map  |  minion  |  gardens  |  silver  |  curse  |  great_hall  |  remodel  |  baron  |  copper  |  ambassador  |  curse  |  cutpurse  |  outpost  |  smithy  |  treasure_map  |  remodel  |  province  |  gardens  |  sea_hag  |  tribute  |  baron  |  cutpurse  |  duchy  |  council_room  |  adventurer  |  duchy  |  ambassador  | 
+player 1 gets hand size of 41
+ outpost  |  adventurer  |  gold  |  province  |  silver  |  duchy  |  embargo  |  embargo  |  village  |  sea_hag  |  village  |  mine  |  great_hall  |  cutpurse  |  village  |  adventurer  |  duchy  |  curse  |  mine  |  embargo  |  remodel  |  adventurer  |  village  |  curse  |  ambassador  |  duchy  |  feast  |  estate  |  cutpurse  |  feast  |  cutpurse  |  copper  |  feast  |  silver  |  curse  |  sea_hag  |  steward  |  great_hall  |  copper  |  great_hall  |  remodel  | 
+Treasures Before: 5
+Card Effect with choice1 = 0 choice2 = 0 choice3 = 1 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 6
+	TREASURE COUNT FAIL
+player 2 gets deck size of 35
+ great_hall  |  mine  |  steward  |  province  |  silver  |  village  |  outpost  |  feast  |  village  |  treasure_map  |  treasure_map  |  duchy  |  ambassador  |  gardens  |  smithy  |  salvager  |  tribute  |  steward  |  cutpurse  |  smithy  |  remodel  |  silver  |  smithy  |  treasure_map  |  embargo  |  sea_hag  |  estate  |  treasure_map  |  mine  |  remodel  |  outpost  |  steward  |  adventurer  |  copper  |  silver  | 
+player 2 gets discard size of 8
+ curse  |  gardens  |  feast  |  curse  |  ambassador  |  gardens  |  duchy  |  embargo  | 
+player 2 gets hand size of 49
+ tribute  |  treasure_map  |  gardens  |  gold  |  feast  |  council_room  |  salvager  |  council_room  |  curse  |  gardens  |  copper  |  province  |  great_hall  |  village  |  silver  |  duchy  |  gardens  |  silver  |  adventurer  |  baron  |  baron  |  estate  |  sea_hag  |  village  |  minion  |  minion  |  mine  |  adventurer  |  salvager  |  village  |  steward  |  embargo  |  copper  |  gold  |  feast  |  salvager  |  adventurer  |  province  |  minion  |  gardens  |  mine  |  province  |  cutpurse  |  great_hall  |  salvager  |  great_hall  |  province  |  remodel  |  embargo  | 
+Treasures Before: 6
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 1 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 5
+	TREASURE COUNT FAIL
+player 3 gets deck size of 44
+ embargo  |  baron  |  baron  |  adventurer  |  adventurer  |  province  |  tribute  |  duchy  |  remodel  |  gardens  |  silver  |  salvager  |  curse  |  minion  |  remodel  |  salvager  |  steward  |  remodel  |  baron  |  mine  |  salvager  |  feast  |  salvager  |  copper  |  adventurer  |  village  |  estate  |  gold  |  tribute  |  smithy  |  adventurer  |  outpost  |  duchy  |  smithy  |  duchy  |  copper  |  sea_hag  |  gold  |  salvager  |  salvager  |  gardens  |  province  |  gardens  |  smithy  | 
+player 3 gets discard size of 4
+ adventurer  |  council_room  |  gardens  |  duchy  | 
+player 3 gets hand size of 37
+ sea_hag  |  province  |  feast  |  village  |  estate  |  baron  |  mine  |  province  |  sea_hag  |  silver  |  remodel  |  gardens  |  great_hall  |  baron  |  minion  |  village  |  steward  |  mine  |  curse  |  village  |  village  |  remodel  |  smithy  |  outpost  |  council_room  |  silver  |  cutpurse  |  province  |  tribute  |  salvager  |  salvager  |  steward  |  remodel  |  great_hall  |  estate  |  feast  |  baron  | 
+Treasures Before: 2
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 1
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 6
+Times Return Value Passes: 0
+Times Return Value Passes: 7
+initializing game with 2 players and state of 2
+player 1 gets deck size of 41
+ tribute  |  treasure_map  |  salvager  |  remodel  |  estate  |  council_room  |  outpost  |  steward  |  feast  |  silver  |  duchy  |  silver  |  minion  |  outpost  |  province  |  salvager  |  smithy  |  copper  |  curse  |  mine  |  duchy  |  ambassador  |  embargo  |  silver  |  baron  |  province  |  gold  |  feast  |  cutpurse  |  steward  |  outpost  |  silver  |  outpost  |  duchy  |  ambassador  |  baron  |  feast  |  feast  |  minion  |  baron  |  embargo  | 
+player 1 gets discard size of 49
+ steward  |  copper  |  gardens  |  duchy  |  province  |  cutpurse  |  treasure_map  |  silver  |  copper  |  adventurer  |  outpost  |  great_hall  |  village  |  province  |  mine  |  council_room  |  cutpurse  |  mine  |  outpost  |  mine  |  silver  |  sea_hag  |  copper  |  treasure_map  |  embargo  |  duchy  |  cutpurse  |  remodel  |  gardens  |  tribute  |  treasure_map  |  smithy  |  village  |  embargo  |  treasure_map  |  ambassador  |  minion  |  feast  |  gardens  |  ambassador  |  embargo  |  adventurer  |  cutpurse  |  tribute  |  adventurer  |  ambassador  |  duchy  |  steward  |  adventurer  | 
+player 1 gets hand size of 26
+ duchy  |  village  |  curse  |  ambassador  |  feast  |  council_room  |  tribute  |  estate  |  minion  |  gold  |  copper  |  cutpurse  |  salvager  |  curse  |  province  |  tribute  |  sea_hag  |  cutpurse  |  village  |  treasure_map  |  copper  |  village  |  gold  |  smithy  |  tribute  |  salvager  | 
+Treasures Before: 4
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 7
+	TREASURE COUNT FAIL
+player 2 gets deck size of 16
+ gardens  |  sea_hag  |  cutpurse  |  sea_hag  |  gardens  |  baron  |  treasure_map  |  gold  |  steward  |  village  |  copper  |  salvager  |  embargo  |  ambassador  |  province  |  council_room  | 
+player 2 gets discard size of 24
+ feast  |  curse  |  council_room  |  duchy  |  curse  |  sea_hag  |  council_room  |  silver  |  steward  |  curse  |  steward  |  embargo  |  province  |  minion  |  treasure_map  |  village  |  treasure_map  |  feast  |  gardens  |  embargo  |  curse  |  outpost  |  sea_hag  |  copper  | 
+player 2 gets hand size of 19
+ treasure_map  |  council_room  |  duchy  |  estate  |  remodel  |  cutpurse  |  council_room  |  treasure_map  |  smithy  |  gardens  |  great_hall  |  cutpurse  |  smithy  |  remodel  |  treasure_map  |  gardens  |  silver  |  gardens  |  remodel  | 
+Treasures Before: 1
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 1 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 1
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 8
+Times Return Value Passes: 0
+Times Return Value Passes: 9
+initializing game with 3 players and state of 5
+player 1 gets deck size of 17
+ council_room  |  gold  |  village  |  outpost  |  outpost  |  silver  |  embargo  |  adventurer  |  embargo  |  duchy  |  smithy  |  duchy  |  copper  |  baron  |  duchy  |  great_hall  |  tribute  | 
+player 1 gets discard size of 39
+ remodel  |  embargo  |  smithy  |  gardens  |  curse  |  steward  |  province  |  minion  |  ambassador  |  salvager  |  adventurer  |  tribute  |  sea_hag  |  mine  |  mine  |  village  |  ambassador  |  adventurer  |  embargo  |  gold  |  mine  |  steward  |  duchy  |  village  |  copper  |  baron  |  treasure_map  |  council_room  |  embargo  |  minion  |  baron  |  embargo  |  cutpurse  |  village  |  sea_hag  |  great_hall  |  steward  |  baron  |  silver  | 
+player 1 gets hand size of 13
+ salvager  |  embargo  |  council_room  |  copper  |  curse  |  baron  |  smithy  |  feast  |  village  |  cutpurse  |  minion  |  council_room  |  treasure_map  | 
+Treasures Before: 1
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 1
+	RETURN VALUE FAIL
+Treasures After: 4
+	TREASURE COUNT FAIL
+player 2 gets deck size of 14
+ embargo  |  embargo  |  salvager  |  silver  |  adventurer  |  great_hall  |  cutpurse  |  sea_hag  |  sea_hag  |  cutpurse  |  steward  |  great_hall  |  tribute  |  silver  | 
+player 2 gets discard size of 16
+ sea_hag  |  tribute  |  embargo  |  baron  |  silver  |  great_hall  |  adventurer  |  mine  |  copper  |  gold  |  cutpurse  |  smithy  |  remodel  |  adventurer  |  treasure_map  |  minion  | 
+player 2 gets hand size of 6
+ remodel  |  treasure_map  |  gardens  |  great_hall  |  remodel  |  ambassador  | 
+Treasures Before: 0
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 1
+	RETURN VALUE FAIL
+Treasures After: 0
+	TREASURE COUNT FAIL
+player 3 gets deck size of 7
+ tribute  |  embargo  |  outpost  |  ambassador  |  mine  |  embargo  |  village  | 
+player 3 gets discard size of 39
+ copper  |  estate  |  salvager  |  baron  |  duchy  |  treasure_map  |  smithy  |  great_hall  |  duchy  |  cutpurse  |  gold  |  curse  |  gold  |  estate  |  salvager  |  province  |  salvager  |  gardens  |  silver  |  village  |  steward  |  estate  |  embargo  |  tribute  |  province  |  adventurer  |  estate  |  minion  |  council_room  |  estate  |  village  |  feast  |  province  |  mine  |  feast  |  gardens  |  village  |  adventurer  |  baron  | 
+player 3 gets hand size of 33
+ salvager  |  sea_hag  |  feast  |  curse  |  steward  |  silver  |  smithy  |  great_hall  |  salvager  |  baron  |  outpost  |  salvager  |  sea_hag  |  outpost  |  curse  |  baron  |  tribute  |  adventurer  |  remodel  |  minion  |  duchy  |  outpost  |  curse  |  duchy  |  mine  |  cutpurse  |  province  |  feast  |  estate  |  copper  |  great_hall  |  steward  |  copper  | 
+Treasures Before: 3
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 1 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 3
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 11
+Times Return Value Passes: 0
+Times Return Value Passes: 12
+initializing game with 2 players and state of 2
+player 1 gets deck size of 1
+ treasure_map  | 
+player 1 gets discard size of 20
+ mine  |  silver  |  embargo  |  curse  |  salvager  |  cutpurse  |  silver  |  mine  |  remodel  |  gold  |  outpost  |  copper  |  curse  |  gold  |  council_room  |  great_hall  |  gold  |  gardens  |  curse  |  village  | 
+player 1 gets hand size of 15
+ treasure_map  |  gardens  |  feast  |  baron  |  smithy  |  duchy  |  great_hall  |  outpost  |  village  |  salvager  |  embargo  |  council_room  |  curse  |  great_hall  |  salvager  | 
+Treasures Before: 0
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 3
+	TREASURE COUNT FAIL
+player 2 gets deck size of 43
+ outpost  |  smithy  |  gardens  |  copper  |  remodel  |  silver  |  salvager  |  tribute  |  adventurer  |  salvager  |  embargo  |  great_hall  |  outpost  |  salvager  |  great_hall  |  estate  |  salvager  |  remodel  |  village  |  curse  |  curse  |  salvager  |  embargo  |  salvager  |  copper  |  province  |  tribute  |  ambassador  |  baron  |  salvager  |  feast  |  adventurer  |  tribute  |  cutpurse  |  salvager  |  village  |  sea_hag  |  silver  |  outpost  |  province  |  village  |  baron  |  baron  | 
+player 2 gets discard size of 39
+ province  |  treasure_map  |  gardens  |  adventurer  |  mine  |  sea_hag  |  remodel  |  village  |  sea_hag  |  duchy  |  province  |  estate  |  embargo  |  great_hall  |  minion  |  baron  |  tribute  |  salvager  |  smithy  |  province  |  baron  |  council_room  |  minion  |  minion  |  province  |  baron  |  estate  |  ambassador  |  gardens  |  gold  |  tribute  |  adventurer  |  steward  |  adventurer  |  mine  |  curse  |  copper  |  province  |  cutpurse  | 
+player 2 gets hand size of 28
+ sea_hag  |  treasure_map  |  embargo  |  minion  |  village  |  ambassador  |  adventurer  |  gold  |  steward  |  mine  |  gold  |  cutpurse  |  salvager  |  treasure_map  |  outpost  |  baron  |  smithy  |  outpost  |  adventurer  |  adventurer  |  curse  |  great_hall  |  sea_hag  |  mine  |  ambassador  |  gardens  |  salvager  |  cutpurse  | 
+Treasures Before: 2
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 0 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 13
+Times Return Value Passes: 0
+Times Return Value Passes: 14
+initializing game with 4 players and state of 7
+player 1 gets deck size of 38
+ village  |  outpost  |  province  |  copper  |  smithy  |  steward  |  gold  |  copper  |  embargo  |  adventurer  |  estate  |  curse  |  feast  |  cutpurse  |  baron  |  outpost  |  curse  |  council_room  |  gold  |  steward  |  feast  |  baron  |  copper  |  mine  |  copper  |  copper  |  embargo  |  gold  |  silver  |  sea_hag  |  feast  |  mine  |  gold  |  curse  |  ambassador  |  minion  |  estate  |  embargo  | 
+player 1 gets discard size of 43
+ minion  |  adventurer  |  embargo  |  gardens  |  outpost  |  remodel  |  salvager  |  tribute  |  smithy  |  mine  |  smithy  |  estate  |  village  |  cutpurse  |  minion  |  salvager  |  embargo  |  tribute  |  ambassador  |  silver  |  council_room  |  outpost  |  gardens  |  gold  |  village  |  copper  |  outpost  |  steward  |  smithy  |  mine  |  curse  |  steward  |  estate  |  remodel  |  duchy  |  remodel  |  feast  |  feast  |  treasure_map  |  outpost  |  steward  |  council_room  |  smithy  | 
+player 1 gets hand size of 13
+ cutpurse  |  sea_hag  |  curse  |  council_room  |  tribute  |  estate  |  council_room  |  adventurer  |  province  |  copper  |  copper  |  minion  |  treasure_map  | 
+Treasures Before: 2
+Card Effect with choice1 = 0 choice2 = 0 choice3 = 1 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 7
+	TREASURE COUNT FAIL
+player 2 gets deck size of 23
+ minion  |  smithy  |  tribute  |  gold  |  minion  |  tribute  |  embargo  |  minion  |  silver  |  gold  |  council_room  |  salvager  |  silver  |  silver  |  silver  |  baron  |  copper  |  minion  |  cutpurse  |  curse  |  province  |  steward  |  village  | 
+player 2 gets discard size of 16
+ village  |  remodel  |  outpost  |  feast  |  cutpurse  |  village  |  smithy  |  ambassador  |  estate  |  baron  |  silver  |  treasure_map  |  council_room  |  tribute  |  tribute  |  cutpurse  | 
+player 2 gets hand size of 41
+ tribute  |  estate  |  feast  |  great_hall  |  smithy  |  sea_hag  |  minion  |  remodel  |  baron  |  province  |  embargo  |  great_hall  |  ambassador  |  silver  |  great_hall  |  duchy  |  tribute  |  silver  |  silver  |  curse  |  steward  |  tribute  |  outpost  |  gold  |  curse  |  council_room  |  minion  |  feast  |  gardens  |  gold  |  steward  |  cutpurse  |  province  |  steward  |  estate  |  silver  |  steward  |  great_hall  |  cutpurse  |  mine  |  baron  | 
+Treasures Before: 6
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 0 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 6
+	TREASURE COUNT FAIL
+player 3 gets deck size of 7
+ mine  |  mine  |  province  |  sea_hag  |  duchy  |  council_room  |  gardens  | 
+player 3 gets discard size of 38
+ province  |  gold  |  gardens  |  smithy  |  remodel  |  feast  |  outpost  |  council_room  |  copper  |  gold  |  baron  |  ambassador  |  adventurer  |  curse  |  sea_hag  |  outpost  |  feast  |  tribute  |  adventurer  |  silver  |  smithy  |  salvager  |  salvager  |  steward  |  silver  |  salvager  |  cutpurse  |  gardens  |  great_hall  |  curse  |  silver  |  ambassador  |  mine  |  embargo  |  curse  |  tribute  |  estate  |  smithy  | 
+player 3 gets hand size of 40
+ steward  |  cutpurse  |  sea_hag  |  baron  |  remodel  |  village  |  council_room  |  silver  |  village  |  tribute  |  minion  |  duchy  |  great_hall  |  ambassador  |  cutpurse  |  tribute  |  sea_hag  |  great_hall  |  mine  |  minion  |  feast  |  remodel  |  estate  |  salvager  |  copper  |  treasure_map  |  treasure_map  |  mine  |  salvager  |  remodel  |  remodel  |  ambassador  |  province  |  sea_hag  |  province  |  duchy  |  baron  |  smithy  |  estate  |  treasure_map  | 
+Treasures Before: 2
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 1 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+player 4 gets deck size of 9
+ cutpurse  |  estate  |  embargo  |  feast  |  minion  |  curse  |  curse  |  salvager  |  ambassador  | 
+player 4 gets discard size of 23
+ province  |  curse  |  remodel  |  province  |  salvager  |  treasure_map  |  tribute  |  ambassador  |  silver  |  sea_hag  |  sea_hag  |  cutpurse  |  outpost  |  embargo  |  duchy  |  sea_hag  |  minion  |  treasure_map  |  remodel  |  treasure_map  |  baron  |  great_hall  |  ambassador  | 
+player 4 gets hand size of 21
+ gardens  |  sea_hag  |  curse  |  great_hall  |  salvager  |  gardens  |  smithy  |  ambassador  |  gold  |  steward  |  gold  |  gardens  |  silver  |  ambassador  |  feast  |  tribute  |  silver  |  province  |  silver  |  feast  |  village  | 
+Treasures Before: 5
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 0 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 5
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 17
+Times Return Value Passes: 0
+Times Return Value Passes: 18
+initializing game with 2 players and state of 6
+player 1 gets deck size of 10
+ estate  |  mine  |  council_room  |  treasure_map  |  ambassador  |  estate  |  embargo  |  council_room  |  ambassador  |  province  | 
+player 1 gets discard size of 9
+ curse  |  feast  |  baron  |  gardens  |  copper  |  baron  |  embargo  |  salvager  |  minion  | 
+player 1 gets hand size of 3
+ mine  |  silver  |  silver  | 
+Treasures Before: 2
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 3
+	TREASURE COUNT FAIL
+player 2 gets deck size of 16
+ estate  |  smithy  |  cutpurse  |  gardens  |  sea_hag  |  minion  |  salvager  |  minion  |  great_hall  |  adventurer  |  curse  |  salvager  |  great_hall  |  feast  |  minion  |  village  | 
+player 2 gets discard size of 49
+ curse  |  village  |  estate  |  gold  |  remodel  |  cutpurse  |  minion  |  great_hall  |  duchy  |  village  |  feast  |  mine  |  great_hall  |  gardens  |  tribute  |  gardens  |  ambassador  |  cutpurse  |  feast  |  baron  |  silver  |  baron  |  ambassador  |  treasure_map  |  gold  |  outpost  |  province  |  minion  |  adventurer  |  village  |  silver  |  tribute  |  steward  |  great_hall  |  province  |  adventurer  |  remodel  |  copper  |  ambassador  |  ambassador  |  gold  |  tribute  |  minion  |  tribute  |  feast  |  adventurer  |  outpost  |  remodel  |  minion  | 
+player 2 gets hand size of 48
+ smithy  |  tribute  |  council_room  |  sea_hag  |  curse  |  tribute  |  sea_hag  |  cutpurse  |  gold  |  adventurer  |  minion  |  cutpurse  |  curse  |  minion  |  council_room  |  smithy  |  mine  |  feast  |  outpost  |  duchy  |  smithy  |  smithy  |  remodel  |  salvager  |  gold  |  estate  |  treasure_map  |  curse  |  treasure_map  |  minion  |  gold  |  village  |  village  |  steward  |  remodel  |  tribute  |  duchy  |  council_room  |  mine  |  great_hall  |  feast  |  salvager  |  gold  |  ambassador  |  salvager  |  outpost  |  mine  |  duchy  | 
+Treasures Before: 4
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 0 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 4
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 19
+Times Return Value Passes: 0
+Times Return Value Passes: 20
+initializing game with 4 players and state of 9
+player 1 gets deck size of 8
+ outpost  |  minion  |  adventurer  |  duchy  |  great_hall  |  baron  |  gold  |  mine  | 
+player 1 gets discard size of 18
+ feast  |  minion  |  ambassador  |  mine  |  outpost  |  salvager  |  steward  |  baron  |  sea_hag  |  treasure_map  |  remodel  |  remodel  |  outpost  |  treasure_map  |  remodel  |  steward  |  feast  |  estate  | 
+player 1 gets hand size of 26
+ smithy  |  minion  |  embargo  |  estate  |  cutpurse  |  curse  |  feast  |  duchy  |  ambassador  |  curse  |  outpost  |  council_room  |  council_room  |  salvager  |  cutpurse  |  cutpurse  |  minion  |  outpost  |  remodel  |  copper  |  village  |  council_room  |  cutpurse  |  outpost  |  minion  |  province  | 
+Treasures Before: 1
+Card Effect with choice1 = 0 choice2 = 0 choice3 = 0 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+player 2 gets deck size of 47
+ embargo  |  steward  |  remodel  |  gold  |  council_room  |  province  |  salvager  |  gardens  |  minion  |  outpost  |  cutpurse  |  smithy  |  silver  |  outpost  |  sea_hag  |  copper  |  copper  |  embargo  |  sea_hag  |  feast  |  curse  |  copper  |  salvager  |  curse  |  baron  |  curse  |  gold  |  sea_hag  |  smithy  |  baron  |  treasure_map  |  baron  |  village  |  province  |  mine  |  tribute  |  council_room  |  tribute  |  sea_hag  |  ambassador  |  steward  |  estate  |  smithy  |  curse  |  remodel  |  estate  |  tribute  | 
+player 2 gets discard size of 17
+ salvager  |  village  |  council_room  |  mine  |  tribute  |  minion  |  minion  |  mine  |  copper  |  tribute  |  gardens  |  ambassador  |  remodel  |  copper  |  silver  |  great_hall  |  cutpurse  | 
+player 2 gets hand size of 48
+ salvager  |  mine  |  tribute  |  duchy  |  salvager  |  remodel  |  gold  |  steward  |  adventurer  |  treasure_map  |  council_room  |  treasure_map  |  minion  |  council_room  |  sea_hag  |  adventurer  |  council_room  |  tribute  |  silver  |  great_hall  |  gold  |  sea_hag  |  minion  |  cutpurse  |  gardens  |  gardens  |  copper  |  outpost  |  sea_hag  |  great_hall  |  copper  |  adventurer  |  ambassador  |  treasure_map  |  copper  |  mine  |  smithy  |  remodel  |  duchy  |  silver  |  adventurer  |  feast  |  adventurer  |  mine  |  baron  |  smithy  |  embargo  |  curse  | 
+Treasures Before: 7
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 1 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 7
+	TREASURE COUNT FAIL
+player 3 gets deck size of 45
+ ambassador  |  gardens  |  treasure_map  |  gardens  |  baron  |  council_room  |  outpost  |  gold  |  tribute  |  cutpurse  |  mine  |  sea_hag  |  tribute  |  smithy  |  baron  |  tribute  |  outpost  |  estate  |  minion  |  gold  |  minion  |  mine  |  embargo  |  cutpurse  |  silver  |  great_hall  |  silver  |  province  |  salvager  |  copper  |  council_room  |  estate  |  curse  |  mine  |  duchy  |  cutpurse  |  gardens  |  mine  |  curse  |  mine  |  sea_hag  |  feast  |  feast  |  minion  |  ambassador  | 
+player 3 gets discard size of 33
+ gardens  |  smithy  |  smithy  |  baron  |  great_hall  |  council_room  |  treasure_map  |  adventurer  |  steward  |  copper  |  mine  |  baron  |  silver  |  council_room  |  minion  |  steward  |  adventurer  |  duchy  |  smithy  |  adventurer  |  adventurer  |  treasure_map  |  remodel  |  council_room  |  salvager  |  curse  |  province  |  ambassador  |  silver  |  estate  |  feast  |  gardens  |  ambassador  | 
+player 3 gets hand size of 38
+ steward  |  treasure_map  |  estate  |  province  |  minion  |  mine  |  tribute  |  silver  |  copper  |  salvager  |  village  |  gardens  |  cutpurse  |  baron  |  salvager  |  cutpurse  |  remodel  |  treasure_map  |  salvager  |  council_room  |  ambassador  |  feast  |  estate  |  tribute  |  mine  |  tribute  |  great_hall  |  feast  |  embargo  |  ambassador  |  sea_hag  |  outpost  |  province  |  province  |  salvager  |  gardens  |  tribute  |  embargo  | 
+Treasures Before: 2
+Card Effect with choice1 = 1 choice2 = 1 choice3 = 0 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+player 4 gets deck size of 49
+ treasure_map  |  adventurer  |  village  |  cutpurse  |  sea_hag  |  sea_hag  |  council_room  |  silver  |  remodel  |  curse  |  gardens  |  ambassador  |  council_room  |  ambassador  |  sea_hag  |  province  |  silver  |  outpost  |  gold  |  smithy  |  salvager  |  sea_hag  |  ambassador  |  salvager  |  ambassador  |  feast  |  cutpurse  |  cutpurse  |  estate  |  gardens  |  council_room  |  village  |  sea_hag  |  council_room  |  silver  |  sea_hag  |  feast  |  council_room  |  feast  |  great_hall  |  remodel  |  copper  |  great_hall  |  embargo  |  feast  |  ambassador  |  minion  |  copper  |  outpost  | 
+player 4 gets discard size of 47
+ copper  |  gardens  |  treasure_map  |  council_room  |  gold  |  salvager  |  outpost  |  gardens  |  estate  |  embargo  |  mine  |  ambassador  |  smithy  |  smithy  |  baron  |  council_room  |  smithy  |  feast  |  feast  |  remodel  |  salvager  |  adventurer  |  remodel  |  estate  |  salvager  |  great_hall  |  adventurer  |  gardens  |  great_hall  |  embargo  |  gold  |  cutpurse  |  feast  |  feast  |  remodel  |  estate  |  tribute  |  tribute  |  adventurer  |  smithy  |  curse  |  council_room  |  embargo  |  copper  |  outpost  |  salvager  |  ambassador  | 
+player 4 gets hand size of 28
+ cutpurse  |  duchy  |  remodel  |  gardens  |  adventurer  |  mine  |  province  |  remodel  |  great_hall  |  council_room  |  council_room  |  ambassador  |  tribute  |  great_hall  |  curse  |  minion  |  adventurer  |  gold  |  copper  |  tribute  |  great_hall  |  salvager  |  outpost  |  ambassador  |  salvager  |  great_hall  |  feast  |  remodel  | 
+Treasures Before: 2
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 0 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 23
+Times Return Value Passes: 0
+Times Return Value Passes: 24
+initializing game with 4 players and state of 2
+player 1 gets deck size of 43
+ feast  |  curse  |  outpost  |  treasure_map  |  smithy  |  curse  |  great_hall  |  gardens  |  gold  |  great_hall  |  adventurer  |  treasure_map  |  treasure_map  |  great_hall  |  embargo  |  cutpurse  |  minion  |  village  |  gold  |  village  |  mine  |  village  |  ambassador  |  gold  |  great_hall  |  silver  |  great_hall  |  feast  |  minion  |  cutpurse  |  ambassador  |  sea_hag  |  council_room  |  remodel  |  cutpurse  |  ambassador  |  tribute  |  great_hall  |  steward  |  steward  |  silver  |  curse  |  feast  | 
+player 1 gets discard size of 30
+ treasure_map  |  smithy  |  embargo  |  outpost  |  curse  |  ambassador  |  sea_hag  |  feast  |  steward  |  village  |  mine  |  mine  |  tribute  |  great_hall  |  silver  |  tribute  |  province  |  province  |  duchy  |  sea_hag  |  ambassador  |  treasure_map  |  duchy  |  ambassador  |  ambassador  |  mine  |  great_hall  |  silver  |  gold  |  gold  | 
+player 1 gets hand size of 7
+ steward  |  curse  |  cutpurse  |  embargo  |  embargo  |  village  |  baron  | 
+Treasures Before: 0
+Card Effect with choice1 = 1 choice2 = 0 choice3 = 1 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 3
+	TREASURE COUNT FAIL
+player 2 gets deck size of 16
+ baron  |  cutpurse  |  salvager  |  baron  |  duchy  |  gold  |  great_hall  |  sea_hag  |  baron  |  steward  |  feast  |  treasure_map  |  minion  |  gardens  |  estate  |  great_hall  | 
+player 2 gets discard size of 12
+ embargo  |  remodel  |  treasure_map  |  gold  |  mine  |  estate  |  embargo  |  salvager  |  feast  |  steward  |  gardens  |  smithy  | 
+player 2 gets hand size of 27
+ steward  |  gardens  |  salvager  |  silver  |  salvager  |  minion  |  village  |  outpost  |  province  |  gold  |  gold  |  embargo  |  feast  |  adventurer  |  great_hall  |  remodel  |  steward  |  mine  |  ambassador  |  cutpurse  |  ambassador  |  great_hall  |  silver  |  tribute  |  gold  |  duchy  |  silver  | 
+Treasures Before: 6
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 1 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 6
+	TREASURE COUNT FAIL
+player 3 gets deck size of 29
+ outpost  |  duchy  |  great_hall  |  cutpurse  |  baron  |  embargo  |  duchy  |  duchy  |  curse  |  embargo  |  gold  |  cutpurse  |  gold  |  treasure_map  |  baron  |  outpost  |  great_hall  |  sea_hag  |  ambassador  |  embargo  |  remodel  |  steward  |  cutpurse  |  embargo  |  minion  |  mine  |  copper  |  baron  |  great_hall  | 
+player 3 gets discard size of 3
+ council_room  |  steward  |  steward  | 
+player 3 gets hand size of 19
+ cutpurse  |  copper  |  outpost  |  province  |  estate  |  estate  |  council_room  |  tribute  |  adventurer  |  estate  |  salvager  |  sea_hag  |  council_room  |  steward  |  mine  |  treasure_map  |  minion  |  adventurer  |  estate  | 
+Treasures Before: 1
+Card Effect with choice1 = 0 choice2 = 0 choice3 = 0 handPosition = 0
+	RETURN VALUE FAIL
+Treasures After: 1
+	TREASURE COUNT FAIL
+player 4 gets deck size of 38
+ cutpurse  |  council_room  |  gardens  |  great_hall  |  smithy  |  remodel  |  treasure_map  |  gardens  |  feast  |  minion  |  outpost  |  great_hall  |  steward  |  gold  |  gardens  |  tribute  |  sea_hag  |  embargo  |  minion  |  province  |  mine  |  steward  |  adventurer  |  gardens  |  smithy  |  great_hall  |  adventurer  |  adventurer  |  salvager  |  copper  |  copper  |  outpost  |  smithy  |  province  |  smithy  |  treasure_map  |  baron  |  cutpurse  | 
+player 4 gets discard size of 13
+ copper  |  sea_hag  |  steward  |  minion  |  council_room  |  sea_hag  |  minion  |  gardens  |  outpost  |  salvager  |  gardens  |  copper  |  tribute  | 
+player 4 gets hand size of 37
+ duchy  |  adventurer  |  adventurer  |  council_room  |  estate  |  feast  |  great_hall  |  adventurer  |  ambassador  |  outpost  |  embargo  |  silver  |  salvager  |  baron  |  province  |  curse  |  council_room  |  feast  |  remodel  |  ambassador  |  embargo  |  estate  |  treasure_map  |  gardens  |  remodel  |  village  |  tribute  |  minion  |  mine  |  copper  |  duchy  |  steward  |  cutpurse  |  province  |  curse  |  curse  |  sea_hag  | 
+Treasures Before: 2
+Card Effect with choice1 = 0 choice2 = 0 choice3 = 1 handPosition = 2
+	RETURN VALUE FAIL
+Treasures After: 2
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 1
+Times Treasures Count Fails: 27
+Times Return Value Passes: 0
+Times Return Value Passes: 28
+initializing game with 2 players and state of 5
+player 1 gets deck size of 27
+ mine  |  outpost  |  great_hall  |  outpost  |  sea_hag  |  tribute  |  council_room  |  mine  |  minion  |  gold  |  council_room  |  silver  |  steward  |  curse  |  treasure_map  |  mine  |  village  |  remodel  |  remodel  |  council_room  |  council_room  |  embargo  |  minion  |  sea_hag  |  tribute  |  baron  |  smithy  | 
+player 1 gets discard size of 27
+ copper  |  copper  |  council_room  |  feast  |  tribute  |  minion  |  tribute  |  adventurer  |  adventurer  |  smithy  |  salvager  |  treasure_map  |  council_room  |  smithy  |  remodel  |  baron  |  gardens  |  outpost  |  baron  |  minion  |  copper  |  minion  |  province  |  adventurer  |  province  |  gold  |  gold  | 
+player 1 gets hand size of 31
+ baron  |  feast  |  baron  |  curse  |  smithy  |  steward  |  great_hall  |  adventurer  |  council_room  |  embargo  |  steward  |  ambassador  |  duchy  |  silver  |  steward  |  gardens  |  village  |  gardens  |  embargo  |  sea_hag  |  silver  |  treasure_map  |  embargo  |  great_hall  |  cutpurse  |  remodel  |  province  |  remodel  |  mine  |  minion  |  village  | 
+Treasures Before: 2
+Card Effect with choice1 = 0 choice2 = 0 choice3 = 0 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 4
+	TREASURE COUNT PASS
+player 2 gets deck size of 16
+ curse  |  gold  |  smithy  |  outpost  |  council_room  |  feast  |  council_room  |  embargo  |  tribute  |  village  |  outpost  |  adventurer  |  minion  |  council_room  |  cutpurse  |  tribute  | 
+player 2 gets discard size of 43
+ cutpurse  |  treasure_map  |  sea_hag  |  treasure_map  |  curse  |  estate  |  great_hall  |  council_room  |  copper  |  village  |  copper  |  steward  |  treasure_map  |  salvager  |  steward  |  tribute  |  gold  |  ambassador  |  cutpurse  |  great_hall  |  province  |  cutpurse  |  outpost  |  sea_hag  |  smithy  |  silver  |  baron  |  embargo  |  steward  |  sea_hag  |  minion  |  duchy  |  mine  |  silver  |  remodel  |  copper  |  copper  |  gold  |  sea_hag  |  smithy  |  smithy  |  ambassador  |  council_room  | 
+player 2 gets hand size of 30
+ silver  |  mine  |  gold  |  steward  |  village  |  tribute  |  minion  |  embargo  |  gardens  |  smithy  |  tribute  |  remodel  |  steward  |  feast  |  copper  |  gardens  |  council_room  |  baron  |  cutpurse  |  estate  |  estate  |  treasure_map  |  copper  |  cutpurse  |  cutpurse  |  tribute  |  estate  |  gold  |  estate  |  great_hall  | 
+Treasures Before: 5
+Card Effect with choice1 = 0 choice2 = 1 choice3 = 0 handPosition = 3
+	RETURN VALUE FAIL
+Treasures After: 5
+	TREASURE COUNT FAIL
+Times Treasures Count Passes: 2
+Times Treasures Count Fails: 28
+Times Return Value Passes: 0
+Times Return Value Passes: 30
+---Random Testing Adventurer Card COMPLETE---
+
+
+
+File 'randomtestadventurer.c'
+Lines executed:96.88% of 64
+Creating 'randomtestadventurer.c.gcov'
+
+File 'randomtestadventurer.c'
+Lines executed:96.88% of 64
+Branches executed:100.00% of 28
+Taken at least once:96.43% of 28
+Calls executed:97.50% of 40
+Creating 'randomtestadventurer.c.gcov'
+
+* * * * * * * * * * * DOMINION * * * * * * * * * * *
+File 'dominion.c'
+Lines executed:30.58% of 569
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:30.58% of 569
+Branches executed:28.06% of 417
+Taken at least once:20.86% of 417
+Calls executed:22.00% of 100
+Creating 'dominion.c.gcov'
+
+* * * * * * * * * * * DOMINION1 * * * * * * * * * * *
+Function 'updateCoins'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:92.31% of 13
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+No calls
+
+Function 'playFeast'
+Lines executed:0.00% of 17
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 6
+
+Function 'playCouncil_Room'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 4
+
+Function 'playVillage'
+Lines executed:100.00% of 6
+No branches
+Calls executed:100.00% of 3
+
+Function 'playSmithy'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 3
+
+Function 'playAdventurer'
+Lines executed:100.00% of 18
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+Calls executed:100.00% of 3
+
+Function 'cardEffect'
+Lines executed:7.00% of 200
+Branches executed:13.61% of 169
+Taken at least once:1.78% of 169
+Calls executed:7.27% of 55
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:100.00% of 22
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:90.32% of 62
+Branches executed:95.65% of 46
+Taken at least once:82.61% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:100.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:100.00% of 6
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:30.58% of 569
+Branches executed:28.06% of 417
+Taken at least once:20.86% of 417
+Calls executed:22.00% of 100
+Creating 'dominion.c.gcov'
+
