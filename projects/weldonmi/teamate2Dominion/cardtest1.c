@@ -1,79 +1,69 @@
-/************
-Author:James Taylor
-Date: 4/24/16
+/*
+ * Miranda Weldon
+ * April 24, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * cardtest1.c
+ */
 
-Card test for smithy_ref()
-
-    test that played smithy card results in +3 to players hand count and that smithy is
-    discarded from current hand. Net hand count should be 7, with 1 less smithy card in player
-    hand.
-
-*************/
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "interface.h"
+#include "rngs.h"
+#include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <string.h>
 
-void cardtest1()
-{
+//main function
+int main(){
+	//declare variables
+	int i, numPlayers = 3;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, embargo, remodel, adventurer, mine, cutpurse, ambassador, great_hall, smithy};
 
-    int numPlayer = 2;
-    int seed = 10000;
-    int player = 0; // 0=player 1
-    char cardName[20];
+	//start up original game and create a copy
+	initializeGame(numPlayers, k, 1000, &Game);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
 
+	printf("Testing Adventurer Card\n\n");
 
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
-        sea_hag, tribute, smithy};
+	for(i = 0; i < numPlayers; i++){
+		//reset game copy 
+		memcpy(&testGame, &Game, sizeof(struct gameState));
+	
+		//play card
+		cardEffect(adventurer, 0, 0, 0, &testGame, 0, 0);
 
-    struct gameState G;
-    initializeGame(numPlayer, k, seed, &G);
+		printf("Player %d:\n", i);
 
-    printf("\n********************************\n");
-    printf("\nCardTest1 - testing smithy_ref()\n");
-    printf("\n********************************\n");
+		//test that the player has 2 new cards
+		printf("\tExpected HandCount: %d\n\tActual HandCount: %d\n", Game.handCount[i] + 2, testGame.handCount[i]);
+		Game.handCount[i] + 2 == testGame.handCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    //printf("%d\n", G.handCount[player]); //print hand count
+		//test that 2 of the cards in the new hand are treasure cards
+		int j, treasureCardCount;
+		for(j = 0; j < Game.handCount[i]; j++){
+			if(testGame.hand[i][j] == copper || testGame.hand[i][j] == silver || testGame.hand[i][j] == gold)
+				treasureCardCount++;
+		}
+		printf("\tExpected TreasureCardCount: at least 2\n\tActual TreasureCardCount: %d\n", testGame.handCount[i]);
+		testGame.handCount[i] >= 2 ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    //shuffle(player, &G);
-    G.hand[player][0] = smithy;
-    //printHand(player, &G); //print hand to check that smithy is available to play
+		//test that the player's deck lost at least 2 cards
+		printf("\tExpected DeckCount: at most %d\n\tActual DeckCount: %d\n", Game.deckCount[i] - 2, testGame.deckCount[i]);
+		testGame.deckCount[i] <= Game.deckCount[i] - 2 ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    smithy_ref(&G, player, 0);
-    //printHand(player, &G); //print updated hand to readily see if player hand updated correctly.
+		//test that at least 0 card is discarded, is this needed?
+		printf("\tExpected DiscardCount: at least 0\n\tActual DiscardCount: %d\n", testGame.discardCount[i]);
+		testGame.discardCount[i] >= 0 ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    if(G.handCount[player] == 7)
-        printf("PASS: Player hand updated to %d cards after playing smithy (5+3- (1 played))\n", G.handCount[player]);
-    else
-        printf("FAIL: Player hand count of %d not equal to 7\n", G.handCount[player]);
+		//test which player's turn
+		printf("\tExpected Player's Turn: %d\n\tActual Player's Turn: %d\n", Game.whoseTurn, testGame.whoseTurn);
+		Game.whoseTurn == testGame.whoseTurn ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    cardNumToName(G.playedCards[0], cardName);
-    if(strcmp(cardName, "Smithy") == 0)
-        printf("PASS: Smithy has been played and put into played pile.\n");
-    else
-        printf("FAIL: Smithy has not been put into played pile.\n");
+		Game.whoseTurn++;
+	}
 
-//    for(i = 0; i < G.handCount[player]; i++)
-//    {
-//
-//        cardNumToName(G.hand[player][i], cardName);
-//        printf("%s\n", cardName);
-//    }
-
-
-
-}
-
-
-int main()
-{
-
-    cardtest1();
-
-    return 0;
+	//zero if no errors
+	return 0;
 }

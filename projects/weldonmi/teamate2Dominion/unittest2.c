@@ -1,129 +1,92 @@
-
-/************
-Author:James Taylor
-Date: 4/24/16
-
-Unit test 2 for supplyCount()
-    test for correct detection of current supply counts for cards after game initialization.
-        copper, silver, gold, estate, duchy, province, adventurer, smithy, mine.
-
-*************/
-
+/*
+ * Miranda Weldon
+ * April 24, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * unittest3.c
+ */
 
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
 #include "rngs.h"
+#include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <string.h>
 
-void unitTest2()
-{
-    int numPlayer = 2;
-    int seed = 1000;
-
-    //holds result from supplyCount()
-    int test = 0;
-
-    //create gameState struc, and available cards(copied from playdom.c)
-    struct gameState G;
-
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
-           sea_hag, tribute, smithy};
-
-    initializeGame(numPlayer, k, seed, &G);
-
-    printf("\n********************************\n");
-    printf("\nUnitTest2 - testing supplyCount()\n");
-    printf("\n********************************\n");
-
-    printf("NEW GAME STATE:Testing treasure cards:\n");
-
-    test = supplyCount(copper, &G);
-    if(test == 46)
-            printf("PASS: copper = 46.\n");
-    else
-        printf("FAIL: copper = %d\n", test);
-
-    test = supplyCount(silver, &G);
-    if(test == 40)
-        printf("PASS: silver = %d.\n", test);
-    else
-        printf("FAIL: silver = %d.\n", test);
-
-    test = supplyCount(gold, &G);
-    if(test == 30)
-            printf("PASS: gold = %d.\n", test);
-    else
-            printf("PASS: gold = %d.\n", test);
-
-        printf("\nNEW GAME STATE:Testing victory cards:\n");
-
-    test = supplyCount(province, &G);
-    if(test == 8)
-        printf("PASS: Province = 8.\n");
-    else
-        printf("FAIL: Province = %d\n", test);
-
-    test = supplyCount(duchy, &G);
-    if(test == 8)
-        printf("PASS: Duchy = 8.\n");
-    else
-        printf("FAIL: Duchy = %d\n", test);
-
-    test = supplyCount(estate, &G);
-    if(test == 8)
-        printf("PASS: Estate = 8.\n");
-    else
-        printf("FAIL: Estate = %d\n", test);
-
-    printf("\nNEW GAME STATE: Testing selection of supply cards:\n");
-
-    test = supplyCount(adventurer, &G);
-    if(test == 10)
-        printf("PASS: Adventure = %d\n", test);
-    else
-        printf("FAIL: Adventure = %d\n", test);
-
-    test = supplyCount(smithy, &G);
-    if(test == 10)
-        printf("PASS: smithy = %d\n", test);
-    else
-        printf("FAIL: smithy = %d\n", test);
-
-    test = supplyCount(mine, &G);
-    if(test == 10)
-        printf("PASS: mine = %d\n", test);
-    else
-        printf("FAIL: mine = %d\n", test);
-
-    printf("\nCHANGED GAME STATE: Testing changing counts to 1 for gold, duchy, mine cards\n");
-
-    G.supplyCount[gold] = 1;
-    G.supplyCount[duchy] = 1;
-    G.supplyCount[mine] = 1;
-
-    test = supplyCount(gold, &G);
-    if(test == 1)
-        printf("PASS: gold = %d\n", test);
-    else
-        printf("FAIL: gold = %d\n", test);
-
-    test = supplyCount(duchy, &G);
-    if(test == 1)
-        printf("PASS: duchy = %d\n", test);
-    else
-        printf("FAIL: duchy = %d\n", test);
-
-    test = supplyCount(mine, &G);
-    if(test == 1)
-        printf("PASS: mine = %d\n", test);
-    else
-        printf("FAIL: mine = %d\n", test);
+//function to print results of updateCoins test
+void updateCoinsTest(int expected, int actual){
+	if(expected == actual)
+		printf("\tTest Pass\n");
+	else
+		printf("\tTest Fail\n");
 }
 
-int main()
-{
-    unitTest2();
-    return 0;
+//main function
+int main(){
+	//declare variables
+	int bonus = 0, numPlayers = 3, handSize = 5, seed = 1000;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, salvager, remodel, sea_hag, mine, cutpurse, ambassador, great_hall, smithy};
+	int testHand[5] = {smithy, copper, copper, copper, copper};
 
+	//start up original game and make a copy
+	initializeGame(numPlayers, k, seed, &Game);
+	memcpy(Game.hand[0], testHand, sizeof(int) * handSize);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	printf("Testing updateCoins()\n\n");
+
+	//test at beginning of game, should be no changes
+	updateCoins(0, &testGame, bonus);
+	printf("Beginning of Game:\n\tExpected: %d\n\tActual: %d\n", Game.coins, testGame.coins);
+	updateCoinsTest(Game.coins, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 1 copper card added, should be +1
+	//[0][0] is first player, first card in hadn; can be changed
+	testGame.hand[0][0] = copper;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Copper to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 1, testGame.coins);
+	updateCoinsTest(Game.coins + 1, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 1 silver card added, should be +2
+	testGame.hand[0][0] = silver;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Silver to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 2, testGame.coins);
+	updateCoinsTest(Game.coins + 2, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 1 gold card added, should be +3
+	testGame.hand[0][0] = gold;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Gold to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 3, testGame.coins);
+	updateCoinsTest(Game.coins + 3, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 4 bonus added, should be +4
+	bonus = 4;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 4 Bonus:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 4, testGame.coins);
+	updateCoinsTest(Game.coins + 4, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+	bonus = 0;
+
+	//test after 1 kingdom card added to 2nd position, should be -1
+	testGame.hand[0][1] = feast;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Kingdom Card to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins - 1, testGame.coins);
+	updateCoinsTest(Game.coins - 1, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//zero if no errors
+	return 0;
 }
+

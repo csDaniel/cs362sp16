@@ -1,0 +1,136 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:#define DEBUG 0
+        -:    9:#define NOISY_TEST 1
+        -:   10:
+function checkIsGameOver called 2000 returned 100% blocks executed 66%
+        -:   11:int checkIsGameOver(int p, struct gameState *post) {
+        -:   12:    struct gameState pre;
+     2000:   13:    memcpy (&pre, post, sizeof(struct gameState));
+        -:   14:    
+     2000:   15:    int supplyCountBackup = pre.supplyCount[province];
+        -:   16:    
+     2000:   17:    pre.supplyCount[province] = 1;
+        -:   18:
+     4000:   19:    assert(isGameOver(&pre) == 0);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   20:    
+     2000:   21:    pre.supplyCount[province] = 0;
+        -:   22:
+     4000:   23:    assert(isGameOver(&pre) == 1);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   24:    
+        -:   25:    
+        -:   26:    
+     2000:   27:    pre.supplyCount[province] = supplyCountBackup;
+        -:   28:    
+     2000:   29:    int supplyCount1Backup = pre.supplyCount[0];
+     2000:   30:    int supplyCount2Backup = pre.supplyCount[1];
+     2000:   31:    int supplyCount3Backup = pre.supplyCount[2];
+        -:   32:    
+        -:   33:    //if three supply pile are at 0, the game ends
+     2000:   34:    pre.supplyCount[0] = 0;
+     2000:   35:    pre.supplyCount[1] = 0;
+     2000:   36:    pre.supplyCount[2] = 0;
+     2000:   37:    int j = 0;
+   104000:   38:    for (int i = 0; i < 25; i++)
+branch  0 taken 96%
+branch  1 taken 4%
+        -:   39:    {
+    50000:   40:        if (pre.supplyCount[i] == 0)
+branch  0 taken 12%
+branch  1 taken 88%
+        -:   41:        {
+     6000:   42:            j++;
+     6000:   43:        }
+    50000:   44:    }
+        -:   45:    
+     4000:   46:    assert( j >= 3);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   47:    /* if ( j >= 3)
+        -:   48:    {
+        -:   49:        return 1;
+        -:   50:    }
+        -:   51:    */
+        -:   52:    
+     2000:   53:    pre.supplyCount[0] = supplyCount1Backup;
+     2000:   54:    pre.supplyCount[1] = supplyCount2Backup;
+     2000:   55:    pre.supplyCount[2] = supplyCount3Backup;
+        -:   56:    
+        -:   57:    
+        -:   58:    
+     4000:   59:    assert(memcmp(&pre, post, sizeof(struct gameState)) == 0);
+branch  0 taken 0%
+branch  1 taken 100%
+     2000:   60:}
+        -:   61:
+function main called 1 returned 0% blocks executed 81%
+        -:   62:int main () {
+        -:   63:    
+        -:   64:    int i, n, r, p, deckCount, discardCount, handCount;
+        -:   65:    
+        1:   66:    int k[10] = {adventurer, council_room, feast, gardens, mine,
+        -:   67:	       remodel, smithy, village, baron, great_hall};
+        -:   68:    
+        -:   69:    struct gameState G;
+        -:   70:    
+        1:   71:    printf ("Testing isGameOver.\n");
+        -:   72:    
+        1:   73:    printf ("RANDOM TESTS.\n");
+        -:   74:    
+        1:   75:    SelectStream(2);
+        1:   76:    PutSeed(3);
+        -:   77:    
+     4002:   78:    for (n = 0; n < 2000; n++) {
+branch  0 taken 99%
+branch  1 taken 1%
+105204000:   79:        for (i = 0; i < sizeof(struct gameState); i++) {
+branch  0 taken 99%
+branch  1 taken 1%
+ 52600000:   80:            ((char*)&G)[i] = floor(Random() * 256);
+ 52600000:   81:        }
+     2000:   82:        p = floor(Random() * 2);
+     2000:   83:        G.deckCount[p] = floor(Random() * MAX_DECK);
+     2000:   84:        G.discardCount[p] = floor(Random() * MAX_DECK);
+     2000:   85:        G.handCount[p] = floor(Random() * MAX_HAND);
+     2000:   86:        checkIsGameOver(p, &G);
+     2000:   87:    }
+        -:   88:    
+        1:   89:    printf ("ALL TESTS OK\n");
+        -:   90:    
+        1:   91:    exit(0);
+        -:   92:    
+        -:   93:    printf ("SIMPLE FIXED TESTS.\n");
+        -:   94:    for (p = 0; p < 2; p++) {
+        -:   95:        for (deckCount = 0; deckCount < 5; deckCount++) {
+        -:   96:            for (discardCount = 0; discardCount < 5; discardCount++) {
+        -:   97:                for (handCount = 0; handCount < 5; handCount++) {
+        -:   98:                    memset(&G, 23, sizeof(struct gameState));
+        -:   99:                    r = initializeGame(2, k, 1, &G);
+        -:  100:                    G.deckCount[p] = deckCount;
+        -:  101:                    memset(G.deck[p], 0, sizeof(int) * deckCount);
+        -:  102:                    G.discardCount[p] = discardCount;
+        -:  103:                    memset(G.discard[p], 0, sizeof(int) * discardCount);
+        -:  104:                    G.handCount[p] = handCount;
+        -:  105:                    memset(G.hand[p], 0, sizeof(int) * handCount);
+        -:  106:                    checkIsGameOver(p, &G);
+        -:  107:                }
+        -:  108:            }
+        -:  109:        }
+        -:  110:    }
+        -:  111:    
+        -:  112:    return 0;
+    #####:  113:}
