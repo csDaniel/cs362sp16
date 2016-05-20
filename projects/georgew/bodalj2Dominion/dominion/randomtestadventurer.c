@@ -1,3 +1,4 @@
+//refactored for bodaljens
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -92,7 +93,8 @@ int callFunction(struct gameState *G, int numPlayers){
 	//printf("\nCoins Before: %d", coinsStart);
 	//call cardEffect function
 	//printf("\nCall Card Effect\n");
-	cardEffect(adventurer, choice1, choice2, choice3, G, handPos, &bonus);
+	//cardEffect(adventurer, choice1, choice2, choice3, G, handPos, &bonus);
+	playAdventurer(thisPlayer, G);
 	coins = countHandCoins(thisPlayer, G);
 	//printf("Coins After: %d\n", coins);
 	if (coins - coinsStart != 2){

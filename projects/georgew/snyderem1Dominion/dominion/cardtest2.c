@@ -1,4 +1,4 @@
-//cardtest2.c
+//cardtest2.c -- refactored code adventurer for snyderem
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -22,9 +22,10 @@ int main() {
 	int tempHand[MAX_HAND];
 	int treasureBefore, treasureAfter;
 	int z;
-	//int choice1 = 0;
-	//int choice2 = 0;
-	//int choice3 = 0;	
+	int choice1 = 0;
+	int choice2 = 0;
+	int choice3 = 0;
+	int bonus = 0;	
 	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, council_room};
 
@@ -46,7 +47,9 @@ int main() {
 	currHandCount = testG.handCount[thisPlayer];
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);	
+	
+	cardEffect(adventurer, choice1, choice2, choice3, &testG, handPos, &bonus);
+	//adventurerCard(thisPlayer, &testG, tempHand);	
 	//check hand count
 	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
 	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
@@ -73,7 +76,8 @@ int main() {
 	}
 	printf("Treasure Before Function: %d\n", treasureBefore);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);
+	//adventurerCard(thisPlayer, &testG, tempHand);
+	cardEffect(adventurer, choice1, choice2, choice3, &testG, handPos, &bonus);
 	//printHand
 	//printHand(thisPlayer, &testG);
 	z = 0;
@@ -101,7 +105,8 @@ int main() {
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run fxn
-	adventurerCard(thisPlayer, &testG, tempHand);
+	//adventurerCard(thisPlayer, &testG, tempHand);
+	cardEffect(adventurer, choice1, choice2, choice3, &testG, handPos, &bonus);
 	//get count after run
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
@@ -124,7 +129,8 @@ int main() {
 	}
 	printf("Deck Count: %d\n", testG.deckCount[thisPlayer]);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);
+	//adventurerCard(thisPlayer, &testG, tempHand);
+	cardEffect(adventurer, choice1, choice2, choice3, &testG, handPos, &bonus);
 	printf("Deck Count: %d\n", testG.deckCount[thisPlayer]);
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
 return 0;

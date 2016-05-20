@@ -1,4 +1,4 @@
-//cardtest2.c
+//cardtest2.c -- refactored for bodalj
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -46,7 +46,7 @@ int main() {
 	currHandCount = testG.handCount[thisPlayer];
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);	
+	playAdventurer(thisPlayer, &testG);	
 	//check hand count
 	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
 	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
@@ -73,7 +73,7 @@ int main() {
 	}
 	printf("Treasure Before Function: %d\n", treasureBefore);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);
+	playAdventurer(thisPlayer, &testG);
 	//printHand
 	//printHand(thisPlayer, &testG);
 	z = 0;
@@ -101,7 +101,8 @@ int main() {
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run fxn
-	adventurerCard(thisPlayer, &testG, tempHand);
+	//adventurerCard(thisPlayer, &testG, tempHand);
+	playAdventurer(thisPlayer, &testG);
 	//get count after run
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
@@ -124,7 +125,8 @@ int main() {
 	}
 	printf("Deck Count: %d\n", testG.deckCount[thisPlayer]);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);
+	//adventurerCard(thisPlayer, &testG, tempHand);
+	playAdventurer(thisPlayer, &testG);
 	printf("Deck Count: %d\n", testG.deckCount[thisPlayer]);
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
 return 0;

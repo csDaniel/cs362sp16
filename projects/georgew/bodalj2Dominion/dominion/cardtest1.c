@@ -1,4 +1,4 @@
-//cardtest1.c
+//cardtest1.c -- refactored for bodalj
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -45,7 +45,7 @@ int main() {	// copy the game state to a test case
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run function
-	smithyCard(handPos, thisPlayer, &testG);
+	playSmithy(handPos, thisPlayer, &testG);
 	//check deck count
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	if ((currDeckCount - 3) == testG.deckCount[thisPlayer]){

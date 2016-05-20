@@ -1,4 +1,4 @@
-//cardtest4.c
+//cardtest4.c --refactored for snyderem
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -14,11 +14,11 @@ int main() {
     	int numPlayers = 2;
     	int thisPlayer = 0;
    	int currDeckCount, currHandCount, currDiscardCount, currActions;
-   	//int bonus = 0;
+   	int bonus = 0;
     	int handPos = 0;
-    	//int choice1 = 0;
-	//int choice2 = 0;
-	//int choice3 = 0;
+    	int choice1 = 0;
+	int choice2 = 0;
+	int choice3 = 0;
 	struct gameState G, testG;
 	
 	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
@@ -43,7 +43,8 @@ int main() {
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run card function
-	greatHallCard(handPos, thisPlayer, &testG);
+	//greatHallCard(handPos, thisPlayer, &testG);
+	cardEffect(great_hall, choice1, choice2, choice3, &testG, handPos, &bonus);
 	//check deck count
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	if ((currDeckCount - 1) == testG.deckCount[thisPlayer]){
@@ -84,7 +85,8 @@ int main() {
 	currActions = testG.numActions;
 	printf("Current Actions Before: %d\n", testG.numActions);
 	//run function
-	greatHallCard(handPos, thisPlayer, &testG);
+	//greatHallCard(handPos, thisPlayer, &testG);
+	cardEffect(great_hall, choice1, choice2, choice3, &testG, handPos, &bonus);
 	//check effects
 	printf("Current Actions After: %d\n", testG.numActions);
 	if ((currActions + 1) == testG.numActions){

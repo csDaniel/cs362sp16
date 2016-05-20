@@ -1,4 +1,4 @@
-//cardtest3.c
+//cardtest3.c --refactored for bodalj
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -41,7 +41,8 @@ int main() {
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run function
-	cardEffect(village, choice1, choice2, choice3, &testG, handPos, &bonus);
+	playVillage(thisPlayer, handPos, &testG);
+	//cardEffect(village, choice1, choice2, choice3, &testG, handPos, &bonus);
 	//check deck count
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	if ((currDeckCount - 1) == testG.deckCount[thisPlayer]){
@@ -78,7 +79,8 @@ int main() {
 	//save num actions
 	currActions = testG.numActions;
 	printf("Current Actions Before: %d\n", testG.numActions);
-	cardEffect(village, choice1, choice2, choice3, &testG, handPos, &bonus);
+	//cardEffect(village, choice1, choice2, choice3, &testG, handPos, &bonus);
+	playVillage(thisPlayer, handPos, &testG);
 	printf("Current Actions After: %d\n", testG.numActions);	
 	if ((currActions + 2) == testG.numActions){
 		printf("ACTION COUNT INCREASED BY 2: SUCCESS\n");

@@ -1,4 +1,4 @@
-//cardtest1.c
+//cardtest1.c ---refactored for snyderem tests
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -15,9 +15,10 @@ int main() {	// copy the game state to a test case
 	int thisPlayer = 0;
 	int handPos = 0;
 	int currDeckCount, currHandCount, currDiscardCount;
-	//int choice1 = 0;
-	//int choice2 = 0;
-	//int choice3 = 0;
+	int choice1 = 0;
+	int choice2 = 0;
+	int choice3 = 0;
+	int bonus = 0;
 	struct gameState G, testG;
 	int currCard;
 	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
@@ -45,7 +46,8 @@ int main() {	// copy the game state to a test case
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run function
-	smithyCard(handPos, thisPlayer, &testG);
+	cardEffect(smithy, choice1, choice2, choice3, &testG, handPos, &bonus);
+	//smithyCard(handPos, thisPlayer, &testG);
 	//check deck count
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	if ((currDeckCount - 3) == testG.deckCount[thisPlayer]){
