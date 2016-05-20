@@ -1,81 +1,60 @@
-/************
-Author:James Taylor
-Date: 4/24/16
+/*
+ * Miranda Weldon
+ * April 23, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * cardtest2.c
+ */
 
-Card test for adventurer_ref()
-
-    adventurer_ref: test that player coin count increase by the value of two added coin cards.
-                    Test that all other drawn cards are sent to discard. Default implementation will draw 3 cards:
-                        Estate, Copper, Copper.
-                    Tests will verify that resulting game states reflects +2 to coin count of player hand and
-                    adding Estate card to discard pile.
-
-
-*************/
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "rngs.h"
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "interface.h"
+#include "rngs.h"
+#include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <string.h>
 
-void cardtest2()
-{
-    int numPlayer = 2;
-    int seed = 10000;
-    int player = 0; // 0=player 1
-    int treasureCount = 0;
-    int treasureCountAfter = 0;
-    char cardName[20];
+//main function
+int main(){
+	//declare variables
+	int i, numPlayers = 3;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, embargo, remodel, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 
+	//start up original game and create a copy
+	initializeGame(numPlayers, k, 1000, &Game);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
 
-    int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
-        sea_hag, tribute, smithy};
+	printf("Testing Smithy Card\n");
 
-    struct gameState G;
-    initializeGame(numPlayer, k, seed, &G);
+	for(i = 0; i < numPlayers; i++){
+		//reset game copy 
+		memcpy(&testGame, &Game, sizeof(struct gameState));
+	
+		//play card
+		cardEffect(smithy, 0, 0, 0, &testGame, 0, 0);
 
-    printf("\n********************************\n");
-    printf("\nCardTest2 - testing adventurer_ref()\n");
-    printf("\n********************************\n");
+		printf("Player %d:\n", i);
 
-    //printHand(player, &G);
-    printDeck(player, &G); //verify only coppers in Deck
+		//test that the player has 3 new cards
+		printf("\tExpected HandCount: %d\n\tActual HandCount: %d\n", Game.handCount[i] + 2, testGame.handCount[i]);
+		Game.handCount[i] + 2 == testGame.handCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    G.hand[player][0] = adventurer; // place adventurer card into Player hand
-    printHand(player, &G); //verify only coppers in player hand
-    printDiscard(player, &G); //verify 0 cards in discard
+		//test that the player's deck lost 3 cards
+		printf("\tExpected DeckCount: %d\n\tActual DeckCount: %d\n", Game.deckCount[i] - 3, testGame.deckCount[i]);
+		Game.deckCount[i] - 3 == testGame.deckCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    treasureCount = countHandCoins(player, &G); //save state of Coin count
-    adventurer_ref(&G, player);
-    treasureCountAfter = countHandCoins(player, &G); //save new state of coin count
-    if(treasureCountAfter == treasureCount + 2)
-        printf("PASS: treasure count is 2 higher than previous count(Current Deck only contains Coppers)\n\n");
-    else
-        printf("FAIL: treasure count is not 2 higher than previous count(Current Deck only contains Coppers\n\n");
+		//test that only 1 card is discarded
+		printf("\tExpected DiscardCount: %d\n\tActual DiscardCount: %d\n", Game.discardCount[i] + 1, testGame.discardCount[i]);
+		Game.discardCount[i] + 1 == testGame.discardCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
+		//test which player's turn
+		printf("\tExpected Player's Turn: %d\n\tActual Player's Turn: %d\n", Game.whoseTurn, testGame.whoseTurn);
+		Game.whoseTurn == testGame.whoseTurn ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
 
-    printHand(player, &G); //verify coin count is +2 coppers
+		Game.whoseTurn++;
+	}
 
-
-    printDiscard(player, &G); //verify discard now contains 1 discard (from position 0 in deck)
-
-    cardNumToName(G.discard[0][0], cardName);
-    if(strcmp(cardName, "Estate") == 0)
-        printf("PASS: Discard contains 1 (Estate card from player discard[0]\n\n");
-    else
-        printf("FAIL: Discard contains incorrect discards\n\n");
-
-
-
-}
-
-int main()
-{
-    cardtest2();
-
-    return 0;
+	//zero if no errors
+	return 0;
 }

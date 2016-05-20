@@ -1,87 +1,60 @@
-//Joseph Cuellar
-//CS - 362
-//TEST - Adventurer Card 
+/*
+ * Miranda Weldon
+ * April 23, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * cardtest2.c
+ */
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
-int AdventurerTEST(struct gameState *postGameState);
+//main function
+int main(){
+	//declare variables
+	int i, numPlayers = 3;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, embargo, remodel, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 
-int main()
-{
-	int player = 0;
-	int numTests = 500;
-	int i, j, k, m, n;
-	struct gameState postGameState;
+	//start up original game and create a copy
+	initializeGame(numPlayers, k, 1000, &Game);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
 
-	for (i = 0; i < sizeof(struct gameState); i++) { 
-		((char*)&postGameState)[i] = floor(Random() * 256);
-	}
+	printf("Testing Smithy Card\n");
+
+	for(i = 0; i < numPlayers; i++){
+		//reset game copy 
+		memcpy(&testGame, &Game, sizeof(struct gameState));
 	
-	postGameState.whoseTurn = player;
-	SelectStream(2);
-	PutSeed(3);
-	printf ("START - Running callAdventurerCard().\n\n");
-	
-	for(k = 0; k < numTests; k++){
-		postGameState.handCount[player] = floor(Random() * MAX_HAND)+1;
-		postGameState.deckCount[player] = floor(Random() * MAX_DECK);
-		postGameState.discardCount[player] = floor(Random() * MAX_DECK);
-		for(m = 0; m < postGameState.handCount[player]; m++)	{
-			postGameState.hand[player][m] = floor(Random() * treasure_map) + 1;
-		}
-		
-		for(j = 0; j < postGameState.discardCount[player]; j++){
-			postGameState.discard[player][j] = floor(Random() * treasure_map) + 1;
-		}
+		//play card
+		cardEffect(smithy, 0, 0, 0, &testGame, 0, 0);
 
-		for(n = 0; n < postGameState.deckCount[player]; n++)	{
-			postGameState.deck[player][n] = floor(Random() * treasure_map) + 1;
-		}
-		AdventurerTEST(&postGameState);
-	}
-	printf ("STOP - Running callAdventurerCard().\n\n");
-	return 0;
-}
+		printf("Player %d:\n", i);
 
-int AdventurerTEST(struct gameState *postGameState){
-	int player = postGameState->whoseTurn;
-	int preTreasure, postTreasure;
-	int i, j;
-	int card;
-	struct gameState pre;
-	memcpy(&pre, postGameState, sizeof(struct gameState));
-	
-	//callAdventurerCard(postGameState, player );
-	int preTotal = pre.deckCount[player] + pre.discardCount[player] - 2;
-	int postTotal = postGameState->deckCount[player] + postGameState->discardCount[player];
-	if(postTotal != preTotal)
-	{
-		printf("ERROR! post total is not 2 treasure cards less than pre total. \n");
+		//test that the player has 3 new cards
+		printf("\tExpected HandCount: %d\n\tActual HandCount: %d\n", Game.handCount[i] + 2, testGame.handCount[i]);
+		Game.handCount[i] + 2 == testGame.handCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test that the player's deck lost 3 cards
+		printf("\tExpected DeckCount: %d\n\tActual DeckCount: %d\n", Game.deckCount[i] - 3, testGame.deckCount[i]);
+		Game.deckCount[i] - 3 == testGame.deckCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test that only 1 card is discarded
+		printf("\tExpected DiscardCount: %d\n\tActual DiscardCount: %d\n", Game.discardCount[i] + 1, testGame.discardCount[i]);
+		Game.discardCount[i] + 1 == testGame.discardCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test which player's turn
+		printf("\tExpected Player's Turn: %d\n\tActual Player's Turn: %d\n", Game.whoseTurn, testGame.whoseTurn);
+		Game.whoseTurn == testGame.whoseTurn ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		Game.whoseTurn++;
 	}
 
-	pre.handCount[player] =  pre.handCount[player]+2;
-	if(postGameState->handCount[player] != pre.handCount[player]){
-		printf("ERROR! pre hand count does not equal post hand count. \n");
-	}
-	
-	for(i = 0; i < pre.handCount[player]; i++){
-		card = pre.hand[player][i];
-		if (card == copper || card == silver || card == gold)
-			preTreasure++;
-	}
-	for(j = 0; j < postGameState->handCount[player]; j++){
-		card = postGameState->hand[player][j];
-		if (card == copper || card == silver || card == gold)
-			postTreasure++;
-	}
-	
-	if(!(postTreasure > preTreasure)){
-		printf("ERROR! Not enough treasure cards added to hand. \n");
-	}
+	//zero if no errors
 	return 0;
 }
