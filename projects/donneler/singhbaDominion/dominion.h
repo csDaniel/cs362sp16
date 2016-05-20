@@ -135,6 +135,8 @@ int playSmithy(struct gameState *state, int handPos);
 int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
+int smithyEffect(struct gameState *state, int handPos);
+int adventurerEffect(struct gameState *state, int handPos);
 
 
 #endif

@@ -42,16 +42,16 @@ int main(){
    discard = 1;
    printf("    hand count = %i, expected %i\n", state.handCount[currentPlayer], saveState.handCount[currentPlayer] + newCards - discard);  
    // Assertion will fail, turning off and will report in bug1.c
-   //assert(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard);
-   printf("    ASSERTION FAILS\n");
+   if(!(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard))
+		printf("    ASSERTION FAILS\n");
 
 // ----------------- TEST 2 ---------------------------------------------------
    printf("\n");
    printf(" TEST 2: 3 Cards should come from own pile.\n");
    printf("    deck count = %i, expected %i\n", state.deckCount[currentPlayer], saveState.deckCount[currentPlayer] - newCards);
    // assertion will fail, turning it off and will report in bug1.c
-   // assert(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards);
-   printf("    ASSERTION FAILS.\n");
+   if(!(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards))
+		printf("    ASSERTION FAILS.\n");
 
 // ----------------- TEST 3 ---------------------------------------------------
    printf("\n");
@@ -71,7 +71,8 @@ int main(){
       printf("    kingdomCard '%i' count = %i, expected = %i\n", i, state.supplyCount[i], saveState.supplyCount[i]);
    }
 
-   assert(saveState.supplyCount[estate] == state.supplyCount[estate]);
+   if(!(saveState.supplyCount[estate] == state.supplyCount[estate]))
+			printf("		assertion fails.\n");
    assert(saveState.supplyCount[duchy] == state.supplyCount[duchy]);
    assert(saveState.supplyCount[province] == state.supplyCount[province]);
    for( i = adventurer; i <= treasure_map; ++i){

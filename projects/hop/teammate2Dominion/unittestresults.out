@@ -1,0 +1,395 @@
+<----------BEGIN unittest1-handCard() ---------->
+
+ TEST 1: Cards in hands revealed appropriately.
+    card: 7, expected: 7
+    card: 9, expected: 9
+    card: 12, expected: 12
+    card: 19, expected: 19
+    card: 18, expected: 18
+
+ TEST 2: No state changes should occur.
+    hand count = 5, expected = 5
+    Player's turn = 0, expected = 0
+    No. Actions = 1, expected = 1
+    No. Buys = 1, expected = 1
+
+<----------END unittest1-handCard() ---------->
+
+Coverage Test: unittest1
+File 'dominion.c'
+Lines executed:0.46% of 646
+Branches executed:0.00% of 417
+Taken at least once:0.00% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'unittest1.c'
+Lines executed:100.00% of 36
+Branches executed:100.00% of 18
+Taken at least once:50.00% of 18
+No calls
+unittest1.c:creating 'unittest1.c.gcov'
+
+<----------BEGIN unittest2-updateCoins()---------->
+
+ TEST 1: Verify coin count is calculated correctly.
+    coins: 7, expected: 7
+
+ TEST 2: No state changes should occur for the other player.
+    deck count = 5, expected = 5
+    discard pile count = 0, expected 0
+
+ TEST 3: No state changes should occur to victory and kingdom card piles
+    estate count = 8, expected = 8
+    duchy count = 8, expected = 8
+    province count = 8, expected = 8
+    kingdomCard '7' count = 10, expected = 10
+    kingdomCard '8' count = -1, expected = -1
+    kingdomCard '9' count = 10, expected = 10
+    kingdomCard '10' count = 8, expected = 8
+    kingdomCard '11' count = 10, expected = 10
+    kingdomCard '12' count = -1, expected = -1
+    kingdomCard '13' count = -1, expected = -1
+    kingdomCard '14' count = 10, expected = 10
+    kingdomCard '15' count = 10, expected = 10
+    kingdomCard '16' count = -1, expected = -1
+    kingdomCard '17' count = -1, expected = -1
+    kingdomCard '18' count = 10, expected = 10
+    kingdomCard '19' count = 10, expected = 10
+    kingdomCard '20' count = -1, expected = -1
+    kingdomCard '21' count = -1, expected = -1
+    kingdomCard '22' count = -1, expected = -1
+    kingdomCard '23' count = -1, expected = -1
+    kingdomCard '24' count = -1, expected = -1
+    kingdomCard '25' count = 10, expected = 10
+    kingdomCard '26' count = 10, expected = 10
+
+<----------END unittest2-updateCoins()---------->
+
+Coverage Test: unittest2
+File 'dominion.c'
+Lines executed:17.65% of 646
+Branches executed:15.83% of 417
+Taken at least once:13.19% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'unittest2.c'
+Lines executed:100.00% of 39
+Branches executed:100.00% of 16
+Taken at least once:62.50% of 16
+No calls
+unittest2.c:creating 'unittest2.c.gcov'
+
+<----------BEGIN unittest3-drawCard()---------->
+
+ Initial deck count: 5
+ TEST 1: Verify cards are drawn and placed into player's hand.
+    card 0 is of type: 4, expected: type != -1
+    card 1 is of type: 4, expected: type != -1
+    card 2 is of type: 4, expected: type != -1
+    card 3 is of type: 1, expected: type != -1
+    card 4 is of type: 1, expected: type != -1
+    Number of cards in hand: 5, expected: 5
+
+ TEST 2: Cards should have been drawn from player's deck.
+   deck count = 0, expected = 0
+
+ TEST 3: No state changes should occur to other player.
+    deck count = 10, expected = 10
+
+<----------END unittest3-drawCard()---------->
+
+Coverage Test: unittest3
+File 'dominion.c'
+Lines executed:19.97% of 646
+Branches executed:17.27% of 417
+Taken at least once:14.39% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'unittest3.c'
+Lines executed:100.00% of 30
+Branches executed:100.00% of 12
+Taken at least once:66.67% of 12
+No calls
+unittest3.c:creating 'unittest3.c.gcov'
+
+<----------BEGIN unittest4-buyCard()---------->
+
+ TEST 1: Bought cards should have been added to player's discard pile.
+    top card on discard pile is: 3, expected: 3
+
+ TEST 2: Assuming no +buy cards were played, only 1 buys were allowed.
+    current player's buys left: 0, expected: 0
+
+ TEST 3: Buying cards without enough coins.
+    discard count: 0, expected: 0
+
+ TEST 4: Buying cards that are out of supply.
+    discard count: 0, expected: 0
+
+ TEST 5: Purchased supply card should have their supply pile reduced by 1.
+    supply count: 9, expected: 9
+
+<----------END unittest4-buyCard()---------->
+
+Coverage Test: unittest4
+File 'dominion.c'
+Lines executed:23.99% of 646
+Branches executed:26.86% of 417
+Taken at least once:17.03% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'unittest4.c'
+Lines executed:100.00% of 46
+Branches executed:100.00% of 18
+Taken at least once:55.56% of 18
+No calls
+unittest4.c:creating 'unittest4.c.gcov'
+
+<----------BEGIN cardtest1-smithy card---------->
+
+Initial deck count: 5
+Initial hand count: 5
+
+ TEST 1: Current player should receive 3 cards.
+    hand count = 7, expected 7
+
+ TEST 2: 3 Cards should come from own pile.
+    deck count = 1, expected 2
+    ASSERTION FAILS.
+
+ TEST 3: No state change should occur for other players.
+    deck count = 10, expected = 10
+    discard pile count = 0, expected 0
+
+ TEST 4: No state change should occur to victory and kingdom cards piles.
+    estate count = 6, expected = 8
+    duchy count = 8, expected = 8
+    province count = 8, expected = 8
+    kingdomCard '7' count = 10, expected = 10
+    kingdomCard '8' count = -1, expected = -1
+    kingdomCard '9' count = 10, expected = 10
+    kingdomCard '10' count = 8, expected = 8
+    kingdomCard '11' count = -1, expected = -1
+    kingdomCard '12' count = 10, expected = 10
+    kingdomCard '13' count = -1, expected = -1
+    kingdomCard '14' count = -1, expected = -1
+    kingdomCard '15' count = 10, expected = 10
+    kingdomCard '16' count = 8, expected = 8
+    kingdomCard '17' count = 10, expected = 10
+    kingdomCard '18' count = -1, expected = -1
+    kingdomCard '19' count = -1, expected = -1
+    kingdomCard '20' count = 10, expected = 10
+    kingdomCard '21' count = -1, expected = -1
+    kingdomCard '22' count = -1, expected = -1
+    kingdomCard '23' count = -1, expected = -1
+    kingdomCard '24' count = -1, expected = -1
+    kingdomCard '25' count = 10, expected = 10
+    kingdomCard '26' count = 10, expected = 10
+		assertion fails.
+
+<----------END cardtest1-smithy card---------->
+
+Coverage Test: cardtest1
+File 'dominion.c'
+Lines executed:28.17% of 646
+Branches executed:34.29% of 417
+Taken at least once:19.42% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'cardtest1.c'
+Lines executed:97.92% of 48
+Branches executed:100.00% of 18
+Taken at least once:61.11% of 18
+No calls
+cardtest1.c:creating 'cardtest1.c.gcov'
+
+<----------BEGIN cardtest2-adventurer card---------->
+
+Initial deck count: 5
+Initial hand count: 5
+ TEST 1: Current player should receive 2 treasure cards, if available.
+
+    hand count = 10, 5 <= expected <= 6
+		assertion failed.
+
+ TEST 2: Up to 2 Cards should come from own pile.
+    deck count = 0, 3 <= expected <= 5
+    ASSERTION FAILS.
+
+ TEST 3: No state change should occur for other players.
+    deck count = 9, expected = 10
+    discard pile count = 0, expected 0
+		assertion failed.
+
+ TEST 4: No state change should occur to victory and kingdom cards piles.
+    estate count = 8, expected = 8
+    duchy count = 8, expected = 8
+    province count = 8, expected = 8
+    kingdomCard '7' count = 10, expected = 10
+    kingdomCard '8' count = 10, expected = 10
+    kingdomCard '9' count = -1, expected = -1
+    kingdomCard '10' count = 8, expected = 8
+    kingdomCard '11' count = 10, expected = 10
+    kingdomCard '12' count = 10, expected = 10
+    kingdomCard '13' count = -1, expected = -1
+    kingdomCard '14' count = -1, expected = -1
+    kingdomCard '15' count = -1, expected = -1
+    kingdomCard '16' count = 8, expected = 8
+    kingdomCard '17' count = 10, expected = 10
+    kingdomCard '18' count = -1, expected = -1
+    kingdomCard '19' count = -1, expected = -1
+    kingdomCard '20' count = 10, expected = 10
+    kingdomCard '21' count = -1, expected = -1
+    kingdomCard '22' count = -1, expected = -1
+    kingdomCard '23' count = 10, expected = 10
+    kingdomCard '24' count = -1, expected = -1
+    kingdomCard '25' count = 10, expected = 10
+    kingdomCard '26' count = -1, expected = -1
+
+<----------END cardtest2-adventurer card---------->
+
+Coverage Test: cardtest2
+File 'dominion.c'
+Lines executed:34.21% of 646
+Branches executed:38.61% of 417
+Taken at least once:23.74% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'cardtest2.c'
+Lines executed:100.00% of 47
+Branches executed:100.00% of 18
+Taken at least once:61.11% of 18
+No calls
+cardtest2.c:creating 'cardtest2.c.gcov'
+
+<----------BEGIN cardtest3-great hall card---------->
+
+Initial deck count: 5
+Initial hand count: 5
+
+ TEST 1: Should draw 1 extra card and gets an extra action.
+    hand count = 4, expected = 5
+		assertion failed.
+
+ TEST 2: 1 card should come from own pile.
+    deck count = 4, expected = 4
+
+ TEST 3: Number of buys should not change.
+    buy count = 1, expected = 1
+
+ TEST 4: No state change should occur for other players.
+    deck count = 10, expected = 10
+    discard pile count = 0, expected 0
+
+ TEST 5: No state change should occur to victory and kingdom cards piles.
+    estate count = 8, expected = 8
+    duchy count = 8, expected = 8
+    province count = 8, expected = 8
+    kingdomCard '7' count = 10, expected = 10
+    kingdomCard '8' count = 10, expected = 10
+    kingdomCard '9' count = -1, expected = -1
+    kingdomCard '10' count = 8, expected = 8
+    kingdomCard '11' count = 10, expected = 10
+    kingdomCard '12' count = 10, expected = 10
+    kingdomCard '13' count = -1, expected = -1
+    kingdomCard '14' count = -1, expected = -1
+    kingdomCard '15' count = -1, expected = -1
+    kingdomCard '16' count = 8, expected = 8
+    kingdomCard '17' count = 10, expected = 10
+    kingdomCard '18' count = -1, expected = -1
+    kingdomCard '19' count = -1, expected = -1
+    kingdomCard '20' count = 10, expected = 10
+    kingdomCard '21' count = -1, expected = -1
+    kingdomCard '22' count = -1, expected = -1
+    kingdomCard '23' count = 10, expected = 10
+    kingdomCard '24' count = -1, expected = -1
+    kingdomCard '25' count = 10, expected = 10
+    kingdomCard '26' count = -1, expected = -1
+
+<----------END cardtest3-great hall card---------->
+
+Coverage Test: cardtest3
+File 'dominion.c'
+Lines executed:35.76% of 646
+Branches executed:39.57% of 417
+Taken at least once:24.70% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'cardtest3.c'
+Lines executed:100.00% of 50
+Branches executed:100.00% of 20
+Taken at least once:60.00% of 20
+No calls
+cardtest3.c:creating 'cardtest3.c.gcov'
+
+<----------BEGIN cardtest4-village card---------->
+
+Initial deck count: 5
+Initial hand count: 5
+
+ TEST 1: Hand should have +1 card minus this card. Current
+         player should also have +2 actions.
+    hand count = 5, expected = 5
+    deck count = 4, expected = 4
+    action count = 1, expected = 3
+		assertion failed.
+
+ TEST 2: Number of buys or coins should not change
+    buy count = 2, expected = 1
+    coin count = 4, expected = 4
+		assertion failed.
+
+ TEST 3: No state change should occur for other players.
+    deck count = 10, expected = 10
+    discard pile count = 0, expected 0
+
+ TEST 4: No state change should occur to victory and kingdom cards piles.
+    estate count = 6, expected = 8
+    duchy count = 8, expected = 8
+    province count = 8, expected = 8
+    kingdomCard '7' count = 10, expected = 10
+    kingdomCard '8' count = 10, expected = 10
+    kingdomCard '9' count = -1, expected = -1
+    kingdomCard '10' count = 8, expected = 8
+    kingdomCard '11' count = 10, expected = 10
+    kingdomCard '12' count = 10, expected = 10
+    kingdomCard '13' count = -1, expected = -1
+    kingdomCard '14' count = -1, expected = -1
+    kingdomCard '15' count = -1, expected = -1
+    kingdomCard '16' count = 8, expected = 8
+    kingdomCard '17' count = -1, expected = -1
+    kingdomCard '18' count = -1, expected = -1
+    kingdomCard '19' count = -1, expected = -1
+    kingdomCard '20' count = 10, expected = 10
+    kingdomCard '21' count = -1, expected = -1
+    kingdomCard '22' count = 10, expected = 10
+    kingdomCard '23' count = 10, expected = 10
+    kingdomCard '24' count = -1, expected = -1
+    kingdomCard '25' count = 10, expected = 10
+    kingdomCard '26' count = -1, expected = -1
+		assertion failed.
+
+<----------END cardtest4-village card---------->
+
+Coverage Test: cardtest4
+File 'dominion.c'
+Lines executed:35.76% of 646
+Branches executed:39.57% of 417
+Taken at least once:24.70% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+File 'cardtest4.c'
+Lines executed:100.00% of 56
+Branches executed:100.00% of 24
+Taken at least once:58.33% of 24
+No calls
+cardtest4.c:creating 'cardtest4.c.gcov'
+

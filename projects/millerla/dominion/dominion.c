@@ -63,7 +63,7 @@ int council_room_card(struct gameState *state, int currentPlayer,int handPos) {
 	state->numBuys++;
 		
 	//Each other player draws a card
-	for (i = 0; i < currentPlayer; i++)
+	for (i = 0; i < state->numPlayers; i++)
 	{
 	    if ( i != currentPlayer ) {
 	      drawCard(i, state);
@@ -74,6 +74,7 @@ int council_room_card(struct gameState *state, int currentPlayer,int handPos) {
 	discardCard(handPos, currentPlayer, state, 0);
 	
 	return 0;
+	
 }
 
 //trashes the treasure map currently in play and another treasure map in hand in exchange for 4 gold

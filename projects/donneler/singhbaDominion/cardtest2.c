@@ -12,6 +12,8 @@
 * 2 - No change to the other player's hand or deck.
 * 3 - No change to the victory card piles and kingdom card piles.
 * 4 - Discard smithy card after playing it.
+*
+* int smithyEffect(struct gameState *state, int handPos)
 **************************************************************************/		
 
 #include "dominion.h"
@@ -56,7 +58,8 @@ int main() {
 			G.hand[p][handCount - 1] = smithy;
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-			playSmithy(p, &G, handCount - 1);			// call playSmithy with current player
+			//playSmithy(p, &G, handCount - 1);			// call playSmithy with current player
+			smithyEffect(&G, handCount -1 );
 
 			//check to see three cards were added
 			if(G.handCount[p] != controlG.handCount[p] + 3) {

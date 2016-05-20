@@ -43,7 +43,8 @@ int main(){
    newCards = 2;
    discard = 1;
    printf("    hand count = %i, %i <= expected <= %i\n", state.handCount[currentPlayer], saveState.handCount[currentPlayer], saveState.handCount[currentPlayer] + newCards - discard);  
-   assert(state.handCount[currentPlayer] >= saveState.handCount[currentPlayer] && state.handCount[currentPlayer] <= saveState.handCount[currentPlayer] + newCards - discard);
+   if(!(state.handCount[currentPlayer] >= saveState.handCount[currentPlayer] && state.handCount[currentPlayer] <= saveState.handCount[currentPlayer] + newCards - discard))
+		printf("		assertion failed.\n");
 
 // ----------------- TEST 2 ---------------------------------------------------
    printf("\n");
@@ -57,7 +58,8 @@ int main(){
    printf(" TEST 3: No state change should occur for other players.\n");
    printf("    deck count = %i, expected = %i\n", state.deckCount[!currentPlayer], saveState.deckCount[!currentPlayer]);
    printf("    discard pile count = %i, expected %i\n", state.discardCount[!currentPlayer], saveState.discardCount[!currentPlayer]);
-   assert(saveState.deckCount[!currentPlayer] == state.deckCount[!currentPlayer]);
+   if(!(saveState.deckCount[!currentPlayer] == state.deckCount[!currentPlayer]))
+		printf("		assertion failed.\n");
 
 // ----------------- TEST 4 ---------------------------------------------------
    printf("\n");

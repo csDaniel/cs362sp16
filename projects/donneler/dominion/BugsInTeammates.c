@@ -25,15 +25,17 @@
 *
 * int smithyEffect(struct gameState *state, int handPos)
 * Testfile: cardtest2.c
-* Test Status: TODO
+* Test Status: Failed.
+*		- handcount is one less than expected.
 * Testfile: randomtestcard.c 
-* Test Status: TODO
+* Test Status: Failed 10/10 tests
+*		- handcount is one less than expected
 *
 * int adventurerEffect(struct gameState *state, int handPos)
 * Testfile: cardtest1.c
-* Test Status: TODO
+* Test Status: Failed - doesnt exist if there are 
 * Testfile: randomtestadventurer.c
-* Test Status: TODO
+* Test Status: Passed
 *
 * int councilEffect(struct gameState *state, int handPos)
 *		No unit test was implemented for this card.
@@ -42,8 +44,10 @@
 *		No unit test was implemented for this card.
 *
 * BUG SUMMARY FOR SINGHBA:
-* BUG1 -
-* BUG2 - 
+* BUG1 - smithyEffect's handCount is one less than expected. The function is discarding
+* the smith card, but in reality this is not an effect of the card itself.
+* BUG2 - adventurerEffect does not exit if there are no treasures in the discard pile
+* or the players deck.
 * BUG3 - the discardCard function allows you to call it with an invalid hand position
 * and then decreases the handcount even though the card position was invalid.
 * --------------------------------------------------------------------------------------
