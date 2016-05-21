@@ -643,7 +643,7 @@ int getCost(int cardNumber)
   return -1;
 }
 
-void adventurer_card(struct gameState *state, int currentPlayer, int drawntreasure, int *temphand[MAX_HAND])
+void adventurer_card(struct gameState *state, int currentPlayer, int drawntreasure, int *temphand)
 {
 	int z = 1;// this is the counter for the temp hand
 

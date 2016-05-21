@@ -136,5 +136,10 @@ int playVillage(struct gameState *state, int handPos);
 int playFeast(struct gameState *state, int choice1);
 int playCouncil_Room(struct gameState *state, int handPos);
 
+void adventurer_card(struct gameState *state, int currentPlayer, int drawntreasure, int *temphand);
+
+int setRandomValue();
+int getRandomCard();
+
 
 #endif
