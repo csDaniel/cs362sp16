@@ -655,8 +655,9 @@ int playAdventurer(int drawntreasure, int currentPlayer, struct gameState *state
       if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
          if (++drawntreasure > 2) break;
       else{
-         temphand[++z]=cardDrawn;
+         temphand[z]=cardDrawn;
          state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+			z++;
       }
 		
 		i++;
@@ -675,7 +676,7 @@ int playAdventurer(int drawntreasure, int currentPlayer, struct gameState *state
 int playSmithy(int currentPlayer, struct gameState *state, int handPos){
    //+3 Cards
    int i;
-   for (i = 0; i < 3; i++);
+   for (i = 0; i < 3; i++)
 	  drawCard(currentPlayer, state);
 			
    //discard card from hand
@@ -701,7 +702,7 @@ int playFeast(struct gameState *state, int currentPlayer, int *temphand, int cho
    //gain card with cost up to 5
    //Backup hand
    int i;
-   for (i = 0; i < state->handCount[currentPlayer]; ++i){
+   for (i = 0; i <= state->handCount[currentPlayer]; ++i){
       temphand[i] = state->hand[currentPlayer][i];//Backup card
       state->hand[currentPlayer][i] = -1;//Set to nothing
    }
@@ -710,7 +711,7 @@ int playFeast(struct gameState *state, int currentPlayer, int *temphand, int cho
    //Update Coins for Buy
    updateCoins(currentPlayer, state, 5);
    for(;;){
-      if (supplyCount(choice1, state) >= 0){
+      if (supplyCount(choice1, state) <= 0){
          if (DEBUG)
             printf("None of that card left, sorry!\n");
 
@@ -765,6 +766,10 @@ int playCouncil_room(int currentPlayer, struct gameState *state, int handpos){
    for (i = 0; i < state->numPlayers; ++i)
 	  if ( i != currentPlayer )
 	      drawCard(i, state);
+
+
+	//discard card from hand
+	discardCard(handpos, currentPlayer, state, 0);
 
    return 0;
 }
@@ -871,6 +876,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case smithy:
       playSmithy(currentPlayer, state, handPos);
+		break;
 		
     case village:
       playVillage(currentPlayer, state, handPos);

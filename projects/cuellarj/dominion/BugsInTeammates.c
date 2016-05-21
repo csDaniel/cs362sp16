@@ -16,7 +16,7 @@ Location: int ambassadorCard function. Many lines.
 Bug2: The variables 'choice1' and 'choice2' are switched everytime they appear in the code.
 Code: All throughout the function, lines 738 - 768
 
-Location: int adventurerCard. Line 664ish. This passed my card test, but was found upon visual code inspection.
+Location: int adventurerCard. Line 664ish. This passed my card test, but caused a seg faults on my random test.
 Bug3: 'z' is not incremented after state->handCount[currentPlayer]--
 Code: else{
 	  temphand[z]=cardDrawn;
@@ -32,7 +32,7 @@ Bug4: 'i' was set to begin at 1 in the for loop rather than 0, so it drew one le
 test for deckCount/handCount.
 Code:	 for (i = 1; i < 3; i++)
 
-Location: adventurer_ref function. Line 656
+Location: adventurer_ref function. Line 656. This failed both my unit test and random test.
 Bug5: The deckCount test condition was > instead of <. This caused a shuffle function to be called whenever there was more than 1 
 card in the deckCount.
 Code: if (state->deckCount[currentPlayer] >1)
