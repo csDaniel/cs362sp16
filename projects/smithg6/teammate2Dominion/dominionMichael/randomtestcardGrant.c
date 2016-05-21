@@ -65,7 +65,7 @@ int main()
 		//use of floor to ensure whole number after use of random number gen
 		numPlayers = ((rand() % 3) + 1);
 		
-		memset(&state, 23, sizeof(state));
+		memset(&state, 23, sizeof(struct state));
 
 		//initialize game and check for success.
 		initializeGame(numPlayers, kingdomCards, randomSeed, &state);

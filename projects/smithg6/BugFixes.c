@@ -5,8 +5,9 @@ Assignment 5
 My first step was to take my unit tests and random testers and drop them into the copied
 folders from my teammates. My next step (Cleared with Instructor Aburas) was to move
 teammate A's cardtests into teammate B's folder and vice versa, as writing cardtests
-is not part of this assignment, but using them is. I needed to make sure that I achieved
-the maximum coverage possible for their code.
+is not part of this assignment, but using them is. I had to modify each of the function
+calls in the tests to correctly utilize each version of the refactored dominion code, as
+there were multiple versions of refactor (cardEffect switch vs direct function).
 
 Next, I did a trial run (without modification of any tests) to see what cropped up. I will
 of course move on to modify and craft these tests to the code they are testing, but
@@ -60,11 +61,11 @@ and corrected this before contiuing to test. Additionally, I modified a unit tes
 was testing the wrong value, and therefore passing when it shouldn't. The discardCard
 function is working correctly upon testing the trashFlag now.
 
-The main bug found with the unit tests is that the "isGameOver" function is unable to
-recognize a corrupted game state. I was able to fix this code by implementing a 
-check and correction that would allow the game to end if a corrupted value occurred.
-By setting any negative values to zero, it ensured that the test passed when a value 
-became corrupted.
+The main teammate bug found in Micahel's code with the unit tests is that the "isGameOver" 
+function is unable to recognize a corrupted game state. I was able to fix this code by
+implementing a check and correction that would allow the game to end if a 
+corrupted value occurred. By setting any negative values to zero, it ensured that
+the test passed when a value became corrupted.
 
 Here are the results after fixing the bug:
 
@@ -104,5 +105,16 @@ loop necessary to pickup any treasure. Random test results and coverage posted b
 		Taken at least once:14.32% of 419
 		Calls executed:8.00% of 100
 
-As for the randomtestcard (testing village), most likely due to the bug introduced by
-Michael regarding the number of actions
+
+
+
+
+
+The coverage amount helped me continue to target further bugs, but has not informed
+a significant amount of the testing. With code like this that maintains a constant
+state, I've found that some of the more interesting and valuable tests have been
+to test the minute functions that modify that state. If this were a much larger code
+base, that might not be the best strategy, but it has worked quite well for discovering
+a few of the bugs in this pre-provided dominion code. Were I to be tackling this
+code without any introduction or understanding, I feel that the coverage values
+would be much more useful and inform a great deal of the test design.
