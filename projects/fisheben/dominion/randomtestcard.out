@@ -1,0 +1,55 @@
+Result for running random test:
+--------------------------------------------------------------------
+randomtestcard.c:
+-------------------------RANDOM TESTER SMITHY---------------------------------
+----------------- Testing Card: smithy ----------------
+Error found in smithy, 7
+	post.whoseTurn = 2 pre.whoseTurn = 2
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 443  pre.HandCount = 443
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 2 pre.playedCards[0] = 2
+	post.discardCount[p] = 277 pre.discardCount[p] = 277
+	post.deckCount[p] = 31 pre.deckCount[p] = 31
+	treasure cards in deck = 12 Player = 2
+
+Error found in smithy, 5
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 201  pre.HandCount = 201
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 8 pre.playedCards[0] = 8
+	post.discardCount[p] = 11 pre.discardCount[p] = 11
+	post.deckCount[p] = 195 pre.deckCount[p] = 195
+	treasure cards in deck = 58 Player = 1
+
+Random testing complete.
+Executed 300000 random tests.
+ >>>>> FAILURES DETECTED: Examine test cases smithy <<<<<
+
+File 'randomtestcard.c'
+Lines executed:77.71% of 157
+Creating 'randomtestcard.c.gcov'
+
+File 'randomtestcard.c'
+Lines executed:77.71% of 157
+Branches executed:84.91% of 106
+Taken at least once:59.43% of 106
+Calls executed:68.33% of 60
+Creating 'randomtestcard.c.gcov'
+
+File 'dominion.c'
+Lines executed:41.11% of 574
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:41.11% of 574
+Branches executed:47.04% of 423
+Taken at least once:42.08% of 423
+Calls executed:23.16% of 95
+Creating 'dominion.c.gcov'
+

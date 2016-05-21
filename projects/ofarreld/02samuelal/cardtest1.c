@@ -1,121 +1,71 @@
-/*
-Alex Samuel
-Assignment 3
-cardtest1.c
-Tests for smithy card
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include "rngs.h"
+#include <stdlib.h>
+
+#include "testHelper.h"
+
+#define TESTCARD "smithy"
 
 int main() {
-    int newCards = 3;
-    int discarded = 1;
-    int numPlayers = 2;
-    int PlayerID = 0;
-    int seed = 638;
-    int i;
-    int errorFlag = 0;
-	struct gameState G, testG;
+	int newCards = 0;
+	int discarded = 1;
+	int newCoins = 0;
+	int shuffledCards = 0;
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
-
-	printf("TEST 1: Testing smithy - +3 Cards Added to Player's Hand\n");
-
-	//Initializes game and copies game state to test case
-	initializeGame(numPlayers, k, seed, &G);
-	memcpy(&testG, &G, sizeof(struct gameState));
-
+	int a, b, c;
 	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+	int remove1, remove2;
+	int seed = 1000;
+	int numPlayers = 2;
+	int thisPlayer = 0;
+	int otherPlayer = 1;
 
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy, council_room};
+	
+	initializeGame(numPlayers, k, seed, &G);  
+	printf("\t Testing Card: %s \n", TESTCARD);
+	
+	// Smithy Info: cost = +3 cards 	
+
+	// boot up the perfect version
+	memcpy(&testG, &G, sizeof(struct gameState));
+	
+	// Test 01 -----------------------------------------------------------------
+	// handCount = handCount + 3 (-1, smithy)
+	printf("Test 01: handCount = handCount + 3 (-1, smithy) \n");
+	
+	// setup test environment
+	memcpy(&testG, &G, sizeof(struct gameState));	
+	printf("initial hand count = %d\n", testG.handCount[thisPlayer]);	
 	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+	
+	newCoins = 0;
+	newCards = 3;
+	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.handCount[thisPlayer] - newCards + shuffledCards);
+	printf("coins = %d, expected = %d\n", testG.coins, G.coins + newCoins);
+	
+	if (testG.handCount[thisPlayer] != G.handCount[thisPlayer] + newCards- discarded) {
+		errorMessage("handCount does not match");
+	}
+	if (testG.deckCount[thisPlayer] != G.deckCount[thisPlayer] - newCards + shuffledCards){ 
+		errorMessage("deckCount does not match");
+  	}
+	if (testG.coins != G.coins + newCoins) {
+		errorMessage("coins do not match");
+	}
+	
+	genericTest(G, testG, otherPlayer, 0);
+	
+	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 
-	printf("Player hand count = %d, expected hand count= %d\n", testG.handCount[PlayerID], G.handCount[PlayerID] + newCards - discarded);
-
-    //printf("\n%d,%d, %d, %d\n", testG.handCount[PlayerID], testG.deckCount[PlayerID], testG.discardCount[PlayerID], testG.playedCardCount);
-
-	if (testG.handCount[PlayerID] != (G.handCount[PlayerID] + newCards - discarded)) {
-        printf("TEST 1 HAS FAILED\n\n");
-        errorFlag = 1;
-     }
-
-    //Test will fail due to bug introduced in earlier assignment, see refactor.c
-
-    printf("TEST 2: Player 2 Is Unaffected by Player 1 Playing Smithy\n");
-    PlayerID = 1;
-	int GDeckResults[27] = { 0 };
-	int testGDeckResults[27] = { 0 };
-    int GHandResults[27] = { 0 };
-	int testGHandResults[27] = { 0 };
-	int Deckdifference[27] = { 0 };
-	int Handdifference[27] = { 0 };
-    int cardVal;
-    int cardTotal;
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        cardVal = G.deck[PlayerID][i];
-        GDeckResults[cardVal]++;
-    }
-
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        cardVal = G.hand[PlayerID][i];
-        GHandResults[cardVal]++;
-    }
-
-    for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-        cardVal = testG.deck[PlayerID][i];
-        testGDeckResults[cardVal]++;
-    }
-
-    for (i = 0; i < testG.handCount[PlayerID]; i++) {
-        cardVal = testG.hand[PlayerID][i];
-        testGHandResults[cardVal]++;
-    }
-
-    printf("Player 2 Deck Totals Before Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", GDeckResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Deck Totals After Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", testGDeckResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Hand Totals Before Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", GHandResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Hand Totals After Smithy Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", testGHandResults[i]);
-    }
-
-    //no difference in hand totals because hands are only drawn at start if turn,
-    //see dominion.c, line 197
-
-    //Compares whether any change to Player 2 hand or deck
-    if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
-        memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-            printf("\n\nTEST 2 HAS PASSED\n\n");
-    }
-
-
-    if (errorFlag == 0) {
-        printf("ALL TESTS PASSED\n\n");
-    }
-
-    return 0;
+  return 0;
 }
+
+

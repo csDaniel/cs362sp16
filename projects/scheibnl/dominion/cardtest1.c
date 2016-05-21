@@ -23,13 +23,16 @@ int main() {
 	int numPlayers = 2;     
 	int thisPlayer = 0;
 
+
+	
 	struct gameState G, testG; 
 	int k[10] = { adventurer, embargo, village, minion, mine, cutpurse, sea_hag, 
 		tribute, smithy, council_room };
 	
+
 	// initialize a game state and player cards
 	initializeGame(numPlayers, k, seed, &G);
-	
+
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 	// ----------- TEST 1: Current player receives 3 cards --------------
@@ -44,9 +47,9 @@ int main() {
 	xtraCoins = 0;
 
 	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
-	
+
 	//Assert fails- Player receives four cards
-	//assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
+	assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
 
 	printf("\n");
 
@@ -56,29 +59,29 @@ int main() {
 	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
 
 	//Assert fails- Four cards come from player's deck
-	//assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
+	assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
 
 	printf("\n");
 	// ----------- TEST 3: No state changes for other players --------------
 	printf("TEST 3: No state changes for other players\n\n");
-	for (i = 0; i < MAX_PLAYERS; i++) 
+	for (i = 0; i < MAX_PLAYERS; i++)
 	{
-		if (i != thisPlayer) 
+		if (i != thisPlayer)
 		{
-			if (i >= numPlayers) 
+			if (i >= numPlayers)
 			{
 				printf("Note: Player not currently in use.\n");
 			}
 
 			printf("Asserting here that cards in player %d's hand haven't changed.\n", i);
-			for (j = 0; j < MAX_HAND; j++) 
+			for (j = 0; j < MAX_HAND; j++)
 			{
 				assert(testG.hand[i][j] == G.hand[i][j]);
 			}
 
 			printf("Player %d: hand count = %d, expected = %d\n", i, testG.handCount[i], G.handCount[i]);
 			assert(testG.handCount[i] == G.handCount[i]);
-			
+
 			printf("Asserting here that cards in player %d's deck haven't changed.\n", i);
 			for (j = 0; j < MAX_DECK; j++)
 			{

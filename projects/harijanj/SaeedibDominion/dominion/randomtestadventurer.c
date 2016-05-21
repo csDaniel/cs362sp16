@@ -105,6 +105,8 @@ int main () {
     }
 
     if (handTC_after != (handTC_before + 2)) {
+      printf("treasure card hand NOW: %d", handTC_after);
+      printf("treasure card hand BEFORE: %d", handTC_before);
       printf("HAND: Treasure Cards didn't increase by 2\n");
     }
   }

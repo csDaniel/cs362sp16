@@ -1,385 +1,301 @@
-/* -----------------------------------------------------------------------
- * Ben Fisher
- * fisheben@oregonstate.edu
- * file: unittest2.c
- * Description: Skeleton taken from CS362 week4 module.
- * Demonstration of how to write unit tests for dominion-base
- * File tests the drawCard in the dominion_helpers.h interface
- * implementation is in the dominion.c file
+/******************************************************************************
+ * Filename:			unittest2.c
+ * Author:			David Hite
+ * Date Created:		4/23/2016
+ * Last Date Modified:		4/23/2016
  *
- * Include the following lines in your makefile:
- *
- * unittest2: unittest2.c dominion.o rngs.o
- *      gcc -o unittest2 -g  unittest2.c dominion.o rngs.o $(CFLAGS)
- * -----------------------------------------------------------------------
- */
- 
- /*
- * DRAW CARD FUNCTION
- * No documentation in the implementation or the interface
- * Description: Function drawCard will draw a card from the players deck and add it to
- * their hand.
- * Preconditions: player and state are valid states of the game
- * Postconditions: A card has been removed from the players deck and a card has been added to
- * the players hand.
- * Testing Requirements: 
- * Only a single card should be removed from the deck and added to the players hand.
- * If the deck is empty then the function will add the discard pile to the deck
- * The discard deck will then be empty after it's added to the deck.
- * No other changes to the game state should occur.
- * The players hand count should increase by one if deck is not empty
- * The players deck count should decrease by one if deck is not empty
- * Player should be a number between 2 and MAX_PLAYERS
- * If player has no cards in deck and no cards in discard pile then no changes should be made
- * 
- int drawCard(int player, struct gameState *state)
-{	int count;
-  int deckCounter;
-  if (state->deckCount[player] <= 0){//Deck is empty
-    
-    //Step 1 Shuffle the discard pile back into a deck
-    int i;
-    //Move discard to deck
-    for (i = 0; i < state->discardCount[player];i++){
-      state->deck[player][i] = state->discard[player][i];
-      state->discard[player][i] = -1;
-    }
-
-    state->deckCount[player] = state->discardCount[player];
-    state->discardCount[player] = 0;//Reset discard
-
-    //Shufffle the deck
-    shuffle(player, state);//Shuffle the deck up and make it so that we can draw
-   
-    if (DEBUG){//Debug statements
-      printf("Deck count now: %d\n", state->deckCount[player]);
-    }
-    
-    state->discardCount[player] = 0;
-
-    //Step 2 Draw Card
-    count = state->handCount[player];//Get current player's hand count
-    
-    if (DEBUG){//Debug statements
-      printf("Current hand count: %d\n", count);
-    }
-    
-    deckCounter = state->deckCount[player];//Create a holder for the deck count
-
-    if (deckCounter == 0)
-      return -1;
-
-    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
-    state->deckCount[player]--;
-    state->handCount[player]++;//Increment hand count
-  }
-
-  else{
-    int count = state->handCount[player];//Get current hand count for player
-    int deckCounter;
-    if (DEBUG){//Debug statements
-      printf("Current hand count: %d\n", count);
-    }
-
-    deckCounter = state->deckCount[player];//Create holder for the deck count
-    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
-    state->deckCount[player]--;
-    state->handCount[player]++;//Increment hand count
-  }
-
-  return 0;
-}
- */
-
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
+ * Description:
+ * Tests the gamestate after initializeGame() is called
+ *****************************************************************************/
 #include <assert.h>
-#include "rngs.h" //random number generator multiple streams
+#include <stdio.h>
+#include <stdlib.h>
+#include "dominion.h"
 
+int RunTest(int numPlayers, int kingdomCards[10], int randomSeed, struct gameState *state, int failureCount);
 
-#define TEST "DRAW_CARD"
-#define TEST_EMPTY 0
-#define TEST_NO_CARDS_IN_DECK 1
-#define TEST_CARDS_IN_DECK 2
+int main()
+{
+	struct gameState* state = newGame();
+	// test with valid values
+	int* kCards = kingdomCards(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+	int numPlayers = 2;
+	const int randomSeed = 25;
+	int failureCount = 0;
+	
+	printf("Testing initializeGame():\n");
+	printf("Normal game state, 2 players:\n");
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	printf("\nNormal game state, 3 players:\n");
+	numPlayers = 3;
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	printf("\nNormal game state, 4 players:\n");
+	numPlayers = 4;
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	printf("\nFaulty game state, 1 player:\n");
+	numPlayers = 1;
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	printf("\nFaulty game state, 5 player:\n");
+	numPlayers = 5;
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	printf("\nFaulty game state, invalid card set:\n");
+	numPlayers = 2;
+	free(kCards);
+	// Each card must be distinct
+	kCards = kingdomCards(1, 1, 3, 4, 5, 6, 7, 8, 9, 9);
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	printf("\nFaulty game state, invalid card values:\n");
+	numPlayers = 2;
+	free(kCards);
+	kCards = kingdomCards(curse - 1, treasure_map + 1, treasure_map + 2, 4, 5, 6, 7, 8, 9, 10);
+	failureCount = RunTest(numPlayers, kCards, randomSeed, state, failureCount);
+	
+	free(kCards);
+	free(state);
+	
+	if (failureCount > 0)
+	{
+		printf("%d tests failed\n", failureCount);
+	}
+	
+	printf("Tests completed!\n");
+	
+	return 0;
+}
 
-//Function will initialize the gameState struct
-int initializeMyGame(struct gameState *G, int actionCards[], int seed, int numPlayer);
-//Function will print the state of the test variable if error is found
-void printState(struct gameState *G, int hand[], int testDiscardDeckCount, int testHandCount, 
-        int testDeckCount, int player, int test);
+int RunTest(int numPlayers, int kCards[10], int randomSeed, struct gameState *state, int failureCount)
+{
+	int returnValue = initializeGame(numPlayers, kCards, randomSeed, state);
+	
+	// check if cards are valid
+	int validCards = 1;
+	int i, j;
+	for (i = 0; i < 10; i++)
+	{
+		if (kCards[i] < curse || kCards[i] > treasure_map)
+		{
+			validCards = 0;
+		}
+		for (j = 0; j < 10; j++)
+		{
+			if (j != i && kCards[j] == kCards[i])
+			{
+			  validCards = 0;
+			}
+		}
+	}
+	// check if number of players is valid
+	int validPlayers = (numPlayers > MAX_PLAYERS || numPlayers < 2)? 0 : 1;
+	
+	// check if initializeGame() missed any invalid parameters
+	if (returnValue != -1)
+	{
+		if (validPlayers == 0)
+		{
+			printf("Error: initializeGame() failed to catch the invalid player number\n");
+			failureCount = failureCount + 1;
+			return failureCount;
+		}
+		if (validCards == 0)
+		{
+			printf("Error: initializeGame() failed to catch the invalid card set\n");
+			failureCount = failureCount + 1;
+			return failureCount;
+		}
+	}
+	else
+	{
+		if (validPlayers == 0)
+		{
+			printf("initializeGame() caught invalid number of players\n");
+			return failureCount;
+		}
+		if (validCards == 0)
+		{
+			printf("initializeGame() caught invalid card set\n");
+			return failureCount;
+		}
+	}
+	
+	// gameState->numPlayers should == numberPlayers passed in, if valid
+	if (state->numPlayers != numPlayers)
+	{
+		printf("Error: number of players modified by initializeGame()\n");
+		printf("numPlayers: %d\tstate->numPlayers: %d\n", numPlayers, state->numPlayers);
+		failureCount = failureCount + 1;
+	}
+	
+	// state->coins should reflect player 1's coin count
+	if (state->coins != 7)
+	{
+		printf("Error: %d coins instead of 7\n", state->coins);
+		failureCount = failureCount + 1;
+	}
+	
+	// check that each player has 3 estate cards and 7 copper cards
+	int totalPlayerCards = 0;
+	for (i = 0; i < numPlayers; i++)
+	{
+		int estateCount = 0, copperCount = 0;
+		totalPlayerCards = totalPlayerCards + state->deckCount[i];
+		if ((state->deckCount[i] + state->handCount[i]) != 10)
+		{
+			printf("Error: deck count is %d for player %d instead of 10\n", state->deckCount[i], i + 1);
+			failureCount = failureCount + 1;
+		}
+		for (j = 0; j < state->deckCount[i]; j++)
+		{
+			if (state->deck[i][j] == estate)
+			{
+				estateCount = estateCount + 1;
+			}
+			if (state->deck[i][j] == copper)
+			{
+				copperCount = copperCount + 1;
+			}
+		}
 		
-int noPlayerStateChanges(struct gameState *preCall, struct gameState *postCall, int p);
-int noVictoryCardChanges(struct gameState *preCall, struct gameState *postCall, int p);
-int noDominionCardChanges(struct gameState *preCall, struct gameState *postCall, int p, int deckSize);
-
-int main() {
-    int k; //counter
-    int seed = 1000; //used in rngs
-    int numPlayer = 2;
-	
-	int errorFlag1 = 0, errorFlag2 = 0, errorFlag3 = 0, errorFlag4 = 0, errorFlag5 = 0, errorFlag6 = 0, errorFlag7 = 0, errorFlag8 = 0;
-	int errorFlagP = 0, errorFlagV = 0, errorFlagD = 0;
-	int bonus = 0;
-    int p;   //used to keep track of player
-	const int ACTION_CARD_TOTAL = 20;
-    int actionCards[20] = { 
-        adventurer, council_room, feast, gardens, mine, remodel, smithy, 
-        village, baron, great_hall, minion, steward, tribute, ambassador, 
-        cutpurse, embargo, outpost, salvager, sea_hag, treasure_map};   
-            
-    struct gameState preCall;
-    struct gameState postCall;   
-	
-	
-	//used to test a hand with no cards in deck and no cards in discard deck
-	const int TEST_ZERO_HAND_COUNT = 0;	
-	
-	const int ALL_CARDS_COUNT = 27;//all possible cards
-	
-	// represents a deck with each of the possible cards
-    int testAllCardsDeck[ALL_CARDS_COUNT];   	
+		if (state->handCount[i] > 0)
+		{
+			for (j = 0; j < state->handCount[i]; j++)
+			{
+				if (state->deck[i][j] == estate)
+				{
+					estateCount = estateCount + 1;
+				}
+				if (state->deck[i][j] == copper)
+				{
+					copperCount = copperCount + 1;
+				}	
+			}
+		}
 		
-	//represents a discard-deck with each of the possible cards
-    int testAllCardsDiscardDeck[ALL_CARDS_COUNT];  
-	   
+		if (state->discardCount[i] > 0)
+		{
+			for (j = 0; j < state->discardCount[i]; j++)
+			{
+				if (state->discard[i][j] == estate)
+				{
+					estateCount = estateCount + 1;
+				}
+				if (state->discard[i][j] == copper)
+				{
+					copperCount = copperCount + 1;
+				}	
+			}
+		}
+		
+		if (i != 0 && estateCount != 3)
+		{
+			printf("Error: player %d has %d estates instead of 3\n", i + 1, estateCount);
+			failureCount = failureCount + 1;
+		}
+		if (i != 0 && copperCount != 7)
+		{
+			printf("Error: player %d has %d copper instead of 7\n", i + 1, copperCount);
+			failureCount = failureCount + 1;
+		}
+		if (i == 0 && estateCount < 3)
+		{
+			printf("Error: player %d has fewer estates than 3\n", i + 1);
+			failureCount = failureCount + 1;
+		}
+		if (i == 0 && copperCount < 7)
+		{
+			printf("Error: player %d has fewer copper than 7\n", i + 1);
+			failureCount = failureCount + 1;
+		}
+	}
 	
+	// check for card availability per number of players
+	int numCurse, numVic;
+	if (numPlayers == 2)
+	{
+		// 10 curse cards, 8 victory cards
+		numCurse = 10;
+		numVic = 8;
+	}
+	else
+	{
+		// 10 curse cards for every player beyond 2, 12 victory cards
+		numCurse = 10 * (numPlayers - 1);
+		numVic = 12;
+	}
+	
+	// there should be numCurse curse cards
+	if (state->supplyCount[curse] != numCurse)
+	{
+		printf("Error: %d curse cards available instead of %d\n", state->supplyCount[curse], numCurse);
+		failureCount = failureCount + 1;
+	}
+	// there should be numVic province cards
+	if (state->supplyCount[province] != numVic)
+	{
+		printf("Error: %d province cards available instead of %d\n", state->supplyCount[province], numVic);
+		failureCount = failureCount + 1;
+	}
+	// there should be numVic duchy cards
+	if (state->supplyCount[duchy] != numVic)
+	{
+		printf("Error: %d duchy cards available instead of %d\n", state->supplyCount[duchy], numVic);
+		failureCount = failureCount + 1;
+	}
+	// there should be numVic estate cards
+	if (state->supplyCount[estate] != numVic)
+	{
+		printf("Error: %d estate cards available instead of %d\n", state->supplyCount[estate], numVic);
+		failureCount = failureCount + 1;
+	}
 	/*
-	* Initialize the test hands
-	*/			
-	//add action cards to no treasure test hand
-	for(k = 0; k < ACTION_CARD_TOTAL; ++k){
-	  testAllCardsDeck[k] = actionCards[k]; 
-	  testAllCardsDiscardDeck[k] = actionCards[k]; 
+	int totalCardCount = 0;
+	for (i = curse; i <= treasure_map; i++)
+	{
+		totalCardCount = totalCardCount + state->supplyCount[i];
 	}
-
-	//add other cards
-	testAllCardsDeck[k] = estate;
-	testAllCardsDiscardDeck[k] = estate;
-	testAllCardsDeck[k+1] = duchy;
-	testAllCardsDiscardDeck[k] = duchy;
-	testAllCardsDeck[k+2] = province;
-	testAllCardsDiscardDeck[k] = province;	
-	testAllCardsDeck[k+3] = curse; 
-	testAllCardsDiscardDeck[k] = curse;	 
-	testAllCardsDeck[k+4] = gold;
-	testAllCardsDiscardDeck[k] = gold;
-	testAllCardsDeck[k+5] = silver;			
-	testAllCardsDiscardDeck[k] = silver;			
-	testAllCardsDeck[k+6] = copper;	
-	testAllCardsDiscardDeck[k] = copper;	
-
-
-    printf ("Starting unittest2\nTESTING drawCard():\n");
 	
-	//test both players
-    for (p = 0; p < numPlayer; p++){
-		
-		initializeMyGame(&preCall, actionCards, seed++, numPlayer);           
-		
-		//****************test EMPTY (case 0) where player has no cards************************************			         
-		preCall.deckCount[p] = TEST_ZERO_HAND_COUNT; // set deck size to 0  
-		preCall.discardCount[p] = TEST_ZERO_HAND_COUNT; // set discard deck size to 0 
-		preCall.whoseTurn = p; //set turn
-		memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
-		drawCard(p, &postCall);
-		
-		if((p == 0) && !errorFlagP){
-			if(noPlayerStateChanges(&preCall, &postCall, 1) < 0){
-				printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
-				errorFlagP = 1;
-			}
-		}else if(!errorFlagP){
-			if(noPlayerStateChanges(&preCall, &postCall, 0) < 0){
-				printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
-				errorFlagP = 1;
-			}
-		}
-		
-		if(!errorFlagV && (noVictoryCardChanges(&preCall, &postCall, p) < 0) ){
-			printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
-			errorFlagV = 1;
-		}		
-		
-		
-		if(((postCall.deckCount[p] != 0 || postCall.discardCount[p] != 0) || 
-				(preCall.handCount[p] != postCall.handCount[p])) && !errorFlag1){ 
-			printState(&postCall, 0, preCall.discardCount[p], preCall.handCount[p], preCall.deckCount[p], p, TEST_EMPTY); 
-			errorFlag1 = 1;
-		}
-		//make sure counts are correct and game state hasn't changed
-		//assert(postCall.handCount[p] == preCall.handCount[p]);
-		//assert(postCall.deckCount[p] == preCall.deckCount[p]);
-		//assert(postCall.discardCount[p] == preCall.discardCount[p]);
-		
-		if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 && !errorFlag2){ 
-			printState(&postCall, 0, preCall.discardCount[p], preCall.handCount[p], preCall.deckCount[p], p, TEST_EMPTY); 
-			errorFlag2 = 1;
-		}
-		//assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);
-		
-		initializeMyGame(&preCall, actionCards, seed++, numPlayer);
-		
-		//*******************test TEST_NO_CARDS_IN_DECK BUT CARDS IN DISCARD DECK (case 1)***************
-		memcpy(preCall.discard[p], testAllCardsDiscardDeck, sizeof(int) * ALL_CARDS_COUNT);			
-		preCall.deckCount[p] = TEST_ZERO_HAND_COUNT; // set deck size to 0  
-		preCall.discardCount[p] = ALL_CARDS_COUNT;  
-		
-		memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
-		drawCard(p, &postCall);
-		
-		if(((postCall.deckCount[p] != (ALL_CARDS_COUNT - 1)) || (postCall.discardCount[p] != 0) ||
-				((preCall.handCount[p] + 1) != postCall.handCount[p])) && !errorFlag3){ 
-			printState(&postCall, preCall.hand[p], preCall.discardCount[p], preCall.handCount[p], 
-                    preCall.deckCount[p], p, TEST_NO_CARDS_IN_DECK); 
-			errorFlag3 = 1;		
-		}
-		//make sure counts are correct and game state hasn't changed
-		//assert(postCall.handCount[p] == (preCall.handCount[p] + 1));
-		//assert(postCall.deckCount[p] == (ALL_CARDS_COUNT - 1));
-		//assert(postCall.discardCount[p] == 0);
-		
-		if(postCall.hand[p][postCall.handCount[p]-1] != postCall.deck[p][postCall.deckCount[p]] && !errorFlag4){ 
-			printState(&postCall, 0, preCall.discardCount[p], preCall.handCount[p], preCall.deckCount[p], p, TEST_NO_CARDS_IN_DECK); 
-			errorFlag4 = 1;
-		}
-		//ensure correct card has been added	
-		//assert(postCall.hand[p][postCall.handCount[p]-1] == postCall.deck[p][postCall.deckCount[p]]);	
-	   
-		//make expected changes to preCall so structs are equal
-		preCall.handCount[p] += 1;
-		preCall.deckCount[p] = (ALL_CARDS_COUNT - 1);
-		preCall.discardCount[p] = 0;
-		preCall.hand[p][postCall.handCount[p]-1] = postCall.deck[p][postCall.deckCount[p] ];
-		memcpy(preCall.deck[p], postCall.deck[p], sizeof(int) * ALL_CARDS_COUNT);//assign deck
-		memcpy(preCall.discard[p], postCall.discard[p], sizeof(int) * ALL_CARDS_COUNT);
-
-		if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 && !errorFlag5){ 
-			printState(&postCall, preCall.hand[p], preCall.discardCount[p], preCall.handCount[p], 
-                    preCall.deckCount[p], p, TEST_NO_CARDS_IN_DECK);
-			errorFlag5 = 1;		
-		}
-		assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);
-
-		initializeMyGame(&preCall, actionCards, seed++, numPlayer);			
-		//*********************test TEST_CARDS_IN_DECK (case 2) where player has cards in deck and discard deck***			
-		memcpy(preCall.deck[p], testAllCardsDeck, sizeof(int) * ALL_CARDS_COUNT);
-		preCall.deckCount[p] = ALL_CARDS_COUNT; // set deck size to 17  
-				
-		memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
-		drawCard(p, &postCall);
-		
-		//test no changes in deck
-		if (!errorFlagD && (noDominionCardChanges(&preCall, &postCall, p, ALL_CARDS_COUNT - 1) < 0) ){
-			printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
-			errorFlagD = 1;
-		}
-		
-		if(((postCall.deckCount[p] != (ALL_CARDS_COUNT - 1)) || ((preCall.handCount[p] + 1) != postCall.handCount[p])) && !errorFlag6){ 
-			printState(&postCall, preCall.hand[p], preCall.discardCount[p], preCall.handCount[p], 
-                    preCall.deckCount[p], p, TEST_CARDS_IN_DECK); 
-			errorFlag6 = 1;		
-		}
-		//make sure counts are correct and game state hasn't changed
-		//assert(postCall.handCount[p] == (preCall.handCount[p] + 1));
-		//assert(postCall.deckCount[p] == (ALL_CARDS_COUNT - 1));
-		//assert(postCall.discardCount[p] == 0);
-		
-		if(postCall.hand[p][postCall.handCount[p]-1] != preCall.deck[p][preCall.deckCount[p] - 1] && !errorFlag7){ 
-			printState(&postCall, 0, preCall.discardCount[p], preCall.handCount[p], preCall.deckCount[p], p, TEST_CARDS_IN_DECK); 
-			errorFlag7 = 1;
-		}
-		//ensure correct card has been added	
-		//assert(postCall.hand[p][postCall.handCount[p]-1] == preCall.deck[p][preCall.deckCount[p] - 1]);	
-		
-		//make expected changes to preCall so structs are equal
-		preCall.handCount[p] += 1;
-		preCall.deckCount[p] = (ALL_CARDS_COUNT - 1);            
-		preCall.hand[p][postCall.handCount[p]-1] = preCall.deck[p][preCall.deckCount[p]];
-
-		if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 && !errorFlag8){ 
-			printState(&postCall, preCall.hand[p], preCall.discardCount[p], preCall.handCount[p], 
-                    preCall.deckCount[p], p, TEST_CARDS_IN_DECK);
-			errorFlag8 = 1;		
-		}
-		//assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);
-      
-    }
-
-    if(!errorFlag1 && !errorFlag2 && !errorFlag3 && !errorFlag4 && !errorFlag5 && !errorFlag6 && !errorFlag7 && !errorFlag8 &&
-		!errorFlagP && ! errorFlagV && ! errorFlagD ){
-		printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TEST);
-	}else{
-		printf("\n >>>>> FAILURES DETECTED: Examine test cases %s <<<<<\n\n", TEST);
-	}  
-
-    return 0;
-}
-
-int initializeMyGame(struct gameState *G, int actionCards[], int seed, int numPlayer){
+	printf("%d total cards\n", totalCardCount + totalPlayerCards);
+	*/
 	
-		memset(G, 23, sizeof(struct gameState));   // clear the game state
-        return initializeGame(numPlayer, actionCards, seed, G); // initialize a new game
-}
-
-void printState(struct gameState *G, int hand[], int testDiscardDeckCount, int testHandCount, 
-        int testDeckCount, int player, int test){
+	// No cards should have been played yet
+	if (state->playedCardCount != 0)
+	{
+		printf("Error: playedCardCount is %d instead of 0\n", state->playedCardCount);
+		failureCount = failureCount + 1;
+	}
 	
-	printf("Error found in %s, %d\n", TEST, test );
-	printf("\tpost G->handCount = %d  testHandCount = %d\n", G->handCount[player], testHandCount);
-	printf("\tpost G->deckCount = %d  testDeckCount = %d\n", G->deckCount[player], testDeckCount);
-	printf("\tpost G->discardCount = %d testDiscardDeckCount = %d\n\n", G->discardCount[player], testDiscardDeckCount);	
-}
-
-int noPlayerStateChanges(struct gameState *preCall, struct gameState *postCall, int p){
-    //int i = 0;	
-	//test no other changes occured to game state	
-	if(preCall->deckCount[p] != postCall->deckCount[p]){ 
-		printf("ERROR noPlayerStateChanges DECKCOUNT's off\n");
-		return -1;
+	// Phase should start at 0
+	if (state->phase != 0)
+	{
+		printf("Error: phase is %d instead of 0\n", state->phase);
+		failureCount = failureCount + 1;
 	}
-	if(preCall->discardCount[p] != postCall->discardCount[p]){ 
-		printf("ERROR noPlayerStateChanges DISCARDCOUNT's off\n");
-		return -1;
+	
+	// Number of actions available should be 1
+	if (state->numActions != 1)
+	{
+		printf("Error: numActions is %d instead of 1\n", state->numActions);
+		failureCount = failureCount + 1;
 	}
-	if(preCall->handCount[p] != postCall->handCount[p]){ 
-		printf("ERROR noPlayerStateChanges HANDCOUNT's off\n");
-		return -1;
+	
+	// Number of buys available should be 1
+	if (state->numBuys != 1)
+	{
+		printf("Error: numBuys is %d instead of 1\n", state->numBuys);
+		failureCount = failureCount + 1;
 	}
-	if(memcmp(&preCall->deck[p], &postCall->deck[p], MAX_DECK) != 0){
-		printf("ERROR noPlayerStateChanges DECK is off\n");
-
-		//for testing
-        //for(i=0; i < MAX_DECK ; ++i){
-        //    printf("\tpreCall-deck[%d][%d] = %d, postCall-deck[%d][%d] = %d\n",p, i, preCall->deck[p][i], p, i, postCall->deck[p][i]);
-        //}
-
-		return -1;
+	
+	// It should be the first player's turn
+	if (state->whoseTurn != 0)
+	{
+		printf("Error: whoseTurn is %d instead of 0\n", state->whoseTurn);
+		failureCount = failureCount + 1;
 	}
-	if(memcmp(&preCall->discard[p], &postCall->discard[p], MAX_DECK) != 0){ 
-		printf("ERROR noPlayerStateChanges DISCARD DECK is off\n");
-		return -1;
-	}
-	if(memcmp(&preCall->hand[p], &postCall->hand[p], MAX_HAND) != 0){ 
-		printf("ERROR noPlayerStateChanges HAND is off\n");
-		return -1;
-	}
-	return 0;
-}
-
-int noVictoryCardChanges(struct gameState *preCall, struct gameState *postCall, int p){
-	if(scoreFor(p, preCall) != scoreFor(p, postCall)){
-		printf("ERROR noVictoryCardChanges\n");
-		return -1;
-	}
-	return 0;
-}
-
-int noDominionCardChanges(struct gameState *preCall, struct gameState *postCall, int p, int deckSize){
-	if(memcmp(&preCall->deck[p], &postCall->deck[p], sizeof(int) *  deckSize) != 0){
-		printf("ERROR noDominionCardChanges\n");
-		return -1;
-	}
-	return 0;
+	
+	return failureCount;
 }

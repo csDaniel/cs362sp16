@@ -15,7 +15,7 @@ while(drawntreasure<2){
 	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-	if (cardDrawn == copper || cardDrawn || silver || cardDrawn == gold)
+	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
 	else{
 	  temphand[z]=cardDrawn;
@@ -33,7 +33,7 @@ while(drawntreasure<2){
 int smithyCard(int currentPlayer, struct gameState *state, int handPos){
 	//+3 Cards
 	int i = 0;
-      for (i = 0; i < 2; i++)
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -50,6 +50,9 @@ int villageCard(int handPos, struct gameState *state, int currentPlayer)
 			
     //+2 Actions
     state->numActions = state->numActions + 2;
+	
+	//discard played card from hand
+    discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
@@ -530,7 +533,7 @@ int scoreFor (int player, struct gameState *state) {
     }
 
   //score from deck
-  for (i = 0; i < state->discardCount[player]; i++)
+  for (i = 0; i < state->deckCount[player]; i++)
     {
       if (state->deck[player][i] == curse) { score = score - 1; };
       if (state->deck[player][i] == estate) { score = score + 1; };

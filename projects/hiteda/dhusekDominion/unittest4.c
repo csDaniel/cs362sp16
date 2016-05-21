@@ -1,164 +1,112 @@
-/*
- * unittest4.c
+/******************************************************************************
+ * Filename:		unittest4.c
+ * Author:		David Hite
+ * Date Created:	4/24/2016
+ * Last Date Edited:	4/24/2016
  *
- */
-
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
+ * Description:
+ * Tests the gamestate after fullDeckCount() is called
+ *****************************************************************************/
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-#include "interface.h"
+#include "dominion.h"
 
-#define TESTFUNCTION "drawCard()"
-
-int main() {
-    int hand;
-    int deck;
-    
-    int seed = 1000;
-    int numPlayers = 2;
-    int thisPlayer = 0;
-    struct gameState G, testG;
-    int k[10] = {adventurer, feast, village, minion, mine, cutpurse,
-        sea_hag, tribute, smithy, council_room};
-    int i;
-    int num;
-    int GnewHandCount;
-    int GnewDeckCount;
-    int GnewDiscardCount;
-    int errorCount = 0;
-    int failedTests = 0;
-    int passedTests = 0;
-    
-    // initialize a game state and player cards
-    initializeGame(numPlayers, k, seed, &G);
-    
-    printf("----------------- Testing Function: %s ----------------\n", TESTFUNCTION);
-    
-    // copy the game state to a test case
-    memcpy(&testG, &G, sizeof(struct gameState));
-    
-    for(i = 0; i < testG.deckCount[thisPlayer]; i++) {
-        testG.discard[thisPlayer][testG.discardCount[thisPlayer]] = testG.deck[thisPlayer][i];
-        testG.discardCount[thisPlayer]++;
-    }
-    
-    testG.deckCount[thisPlayer] = 0;
-    
-    hand = 1;
-    deck = 1;
-    GnewHandCount = G.handCount[thisPlayer] + hand;
-    GnewDeckCount = G.deckCount[thisPlayer] - deck;
-    GnewDiscardCount = 0;
-    
-    drawCard(thisPlayer, &testG);
-    
-    // ----------- Draw a card from an empty deck. --------------
-    printf("Testing: Draw a card from an empty deck.\n");
-    if(testG.handCount[thisPlayer] != GnewHandCount) {
-        if(testG.handCount[thisPlayer] < GnewHandCount) {
-            num = GnewHandCount - testG.handCount[thisPlayer];
-            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too few cards.\n", num);
-            failedTests++;
-            errorCount++;
-        } else { // hand count is too big
-            num = testG.handCount[thisPlayer] - GnewHandCount;
-            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too many cards.\n", num);
-            failedTests++;
-            errorCount++;
-        }
-    }
-    if(testG.deckCount[thisPlayer] != GnewDeckCount) {
-        if(testG.deckCount[thisPlayer] < GnewDeckCount) {
-            num = GnewDeckCount - testG.deckCount[thisPlayer];
-            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too few cards.\n", num);
-            failedTests++;
-            errorCount++;
-        } else { // deck count is too big
-            num = testG.deckCount[thisPlayer] - GnewDeckCount;
-            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too many cards.\n", num);
-            failedTests++;
-            errorCount++;
-        }
-    }
-    if(testG.discardCount[thisPlayer] != GnewDiscardCount) {
-        if(testG.discardCount[thisPlayer] < GnewDiscardCount) {
-            num = GnewDiscardCount - testG.discardCount[thisPlayer];
-            printf("\t**FAILED**: Discard count was not updated correctly.  There are %d too few cards.\n", num);
-            failedTests++;
-            errorCount++;
-        } else { // discard count is too big
-            num = testG.discardCount[thisPlayer] - GnewDiscardCount;
-            printf("\t**FAILED**: Discard count was not updated correctly.  There are %d too many cards.\n", num);
-            failedTests++;
-            errorCount++;
-        }
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: Discard, deck, and hand counts are all correct.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    hand = 1;
-    deck = 1;
-    GnewHandCount = GnewHandCount + hand;
-    GnewDeckCount = GnewDeckCount - deck;
-    
-    drawCard(thisPlayer, &testG);
-    
-    // ----------- Draw a card from a deck. --------------
-    printf("Testing: Draw a card from a deck.\n");
-    if(testG.handCount[thisPlayer] != GnewHandCount) {
-        if(testG.handCount[thisPlayer] < GnewHandCount) {
-            num = GnewHandCount - testG.handCount[thisPlayer];
-            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too few cards.\n", num);
-            failedTests++;
-            errorCount++;
-        } else { // hand count is too big
-            num = testG.handCount[thisPlayer] - GnewHandCount;
-            printf("\t**FAILED**: Hand count was not updated correctly.  There are %d too many cards.\n", num);
-            failedTests++;
-            errorCount++;
-        }
-    }
-    if(testG.deckCount[thisPlayer] != GnewDeckCount) {
-        if(testG.deckCount[thisPlayer] < GnewDeckCount) {
-            num = GnewDeckCount - testG.deckCount[thisPlayer];
-            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too few cards.\n", num);
-            failedTests++;
-            errorCount++;
-        } else { // deck count is too big
-            num = testG.deckCount[thisPlayer] - GnewDeckCount;
-            printf("\t**FAILED**: Deck count was not updated correctly.  There are %d too many cards.\n", num);
-            failedTests++;
-            errorCount++;
-        }
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: Discard, deck, and hand counts are all correct.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    
-    
-    
-    
-    
-    //---------------------------------------------------------------------------
-    
-    printf(" >>>>> SUCCESS: Testing complete %s <<<<<\n", TESTFUNCTION);
-    printf("\t%d tests **FAILED**.\n", failedTests);
-    printf("\t%d tests PASSED.\n\n", passedTests);
-    
-    
-    return 0;
+int main()
+{
+	printf("Testing fullDeckCount()...\n");
+	struct gameState* state = newGame();
+	int failCount = 0;
+	int player = 0;
+	
+	// set up player's cards
+	state->deckCount[player] = 10;
+	state->handCount[player] = 5;
+	state->discardCount[player] = 7;
+	
+	int i;
+	for (i = 0; i < 10; i++)
+	{
+		state->deck[player][i] = i;
+		
+		if (i < 5)
+			state->hand[player][i] = i;
+		if (i < 7)
+			state->discard[player][i] = i;
+	}
+	
+	// check for returning correct values
+	int sixCount = fullDeckCount(player, 6, state);
+	int nineCount = fullDeckCount(player, 9, state);
+	int oneCount = fullDeckCount(player, 1, state);
+	int outOfRangeCount = fullDeckCount(player, 15, state);
+	
+	if (sixCount != 2)
+	{
+		printf("Error: fullDeckCount() returned %d instead of 2\n", sixCount);
+		failCount = failCount + 1;
+	}
+	if (nineCount != 1)
+	{
+		printf("Error: fullDeckCount() returned %d instead of 1\n", nineCount);
+		failCount = failCount + 1;
+	}
+	if (oneCount != 3)
+	{
+		printf("Error: fullDeckCount() returned %d instead of 3\n", oneCount);
+		failCount = failCount + 1;
+	}
+	if (outOfRangeCount != 0)
+	{
+		printf("Error: fullDeckCount() returned %d instead of 0\n", outOfRangeCount);
+		failCount = failCount + 1;
+	}
+	
+	// check that the count of each deck has not changed
+	if (state->deckCount[player] != 10)
+	{
+		printf("Error: deckCount is %d instead of 10\n", state->deckCount[player]);
+		failCount = failCount + 1;
+	}
+	
+	if (state->handCount[player] != 5)
+	{
+		printf("Error: handCount is %d instead of 5\n", state->handCount[player]);
+		failCount = failCount + 1;
+	}
+	
+	if (state->discardCount[player] != 7)
+	{
+		printf("Error: discardCount is %d instead of 7\n", state->discardCount[player]);
+		failCount = failCount + 1;
+	}
+	
+	// check that each deck has not changed
+	for (i = 0; i < 10; i++)
+	{
+		if (state->deck[player][i] != i)
+		{
+			printf("Error: deck at %d is %d instead of %d\n", i, state->deck[player][i], i);
+			failCount = failCount + 1;
+		}
+		
+		if (i < 5)
+		{
+			if (state->hand[player][i] != i)
+			{
+				printf("Error: hand at %d is %d instead of %d\n", i, state->hand[player][i], i);
+				failCount = failCount + 1;
+			}
+		}
+		if (i < 7)
+		{
+			if (state->discard[player][i] != i)
+			{
+				printf("Error: discard at %d is %d instead of %d\n", i, state->discard[player][i], i);
+				failCount = failCount + 1;
+			}
+		}
+	}
+	
+	printf("%d tests failed!\n", failCount);
+	printf("Testing complete!\n");
+	return 0;
 }

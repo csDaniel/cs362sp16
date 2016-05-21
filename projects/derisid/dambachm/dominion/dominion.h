@@ -136,4 +136,9 @@ void playGreat_Hall(int, int, struct gameState*);
 void playSteward(int, int, int, int, int, struct gameState*);
 void playMinion(int, int, int, int, struct gameState*);
 
+//Starting David A5 refactor
+void adventurerCard(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int z, int temphand[]);
+void smithyCard(int currentPlayer, struct gameState *state, int handPos, int i);
+
+
 #endif

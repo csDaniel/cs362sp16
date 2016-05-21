@@ -7,6 +7,11 @@
 **		cardEffect() function in the file dominion.c.
 ****************
 
+Before I edited the code to add 5 functions for 5 cards, I ran the 
+program including each of the integers 1-9 
+(i.e. ./playdom.exe 1 - ./playdom.exe 9) and documented the result 
+for each player's score. Once I 
+
 Changes to Smithy:
 	In the for loop, I altered the "i<3" to "i<=3" which 
 	changes the number of times the loop runs (line 680). I also 

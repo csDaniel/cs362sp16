@@ -1,279 +1,107 @@
-/*
- * cardtest3.c
+/******************************************************************************
+ * Filename:		cardtest3.c
+ * Author:		David Hite
+ * Date Created:	4/24/2016
+ * Laste Date Edited:	4/24/2016
  *
- */
-
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
+ * Description:
+ * Tests the gamestate after playVillage() is called
+ *****************************************************************************/
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-#include "interface.h"
+#include "dominion.h"
 
-#define TESTCARD "village"
+int main()
+{
+	printf("Testing playVillage()...\n");
+	struct gameState* state = newGame();
+	int player = 0;
+	state->numActions = 1;
+	state->numPlayers = 4;
+	state->playedCardCount = 0;
+	int failCount = 0;
+	
+	// set hand to a known state
+	state->handCount[player] = 3;
+	state->hand[player][0] = copper;
+	state->hand[player][1] = village;
+	state->hand[player][2] = estate;
+	
+	// set deck to a known state
+	state->deckCount[player] = 3;
+	state->deck[player][0] = copper;
+	state->deck[player][1] = gold;
+	state->deck[player][2] = copper;
 
-int main() {
-    int newCards = 0;
-    int discarded = 1;
-    int extraActions = 0;
-    int extraBuys = 0;
-    int shuffledCards = 0;
-    
-    int i;
-    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-    int seed = 1000;
-    int numPlayers = 2;
-    int thisPlayer = 0;
-    int otherPlayer = 1;
-    struct gameState G, testG;
-    int k[10] = {adventurer, feast, village, minion, mine, cutpurse,
-        sea_hag, tribute, smithy, council_room};
-    int GnewHandCount;
-    int GnewDeckCount;
-    int GnewActionCount;
-    int GnewBuyCount;
-    int GdeckCount;
-    int num;
-    int card1;
-    int deckCard1;
-    int errorCount = 0;
-    int failedTests = 0;
-    int passedTests = 0;
-    const char* cards[27] = {"curse", "estate", "duchy", "province", "copper", "silver",
-                             "gold", "adventurer", "council room", "feast", "gardens",
-                             "mine", "remodel", "smithy", "village", "baron", "great hall",
-                             "minion", "steward", "tribute", "ambassador", "cutpurse",
-                             "embargo", "outpost", "salvager", "sea hag", "treasure map"};
-    
-    // initialize a game state and player cards
-    initializeGame(numPlayers, k, seed, &G);
-    
-    printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
-    
-    // set card in position 0 to Village
-    G.hand[thisPlayer][handpos] = village;
-    GdeckCount = G.deckCount[thisPlayer];
-    
-    // copy the game state to a test case
-    memcpy(&testG, &G, sizeof(struct gameState));
-    
-    // play village card in testG game
-    cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
-    
-    newCards = 1;
-    extraActions = 2;
-    extraBuys = 0;
-    GnewHandCount = G.handCount[thisPlayer] + newCards - discarded;
-    GnewDeckCount = GdeckCount - newCards + shuffledCards;
-    GnewActionCount = G.numActions + extraActions;
-    GnewBuyCount = G.numBuys + extraBuys;
-    
-    printf("Current game state compared with expected state:\n");
-    printf("\thand count = %d, expected = %d\n", testG.handCount[thisPlayer], GnewHandCount);
-    printf("\tdeck count = %d, expected = %d\n", testG.deckCount[thisPlayer], GnewDeckCount);
-    printf("\tactions = %d, expected = %d\n", testG.numActions, GnewActionCount);
-    printf("\tbuys = %d, expected = %d\n", testG.numBuys, GnewBuyCount);
-    printf("\n");
-    
-    // ----------- Current player should receive exactly 1 card --------------
-    printf("Testing: Current player should receive exactly 1 card.\n");
-    if(testG.handCount[thisPlayer] != GnewHandCount) {
-        if(testG.handCount[thisPlayer] < GnewHandCount) {
-            num = GnewHandCount - testG.handCount[thisPlayer];
-            printf("\t**FAILED**: Current player drew %d too few cards.\n\n", num);
-            failedTests++;
-        } else { // Current player drew too many cards
-            num = testG.handCount[thisPlayer] - GnewHandCount;
-            printf("\t**FAILED**: Current player drew %d too many cards.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player received the correct number of cards.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- Current player's deck should be 1 card smaller --------------
-    printf("Testing: Current player's deck should be 1 card smaller.\n");
-    if(testG.deckCount[thisPlayer] != GnewDeckCount) {
-        if(testG.deckCount[thisPlayer] < GnewDeckCount) {
-            num = GnewDeckCount - testG.deckCount[thisPlayer];
-            printf("\t**FAILED**: Current player drew %d too many cards.\n\n", num);
-            failedTests++;
-        } else { // Current player drew too few cards
-            num = testG.deckCount[thisPlayer] - GnewDeckCount;
-            printf("\t**FAILED**: Current player drew %d too few cards.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player's deck contains the correct number of cards.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- Current player should receive 2 additional actions --------------
-    printf("Testing: Current player should receive 2 additional actions.\n");
-    if(testG.numActions != GnewActionCount) {
-        if(testG.numActions < GnewActionCount) {
-            num = GnewActionCount - testG.numActions;
-            printf("\t**FAILED**: Current player has %d too few actions.\n\n", num);
-            failedTests++;
-        } else { // Current player has too many actions
-            num = testG.numActions - GnewActionCount;
-            printf("\t**FAILED**: Current player has %d too many actions.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player has the correct number of actions.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- Current player should receive no additional buys --------------
-    printf("Testing: Current player should receive no additional buys.\n");
-    if(testG.numBuys != GnewBuyCount) {
-        if(testG.numBuys < GnewBuyCount) {
-            num = GnewBuyCount - testG.numBuys;
-            printf("\t**FAILED**: Current player has %d too few buys.\n\n", num);
-            failedTests++;
-        } else { // Current player has too many buys
-            num = testG.numBuys - GnewBuyCount;
-            printf("\t**FAILED**: Current player has %d too many buys.\n\n", num);
-            failedTests++;
-        }
-    } else {
-        printf("\tPASSED: Current player has the correct number of buys.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- Current player should draw 1 card from his own deck --------------
-    printf("Testing: Current player should draw 1 card from his own deck.\n");
-    card1 = testG.hand[thisPlayer][handpos]; // since last card is swapped with Village's position when it is discarded
-    deckCard1 = G.deck[thisPlayer][G.deckCount[thisPlayer] - 1];
-    if(card1 != deckCard1) {
-        printf("\t**FAILED**: The card was not drawn from the current player's deck.\n\n");
-        failedTests++;
-    } else {
-        printf("\tPASSED: Card was drawn from the correct player's deck.\n\n");
-        passedTests++;
-    }
-    
-    // ----------- No state change should occur for other players. --------------
-    printf("Testing: No state change should occur for other players.\n");
-    errorCount = 0;
-    if(testG.handCount[otherPlayer] != G.handCount[otherPlayer]) {
-        printf("\t**FAILED**: Other player's hand count has changed.\n");
-        failedTests++;
-        errorCount++;
-    }
-    if(testG.deckCount[otherPlayer] != G.deckCount[otherPlayer]) {
-        printf("\t**FAILED**: Other player's deck count has changed.\n");
-        failedTests++;
-        errorCount++;
-    }
-    if(testG.discardCount[otherPlayer] != G.discardCount[otherPlayer]) {
-        printf("\t**FAILED**: Other player's discard count has changed.\n");
-        failedTests++;
-        errorCount++;
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the other player.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    // ----------- No state change should occur for the victory card piles. --------------
-    printf("Testing: No state change should occur for the victory card piles.\n");
-    errorCount = 0;
-    if(supplyCount(estate, &testG) != supplyCount(estate, &G)) {
-        printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[estate]);
-        failedTests++;
-        errorCount++;
-    }
-    if(supplyCount(duchy, &testG) != supplyCount(duchy, &G)) {
-        printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[duchy]);
-        failedTests++;
-        errorCount++;
-    }
-    if(supplyCount(province, &testG) != supplyCount(province, &G)) {
-        printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[province]);
-        failedTests++;
-        errorCount++;
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the victory card piles.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    // ----------- No state change should occur for the treasure card piles. --------------
-    printf("Testing: No state change should occur for the treasure card piles.\n");
-    errorCount = 0;
-    if(supplyCount(copper, &testG) != supplyCount(copper, &G)) {
-        printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[copper]);
-        failedTests++;
-        errorCount++;
-    }
-    if(supplyCount(silver, &testG) != supplyCount(silver, &G)) {
-        printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[silver]);
-        failedTests++;
-        errorCount++;
-    }
-    if(supplyCount(gold, &testG) != supplyCount(gold, &G)) {
-        printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[gold]);
-        failedTests++;
-        errorCount++;
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the treasure card piles.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    // ----------- No state change should occur for the kingdom card piles. --------------
-    printf("Testing: No state change should occur for the kingdom card piles.\n");
-    errorCount = 0;
-    for(i = 0; i < 10; i++) {
-        if(supplyCount(k[i], &testG) != supplyCount(k[i], &G)) {
-            printf("\t**FAILED**: Supply of %s cards has changed.\n", cards[k[i]]);
-            failedTests++;
-            errorCount++;
-        }
-    }
-    
-    if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the kingdom card piles.\n\n");
-        passedTests++;
-    } else {
-        printf("\n");
-    }
-    
-    // ----------- Current player's discard pile should have Village on top --------------
-    printf("Testing: Current player's discard pile should have Village on top.\n");
-    if(testG.discardCount[thisPlayer] > 0) {
-        if(testG.discard[thisPlayer][testG.discardCount[thisPlayer] - 1] != village) {
-            printf("\t**FAILED**: The last card in current player's discard pile is not Village.\n\n");
-            failedTests++;
-        } else {
-            printf("\tPASSED: The last card in current player's discard pile is Village.\n\n");
-            passedTests++;
-        }
-    } else {
-        printf("\t**FAILED**: The current player's test discard pile is empty.\n\n");
-        failedTests++;
-    }
-    
-    //---------------------------------------------------------------------------
-    
-    printf(" >>>>> SUCCESS: Testing complete %s <<<<<\n", TESTCARD);
-    printf("\t%d tests **FAILED**.\n", failedTests);
-    printf("\t%d tests PASSED.\n\n", passedTests);
-    
-    
-    return 0;
+	// set other players' cards to a known state
+	int i;
+	for (i = 1; i < state->numPlayers; i++)
+	{
+		state->handCount[i] = 0;
+		state->deckCount[i] = 0;
+		state->discardCount[i] = 0;
+	}
+	
+	// call the function being tested
+	playVillage(state, 1, player);
+	
+	// check that handCount has not changed (1 card added, 1 discarded)
+	if (state->handCount[player] != 3)
+	{
+		printf("Error: handCount is %d instead of 3\n", state->handCount[player]);
+		failCount++;
+	}
+	
+	// check that numActions has increased by 2
+	if (state->numActions != 3)
+	{
+		printf("Error: numActions is %d instead of 3\n", state->numActions);
+		failCount++;
+	}
+	
+	// check that deck has had a card removed
+	if (state->deckCount[player] != 2)
+	{
+		printf("Error: deckCount is %d instead of 2\n", state->deckCount[player]);
+		failCount++;
+	}
+	
+	// check that village card is no longer in the player's hand
+	for (i = 0; i < state->handCount[player]; i++)
+	{
+		if (state->hand[player][i] == village)
+		{
+			printf("Error: village card not discarded\n");
+			failCount++;
+		}
+	}
+	
+	// check that the played card count has incremented
+	if (state->playedCardCount != 1)
+	{
+		printf("Error: playedCardCount is %d instead of 1\n", state->playedCardCount);
+		failCount++;
+	}
+	
+	// check that the other players' cards were not modified
+	for (i = 1; i < state->numPlayers; i++)
+	{
+		if (state->handCount[i] != 0)
+		{
+			printf("Error: player %d's handCount is %d instead of 0\n", i + 1, state->handCount[i]);
+			failCount++;
+		}
+		if (state->deckCount[i] != 0)
+		{
+			printf("Error: player %d's deckCount is %d instead of 0\n", i + 1, state->deckCount[i]);
+			failCount++;
+		}
+		if (state->discardCount[i] != 0)
+		{
+			printf("Error: player %d's discardCount is %d instead of 0\n", i + 1, state->discardCount[i]);
+			failCount++;
+		}
+	}
+	
+	printf("Testing complete!\n%d errors found.\n", failCount);
+	return 0;
 }

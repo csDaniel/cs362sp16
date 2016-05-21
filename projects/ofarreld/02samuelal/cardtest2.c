@@ -1,145 +1,77 @@
-/*
-Alex Samuel
-Assignment 3
-cardtest2.c
-Tests for adventurer card
-*/
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include "rngs.h"
+#include <stdlib.h>
+
+#include "testHelper.h"
+
+#define TESTCARD "Great_Hall"
 
 int main() {
-    int newCards = 2;
-    int discarded = 1;
-    int numPlayers = 2;
-    int PlayerID = 0;
-    int seed = 326;
-    int i;
-    int errorFlag = 0;
-	struct gameState G, testG;
+	int newCards = 0;
+	int discarded = 1;
+	int newCoins = 0;
+	int shuffledCards = 0;
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
-
-	printf("TEST 1: Testing adventurer - +2 Treasure Cards Added to Player's Hand, 1 Discarded\n");
-
-	//Initializes game and copies game state to test case
-	initializeGame(numPlayers, k, seed, &G);
-	memcpy(&testG, &G, sizeof(struct gameState));
-
+	int a, b, c;
 	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+	int remove1, remove2;
+	int seed = 1000;
+	int numPlayers = 2;
+	int thisPlayer = 0;
+	int otherPlayer = 1;
 
-	cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
+	struct gameState G, testG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy, council_room};
+	
+	initializeGame(numPlayers, k, seed, &G);  
+	printf("\t Testing Card: %s \n", TESTCARD);
+	
+	// boot up the perfect version
+	memcpy(&testG, &G, sizeof(struct gameState));
+	
+	// Test 01 -----------------------------------------------------------------
+	// Coints += $2  Buys +1 
+	printf("Test 01: +1 card, +1 action \n");
+	
+	// setup test environment
+	memcpy(&testG, &G, sizeof(struct gameState));	
+	cardEffect(great_hall, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-	printf("Player hand count = %d, expected hand count= %d\n", testG.handCount[PlayerID], G.handCount[PlayerID] + newCards - discarded);
+	// Test 01	
+	newCoins = 0;
+	newCards = 1;
+	a = 1;
 
-    //Test fails because of bug introduced in refactor.c where 3 treasure cards are added instead of 2
-    //Also, as a result of a different bug, adventurer card is not discarded
-    if (testG.handCount[PlayerID] != (G.handCount[PlayerID] + newCards - discarded)) {
-        printf("TEST 1 HAS FAILED\n\n");
-        errorFlag = 1;
-     }
+	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], 
+		G.handCount[thisPlayer] + newCards - discarded);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], 
+		G.handCount[thisPlayer] - newCards + shuffledCards);
+	printf("coins = %d, expected = %d\n", testG.coins, G.coins + newCoins);
+	printf("player actions = %d, expected = %d\n", testG.numActions, G.numActions + 1);
+	
+	if (testG.handCount[thisPlayer] != G.handCount[thisPlayer] + newCards- discarded) {
+		errorMessage("handCount does not match");
+	}
+	if (testG.deckCount[thisPlayer] != G.deckCount[thisPlayer] - newCards + shuffledCards){ 
+		errorMessage("deckCount does not match");
+  	}
+	if (testG.coins != G.coins + newCoins) {
+		errorMessage("coins do not match");
+	}
+	if (testG.numActions != (G.numActions + a)) {
+		errorMessage("player's actions do not match");
+	}	
+	
+	genericTest(G, testG, otherPlayer, 0);
+	
+	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 
-    printf("TEST 2: Testing adventurer - Only Treasure Cards Are Added to Player's Hand\n");
-
-    int treasureBefore = 0;
-    int treasureAfter = 0;
-
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        if (G.hand[PlayerID][i] == copper || G.hand[PlayerID][i] == silver || G.hand[PlayerID][i] == gold) {
-            treasureBefore++;
-        }
-    }
-
-    for (i = 0; i < testG.handCount[PlayerID]; i++) {
-        if (testG.hand[PlayerID][i] == copper || testG.hand[PlayerID][i] == silver || testG.hand[PlayerID][i] == gold) {
-            treasureAfter++;
-        }
-    }
-
-    int NottreasureBefore = G.handCount[PlayerID] - treasureBefore;
-    int NottreasureAfter = testG.handCount[PlayerID] - treasureAfter;
-
-    printf("Non-Treasure Cards = %d, expected non-treasure cards = %d\n", NottreasureAfter, NottreasureBefore);
-
-    //Test 2 fails because of bug introduced in refactor.c where 3 treasure cards are added instead of 2
-    if (NottreasureBefore != NottreasureAfter) {
-        printf("TEST 2 HAS FAILED\n\n");
-        errorFlag = 1;
-     }
-
-    printf("TEST 3: Player 2 Is Unaffected by Player 1 Playing Adventurer\n");
-    PlayerID = 1;
-	int GDeckResults[27] = { 0 };
-	int testGDeckResults[27] = { 0 };
-    int GHandResults[27] = { 0 };
-	int testGHandResults[27] = { 0 };
-	int Deckdifference[27] = { 0 };
-	int Handdifference[27] = { 0 };
-    int cardVal;
-    int cardTotal;
-
-    for (i = 0; i < G.deckCount[PlayerID]; i++) {
-        cardVal = G.deck[PlayerID][i];
-        GDeckResults[cardVal]++;
-    }
-
-    for (i = 0; i < G.handCount[PlayerID]; i++) {
-        cardVal = G.hand[PlayerID][i];
-        GHandResults[cardVal]++;
-    }
-
-    for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-        cardVal = testG.deck[PlayerID][i];
-        testGDeckResults[cardVal]++;
-    }
-
-    for (i = 0; i < testG.handCount[PlayerID]; i++) {
-        cardVal = testG.hand[PlayerID][i];
-        testGHandResults[cardVal]++;
-    }
-
-    printf("Player 2 Deck Totals Before Adventurer Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", GDeckResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Deck Totals After Adventurer Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", testGDeckResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Hand Totals Before Adventurer Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", GHandResults[i]);
-    }
-
-    printf("\n\n");
-
-    printf("Player 2 Hand Totals After Adventurer Was Played By Player 1\n");
-    for (i = 0; i < 27; i++) {
-        printf ("%d ", testGHandResults[i]);
-    }
-
-    //no difference in hand totals because hands are only drawn at start if turn,
-    //see dominion.c, line 197
-
-    //Compares whether any change to Player 2 hand or deck
-    if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
-        memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-            printf("\n\nTEST 3 HAS PASSED\n\n");
-    }
-    else {
-        printf("\n\nTEST 3 HAS FAILED\n\n");
-    }
-
-    return 0;
+  return 0;
 }
+
+

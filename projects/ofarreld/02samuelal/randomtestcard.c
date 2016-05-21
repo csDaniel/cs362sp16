@@ -1,173 +1,125 @@
 /*
-Alex Samuel
-Assignment 4
-randomtestcard.c
-Random Tester for smithy card
-*/
+ *	Name:						Daniel Ofarrell
+ *	Date Created:					5 May 2016
+ *	Last Modification Date:				5 May 2016
+ *	Filename					randomtestcard.c
+ *
+ *	Objective:
+ *		This will perform a random test on the SALVAGER card
+ *
+ *		Each test will haveb the following randomized:
+ *		- the player deck
+ *		- the player discardCount
+ *		- the layer handCount
+ *		- the number of players
+ *		- the number of treasures
+ *
+ *		Reference for this test has been taken from betterTestDrawCard.c
+ *  */ 
+
 
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include "rngs.h"
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include <assert.h>
+#include "rngs.h"
+#include <stdlib.h>
+
+#include "testHelperRand.h"
+
+#define TESTCARD "salvager"
 
 int main() {
-    srand (time(NULL));
+	int iterations = 5000;
+	int result = 0;
 
-    int choice1 = 0;
-    int choice2 = 0;
-    int choice3 = 0;
-    int i, j, m;
-    int newCards = 3;
-    int discarded = 1;
-    int minPlayers = 2;
-    int numPlayers = 0;
-    int PlayerID = 0;
-    int errorFlag1 = 0;
-    int errorFlag2 = 0;
-    int errorFlag3 = 0;
-    int counter = 0;
+	int seed = 1000;
+	int numPlayers = 2;
+	int thisPlayer = 0;
+	int discard = 2;
+	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0;
 
-	struct gameState G, testG;
+	int newBuys = 1;
+	int a = 0, b = 0;
 
-    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-    sea_hag, tribute, smithy, council_room};
+	struct gameState G, expG, resG;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy, council_room};
 
-	for (i = minPlayers; i < MAX_PLAYERS + 1; i++) {
-            numPlayers = i;
+	// initialize game environment & begin testing
+	initializeGame(numPlayers, k, seed, &G);
+	memcpy(&expG, &G, sizeof(struct gameState));
+	printf("\t Testing Card: %s \n", TESTCARD);
+	SelectStream(2);
+	PutSeed(12);
 
-        for (j = 0; j < 1000000; j++) {
+	// +1 buy
+	// + gain coins equal to cost of a card
+	// Actions--
 
-            int seed = floor(Random() * 1000);
-            int handpos = floor(Random() * MAX_HAND);
-            int bonus = floor(Random() * 1000);
+	for (a = 0; a < iterations; a++) {
+		// initialize random values
+		choice1 = 0;
+		memcpy(&expG, &G, sizeof(struct gameState));
+		do {
+			expG.handCount[thisPlayer] = floor(Random() * MAX_HAND);
+		} while (expG.handCount[thisPlayer] < 2);
+		expG.deckCount[thisPlayer] = floor(Random() * MAX_DECK);
+		expG.discardCount[thisPlayer] = floor(Random() * MAX_DECK);
+		// randomize count of cards
+		for (b = 0; b < (treasure_map); b++) {
+			expG.supplyCount[b] = floor(Random() * 10);
+			expG.embargoTokens[b] = floor(Random() * 10);
+		}
 
-            int seed1C = floor(Random() * 1000);
-            int seed2C = floor(Random() * 1000);
-            int seed3C = floor(Random() * 1000);
+		expG.numActions = floor(Random() * MAX_HAND);
+		expG.coins += floor(Random() * 60) * 1;
+		expG.coins += floor(Random() * 60) * 2;
+		expG.coins += floor(Random() * 30) * 3;
+		expG.numBuys = floor(Random() * MAX_HAND);
 
-            if (seed1C % 2 == 0) {
-                choice1 = 1;
-            }
+		// randomize the contents of player's hand, deck, and discard
+		for (b = 0; b < expG.handCount[thisPlayer]; b++) {
+			expG.hand[thisPlayer][b] = floor(Random() * (treasure_map));
+		}
+		for (b = 0; b < expG.deckCount[thisPlayer]; b++) {
+			expG.deck[thisPlayer][b] = floor(Random() * (treasure_map));
+		}
+		for (b = 0; b < expG.discardCount[thisPlayer]; b++) {
+			expG.discard[thisPlayer][b] = floor(Random() * treasure_map);
+		}
 
-            if (seed2C % 2 == 0) {
-                choice2 = 1;
-            }
+		expG.hand[thisPlayer][0] = salvager;
+		// pick a card to burn for coins
 
-            if (seed3C % 2 == 0) {
-                choice3 = 1;
-            }
+		while (choice1 <= 0) {
+			choice1 = floor(Random() * expG.handCount[thisPlayer]);
+		}
 
-            //Initializes game and copies game state to test case
-            initializeGame(numPlayers, k, seed, &G);
-            memcpy(&testG, &G, sizeof(struct gameState));
-
-            PlayerID = whoseTurn(&testG);
-
-            cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
-
-            //Random Test 1 - Testing smithy - +3 Cards Added to Player's Hand
-            //Test fails because of bug introduced in refactor.c where 4 cards are drawn instead of 3
-            if (testG.handCount[PlayerID] != (G.handCount[PlayerID] + newCards - discarded)) {
-                errorFlag1 = 1;
-            }
-
-            //Random Test 2 - Other Players Are Unaffected by Player 1 Playing Smithy
-            for (m = 1; m < numPlayers; m++) {
-
-                PlayerID = m;
-                int GDeckResults[27] = { 0 };
-                int testGDeckResults[27] = { 0 };
-                int GHandResults[27] = { 0 };
-                int testGHandResults[27] = { 0 };
-                int Deckdifference[27] = { 0 };
-                int Handdifference[27] = { 0 };
-                int cardVal;
-                int cardTotal;
-
-
-                for (i = 0; i < G.deckCount[PlayerID]; i++) {
-                    cardVal = G.deck[PlayerID][i];
-                    GDeckResults[cardVal]++;
-                }
-
-                for (i = 0; i < testG.deckCount[PlayerID]; i++) {
-                    cardVal = testG.deck[PlayerID][i];
-                    testGDeckResults[cardVal]++;
-                }
-
-                /*
-                for (i = 0; i < G.handCount[PlayerID]; i++) {
-                    cardVal = G.hand[PlayerID][i];
-                    GHandResults[cardVal]++;
-                }
-
-
-                for (i = 0; i < testG.handCount[PlayerID]; i++) {
-                    cardVal = testG.hand[PlayerID][i];
-                    testGHandResults[cardVal]++;
-                }
-                */
-
-
-                //no difference in hand totals because hands are only drawn at start if turn,
-                //see dominion.c, line 197
-
-                //Compares whether any change to Player 2 hand or deck
-                if (memcmp(GDeckResults, testGDeckResults, sizeof(GDeckResults)) == 0 &&
-                    memcmp(GHandResults, testGHandResults, sizeof(GHandResults)) == 0 ) {
-                        //printf("\n\nRANDOM TEST 3 HAS PASSED\n\n");
-                }
-                else {
-                    errorFlag3 = 1;
-                }
-
-                memset(GDeckResults, 0, 27 * (sizeof GDeckResults[0]) );
-                memset(testGDeckResults, 0, 27 * (sizeof testGDeckResults[0]) );
-                memset(GHandResults, 0, 27 * (sizeof GHandResults[0]) );
-                memset(testGHandResults, 0, 27 * (sizeof testGHandResults[0]) );
-                memset(Deckdifference, 0, 27 * (sizeof Deckdifference[0]) );
-                memset(Handdifference, 0, 27 * (sizeof Handdifference[0]) );
-
-            }
-
-            memset(&G, 23, sizeof(struct gameState));
-            memset(&testG, 23, sizeof(struct gameState));
-
-            if(counter == 0) {
-                printf("RANDOM TESTING IN PROGRESS...");
-            }
-            else if(counter % 10000 == 0) {
-                printf(".");
-            }
-
-            counter++;
-
-        }
-
+		memcpy(&resG, &expG, sizeof(struct gameState));
+		result = cardEffect(salvager, choice1, choice2, choice3, &resG, handpos, 0);
+	
+		// test: discard size, handsize, coins, buys
+		if (resG.handCount[thisPlayer] != (expG.handCount[thisPlayer] - discard)) {
+			printf("ERROR: Hand Count Expected: %d\t Result: %d\n", 
+				(expG.handCount[thisPlayer] - discard), resG.handCount[thisPlayer]);
+		}
+		if (resG.discardCount[thisPlayer] != (expG.discardCount[thisPlayer])) {
+			printf("ERROR: Discard Count Expected: %d\t Result: %d\n",
+				(expG.discardCount[thisPlayer]), resG.discardCount[thisPlayer]);
+		}
+		if (resG.coins != (expG.coins + getCost(handCard(choice1, &expG )))) {
+			printf("ERROR: Coins Expected: %d\t Result: %d\n",
+				(expG.coins + getCost(handCard(choice1, &expG))), resG.coins);
+		}
+		if (resG.numBuys != (expG.numBuys + newBuys)) {
+			printf("ERROR: Buys Expected: %d\t Result: %d\n",
+				(expG.numBuys + newBuys), resG.numBuys);
+		}
 	}
 
-
-    printf("\n\nRANDOM TEST 1: Testing smithy - +3 Cards Added to Player's Hand\n");
-    if (errorFlag1 > 0) {
-        printf("RANDOM TEST 1 HAS FAILED\n\n");
-    }
-    else {
-        printf("RANDOM TEST 1 HAS PASSED\n\n");
-    }
-
-    printf("RANDOM TEST 2: Testing smithy - Other Players Are Unaffected by Player 1 Playing Smithy\n");
-    if (errorFlag2 > 0) {
-        printf("RANDOM TEST 2 HAS FAILED\n\n");
-    }
-    else {
-        printf("RANDOM TEST 2 HAS PASSED\n\n");
-    }
-
-
-
-    return 0;
+	printf("\n >>>>>>> %s TESTING STATUS: COMPLETE <<<<<<<\n\n", TESTCARD);  
+	return 0;
 }
+
