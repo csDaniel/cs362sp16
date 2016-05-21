@@ -1,22 +1,4 @@
 INDEX VERSION 1.126+E:\github\cs362sp16\cs362sp16\projects\tungr\finalProject\.metadata\.plugins\org.eclipse.jdt.core
-1080962453.index
-2200398545.index
-3110959222.index
-119771733.index
-1546903804.index
-2197014563.index
-4014991606.index
-43147290.index
-2637012844.index
-2940653691.index
-2071851371.index
-1387024309.index
-3103790976.index
-4184877898.index
-2970378280.index
-2721651919.index
-4130777089.index
-438095081.index
 3459785222.index
-4208218345.index
+43147290.index
 2745284046.index
