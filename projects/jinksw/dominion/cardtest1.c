@@ -31,7 +31,6 @@ int playSmithyCard(struct gameState* state, int handPos) {
 #include "rngs.h"
 #include <stdlib.h>
 #include "interface.h"
-#include "interface.c"
 
 #define TESTCARD "smithy"
 
@@ -51,7 +50,7 @@ int main() {
 		int failFlag = 0;
 		int passCount = 0;
 		int tests = 4;
-		char *cardName = NULL;
+		char *cardName;
 	
 		struct gameState G, testG;
 		int k[10] = {smithy, embargo, village, minion, mine, cutpurse,
@@ -217,7 +216,7 @@ int main() {
 	// ----------- TEST 4: Coin, Action, Buy, Kingdom, Victory states don't change ---------
 	failFlag = 0;
 	handpos = 0;
-	printf("TEST 4: Coin, Action, Buy, Kingdom, Victory states don't change\n");
+	printf("\nTEST 4: Coin, Action, Buy, Kingdom, Victory states don't change\n");
 	
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
@@ -233,6 +232,7 @@ int main() {
 	printf("Kingdom cards = ");
 	for( i=0; i< 10; i++ ){ 
 		cardNumToName( kTest[i], cardName );
+	printf( "Post\n" );
 		printf( "(%s = %d)", cardName, testG.supplyCount[i] );
 	}
 	printf(", expected = ");

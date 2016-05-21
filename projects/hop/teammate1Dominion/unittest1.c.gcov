@@ -1,0 +1,87 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <assert.h>
+        -:    3:#include "dominion.h"
+        -:    4:#include "rngs.h"
+        -:    5:
+function main called 1 returned 100% blocks executed 52%
+        -:    6:int main(){
+        -:    7:
+        -:    8:   struct gameState state;
+        1:    9:   int currentPlayer = 0;
+        1:   10:   state.numPlayers = 2;
+        1:   11:   state.whoseTurn = 0;
+        1:   12:   state.hand[currentPlayer][0] = adventurer;
+        1:   13:   state.hand[currentPlayer][1] = feast;
+        1:   14:   state.hand[currentPlayer][2] = remodel;
+        1:   15:   state.hand[currentPlayer][3] = tribute;
+        1:   16:   state.hand[currentPlayer][4] = steward;
+        1:   17:   state.handCount[currentPlayer] = 5;
+        1:   18:   state.handCount[1] = 0;
+        1:   19:   state.numActions = 1;
+        1:   20:   state.numBuys = 1;
+        -:   21:   
+        -:   22:   /* business requirements
+        -:   23:      
+        -:   24:      description: testing handCard(int handNum, struct gameState *state), 
+        -:   25:      which returns the index of a player's card held at handNum. The index 
+        -:   26:      references the position of that card in the CARD enumeration.
+        -:   27:         
+        -:   28:      1. Manual initialization of cards in hand. Function should return card
+        -:   29:         number. adventurer = 7, feast = 9, remodel = 12, tribute = 19, and 
+        -:   30:         steward = 18.
+        -:   31:      2. No state changes should occur at all.  
+        -:   32:
+        -:   33:      end requirements*/
+        1:   34:   printf("<----------BEGIN unittest1-handCard() ---------->\n\n");
+        -:   35:
+        -:   36:// ----------------- TEST 1 ---------------------------------------------------
+        1:   37:   printf(" TEST 1: Cards in hands revealed appropriately.\n");
+        1:   38:   printf("    card: %i, expected: 7\n", handCard(0, &state));
+        1:   39:   printf("    card: %i, expected: 9\n", handCard(1, &state));
+        1:   40:   printf("    card: %i, expected: 12\n", handCard(2, &state));
+        1:   41:   printf("    card: %i, expected: 19\n", handCard(3, &state));
+        1:   42:   printf("    card: %i, expected: 18\n", handCard(4, &state));
+        2:   43:   assert(handCard(0, &state) == 7);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   44:   assert(handCard(1, &state) == 9);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   45:   assert(handCard(2, &state) == 12);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   46:   assert(handCard(3, &state) == 19);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   47:   assert(handCard(4, &state) == 18);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   48:
+        -:   49:// ----------------- TEST 2 ---------------------------------------------------
+        1:   50:   printf("\n"); 
+        1:   51:   printf(" TEST 2: No state changes should occur.\n");
+        1:   52:   printf("    hand count = %i, expected = 5\n", state.handCount[0]);
+        1:   53:   printf("    Player's turn = %i, expected = 0\n", state.whoseTurn);
+        1:   54:   printf("    No. Actions = %i, expected = 1\n", state.numActions);
+        1:   55:   printf("    No. Buys = %i, expected = 1\n", state.numBuys);
+        2:   56:   assert(state.handCount[0] == 5);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   57:   assert(state.whoseTurn == 0);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   58:   assert(state.numActions == 1);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   59:   assert(state.numBuys == 1);   
+branch  0 taken 0%
+branch  1 taken 100%
+        1:   60:   printf("\n<----------END unittest1-handCard() ---------->\n\n");
+        -:   61:
+        1:   62:   return 0;
+        -:   63:}

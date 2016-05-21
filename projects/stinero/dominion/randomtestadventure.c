@@ -1,44 +1,5 @@
-/*
- * cardtest2.c
- *
-
- */
-
-/*
- * Include the following lines in your makefile:
- *
- * randomtestadventurer: randomtestadventure.c dominion.o rngs.o
- *      gcc -o randomtestadventurer -g  randomtestadventure.c dominion.o rngs.o $(CFLAGS)
- *
- *   I have decided to make an intelligent random tester as creating a bunch of game states that are useless.
- *
- */
-
-/*
- * cardtest2.c
- *
-
- */
-
-/*
- * Include the following lines in your makefile:
- *
- * cardtest2: cardtest2.c dominion.o rngs.o
- *      gcc -o cardtest1 -g  cardtest2.c dominion.o rngs.o $(CFLAGS)
- *
- *      This will test the adventure card.
- *      int adventurerPlay(int currentPlayer, int handPos, struct gameState *state)
- *
- *		The adventurer card implementation was badly broken. Due to bugs introduced in implementation it will
- *		not draw cards into the hand of the person.
- *
- *		I created several test, one general case and one specific case to show that the Adventure Card
- *		Doesn't get discarded, and several more showing that this function is incredibly broken.
- *		This would not pass a smoke test.
- *
- *		The bright side is the test show no changes in OTHER cards when using the adventurer.
- *
- */
+/*randomtestAdventure.c
+ * */
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -47,11 +8,13 @@
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
-void testDeckCount(struct gameState *state);
+struct gameState * randomizeGame();
+
+
 void testTreasure(struct gameState *state);
 void testMoreCards(struct gameState *state);
 void otherPlayersEffected(struct gameState *state, int numPlayers);
-struct gameState * randomizeGame();
+
 
 void otherPlayersEffected(struct gameState *state, int numPlayers)
 {
@@ -92,7 +55,7 @@ return;
 void testMoreCards(struct gameState *state)
 {
 
-	int cardInHand = state->handCount[state->whoseTurn] - 1;
+	int cardInHand = state->handCount[state->whoseTurn] - 1; //-1 accounts for the card that will be played.
 	int cardToggle;
 	int i;
 	int player = state->whoseTurn;
@@ -120,18 +83,33 @@ void testMoreCards(struct gameState *state)
 
 	if(cardToggle == 1)
 	{
-		printf("Expected card count : %d \n", cardInHand+2);
-		printf("Actual card count : %d \n", state->handCount[player]);
+//		printf("Expected card count : %d \n", cardInHand+2);
+//		printf("Actual card count : %d \n", state->handCount[player]);
+		assert(cardInHand+2 == state->handCount[player]);
 	}
 	else
 	{
-		printf("Expected card count : %d or %d \n", cardInHand+1, cardInHand);
-		printf("Actual card count : %d \n", state->handCount[player]);
+
+		if(cardInHand == state->handCount[player])
+		{
+//			printf("Expected card count : %d or %d \n", cardInHand+1, cardInHand);
+//			printf("Actual card count : %d \n", state->handCount[player]);
+		}
+		else if(cardInHand+1 == state->handCount[player])
+		{
+//			printf("Expected card count : %d or %d \n", cardInHand+1, cardInHand);
+//			printf("Actual card count : %d \n", state->handCount[player]);
+		}
+		else
+		{
+			printf("Error In test More Card Functions \n");
+			printf("Expected hand count : %d or %d \n", cardInHand+1, cardInHand);
+//			printf("Deck Count is: %d\n", state->deckCount[player]);
+//			printf("Discard Count is: %d\n", state->discardCount[player]);
+			printf("Actual hand count : %d \n", state->handCount[player]);
+		}
+
 	}
-
-
-	assert(cardInHand < state->handCount[state->whoseTurn > cardInHand]);
-
 
 	return;
 
@@ -149,10 +127,10 @@ void testTreasure(struct gameState *state)
 
 	state->hand[player][0] = 7;
 
-	printf("Original Hand: \n");
+//	printf("Original Hand: \n");
 	for(i = 0; i < state->handCount[player]; i++)
 	{
-		printf("%d   ",state->hand[player][i]);
+//		printf("%d   ",state->hand[player][i]);
 
 		if((state->hand[player][i] == copper) || (state->hand[player][i] == silver) || (state->hand[player][i] == gold))
 		{
@@ -177,11 +155,11 @@ void testTreasure(struct gameState *state)
 	}
 
 	cardEffect( adventurer , 0, 0, 0, state, 0, &bonus);
-	printf("\n Hand After Card Played: \n");
+//	printf("\n Hand After Card Played: \n");
 
 	for(i = 0; i < state->handCount[player]; i++)
 	{
-		printf("%d   ",state->hand[player][i]);
+//		printf("%d   ",state->hand[player][i]);
 
 		if((state->hand[player][i] == copper) || (state->hand[player][i] == silver) || (state->hand[player][i] == gold))
 		{
@@ -192,57 +170,29 @@ void testTreasure(struct gameState *state)
 
 	if(deckTreaSureCount >=2 )
 	{
-		printf("\nTreasure Count: %d \n", treasureCount);
-		printf("New Treasure Count: %d \n", newTreasureCount);
-		printf("Expected Treasure Count: %d \n", treasureCount+2);
+//		printf("\nTreasure Count: %d \n", treasureCount);
+//		printf("New Treasure Count: %d \n", newTreasureCount);
+//		printf("Expected Treasure Count: %d \n", treasureCount+2);
 		assert(treasureCount+2 == newTreasureCount);
 	}
 	else if(deckTreaSureCount == 1)
 	{
-		printf("\nTreasure Count: %d \n", treasureCount);
-		printf("New Treasure Count: %d \n", newTreasureCount);
-		printf("Expected Treasure Count: %d \n", treasureCount+1);
+//		printf("\nTreasure Count: %d \n", treasureCount);
+//		printf("New Treasure Count: %d \n", newTreasureCount);
+//		printf("Expected Treasure Count: %d \n", treasureCount+1);
 		assert(treasureCount+1 == newTreasureCount);
 	}
 	else if(deckTreaSureCount == 0)
 	{
-		printf("Treasure Count: %d \n", treasureCount);
-		printf("New Treasure Count: %d \n", newTreasureCount);
-		printf("Expected Treasure Count: %d \n", treasureCount);
+//		printf("Treasure Count: %d \n", treasureCount);
+//		printf("New Treasure Count: %d \n", newTreasureCount);
+//s		printf("Expected Treasure Count: %d \n", treasureCount);
 		assert(treasureCount == newTreasureCount);
 	}
 
 	return;
 }
 
-void testDeckCount(struct gameState *state)
-{
-	struct gameState testG;
-	int player = state->whoseTurn;
-	int cardCount = state->deckCount[player];
-	int bonus = 0;
-
-	//int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
-
-
-	while(cardCount < 2)
-	{
-		drawCard(state->whoseTurn, &testG);
-		cardCount = state->deckCount[player];
-	}
-
-	cardEffect( adventurer , 0, 0, 0, &testG, 0, &bonus);
-
-	while(cardCount > 2)
-	{
-		discardCard(0, state->whoseTurn, &testG, 0);
-		cardCount = state->deckCount[player];
-	}
-
-	cardEffect( adventurer , 0, 0, 0, &testG, 0, &bonus);
-
-	return;
-}
 
 
 
@@ -282,6 +232,7 @@ struct gameState * randomizeGame() {
 		k[length] = roomTry;
 		length++;
 	}
+
 	player = random() % 2 + 2;
 	seed = (random() % 9999) + 1;
 	initializeGame(player, k, seed, G);
@@ -322,14 +273,14 @@ struct gameState * randomizeGame() {
 
 	G->handCount[player] = (random() % 20)+1;
 	for(i = 0; i < G->handCount[player]; i++){
-		if (j > 5) {
+		if (i > 5) {
 			roomTry = random() % 10;
-			G->hand[i][j] = k[roomTry];
+			G->hand[player][i] = k[roomTry];
 		} else {
-			G->hand[i][j] = (random() % 3) + 4;
+			G->hand[player][i] = (random() % 3) + 4;
 		}
-	}
-
+	}/*
+*/
 	return G;
 }
 
@@ -338,42 +289,49 @@ int main() {
 
 	struct gameState *G;
 	int i;
+	int bonus;
 
+	bonus = 0;
+
+
+
+	printf("Test Treasure \n");
 	for (i = 0; i < 1000; i++) {
 		G = randomizeGame();
-		printf("Test Treasure \n");
 		testTreasure(G);
-		printf("Test Complete \n ******************** \n");
 		free(G);
 	}
-/*	for (i = 0; i < 1000; i++) {
-			G = randomizeGame();
-			printf("Follow up test to prove no cards are drawn. \n");
-			testMoreCards(G);
-			printf("Test Complete \n ******************** \n");
-			free(G);
-		}
+	printf("Test Complete \n ******************** \n");
 
 
+	printf("Test to see  \n");
 	for (i = 0; i < 1000; i++) {
 			G = randomizeGame();
-			printf("Follow up test to see if other players decks/cards/vpoints are changed. \n");
-			otherPlayersEffected(G, G->numPlayers);
-			printf("Test Complete. No changes registered.\n ******************** \n");
+			testMoreCards(G);
 			free(G);
 		}
+	printf("Test Complete \n ******************** \n");
 
 
-	for (i = 0; i < 10; i++) {
+printf("Follow up test to see if other players decks/cards/vpoints are changed. \n");
+	for (i = 0; i < 1000; i++) {
 			G = randomizeGame();
-			printf("Draws Card with deck < 2 cards and over 2 cards. Test for SegFault/ non-terminating loop \n");
-//			testDeckCount(G);
-			printf("Test Complete. Card draws with < 2 cards and >2 cards.\n ******************** \n");
+			otherPlayersEffected(G, G->numPlayers);
 			free(G);
-		}*/
+		}
+printf("Test Complete. No changes registered.\n ******************** \n");
 
-	printf("We made it!\n");
 
-		return 0;
+printf("10,000 Runs of drawing adventure.\n");
+	for (i = 0; i < 10000; i++) {
+			G = randomizeGame();
+			cardEffect( adventurer , 0, 0, 0, G, 0, &bonus);
+			free(G);
+		}
+printf("Test Complete. 10,000 iterations ran on Random Game\n ******************** \n");
+
+printf("We made it!\n");
+
+	return 0;
 
 }
