@@ -15,7 +15,7 @@ Date: 5/4/2016
 
 //testing Adventurer - reveal cards from deck until two treasure cards are found, then discard the other revealed cards
 int main() {
-	int randomRun = 1000000;//the number of times the random checker runs
+	int randomRun = 1000;//the number of times the random checker runs
 	int seed = 1;//the seed for initializeGame
 	int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};//used to initialize game - not cards for player playing adventurer
     struct gameState game;//the game used
