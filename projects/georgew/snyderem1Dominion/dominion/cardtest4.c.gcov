@@ -1,0 +1,108 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://cardtest4.c --refactored for snyderem
+        -:    2:#include "dominion.h"
+        -:    3:#include "dominion_helpers.h"
+        -:    4:#include <string.h>
+        -:    5:#include <stdio.h>
+        -:    6:#include <assert.h>
+        -:    7:#include "rngs.h"
+        -:    8:#include <stdlib.h>
+        -:    9:
+        -:   10:#define TESTCARD "great_hall"
+        -:   11:
+        1:   12:int main() {
+        1:   13:  	int seed = 1000;
+        1:   14:    	int numPlayers = 2;
+        1:   15:    	int thisPlayer = 0;
+        -:   16:   	int currDeckCount, currHandCount, currDiscardCount, currActions;
+        1:   17:   	int bonus = 0;
+        1:   18:    	int handPos = 0;
+        1:   19:    	int choice1 = 0;
+        1:   20:	int choice2 = 0;
+        1:   21:	int choice3 = 0;
+        -:   22:	struct gameState G, testG;
+        -:   23:	
+        1:   24:	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
+        -:   25:			sea_hag, tribute, smithy, council_room};
+        -:   26:
+        -:   27:	// initialize a game state and player cards
+        1:   28:	initializeGame(numPlayers, k, seed, &G);
+        -:   29:
+        1:   30:	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
+        -:   31:	// copy the game state to a test case
+        1:   32:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   33:	printf("---------------TEST 1: CHECKING DRAW CARD FUNCTION\n-----------");
+        -:   34:	
+        -:   35:	//get starting game state
+        1:   36:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:   37:	currDeckCount = testG.deckCount[thisPlayer];
+        1:   38:	currHandCount = testG.handCount[thisPlayer];
+        1:   39:	currDiscardCount = testG.discardCount[thisPlayer];
+        -:   40:	
+        -:   41:	//currCard = testG.deck[player][currDeckCount - 1];
+        1:   42:	printf("Deck Count Before: %d\n", testG.deckCount[thisPlayer]);
+        1:   43:	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
+        1:   44:	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
+        -:   45:	//run card function
+        -:   46:	//greatHallCard(handPos, thisPlayer, &testG);
+        1:   47:	cardEffect(great_hall, choice1, choice2, choice3, &testG, handPos, &bonus);
+        -:   48:	//check deck count
+        1:   49:	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
+        1:   50:	if ((currDeckCount - 1) == testG.deckCount[thisPlayer]){
+        1:   51:		printf("DECK COUNT DECREASED BY 1: SUCCESS\n");
+        -:   52:	}
+    #####:   53:	else if (currDeckCount == testG.deckCount[thisPlayer])
+        -:   54:	{
+    #####:   55:		printf("DECK COUNT STAYED THE SAME: FAILURE\n");
+        -:   56:	}
+        -:   57:	else
+    #####:   58:		printf("DECK COUNT CHANGED INCORRECTLY: FAILURE\n");
+        -:   59:
+        -:   60:	//check hand count
+        1:   61:	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
+        1:   62:	if ((currHandCount + 1) == testG.handCount[thisPlayer]){
+    #####:   63:		printf("HAND COUNT INCREASED BY 1: SUCCESS\n");
+        -:   64:	}
+        1:   65:	else if (currHandCount == testG.handCount[thisPlayer])
+        -:   66:	{
+        1:   67:		printf("HAND COUNT DIDN'T CHANGE: FAILURE\n");
+        -:   68:	}
+        -:   69:	else
+    #####:   70:		printf("HAND COUNT CHANGE INCORRECT: FAILURE\n");
+        -:   71:	
+        -:   72:	//check discard count
+        1:   73:	printf("Discard Count After: %d\n", testG.discardCount[thisPlayer]);
+        1:   74:	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer]){
+    #####:   75:		printf("DISCARD COUNT INCREASED BY 1: SUCCESS\n");	
+        -:   76:	}
+        -:   77:	else
+        1:   78:		printf("DISCARD COUNT INCORRECT: FAILURE\n");
+        -:   79:	
+        -:   80:	//check action totals
+        1:   81:	printf("---------------TEST 2: CHECKING ACTIONS TOTAL\n-----------");
+        -:   82:	//get starting game state
+        1:   83:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   84:	//store actions
+        1:   85:	currActions = testG.numActions;
+        1:   86:	printf("Current Actions Before: %d\n", testG.numActions);
+        -:   87:	//run function
+        -:   88:	//greatHallCard(handPos, thisPlayer, &testG);
+        1:   89:	cardEffect(great_hall, choice1, choice2, choice3, &testG, handPos, &bonus);
+        -:   90:	//check effects
+        1:   91:	printf("Current Actions After: %d\n", testG.numActions);
+        1:   92:	if ((currActions + 1) == testG.numActions){
+        1:   93:		printf("ACTION COUNT INCREASED BY 1: SUCCESS\n");
+        -:   94:	}
+    #####:   95:	else if (currActions == testG.numActions)
+        -:   96:	{
+    #####:   97:		printf("ACTION COUNT STAYED THE SAME: FAILURE\n");
+        -:   98:	}
+        -:   99:	else
+    #####:  100:		printf("ACTION COUNT CHANGED INCORRECTLY: FAILURE\n");
+        1:  101:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
+        1:  102:return 0;
+        -:  103:}
