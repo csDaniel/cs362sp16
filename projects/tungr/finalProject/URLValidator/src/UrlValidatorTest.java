@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+import org.junit.Test;
+
 import junit.framework.TestCase;
 
 /**
@@ -26,30 +28,36 @@ public class UrlValidatorTest extends TestCase {
 
    private boolean printStatus = false;
    private boolean printIndex = false;//print index that indicates current scheme,host,port,path, query test were using.
+   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
    
    //first three are true
-   private String[] schemes = {"http://", "https://", "ftp://", "htt://", "htts://", "http:", "///", "https//"};
-   private String[] authorities = {"auth1", "auth2", "auth3", "auth4", "auth5", "auth6", "auth7", "auth8"};
-   private String[] ports = {"ports1", "ports2", "ports3", "ports4", "ports5", "ports6", "ports7", "ports8"};
-   private String[] paths = {"paths1", "paths2", "paths3", "paths4", "paths5", "paths6", "paths7", "paths8"};
-   private String[] queries = {"quers1", "quers2", "quers3", "quers4", "quers5", "quers6", "quers7", "quers8"};
+   private String[] schemes = {"http://", "https://", "ftp://", "http://", "htt://", "htts://", "http:", "///"};
+   private String[] authorities = {"www.google.com", "amazon.com", "uk.yahoo.com", "0.0.0.0", "www.yahoo.co.uk", "192.174.456.1.", ".4.3.4.5", "www.google.444"};
+   private String[] ports = {":0",":6000",":1234",":8080",":39r4",":-244" ,":8000000",":12345678"};
+   private String[] paths = {"/mail/","/mail/u/2","/$!37","/spam/","/..","/../","/..//mail","/inbox//mail"};
+   private String[] queries = {"/?twenty=20&UnitID=439" , "/?twenty=20&UnitID=439&Kara=see&Cant=kara&This=Kara&Rosa=can't&See=can't&This=Rosa&Sam=Can't&sEe=this",
+		   "/search/enhancedlocalsearch?where=46250&loctypes=1/4/5/9/11/13/19/21/1000/1001/1003/&from=hdr",
+		   "/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=google%20maps",
+		   "/ ?twenty=20&UnitID=439",
+		   "/webhp ?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=google%20maps",
+		   "/webhp? sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=bloomington+indiana%3F",
+		   "/webhp?%20sourceid=chrome- instant&ion=1&espv=2&ie=UTF-8#q=bloomington+"};
    
    public UrlValidatorTest(String testName) {
       super(testName);
    }
 
-   
-   
    public void testManualTest()
    {
-	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   System.out.println(urlVal.isValid("htts://www.google.com"));
-	     
+	   //UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   //System.out.println(urlVal.isValid("htts://www.google.com"));    
    }
    
-   public void testIsValid()
+   /*public void testIsValid()
    {   
+	   
 	   Boolean expectedValue = true; //true
+	   Boolean actualValue = true;
 	   
 	   for(int i = 0; i<schemes.length; i++){   
 		   for(int j = 0; j<authorities.length; j++){
@@ -57,43 +65,55 @@ public class UrlValidatorTest extends TestCase {
 				   	for(int l = 0; l<paths.length; l++){
 				   		for(int m = 0; m<queries.length; m++){
 						   String URL = new String("");
-						   expectedValue = true;
-						   changeFlag(expectedValue, i);
-						   changeFlag(expectedValue, j);
-						   changeFlag(expectedValue, k);
-						   changeFlag(expectedValue, l);
-						   changeFlag(expectedValue, m);
 						   URL = URL + schemes[i] + authorities[j] + ports[k] + paths[l] + queries[m];
-
-						   collector(URL, expectedValue);
+						   
+						   if(!urlVal.isValid(URL)){
+							   
+						   } else {
+							   
+						   }
+						   if(expectedValue == true){
+							   assertTrue(URL + " should be valid",
+						                urlVal.isValid(URL));
+						   } else {
+						       assertFalse(URL + " should not be valid",
+						                urlVal.isValid(URL));   
+						   }
 					   }
 				   }
 			   }
 		   }
 	   }
+   }*/
+   
+   @Test
+   public void testSuccessfullyWorkingAsExpected(){
+	   String URL = "http://www.google.com/mail";
+	   assertTrue(URL + " should be valid", urlVal.isValid(URL));
    }
    
-   //change flag to false
-   //if its in the first half of the array, it's "true" 
-   public void changeFlag(Boolean flag, int place){
-	   if(place>3){
-		   flag = false;
-	   }
+   @Test
+   public void testSuccessfullyFailingAsExpected(){
+	   String URL = "http://www.google.com:0//mail/?twenty=20&UnitID=439";
+	   assertFalse(URL + " should be invalid", urlVal.isValid(URL));	  
+	   URL = "www.google.com";
+	   assertFalse(URL + " should be invalid", urlVal.isValid(URL));
    }
    
-   public void collector(String URL, Boolean expectedValue){
-	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   
-	   System.out.println("expectedValue: " + expectedValue + " URL: " + URL);
-	   System.out.println(" Actual Result: " + urlVal.isValid(URL));
-	   
-	   if(expectedValue == true){
-		   assertTrue(URL + " should be valid",
-	                urlVal.isValid(URL));
-	   } else {
-	       assertFalse(URL + " should not be valid",
-	                urlVal.isValid(URL));   
-	   }	   
+   @Test
+   public void testShouldBeWorkingButAreNotWorking(){
+	   //authority function -> actually query function 
+	   String URL = "http://www.google.com/mail/?twenty=20&UnitID=439";
+	   assertFalse(URL + " should be invalid", urlVal.isValid(URL));
+	   //port function
+	   //URL = "http://www.google.com:3000";
+	   //assertFalse(URL + " should be invalid", urlVal.isValid(URL));
+   }
+   
+   @Test
+   public void testShouldNotBeWorkingButAreWorking(){
+	   String URL = "http://www.google.com:70000";
+	   assertTrue(URL + " should be invalid", urlVal.isValid(URL));	   
    }
 }
 

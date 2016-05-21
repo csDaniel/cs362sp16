@@ -1,3 +1,4 @@
+//INCORRECT
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -155,7 +156,7 @@ public class UrlValidator implements Serializable {
     private static final String LEGAL_ASCII_REGEX = "^\\p{ASCII}+$";
     private static final Pattern ASCII_PATTERN = Pattern.compile(LEGAL_ASCII_REGEX);
 
-    private static final String PORT_REGEX = "^:(\\d{1,3})$";
+    private static final String PORT_REGEX = "^:(\\d{1,5})$";
     private static final Pattern PORT_PATTERN = Pattern.compile(PORT_REGEX);
 
     /**
@@ -279,52 +280,52 @@ public class UrlValidator implements Serializable {
      */
     public boolean isValid(String value) {
         if (value == null) {
-        	System.out.println("valid==null");
+        	//System.out.println("valid==null");
             return false;
         }
 
         if (!ASCII_PATTERN.matcher(value).matches()) {
-        	System.out.println("!ASCII_PATTERN.matcher(value).matches()");
+        	//System.out.println("!ASCII_PATTERN.matcher(value).matches()");
             return false;
         }
 
         // Check the whole url address structure
         Matcher urlMatcher = URL_PATTERN.matcher(value);
         if (!urlMatcher.matches()) {
-        	System.out.println("!urlMatcher.matches()");
+        	//System.out.println("!urlMatcher.matches()");
             return false;
         }
 
         String scheme = urlMatcher.group(PARSE_URL_SCHEME);
         if (!isValidScheme(scheme)) {
-        	System.out.println("!isValidScheme(scheme)");
+        	//System.out.println("!isValidScheme(scheme)");
             return false;
         }
 
         String authority = urlMatcher.group(PARSE_URL_AUTHORITY);
         if ("file".equals(scheme) && "".equals(authority)) {
            // Special case - file: allows an empty authority
-        	System.out.println("Special case - file: allows an empty authority");
+        	//System.out.println("Special case - file: allows an empty authority");
         } else {
            // Validate the authority
            if (!isValidAuthority(authority)) {
-        	   System.out.println("!isValidAuthority(authority)");
+        	   //System.out.println("!isValidAuthority(authority)");
                return false;
             }
         }
 
         if (!isValidPath(urlMatcher.group(PARSE_URL_PATH))) {
-        	System.out.println("!isValidPath(urlMatcher.group(PARSE_URL_PATH))");
+        	//System.out.println("!isValidPath(urlMatcher.group(PARSE_URL_PATH))");
             return false;
         }
 
         if (!isValidQuery(urlMatcher.group(PARSE_URL_QUERY))) {
-        	System.out.println("!isValidQuery(urlMatcher.group(PARSE_URL_QUERY))");
+        	//System.out.println("!isValidQuery(urlMatcher.group(PARSE_URL_QUERY))");
             return false;
         }
 
         if (!isValidFragment(urlMatcher.group(PARSE_URL_FRAGMENT))) {
-        	System.out.println("!isValidFragment(urlMatcher.group(PARSE_URL_FRAGMENT))");
+        	//System.out.println("!isValidFragment(urlMatcher.group(PARSE_URL_FRAGMENT))");
         	return false;
         }
 

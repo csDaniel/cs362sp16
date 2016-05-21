@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="URLValidatorCorrect" project="URLValidatorCorrect" tests="11" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="UrlValidatorTest" incomplete="true">
+    <testcase name="testValidateUrl" classname="UrlValidatorTest" time="0.0"/>
+    <testcase name="testIsValidScheme" classname="UrlValidatorTest" time="0.01"/>
+    <testcase name="testBug1" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testBug2" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testIsValid" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testValidator202" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testValidator204" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testValidator218" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testValidator248" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testValidator276" classname="UrlValidatorTest" incomplete="true"/>
+    <testcase name="testValidator288" classname="UrlValidatorTest" incomplete="true"/>
+  </testsuite>
+</testrun>
