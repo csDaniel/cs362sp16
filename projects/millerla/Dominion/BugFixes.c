@@ -159,5 +159,10 @@ Code Changes:
 	
 	The second cause of the error in the number of cards in hand and number of cards discarded after the play of Adventurer was the failure of to discard the Adventurer itself after it was played. The hand count of the current player was consistenly 1 higher than expected, even after re-introducing the counter of the non-treasure cards to be discarded. Introducing discardCard removes the Adventurer card from the active player's hand, as is expected after playing Adventurer.
 	
+Bug 4: Treasure Map Creating New Treasure Cards
 	
+Code Changes:	
+
+	"if (state->hand[currentPlayer][i] = treasure_map && i != handPos)" was changed to "if (state->hand[currentPlayer][i] == treasure_map && i != handPos)"
 	
+	Instead of searching the hand of the current player for a second Treasure Map, the comparison assigns the value of treasure_map to the first card in the player's hand. This was the last of several bugs that I introduced for Assignment 2 and is now corrected. All other introduced bugs were discovered by teammates and corrected appropriately.
