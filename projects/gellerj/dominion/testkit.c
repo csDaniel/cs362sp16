@@ -2,6 +2,15 @@
 #include "testkit.h"
 #include "dominion.h"
 
+
+int compare2(const void *a, const void *b) {
+    if (*(int *) a > *(int *) b)
+        return 1;
+    if (*(int *) a < *(int *) b)
+        return -1;
+    return 0;
+}
+
 int handIsUntouched(struct gameState *before, struct gameState *after, int player) {
     int i;
     for (i = 0; i < before->handCount[player]; i++) {
@@ -101,8 +110,8 @@ int checkHandCard(struct gameState *game, int player, int position, int card) {
 
 void diffHand(struct gameState *before, struct gameState *after, int player, int diffCards[MAX_HAND]) {
     int i, diffPos = 0;
-    qsort((void *) (before->hand[player]), (size_t) before->handCount[player], sizeof(int), compare);
-    qsort((void *) (after->hand[player]), (size_t) after->handCount[player], sizeof(int), compare);
+    qsort((void *) (before->hand[player]), (size_t) before->handCount[player], sizeof(int), compare2);
+    qsort((void *) (after->hand[player]), (size_t) after->handCount[player], sizeof(int), compare2);
     for (i = 0; i < MAX_HAND; i++) {
         if (before->hand[player][i] != after->hand[player][i]) {
             diffCards[diffPos] = after->hand[player][i];

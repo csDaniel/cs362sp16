@@ -8,6 +8,10 @@ randomtestadventurer.out: randomtestadventurer.c dominion.o
 	gcov randomtestadventurer.c >> randomtestadventurer.out
 	gcov randomtestadventurer.c -b >> randomtestadventurer.out
 	cat randomtestadventurer.c.gcov >> randomtestadventurer.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestadventurer.out	
+	gcov dominion.c -b >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
 	
 	echo "%-------------------------------------RANDOM TESTING COMPLETE-------------------------------------%" >> randomtestadventurer.out	
 	
@@ -19,6 +23,10 @@ randomtestcard.out: randomtestcard.c dominion.o
 	gcov randomtestcard.c >> randomtestcard.out
 	gcov randomtestcard.c -b >> randomtestcard.out
 	cat randomtestcard.c.gcov >> randomtestcard.out
+	gcov dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+	gcov dominion.c -b >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
 	
 	echo "%-------------------------------------RANDOM TESTING COMPLETE-------------------------------------%" >> randomtestcard.out	
 

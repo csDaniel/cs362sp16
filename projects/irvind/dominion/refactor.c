@@ -8,6 +8,9 @@ adventurerCard()
 	BUG: In the while drawntreasure statement, changed if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 		to (cardDrawn == copper && cardDrawn == silver && cardDrawn == gold)
 	
+	**I went back and removed this bug, since it was causing an instant segmentation fault when I tried to run one of my card
+	tests for assignment 3.
+	
 smithyCard()
 	change: Moved from cardEffect switch statement to separate function smithyCard()
 	BUG: Changed the loop parameters at the beginning of the function; function only draws 2 cards instead of 3. 
