@@ -283,18 +283,18 @@ public class UrlValidatorTest extends TestCase {
 		   	   //If the tests passes, prompt the user with the actual and expected results
 		   	   if (result == paths[i].valid)
 			   {
-				   System.out.println("Test Passed: port used " + paths[i].item + " || Actual Result: " + result + " ||  Expected Result: " + paths[i].valid);
+				   System.out.println("Test Passed: path used " + paths[i].item + " || Actual Result: " + result + " ||  Expected Result: " + paths[i].valid);
 			   } 
 		   	   //If the tests fails, prompt the user with the actual and expected results
 		   	   else 
 			   {
-				   System.out.println("Test Failed: port used " + paths[i].item + " || Actual Result: " + result + " ||  Expected Result: " +  paths[i].valid);
+				   System.out.println("Test Failed: path used " + paths[i].item + " || Actual Result: " + result + " ||  Expected Result: " +  paths[i].valid);
 			   }
 			
 		}
 	   //Prompt the user with the end of testing
 	   System.out.println("----------------------------------------------------");
-	   System.out.println("|************* End of Port Test ******************|");
+	   System.out.println("|************* End of Path Test ******************|");
 	   System.out.println("----------------------------------------------------");
 }
    /**********************************************************************************
@@ -409,7 +409,7 @@ public class UrlValidatorTest extends TestCase {
 		}
 	   //Prompt the user with the end of testing
 	   System.out.println("----------------------------------------------------");
-	   System.out.println("|************* End of TLD Test ******************|");
+	   System.out.println("|************* End of Domain Test ******************|");
 	   System.out.println("----------------------------------------------------");
 }
    
@@ -515,8 +515,10 @@ public class UrlValidatorTest extends TestCase {
   };
    
    static ResultPair[] tlds = {
-		   new ResultPair("aero", true),
-		   new ResultPair("asia", true),
+		   new ResultPair(".shouldNotWork", false),
+		   new ResultPair(".aaa", false),
+		   new ResultPair(".zz", false),
+		   new ResultPair(".@#$%com", false),
 		   new ResultPair("com", true),
 		   new ResultPair("cat", true),
 		   new ResultPair("coop", true),
@@ -550,10 +552,7 @@ public class UrlValidatorTest extends TestCase {
 		   new ResultPair("tree", false),
 		   new ResultPair("beav", false),
 		   new ResultPair("train", false),
-		   new ResultPair("http://", false),
-		   new ResultPair("www.google.com", false)
-		   
-		   
+		   new ResultPair("http://", false)		   
    };
    
    static ResultPair[] paths = {
@@ -571,9 +570,9 @@ public class UrlValidatorTest extends TestCase {
 
    static ResultPair[] ports = 
 	   { 
+		   new ResultPair(":1024", true),
 		   new ResultPair(":0", true),
 		   new ResultPair(":65535", true),
-		   new ResultPair(":1024", true),
 		   new ResultPair(": ", false),
 		   new ResultPair(":Zero", false),
 		   new ResultPair(":755", true),
