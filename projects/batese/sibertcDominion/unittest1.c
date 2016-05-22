@@ -1,137 +1,104 @@
+/*
+File: unittest1.c
+Author: Elliot Bates
+Description: Unit test for discard card function from dominion
+*/
+
+/*
+int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+{
+	
+  //if card is not trashed, added to Played pile 
+  if (trashFlag < 1)
+    {
+      //add card to played pile
+      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+      state->playedCardCount++;
+    }
+	
+  //set played card to -1
+  state->hand[currentPlayer][handPos] = -1;
+	
+  //remove card from player's hand
+  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+    {
+      //reduce number of cards in hand
+      state->handCount[currentPlayer]--;
+    }
+  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+    {
+      //reduce number of cards in hand
+      state->handCount[currentPlayer]--;
+    }
+  else 	
+    {
+      //replace discarded card with last card in hand
+      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+      //set last card to -1
+      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+      //reduce number of cards in hand
+      state->handCount[currentPlayer]--;
+    }
+	
+  return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
+#include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
 
-#define TESTFUNCTION "updateCoins()"
+
 
 int main() {
-	int seed = 1000;
-	int numPlayers = 2;
-	int i = 0;
-	struct gameState G, testG;
-	int k[10] = {adventurer, embargo, village, minion, mine,
-				cutpurse, sea_hag, tribute, smithy, council_room};
-			
-	initializeGame(numPlayers, k, seed, &G);
+	int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int p, r, handCount, handPos;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+    int maxHandCount = 5;
+	int testHand1[] = {copper, silver, gold, adventurer, smithy};
+	int prePlayedCount, postPlayedCount;
 	
-	printf("\n----------------- START TESTING: %s ----------------\n", TESTFUNCTION);
-	
-	//starting hand amount
-	G.handCount[1] = 5;
-	
-	//initialize a hand of no coins
-	for(i = 0; i < G.handCount[1]; i++) {
-		G.hand[1][i] = k[0];
+	printf ("TESTING discardCard():\n");
+    for (p = 0; p < numPlayer; p++) {
+		for (handCount = 1; handCount <= maxHandCount; handCount++) {
+			for (handPos = 0; handPos < handCount; handPos++) {
+				// perform tests with no trash flag
+				printf("Testing player %d with handCount %d, discarding card from handPos %d without trash flag.\n", p, handCount, handPos);
+                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+                G.handCount[p] = handCount;                 // set the number of cards on hand
+                memcpy(G.hand[p], testHand1, sizeof(int) * handCount); // copy across some random cards from the test hand
+				prePlayedCount = G.playedCardCount;
+				discardCard(handPos, p, &G, 0); //Call discard card without trash flag
+				postPlayedCount = G.playedCardCount;
+				if (postPlayedCount == (prePlayedCount + 1)) //check played cards has increased by 1
+					printf("PASSED: Played card count = %d, expected %d.\n", postPlayedCount, (prePlayedCount + 1));
+				else
+					printf("FAILED: Played card count = %d, expected %d.\n", postPlayedCount, (prePlayedCount + 1));
+				if (G.playedCards[G.playedCardCount-1] == testHand1[handPos]) // check correct card was added to played cards
+					printf("PASSED: Top card in playedCards = %d, expected = %d.\n", G.playedCards[G.playedCardCount-1], testHand1[handPos]); 
+				else
+					printf("FAILED: Top card in playedCards = %d, expected = %d.\n", G.playedCards[G.playedCardCount-1], testHand1[handPos]);
+				if (G.handCount[p] == (handCount - 1)) // Check handcount has recreases
+					printf("PASSED: Hand Count = %d, expected %d.\n", G.handCount[p], (handCount - 1));
+				else
+					printf("FAILED: Hand Count = %d, expected %d.\n", G.handCount[p], (handCount - 1));
+				if ((handPos != (handCount - 1)) && (handCount != 1)) { // ie is not the last card in the hand
+					if (G.hand[p][handPos] == testHand1[handCount - 1])
+						printf("PASSED: Card switched with = %d, expected = %d.\n", G.hand[p][handPos], testHand1[handCount - 1]); //Check that the card was switched with the expected card
+					else
+						printf("FAILED: Card switched with = %d, expected = %d.\n", G.hand[p][handPos], testHand1[handCount - 1]); //Check that the card was switched with the expected card
+				}		
+
+			}
+		}
 	}
-	
-	updateCoins(1, &G, 0);
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	if (testG.coins == 0) {
-		printf("updateCoins TEST#1: PASS when no coins in hand.\n");
-	}
-	else {
-		printf("updateCoins TEST#1: FAIL when no coins in hand.\n");
-	}
-	
-	//testing mixed cards to count
-	G.hand[1][0] = copper;
-	G.hand[1][1] = silver;
-	G.hand[1][2] = gold;
-	G.hand[1][3] = estate;
-	G.hand[1][4] = silver;
-	
-	updateCoins(1, &G, 0);
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n----------- Testing 1 copper, 2 silver, 1 gold ----------\n");
-	if (testG.coins == 8) {
-		printf("updateCoins TEST#2: PASS - expected: 8 - actual: %d.\n", testG.coins);
-	}
-	else {
-		printf("updateCoins TEST#2: FAIL - expected: 8 - actual: %d.\n", testG.coins);
-	}
-	
-	//Testing Copper value
-	for(i = 0; i < G.handCount[1]; i++) {
-		G.hand[1][i] = copper;
-	}
-	
-	updateCoins(1, &G, 0);
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n----------------- Testing 5 copper ----------------\n");
-	if (testG.coins == 5) {
-		printf("updateCoins TEST#3: PASS - expected: 5 - actual: %d.\n", testG.coins);
-	}
-	else {
-		printf("updateCoins TEST#3: FAIL - expected: 5 - actual: %d.\n", testG.coins);
-	}
-	
-	//Testing Silver value
-	for(i = 0; i < G.handCount[1]; i++) {
-		G.hand[1][i] = silver;
-	}
-	
-	updateCoins(1, &G, 0);
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	
-	printf("\n----------------- Testing 5 silver ----------------\n");
-	if (testG.coins == 10) {
-		printf("updateCoins TEST#4: PASS - expected: 10 - actual: %d.\n", testG.coins);
-	}
-	else {
-		printf("updateCoins TEST#4: FAIL - expected: 10 - actual: %d.\n", testG.coins);
-	}
-	
-	//Testing Gold value
-	for(i = 0; i < G.handCount[1]; i++) {
-		G.hand[1][i] = gold;
-	}
-	
-	updateCoins(1, &G, 0);
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n----------------- Testing 5 gold ----------------\n");
-	if (testG.coins == 15) {
-		printf("updateCoins TEST#5: PASS - expected: 15 - actual: %d.\n", testG.coins);
-	}
-	else {
-		printf("updateCoins TEST#5: FAIL - expected: 15 - actual: %d.\n", testG.coins);
-	}
-	
-	//Testing Bonus value
-	for(i = 0; i < G.handCount[1]; i++) {
-		G.hand[1][i] = copper;
-	}
-	
-	updateCoins(1, &G, 10);
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n------------- Testing 10 bonus + 5 copper ------------\n");
-	if (testG.coins == 15) {
-		printf("updateCoins TEST#6: PASS - expected: 15 - actual: %d.\n", testG.coins);
-	}
-	else {
-		printf("updateCoins TEST#6: FAIL - expected: 15 - actual: %d.\n", testG.coins);
-	}
-	
-	printf("\n----------------- END TESTING: %s ----------------\n", TESTFUNCTION);
 	return 0;
 }

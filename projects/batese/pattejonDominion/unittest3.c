@@ -1,12 +1,38 @@
-/* ---------------------------------------------------------------------
-* Jon Patterson
-* Assignment 3
-* unittest3.c
-* discardCard() method
-* This was adapted from the testupdateCoins.c code provided by the instructor
-* but I have added additional code to test the game state when random hands
-* were populated with different cards
+/*
+File: unittest3.c
+Author: Elliot Bates
+Description: Unit test for is game over function from dominion
 */
+
+/*
+int isGameOver(struct gameState *state) {
+  int i;
+  int j;
+	
+  //if stack of Province cards is empty, the game ends
+  if (state->supplyCount[province] == 0)
+    {
+      return 1;
+    }
+
+  //if three supply pile are at 0, the game ends
+  j = 0;
+  for (i = 0; i < 25; i++)
+    {
+      if (state->supplyCount[i] == 0)
+	{
+	  j++;
+	}
+    }
+  if ( j >= 3)
+    {
+      return 1;
+    }
+
+  return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -14,55 +40,70 @@
 #include <assert.h>
 #include "rngs.h"
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
-// set ASSERTS_ON to 0 to disable asserts for investigating gcov
-#define ASSERTS_ON 0
+
 
 int main() {
+	int i;
     int seed = 1000;
     int numPlayer = 2;
-    int p, r, handCount, playedCount;
+    int p, r;
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
-    int error = 0;
-    memset(&G, 23, sizeof(struct gameState));
-    r = initializeGame(numPlayer, k, seed, &G);
-    printf ("Testing discardCard():\n");
-    for (p = 0; p < numPlayer; p++){
-        handCount = G.handCount[p];
-        playedCount = G.playedCardCount;
-        while(handCount > 0){
-            handCount--;
-            playedCount++;
-            discardCard(0, p, &G, 0);
-            #if (NOISY_TEST == 1)
-            printf("Test player %d with %d cards in hand and %d played.\n", p, handCount, playedCount);
-            printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
-            printf("Played = %d, Expected = %d\n", G.playedCardCount, playedCount);
-            #endif
-            #if (ASSERTS_ON == 1)
-            assert(G.playedCardCount == playedCount);
-            assert(G.handCount[p] == handCount);
-            #endif
-            if(G.playedCardCount != playedCount) error = 1;
-            if(G.handCount[p] != handCount) error = 1;
-        }
-        // hand should be empty now, try to discard a card again
-        discardCard(0, p, &G, 0);
-        #if (NOISY_TEST == 1)
-        printf("Empty hand, played = %d, Expected = %d\n", G.playedCardCount, playedCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.playedCardCount == playedCount);
-        #endif
-        if(G.playedCardCount != playedCount) error = 1;
-        if(error == 1){
-            printf("Errors were encountered.\n");
-            return 1;
-        }
+	int supplyCounts[25];
+	int gameOver;
 
-    }
-    return 0;
+	printf ("TESTING isGameOver():\n");
+	
+	// check function does not modify any supply counts
+	printf("Testing effect of function on supply counts.\n");
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	for (i = 0; i < 25; i++) {
+		supplyCounts[i] = G.supplyCount[i];
+	}
+	isGameOver(&G);
+	for (i = 0; i < 25; i++) {
+		if (supplyCounts[i] == G.supplyCount[i])
+			printf("PASSED: supplyCount[%d] = %d, expected = %d.\n", i, G.supplyCount[i], supplyCounts[i]);
+		else
+			printf("FAILED: supplyCount[%d] = %d, expected = %d.\n", i, G.supplyCount[i], supplyCounts[i]);
+	}
+	
+	// check no provice cards causes game to end
+	printf("Testing that no province cards causes end of game.\n");
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game	
+	G.supplyCount[province] = 0;
+	gameOver = isGameOver(&G);
+	if (gameOver == 1)
+		printf("PASSED: isGameOver = %d, expected = 1.\n", gameOver);
+	else
+		printf("FAILED: isGameOver = %d, expected = 1.\n", gameOver);
+	
+	// check 3 empty piles causes game over
+	printf("Testing that 3 empty piles causes end of game.\n");
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game	
+	G.supplyCount[copper] = 0;
+	G.supplyCount[silver] = 0;
+	G.supplyCount[smithy] = 0;
+	gameOver = isGameOver(&G);
+	if (gameOver == 1)
+		printf("PASSED: isGameOver = %d, expected = 1.\n", gameOver);
+	else
+		printf("FAILED: isGameOver = %d, expected = 1.\n", gameOver);
+	
+	// check 2 empty piles does not cause game over
+	printf("Testing that 2 empty piles does not cause end of game.\n");
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game	
+	G.supplyCount[copper] = 0;
+	G.supplyCount[smithy] = 0;
+	gameOver = isGameOver(&G);
+	if (gameOver == 0)
+		printf("PASSED: isGameOver = %d, expected = 0.\n", gameOver);
+	else
+		printf("FAILED: isGameOver = %d, expected = 0.\n", gameOver);
+	return 0;
 }

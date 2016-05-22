@@ -1,125 +1,318 @@
-/* ---------------------------------------------------------------------
-* Jon Patterson
-* Assignment 4
-* randomtestcard.c
-* village card random tests
-*---------------------------------------------------------------------*/
+/*
+File: randomtestcard.c
+Author: Elliot Bates
+Description: Random test for the villiage card function in dominion.c
+*/
+
+/*
+int villageCard(int currentPlayer, struct gameState *state, int handPos) {
+	  //+1 Card
+      drawCard(currentPlayer, state);
+			
+      //+2 Actions
+      state->numActions = state->numActions + 1;
+			
+      //discard played card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <time.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
-// set ASSERTS_ON to 0 to disable asserts for investigating gcov
-#define ASSERTS_ON 0
-// let's just define number of tests here
-#define NUM_TESTS 1000
+# define noiseLevel 1
+//Noise level 0 = no print statements
+//Noise level 1 = only print failed tests
+//Noise level 2 = print results of all tests
+//Noise level 3 = print everything
+# define defaultTests 1000
 
-int main() {
-    int seed = 1000;
-    int numPlayer;
-    int p, r, i, test;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState G;
-    struct gameState T;
-    int error;
-    int num_errors = 0;
-    srand(time(NULL)); // set random seed prior to going into loop
-    for( test = 0; test < NUM_TESTS; test++ ){
-        // In the previous assignment this was a much shorter test but it had good coverage
-        // For this assignment I'm going to try and add more cases and then ensure the 
-        // random testing component keeps up the good coverage
-        seed = rand(); // randomize
-        numPlayer = (rand() % 3) + 2; // set randome number of players, minimum 2
+// Function prototypes
+int testStatesVillage (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p);
 
-        error = 0; // We're going to track the number of tests that have errors, just for fun
-        memset(&G, 23, sizeof(struct gameState));
-        memset(&T, 23, sizeof(struct gameState));
+int main (int argc, char** argv) {
 
-        r = initializeGame(numPlayer, k, seed, &G);
-        // ensure that the values of all of the supply cards are are at least 2
-        int j = 0;
-        // start with the first player, since they're active
-        p = 0;
-        // make a random card in hand a village
-        int temp = rand() % G.handCount[p];
-        for(j = 0; j < 25; j++){
-            G.supplyCount[j] = 2;
-        }
-        printf ("Testing village for playCard(%d, 0, 0, 0, gameState):\n", temp);
-        printf("Testing for village card player %d:\n", p);
-        int testActions = G.numActions;
-        int testBuys = G.numBuys;
-        int testHandCount = G.handCount[p];
-        int testDeckCount = G.deckCount[p];
+	int p, i, r; 								//player holder, test number
+	int x, y, z;							// counters
+	int numTests;
+	int kingdomCardsToAdd, otherCardsToAdd;
+	int kingdomCardToAdd, otherCardToAdd;
+	int maxExtraCards = 10;					// Maximum of each type of card to add extra to deck
+	int handSize;							// Number of cards player will have in hand;
+	int handPos;							// The position the card will go in the players hand
+	int deckSize;							// The number of cards that the player will have in their deck when the test starts
+	int failedTests;						// Will hold the number of failed tests returned by the state comparison function
+	int seed = 1000;
+	int numPlayers;  						// number of players in game
+	struct gameState preGameState;			// original gameState
+	struct gameState postGameState;			// test gameState
+	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
+	int otherCards[7] = {curse, estate, duchy, province, copper, silver, gold};
 
-        //assign the card
-        G.hand[p][temp] = village;
-        // Copy the gameState to another place to test so we can compare
-        memcpy(&T, &G, sizeof(struct gameState));
-        //play the village card now
-        playCard(temp, 0, 0, 0, &G);
+	//Set up gamestate with random number of players
+	//Get arguments for number of tests if there is one
+	/*if (argc == 2) {
+		char* testsArg = argv[1];
+		numTests = atoi(testsArg);
+	} else {
+		numTests = defaultTests;
+	}
+	if (numTests == NULL) {
+		printf("Bad agruments.\n");
+		exit(1);
+	}*/
+	numTests = 20000;
+	//PlantSeeds(7);
+	srand(time(NULL));
+	
 
-        //Upon execution, adjust test values
-        //test actions should be one more
-        testActions++;
-        //Buys unchanged
-        //net hand count should be unchanged
-        //deck count should be 1 less
-        testDeckCount -= 1;
+	for (i = 1; i <= numTests; i++) {
+# if (noiseLevel > 0)
+		printf("-----Beginning test %d of %d-----\n", i, numTests);
+# endif	
+		
+		// Set a random number of players
+		numPlayers = (rand() % 3) + 2;
+		//printf("Seeds planted and numPlayers randomised to %d.\n", numPlayers);
+		
+		//Initialise gamestate
+		memset(&preGameState, 23, sizeof(struct gameState));   // clear the game states
+		memset(&postGameState, 23, sizeof(struct gameState));   // clear the game states
+		r = initializeGame(numPlayers, k, seed, &preGameState); // initialize a new game	
+		//printf("Gamestate initialised.\n");
+		
+		//Randomise hands and decks in some way
+		for (p = 0; p < numPlayers; p++) {
+			// Add random number of kingdom cards to deck
+			kingdomCardsToAdd = (rand() % 11);
+			for (x = 0; x < kingdomCardsToAdd; x++) {
+				kingdomCardToAdd = k[(int) (rand() % 10)];
+				preGameState.deck[p][preGameState.deckCount[p]] = kingdomCardToAdd;
+				preGameState.deckCount[p]++;
+			}
+			//printf("Added kingdom cards to %d.\n", p);
+			// Add random number of other cards to deck
+			otherCardsToAdd = (rand() % 11);
+			for (x = 0; x < otherCardsToAdd; x++) {
+				otherCardToAdd = otherCards[(int) (rand() % 10)];
+				preGameState.deck[p][preGameState.deckCount[p]] = otherCardToAdd;
+				preGameState.deckCount[p]++;
+			}	
+			//printf("Added other cards to %d.\n", p);
+			// If first player then add hand back to deck
+			if (p == 0) {
+				while (preGameState.handCount[p] > 0) {
+					preGameState.deck[p][preGameState.deckCount[p]] = preGameState.hand[p][preGameState.handCount[p] - 1];
+					preGameState.handCount[p]--;
+					preGameState.hand[p][preGameState.handCount[p]] = -1;
+					preGameState.deckCount[p]++;
+				}
+				//printf("Removed cards from hand of p0.\n");
+			}
+			// Shuffle deck
+			shuffle(p, &preGameState);
+			//printf("Player %d hand shuffled.\n", p);
+			// Draw random sized hand . this may need to be changed for a generic version
+			handSize = (rand() % 6);
+			for (x = 0; x < handSize; x++) {
+				drawCard(p, &preGameState);
+			}
+			//printf("Hand drawn of size %d for player %d.\n", handSize, p);
+		}
 
-        #if (NOISY_TEST == 1)
-        printf("Test actions updated correctly:\n");
-        printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
-        printf("Test buys updated correctly:\n");
-        printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
-        printf("Test deck updated correctly:\n");
-        printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
-        printf("Test hand updated correctly:\n");
-        printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.numActions == testActions);
-        assert(G.numBuys == testBuys);
-        assert(G.deckCount[p] == testDeckCount);
-        assert(G.handCount[p] == testHandCount);
-        #endif
-        if (G.numActions != testActions) error = 1;
-        if (G.numBuys != testBuys) error = 1;
-        if (G.deckCount[p] != testDeckCount ) error = 1;
-        if (G.handCount[p] != testHandCount ) error = 1;
+		//Choose a random player to test card on
+		p = (rand() % (numPlayers));
+		//printf("Random player chosen %d.\n", p);
+		
+		//Make it this player's turn
+		preGameState.whoseTurn = p;
+		
+		//Make sure player has card in hand, place in random position if not
+		for (x = 0; x < preGameState.handCount[p]; x++) {
+			if (preGameState.hand[p][x] == village) {
+				handPos = x;
+				break;
+			}
+			if (x == preGameState.handCount[p] - 1) { // Will only get inside this statement if there is no village in hand
+				handPos = rand() % (preGameState.handCount[p]);
+				preGameState.hand[p][handPos] = village;
+			}
+		}
+		//printf("Card now in hand.\n");
+		
+		// Randomise number of cards left in deck to trigger any lines that involve shuffling
+		deckSize = rand() % (preGameState.deckCount[p] + 1);
+		while (preGameState.deckCount[p] > deckSize) {
+			preGameState.discard[p][preGameState.discardCount[p]] = preGameState.deck[p][preGameState.deckCount[p] - 1];
+			preGameState.discardCount[p]++;
+			preGameState.deckCount[p]--;
+		}	
+		//printf("Deck randomised with size %d.\n", deckSize);		
 
-        //Some additional sanity tests for other players
-        for(p = 1; p < numPlayer; p++){
-            #if NOISY_TEST
-            printf("Test player %d unchanged:\n", p);
-            printf("Deck = %d, Expected = %d\n", G.deckCount[p], T.deckCount[p]);
-            printf("Hand = %d, Expected = %d\n", G.handCount[p], T.handCount[p]);
-            #endif
-            #if (ASSERTS_ON == 1)
-            assert(G.deckCount[p] == T.deckCount[p]);
-            assert(G.handCount[p] == T.handCount[p]);
-            #endif 
-            if(G.deckCount[p] != T.deckCount[p]) error = 1;
-            if(G.handCount[p] != T.handCount[p]) error = 1;
-        }
-        if(error == 1){
-            num_errors++;
-        }
+		//Save copy of gamestate
+		memcpy(&postGameState, &preGameState, sizeof(struct gameState));
+		//printf("Gamestate copied.\n");
 
-    }
-    printf("Number of tests run: %d\n", test);
-    printf("Number of tests that encountered errors: %d\n", num_errors);
-    if(num_errors > 0){
-        printf("Errors were encountered.\n");
-        return 1;
-    }
+		//Call village method
+		cardEffect(village, 0, 0, 0, &postGameState, 0, 0);
 
-    return 0;
+		//Test that only certain things have changed and that they have changed correctly
+		failedTests = testStatesVillage(&preGameState, &postGameState, numPlayers, p);
+# if (noiseLevel > 0)
+		printf("-----Test %d complete. %d state comparison tests were failed.-----\n", i, failedTests);
+# endif	
+		
+	}
+
+	return 0;
+}
+
+
+
+
+//Test states village function
+int testStatesVillage (struct gameState *preGameState, struct gameState *postGameState, int numPlayers, int p) {
+	int x, y;				// counters
+	int failedTest = 0;
+	
+	
+# if (noiseLevel > 2)
+	printf("Comparing game states before and after card played.\n");
+# endif	
+	for (x = 0; x < numPlayers; x++) {
+		if (x == p) {
+			//Check player's hand size has not increased
+			if (postGameState->handCount[x] == preGameState->handCount[x]) {
+# if (noiseLevel > 1)
+				printf("PASSED: Player %d hand count has not increased.\n", x);
+# endif	
+			} else {
+# if (noiseLevel > 0)
+				printf("FAILED: Player %d hand count has increased by %d.\n", x, (postGameState->handCount[x] - preGameState->handCount[x]));
+				failedTest++;
+# endif	
+			}
+			//If deck did not need to be shuffled, check top card from deck is now in hand
+			if (preGameState->deckCount[x] > 0) {
+				for (y = 0; y < postGameState->handCount[x]; y++) {
+					if (postGameState->hand[x][y] == preGameState->deck[x][preGameState->deckCount[x]-1]) {
+# if (noiseLevel > 1)
+						printf("PASSED: Hand now contains top card from deck.\n");
+# endif	
+						break;
+					}
+					if (y == postGameState->handCount[x] - 1) { // will only get inside here if top card from deck in not in hand
+# if (noiseLevel > 0)
+						printf("FAILED: Top card from deck is not in hand.\n");
+# endif					
+					}
+				}
+			}
+			//Check buys are still the same
+			if (postGameState->numBuys == preGameState->numBuys) {
+# if (noiseLevel > 1)
+				printf("PASSED: numBuys has not changed.\n");
+# endif	
+			} else {
+# if (noiseLevel > 0)
+				printf("FAILED: numBuys has changed from %d to %d.\n", preGameState->numBuys, postGameState->numBuys);
+				failedTest++;
+# endif	
+			}
+			//Check actions has increased by 2
+			if (postGameState->numActions == preGameState->numActions + 2) {
+# if (noiseLevel > 1)
+				printf("PASSED: numActions has increased by 2.\n");
+# endif	
+			} else {
+# if (noiseLevel > 0)
+				printf("FAILED: numActions has changed from %d to %d.\n", preGameState->numActions, postGameState->numActions);
+				failedTest++;
+# endif	
+			}			
+		} else { // For all other players
+		
+			// Compare hands
+			if (postGameState->handCount[x] == preGameState->handCount[x]) {
+# if (noiseLevel > 1)
+				printf("PASSED: Player %d handCount has not changed.\n", x);
+# endif	
+				for (y = 0; y < postGameState->handCount[x]; y++) {
+					if (postGameState->hand[x][y] == preGameState->hand[x][y]) {
+# if (noiseLevel > 1)
+						printf("PASSED: Player %d card in hand position %d has not changed.\n", x, y);
+# endif	
+					} else {
+# if (noiseLevel > 0)
+						printf("FAILED: Player %d card in hand position %d has changed from %d to %d.\n", x, y, preGameState->hand[x][y], postGameState->hand[x][y]);
+						failedTest++;
+# endif	
+					}
+				}
+			} else {
+# if (noiseLevel > 0)
+				printf("FAILED: Player %d handCount has changed from %d to %d.\n", x, preGameState->handCount[x], postGameState->handCount[x]);
+				failedTest++;
+# endif		
+			}
+			
+			// Compare decks
+			if (postGameState->deckCount[x] == preGameState->deckCount[x]) {
+# if (noiseLevel > 1)
+				printf("PASSED: Player %d deckCount has not changed.\n", x);
+# endif	
+				for (y = 0; y < postGameState->deckCount[x]; y++) {
+					if (postGameState->deck[x][y] == preGameState->deck[x][y]) {
+# if (noiseLevel > 1)
+						printf("PASSED: Player %d card in deck position %d has not changed.\n", x, y);
+# endif	
+					} else {
+# if (noiseLevel > 0)
+						printf("FAILED: Player %d card in deck position %d has changed from %d to %d.\n", x, y, preGameState->deck[x][y], postGameState->deck[x][y]);
+						failedTest++;
+# endif	
+					}
+				}
+			} else {
+# if (noiseLevel > 0)
+				printf("FAILED: Player %d deckCount has changed from %d to %d.\n", x, preGameState->deckCount[x], postGameState->deckCount[x]);
+				failedTest++;
+# endif		
+			}
+			
+			// Compare discard piles
+			if (postGameState->discardCount[x] == preGameState->discardCount[x]) {
+# if (noiseLevel > 1)
+				printf("PASSED: Player %d discardCount has not changed.\n", x);
+# endif	
+				for (y = 0; y < postGameState->discardCount[x]; y++) {
+					if (postGameState->discard[x][y] == preGameState->discard[x][y]) {
+# if (noiseLevel > 1)
+						printf("PASSED: Player %d card in discard position %d has not changed.\n", x, y);
+# endif	
+					} else {
+# if (noiseLevel > 0)
+						printf("FAILED: Player %d card in discard position %d has changed from %d to %d.\n", x, y, preGameState->discard[x][y], postGameState->discard[x][y]);
+						failedTest++;
+# endif	
+					}
+				}
+			} else {
+# if (noiseLevel > 0)
+				printf("FAILED: Player %d discardCount has changed from %d to %d.\n", x, preGameState->discardCount[x], postGameState->discardCount[x]);
+				failedTest++;
+# endif		
+			}
+		}
+	}
+	
+	// Returns the number of tests failed
+	return failedTest;
 }

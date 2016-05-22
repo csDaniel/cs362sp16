@@ -1,86 +1,86 @@
-/* ---------------------------------------------------------------------
-* Jon Patterson
-* Assignment 3
-* cardtest1.c
-* smithy card tests
-*---------------------------------------------------------------------*/
+/*
+File: cardtest1.c
+Author: Elliot Bates
+Description: Unit test for the adventurer card function in dominion.c
+*/
+
+/*
+int adventurerCard(int currentPlayer, struct gameState *state)
+{
+	int temphand[MAX_HAND];// moved above the if statement
+	int drawntreasure=0;
+	int cardDrawn;
+	int z = 0;// this is the counter for the temp hand
+	
+      while(drawntreasure<2){
+	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+	  shuffle(currentPlayer, state);
+	}
+	drawCard(currentPlayer, state);
+	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+	if (cardDrawn == copper || cardDrawn == silver)
+	  drawntreasure++;
+	else{
+	  temphand[z]=cardDrawn;
+	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+	  z++;
+	}
+      }
+      while(z-1>=0){
+	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+	z=z-1;
+      }
+      return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
-// set ASSERTS_ON to 0 to disable asserts for investigating gcov
-#define ASSERTS_ON 0
+int main(){
 
-int main() {
-    int seed = 1000;
-    int numPlayer = 2;
-    int p, r;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState G;
-    int error;
+	int i, r, p; 					 				
+	int c1, c2;								// cards
+	int pos;
+	int seed = 1000;
+	int numPlayers = 2;  					// players for valid gamestate
+	struct gameState O;						// original gameState
+	struct gameState G;						// test gameState
+	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 
-    memset(&G, 23, sizeof(struct gameState));
-    r = initializeGame(numPlayer, k, seed, &G);
-    // ensure that the values of all of the supply cards are are at least 2
-    int j = 0;
-    for(j = 0; j < 25; j++){
-        G.supplyCount[j] = 2;
-    }
-
-    printf ("Testing smithy for playCard(0, 0, 0, 0, gamestate):\n");
-    for (p = 0; p < numPlayer; p++){
-    	printf("Testing for player %d:\n", p);
-	    int testActions = G.numActions;
-	    int testBuys = G.numBuys;
-	    int testHandCount = G.handCount[p];
-	    int testDeckCount = G.deckCount[p];
-
-	    // make card in hand a smithy
-	    G.hand[p][0] = smithy;
-	    //play it
-	    playCard(0, 0, 0, 0, &G);
-
-	 	//Upon execution, adjust test values
-	 	//test actions should be one less
-	 	testActions--;
-	 	//net hand count should now be +2
-	 	testHandCount += 2;
-	 	//deck count should be 3 less
-	 	testDeckCount -= 3;
-	 	#if (NOISY_TEST == 1)
-        printf("Test actions updated correctly:\n");
-        printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
-        printf("Test buys unchanged:\n");
-        printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
-        printf("Test deck updated correctly:\n");
-        printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
-        printf("Test hand updated correctly:\n");
-        printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.numActions == testActions);
-        assert(G.numBuys == testBuys);
-        assert(G.deckCount[p] == testDeckCount);
-        assert(G.handCount[p] == testHandCount);
-        #endif
-        if (G.numActions != testActions) error = 1;
-        if (G.numBuys != testBuys) error = 1;
-        if (G.deckCount[p] != testDeckCount	) error = 1;
-        if (G.handCount[p] != testHandCount	) error = 1;
-        if(error == 1){
-        	printf("Errors were encountered.\n");
-        	return 1;
-        }
-
-    }
-    return 0;
+	printf("Testing ADVENTURER card.\n");
+	for (p = 0; p < numPlayers; p++) {
+		printf("Testing for player %d.\n", p);
+		//Create game state
+		memset(&O, 23, sizeof(struct gameState));   // clear the game state
+		r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
+		memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
+		G.whoseTurn = p; //set players turn
+		//play card
+		cardEffect(adventurer, 0, 0, 0, &G, 0, 0);
+		
+		//Check players hand has gained 2 cards
+		if (G.handCount[p] == (O.handCount[p] + 2))
+			printf("PASSED: New hand count = %d, expected = %d.\n", G.handCount[p], (O.handCount[p] + 2));
+		else
+			printf("FAILED: New hand count = %d, expected = %d.\n", G.handCount[p], (O.handCount[p] + 2));
+		
+		//Check 2 cards gained are treasure
+		c1 = G.hand[p][G.handCount[p]-2]; // first added card
+		c2 = G.hand[p][G.handCount[p]-1]; // second added card
+		if (c1 == 4 || c1 == 5 || c1 == 6)
+			printf("PASSED: First card added = %d, expected 4, 5, or 6.\n", c1);
+		else
+			printf("FAILED: First card added = %d, expected 4, 5, or 6.\n", c1);
+		if (c2 == 4 || c2 == 5 || c2 == 6)
+			printf("PASSED: Second card added = %d, expected 4, 5, or 6.\n", c2);
+		else
+			printf("FAILED: Second card added = %d, expected 4, 5, or 6.\n", c2);
+	}
+	return 0;
 }
-

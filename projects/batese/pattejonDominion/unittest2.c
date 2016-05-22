@@ -1,12 +1,79 @@
-/* ---------------------------------------------------------------------
-* Jon Patterson
-* Assignment 3
-* unittest2.c
-* buyCard() method
-* This was adapted from the testupdateCoins.c code provided by the instructor
-* but I have added additional code to test the game state when random hands
-* were populated with different cards
+/*
+File: unittest2.c
+Author: Elliot Bates
+Description: Unit test for get winners function from dominion
 */
+
+/*
+int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+  int i;	
+  int j;
+  int highScore;
+  int currentPlayer;
+
+  //get score for each player
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      //set unused player scores to -9999
+      if (i >= state->numPlayers)
+	{
+	  players[i] = -9999;
+	}
+      else
+	{
+	  players[i] = scoreFor (i, state);
+	}
+    }
+
+  //find highest score
+  j = 0;
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if (players[i] > players[j])
+	{
+	  j = i;
+	}
+    }
+  highScore = players[j];
+
+  //add 1 to players who had less turns
+  currentPlayer = whoseTurn(state);
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if ( players[i] == highScore && i > currentPlayer )
+	{
+	  players[i]++;
+	}
+    }
+
+  //find new highest score
+  j = 0;
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if ( players[i] > players[j] )
+	{
+	  j = i;
+	}
+    }
+  highScore = players[j];
+
+  //set winners in array to 1 and rest to 0
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if ( players[i] == highScore )
+	{
+	  players[i] = 1;
+	}
+      else
+	{
+	  players[i] = 0;
+	}
+    }
+
+  return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -14,86 +81,69 @@
 #include <assert.h>
 #include "rngs.h"
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
-// set ASSERTS_ON to 0 to disable asserts for investigating gcov
-#define ASSERTS_ON 0
+
 
 int main() {
+	int i;
     int seed = 1000;
     int numPlayer = 2;
-    int p, r, handCount, deckCount, discardCount;
+    int p, r;
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
+	int x, y; // p1 and p2 scores respectively
+	int players[MAX_PLAYERS];
 
-    memset(&G, 23, sizeof(struct gameState));
-    r = initializeGame(numPlayer, k, seed, &G);
-    printf ("Testing buyCard():\n");
-    for (p = 0; p < numPlayer; p++){
-        handCount = G.handCount[p];
-        deckCount = G.deckCount[p];
-        discardCount = G.discardCount[p];
-        while(deckCount > 0){
-            handCount++; // increment hand count by one
-            deckCount--; // decrement deck count by one
-            drawCard(p, &G);
-            #if (NOISY_TEST == 1)
-            printf("Test player %d with %d cards in hand and %d in deck.\n", p, handCount, deckCount);
-            printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
-            #endif
-            #if (ASSERTS_ON == 1)
-            assert(G.handCount[p] == handCount);
-            #endif
-            #if (NOISY_TEST == 1)
-            printf("Deck = %d, Expected = %d\n", G.deckCount[p], deckCount);
-            #endif
-            #if (ASSERTS_ON == 1)
-            assert(G.deckCount[p] == deckCount);
-            #endif
-        }
-        // deck is empty, but discard pile is also empty, expect this to fail and leave counts unchanged
-        // This causes a segfault, but I'm not going to lose points for not having gcov so whatever
-        //drawCard(p, &G);
-        #if (NOISY_TEST == 1)
-        printf("Test player %d with %d cards in hand and %d in deck.\n", p, handCount, deckCount);
-        printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.handCount[p] == handCount);
-        #endif
-        #if (NOISY_TEST == 1)
-        printf("Deck = %d, Expected = %d\n", G.deckCount[p], deckCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.deckCount[p] == deckCount);
-        #endif
+	printf ("TESTING getWinners():\n");	
 
-        //discard all of the cards and try drawing again
-        while(G.handCount[p] > 0){
-            discardCard(0, p, &G, 0);
-        }
-        deckCount = handCount; //we're going to assume all the cards were shuffled back into the deck
-        handCount = G.handCount[p]; // this should be zero, not testing that here though, will test that function in another test
-        handCount++; //increment hand count by one
-        deckCount--;
-        //drawcard segfaults and fails to reshuffle deck
-        //drawCard(p, &G); //code implements a shuffle here, which is probably bad but w/e
-        #if (NOISY_TEST == 1)
-        printf("Test player %d with %d cards in hand and %d in deck.\n", p, handCount, deckCount);
-        printf("Hand = %d, Expected = %d\n", G.handCount[p], handCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.handCount[p] == handCount);
-        #endif
-        #if (NOISY_TEST == 1)
-        printf("Deck = %d, Expected = %d\n", G.deckCount[p], deckCount);
-        #endif
-        #if (ASSERTS_ON == 1)
-        assert(G.deckCount[p] == deckCount);
-        #endif
-        // now do it for the other players
-    }
+	//Player 1 higher score
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	// add province to player 1's deck
+	G.hand[0][G.handCount[0]] = 4; //4 is code for province
+	G.handCount[0]++;
+	getWinners(players, &G);
+	// Player 1 is winner
+	if (players[0] == 1 && players[1] == 0)
+		printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
 
-return 0;
+
+	//Player 2 higher score
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	// add province to player 2's deck
+	G.hand[1][G.handCount[1]] = 4; //4 is code for province
+	G.handCount[1]++;
+	getWinners(players, &G);
+	if (players[0] == 0 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+
+	
+	//Same score player 1's turn
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	getWinners(players, &G);
+	if (players[0] == 0 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);	
+	
+	//Same score player 2's turn
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 1; // Set to player 1's turn
+	getWinners(players, &G);
+	if (players[0] == 1 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	
+	return 0;
 }

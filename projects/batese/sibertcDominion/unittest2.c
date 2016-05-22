@@ -1,68 +1,149 @@
+/*
+File: unittest2.c
+Author: Elliot Bates
+Description: Unit test for get winners function from dominion
+*/
+
+/*
+int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+  int i;	
+  int j;
+  int highScore;
+  int currentPlayer;
+
+  //get score for each player
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      //set unused player scores to -9999
+      if (i >= state->numPlayers)
+	{
+	  players[i] = -9999;
+	}
+      else
+	{
+	  players[i] = scoreFor (i, state);
+	}
+    }
+
+  //find highest score
+  j = 0;
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if (players[i] > players[j])
+	{
+	  j = i;
+	}
+    }
+  highScore = players[j];
+
+  //add 1 to players who had less turns
+  currentPlayer = whoseTurn(state);
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if ( players[i] == highScore && i > currentPlayer )
+	{
+	  players[i]++;
+	}
+    }
+
+  //find new highest score
+  j = 0;
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if ( players[i] > players[j] )
+	{
+	  j = i;
+	}
+    }
+  highScore = players[j];
+
+  //set winners in array to 1 and rest to 0
+  for (i = 0; i < MAX_PLAYERS; i++)
+    {
+      if ( players[i] == highScore )
+	{
+	  players[i] = 1;
+	}
+      else
+	{
+	  players[i] = 0;
+	}
+    }
+
+  return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
+#include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
 
-#define TESTFUNCTION "isGameOver()"
+
 
 int main() {
-	int seed = 1000;
-	int numPlayers = 2;
-	struct gameState G, testG;
-	int k[10] = {adventurer, embargo, village, minion, mine,
-				cutpurse, sea_hag, tribute, smithy, council_room};
-			
-	initializeGame(numPlayers, k, seed, &G);
+	int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int p, r;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+	int x, y; // p1 and p2 scores respectively
+	int players[MAX_PLAYERS];
+
+	printf ("TESTING getWinners():\n");	
+
+	//Player 1 higher score
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	// add province to player 1's deck
+	G.hand[0][G.handCount[0]] = 4; //4 is code for province
+	G.handCount[0]++;
+	getWinners(players, &G);
+	// Player 1 is winner
+	if (players[0] == 1 && players[1] == 0)
+		printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 0.\n", players[0], players[1]);
+
+
+	//Player 2 higher score
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	// add province to player 2's deck
+	G.hand[1][G.handCount[1]] = 4; //4 is code for province
+	G.handCount[1]++;
+	getWinners(players, &G);
+	if (players[0] == 0 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+
 	
-	printf("\n----------------- START TESTING: %s ----------------\n", TESTFUNCTION);
+	//Same score player 1's turn
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 0; // Set to player 1's turn
+	getWinners(players, &G);
+	if (players[0] == 0 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 0  Player2 score = %d, expected = 1.\n", players[0], players[1]);	
 	
-	//sets province supply count to 0, game should always end.
-	G.supplyCount[province] = 0;
+	//Same score player 2's turn
+	memset(&G, 23, sizeof(struct gameState));   // clear the game state
+	r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+	G.whoseTurn = 1; // Set to player 1's turn
+	getWinners(players, &G);
+	if (players[0] == 1 && players[1] == 1)
+		printf("PASSED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
+	else
+		printf("FAILED: Player1 score = %d, expected = 1  Player2 score = %d, expected = 1.\n", players[0], players[1]);
 	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n----------- Testing Game Over: 0 provinces ----------\n");
-	if (isGameOver(&testG) == 1) {
-		printf("isGameOver TEST#1: PASS when no provinces left.\n");
-	}
-	else {
-		printf("isGameOver TEST#1: FAIL when no provinces left.\n");
-	}
-	
-	G.supplyCount[province] = 10;
-	
-	//Game will not end if less than 3 supply piles are empty
-	G.supplyCount[copper] = 0;
-	G.supplyCount[estate] = 0;
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n----------- Testing Not Game Over: 2 empty piles ----------\n");
-	if (isGameOver(&testG) == 0) {
-		printf("isGameOver TEST#2: PASS when 2 supply piles are empty\n");
-	}
-	else {
-		printf("isGameOver TEST#2: FAIL when 2 supply piles are empty\n");
-	}
-	
-	//Game will end when the third pile is introduced
-	G.supplyCount[mine] = 0;
-	
-	//copy over state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	printf("\n----------- Testing Game Over: 3 empty piles ----------\n");
-	if (isGameOver(&testG) == 1) {
-		printf("isGameOver TEST#3: PASS when 3 supply piles are empty\n");
-	}
-	else {
-		printf("isGameOver TEST#3: FAIL when 3 supply piles are empty\n");
-	}
-	
-	printf("\n----------------- END TESTING: %s ----------------\n", TESTFUNCTION);
 	return 0;
 }

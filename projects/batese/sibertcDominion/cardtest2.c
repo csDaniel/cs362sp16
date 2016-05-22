@@ -1,62 +1,76 @@
+/*
+File: cardtest2.c
+Author: Elliot Bates
+Description: Unit test for the smithy card function in dominion.c
+*/
+
+/*
+int smithyCard(int currentPlayer, struct gameState *state, int handPos)
+{
+	int i = 0;
+      //+3 Cards
+      for (i = 0; i > 3; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+			
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+      return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
 #include "rngs.h"
+#include <stdio.h>
+#include <assert.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define TESTCARD "Village"
+int main(){
 
-int main() {
+	int i, r, p; 					 				
+	int c1, c2;								// cards
+	int pos;
 	int seed = 1000;
-	int player = 0;
-	int numPlayers = 2;
-	int handPos = 0;
-	struct gameState G;
-	int k[10] = {adventurer, embargo, village, minion, mine,
-				cutpurse, sea_hag, tribute, smithy, council_room};
+	int numPlayers = 2;  					// players for valid gamestate
+	struct gameState O;						// original gameState
+	struct gameState G;						// test gameState
+	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
+	int handPos;
+	int maxHandPos = 4;
+
+	printf("Testing SMITHY card.\n");
+	for (p = 0; p < numPlayers; p++) {
+		for (handPos = 0; handPos < maxHandPos; handPos++) {
+			printf("Testing for player %d and handPos %d.\n", p, handPos);
+			//Create game state
+			memset(&O, 23, sizeof(struct gameState));   // clear the game state
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
+			O.whoseTurn = p; //set players turn
+			if (p != 0) { //If not first player need to draw first hand
+				  for (i = 0; i < 5; i++){
+					drawCard(O.whoseTurn, &O);
+				  }
+			}
+			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
+			//play card
+			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
 			
-	initializeGame(numPlayers, k, seed, &G);
-	
-	printf("\n----------------- START TESTING: %s ----------------\n", TESTCARD);
-	
-	//Card executes
-	if (cardVillage(&G, player, handPos) == 0) {
-		printf("cardVillage TEST#1: PASS village executes without errors.\n");
+			//Check players hand has gained 2 cards
+			if (G.handCount[p] == (O.handCount[p] + 2))
+				printf("PASSED: New hand count = %d, expected = %d.\n", G.handCount[p], (O.handCount[p] + 2));
+			else
+				printf("FAILED: New hand count = %d, expected = %d.\n", G.handCount[p], (O.handCount[p] + 2));
+			
+			//check player has played 1 card
+			if (G.playedCardCount == (O.playedCardCount + 1))
+				printf("PASSED: New played count = %d, expected = %d.\n", G.playedCardCount, (O.playedCardCount + 1));
+			else
+				printf("FAILED: New played count = %d, expected = %d.\n", G.playedCardCount, (O.playedCardCount + 1));
+		}
 	}
-	else {
-		printf("cardVillage TEST#1: FAIL village executes without errors.\n");
-	}
-	
-	G.playedCardCount = 0;
-	G.handCount[player] = 3;
-	G.numActions = 0;
-	
-	
-	cardVillage(&G, player, handPos);
-	
-	if(G.numActions == 2) {
-		printf("cardVillage TEST#2: PASS Expected numActions: %d - result: %d\n", 2, G.numActions);
-	}
-	else {
-		printf("cardVillage TEST#2: FAIL Expected numActions: %d - result: %d\n", 2, G.numActions);
-	}
-	
-	if(G.handCount[player] == 1) {
-		printf("cardVillage TEST#3: PASS Expected CardHand: %d - result: %d\n", 3, G.handCount[player]);
-	}
-	else {
-		printf("cardVillage TEST#3: FAIL Expected CardHand: %d - result: %d\n", 3, G.handCount[player]);
-	}
-	
-	if(G.playedCardCount == 1) {
-		printf("cardVillage TEST#4: PASS Cards Played: %d - result: %d\n", 1, G.playedCardCount);
-	}
-	else {
-		printf("cardVillage TEST#4: FAIL Cards Played: %d - result: %d\n", 1, G.playedCardCount);
-	}
-	
-	printf("\n----------------- END TESTING: %s ----------------\n", TESTCARD);
-	
 	return 0;
 }

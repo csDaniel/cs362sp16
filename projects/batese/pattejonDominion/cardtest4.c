@@ -1,86 +1,99 @@
-/* ---------------------------------------------------------------------
-* Jon Patterson
-* Assignment 3
-* cardtest4.c
-* village card tests
-*---------------------------------------------------------------------*/
+/*
+File: cardtest4.c
+Author: Elliot Bates
+Description: Unit test for the council_room card function in dominion.c (8)
+*/
+
+/*
+int council_roomCard(int currentPlayer, struct gameState *state, int handPos) {
+  //+4 Cards
+  int i;
+      for (i = 0; i < 4; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+			
+      //+1 Buy
+      state->numBuys++;
+			
+      //Each other player draws a card
+      for (i = 1; i < state->numPlayers; i++)
+	{
+	  if ( i != currentPlayer )
+	    {
+	      drawCard(i, state);
+	    }
+	}
+			
+      //put played card in played card pile
+      discardCard(handPos, currentPlayer, state, 0);
+			
+      return 0;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
-// set ASSERTS_ON to 0 to disable asserts for investigating gcov
-#define ASSERTS_ON 0
+int main(){
 
-int main() {
-    int seed = 1000;
-    int numPlayer = 2;
-    int p, r, i;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState G;
-    int error;
+	int i, r, p, otherPlayer; 					 				
+	int c1, c2;								// cards
+	int pos;
+	int seed = 1000;
+	int numPlayers = 2;  					// players for valid gamestate
+	struct gameState O;						// original gameState
+	struct gameState G;						// test gameState
+	int k[10] = {village, council_room, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
+	int handPos;
+	int maxHandPos = 4;
 
-    memset(&G, 23, sizeof(struct gameState));
-    r = initializeGame(numPlayer, k, seed, &G);
-    // ensure that the values of all of the supply cards are are at least 2
-    int j = 0;
-    for(j = 0; j < 25; j++){
-        G.supplyCount[j] = 2;
-    }
-
-    printf ("Testing village for playCard(0, 0, 0, 0, gamestate):\n");
-    p = 0;
-    printf("Testing for player %d:\n", p);
-    int testActions = G.numActions;
-    int testBuys = G.numBuys;
-    int testHandCount = G.handCount[p];
-    int testDeckCount = G.deckCount[p];
-
-    // make card in hand a council_room
-    G.hand[p][0] = village;
-    //play it
-    playCard(0, 0, 0, 0, &G);
-
-    //Upon execution, adjust test values
-    //test actions should be one more
-    testActions++;
-    //Buys unchanged
-    //net hand count should be unchanged
-    //deck count should be 1 less
-    testDeckCount -= 1;
-
-    #if (NOISY_TEST == 1)
-    printf("Test actions updated correctly:\n");
-    printf("Actions = %d, Expected = %d\n", G.numActions, testActions);
-    printf("Test buys updated correctly:\n");
-    printf("Buys = %d, Expected = %d\n", G.numBuys, testBuys);
-    printf("Test deck updated correctly:\n");
-    printf("Deck = %d, Expected = %d\n", G.deckCount[p], testDeckCount);
-    printf("Test hand updated correctly:\n");
-    printf("Hand = %d, Expected = %d\n", G.handCount[p], testHandCount);
-    #endif
-    #if (ASSERTS_ON == 1)
-    assert(G.numActions == testActions);
-    assert(G.numBuys == testBuys);
-    assert(G.deckCount[p] == testDeckCount);
-    assert(G.handCount[p] == testHandCount);
-    #endif
-    if (G.numActions != testActions) error = 1;
-    if (G.numBuys != testBuys) error = 1;
-    if (G.deckCount[p] != testDeckCount ) error = 1;
-    if (G.handCount[p] != testHandCount ) error = 1;
-
-    if(error == 1){
-        printf("Errors were encountered.\n");
-        return 1;
-    }
-
-    return 0;
+	printf("Testing COUNCIL_ROOM card.\n");
+	for (p = 0; p < numPlayers; p++) {
+		for (handPos = 0; handPos < maxHandPos; handPos++) {
+			printf("Testing for player %d and handPos %d.\n", p, handPos);
+			//Create game state
+			memset(&O, 23, sizeof(struct gameState));   // clear the game state
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayers, k, seed, &O); // initialize a new game
+			O.whoseTurn = p; //set players turn
+			if (p != 0) { //If not first player need to draw first hand
+				  for (i = 0; i < 5; i++){
+					drawCard(O.whoseTurn, &O);
+				  }
+			}
+			O.hand[p][handPos] = 8; //int for coincil_room card
+			memcpy(&G, &O, sizeof(struct gameState)); // Copy game state
+			//play card
+			cardEffect(council_room, 0, 0, 0, &G, handPos, 0);
+			
+			//Check player has gained 4 cards
+			if (G.handCount[p] == O.handCount[p] + 3)
+				printf("PASSED: New hand count = %d, expected = %d.\n", G.handCount[p], O.handCount[p] + 3);
+			else
+				printf("FAILED: New hand count = %d, expected = %d.\n", G.handCount[p], O.handCount[p] + 3);
+			
+			//check player has gained 1 buy
+			if (G.numBuys == O.numBuys + 1)
+				printf("PASSED: New num buys = %d, expected = %d.\n", G.numBuys, O.numBuys + 1);
+			else
+				printf("FAILED: New num buys = %d, expected = %d.\n", G.numBuys, O.numBuys + 1);
+			
+			//check all other players have gained 1 card
+			for (otherPlayer = 0; otherPlayer < numPlayers; otherPlayer++) {
+				if (otherPlayer != p) { //i.e. is another player
+					if (G.handCount[otherPlayer] == O.handCount[otherPlayer] + 1)
+						printf("PASSED: Player %d new hand count = %d, expected = %d.\n", otherPlayer, G.handCount[otherPlayer], O.handCount[otherPlayer] + 1);
+					else
+						printf("FAILED: Player %d new hand count = %d, expected = %d.\n", otherPlayer, G.handCount[otherPlayer], O.handCount[otherPlayer] + 1);
+				}
+			}
+		}
+	}
+	return 0;
 }

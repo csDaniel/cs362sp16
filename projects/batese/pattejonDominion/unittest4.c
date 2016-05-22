@@ -1,102 +1,102 @@
-/* ---------------------------------------------------------------------
-* Jon Patterson
-* Assignment 3
-* unittest4.c
-* isGameOver() method
-* This was adapted from the testupdateCoins.c code provided by the instructor
-* but I have added additional code to test the game state when random hands
-* were populated with different cards
+/*
+File: unittest1.c
+Author: Elliot Bates
+Description: Unit test for full deck count function from dominion
 */
+
+/*
+int fullDeckCount(int player, int card, struct gameState *state) {
+  int i;
+  int count = 0;
+
+  for (i = 0; i < state->deckCount[player]; i++)
+    {
+      if (state->deck[player][i] == card) count++;
+    }
+
+  for (i = 0; i < state->handCount[player]; i++)
+    {
+      if (state->hand[player][i] == card) count++;
+    }
+
+  for (i = 0; i < state->discardCount[player]; i++)
+    {
+      if (state->discard[player][i] == card) count++;
+    }
+
+  return count;
+}
+*/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-#include <time.h>
-#include <stdlib.h>
-
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
-// set ASSERTS_ON to 0 to disable asserts for investigating gcov
-#define ASSERTS_ON 1
 
 int main() {
-	srand(time(NULL));
+	int i;
     int seed = 1000;
     int numPlayer = 2;
-    int p, r, i, t, a, b, c;
+    int p, r;
     int k[10] = {adventurer, council_room, feast, gardens, mine
                , remodel, smithy, village, baron, great_hall};
     struct gameState G;
+	int supplyCounts[25];
+	int gameOver;
+	int card, deckCount;
 
-    memset(&G, 23, sizeof(struct gameState));
-    r = initializeGame(numPlayer, k, seed, &G);
-
-    // ensure that the values of all of the supply cards are are at least 2
-    int j = 0;
-    for(j = 0; j < 25; j++){
-        G.supplyCount[j] = 2;
-    }
-    printf ("Testing isGameOver():\n");
-    // first test to see if the number of provinces is > 0
-    G.supplyCount[province] = 1;
-    i = isGameOver(&G);
-    printf("Expect isGameOver = 0, actual = %d.\n", i);
-    assert(i == 0);
-    // test if provinces == 0 ends the game
-    G.supplyCount[province] = 0;
-    i = isGameOver(&G);
-    printf("Expect isGameOver = 1, actual = %d.\n", i);
-    assert(i == 1);
-    // Reset the province and try testing again
-    G.supplyCount[province] = 1;
-    i = isGameOver(&G);
-    printf("Expect isGameOver = 0, actual = %d.\n", i);
-    assert(i == 0);
-
-    // now we'll try setting just one supply to 0 and see if it causes the expected behavior
-    for(t = 0; t < 100; t++){
-    	printf("Starting random test %d of empty piles\n", t);
-    	a = rand() % 25; // pick a random position
-    	while( a == 3){
-    		a = rand() % 25; //can't pick 3!
-    	}
-    	printf("Setting position %d to empty.\n", a);
-    	G.supplyCount[a] = 0;	// set to 0
-    	// Expect game to continue
-    	i = isGameOver(&G);
-    	printf("Expect isGameOver = 0, actual = %d.\n", i);
-    	assert(i == 0);
-    	b = rand() % 25;
-    	while(a == b || b == 3){
-    		//rand until they are not
-    		b = rand() % 25;
-    	}
-    	printf("Setting position %d to empty.\n", b);
-    	G.supplyCount[b] = 0;
-    	// Expect game to continue
-    	i = isGameOver(&G);
-    	printf("Expect isGameOver = 0, actual = %d.\n", i);
-    	assert(i == 0);
-    	c = rand() % 25;
-    	while(c == a || c == b || c == 3){
-    		c = rand() % 25;
-    	}
-    	printf("Setting position %d to empty.\n", c);
-    	i = isGameOver(&G);
-    	G.supplyCount[c] = 0;
-    	// expect game to end
-    	i = isGameOver(&G);
-    	printf("Expect isGameOver = 1, actual = %d.\n", i);
-    	assert(i == 1);
-    	// loop again
-    	for(j = 0; j < 25; j++){
-        	G.supplyCount[j] = 2;
-    	}
-
-    }
-    
-    return 0;
-
+	printf ("TESTING fullDeckCount():\n");
+	
+	for (p = 0; p < numPlayer; p++) {
+		for (card = 1; card < 24; card++) {
+			printf("Testing with player %d and card %d.\n", p, card);
+			// Check with 1 cards in each place
+			printf("Testing with 1 card in each location.\n");
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+			G.deck[p][0] = card;
+			G.deckCount[p] = 1;
+			G.hand[p][0] = card;
+			G.handCount[p] = 1;
+			G.discard[p][0] = card;
+			G.discardCount[p] = 1;
+			deckCount = fullDeckCount(p, card, &G);
+			if (deckCount == 3)
+				printf("PASSED: fullDeckCount = %d, expected = 3.\n", deckCount);
+			else
+				printf("FAILED: fullDeckCount = %d, expected = 3.\n", deckCount);
+			
+			// Check with 1 cards in 2 places
+			printf("Testing with 1 card in both deck and discard.\n");
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+			G.deck[p][0] = card;
+			G.deckCount[p] = 1;
+			G.handCount[p] = 0;
+			G.discard[p][0] = card;
+			G.discardCount[p] = 1;
+			deckCount = fullDeckCount(p, card, &G);
+			if (deckCount == 2)
+				printf("PASSED: fullDeckCount = %d, expected = 2.\n", deckCount);
+			else
+				printf("FAILED: fullDeckCount = %d, expected = 2.\n", deckCount);
+			
+			// Check with 1 card in 1 places
+			printf("Testing with 1 card in just hand.\n");
+			memset(&G, 23, sizeof(struct gameState));   // clear the game state
+			r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+			G.deckCount[p] = 0;
+			G.hand[p][0] = card;
+			G.handCount[p] = 1;
+			G.discardCount[p] = 0;
+			deckCount = fullDeckCount(p, card, &G);
+			if (deckCount == 1)
+				printf("PASSED: fullDeckCount = %d, expected = 1.\n", deckCount);
+			else
+				printf("FAILED: fullDeckCount = %d, expected = 1.\n", deckCount);
+		}
+	}
+	return 0;
 }
