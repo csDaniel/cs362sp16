@@ -385,6 +385,25 @@ int isGameOver(struct gameState *state) {
     return 0;
 }
 
+int countAllDeckCards(int player, struct gameState *state) {
+        int i;
+        int count = 0;
+
+        for (i = 0; i < state->deckCount[player]; i++) {
+            count++;
+        }
+
+        for (i = 0; i < state->handCount[player]; i++) {
+            count++;
+        }
+
+        for (i = 0; i < state->discardCount[player]; i++) {
+            count++;
+        }
+
+        return count;
+}
+
 int scoreFor(int player, struct gameState *state) {
 
     int i;
@@ -396,7 +415,7 @@ int scoreFor(int player, struct gameState *state) {
         if (state->hand[player][i] == duchy) { score = score + 3; };
         if (state->hand[player][i] == province) { score = score + 6; };
         if (state->hand[player][i] == great_hall) { score = score + 1; };
-        if (state->hand[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+        if (state->hand[player][i] == gardens) { score = score + (countAllDeckCards(player, state) / 10); };
     }
 
     //score from discard
@@ -406,17 +425,17 @@ int scoreFor(int player, struct gameState *state) {
         if (state->discard[player][i] == duchy) { score = score + 3; };
         if (state->discard[player][i] == province) { score = score + 6; };
         if (state->discard[player][i] == great_hall) { score = score + 1; };
-        if (state->discard[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+        if (state->discard[player][i] == gardens) { score = score + (countAllDeckCards(player, state) / 10); };
     }
 
     //score from deck
-    for (i = 0; i < state->discardCount[player]; i++) {
+    for (i = 0; i < state->deckCount[player]; i++) {
         if (state->deck[player][i] == curse) { score = score - 1; };
         if (state->deck[player][i] == estate) { score = score + 1; };
         if (state->deck[player][i] == duchy) { score = score + 3; };
         if (state->deck[player][i] == province) { score = score + 6; };
         if (state->deck[player][i] == great_hall) { score = score + 1; };
-        if (state->deck[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+        if (state->deck[player][i] == gardens) { score = score + (countAllDeckCards(player, state) / 10); };
     }
 
     return score;
@@ -1175,7 +1194,7 @@ int playSmithy(struct gameState *state, int handPos) {
     for (i = 0; i < 3; i++) {
         drawCard(currentPlayer, state);
     }
-    discardCard(handPos, currentPlayer, state, 1);
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }
 
@@ -1192,7 +1211,7 @@ int playAdventurer(struct gameState *state) {
         }
         drawCard(currentPlayer, state);
         cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1]; //top card of hand is most recently drawn card.
-        if (cardDrawn == copper || cardDrawn == silver)
+        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
             drawntreasure++;
         else {
             temphand[z] = cardDrawn;
@@ -1211,7 +1230,7 @@ int playAdventurer(struct gameState *state) {
 int playVillage(struct gameState *state, int handPos) {
     int currentPlayer = state->whoseTurn;
     drawCard(currentPlayer, state);
-    state->numActions = 2;
+    state->numActions = state->numActions + 2;
     discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }

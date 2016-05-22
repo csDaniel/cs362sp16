@@ -77,7 +77,7 @@ int main() {
 				//			printf("discard: %i, %i\n", i, G.discard[0][i]);
 			}
 			// random deck
-			G.deckCount[0] = rand() % 100;
+			G.deckCount[0] = ((rand() % 1000) + 5);
 			//		printf("deck count: %i\n", G.deckCount[0]);
 			for (i = 0; i < G.deckCount[0]; i++)
 			{
@@ -85,6 +85,10 @@ int main() {
 				G.deck[0][i] = randcard;
 				//			printf("deck: %i, %i\n", i, G.deck[0][i]);
 			}
+			G.deck[0][0] = copper;
+			G.deck[0][1] = copper;
+			G.deck[0][2] = copper;
+			G.deck[0][3] = copper;
 			//		printf("TESTING adventurer:\n");
 			for (i = 0; i < 25; i++)
 			{
@@ -294,7 +298,7 @@ int main() {
 		}
 		if (error == 0)
 		{
-			printf("All tests passed!\n");
+//			printf("All tests passed!\n");
 			successCount++;
 		}
 	}

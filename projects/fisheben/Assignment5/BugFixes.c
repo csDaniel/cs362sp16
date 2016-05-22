@@ -8,15 +8,16 @@
  *************************************************************************************************************
  *************************************************************************************************************
  
- Discussion: Kristen Dhuse
- I found that Kristen had fixed the discardCard function be using the trashCount
+ Kristen Dhuse
+ I found that Kristen had fixed the discardCard function by using the trashCount
  variable.  This required me to update my test cases so that they initialize
  the trashCount varaible when building a test case. I didn't use code coverage at all
- to help find bugs in Kristens code.  I found that I've spent enough time getting familiar
+ to help locate the bugs in Kristens code.  I found that I've spent enough time getting familiar
  with the code that I could read and follow along fairly well and spotted the bugs this
  way.  I could see for larger projects where code coverage would very helpful, if I for
  example wanted to implement Tarantula to help narrow down a hard to find bug.
- Bugs Found in Kristens code:
+ 
+ Bugs fixed in Kristens code:
  
  unittest1.c
  Bugs fixed in updateCoins function.
@@ -67,16 +68,17 @@
  
  *************************************************************************************************************
  *************************************************************************************************************
- Discussion: David Hite
+ David Hite
  I found that the playVillage function call from the cardEffect function had the arguments in the wrong order
  which was causing a seg fault.  I swtiched the handPos and currentPlayer in the call which resolved the seg
  fault.  I also found the playSmithy was incrementing the handPos variable in the function which also caused a 
- seg fault, removing this resolved the issue. I used GDB to help find the line that was causing the seg fault.
+ seg fault, removing this resolved the issue. I used GDB to help find the lines that were causing the seg faults.
  I didn't use code coverage at all to help find bugs in David's code either.  I found that I've spent enough
  time getting familiar with the code that I could read and follow along fairly well and spotted the bugs this
  way.  I could see for larger projects where code coverage would very helpful, if I for example wanted to 
  implement Tarantula to help narrow down a hard to find bug.
- Bugs Found in Kristens code:
+ 
+ Bugs fixed in David's code:
  
  unittest1.c
  Bugs fixed in updateCoins function.

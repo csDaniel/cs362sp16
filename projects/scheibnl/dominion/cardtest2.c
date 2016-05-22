@@ -32,11 +32,17 @@ int main() {
 
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
+	
+
 	// ----------- TEST 1: Current player receives two cards, both of which are treasure cards --------------
 	printf("TEST 1: Current player receives two cards, both of which are treasure cards\n\n");
 
 	// copy the game state to a test case 
 	memcpy(&testG, &G, sizeof(struct gameState));
+
+	//giving both an adventurer card in handpos
+	testG.hand[thisPlayer][handpos] = 7;
+	G.hand[thisPlayer][handpos] = 7;
 
 	cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 
@@ -45,7 +51,7 @@ int main() {
 
 	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	//Assert fails- Player has one too many cards on hand
-	//assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
+	assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
 
 	int treasureCardsTest = 0;
 	int treasureCardsCopy = 0;
@@ -117,7 +123,7 @@ int main() {
 	// ----------- TEST 3: No state changes for victory card piles & kingdom card piles --------------
 	printf("TEST 3: No state changes for victory card piles & kingdom card piles\n\n");
 
-	for(i = 0; i < (treasure_map + 1); i++)
+	for (i = 0; i < (treasure_map + 1); i++)
 	{
 		printf("Card %d: supply count = %d, expected = %d\n", i, testG.supplyCount[i], G.supplyCount[i]);
 		assert(testG.supplyCount[i] == G.supplyCount[i]);
@@ -125,28 +131,51 @@ int main() {
 
 	printf("\n");
 
-	for(i = 0; i < (treasure_map + 1); i++)
+	for (i = 0; i < (treasure_map + 1); i++)
 	{
 		printf("Card %d: embargo tokens = %d, expected = %d\n", i, testG.embargoTokens[i], G.embargoTokens[i]);
 		assert(testG.embargoTokens[i] == G.embargoTokens[i]);
 	}
 
 	printf("\n");
-	// ----------- TEST 4: All cards drawn should be discarded (put in played cards) except for the two treasure cards --------------
-	printf("TEST 4: All cards drawn should be discarded except for the two treasure cards\n\n");
+	// ----------- TEST 4: All cards drawn should be discarded correctly --------------
+	printf("TEST 4: All cards drawn should be discarded correctly\n\n");
 
 	// copy the game state to a test case 
 	memcpy(&testG, &G, sizeof(struct gameState));
 
 	//setting two adventurer cards, so player draws something other than coins.
-	testG.deck[thisPlayer][testG.deckCount[thisPlayer] - 1] = 7;
-	testG.deck[thisPlayer][testG.deckCount[thisPlayer] - 2] = 7;
+	testG.deck[thisPlayer][0] = 7;
+	testG.deck[thisPlayer][G.deckCount[thisPlayer] - 1] = 7;
+	G.deck[thisPlayer][0] = 7;
+	G.deck[thisPlayer][G.deckCount[thisPlayer]-1] = 7;
 
 	cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-	printf("discarded cards = %d, expected = %d\n", testG.discardCount[thisPlayer], (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2));
+	printf("Discarded Cards: \n");
+	for (i = 0; i < testG.discardCount[thisPlayer]; i++)
+	{
+		printf("Card %d: %d\n", i, testG.discard[thisPlayer][i]);
+	}
+	
+	printf("Old Deck: \n");
+	for (i = 0; i < G.deckCount[thisPlayer]; i++)
+	{
+		printf("Old Deck %d: %d\n", i, G.deck[thisPlayer][i]);
+	}
+
+	printf("New Deck: \n");
+	for (i = 0; i < testG.deckCount[thisPlayer]; i++)
+	{
+		printf("New Deck %d: %d\n", i, G.deck[thisPlayer][i]);
+	}
+
+	printf("discarded count = %d, expected = %d\n", testG.discardCount[thisPlayer], (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2));
+	assert(testG.discardCount[thisPlayer] == (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2));
+
+	printf("played card count = %d, expected = %d\n", testG.playedCardCount, 1);
 	//Assert fails: too many cards in discard pile
-	//assert(testG.playedCardCount == (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2));
+	assert(testG.playedCardCount == 1);
 
 
 	printf("\n");
@@ -161,6 +190,8 @@ int main() {
 
 
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+
+
 
 	return 0;
 }

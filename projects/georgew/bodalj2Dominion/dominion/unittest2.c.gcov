@@ -1,0 +1,108 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://unittest2.c
+        -:    2://shuffle function
+        -:    3:#include "dominion.h"
+        -:    4:#include "dominion_helpers.h"
+        -:    5:#include <string.h>
+        -:    6:#include <stdio.h>
+        -:    7:#include <assert.h>
+        -:    8:#include "rngs.h"
+        -:    9:#include <stdlib.h>
+        -:   10:
+        -:   11:#define FUNCTION "shuffle"
+        -:   12:
+        1:   13:int main() {
+        -:   14:	int i, j, l;
+        -:   15:	int tempDeck[MAX_DECK];
+        1:   16:	int seed = 1000;
+        1:   17:	int numPlayers = 2;
+        1:   18:	int thisPlayer = 0;
+        -:   19:	int currDeckCount, startingDeckCount, endingDeckCount;
+        1:   20:	int deckPos = 0;
+        1:   21:	int sameCount = 0;
+        -:   22:	struct gameState G, testG;
+        -:   23:
+        1:   24:	int k[10] = {curse, estate, village, remodel, 
+        -:   25:		council_room, adventurer, province, smithy, steward, tribute};
+        -:   26:	//initialize game, state and player cards
+        1:   27:	initializeGame(numPlayers, k, seed, &G);
+        1:   28:	printf("----------------- Testing Function: %s ----------------\n", FUNCTION);
+        1:   29:	printf("-------------Saving Current Game State----------------\n");
+        1:   30:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   31:	printf("--------------------Checking valid deckCount\n------------");
+        -:   32:	//store deckCount
+        1:   33:	currDeckCount = testG.deckCount[thisPlayer];
+        -:   34:	//change deckCount
+        1:   35:	testG.deckCount[thisPlayer] = 0;
+        -:   36:	//shuffle to find error condition
+        1:   37:	if (shuffle(thisPlayer, &testG) == -1)
+        1:   38:		printf("No Cards to Count: SUCCESS\n");
+        -:   39:	//restore deckCount
+        1:   40:	testG.deckCount[thisPlayer] = currDeckCount;
+        -:   41:	
+        1:   42:	printf("----------------------------Checking Each Player----------------------\n");
+        3:   43:	for (i=0; i < numPlayers; i++){
+        -:   44:		//revert to starting game 
+        2:   45:		memcpy(&G, &testG, sizeof(struct gameState));
+        -:   46:		//set current player
+        2:   47:		thisPlayer = i;
+        2:   48:		printf("\nPlayer Number: %d\n", thisPlayer);
+        2:   49:		if (testG.discardCount[i] == 0)
+        2:   50:			printf("Player %d: Current Discard Count: %d\n", i, testG.discardCount[i]);
+        -:   51:		else
+    #####:   52:			printf("Discard Pile should be empty");
+        -:   53:		//output starting deck count
+        2:   54:		printf("Player %d: Starting Deck Count: %d\n",i ,testG.deckCount[i]);
+        -:   55:		//printf("----------Saving Current Deck--------\n");
+        2:   56:		startingDeckCount = testG.deckCount[thisPlayer];
+        2:   57:		j = testG.deckCount[thisPlayer];
+        -:   58:		//iterate through deck and save to tempDeck
+        -:   59:		//reset deckPos
+        2:   60:		deckPos = 0;
+       19:   61:		while (j > 0) {
+       15:   62:			j--;
+       15:   63:			tempDeck[j] = testG.deck[thisPlayer][j];
+       15:   64:			deckPos++;
+        -:   65:		}
+        -:   66:		//shuffle deck
+        2:   67:		shuffle(thisPlayer, &testG);
+        -:   68:		//get final deck count
+        2:   69:		endingDeckCount = testG.deckCount[thisPlayer];
+        2:   70:		printf("Player %d: Ending Deck Count: %d\n", i, testG.deckCount[i]);
+        -:   71:		//check if change in deckCount
+        2:   72:		if (startingDeckCount == endingDeckCount){
+        2:   73:			printf("Deck Count Start: %d Deck Count Finish: %d\n", startingDeckCount, endingDeckCount);
+        -:   74:		}
+        -:   75:		else
+    #####:   76:			printf("Deck Count should stay the same: FAIL\n");
+        -:   77:		//output shuffled cards and check to see if shuffled
+       17:   78:		for (l = 0; l < deckPos; l++){
+       15:   79:			printf("\nBefore Shuffle Function Card at Position %d: %d", l, tempDeck[l]);
+       15:   80:			printf("\nAfter Shuffle Function Card at Position %d: %d", l, (testG.deck[thisPlayer][l]));
+       15:   81:			if (tempDeck[l] == testG.deck[thisPlayer][l]){
+        9:   82:				sameCount++;
+        -:   83:			}
+        -:   84:		}
+        2:   85:		if (sameCount == endingDeckCount){
+        1:   86:			printf("\nCards were not suffled: FAIL\n");
+        -:   87:		}
+        -:   88:		else
+        1:   89:			printf("\nCards Shuffled: SUCCESS\n");
+        -:   90:		//check for game state changes
+        -:   91:		//assert(testG.deckCount[thisPlayer] == testG.deckCount[thisPlayer]);
+        -:   92:		//assert(testG.coins == testG.coins);
+        -:   93:		//assert(testG.playedCardCount == testG.playedCardCount);
+        -:   94:		//assert(testG.numPlayers == testG.numPlayers);
+        -:   95:		//check discard
+        2:   96:		if (testG.discardCount[i] == 0)
+        2:   97:			printf("Player %d: Current Discard Count: %d\n",i ,testG.discardCount[i]);
+        -:   98:		else
+    #####:   99:			printf("Discard Pile should be empty");
+        -:  100:	}
+        1:  101:		printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", FUNCTION);
+        1:  102:	return 0;
+        -:  103:}

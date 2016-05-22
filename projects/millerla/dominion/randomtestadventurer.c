@@ -15,7 +15,7 @@ Date: 5/4/2016
 
 //testing Adventurer - reveal cards from deck until two treasure cards are found, then discard the other revealed cards
 int main() {
-	int randomRun = 1000000;//the number of times the random checker runs
+	int randomRun = 1000;//the number of times the random checker runs
 	int seed = 1;//the seed for initializeGame
 	int cards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};//used to initialize game - not cards for player playing adventurer
     struct gameState game;//the game used
@@ -76,21 +76,21 @@ int main() {
 		}
 		
 		if(treasureCount == 0 && returnVal == 0 && preCardGame.handCount[currentPlayer] - 1 != game.handCount[currentPlayer]) {// confirming there is a net of 1 card taken from hand when 0 treasure cards available
-			printf("ERROR IN NET NUMBER OF CARDS ADDED: test: %i, player: %i, treasure in game.deckCount and game.discardCount: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer] - 1, game.handCount[currentPlayer]);
+			printf("ERROR IN NET NUMBER OF CARDS ADDED:\n\ntest: %i \nplayer: %i \ntreasure in game.deckCount and game.discardCount: %i \nexpected game.handCount: %i \nactual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer] - 1, game.handCount[currentPlayer]);
 		}
 		else if(treasureCount == 1 && returnVal == 0 && preCardGame.handCount[currentPlayer] != game.handCount[currentPlayer]) {// confirming there is a net of 0 cards added to hand when 1 treasure card is available
-			printf("ERROR IN NET NUMBER OF CARDS ADDED: test: %i, player: %i, treasure in game.deckCount and game.discardCount: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
+			printf("ERROR IN NET NUMBER OF CARDS ADDED:\n\ntest: %i \nplayer: %i \ntreasure in game.deckCount and game.discardCount: %i \nexpected game.handCount: %i \nactual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
 		}
 		else if(treasureCount >= 2 && returnVal == 0 && preCardGame.handCount[currentPlayer] + 1 != game.handCount[currentPlayer]) {// confirming there is a net of 1 card added to hand when 2 treasure cards available
-			printf("ERROR IN NET NUMBER OF CARDS ADDED: test: %i, player: %i, treasure in game.deckCount and game.discardCount: %i, expected game.handCount: %i, actual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer] + 1, game.handCount[currentPlayer]); //LAUREN
+			printf("ERROR IN NET NUMBER OF CARDS ADDED:\n\ntest: %i \nplayer: %i \ntreasure in game.deckCount and game.discardCount: %i \nexpected game.handCount: %i \nactual game.handCount: %i\n\n", i, currentPlayer, treasureCount, preCardGame.handCount[currentPlayer] + 1, game.handCount[currentPlayer]); //LAUREN
 		}
 		
 		if(game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer] > - 1 && treasureCount >= 1 && game.hand[currentPlayer][game.handCount[currentPlayer]-1] != copper && game.hand[currentPlayer][game.handCount[currentPlayer]-1] != silver && game.hand[currentPlayer][game.handCount[currentPlayer]-1] != gold) {//confirming that there is treasure cards at the end of the hand if a card has been added and there are available treasure cards
-			printf("ERROR IN MISSING TREASURE CARD AT END OF HAND: test: %i, player: %i, game.deckCount previously: %i, game.discardCount previously: %i, treasure in game.deckCount and game.discardCount: %i, CARD enum: %i, net game.handCount: %i\n\n", i,  currentPlayer, preCardGame.deckCount[currentPlayer], preCardGame.discardCount[currentPlayer], treasureCount, (int)game.hand[currentPlayer][game.handCount[currentPlayer]-1], game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer]);
+			printf("ERROR IN MISSING TREASURE CARD AT END OF HAND:\n\ntest: %i \nplayer: %i \ngame.deckCount previously: %i \ngame.discardCount previously: %i \ntreasure in game.deckCount and game.discardCount: %i \nCARD enum of non-treasure card: %i \nnet game.handCount: %i \ngame.handCount previously: %i  \ngame.handCount currently: %i\n\n", i,  currentPlayer, preCardGame.deckCount[currentPlayer], preCardGame.discardCount[currentPlayer], treasureCount, (int)game.hand[currentPlayer][game.handCount[currentPlayer]-1], game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer], preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
 		}
 		
 		if(game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer] > 0 && treasureCount >= 2 && game.hand[currentPlayer][game.handCount[currentPlayer]-2] != copper && game.hand[currentPlayer][game.handCount[currentPlayer]-2] != silver && game.hand[currentPlayer][game.handCount[currentPlayer]-2] != gold) {//confirming that there is treasure cards at the end of the hand
-			printf("ERROR IN MISSING TREASURE CARD AT END OF HAND - 1: test: %i, player: %i, game.deckCount previously: %i, game.discardCount previously: %i, treasure in game.deckCount and game.discardCount: %i, CARD enum: %i, net game.handCount: %i\n\n", i,  currentPlayer, preCardGame.deckCount[currentPlayer], preCardGame.discardCount[currentPlayer], treasureCount, (int)game.hand[currentPlayer][game.handCount[currentPlayer]-2], game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer]);
+			printf("ERROR IN MISSING TREASURE CARD AT END OF HAND - 1:\n\ntest: %i \nplayer: %i \ngame.deckCount previously: %i \ngame.discardCount previously: %i \ntreasure in game.deckCount and game.discardCount: %i \nCARD enum of non-treasure card: %i \nnet game.handCount: %i \ngame.handCount previously: %i  \ngame.handCount currently: %i\n\n", i,  currentPlayer, preCardGame.deckCount[currentPlayer], preCardGame.discardCount[currentPlayer], treasureCount, (int)game.hand[currentPlayer][game.handCount[currentPlayer]-2], game.handCount[currentPlayer] - preCardGame.handCount[currentPlayer], preCardGame.handCount[currentPlayer], game.handCount[currentPlayer]);
 		}
 		
 	}

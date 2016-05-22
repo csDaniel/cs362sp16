@@ -233,7 +233,7 @@ int main() {
     // ----------- Other player should draw 1 card from his own deck --------------
     printf("Testing: Other player should draw 1 card from his own deck.\n");
     if(testG.hand[otherPlayer][testG.handCount[otherPlayer] - 1] != G.deck[otherPlayer][G.deckCount[otherPlayer] - 1]) {
-        printf("\t**FAILED**: The first card was not drawn from the current player's deck.\n\n");
+        printf("\t**FAILED**: The first card was not drawn from the correct player's deck.\n\n");
         failedTests++;
     } else {
         printf("\tPASSED: Cards were drawn from the correct player's deck.\n\n");
@@ -260,7 +260,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the other player except for drawing a card.\n\n");
+        printf("\tPASSED: No state change has occurred for the other player except for drawing a card.\n\n");
         passedTests++;
     } else {
         printf("\n");
@@ -286,7 +286,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the victory card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the victory card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");
@@ -312,7 +312,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the treasure card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the treasure card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");
@@ -330,7 +330,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the kingdom card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the kingdom card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");
