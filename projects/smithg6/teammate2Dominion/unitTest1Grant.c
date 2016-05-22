@@ -40,17 +40,17 @@ int main()
 	}
 
 	//This is a test to make sure that the cost of adventurer is correctly returned.
-	cardNum = 8;
+	cardNum = 7;
 	i = getCost(cardNum);
 
 	if(i != 6)
 	{
-		printf("Something went wrong! Adventurer should cost 6.");
+		printf("Something went wrong! Adventurer should cost 6.\n");
 	}
 
 	if(i == 6)
 	{
-		printf("This test passed: Return values are appropriate");	
+		printf("This test passed: Return values are appropriate\n");	
 	}
 
 
@@ -60,10 +60,10 @@ int main()
 
 	if(j)
 	{
-		printf("This test failed. getCost returned a default value %d for a card that doesn't exist", j);
+		printf("This test passed. \ngetCost returned a default value %d for a card that doesn't exist\n", j);
 	} else
 		{
-			printf("This test passed and returned no value for an invalid card.");	
+			printf("This test failed and returned a valid value for an invalid card.\n");	
 		}
-
+	return 0;
 }
