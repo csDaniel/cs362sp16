@@ -209,204 +209,204 @@ Creating 'dominion.c.gcov'
 
 -- randomtestcard results --
 TESTING random village card
-FAIL: [player: 1] [seed: 1837836376] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1837836376] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1837836376] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1837836376] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 889228615] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 889228615] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 889228615] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 889228615] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1705006053] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1705006053] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1705006053] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1705006053] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1216624798] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1216624798] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1216624798] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1216624798] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1910524373] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1910524373] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1910524373] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1910524373] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 385818831] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 385818831] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 385818831] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 385818831] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 222929510] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 222929510] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 222929510] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 222929510] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1506793575] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1506793575] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1506793575] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1506793575] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 2141240440] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 2141240440] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 2141240440] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 2141240440] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 2038991785] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 2038991785] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 2038991785] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 2038991785] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1227149266] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1227149266] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1227149266] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1227149266] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1462705794] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1462705794] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1462705794] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1462705794] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 521995620] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 521995620] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 521995620] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 521995620] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 2015862112] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 2015862112] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 2015862112] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 2015862112] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 92940835] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 92940835] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 92940835] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 92940835] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 2001118330] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 2001118330] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 2001118330] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 2001118330] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1212324212] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1212324212] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1212324212] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1212324212] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 925609287] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 925609287] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 925609287] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 925609287] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1750268690] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1750268690] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1750268690] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1750268690] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 309504544] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 309504544] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 309504544] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 309504544] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 244890849] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 244890849] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 244890849] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 244890849] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 866290812] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 866290812] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 866290812] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 866290812] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1608284695] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1608284695] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1608284695] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1608284695] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 380164758] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 380164758] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 380164758] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 380164758] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1136789352] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1136789352] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1136789352] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1136789352] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1722222113] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1722222113] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1722222113] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1722222113] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 13595564] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 13595564] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 13595564] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 13595564] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1633561864] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1633561864] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1633561864] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1633561864] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1521817093] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1521817093] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1521817093] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1521817093] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1691218154] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1691218154] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1691218154] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1691218154] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1669370108] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1669370108] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1669370108] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1669370108] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1146625684] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1146625684] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1146625684] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1146625684] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1012213496] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1012213496] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1012213496] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1012213496] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 823655951] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 823655951] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 823655951] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 823655951] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1797577847] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1797577847] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1797577847] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1797577847] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1549536260] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1549536260] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1549536260] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1549536260] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 465350021] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 465350021] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 465350021] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 465350021] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 915432290] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 915432290] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 915432290] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 915432290] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 111609344] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 111609344] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 111609344] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 111609344] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 195121625] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 195121625] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 195121625] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 195121625] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1057477268] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1057477268] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1057477268] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1057477268] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1778341893] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1778341893] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1778341893] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1778341893] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1672937645] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1672937645] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1672937645] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1672937645] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1263260145] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1263260145] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1263260145] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1263260145] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 417687857] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 417687857] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 417687857] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 417687857] [playVillage] buy count increased by [0]
-FAIL: [player: 2] [seed: 1376645266] [playVillage] Village was not discarded
-SUCCESS: [player: 2] [seed: 1376645266] [playVillage] actions increased by [2]
-SUCCESS: [player: 2] [seed: 1376645266] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 2] [seed: 1376645266] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1846283405] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1846283405] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1846283405] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1846283405] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 891442838] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 891442838] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 891442838] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 891442838] [playVillage] buy count increased by [0]
-FAIL: [player: 1] [seed: 1585216501] [playVillage] Village was not discarded
-SUCCESS: [player: 1] [seed: 1585216501] [playVillage] actions increased by [2]
-SUCCESS: [player: 1] [seed: 1585216501] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 1] [seed: 1585216501] [playVillage] buy count increased by [0]
-SUCCESS: [player: 0] [seed: 1382905788] [playVillage] Village was correctly discarded
-SUCCESS: [player: 0] [seed: 1382905788] [playVillage] actions increased by [2]
-SUCCESS: [player: 0] [seed: 1382905788] [playVillage] correctly drew [1] card(s)
-SUCCESS: [player: 0] [seed: 1382905788] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1213535604] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1213535604] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1213535604] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1213535604] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 94514980] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 94514980] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 94514980] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 94514980] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1120637946] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1120637946] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1120637946] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1120637946] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 497711469] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 497711469] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 497711469] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 497711469] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 695273086] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 695273086] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 695273086] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 695273086] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 159601975] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 159601975] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 159601975] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 159601975] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 735413357] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 735413357] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 735413357] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 735413357] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 448445949] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 448445949] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 448445949] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 448445949] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 872847862] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 872847862] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 872847862] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 872847862] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 1844226623] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 1844226623] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 1844226623] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 1844226623] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1288594417] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1288594417] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1288594417] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1288594417] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 650777276] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 650777276] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 650777276] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 650777276] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 58166698] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 58166698] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 58166698] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 58166698] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1893990499] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1893990499] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1893990499] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1893990499] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 664425386] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 664425386] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 664425386] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 664425386] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 2003112893] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 2003112893] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 2003112893] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 2003112893] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 259656018] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 259656018] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 259656018] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 259656018] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 76166888] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 76166888] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 76166888] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 76166888] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 819998338] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 819998338] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 819998338] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 819998338] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1688427961] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1688427961] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1688427961] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1688427961] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 298291549] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 298291549] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 298291549] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 298291549] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 2090877807] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 2090877807] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 2090877807] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 2090877807] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1929743979] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1929743979] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1929743979] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1929743979] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 184361405] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 184361405] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 184361405] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 184361405] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 1059087111] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 1059087111] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 1059087111] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 1059087111] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 378685468] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 378685468] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 378685468] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 378685468] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1601861798] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1601861798] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1601861798] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1601861798] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 969803664] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 969803664] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 969803664] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 969803664] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 470534288] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 470534288] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 470534288] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 470534288] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1044068403] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1044068403] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1044068403] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1044068403] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1208998997] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1208998997] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1208998997] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1208998997] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 31378025] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 31378025] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 31378025] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 31378025] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1900687763] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1900687763] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1900687763] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1900687763] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1495115214] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1495115214] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1495115214] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1495115214] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1459855495] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1459855495] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1459855495] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1459855495] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 342698044] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 342698044] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 342698044] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 342698044] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 450728484] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 450728484] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 450728484] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 450728484] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 371876525] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 371876525] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 371876525] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 371876525] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 554588115] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 554588115] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 554588115] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 554588115] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1871711118] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1871711118] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1871711118] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1871711118] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1872504861] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1872504861] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1872504861] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1872504861] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1845563760] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1845563760] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1845563760] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1845563760] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 294181445] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 294181445] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 294181445] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 294181445] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1571491908] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1571491908] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1571491908] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1571491908] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1129034706] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1129034706] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1129034706] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1129034706] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 1778718873] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 1778718873] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 1778718873] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 1778718873] [playVillage] buy count increased by [0]
+FAIL: [player: 2] [seed: 1228690005] [playVillage] Village was not discarded
+SUCCESS: [player: 2] [seed: 1228690005] [playVillage] actions increased by [2]
+SUCCESS: [player: 2] [seed: 1228690005] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 2] [seed: 1228690005] [playVillage] buy count increased by [0]
+FAIL: [player: 1] [seed: 1886087770] [playVillage] Village was not discarded
+SUCCESS: [player: 1] [seed: 1886087770] [playVillage] actions increased by [2]
+SUCCESS: [player: 1] [seed: 1886087770] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 1] [seed: 1886087770] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1679595407] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1679595407] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1679595407] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1679595407] [playVillage] buy count increased by [0]
+SUCCESS: [player: 0] [seed: 1429211254] [playVillage] Village was correctly discarded
+SUCCESS: [player: 0] [seed: 1429211254] [playVillage] actions increased by [2]
+SUCCESS: [player: 0] [seed: 1429211254] [playVillage] correctly drew [1] card(s)
+SUCCESS: [player: 0] [seed: 1429211254] [playVillage] buy count increased by [0]
 
