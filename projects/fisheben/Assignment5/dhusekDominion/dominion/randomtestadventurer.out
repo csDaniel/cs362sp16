@@ -1,0 +1,68 @@
+Result for running random test:
+--------------------------------------------------------------------
+randomtestadventurer.c:
+-------------------------RANDOM TESTER ADVENTURER---------------------------------
+----------------- Testing Card: adventurer ----------------
+Error found in adventurer, 7
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 497  pre.HandCount = 497
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 6 pre.playedCards[0] = 6
+	post.discardCount[p] = 314 pre.discardCount[p] = 314
+	post.deckCount[p] = 74 pre.deckCount[p] = 74
+	treasure cards in deck = 24 Player = 1
+
+Error found in adventurer, 2
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 179  pre.HandCount = 179
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 24 pre.playedCards[0] = 24
+	post.discardCount[p] = 14 pre.discardCount[p] = 17
+	post.deckCount[p] = 121 pre.deckCount[p] = 118
+	treasure cards in deck = 0 Player = 1
+
+ERROR noDominionCardChanges
+Error found in adventurer, 11
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 179  pre.HandCount = 179
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 24 pre.playedCards[0] = 24
+	post.discardCount[p] = 14 pre.discardCount[p] = 17
+	post.deckCount[p] = 121 pre.deckCount[p] = 118
+	treasure cards in deck = 0 Player = 1
+
+Random testing complete.
+Executed 300000 random tests.
+ >>>>> FAILURES DETECTED: Examine test cases adventurer <<<<<
+
+File 'randomtestadventurer.c'
+Lines executed:82.49% of 177
+Creating 'randomtestadventurer.c.gcov'
+
+File 'randomtestadventurer.c'
+Lines executed:82.49% of 177
+Branches executed:82.81% of 128
+Taken at least once:66.41% of 128
+Calls executed:73.02% of 63
+Creating 'randomtestadventurer.c.gcov'
+
+File 'dominion.c'
+Lines executed:42.13% of 572
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:42.13% of 572
+Branches executed:47.24% of 417
+Taken at least once:42.21% of 417
+Calls executed:23.76% of 101
+Creating 'dominion.c.gcov'
+

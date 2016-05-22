@@ -1,4 +1,4 @@
-CFLAGS = -Wall -fpic -coverage -lm
+CFLAGS = -Wall -fpic -coverage -lm -fprofile-arcs -ftest-coverage
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -90,13 +90,20 @@ unittestresults.out: unittests cardtests
 	echo '' >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 
-randomtests: randomtestadventurer.c randomtestcard.c dominion.o rngs.o
-	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
-	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
-	echo '' > randomtestcard.out
-	./randomtestcard >> randomtestcard.out
-	echo '' > randomtestadventurer.out
-	./randomtestadventurer >> randomtestadventurer.out
+randomtestcard.out: randomtestcard.c
+	make dominion.o
+	gcc -o rtc randomtestcard.c rngs.c dominion.o $(CFLAGS) 
+	./rtc &> randomtestcard.out
+	gcov -b -f dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
+	
+randomtestadventurer.out: randomtestadventurer.c
+	make dominion.o
+	gcc -o rta randomtestadventurer.c rngs.c dominion.o $(CFLAGS) 
+	./rta &> randomtestadventurer.out
+	gcov -b -f dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+	
 	
 
 all: playdom player testDrawCard testBuyCard badTestDrawCard

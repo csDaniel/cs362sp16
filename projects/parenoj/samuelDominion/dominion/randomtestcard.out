@@ -1,0 +1,14 @@
+Justin Pareno - Random Test Card Output
+Results: 
+Testing great_hallCard.
+RANDOM TESTS.
+ALL TESTS OK
+Number of Iterations: 2500
+Number of Unexpected Results: 0
+File 'dominion.c'
+Lines executed:46.22% of 476
+Branches executed:52.10% of 334
+Taken at least once:41.92% of 334
+Calls executed:33.33% of 75
+Creating 'dominion.c.gcov'
+

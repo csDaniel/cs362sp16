@@ -21,6 +21,7 @@ int main() {
 	int temphand;
 	int thisPlayer = 0;
 	int xtraCoins;
+	int playedCards = 1;
 struct gameState G, testG; 
 int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
 // initialize a game state and player cards 
@@ -37,10 +38,12 @@ xtraCoins = 0;
 printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
 printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins); 
+printf("played card count = %d, expected = %d\n", testG.playedCardCount, G.playedCardCount + playedCards);
 assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
 
 assert(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards);
-assert(testG.coins == G.coins + xtraCoins); 
+assert(testG.coins == G.coins + xtraCoins);
+assert(testG.playedCardCount == G.playedCardCount + playedCards);
 printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 return 0;
 }

@@ -33,7 +33,7 @@ int main() {
         initialDeck = Game.deckCount[player];
         initialHand = Game.handCount[player];
 
-        playVillage(&Game, 0);
+        cardEffect(great_hall, 0,0,0, &Game, 0, 0);
 
         finalAct = Game.numActions;
         finalDeck = Game.deckCount[player];

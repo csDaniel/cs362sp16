@@ -1,0 +1,24 @@
+Testing Adventurer 250 times...
+Cards to Discard Passed 194 times
+Treasure to Hand Passed 250 times
+Adventurer to Played Passed 0 times
+Other Player State Passed 250 times
+Decrement Actions Passed 250 times
+File 'dominion.c'
+Lines executed:41.53% of 561
+Branches executed:40.53% of 417
+Taken at least once:30.22% of 417
+Calls executed:28.42% of 95
+Creating 'dominion.c.gcov'
+
+Testing cardtest2 for adventurer card
+Test should successfully draw zero or one treasure card if that is all in deck and discard
+FAIL
+Testing that code shuffles once
+SUCCESS
+Testing that other cards are added to discard
+SUCCESS
+Testing that treasure cards are added to hand
+FAIL - p1Coins: 4, currentCoins: 5
+Testing that adventurer removed from hand and added to played pile
+FAIL
