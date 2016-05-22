@@ -1,218 +1,83 @@
-//Ellard Gerritsen van der Hoop
-//CS362 Card Test 1 - Smithy
-//
-
-
+//Shawn Seibert
+//Card Test 1
+//adventureCard() 
+//gcc cardtest1.c dominion.c rngs.c -o cardtest1 -lm
 
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
-#include <string.h>
-
 
 int main()
 {
-	int numPlayers = 2;
-	int choice1 = 0;
-	int choice2 = 0;
-	int choice3 = 0;
-	int seed = 1000;
-	int k[10] = {adventurer, council_room,feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+	int player = 1;
 	struct gameState state, testState;
-	int totalBugs = 0; 
-	int previousCountP1 = 0;
-	int previousCountP2 = 0;
-
-
-
-	initializeGame(numPlayers, k, seed, &state);
-	int currentPlayer = whoseTurn(&state);
-	state.hand[currentPlayer][0] = smithy;
-	memcpy(&testState, &state, sizeof(struct gameState));
-
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Card Test 1 - Smithy Card\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
-
-	
-	 
-	//Giving a guaranteed smithy 
-	printf("5 Cards in Hand for player with at least 1 Smithy\n");
-//	state.hand[currentPlayer][4] = smithy; // Gives a guaranteed smithy for testing in last slot of hand
-
-	//Some quick information statements for later comparison
-	printf("Cards Played so far : %d\n", state.playedCardCount);
-	printf("Smithy Cards in Game: %d\n", state.supplyCount[smithy]);
-
-	
-	
-
-
-
-
-
-	//Actually apply cardEffect of Smithy. 
-	cardEffect(smithy, choice1, choice2, choice2, &state, 0, 0); 
-	
-	//Test to see how many cards were added to hand
-	printf("Number of cards Drawn: %d    Expected: %d\n", state.handCount[currentPlayer], testState.handCount[currentPlayer] + 2); 
-
-
-	//We expect 7 Cards. 3 should have been drawn and Smithy discard. 5+3-1= 7
-	if (state.handCount[currentPlayer] !=  7)
-	{
-		totalBugs++;
-		printf("ERROR: Hand Count is off for Player 1\n");
-	}	
-
-
-	//Test to see that 3 cards were removed from players pile
-	printf("Number of cards in Pile: %d   Expected: %d \n", state.deckCount[currentPlayer], testState.deckCount[currentPlayer]- 3);
-
-
-	//PreviousCountP1 tracks original count. So new count should be previousCountP1 -3 
-	if (state.deckCount[currentPlayer] != testState.deckCount[currentPlayer] - 3)
-	{
-		totalBugs++;
-		printf("ERROR: Deck count is off for Player\n");
-	}
-
-	
-	printf("Number of cards discarded: %d       Expected: 0\n", state.discardCount[currentPlayer]);
-
-	//This is different than the discard pile.  
-	if (state.discardCount[currentPlayer] != 0)
-	{
-		totalBugs++;
-		printf("ERROR: discardCount is off for Player\n");
-	}
-
-	//Check Player Card Count
-	//
-	
-	printf("Number of cards played: %d    Expected: %d \n", state.playedCardCount, testState.playedCardCount+1);
-	if (state.playedCardCount != 1)
-	{
-		totalBugs++;
-		printf("ERROR: Played Card Count is incorrect\n");
-	}
-
-	//
-	////
-	//Test to see no state change occured for other player
-	////
-	//
-	printf("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Checking the state of other player\n");
-
-	if (state.deckCount[1] != testState.deckCount[1])
-	{
-		totalBugs++;
-		printf("ERROR: Deck count off. It should not be changed for P2 on P1's action\n"); 
-	}
-
-	if (state.handCount[1] != 0)
-	{
-		totalBugs++;
-		printf("ERROR: Other player has cards in hand when they should have none\n");
-	}
-
-	//Remember this is different than the discard pile  and it is always rese to 0 at 
-	//the beginning of a turn 
-	if (state.discardCount[1] != 0)
-	{
-		totalBugs++;
-		printf("ERROR: Other play has active discarded cards when it never had a turn\n");
-	}
-
-
-
-	//Test to see that no state change occurred for victory or kingdom cards	
-
+	int bonus;
+	int beforeCardDraw;
+	int afterCardDraw;
+	int seed = 100;
+	int numPlayers = 4;
+	int drawTotal = 3;
+	int loopCount = 0;
+	int drawntreasure = 0;
+	int cardDrawn = 3;
+	int currentPlayer = 1;
+	int handPos = 0;
 	int i = 0;
-	int victoryError = 0;
-	printf("Checking Supply Count of Victory Cards\n");
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+				smithy, council_room};
+	int temphand[MAX_HAND];
+	int z = 0;			
 
-	if (state.supplyCount[estate] != testState.supplyCount[estate]){
-		totalBugs++;
-		printf("ERROR: Estate Supply Count Off\n");
-		victoryError++;
+	printf("-------------------ADVENTURE CARD TEST ---------------------\n");
+	memcpy(&testState, &state, sizeof(struct gameState));
+	initializeGame(numPlayers, k, seed, &testState);
+	while(drawntreasure < 2){
+	if (testState.deckCount[currentPlayer] <1)
+	{//if the deck is empty we need to shuffle discard and add to deck
+	  shuffle(currentPlayer, &testState);
 	}
-
-	if (state.supplyCount[duchy] != testState.supplyCount[duchy]){
-		totalBugs++;
-		printf("ERROR: Duchy Supply Count off\n");
-		victoryError++;
-	}
-
-	if (state.supplyCount[province] != testState.supplyCount[province]){
-		totalBugs++;
-		printf("ERROR: Province Supply Count off\n");
-		victoryError++;
-	}
-
-	printf("Number of Incorrect SupplyCounts of Victory Cards: %d\n", victoryError++);
-
-
-
-
-	printf("Checking Supply Count of Kingdom Cards\n");
-
-	int kingdomError = 0;
-	for (i = 0; i < 10; i++)
-	{
-		if (state.supplyCount[i] != testState.supplyCount[i]){
-			totalBugs++;
-			kingdomError++;
-		}
-	}
-	printf("Number of Incorrect SupplyCounts of Kingdom Cards: %d\n", kingdomError);
-	printf("Checking Supply Count of Smithy in Deck\n");
-
-	printf("Number Left in Deck: %d     Expected:  %d\n", state.supplyCount[smithy], testState.supplyCount[smithy]);
-	printf("Note: Since we assigned a smithy card at the beginning of the test, a Smithy Card was never bought.\n");
-	printf("Thus 10 is acceptable in this case since it means noting happened to the supplyCount during action\n");
-	if (state.supplyCount[smithy] != 10)
-	{
-		totalBugs++;
-		printf("ERROR: Incorrect Count of Smithy Cards Left\n");
-
-	}
+	testState.handCount[currentPlayer] = 4;
 	
-
-	
-
-
-
-
-
-
-
-	if (totalBugs != 0)
+	beforeCardDraw = testState.handCount[currentPlayer];
+	drawCard(currentPlayer, &testState);
+	cardDrawn++;//top card of hand is most recently drawn card.
+	afterCardDraw = testState.handCount[currentPlayer];
+	if (beforeCardDraw+1 == afterCardDraw)
 	{
-		printf("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("Smithy Card test- FAIL \n");
-		printf("Total Bugs: %d\n", totalBugs);
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+		printf("Test Passed: Card Drawn is top card.\n", i);
 	}
 	else
 	{
-		printf("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("Smithy Card test- PASS \n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+		printf("Test Failed: Card Drawn is not top card.\n", i);
+		break;
 	}
-
-
-
-
-
-
-
-
-
-
-
-	return 0;
+	printf("COPPER %d | SILVER %d | GOLD %d \n", copper, silver, gold);
+	if (cardDrawn == copper || cardDrawn == gold)
+	{	
+		printf("Test Passed: Draw Treasure: %d\n", cardDrawn);
+		drawntreasure++;
+	}
+	else
+	{
+		if (cardDrawn == copper ||cardDrawn == silver || cardDrawn == gold)
+		{
+			printf("Test Failed: Draw Treasure: %d\n", cardDrawn);
+			break;
+		}
+		printf("OTHER CARD DRAWN: %d\n", cardDrawn);
+		temphand[z]=cardDrawn;
+		testState.handCount[currentPlayer]--; //remove the top card
+		z++;
+	}
+   }
+      while(z-1>=0)
+	  {
+		//checkCardDraw = testState.discard[currentPlayer][testState.discardCount[currentPlayer]++];
+		testState.discard[currentPlayer][testState.discardCount[currentPlayer]++]=temphand[z-1];
+		z=z-1;    //discard all cards in play that have been drawn 
+      }
+      return 0;
 }

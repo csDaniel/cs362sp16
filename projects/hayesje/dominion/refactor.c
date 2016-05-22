@@ -34,12 +34,6 @@ The five functions choosen for assignment 2
             c.  Changed the deck count threshold used to determine the need for a shuffle
                 original: if(state->deckCount[currentPlayer] < 1)
                      bug: if(state->deckCount[currentPlayer] == 1)
-            d.  Changed the remove card from hand statement when card drawn is not a treasure card
-                original: state->handCount[currentPlayer]--
-                     bug: orginal statement removed (missing).
-            e.  Changed the boundary condition used for placing non-treasure revealed cards to the discard pile.
-	        original: while(z-1>=0)
-		     bug: while(z-1>0)
 
     2.  Smithy
         Bugs Introduced:

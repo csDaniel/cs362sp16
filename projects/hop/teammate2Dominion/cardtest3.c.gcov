@@ -1,0 +1,115 @@
+        -:    0:Source:cardtest3.c
+        -:    0:Graph:cardtest3.gcno
+        -:    0:Data:cardtest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <assert.h>
+        -:    3:#include <string.h>
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include "rngs.h"
+        -:    7:
+function main called 1 returned 100% blocks executed 65%
+        -:    8:int main(){
+        -:    9:
+        -:   10:   struct gameState state, saveState;
+        1:   11:   int numPlayers = 2, i;
+        1:   12:   int handPos = 0, choice1 = 0, choice2 = 0, choice3 = 0;
+        1:   13:   int *bonus = NULL;
+        1:   14:   int newCards = 0, discard = 0;
+        1:   15:   int kingdom[10] = {council_room, adventurer, gardens, mine, ambassador,  
+        -:   16:                     remodel, great_hall, minion, sea_hag, outpost};
+        1:   17:   int seed = 1000;
+        -:   18:
+        1:   19:   initializeGame(numPlayers, kingdom, seed, &state);
+        1:   20:   int currentPlayer = state.whoseTurn;
+        -:   21:   // Save the state as-is
+        1:   22:   memcpy(&saveState, &state, sizeof(struct gameState));
+        -:   23:   /* business requirements
+        -:   24:      
+        -:   25:      description: testing great hall card, 
+        -:   26:
+        -:   27:      1. Draw 1 extra card and there should be +1 action.
+        -:   28:      2. Card should come from own pile.
+        -:   29:      3. Number of buys should not change.
+        -:   30:      3. No state change should occur for other players.
+        -:   31:      4. No state change should occur to the victory and kingdom card piles.
+        -:   32:
+        -:   33:      end requirements*/
+        1:   34:   printf("<----------BEGIN cardtest3-great hall card---------->\n\n");
+        1:   35:   printf("Initial deck count: %i\n",state.deckCount[currentPlayer]);
+        1:   36:   printf("Initial hand count: %i\n", state.handCount[currentPlayer]);
+        -:   37:
+        -:   38:// ----------------- TEST 1 ---------------------------------------------------
+        1:   39:   printf("\n");
+        1:   40:   printf(" TEST 1: Should draw 1 extra card and gets an extra action.\n");
+        1:   41:   cardEffect(great_hall, choice1, choice2, choice3, &state, handPos, bonus);  
+        1:   42:   newCards = 1;
+        1:   43:   discard = 1;
+        1:   44:   printf("    hand count = %i, expected = %i\n", state.handCount[currentPlayer], saveState.handCount[currentPlayer] + newCards - discard);  
+        1:   45:   if(!(state.handCount[currentPlayer] == saveState.handCount[currentPlayer] + newCards - discard))
+branch  0 taken 100%
+branch  1 taken 0%
+        1:   46:		printf("		assertion failed.\n");
+        -:   47:
+        -:   48:// ----------------- TEST 2 ---------------------------------------------------
+        1:   49:   printf("\n");
+        1:   50:   printf(" TEST 2: 1 card should come from own pile.\n");
+        1:   51:   printf("    deck count = %i, expected = %i\n", state.deckCount[currentPlayer], saveState.deckCount[currentPlayer] - newCards);
+        2:   52:   assert(state.deckCount[currentPlayer] == saveState.deckCount[currentPlayer] - newCards);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   53:
+        -:   54:// ----------------- TEST 3 ---------------------------------------------------
+        1:   55:   printf("\n");
+        1:   56:   printf(" TEST 3: Number of buys should not change.\n");
+        1:   57:   printf("    buy count = %i, expected = %i\n", state.numBuys, saveState.numBuys);
+        2:   58:   assert(state.numBuys == saveState.numBuys);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   59:
+        -:   60:// ----------------- TEST 4 ---------------------------------------------------
+        1:   61:   printf("\n");
+        1:   62:   printf(" TEST 4: No state change should occur for other players.\n");
+        1:   63:   printf("    deck count = %i, expected = %i\n", state.deckCount[!currentPlayer], saveState.deckCount[!currentPlayer]);
+        1:   64:   printf("    discard pile count = %i, expected %i\n", state.discardCount[!currentPlayer], saveState.discardCount[!currentPlayer]);
+        2:   65:   assert(saveState.deckCount[!currentPlayer] == state.deckCount[!currentPlayer]);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   66:
+        -:   67:// ----------------- TEST 5 ---------------------------------------------------
+        1:   68:   printf("\n");
+        1:   69:   printf(" TEST 5: No state change should occur to victory and kingdom cards piles.\n");
+        1:   70:   printf("    estate count = %i, expected = %i\n", state.supplyCount[estate], saveState.supplyCount[estate]);
+        1:   71:   printf("    duchy count = %i, expected = %i\n", state.supplyCount[duchy], saveState.supplyCount[duchy]);
+        1:   72:   printf("    province count = %i, expected = %i\n", state.supplyCount[province], saveState.supplyCount[province]);
+        -:   73:   
+       42:   74:   for( i = adventurer; i <= treasure_map; ++i){
+branch  0 taken 95%
+branch  1 taken 5%
+       20:   75:      printf("    kingdomCard '%i' count = %i, expected = %i\n", i, state.supplyCount[i], saveState.supplyCount[i]);
+       20:   76:   }
+        -:   77:
+        2:   78:   assert(saveState.supplyCount[estate] == state.supplyCount[estate]);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   79:   assert(saveState.supplyCount[duchy] == state.supplyCount[duchy]);
+branch  0 taken 0%
+branch  1 taken 100%
+        2:   80:   assert(saveState.supplyCount[province] == state.supplyCount[province]);
+branch  0 taken 0%
+branch  1 taken 100%
+       42:   81:   for( i = adventurer; i <= treasure_map; ++i){
+branch  0 taken 95%
+branch  1 taken 5%
+       40:   82:      assert(saveState.supplyCount[i] == state.supplyCount[i]);
+branch  0 taken 0%
+branch  1 taken 100%
+       20:   83:   }
+        1:   84:   printf("\n");
+        1:   85:   printf("<----------END cardtest3-great hall card---------->\n\n");
+        -:   86:
+        1:   87:   return 0;
+        -:   88:}
+        -:   89:

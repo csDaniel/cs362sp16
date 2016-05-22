@@ -1,0 +1,102 @@
+Testing isGameOver.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest1.c'
+Lines executed:97.67% of 43
+unittest1.c:creating 'unittest1.c.gcov'
+
+File 'unittest1.c'
+Lines executed:97.67% of 43
+Branches executed:100.00% of 16
+Taken at least once:75.00% of 16
+No calls
+unittest1.c:creating 'unittest1.c.gcov'
+
+Testing numHandCards.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest2.c'
+Lines executed:96.43% of 28
+unittest2.c:creating 'unittest2.c.gcov'
+
+File 'unittest2.c'
+Lines executed:96.43% of 28
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+unittest2.c:creating 'unittest2.c.gcov'
+
+Testing whoseTurn.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest3.c'
+Lines executed:95.65% of 23
+unittest3.c:creating 'unittest3.c.gcov'
+
+File 'unittest3.c'
+Lines executed:95.65% of 23
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+unittest3.c:creating 'unittest3.c.gcov'
+
+Testing supplyCount.
+RANDOM TESTS.
+ALL TESTS OK
+----------------- Testing Card: village ----------------
+TEST 1: +1 card
+hand count = 5, expected = 5
+deck count = 4, expected = 4
+coins = 4, expected = 4
+TEST 2: +2 actions
+Number of actions expected: 3
+Number of actions found: 3
+
+ >>>>> SUCCESS: Testing complete village <<<<<
+
+----------------- Testing Card: great hall ----------------
+TEST 1: +1 card
+hand count = 5, expected = 5
+deck count = 4, expected = 4
+coins = 4, expected = 4
+TEST 2: +1 actions
+Number of actions expected: 2
+Number of actions found: 2
+
+ >>>>> SUCCESS: Testing complete great hall <<<<<
+
+File 'cardtest2.c'
+Lines executed:100.00% of 33
+cardtest2.c:creating 'cardtest2.c.gcov'
+
+File 'cardtest2.c'
+Lines executed:100.00% of 33
+Branches executed:100.00% of 8
+Taken at least once:50.00% of 8
+No calls
+cardtest2.c:creating 'cardtest2.c.gcov'
+
+----------------- Testing Card: smithy ----------------
+TEST 1: +3 cards
+hand count = 7, expected = 7
+deck count = 2, expected = 2
+coins = 4, expected = 4
+
+ >>>>> SUCCESS: Testing complete smithy <<<<<
+
+File 'cardtest3.c'
+Lines executed:100.00% of 25
+cardtest3.c:creating 'cardtest3.c.gcov'
+
+File 'cardtest3.c'
+Lines executed:100.00% of 25
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+cardtest3.c:creating 'cardtest3.c.gcov'
+
+----------------- Testing Card: adventurer ----------------
+TEST 1: choice1 = 1 = +2 cards
+hand count = 7, expected = 7
+deck count = 3, expected = 2
+coins = 4, expected = 4

@@ -63,7 +63,19 @@ randomtestadventurer.out: randomtestadventurer.c
 	./rta
 	gcov -b -f dominion.c &> randomtestadventurer.out
 	cat dominion.c.gcov >> randomtestadventurer.out
+	randomtestcard.out: randomtestcard.c
+	make dominion.o
+	gcc -o rtc randomtestcard.c rngs.c dominion.o $(CFLAGS) 
+	./rtc &> randomtestcard.out
+	gcov -b -f dominion.c >> randomtestcard.out
+	cat dominion.c.gcov >> randomtestcard.out
 	
+randomtestadventurer.out: randomtestadventurer.c
+	make dominion.o
+	gcc -o rta randomtestadventurer.c rngs.c dominion.o $(CFLAGS) 
+	./rta &> randomtestadventurer.out
+	gcov -b -f dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
 	
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

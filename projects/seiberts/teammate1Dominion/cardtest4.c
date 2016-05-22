@@ -1,264 +1,185 @@
-//Ellard Gerritsen van der Hoop
-//CS362 Card Test 4 - CutPurse
+//Shawn Seibert
+//Card Test 4
+//MinionCard()
+//gcc cardtest4.c dominion.c rngs.c -o cardtest4 -lm
+
+//minionCard(int choice1, int choice2, int choice3, int handPos, int currentPlayer, struct gameState *state)
+
 
 
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
-#include <string.h>
-
-
 
 int main()
 {
-
-	int numPlayers =2;
-	int choice1 = 0;
-	int choice2 = 0;
-	int seed = 1000;
-	int k[10] = {adventurer, cutpurse,feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+	int player = 1;
 	struct gameState state, testState;
-	int totalBugs = 0; 
-	
-
-	initializeGame(numPlayers, k, seed, &state);
-	int currentPlayer = whoseTurn(&state);
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	printf("Card Test 4 - CutpurseCard\n");
-	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n\n");
-
-	printf("BEFORE CARD EFFECT\n");	
-	
-	int j = 0;
+	int bonus;
+	int c1, c2, c3;
+	int seed = 100;
+	int numPlayers = 2;
+	int cardDrawCount = 0;
+	int checkBuyAmount = 0;
+	int oldCardCount, newCardCount;
+	int choice1 = 0, choice2 = 0, choice3, choice4;
+	int drawTotal = 3;
+	int oldActionAmount, newActionAmount;
+	int oldCoinCount, newCoinCount;
+	int loopCount = 0;
+	int currentPlayer = 1;
 	int i = 0;
-	int P1copperAmount1 = 0;
-	int P2copperAmount1 = 0;
-
-
-	//Setting Hands for both players
-	//
-
-	state.hand[currentPlayer][0] = cutpurse;
-	state.hand[currentPlayer][1] = copper;
-	state.hand[currentPlayer][2] = copper;
-	state.hand[currentPlayer][3] = copper;
-	state.hand[currentPlayer][4] = copper;
-
-	state.handCount[1] = 5;
-	state.hand[1][0] = copper;
-	state.hand[1][1] = copper;
-	state.hand[1][2] = copper;
-	state.hand[1][3] = copper;
-	state.hand[1][4] = copper;
-
-
-
-
-
-	updateCoins(currentPlayer, &state,0);
+	 int j = 0;
+	int handPos = 0;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, 
+				smithy, council_room};
 	
+
+	printf("-------------------MINION CARD TEST---------------------\n");
 	memcpy(&testState, &state, sizeof(struct gameState));
-
-	printf("Current Coin Amount: %d\n", state.coins);
+	initializeGame(numPlayers, k, seed, &testState);
 	
-
-
-	for (i = 0; i < state.handCount[currentPlayer]; i++)
+	//Add 4 cards to current player hand
+	for (i = 0; i < 4; i++) 
 	{
-		if (state.hand[currentPlayer][i] == copper)
+		loopCount++;
+		drawCard(currentPlayer, &testState);
+	}
+	//+1 action
+	testState.numActions++;
+	printf("CHECKING INCREASE IN ACTIONS.\n");
+	printf("Previous number of Actions %d\n",  testState.numActions);
+	oldActionAmount = testState.numBuys;
+	testState.numBuys++;
+	printf("Increased number of Actions %d\n",  testState.numActions); 
+	newActionAmount = testState.numActions;
+	if ((oldActionAmount + 1) == newActionAmount)
+	{
+		printf("Test passed: Number of actions increased by one.\n");
+	}
+	else
+	{
+		printf("Test failed: Number of actions did not increase by one.\n");
+	}
+			
+    //discard card from hand
+    printf("CHECKING DISCARD.\n");
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer] );
+	oldCardCount = testState.handCount[currentPlayer];
+    discardCard(handPos, currentPlayer, &testState, 0);
+	printf("Current player hand count: %d\n", testState.handCount[currentPlayer] );
+	newCardCount = testState.handCount[currentPlayer];
+	if ((oldCardCount - 1) == newCardCount)
+	{
+		printf("Test Passed: Player discarded.\n");
+	}
+	else
+	{
+		printf("Test Failed: Player did not discard correctly.\n");
+	}
+	
+	//Loop twice for both choices
+	for (i = 0; i < 2; i++)
+	{
+		printf("I TOTAL: %d\n", i);
+		//Increase coins by 2
+		if (i == 0)		
 		{
-			P1copperAmount1++;
+			//Check coin increase
+			printf("CHECKING COIN INCREASE\n");
+			printf("Current coin count %d.\n", testState.coins);
+			oldCoinCount = testState.coins;
+			testState.coins = testState.coins + 2;
+			newCoinCount = testState.coins;
+			printf("New coin count %d.\n", testState.coins);
+			if ((oldCoinCount + 2) == newCoinCount)
+			{
+				printf("Test Passed: Player coin increased by two.\n");
+			}
+			else
+			{
+				printf("Test Failed: Player coins did not increase correctly.\n");
+			}
 		}
-
-	}	
-
-	for (i = 0; i < state.handCount[1]; i++)
-	{
-		if (state.hand[1][i] == copper)
+				
+		  else if (i == 1)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
 		{
-			P2copperAmount1++;
+		  //discard hand
+			printf("CHECKING DISCARD.\n");
+			printf("Current player hand : %d\n", testState.handCount[currentPlayer] );
+			oldCardCount = testState.handCount[currentPlayer];
+
+			
+		 while(numHandCards(&testState) > 0)
+			{
+			  
+			  discardCard(handPos, currentPlayer, &testState, 0);
+			  newCardCount = testState.handCount[currentPlayer];
+			}
+			if (newCardCount <= 0)
+			{
+				printf("Test passed: Card count = %d.\n", numHandCards(&testState));
+			}
+			else
+			{
+				printf("Test failed: All cards were not discarded.\n");
+			}
+					
+		  //draw 4
+		  printf("CHECKING ADD 4 CARDS\n");
+		  oldCardCount = testState.handCount[currentPlayer];
+		  for (i = 0; i < 4; i++)
+			{
+			  printf("Number of cards added: %d\n", i);
+			  drawCard(currentPlayer, &testState);
+			}
+			 newCardCount = testState.handCount[currentPlayer];
+			 if ((oldCardCount +4) == newCardCount)
+			{
+				printf("Test passed: New card count = 4.\n");
+			}
+			else
+			{
+				printf("Test failed: Incorrect number of cards added.\n");
+			}
+							
+		  //other players discard hand and redraw if hand size > 4
+		  for (i = 0; i < testState.numPlayers; i++)
+		  {
+			  if (i != currentPlayer)
+			  {
+				oldCardCount = 0;
+				if ( testState.handCount[i] > 4 )
+				{
+				  //discard hand
+				  while( testState.handCount[i] > 0 )
+				{
+				  discardCard(handPos, i, &testState, 0);
+				}
+				printf("CHECKING OTHER PLAYERS ADDED CARDS\n");
+				  //draw 4
+				for (j = 0; j < 4; j++)
+				{
+					 printf("Number of cards added: %d\n", j);
+					drawCard(i, &testState);
+				}
+				newCardCount = testState.handCount[i];
+				if ((oldCardCount +4) == newCardCount)
+				{
+					printf("Test passed: New card count = 4.\n");
+				}
+				else
+				{
+					printf("Test failed: Incorrect number of cards added.\n");
+				}
+				}
+			}
+			}
+					
 		}
-
-	}	
-	printf("Amount of Copper in P1's Hand: %d\n", P1copperAmount1);
-	printf("Amount of Copper in P2's Hand: %d\n", P2copperAmount1);
-
-
-	printf("\n\nAFTER Card Effect- Cutpurse Occurs\n");
-	cardEffect(cutpurse, choice1, choice2, choice2, &state, 0, 0); 
-	//--------------------------------Test 1 ------------------------------/
-	// Check for the updateCoins action
-	
-
-	printf("Checking Amount of Coins for P1: %d  Expected: %d", state.coins, testState.coins + 2);
-	
-
-
-	if (state.coins == testState.coins + 2)
-	{
-		printf("               PASS\n");
-	
-
 	}
-	else
-	{
-		printf("\nERROR: Incorrect Amount of Coins\n");
-		totalBugs++;
-
-
-	}
-
-
-	//------------------------------------Test 2------------------------------/
-	//Check for Copper Cards
-	printf("Checking for Number of Copper Cards in P1 and  Removal of 1 Copper Card from P2's Hand\n");
-
-	int P1copperAmount2 = 0;
-	int P2copperAmount2 = 0;
-
-	for (i = 0; i < state.handCount[currentPlayer]; i++)
-	{
-		if (state.hand[currentPlayer][i] == copper)
-		{
-			P1copperAmount2++;
-		}
-
-	}	
-
-	for (i = 0; i < state.handCount[1]; i++)
-	{
-		if (state.hand[1][i] == copper)
-		{
-			P2copperAmount2++;
-		}
-
-	}	
-
-	printf("Number of Copper Cards for P1: %d      Expected: %d", P1copperAmount2, P1copperAmount1);
-	
-
-	if (P1copperAmount2 == P1copperAmount1)
-	{
-		printf("                PASS\n");
-		
-	} 
-	else
-	{
-		
-		printf("\nERROR: Copper Cards in hand shouldnt have changed for P1\n");
-		totalBugs++;
-
-	}
-
-	printf("Number of Copper Cards for P2: %d      Expected: %d", P2copperAmount2, P2copperAmount1-1);
-
-	if (P2copperAmount2 == P2copperAmount1-1)
-	{
-		printf("                  PASS\n");
-		
-	} 
-	else
-	{
-		printf("\nERROR: One copper card should have been removed from P2\n");
-		totalBugs++;
-
-
-	}
-	
-	//-------------------------------------Test 3 ---------------------------------//
-	//Check Supply Counts of Copper
-
-
-	printf("Checking Supply Count of Copper\n");
-	printf("Current Supply Count of Copper:   %d        Expected: %d", state.supplyCount[copper], testState.supplyCount[copper]);
-
-
-	if (state.supplyCount[copper] == testState.supplyCount[copper])
-	{
-		printf("                           PASS\n");
-
-
-	}
-	else
-	{
-		printf("\nERROR: Copper supply count should not have changed\n");
-		totalBugs++;
-
-	}
-
-	//----------------------------------------------Test 4 --------------------------->
-	//Checking playerCardCount and playedCards
-	
-
-	printf("Checking playedCardCount: Remember 2 cards were discarded\n");
-	printf("Played Card Count: %d         Expected: %d", state.playedCardCount, testState.playedCardCount +2);
-
-
-	if (state.playedCardCount == testState.playedCardCount+2)
-	{
-		printf("		PASS\n");
-	
-
-	}
-	else
-	{
-		printf("\nERROR:  Improper playedCardCount\n");
-		totalBugs++;
-	}
-
-
-
-	printf("Checking Played Cards: 4 = Copper,	 21 = Cutpurse\n");
-	
-	int card1 = 0;
-	int card2 = 0;	
-	for (i = 0; i < state.playedCardCount;i++)
-	{
-		if (state.playedCards[i] == 4)
-			card1 = 1;
-
-		if (state.playedCards[i] == 21)
-			card2 = 1;	
-		printf("Card here: %d \n", state.playedCards[i]);
-	}
-
-	printf("Card Check Results: ");
-	if (card1 == 1 && card2 == 1)
-	{
-		printf("		PASS\n");
-	}
-	else
-	{
-		printf("\nERROR:  Incorrect Cards in played pile\n");
-		totalBugs++;
-	}
-
-	if (totalBugs != 0)
-	{
-		printf("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("Cutpurse test- FAIL \n");
-		printf("Total Bugs: %d\n", totalBugs);
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	}
-	else
-	{
-		printf("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-		printf("Cutpurse test - PASS \n");
-		printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-	
-	}
-
-
-
-
-
-
-
-
-
-
-
-	return 0;
+     return 0;
 }

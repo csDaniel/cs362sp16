@@ -28,7 +28,7 @@ int main()
 {
 	struct gameState G, testG;
 	int i,x;
-	int thisPlayer=0, discard_cards, xtra_coins;
+	int thisPlayer=0, discard_cards, xtra_coins, handPos;
 	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
            sea_hag, tribute, smithy};
   	srand(time(NULL));
@@ -38,24 +38,34 @@ int main()
 	
 	for (x=0; x<ITERATION; x++)
 	{
+		
+		thisPlayer = 0;
+		handPos = rand()%5;
 		discard_cards=0;
 		xtra_coins=0;
 		printf("------ Testing Card: %s - Test %d -------\n", TESTCARD, x+1);
 		thisPlayer = x;
 		printf ("Player %d played %s.\n", thisPlayer, TESTCARD);
 
+		// prepare hand
+		G.hand[thisPlayer][handPos] = adventurer;
+
 		//get deck content
 		printf("Deck Content Before: \n");
 		for (i=0; i<G.deckCount[thisPlayer]; i++)
 			printf("(%d) ", G.deck[thisPlayer][i]);
 		printf("\n");
+		//get hand content
+		printf("Hand Content Before: \n");
+		for (i=0; i<G.handCount[thisPlayer]; i++)
+			printf("(%d) ", G.hand[thisPlayer][i]);
+		printf("\n");
 
 		//cond before adventurer
-		updateCoins(thisPlayer, &G, 0);
 		memcpy(&testG, &G, sizeof(struct gameState));
-		//printf("coins-%d\n",G.coins);
+	
 		//play adventurer
-		adventurer_effect(thisPlayer, &testG);
+		cardEffect(adventurer,0,0,0, &testG, 0, 0);
 
 		//cond after adventurer
 		discard_cards = G.deckCount[thisPlayer] - testG.deckCount[thisPlayer];
@@ -63,6 +73,10 @@ int main()
 		printf("Deck Content After: \n");
 		for (i=0; i<testG.deckCount[thisPlayer]; i++)
 			printf("(%d) ", testG.deck[thisPlayer][i]);
+		printf("\n");
+		printf("Hand Content After: \n");
+		for (i=0; i<testG.handCount[thisPlayer]; i++)
+			printf("(%d) ", testG.hand[thisPlayer][i]);
 		printf("\n");
 
 		//Get the difference in extra coins and discarded cards
@@ -89,7 +103,7 @@ int main()
 		discard_cards += 1; //plus 1 for adventurer card
 
 		//compare
-		updateCoins(thisPlayer, &testG, 0);
+		//updateCoins(thisPlayer, &testG, 0);
 		printf("Coins count = %d, expected = %d\n", testG.coins, G.coins+xtra_coins); 
 		printf("Discarded count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer]+discard_cards); 
 
