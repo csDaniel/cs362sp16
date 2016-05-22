@@ -13,9 +13,9 @@ PASSED: RETURN VALUE = 0
         EXPECTATION IS r = 0
 PASSED: RETURN VALUE = 0
         EXPECTATION IS r = 0
-FAILED: RETURN VALUE = 0
+PASSED: RETURN VALUE = 1
         EXPECTATION IS r = 1
-FAILED: RETURN VALUE = 0
+PASSED: RETURN VALUE = 1
         EXPECTATION IS r = 1
 PASSED: RETURN VALUE = 1
         EXPECTATION IS r = 1
@@ -25,14 +25,14 @@ PASSED: RETURN VALUE = 1
 unittest2
 --------------------------------------------
 UNIT TEST #2: scoreFor()
-FAILED: RETURN VALUE = 33
-        EXPECTATION IS r = 76
-FAILED: RETURN VALUE = 10
+PASSED: RETURN VALUE = 156
+        EXPECTATION IS r = 156
+PASSED: RETURN VALUE = 12
         EXPECTATION IS r = 12
-FAILED: RETURN VALUE = 0
-        EXPECTATION IS r = 25
-FAILED: RETURN VALUE = 23
-        EXPECTATION IS r = 38
+PASSED: RETURN VALUE = 30
+        EXPECTATION IS r = 30
+PASSED: RETURN VALUE = 54
+        EXPECTATION IS r = 54
 PASSED: RETURN VALUE = -1
         EXPECTATION IS r = -1
 PASSED: RETURN VALUE = 1
@@ -260,8 +260,8 @@ CARD TEST #1: SMITHY
 PASSED: CARD EXECUTION
 PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 2
         EXPECTATION IS +2 CARDS
-FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 7
-        EXPECTATION IS -2 CARDS
+PASSED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 7
+        EXPECTATION IS -3 CARDS
 PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
         EXPECTATION IS NO CHANGE
 PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
@@ -277,12 +277,14 @@ cardtest2
 --------------------------------------------
 CARD TEST #2: ADVENTURER
 PASSED: CARD EXECUTION
-FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO -496
+PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 1 TO 2
         EXPECTATION IS +1 CARDS
-FAILED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 0
+PASSED: CURRENT PLAYER TREASURE CARDS IN HAND WENT FROM 0 TO 2
         EXPECTATION IS +2 TREASURE CARDS
-FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 4
-        EXPECTATION IS -1 CARDS
+ED: CURRENT PLAYER CARDS IN DISCARD WENT FROM 0 TO 2
+ED: CURRENT PLAYER CARDS IN DECK WENT FROM 10 TO 6
+ED: CURRENT PLAYER CARDS IN HAND WENT FROM 1 TO 2
+PASS
 PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
         EXPECTATION IS NO CHANGE
 PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
@@ -300,13 +302,13 @@ CARD TEST #3: COUNCIL ROOM
 PASSED: CARD EXECUTION
 PASSED: NUMBER OF BUYS WENT FROM 1 TO 2
         EXPECTATION IS +1 BUYS
-FAILED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 4
+PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 3
         EXPECTATION IS +3 CARDS
-FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 5
-        EXPECTATION IS -3 CARDS
-FAILED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
+PASSED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 6
+        EXPECTATION IS -4 CARDS
+PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 6
         EXPECTATION IS +1 CARDS
-FAILED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
+PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 4
         EXPECTATION IS -1 CARDS
 PASSED: NO CHANGE TO VICTORY CARD PILE
         EXPECTATION IS NO CHANGE
@@ -323,8 +325,8 @@ PASSED: NUMBER OF ACTIONS WENT FROM 1 TO 3
         EXPECTATION IS +2 ACTIONS
 PASSED: CURRENT PLAYER CARDS IN HAND WENT FROM 0 TO 0
         EXPECTATION IS NET ZERO CARDS
-FAILED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 9
-        EXPECTATION IS NET ZERO CARDS
+PASSED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM 10 TO 9
+        EXPECTATION IS -1 CARDS
 PASSED: OTHER PLAYER CARDS IN HAND WENT FROM 5 TO 5
         EXPECTATION IS NO CHANGE
 PASSED: OTHER PLAYER CARDS IN DECK/DISCARD WENT FROM 5 TO 5
@@ -351,7 +353,7 @@ Taken at least once:0.00% of 6
 Calls executed:0.00% of 1
 
 Function 'discardCard'
-Lines executed:92.31% of 13
+Lines executed:100.00% of 13
 Branches executed:100.00% of 6
 Taken at least once:83.33% of 6
 No calls
@@ -379,10 +381,10 @@ Taken at least once:100.00% of 6
 Calls executed:100.00% of 3
 
 Function 'adventurerCardEffect'
-Lines executed:100.00% of 17
+Lines executed:94.44% of 18
 Branches executed:100.00% of 12
-Taken at least once:83.33% of 12
-Calls executed:100.00% of 2
+Taken at least once:75.00% of 12
+Calls executed:66.67% of 3
 
 Function 'smithyCardEffect'
 Lines executed:100.00% of 5
@@ -397,10 +399,10 @@ Taken at least once:0.00% of 28
 No calls
 
 Function 'drawCard'
-Lines executed:100.00% of 22
-Branches executed:100.00% of 6
-Taken at least once:100.00% of 6
-Calls executed:100.00% of 1
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
 
 Function 'getWinners'
 Lines executed:0.00% of 24
@@ -409,10 +411,10 @@ Taken at least once:0.00% of 22
 Calls executed:0.00% of 2
 
 Function 'scoreFor'
-Lines executed:100.00% of 24
-Branches executed:100.00% of 42
-Taken at least once:100.00% of 42
-Calls executed:100.00% of 3
+Lines executed:100.00% of 34
+Branches executed:100.00% of 44
+Taken at least once:100.00% of 44
+No calls
 
 Function 'isGameOver'
 Lines executed:100.00% of 10
@@ -465,9 +467,9 @@ Taken at least once:0.00% of 10
 Calls executed:0.00% of 3
 
 Function 'shuffle'
-Lines executed:100.00% of 16
+Lines executed:93.75% of 16
 Branches executed:100.00% of 8
-Taken at least once:100.00% of 8
+Taken at least once:87.50% of 8
 Calls executed:100.00% of 2
 
 Function 'initializeGame'
@@ -493,9 +495,9 @@ Taken at least once:75.00% of 4
 No calls
 
 File 'dominion.c'
-Lines executed:34.99% of 563
-Branches executed:37.89% of 417
-Taken at least once:35.01% of 417
-Calls executed:21.05% of 95
+Lines executed:33.62% of 574
+Branches executed:37.23% of 419
+Taken at least once:33.65% of 419
+Calls executed:17.20% of 93
 Creating 'dominion.c.gcov'
 

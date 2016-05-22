@@ -68,6 +68,10 @@ randomtestcard: randomtestcard.c dominion.o rngs.o test_helpers.o
 randomtestadventurer: randomtestadventurer.c dominion.o rngs.o test_helpers.o
 	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o test_helpers.o $(CFLAGS) 
 
+
+cardtest3Singhba: cardtest3Singhba.c dominion.o rngs.o
+	gcc -o cardtest3Singhba -g  cardtest3Singhba.c dominion.o rngs.o $(CFLAGS)  
+
 unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestadventurer randomtestcard
 	echo "Result for running dominion tests:" > tests.out
 	

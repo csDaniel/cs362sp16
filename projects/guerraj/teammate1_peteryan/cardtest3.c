@@ -1,126 +1,83 @@
-/*
-Author: Ryan Peters
-Date: 04/21/16
-Description: Unit test for village card effect.  The village card allows the
-player to draw one card and gain 2 actions.  There are test to see if the player
-handCount stays the same, the drawn card replacing the village card.  Test that 
-the player gains 2 actions.  Tests that the exit code is 0.  Shows that the new
-card in the hand is different.
-*/
+/* -----------------------------------------------------------------------
+ This unit test will test the remodel card in dominion.c  
+we will test that after the remodel card is played the correct trade happends 
+ Created by James Guerra
+ 
+ * -----------------------------------------------------------------------
+ */
 
-#include<stdio.h>
-#include<string.h>
 #include "dominion.h"
+#include "dominion_helpers.h"
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
+#include "rngs.h"
 
-void testVillage()
-{
-	int seed = 100;
-	int k[10] = {adventurer, council_room, feast, gardens, mine,
-                remodel, smithy, village, baron, great_hall};
-	struct gameState state;
-	int r;
-	int i;
-	int bonus = 0; //Bonus is not used by village
-	int numPlayer = 2;
-	int player = 1;
-	int handPos;
-	
-	/*Test card is drawn by player and exit code is 0*/
-	memset(&state, 0, sizeof(struct gameState));  
-    initializeGame(numPlayer, k, seed, &state);
-	handPos = 1;
-	state.whoseTurn = player;
-	state.numActions = 0;
-	state.handCount[player] = 3;
-	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
-	if(state.handCount[player] == 3)
-		printf("villageEffect: PASS net gain 0 cards.\n");
-	else
-		printf("villageEffect: FAIL net gain 0 cards.\n");
-	if(r == 0)
-		printf("villageEffect: PASS exit code 0.\n");
-	else
-		printf("villageEffect: FAIL exit code 0.\n");
-	
-	/*Test player gains 2 actions*/
-	memset(&state, 0, sizeof(struct gameState));  
-    initializeGame(numPlayer, k, seed, &state);
-	handPos = 1;
-	state.whoseTurn = player;
-	state.numActions = 0;
-	state.handCount[player] = 3;
-	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
-	if(state.numActions == 2)
-		printf("villageEffect: PASS gain 2 actions.\n");
-	else
-		printf("villageEffect: FAIL gain 2 actions.\n");
-	
-	/*Test other players did nto draw cards*/
-	memset(&state, 0, sizeof(struct gameState));  
-    initializeGame(numPlayer, k, seed, &state);
-	handPos = 1;
-	state.whoseTurn = player;
-	state.numActions = 0;
-	state.handCount[0] = 3;
-	state.deckCount[0] = 10;
-	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
-	if(state.handCount[0] == 3)
-		printf("villageEffect: PASS other player did not draw a card.\n");
-	else
-		printf("villageEffect: FAIL other player did not draw a card.\n");
-	if(state.deckCount[0] == 10)
-		printf("villageEffect: PASS other player deck did not change.\n");
-	else
-		printf("villageEffect: FAIL other player deck did not change.\n");
-	
-	/*Test village card is replaced with new card*/
-	memset(&state, 0, sizeof(struct gameState));  
-    initializeGame(numPlayer, k, seed, &state);
-	handPos = 1;
-	state.whoseTurn = player;
-	state.numActions = 0;
-	state.handCount[player] = 3;
-	state.hand[player][0] = gold;
-	state.hand[player][1] = village;
-	state.hand[player][2] = silver;
-	printf("villageEffect: Hand before play - ");
-	for(i = 0; i < 3; i++)
-	{
-		printf("%d ", state.hand[player][i]);
-	}
-	printf("\n");
-	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
-	printf("villageEffect: Hand after play - ");
-	for(i = 0; i < 3; i++)
-	{
-		printf("%d ", state.hand[player][i]);
-	}
-	printf("\n");
-	
-	/*Test supply stacks do not change*/
-	for(i = 0; i <= treasure_map; i++)
-	{
-		state.supplyCount[i] = 10;
-	}
-	player = 1;
-	handPos = 0;	
-	state.handCount[player] = 3;
-	state.deckCount[player] = 10;
-	state.handCount[0] = 3;
-	state.deckCount[0] = 10;
-	state.playedCardCount = 0;
-	r = cardEffect(village, 0, 0, 0, &state, handPos, &bonus);
-	for(i = 0; i <= treasure_map; i++)
-	{
-		if(state.supplyCount[i] == 10)
-			printf("villageEffect: PASS card to drawn from supply posistion %d.\n", i);
-		else
-			printf("villageEffect: FAIL  card to drawn from supply posistion %d.\n", i);
-	}
-}
+// set NOISY_TEST to 0 to remove printfs from output
+#define NOISY_TEST 1
 
-int main(int argc, char *argv[])
-{
-    testVillage();
+int main() {
+    int j;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 10;
+    int p, r, handCount;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+    int maxHandCount = 5;
+    int pass =0;
+
+    printf ("TESTING remodel Card:\n"); //handpos = 6 in k
+   
+            
+
+				p = 0;
+				handCount =0;
+      
+                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+                G.handCount[p] = handCount;                 // set the number of cards on hand
+                gainCard(remodel, &G, 2, p);
+				handCount++;
+				gainCard(mine, &G, 2, p); //for trading later should be in hand[1]
+				handCount++;
+                playCard(0, 1,7, 0, &G);
+			   // cardEffect(remodel, 1, 7, 0, &G, G.hand[p][0], 0);  //trade for adventeruer card
+#if (NOISY_TEST == 1)
+                printf("G.handCount = %d, expected = %d\n", G.handCount[p], handCount); //smithy card should draw three and discard 1
+#endif
+                if(G.handCount[p] == handCount){ // check if the number of cards is correct
+					printf("Test 1 passed, expected card number in hand \n");                
+				}
+				else{
+					pass = 1;
+					printf("Test 1 failed, expected card number not found in hand \n");
+				}
+				//check player 2 hand
+				if(G.handCount[p+1] == 0){ // check if the number of cards is correct
+					printf("Test 2 passed, expected card number in hand player 2 \n");                
+				}
+				else{
+					pass = 1;
+					printf("Test 2 failed, expected card number not found in hand player 2\n");
+				}
+				for(j=0; j<G.handCount[p]; j++){
+				if(G.hand[p][j] == adventurer)
+				{
+					if(j+1 == G.handCount[p])
+					printf("Test 3 passed, adventurer card added \n");
+				break;
+				}
+				else{
+					if(j+1 == G.handCount[p]){
+						printf("Test 3 failed, adventurer card not added \n");
+						pass =2;
+					}
+				} }
+       if(pass == 0){
+    printf("All tests passed!\n");
+	   }
     return 0;
 }

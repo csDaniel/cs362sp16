@@ -6,6 +6,7 @@
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
+#include "interface.h"
 
 #define TESTCARD "smithy"
 
@@ -45,7 +46,13 @@ int main() {	// copy the game state to a test case
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
 	//run function
+	printHand(thisPlayer ,&testG);
+	printDiscard(thisPlayer, &testG);
+	printPlayed(thisPlayer, &testG);
 	playSmithy(handPos, thisPlayer, &testG);
+	printHand(thisPlayer, &testG);
+	printPlayed(thisPlayer, &testG);
+	printDiscard(thisPlayer, &testG);
 	//check deck count
 	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
 	if ((currDeckCount - 3) == testG.deckCount[thisPlayer]){

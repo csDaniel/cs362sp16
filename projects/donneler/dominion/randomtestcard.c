@@ -90,7 +90,7 @@ int main() {
 
 		memcpy(&controlG, &G, sizeof(struct gameState));		// copy game state to test case
 
-		playSmithy(p, &G, smithyPos);							// call playSmithy w current player
+		playSmithy(&G, smithyPos);							// call playSmithy w current player
 
 		passedTest = smithyTestOracle(testNum, p, smithyPos, G, controlG);
 

@@ -55,6 +55,9 @@ int main() {
     
     // set card in position 0 to adventurer
     G.hand[thisPlayer][handpos] = adventurer;
+    // update coins in case adventurer replaced a treasure card in hand.
+    updateCoins(thisPlayer, &G, bonus);
+    
     //printHand(thisPlayer, &G);
     // count treasure cards in G hand
     for(i = 0; i < G.handCount[thisPlayer]; i++) {
@@ -139,21 +142,21 @@ int main() {
     }
     
     // ----------- Current player should receive exactly 5 coins --------------
-//    printf("Testing: Current player should receive exactly 5 coins.\n");
-//    if(testG.coins != GnewCoins) {
-//        if(testG.coins < GnewCoins) {
-//            num = GnewCoins - testG.coins;
-//            printf("\t**FAILED**: Current player has %d too few coins.\n\n", num);
-//            failedTests++;
-//        } else { // Current player has too many coins
-//            num = testG.coins - GnewCoins;
-//            printf("\t**FAILED**: Current player has %d too many coins.\n\n", num);
-//            failedTests++;
-//        }
-//    } else {
-//        printf("\tPASSED: Current player has the correct number of coins.\n\n");
-//        passedTests++;
-//    }
+    printf("Testing: Current player should receive exactly 5 coins.\n");
+    if(testG.coins != GnewCoins) {
+        if(testG.coins < GnewCoins) {
+            num = GnewCoins - testG.coins;
+            printf("\t**FAILED**: Current player has %d too few coins.\n\n", num);
+            failedTests++;
+        } else { // Current player has too many coins
+            num = testG.coins - GnewCoins;
+            printf("\t**FAILED**: Current player has %d too many coins.\n\n", num);
+            failedTests++;
+        }
+    } else {
+        printf("\tPASSED: Current player has the correct number of coins.\n\n");
+        passedTests++;
+    }
     
     // ----------- Current player should draw treasure cards from his own deck --------------
     printf("Testing: Current player should draw treasure cards from his own deck.\n");

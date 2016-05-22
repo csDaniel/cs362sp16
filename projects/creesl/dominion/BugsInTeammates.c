@@ -1,5 +1,6 @@
 /*
 Bugs in teammates' code.
+Assignement 5
 
 Teammate 1 - johnchri
 Common cards refactored to test: smithy, adventurer
@@ -8,7 +9,6 @@ Smithy
 Test: cardtest1 - smithy
 	Player should have 3 more cards: FAIL
 	Should be 3 less cards in player's pile: FAIL
-	2 should be 3
 
 Report
 Title: Smithy card not effecting precisely 3 cards

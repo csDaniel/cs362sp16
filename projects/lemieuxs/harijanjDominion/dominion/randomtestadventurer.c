@@ -1,114 +1,153 @@
 #include "dominion.h"
-#include <stdlib.h>
+#include "dominion_helpers.h"
+#include <string.h>
 #include <stdio.h>
 #include <assert.h>
-#include <math.h>
-#include <time.h>
 #include "rngs.h"
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
 
-#define MAX_TESTS 2000
+int myAssert(int statement) {
+	if (statement != 0) {
+		printf("RESULT: PASSED\n");
+		return 0;
+	}
+	else {
+		printf("RESULT: FAILED\n");
+		return 1;
+	}
+}
 
-int main () {
+int checkAdventurer(struct gameState *game, int thisPlayer) {
+	int r, i, treasureBefore = 0, treasureAfter = 0, adventurerFound = 0, numFails = 0;
+	struct gameState testGame;
 
-  srand(time(NULL));
+	game->whoseTurn = thisPlayer;
 
-  int i; 
-  int j; 
-  int player;
-  int numberPlayer;
-  int handCount; 
-  int deckCount;
-  int discardCount;
-  int seed;
+	memcpy(&testGame, game, sizeof(struct gameState));
 
-  int k[10] = {adventurer, council_room, feast, gardens, mine,
-         remodel, smithy, village, baron, great_hall};
 
-  struct gameState G;
+	// keep track of how many treasure cards are in hand before
+	for (i = 0; i < game->handCount[thisPlayer]; ++i) {
+		if (game->hand[thisPlayer][i] == copper || game->hand[thisPlayer][i] == silver || game->hand[thisPlayer][i] == gold)
+			treasureBefore++;
+	}
 
-  printf ("Random Test: Adventurer Card.\n");
 
-  for (i = 0; i < MAX_TESTS; i++) {
-    
-    numberPlayer = (rand() % 4) + 1; // Range: 1 - 4 players
+	r = cardEffect(adventurer, 0, 0, 0, game, 0, 0);
+	printf("Checking that cardEffect returns 0:\n");
+	numFails += myAssert(r == 0);
 
-    player = rand() % numberPlayer;
 
-    seed = rand();
+	printf("Checking +2 treasure:\n");
+	// check that there are two more treasure in hand than there were before
+	for (i = 0; i < game->handCount[thisPlayer]; ++i) {
+		if (game->hand[thisPlayer][i] == copper || game->hand[thisPlayer][i] == silver || game->hand[thisPlayer][i] == gold)
+			treasureAfter++;
+	}
 
-    initializeGame(numberPlayer, k, seed, &G);
+	numFails += myAssert(treasureBefore + 2 == treasureAfter);
 
-    G.deckCount[player] = rand() % MAX_DECK;
-    G.discardCount[player] = rand() % MAX_DECK;
-    G.handCount[player] = rand() % MAX_HAND;
-    G.whoseTurn = player;
 
-    deckCount = G.deckCount[player];
-    discardCount = G.discardCount[player];
-    handCount = G.handCount[player];
+	printf("Checking discardCount and deckCount:\n");
+	numFails += myAssert(game->discardCount[thisPlayer] + game->deckCount[thisPlayer] == testGame.discardCount[thisPlayer] + testGame.deckCount[thisPlayer] - 2);
 
-    //Need to add stuff here
-    for(j = 0; j < deckCount; j++){
-      G.deck[player][j] = rand() % (treasure_map);
-    }
+	// check that the adventurer card has been added to played pile
+	printf("Checking that Adventurer has been added to played pile:\n");
+	for (i = 0; i < game->playedCardCount; ++i) {
+		if (game->playedCards[i] == adventurer)
+			adventurerFound = 1;
+	}
 
-    for(j = 0; j < discardCount; j++){
-      G.discard[player][j] = rand() % (treasure_map);
-    }
+	numFails += myAssert(adventurerFound == 1);
 
-    for(j = 0; j < handCount; j++){
-      G.hand[player][j] = rand() % (treasure_map);
-    }
+	printf("Checking that playedCardCount has been incremented by 1:\n");
 
-    if (seed % 3 == 0) {
-      G.deckCount[player] = 0;
-    }
+	numFails += myAssert(game->playedCardCount == testGame.playedCardCount + 1);
 
-    // TC stands for Treasure Card
-    int deckTC_before = 0;
-    int handTC_before = 0;
-    int deckTC_after = 0;
-    int handTC_after = 0;
+	printf("\nTesting other players' state:\n");
 
-    // Count # of Treasure Card BEFORE Adventurer
-    for (j = 0; j < G.handCount[player]; j++) {
-      if (G.hand[player][j] == copper || G.hand[player][j] == silver || G.hand[player][j] == gold) {
-        handTC_before += 1;
-      }
-    }
-    for (j = 0; j < G.deckCount[player]; j++) {
-      if (G.deck[player][j] == copper || G.deck[player][j] == silver || G.deck[player][j] == gold) {
-        deckTC_before += 1;
-      }
-    }
+	// check that other players' state hasn't been modified
 
-    cardEffect(adventurer, 0, 0, 0, &G, 0, NULL);
+	// Check other players' state
+	for (i = 0; i < game->numPlayers; ++i) {
+		if (i != thisPlayer) {
+			printf("\nChecking Player Number %d:\n", i);
 
-    // Count # of Treasure Card AFTER Adventurer
-    for (j = 0; j < G.handCount[player]; j++) {
-      if (G.hand[player][j] == copper || G.hand[player][j] == silver || G.hand[player][j] == gold) {
-        handTC_after += 1;
-      }
-    }
-    for (j = 0; j < G.deckCount[player]; j++) {
-      if (G.deck[player][j] == copper || G.deck[player][j] == silver || G.deck[player][j] == gold) {
-        deckTC_after += 1;
-      }
-    }
+			printf("Checking handCount\n");
+			numFails += myAssert(game->handCount[i] == testGame.handCount[i]);
 
-    if (G.handCount[player] != (handCount + 2)) {
-      printf("FAIL to draw 2 cards!\n");
-    }  
+			printf("Checking deckCount\n");
+			numFails += myAssert(game->deckCount[i] == testGame.deckCount[i]);
 
-    if (deckTC_after != (deckTC_before - 2)) {
-      printf("DECK: Treasure Cards didn't decrease by 2.\n");
-    }
+			printf("Checking discardCount\n");
+			numFails += myAssert(game->discardCount[i] == testGame.discardCount[i]);
+		}
+	}
 
-    if (handTC_after != (handTC_before + 2)) {
-      printf("HAND: Treasure Cards didn't increase by 2\n");
-    }
-  }
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		numFails += myAssert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
 
-  printf("\nTEST FOR ADVENTURER CARD COMPLETE!\n");
-  return 0;
+	printf("Number of failures during this function call: %d\n", numFails);
+
+
+	return numFails;
+}
+
+
+
+int main() {
+
+	struct gameState G;
+
+
+	int n, i, p;
+
+	int numFails = 0;
+
+	printf("Random Tester: Testing Adventurer Card\n");
+	
+	srand(time(NULL));
+
+	for (n = 0; n < 2000; ++n) {
+		printf("******************************************************************\n\n");
+		printf("\nTEST NUMBER %d\n\n", n + 1);
+
+		for (i = 0; i < sizeof(struct gameState); i++) {
+			((char*)&G)[i] = rand() % 256 + 1;
+		}
+
+		G.numPlayers = 3;
+		G.playedCardCount = 0;
+
+		p = rand() % G.numPlayers;
+		G.deckCount[p] = rand() % MAX_DECK + 1;
+		G.discardCount[p] = rand() % MAX_DECK + 1;
+		G.handCount[p] = rand() % MAX_HAND + 1;
+
+		printf("Player: %d\n", p);
+
+		for (i = 0; i < G.deckCount[p]; ++i) {
+			G.deck[p][i] = rand() % treasure_map + 1;
+		}
+
+		for (i = 0; i < G.discardCount[p]; ++i) {
+			G.discard[p][i] = rand() % treasure_map + 1;
+		}
+
+		for (i = 0; i < G.handCount[p]; ++i) {
+			G.hand[p][i] = rand() % treasure_map + 1;
+		}
+
+		numFails += checkAdventurer(&G, p);
+
+	}
+
+	printf("\nTotal Number of Failures: %d\n\n\n", numFails);
+
+	return 0;
 }

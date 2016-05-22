@@ -59,6 +59,7 @@ void council_roomTest(){
 	}
 
 	discardCard(0, 1, &compareGame, 0);
+	printResults(&game, &compareGame);
 
 	printf("+++++ Testing game vs compare state for player 2. +++++\n");
 	printf("Comparing player 2 in game vs compare game. \n");

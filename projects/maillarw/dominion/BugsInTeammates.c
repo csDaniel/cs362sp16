@@ -18,6 +18,7 @@ run in the tests.
 	
 Number: 1.1
 Function: smithy_function()
+Priority: Severe
 Effect: The player's hand count does not match the expected hand count after playing the smithy card
 Possible location: Line 717: the discardCard function is being passed the incorrect player's 
 location
@@ -34,6 +35,7 @@ Failed
 
 Number: 1.2
 Function: council_room_function()
+Priority: Severe
 Effect: The player's number of buys does not increase by 1
 Possible location: Line 658: The number of buys is incremented by a predetermined amount that may 
 not equal 1
@@ -57,8 +59,9 @@ this was easily remedied).
 
 Number: 2.1
 Function: scoreFor()
+Priority: Severe
 Effect: The score of having one of every card in the player's deck and an empty hand and discard 
-pile returns a value of 0 when it should be 11
+pile returns a value of 0 when it should be 12
 Possible location: Line 444: The deck is iterated through up to state->discardCount[player] when it 
 should
 	go up to state->deckCount[player]
@@ -68,12 +71,13 @@ This was determined based on the fact that the scoreFor() failed the following t
 --------Unit Test 3: Test 4: Deck that has one of every card ---------
 
 Failed
-Count is 0 but should be 11
+Count is 0 but should be 12
 	
 *** Teammate 2: Bug 2 ***
 
 Number: 2.2
 Function: playSmithy()
+Priority: Severe
 Effect: Player's hand count does not match what it should be. 
 Possible location: Line 649: The comment says that 3 cards are added to the hand upon playing 
 smithy, but the iterator that adds the cards only goes up to 2.
@@ -150,17 +154,17 @@ Passed
 --------Test 2: Hand that has one of every card, empty deck ---------
 
 Failed
-Count is 10 but should be 11
+Count is 10 but should be 12
 
 --------Test 3: Discard that has one of every card, empty deck ---------
 
 Failed
-Count is -7 but should be 11
+Count is -7 but should be 12
 
 --------Test 4: Deck that has one of every card ---------
 
 Failed
-Count is 0 but should be 11
+Count is 0 but should be 12
 
 
 ************************    Unit Test 4: Testing fullDeckCount()     **********************
@@ -510,17 +514,17 @@ Passed
 --------Test 2: Hand that has one of every card, empty deck ---------
 
 Failed
-Count is 10 but should be 11
+Count is 10 but should be 12
 
 --------Test 3: Discard that has one of every card, empty deck ---------
 
 Failed
-Count is -7 but should be 11
+Count is -7 but should be 12
 
 --------Test 4: Deck that has one of every card ---------
 
 Failed
-Count is 0 but should be 11
+Count is 0 but should be 12
 
 
 ************************    Unit Test 4: Testing fullDeckCount()     **********************

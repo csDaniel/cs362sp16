@@ -1,105 +1,78 @@
-/*
-Author: Ryan Peters
-Date: 04/21/16
-Description: Unit test for playAdventurer().  Test the adventure card effect.
-Test for eit code 0.  Test that two cards are added to player's hand.  Tests 
-if treasure cards are added to hand.
-*/
+/* -----------------------------------------------------------------------
+ This unit test will test the adventeruer card in dominion.c  
+we will test that after the adventeruer card is played a card is discarded and two cards are drawn
+ Created by James Guerra
+ 
+ * -----------------------------------------------------------------------
+ */
 
-#include<stdio.h>
-#include<string.h>
 #include "dominion.h"
+#include "dominion_helpers.h"
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
+#include "rngs.h"
 
-void testPlayAdventurer()
-{
-	int seed = 100;
-	int k[10] = {adventurer, council_room, feast, gardens, mine,
-                remodel, smithy, village, baron, great_hall};
-	struct gameState state;
-	int r;
-	int i;
-	int numPlayer = 2;
-	int player;
-	
-	/*Tests that two cards are in the players hand*/
-	memset(&state, 0, sizeof(struct gameState));  
-    initializeGame(numPlayer, k, seed, &state);
-	player = 1;	
-	state.handCount[player] = 3;
-	r = playAdventurer(player, &state);
-	if(state.handCount[player] == 5)
-		printf("playAdventurer: PASS two cards added to player hand.\n");
-	else
-		printf("playAdventurer: FAIL two cards added to player hand.\n");
-	if(r == 0)
-		printf("playAdventurer: PASS exit code 0.\n");
-	else
-		printf("playAdventurer: FAIL exit code 0.\n");
-	
-	/*Check is treasure is added to hand*/
-	memset(&state, 0, sizeof(struct gameState));   
-    initializeGame(numPlayer, k, seed, &state);
-	int treasureAdded = 0;
-	player = 1;	
-	state.handCount[player] = 3;  //add cards that are not treasure cards.
-	for(i = 0; i < 3; i++)
-	{
-		state.hand[player][i] = adventurer;
-	}
-	r = playAdventurer(player, &state);
-	for(i = 0; i < state.handCount[player]; i++)
-	{
-		if(state.hand[player][i] == copper || state.hand[player][i] == silver || state.hand[player][i] == gold)
-		{
-			treasureAdded++;
-		}
-	}
-	if(treasureAdded == 2)
-		printf("playAdventurer: PASS draw two treasure cards.\n");
-	else
-		printf("playAdventurer: FAIL draw two treasure cards.\n");
-	
-	/*Test other players do not draw cards*/
-	player = 1;	
-	state.handCount[player] = 3;
-	state.deckCount[player] = 10;
-	state.handCount[0] = 3;
-	state.deckCount[0] = 10;
-	state.playedCardCount = 0;
-	r = playAdventurer(player, &state);
-	if(state.handCount[0] == 3)
-		printf("playAdventurer: PASS other player did not draw card.\n");
-	else
-		printf("playAdventurer: FAIL other player did not draw card.\n");
-	if(state.deckCount[0] == 10)
-		printf("playAdventurer: PASS other player did not draw card.\n");
-	else
-		printf("playAdventurer: FAIL other player did not draw card.\n");
-	
-	/*Test palyers discards cards*/
-	player = 1;	
-	state.handCount[player] = 3;
-	state.deckCount[player] = 10;
-	state.handCount[0] = 3;
-	state.deckCount[0] = 10;
-	state.playedCardCount = 0;
-	state.discardCount[player] = 0;
-	r = playAdventurer(player, &state);
-	if(state.discardCount[player] > 0)
-		printf("playAdventurer: PASS player discarded cards.\n");
-	else
-		printf("playAdventurer: FAIL player discarded cards.\n");
-	for(i = 0; i < state.discardCount[player]; i++)
-	{
-		if(state.discard[player][i] == copper || state.discard[player][i] == silver || state.discard[player][i] == gold)
-			printf("playAdventurer: FAIL treasure discarded.\n");
-		else
-			printf("playAdventurer: PASS treasure not discarded.\n");
-	}
-}	
+// set NOISY_TEST to 0 to remove printfs from output
+#define NOISY_TEST 1
 
-int main(int argc, char *argv[])
-{
-    testPlayAdventurer();
+int main() {
+    int j;
+    int seed = 1000;
+    int numPlayer = 2;
+    int maxBonus = 10;
+    int p, r, handCount;
+    int bonus;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G;
+    int maxHandCount = 5;
+    int pass =0;
+
+    printf ("TESTING adventeruer Card:\n"); //handpos = 6 in k
+   
+            
+
+				p = 0;
+				handCount =0;
+             
+                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+                G.handCount[p] = handCount;                 // set the number of cards on hand
+                gainCard(adventurer, &G, 2, p);
+				handCount++;
+                cardEffect(adventurer, 0, 0, 0, &G, G.hand[p][0], 0);
+#if (NOISY_TEST == 1)
+                printf("G.handCount = %d, expected = %d\n", G.handCount[p], handCount + 1); //adventeruer card should have 2 added
+#endif
+                if(G.handCount[p] == handCount + 1){ // check if the number of cards is correct
+					printf("Test 1 passed, expected card number in hand \n");                
+				}
+				else{
+					pass = 1;
+					printf("Test 1 failed, expected card number not found in hand \n");
+				}
+				//check player 2 hand
+				if(G.handCount[p+1] == 0){ // check if the number of cards is correct
+					printf("Test 2 passed, expected card number in hand player 2 \n");                
+				}
+				else{
+					pass = 1;
+					printf("Test 2 failed, expected card number not found in hand player 2\n");
+				}
+				for(j=0; j<G.handCount[p]; j++){
+				if(G.hand[p][j] == copper || G.hand[p][j] == silver || G.hand[p][j] == gold)
+				{
+					if(j+1 == G.handCount[p])
+					printf("Test 3 passed, only treasure cards were drawn and kept \n");
+				}
+				else{
+					printf("Test 3 failed, non-treasure card in hand \n");
+					pass =1;
+					break;
+				} }
+       if(pass == 0){
+    printf("All tests passed!\n");
+	   }
     return 0;
 }

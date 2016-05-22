@@ -1,108 +1,150 @@
 #include "dominion.h"
-#include <stdlib.h>
+#include "dominion_helpers.h"
+#include <string.h>
 #include <stdio.h>
 #include <assert.h>
-#include <math.h>
-#include <time.h>
 #include "rngs.h"
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
 
-#define MAX_TESTS 2000
 
-int main () {
+int myAssert(int statement) {
+	if (statement != 0) {
+		printf("RESULT: PASSED\n");
+		return 0;
+	}
+	else {
+		printf("RESULT: FAILED\n");
+		return 1;
+	}
+}
 
-  srand(time(NULL));
+int checkCouncilRoom(struct gameState *game, int thisPlayer) {
+	int r, i, numFails = 0, deckCountBefore;
+	struct gameState testGame;
+	game->whoseTurn = thisPlayer;
 
-  int i; 
-  int j;
-  int k;
-  int player;
-  int numberPlayer;
-  int handCount; 
-  int deckCount;
-  int discardCount;
-  int seed;
-  int numberOfCard[4];
-  int notIncrease = 0;
+	deckCountBefore = game->deckCount[thisPlayer];
 
-  int cards[10] = {adventurer, council_room, feast, gardens, mine,
-         remodel, smithy, village, baron, great_hall};
+	memcpy(&testGame, game, sizeof(struct gameState));
 
-  struct gameState G;
+	r = cardEffect(council_room, 0, 0, 0, game, 0, 0);
+	printf("Checking that cardEffect returns 0:\n");
 
-  printf ("Random Test: Smithy Card.\n");
+	numFails += myAssert(r == 0);
 
-  for (i = 0; i < MAX_TESTS; i++) {
-    
-    numberPlayer = (rand() % 4) + 1; // Range: 1 - 4 players
 
-    player = rand() % numberPlayer;
+	printf("Checking handCount:\n");
+	numFails += myAssert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer] + 3);
 
-    printf("Number of player playing: %d\n",numberPlayer);
-    printf("YOU are playing as player number : %d\n",player);
+	printf("deckCount now = %d\n", game->deckCount[thisPlayer]);
 
-    seed = rand();
 
-    initializeGame(numberPlayer, cards, seed, &G);
+	if (deckCountBefore >= 4) {
+		printf("Checking deckCount:\n");
+		numFails += myAssert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer] - 4);
 
-    // Set hand cards and deck cards for each player
-    for (k = 0; k < numberPlayer; k++) {
-      G.deckCount[k] = rand() % MAX_DECK;
-      G.discardCount[k] = rand() % MAX_DECK;
-      G.handCount[k] = rand() % MAX_HAND;
-      for(j = 0; j < G.handCount[k]; j++){
-        G.hand[k][j] = rand() % (treasure_map);
-      }
-      for(j = 0; j < G.deckCount[k]; j++){
-        G.deck[k][j] = rand() % (treasure_map);
-      }
-    }
+		printf("Checking discardCount:\n");
+		numFails += myAssert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+	}
+	else {
+		// account for reshuffling the discard pile
+		printf("Checking deckCount and discardCount:\n");
+		numFails += myAssert(game->discardCount[thisPlayer] + game->deckCount[thisPlayer] == testGame.discardCount[thisPlayer] + testGame.deckCount[thisPlayer] - 4);
+	}
+	printf("Checking buys:\n");
+	numFails += myAssert(game->numBuys == testGame.numBuys + 1);
 
-    G.numPlayers = numberPlayer;
-    G.whoseTurn = player;
 
-    // copy state variable
-    deckCount = G.deckCount[player];
-    handCount = G.handCount[player];
-    printf("<----- BEFORE SMITHY ----->\n");
-    printf("Your total hand cards: %d\n",handCount);
-    printf("Your total deck cards: %d\n",deckCount);
+	printf("Checking that the card has been added to played pile:\n");
+	numFails += myAssert(game->playedCardCount == testGame.playedCardCount + 1);
 
-    // count number of card each player
-    for (k = 0; k < numberPlayer; k++) {
-      numberOfCard[k] = G.handCount[k];
-      printf("Player %d hand cards: %d\n",k, numberOfCard[k]);
-    }
+	printf("\nTesting other players' state:\n");
+	// Check other players' state
+	for (i = 0; i < game->numPlayers; ++i) {
+		if (i != thisPlayer) {
+			printf("\nChecking Player Number %d:\n", i);
 
-    cardEffect(smithy, 0, 0, 0, &G, 0, 0);
+			printf("Checking handCount\n");
+			numFails += myAssert(game->handCount[i] == testGame.handCount[i] + 1);
 
-    printf("<----- AFTER SMITHY ----->\n");
-    printf("Your total hand cards: %d\n",G.handCount[player]);
-    printf("Your total deck cards: %d\n",G.deckCount[player]);
-    
-    for (k = 0; k < numberPlayer; k++) {
-      numberOfCard[k] = G.handCount[k];
-      printf("Player %d hand cards: %d\n",k, numberOfCard[k]);
-    }
+			printf("Checking deckCount\n");
+			numFails += myAssert(game->deckCount[i] == testGame.deckCount[i] - 1);
 
-    // check if current player gain 3 cards
-    if (G.handCount[player] != (handCount + 3)) {
-      printf("Current player FAILS to gain 3 cards!\n");
-    }  
+			printf("Checking discardCount\n");
+			numFails += myAssert(game->discardCount[i] == testGame.discardCount[i]);
+		}
+	}
 
-    // check if current player gain 3 cards from his/her deck
-    if (G.deckCount[player] != deckCount - 3) {
-      printf("Current player's deck FAILS to reduced by 3 cards!\n");
-    }
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		numFails += myAssert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
 
-    for (k = 0; k < numberPlayer; k++) {
-      if ((k != player) && (G.handCount[k] == numberOfCard[k])) {
-        notIncrease += 1;
-      }
-    }
-    printf("There are %d players from %d number of players (exclude YOU) that's not effected by smithy.\n\n", notIncrease, numberPlayer-1);
-    notIncrease = 0;
-  }
-  
-  printf("\nTEST FOR SMITHY CARD COMPLETE!\n");
-  return 0;
+	printf("Number of failures during this function call: %d\n", numFails);
+
+
+	return numFails;
+}
+
+
+
+int main() {
+
+	int n, i, j, p;
+
+	int numFails = 0;
+
+	struct gameState G;
+
+
+	printf("Random Tester: Testing Council Room Card\n");
+
+	srand(time(NULL));
+
+	for (n = 0; n < 2000; ++n) {
+		printf("******************************************************************\n\n");
+		printf("\nTEST NUMBER %d\n\n", n + 1);
+
+		for (i = 0; i < sizeof(struct gameState); i++) {
+			((char*)&G)[i] = rand() % 256 + 1;
+		}
+
+		G.numPlayers = 3;
+		G.playedCardCount = 0;
+		G.numBuys = 0;
+
+		// generate random state for all players
+		for (j = 0; j < G.numPlayers; ++j) {
+			G.deckCount[j] = rand() % MAX_DECK + 1;
+			G.discardCount[j] = rand() % MAX_DECK + 1;
+			G.handCount[j] = rand() % MAX_HAND + 1;
+
+			for (i = 0; i < G.deckCount[j]; ++i) {
+				G.deck[j][i] = rand() % treasure_map + 1;
+			}
+
+			for (i = 0; i < G.discardCount[j]; ++i) {
+				G.discard[j][i] = rand() % treasure_map + 1;
+			}
+
+			for (i = 0; i < G.handCount[j]; ++i) {
+				G.hand[j][i] = rand() % treasure_map + 1;
+			}
+		}
+
+		p = rand() % G.numPlayers;
+		printf("Player: %d\n", p);
+
+
+		numFails += checkCouncilRoom(&G, p);
+
+	}
+
+	printf("\nTotal Number of Failures: %d\n\n\n", numFails);
+
+
+	return 0;
 }
