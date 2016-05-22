@@ -257,6 +257,7 @@ int playCard(int handPos, int choice1, int choice2, int choice3, struct gameStat
   //play card
   if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
     {
+      discardCard(handPos, state->whoseTurn, state, 1);
       return -1;
     }
 	
@@ -664,8 +665,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      playAdventurer(currentPlayer, state);
-      return 0;
+      return playAdventurer(state);
 			
     case council_room:
       //+4 Cards
@@ -748,8 +748,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return -1;
 			
     case mine:
-      playMine(currentPlayer, state, choice1, choice2, handPos);
-      return 0;
+      return playMine(state, choice1, choice2, handPos);
 			
     case remodel:
       j = state->hand[currentPlayer][choice1];  //store card we will trash
@@ -778,7 +777,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      playSmithy(currentPlayer, state, handPos);
+      return playSmithy(state, handPos);
 
 		
     case village:
@@ -1046,13 +1045,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case cutpurse:
-      playCutpurse(currentPlayer, state, handPos);
-      return 0;
+      return playCutpurse(state, handPos);
 
 		
     case embargo: 
-      playEmbargo(currentPlayer, state, handPos, choice1);
-      return 0;
+      return playEmbargo(state, handPos, choice1);
 		
     case outpost:
       //set outpost flag
@@ -1124,39 +1121,40 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
 {
-	
-  //if card is not trashed, added to Played pile 
-  if (trashFlag < 1)
-    {
-      //add card to played pile
-      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
-      state->playedCardCount++;
-    }
-	
-  //set played card to -1
-  state->hand[currentPlayer][handPos] = -1;
-	
-  //remove card from player's hand
-  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
-    {
-      //reduce number of cards in hand
-      state->handCount[currentPlayer]--;
-    }
-  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
-    {
-      //reduce number of cards in hand
-      state->handCount[currentPlayer]--;
-    }
-  else 	
-    {
-      //replace discarded card with last card in hand
-      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
-      //set last card to -1
-      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
-      //reduce number of cards in hand
-      state->handCount[currentPlayer]--;
-    }
-	
+	if (state->handCount[currentPlayer] > 0 && (handPos >= 0) && (handPos < state->handCount[currentPlayer])) {
+    //if card is not trashed, added to Played pile 
+    if (trashFlag < 1)
+      {
+        //add card to played pile
+        state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
+        state->playedCardCount++;
+      }
+  	
+    //set played card to -1
+    state->hand[currentPlayer][handPos] = -1;
+  	
+    //remove card from player's hand
+    if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+      {
+        //reduce number of cards in hand
+        state->handCount[currentPlayer]--;
+      }
+    else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+      {
+        //reduce number of cards in hand
+        state->handCount[currentPlayer]--;
+      }
+    else 	
+      {
+        //replace discarded card with last card in hand
+        state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+        //set last card to -1
+        state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+        //reduce number of cards in hand
+        state->handCount[currentPlayer]--;
+      }
+	}
+
   return 0;
 }
 
@@ -1242,32 +1240,40 @@ int updateCoins(int player, struct gameState *state, int bonus)
 * you get just that one Treasure.
 * Source: http://dominioncg.wikia.com/wiki/Adventurer
 ********************************************************************/
-int playAdventurer(int currentPlayer, struct gameState *state)
+int playAdventurer(struct gameState *state)
 {
-  int drawntreasure;
+  int currentPlayer = state->whoseTurn;
+  int drawntreasure = 0;
   int cardDrawn;
   int temphand[MAX_HAND];
   int z = 0;  // this is the counter for the temp hand
+  int allCards = state->deckCount[currentPlayer] + state->handCount[currentPlayer];
 
-  while(drawntreasure<=2)
+  while(drawntreasure < 2)
   {
-    if (state->deckCount[currentPlayer] < 1)
-    {//if the deck is empty we need to shuffle discard and add to deck
-      shuffle(currentPlayer, state);
-    }
+    if (allCards != 0) {
+      if (state->deckCount[currentPlayer] < 1)
+      {//if the deck is empty we need to shuffle discard and add to deck
+        shuffle(currentPlayer, state);
+      }
 
-    drawCard(currentPlayer, state);
-    
-    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-    
-    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-      drawntreasure++;
-    
-    else
-    {
-      temphand[z]=cardDrawn;
-      state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-      z++;
+      drawCard(currentPlayer, state);
+      
+      cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+      
+      if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+        drawntreasure++;
+      
+      else
+      {
+        temphand[z]=cardDrawn;
+        state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+        z++;
+      }
+      allCards--;
+    }
+    else {
+      break;
     }
   }
   
@@ -1284,15 +1290,16 @@ int playAdventurer(int currentPlayer, struct gameState *state)
 * Rules for Smithy: Draw three cards.
 * Source: http://dominioncg.wikia.com/wiki/Smithy
 ********************************************************************/
-int playSmithy(int currentPlayer, struct gameState *state, int handPos)
+int playSmithy(struct gameState *state, int handPos)
 {
+  int currentPlayer = state->whoseTurn;
   int i;
   //+3 Cards
-  for (i = 0; i <= 3; i++)
+  for (i = 0; i < 3; i++)
   {
-    drawCard(currentPlayer, state);
-    return 0;
+    drawCard(currentPlayer, state);   
   }
+  return 0;
 }
 
 /********************************************************************
@@ -1301,22 +1308,20 @@ int playSmithy(int currentPlayer, struct gameState *state, int handPos)
 * gains a Curse card per Embargo token on that pile.
 * Source: http://dominioncg.wikia.com/wiki/Embargo
 ********************************************************************/
-int playEmbargo(int currentPlayer, struct gameState *state, int handPos, int choice1)
+int playEmbargo(struct gameState *state, int handPos, int choice1)
 {
   //+2 Coins
    state->coins = state->coins + 2;
       
   //see if selected pile is in play
-  if ( state->supplyCount[choice1] == -1 )
+  if ( state->supplyCount[choice1] == 0 )
   {
     return -1;
   }
   
   //add embargo token to selected supply pile
   state->embargoTokens[choice1]++;
-  
-  //trash card
-  discardCard(handPos, currentPlayer, state, 1);    
+   
   return 0;
 }
 
@@ -1325,8 +1330,9 @@ int playEmbargo(int currentPlayer, struct gameState *state, int handPos, int cho
 * Treasure card costing up to 3 Coins more; put it into your hand.
 * Source: http://dominioncg.wikia.com/wiki/Mine
 ********************************************************************/
-int playMine(int currentPlayer, struct gameState *state, int choice1, int choice2, int handPos)
+int playMine(struct gameState *state, int choice1, int choice2, int handPos)
 {
+  int currentPlayer = state->whoseTurn;
   int i;
   int j;
 
@@ -1342,15 +1348,12 @@ int playMine(int currentPlayer, struct gameState *state, int choice1, int choice
     return -1;
   }
 
-  if ( (getCost(state->hand[currentPlayer][choice1])) > getCost(choice2) )
+  if ( (getCost(state->hand[currentPlayer][choice1]) + 3) < getCost(choice2) )
   {
     return -1;
   }
 
   gainCard(choice2, state, 2, currentPlayer);
-
-  //discard card from hand
-  discardCard(handPos, currentPlayer, state, 0);
 
   //discard trashed card
   for (i = 0; i < state->handCount[currentPlayer]; i++)
@@ -1369,13 +1372,14 @@ int playMine(int currentPlayer, struct gameState *state, int choice1, int choice
 * card (or reveals a hand with no Copper).
 * Source: http://dominioncg.wikia.com/wiki/Cutpurse
 ********************************************************************/
-int playCutpurse(int currentPlayer, struct gameState *state, int handPos)
+int playCutpurse(struct gameState *state, int handPos)
 {
+  int currentPlayer = state->whoseTurn;
   int i;
   int j;
   int k;
 
-  updateCoins(currentPlayer, state, 3);
+  updateCoins(currentPlayer, state, 2);
   
   for (i = 0; i < state->numPlayers; i++)
   {
@@ -1383,12 +1387,12 @@ int playCutpurse(int currentPlayer, struct gameState *state, int handPos)
     {
       for (j = 0; j < state->handCount[i]; j++)
       {
-        if (state->hand[i][j] == gold)
+        if (state->hand[i][j] == copper)
         {
           discardCard(j, i, state, 0);
           break;
         }
-        if (j == state->handCount[i])
+        if (j == state->handCount[i] - 1)
         {
           for (k = 0; k < state->handCount[i]; k++)
           {
@@ -1399,10 +1403,7 @@ int playCutpurse(int currentPlayer, struct gameState *state, int handPos)
           break;
         }   
       }      
-    }  
-    //discard played card from hand
-    discardCard(handPos, currentPlayer, state, 0);      
-    
+    }    
   }       
   return 0;  
 }

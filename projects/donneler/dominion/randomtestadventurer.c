@@ -76,7 +76,7 @@ int main() {
 
 		memcpy(&controlG, &G, sizeof(struct gameState));		// copy game state to test case
 
-		playAdventurer(p, &G);									// call playAdventurer w current player
+		playAdventurer(&G);									// call playAdventurer w current player
 
 		passedTest = adventurerTestOracle(testNum, p, G, controlG);
 
