@@ -6,6 +6,9 @@
 
 // This is test of the village card / function from dominion.c
 
+// Method is called pVillage in Susan's implmentation.
+
+
 int main() {
   printf("*** Testing villageCardEffect *** \n");
 
@@ -18,7 +21,7 @@ int main() {
 
   // Test if card drawn from player's deck
   int expec_deck_count = game.deckCount[player] - 1;
-  villageCardEffect(player, 0, &game);
+  pVillage(player, 0, &game);
   if (expec_deck_count == game.deckCount[player]) {
     printf("Card correctly drawn from player's deck\n");
   } else {
@@ -29,7 +32,7 @@ int main() {
   game.hand[player][1] = village;
   game.hand[player][0] = smithy;
   game.handCount[player] = 2;
-  villageCardEffect(player, 1, &game);
+  pVillage(player, 1, &game);
   if (game.hand[player][1] != village) {
     printf("Card correctly discarded from player's hand\n");
   } else {
@@ -39,7 +42,7 @@ int main() {
 
   // Test if actions given to player
   game.numActions = 1;
-  villageCardEffect(player, 1, &game);
+  pVillage(player, 1, &game);
   if (game.numActions == 3) {
     printf("Actions correctly awarded to player.\n");
   } else {
@@ -49,7 +52,7 @@ int main() {
   // Test if other players are unaffected.
   int orig_deck_count = game.deckCount[other_player];
   int orig_hand_count = game.handCount[other_player];
-  villageCardEffect(player, 0, &game);
+  pVillage(player, 0, &game);
   if (orig_deck_count == game.deckCount[other_player]) {
     printf("Other player's deck unaffected.\n");
   } else {
@@ -70,7 +73,7 @@ int main() {
   for (i = 0; i < 17; i++) {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
-  villageCardEffect(player, 0, &game);
+  pVillage(player, 0, &game);
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;

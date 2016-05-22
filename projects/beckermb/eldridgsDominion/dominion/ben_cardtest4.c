@@ -6,6 +6,7 @@
 
 
 // This is a test for the adventurer card / function from dominion.c
+// Method is called pAdventurer in susan's implementation.
 
 int main() {
   printf("*** Testing adventurerCardEffect *** \n");
@@ -19,7 +20,7 @@ int main() {
 
   //Test if two treatures added to hand with normal deck
   int handSize = game.handCount[player] + 1;
-  adventurerCardEffect(player, 0, &game);
+  pAdventurer(player, 0, &game);
   if (handSize == game.handCount[player]) {
     printf("Player hand size increased by one.\n");
   } else {
@@ -39,7 +40,7 @@ int main() {
   int orig_copp = fullDeckCount(player, copper, &game);
   int orig_silv = fullDeckCount(player, silver, &game);
   int orig_gold = fullDeckCount(player, gold, &game);
-  adventurerCardEffect(player, 0, &game);
+  pAdventurer(player, 0, &game);
   int new_copp = fullDeckCount(player, copper, &game);
   int new_silv = fullDeckCount(player, silver, &game);
   int new_gold = fullDeckCount(player, gold, &game);
@@ -51,7 +52,7 @@ int main() {
   // Test if other players are unaffected.
   int orig_deck_count = game.deckCount[other_player];
   int orig_hand_count = game.handCount[other_player];
-  villageCardEffect(player, 0, &game);
+  pAdventurer(player, 0, &game);
   if (orig_deck_count == game.deckCount[other_player]) {
     printf("Other player's deck unaffected.\n");
   } else {
@@ -72,7 +73,7 @@ int main() {
   for (i = 0; i < 17; i++) {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
-  adventurerCardEffect(player, 0, &game);
+  pAdventurer(player, 0, &game);
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;
