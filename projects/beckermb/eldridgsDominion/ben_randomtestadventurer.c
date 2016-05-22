@@ -127,7 +127,7 @@ int main() {
     int orig_disc_count = game.discardCount[other_player];
 
     //Run method
-    adventurerCardEffect(&game);
+    pAdventurer(&game);
 
     //Check postconditions
     int post_money_count_deck = moneyCountDeck(player, &game);
