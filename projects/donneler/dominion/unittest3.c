@@ -78,10 +78,16 @@ int main() {
 
 					// played card count incremented
 					//assert(G.playedCardCount == controlG.playedCardCount + 1); 
+
+					if (G.playedCardCount != controlG.playedCardCount + 1) {
+						printf("*******************************************************************\n");
+						printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
+						printf("\tPlayed card count = %d, Expected = %d\n", G.playedCardCount, controlG.playedCardCount + 1);
+					}
 				}
 				else {
 					//assert(G.handCount[p] == controlG.handCount[p]);	// check handcount didnt dec
-					if (G.handCount[p] != controlG.handCount[p] - 1) {
+					if (G.handCount[p] != controlG.handCount[p]) {
 						printf("*******************************************************************\n");
 						printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
 						printf("\tHandcount = %d, Expected = %d\n", G.handCount[p], controlG.handCount[p]);						
@@ -94,11 +100,7 @@ int main() {
 						printf("\tInvalid Handcount = %d\n", G.handCount[p]);						
 				}
 
-				if (G.playedCardCount != controlG.playedCardCount + 1) {
-					printf("*******************************************************************\n");
-					printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
-					printf("\tPlayed card count = %d, Expected = %d\n", G.playedCardCount, controlG.playedCardCount + 1);
-				}
+
 				
 				
 				for (i = 0; i < numPlayers; i++) {	// Check deck of all players
@@ -126,7 +128,7 @@ int main() {
 				handPos = maxHandCount;
 				discardCard(handPos, p, &G, 1); 					// Discard of first card with trash flag
 
-				if (handPos < handCount) {
+				if (handCount>0 && handPos >=0 && (handPos < handCount)) {
 					if (handCount > 0) {
 						assert(G.handCount[p] == controlG.handCount[p] - 1);	// check handcount decreased
 					}
@@ -156,7 +158,7 @@ int main() {
 					//assert(G.handCount[p] == controlG.handCount[p]);	//should not dec handCount
 					if (G.handCount[p] != controlG.handCount[p]) {
 						printf("*******************************************************************\n");
-						printf("Test player %d with %d card(s) in hand and %d cards in discard. Asked for an invalid card removal.\n", p, handCount, discardCount);
+						printf("Test player %d with %d card(s) in hand and %d cards in discard. Asked for an invalid card removal.\n", p, G.handCount[p], controlG.handCount[p]);
 						printf("\tHand count = %d, Expected = %d\n", G.handCount[p], controlG.handCount[p]);						
 					}
 				}
@@ -186,12 +188,18 @@ int main() {
 				discardCard(handPos, p, &G, 0); 		// Discard of a middle card with trash flag
 
 
-				if (handCount > 0) {
+				if (handCount > 0 && handPos >=0 && handPos < handCount) {
 					assert(G.handCount[p] == controlG.handCount[p] - 1);	// check handcount decreased
+
+					if (G.playedCardCount != controlG.playedCardCount + 1) {
+						printf("*******************************************************************\n");
+						printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
+						printf("\tPlayed card count = %d, Expected = %d\n", G.playedCardCount, controlG.playedCardCount + 1);
+					}
 				}
 				else {
 					//assert(G.handCount[p] == controlG.handCount[p]);	// check handcount didnt dec
-					if (G.handCount[p] != controlG.handCount[p] - 1) {
+					if (G.handCount[p] != controlG.handCount[p]) {
 						printf("*******************************************************************\n");
 						printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
 						printf("\tHandcount = %d, Expected = %d\n", G.handCount[p], controlG.handCount[p]);						
@@ -204,11 +212,7 @@ int main() {
 						printf("\tInvalid Handcount = %d\n", G.handCount[p]);						
 				}
 
-				if (G.playedCardCount != controlG.playedCardCount + 1) {
-					printf("*******************************************************************\n");
-					printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
-					printf("\tPlayed card count = %d, Expected = %d\n", G.playedCardCount, controlG.playedCardCount + 1);
-				}
+
 				
 				
 				for (i = 0; i < numPlayers; i++) {	// Check deck of all players
@@ -234,12 +238,18 @@ int main() {
 				discardCard(handPos, p, &G, 0); 		// Discard of last card without trash flag
 
 
-				if (handCount >= 0) {
+				if (handCount > 0 && handPos >= 0 && handPos < handCount) {
 					assert(G.handCount[p] == controlG.handCount[p] - 1);	// check handcount decreased
+
+					if (G.playedCardCount != controlG.playedCardCount + 1) {
+						printf("*******************************************************************\n");
+						printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
+						printf("\tPlayed card count = %d, Expected = %d\n", G.playedCardCount, controlG.playedCardCount + 1);
+					}
 				}
 				else {
 					//assert(G.handCount[p] == controlG.handCount[p]);	// check handcount didnt dec
-					if (G.handCount[p] != controlG.handCount[p] - 1) {
+					if (G.handCount[p] != controlG.handCount[p]) {
 						printf("*******************************************************************\n");
 						printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
 						printf("\tHandcount = %d, Expected = %d\n", G.handCount[p], controlG.handCount[p]);						
@@ -252,11 +262,7 @@ int main() {
 						printf("\tInvalid Handcount = %d\n", G.handCount[p]);						
 				}
 				
-				if (G.playedCardCount != controlG.playedCardCount + 1) {
-					printf("*******************************************************************\n");
-					printf("Test player %d with %d card(s) in hand and %d cards in discard.\n", p, handCount, discardCount);
-					printf("\tPlayed card count = %d, Expected = %d\n", G.playedCardCount, controlG.playedCardCount + 1);
-				}
+
 				
 				
 				for (i = 0; i < numPlayers; i++) {	// Check deck of all players

@@ -17,6 +17,7 @@
 
 
 import junit.framework.TestCase;
+import java.util.Random;
 
 
 
@@ -471,11 +472,91 @@ public class UrlValidatorTest extends TestCase {
 }
    public void testIsValid()
    {
-	   for(int i = 0;i<10000;i++)
-	   {
-		   
-	   }
-   }
+   
+   	   Random rand = new Random();
+   	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+   	   //strings of good and bad schemes
+          String goodSchemes[] = {"http://", "ftp://", "h3t://", "https://" };
+          int SchemeSize = goodSchemes.length;
+
+          String badSchemes [] = {"http;//", "ftp//", "http:", "fttp:/"};
+       
+          //Strings of good and bad authority sequences
+          String goodAuthority[] = {"www.google.com",  "reddit.com", "255.255.255.255"};
+          int AuthoritySize = goodAuthority.length;
+  
+          String badAuthority [] = {"192.270.222.134", "", "ww.google.com", "www.google.co"};
+        
+          //Strings of good and bad port sequences
+          String goodPort[] = {":3120", ":10", ":10000", "51234"};
+          int PortSize = goodPort.length;
+         
+          String badPort[] = {":badPort",":555p", ":p1234", "123-3"};
+      
+          //Strings of good and bad path sequences
+          String goodPath[] = {"/home", "/reset-table", "/showData/table", "/music/pop/mp3s"};
+          int PathSize = goodPath.length;
+          
+          String badPath [] = {"//home/", "/hello//", "=/", "//hello//"};
+    
+          //Strings of good and bad queries 
+          String goodQuery[] = {"?name=John", "?hello=goodbye&value1=value2", "?hello=he+llo", "?value1=123"};
+          int QuerySize = goodQuery.length;
+          
+          String badQuery [] = {"??!!??!!","!12345","=!/@4521", "?vv!=2"};
+   
+   	   Random randomSequence = new Random();
+          boolean result; 
+          boolean expected;
+          int randomNum;
+         
+          int part1,part2,part3,part4,part5;
+    
+          System.out.println("Tests Starting Now\n");
+          //Random Generator Loop for each part of the URL 
+          for(int i = 0;i<50;i++)
+          {
+        	  System.out.println("Test number " + (i+1) + "\n");
+              part1 = rand.nextInt(SchemeSize);
+              part2 = rand.nextInt(AuthoritySize);
+              part3 = rand.nextInt(PortSize);
+              part4 = rand.nextInt(PathSize);
+              part5 = rand.nextInt(QuerySize);
+           
+              if(rand.nextInt()%2 == 0){
+           	   expected = true;
+                  String scheme = goodSchemes[part1];
+                  String authority = goodAuthority[part2];
+                  String port = goodPort[part3];
+                  String path = goodPath[part4];
+                  String query = goodQuery[part5];
+                  result = urlVal.isValid(scheme + authority + port + path + query);
+                  System.out.println(scheme + authority + port + path + query);
+                  System.out.println("Return:" + result +" Expected:"+ expected);
+                  if (expected != result){
+                      System.out.println("\n\tERROR: Expected result does not match\n");
+                  }
+                  System.out.println("");
+          }
+              else{
+           	   expected = false;
+                  String scheme = badSchemes[part1];
+                  String authority = badAuthority[part2];
+                  String port = badPort[part3];
+                  String path = badPath[part4];
+                  String query = badQuery[part5];
+                  System.out.println(scheme + authority + port + path + query);
+                  result = urlVal.isValid(scheme + authority + port + path + query);
+                  System.out.println("Return:" + result +" Expected:"+ expected);
+                  if (expected != result){
+                      System.out.println("\n\tERROR: Expected result does not match\n");
+                  }
+                  System.out.println("");
+               }
+ 
+          }
+          System.out.println("End of testIsValid Testing\n");
+     }
    
    /*
    public void testAnyOtherUnitTest()
@@ -571,9 +652,9 @@ public class UrlValidatorTest extends TestCase {
 
    static ResultPair[] ports = 
 	   { 
-		   new ResultPair(":1024", true),
+		   new ResultPair(":1000", true),
+		   new ResultPair(":999", true),
 		   new ResultPair(":0", true),
-		   new ResultPair(":65535", true),
 		   new ResultPair(": ", false),
 		   new ResultPair(":Zero", false),
 		   new ResultPair(":755", true),

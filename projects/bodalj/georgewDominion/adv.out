@@ -1,0 +1,8 @@
+TESTING adventurer card
+Testing with treasures [gold] [gold]
+SUCCESS: [playAdventurer] [player: 2] Correct number of treasure cards gained
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 2] Correct number of treasure cards gained
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+Segmentation fault (core dumped)
+

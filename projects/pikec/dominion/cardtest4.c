@@ -25,6 +25,7 @@ int main (){
 	int otherPlayer = currentPlayer +1;
 	int i =0;
 	int bugFlag = 0;
+	int oCop = 0;
 
 	//set-up initial game board
 	int k[10]= {adventurer, smithy, village, cutpurse, feast, minion, remodel, mine, gardens, sea_hag};
@@ -81,20 +82,32 @@ int main (){
 		printf("FAILED: BUG #%d\n", bugFlag);
 	} 
 	
-	//assert that other player has all copper coin cards in hand removed
-	printf("Confim other player has no copper coin cards in hand");
-	for(i=0; i< post.handCount[otherPlayer]; i++){
-		printf("Hand card # %d is %d \n", i, post.hand[otherPlayer][i]);
-		if(post.hand[otherPlayer][i] != copper)
-			printf("PASSED\n");
+	//assert that other player has one copper coin cards in hand removed
+	printf("Confim other player has one copper coin cards in hand\n");
+	for (i=0; i < pre.handCount[otherPlayer];i++){
+		printf("Other player pre-hand #%d: %d\n", i, pre.hand[otherPlayer][i]);
+		if (pre.hand[otherPlayer][i]==copper){
+			oCop = 1;
+		}	
+	}
+	printf("ocop: %d \n", oCop);
+	if (oCop == 1)
+		printf("other player had a copper coin card\n");
+	else
+		printf ("other player had no copper coin card\n");
+	
+	if (oCop == 1){
+		printf("Check that one copper coin card was removed from other player pre hand: %d  post hand: %d \n",pre.handCount[otherPlayer], post.handCount[otherPlayer]);
+		if(pre.handCount[otherPlayer] == (post.handCount[otherPlayer]+1))
+				printf("PASSED\n");
 		else{
 			bugFlag++;
 			printf("FAILED: BUG# %d\n", bugFlag);
 		}			
-	}//end for
+	}
 		
 	//assert that removed copper coins are in played pile
-	printf("Confim copper cards are discarded into played pile.\n");
+	printf("Confim copper card of other player are discarded into played pile.\n");
 	for(i=pre.playedCardCount; i < (post.playedCardCount-1); i++){
 		printf("Played card # %d is %d. \n", i, post.playedCards[i]);
 		if(post.playedCards[i] == copper)
@@ -105,31 +118,15 @@ int main (){
 		}
 	}//end for
 		
-	//assert other player hand count is less if copper cards were removed
+	//assert other player hand count is less if copper card was removed
 	printf("Confirm that coin count decrease for other player.\n");
-	int flag = 0;
-	int n;
-	
-	for (n=0; n < post.handCount[otherPlayer]; n++){
-		if (pre.hand[otherPlayer][n] == copper){
-			flag = 1;
-			break;
-		}	
-	}//end for
-	if (flag == 1){
-		int preCopper = 0;
-		int k=0;
-		for (k=0; k < pre.handCount[otherPlayer]; k++){
-			if ( pre.hand[otherPlayer][k] == copper)
-				preCopper++;
-		}
-		
+	if (oCop == 1){
 		updateCoins(otherPlayer, &pre, 0);
 		int preOtherCoin = pre.coins;
 		updateCoins(otherPlayer, &post, 0);
 		int postOtherCoin = post.coins;
-		printf("Confirm other player coin count decreases with copper coin removal. pre coins: %d   copper coins: %d  post coin:%d \n", preOtherCoin, preCopper, postOtherCoin);
-		if((postOtherCoin + preCopper) == preOtherCoin)
+		printf("Confirm other player coin count decreases with copper coin removal. pre coins: %d  post coin:%d \n", preOtherCoin, postOtherCoin);
+		if((postOtherCoin + 1) == preOtherCoin)
 			printf("PASSED\n");
 		else{
 			bugFlag++;
