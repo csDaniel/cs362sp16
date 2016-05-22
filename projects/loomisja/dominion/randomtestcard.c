@@ -562,7 +562,7 @@ int main()
 		srand(seed);
 
 		/* get randomized input */
-		randomizeGameState(&pre, Kingdom, adventurer, &handpos);
+		randomizeGameState(&pre, Kingdom, CARDUNDERTEST, &handpos);
 
 		if (OUTPUTLEVEL > 1) printf("Input State: seed=%u numPlayers=%d whoseTurn=%d handpos=%d\n", seed, pre.numPlayers, pre.whoseTurn, handpos);
 

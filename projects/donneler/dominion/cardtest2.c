@@ -56,16 +56,11 @@ int main() {
 			G.hand[p][handCount - 1] = smithy;
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-			playSmithy(p, &G, handCount - 1);			// call playSmithy with current player
+			playSmithy(&G, handCount - 1);			// call playSmithy with current player
 
 			//check to see three cards were added
 			if(G.handCount[p] != controlG.handCount[p] + 3) {
 				printf("\tPlayer = %d, Handcount = %d, Expected handCount = %d\n", p, G.handCount[p], controlG.handCount[p] + 3);
-			}
-
-			//Check to see if smithy has been discarded
-			if((G.hand[p][handCount - 1] == smithy) && (G.discardCount[p] == controlG.discardCount[p])) {
-				printf("\tSmithy was not been discarded.\n");
 			}
 
 			for (i = 0; i < numPlayers; i++) {	// Check hand and deck of other players

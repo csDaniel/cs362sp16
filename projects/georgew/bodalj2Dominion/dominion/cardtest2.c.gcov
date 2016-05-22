@@ -1,0 +1,138 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://cardtest2.c -- refactored for bodalj
+        -:    2:#include "dominion.h"
+        -:    3:#include "dominion_helpers.h"
+        -:    4:#include <string.h>
+        -:    5:#include <stdio.h>
+        -:    6:#include <assert.h>
+        -:    7:#include "rngs.h"
+        -:    8:#include <stdlib.h>
+        -:    9:#include "interface.h"
+        -:   10:
+        -:   11:#define TESTCARD "adventurer"
+        -:   12:
+        1:   13:int main() {
+        1:   14:  	int seed = 1000;
+        1:   15:    int numPlayers = 2;
+        1:   16:    int thisPlayer = 0;
+        -:   17:	struct gameState G, testG;
+        -:   18:	int currCard;
+        1:   19:	int handPos = 0;
+        -:   20:	int currDeckCount, currHandCount, currDiscardCount;
+        -:   21:	int deckChange, handChange, discardChange;
+        -:   22:	int tempHand[MAX_HAND];
+        -:   23:	int treasureBefore, treasureAfter;
+        -:   24:	int z;
+        -:   25:	//int choice1 = 0;
+        -:   26:	//int choice2 = 0;
+        -:   27:	//int choice3 = 0;	
+        1:   28:	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
+        -:   29:			sea_hag, tribute, smithy, council_room};
+        -:   30:
+        -:   31:	// initialize a game state and player cards
+        1:   32:	initializeGame(numPlayers, k, seed, &G);
+        1:   33:	printf("Testing for: ");
+        1:   34:	printf("1. 2 Cards Added To Hand");
+        1:   35:	printf("2. 2 Cards Added Are Treasure Cards");
+        1:   36:	printf("3. All Cards that are either added to Hand or Taken from deck are Accounted For");
+        1:   37:	printf("4. If At End of Pile Add Discarded Back and Shuffle");
+        -:   38:	// copy the game state to a test case
+        1:   39:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   40:	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
+        -:   41:	
+        1:   42:	printf("-------TEST 1: CHECKING IF TWO CARDS WERE ADDED TO HAND--------\n");
+        -:   43:	//copy starting game state
+        1:   44:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   45:	//check hand count at start
+        1:   46:	currHandCount = testG.handCount[thisPlayer];
+        1:   47:	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
+        -:   48:	//run function
+        1:   49:	playAdventurer(thisPlayer, &testG);	
+        -:   50:	//check hand count
+        1:   51:	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
+        1:   52:	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
+    #####:   53:		printf("HAND COUNT INCREASED BY 1: SUCCESS\n");
+        -:   54:	}
+        1:   55:	else if (currHandCount == testG.handCount[thisPlayer])
+        -:   56:	{
+    #####:   57:		printf("HAND COUNT DIDN'T CHANGE: FAILURE\n");
+        -:   58:	}
+        -:   59:	else
+        1:   60:		printf("HAND COUNT CHANGE INCORRECT: FAILURE\n");
+        1:   61:	printf("--------TEST 2: CHECK IF ADDED CARDS ARE TREASURE CARDS---------\n");
+        -:   62:	//revert to starting game state
+        1:   63:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:   64:	currHandCount = testG.handCount[thisPlayer];
+        -:   65:	//print hand
+        -:   66:	//printHand(thisPlayer, &testG);
+        -:   67:	//count treasure cards
+        2:   68:	while(z < currHandCount){
+    #####:   69:		currCard = testG.hand[thisPlayer][z];
+    #####:   70:		if (currCard == copper || currCard == silver || currCard == gold)
+    #####:   71:	       		treasureBefore++;    
+    #####:   72:		z++;
+        -:   73:	}
+        1:   74:	printf("Treasure Before Function: %d\n", treasureBefore);
+        -:   75:	//run function
+        1:   76:	playAdventurer(thisPlayer, &testG);
+        -:   77:	//printHand
+        -:   78:	//printHand(thisPlayer, &testG);
+        1:   79:	z = 0;
+        1:   80:	if (testG.handCount[thisPlayer] == (currHandCount + 2)) {
+    #####:   81:		while(z != testG.handCount[thisPlayer]) {
+    #####:   82:			currCard = testG.hand[thisPlayer][z];
+    #####:   83:			if (currCard == copper || currCard == silver || currCard == gold)
+    #####:   84:		       treasureAfter++;   
+    #####:   85:			z++;
+        -:   86:		}
+        -:   87:	}
+        1:   88:	printf("Treasure After Function: %d\n", treasureAfter);
+        1:   89:	if ((treasureBefore + 2) == treasureAfter)
+    #####:   90:		printf("ADDED TWO TREASURE CARDS: SUCCESS\n");
+        -:   91:	else
+        1:   92:		printf("ADDED INCORRECT TREASURE CARDS: FAILURE\n");
+        1:   93:	printf("--------TEST 3: CHECK IF ALL CARDS ACCOUNTED FOR---------\n");
+        -:   94:	//revert to starting game state
+        1:   95:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   96:	//count cards in each deck
+        1:   97:	currHandCount = testG.handCount[thisPlayer];
+        1:   98:	currDiscardCount = testG.discardCount[thisPlayer];
+        1:   99:	currDeckCount = testG.deckCount[thisPlayer];
+        1:  100:	printf("Deck Count Before: %d\n", testG.deckCount[thisPlayer]);
+        1:  101:	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
+        1:  102:	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
+        -:  103:	//run fxn
+        -:  104:	//adventurerCard(thisPlayer, &testG, tempHand);
+        1:  105:	playAdventurer(thisPlayer, &testG);
+        -:  106:	//get count after run
+        1:  107:	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
+        1:  108:	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
+        1:  109:	printf("Discard Count After: %d\n", testG.discardCount[thisPlayer]);
+        1:  110:	handChange = (testG.handCount[thisPlayer]) - currHandCount;
+        1:  111:	deckChange =  currDeckCount - (testG.deckCount[thisPlayer]);
+        1:  112:	discardChange = (testG.discardCount[thisPlayer]) - currDiscardCount;
+        -:  113:	//check if all cards are accounted for
+        1:  114:	if(deckChange == (handChange + discardChange))
+        1:  115:		printf("All Cards Accounted For: SUCCESS\n");
+        -:  116:	else
+    #####:  117:		printf("All Cards not Accounted For: FAILURE\n");
+        1:  118:	printf("--------------TEST 4: CHECK IF SHUFFLE OCCURS-----------------\n");
+        -:  119:	//revert to starting game state
+        1:  120:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:  121:	//empty deck out
+        9:  122:	while(testG.handCount[thisPlayer] > 1)
+        -:  123:	{
+        7:  124:		discardCard(handPos, thisPlayer, &testG, 1);
+        -:  125:	}
+        1:  126:	printf("Deck Count: %d\n", testG.deckCount[thisPlayer]);
+        -:  127:	//run function
+        -:  128:	//adventurerCard(thisPlayer, &testG, tempHand);
+        1:  129:	playAdventurer(thisPlayer, &testG);
+        1:  130:	printf("Deck Count: %d\n", testG.deckCount[thisPlayer]);
+        1:  131:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
+        1:  132:return 0;
+        -:  133:}

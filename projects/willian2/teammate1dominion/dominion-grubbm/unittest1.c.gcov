@@ -1,0 +1,113 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:3
+        -:    0:Programs:1
+        -:    1:/******************************************************************************
+        -:    2:* ASSIGNMENT 5 - unittest1.c
+        -:    3:* AUTHOR: Nickolas A. Williams
+        -:    4:* CLASS: CS362
+        -:    5:* DATE: 05/22/2016
+        -:    6:* NOTES: unit testing of the discardCard() function
+        -:    7:* REQUIREMENTS for discardCard():
+        -:    8:*  1. If card is not to be trashed, it must be placed in the played card pile
+        -:    9:*  2. If card is to be trashed, it must count as removed from play (trash pile)
+        -:   10:*  3. Only this card should be discarded
+        -:   11:*  4. Only this player should have discarded
+        -:   12:* TESTING tasks for discardCard():
+        -:   13:*  1. Test if trashflag = 1, card is not placed in discard pile, 
+        -:   14:*     playedCardCount is not incremented
+        -:   15:*  2. Test if trashflag < 1, card is placed in discard pile and playedCardCount
+        -:   16:*     is incremented
+        -:   17:*  3. Test if last card is discarded, hand is empty
+        -:   18:*  4. Test if only card is played, hand is empty
+        -:   19:*  5. Test if hand is full (MAX_HAND cards in hand), and discardCard() is 
+        -:   20:*     called MAX_HAND - 1 times, the last remaining card is the first card
+        -:   21:*     in the hand
+        -:   22:*  6. Test that no other players are affected by discardCard() 
+        -:   23:******************************************************************************/
+        -:   24:
+        -:   25:#include "dominion.h"
+        -:   26:#include "dominion_helpers.h"
+        -:   27:#include <string.h>
+        -:   28:#include <stdio.h>
+        -:   29:#include <assert.h>
+        -:   30:#include "rngs.h"
+        -:   31:
+        -:   32:// set NOISY_TEST to 0 to remove printfs from output
+        -:   33:#define NOISY_TEST 0
+        -:   34:
+        3:   35:int main() 
+        -:   36:{
+        -:   37:    int i;
+        3:   38:    int seed = 1000;
+        3:   39:    int numPlayer = 2;
+        -:   40:    int player, r, handCount;
+        3:   41:	int maxHandCount = 10;
+        -:   42:    int trashflag;
+        3:   43:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   44:               , remodel, smithy, village, baron, great_hall};
+        -:   45:    struct gameState G;
+        -:   46:	
+        -:   47:	//create test hand where first card is copper, the rest is silver
+        -:   48:	int testingHand[MAX_HAND];
+        3:   49:	testingHand[1] = copper;
+     1500:   50:	for (i = 1; i < MAX_HAND; i++)
+        -:   51:	{
+     1497:   52:		testingHand[i] = silver;
+        -:   53:	}
+        -:   54:
+        3:   55:    printf ("TESTING discardCard():\n");
+        9:   56:    for (player = 0; player < numPlayer; player++)
+        -:   57:    {
+       66:   58:        for (handCount = 1; handCount <= maxHandCount; handCount++) //start at one card
+        -:   59:        {
+      180:   60:            for (trashflag = 0; trashflag <= 1; trashflag++)
+        -:   61:            {
+        -:   62:#if (NOISY_TEST == 1)
+        -:   63:                printf("Test player %d with %d card(s) and trashflag set to %d.\n", player, handCount, trashflag);
+        -:   64:#endif
+      120:   65:                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+      120:   66:                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+      120:   67:                G.handCount[player] = handCount;            // set the number of cards on hand
+      120:   68:                memcpy(G.hand[player], testingHand, sizeof(int) * handCount); // set to testingHand
+        -:   69:                
+        -:   70:				int j;
+      120:   71:				int playedtrack = 0; //keeps track of how many cards should have been played
+        -:   72:				
+      780:   73:				for (j = (handCount - 1); j >= 0; j--)
+        -:   74:				{
+        -:   75:#if (NOISY_TEST == 1)
+        -:   76:                printf("Discarding G.hand[%d][%d]\n", player, j);
+        -:   77:#endif
+      660:   78:					discardCard(j, player, &G, trashflag);
+      660:   79:					if (trashflag == 0)
+        -:   80:					{
+      330:   81:						playedtrack++;
+      330:   82:						assert(G.playedCardCount == playedtrack);
+        -:   83:					}
+      330:   84:					else if (trashflag == 1)
+        -:   85:					{
+      330:   86:						assert(G.playedCardCount == 0);
+        -:   87:					}
+        -:   88:					
+      660:   89:					assert(G.hand[player][j] == -1);
+      660:   90:					assert(G.handCount[player] == j);
+        -:   91:					// if (j > 2) //there were three or more cards in the hand
+        -:   92:					// {
+        -:   93:						// assert(G.hand[player][j-1] == silver);
+        -:   94:						// assert(G.hand[player][0] == copper);
+        -:   95:					// }
+        -:   96:					// else if (j == 1) //there were two cards in the hand
+        -:   97:					// {
+        -:   98:						// assert(G.hand[player][j-1] == copper);
+        -:   99:					// }
+        -:  100:				}
+        -:  101:			}
+        -:  102:        }
+        -:  103:    }
+        3:  104:	printf("All tests passed!\n");
+        -:  105:
+        3:  106:	return 0;
+        -:  107:}
+        -:  108:

@@ -1,0 +1,13 @@
+results for running randomtestadventure.c
+Now testing, random test for Adventure card
+G.handCount = 5, expected = 3
+Test 1 failed, expected card number not found in hand 
+Test 2 passed, expected card number in hand player 2 
+Test 3 failed, non-treasure card in hand 
+File 'randomtestadventure.c'
+Lines executed:86.11% of 36
+Branches executed:100.00% of 16
+Taken at least once:56.25% of 16
+Calls executed:77.78% of 18
+Creating 'randomtestadventure.c.gcov'
+

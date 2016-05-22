@@ -200,7 +200,7 @@ int main() {
 		}
 	}
 	// Test there are 2 more treasures in players hand
-	if ((treasureInHand +2 ) != postTreasureInHand)
+	if ((treasureInHand + 2 ) != postTreasureInHand)
 	{
 		printf("Error with number of treasures in hand ");
 		printf("Expected: %i.  Actual: %i\n", (treasureInHand + 2), postTreasureInHand);

@@ -107,7 +107,7 @@ int oracleTest(struct gameState* G, struct gameState* testG)
 		numFails++;
 	}
 	printf("----------- Test 4:  Difference in deck amt should reflect discard + 2 ----------\n");
-	if(testG->deckCount[thisPlayer] >= G->deckCount[thisPlayer])
+	if(testG->deckCount[thisPlayer] == (G->deckCount[thisPlayer] - (testG->discardCount[thisPlayer] + 2)))
 		printf("TEST PASSED \n");
 	else{
 		printf("TEST FAILED \n");

@@ -1,106 +1,109 @@
-/*
- * randomtestadventurer.c
- */
-
-/*
- * Include the following lines in your makefile:
- *
- * randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o
- *      gcc -o randomtestadventurer.out -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
- */
-
-
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
-#include <time.h> 
-#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <assert.h>
+#include <math.h>
 
-#define TESTCARD "adventurer"
-#define ITERATION 4
+#define MAX_TESTS 1000
 
+int testingAdventurer(struct gameState *state, struct gameState *game);
 
 int main()
 {
-	struct gameState G, testG;
-	int i,x;
-	int thisPlayer=0, discard_cards, xtra_coins;
-	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
-           sea_hag, tribute, smithy};
-  	srand(time(NULL));
-  	printf ("Starting tested game.\n");
-  	
-  	initializeGame(MAX_PLAYERS, k, rand()%500+500, &G);
-	
-	for (x=0; x<ITERATION; x++)
+	srand(time(NULL));
+
+	struct gameState state;
+	struct gameState game;
+
+	int i, j, player, players, seed; 
+
+	int errorCount = 0;
+
+	int card[10] = {adventurer, feast, gardens, mine, remodel, smithy, village, council_room, great_hall, minion};
+
+	printf("\nRandom Village Card Testing...\n");
+
+	for(i = 0; i < MAX_TESTS; i++)
 	{
-		discard_cards=0;
-		xtra_coins=0;
-		printf("------ Testing Card: %s - Test %d -------\n", TESTCARD, x+1);
-		thisPlayer = x;
-		printf ("Player %d played %s.\n", thisPlayer, TESTCARD);
-
-		//get deck content
-		printf("Deck Content Before: \n");
-		for (i=0; i<G.deckCount[thisPlayer]; i++)
-			printf("(%d) ", G.deck[thisPlayer][i]);
-		printf("\n");
-
-		//cond before adventurer
-		updateCoins(thisPlayer, &G, 0);
-		memcpy(&testG, &G, sizeof(struct gameState));
-		//printf("coins-%d\n",G.coins);
-		//play adventurer
-		adventurer_effect(thisPlayer, &testG);
-
-		//cond after adventurer
-		discard_cards = G.deckCount[thisPlayer] - testG.deckCount[thisPlayer];
-		
-		printf("Deck Content After: \n");
-		for (i=0; i<testG.deckCount[thisPlayer]; i++)
-			printf("(%d) ", testG.deck[thisPlayer][i]);
-		printf("\n");
-
-		//Get the difference in extra coins and discarded cards
-		for (i=testG.deckCount[thisPlayer]; i<G.deckCount[thisPlayer]; i++)
+		do
 		{
-			if (G.deck[thisPlayer][i] == gold)
-			{
-				xtra_coins += 3;
-				discard_cards -=1;
-			}
-			else if (G.deck[thisPlayer][i] == silver)
-			{
-				xtra_coins += 2;
-				discard_cards -=1;
-			}
-			else if (G.deck[thisPlayer][i] == copper)
-			{
-				xtra_coins += 1;
-				discard_cards -=1;
-			}
-			//printf("dcard=%d ,coins=%d\n", discard_cards, xtra_coins);
+			players = rand() % 4;
+		} while(players < 2);
+
+		assert(players > 1);
+
+		// Making sure that seed does not equal to zero
+		seed = i + 1 + rand();
+
+		// Initialize game
+		initializeGame(players, card, seed, &state);
+
+		// Picking a random player
+		do
+		{
+			player = rand() % players;
+			if(player == 0 || player == 1)
+				{
+					player = 1;
+					break;
+				}
+		}while(player == 0);
+
+		// Initialize valid state variables
+		state.deckCount[player] = rand() % MAX_DECK;
+		state.discardCount[player] = rand() % MAX_DECK;
+		state.handCount[player] = rand() % MAX_HAND;
+
+		// Initalize deck and discard to random cards
+
+		for(j = 0; j < state.deckCount[player]; j++)
+		{
+			state.deck[player][j] = rand() % (treasure_map + 1);
 		}
-		
-		discard_cards += 1; //plus 1 for adventurer card
+		for(j = 0; j < state.discardCount[player]; j++)
+		{
+			state.discard[player][j] = rand() % (treasure_map + 1);
+		}
 
-		//compare
-		updateCoins(thisPlayer, &testG, 0);
-		printf("Coins count = %d, expected = %d\n", testG.coins, G.coins+xtra_coins); 
-		printf("Discarded count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer]+discard_cards); 
+		// Setting the first card to be village
+		state.handCount[player] = rand() % (treasure_map + 1);
+		state.hand[player][0] = adventurer;
+		for(j = 1; j < state.handCount[player]; j++)
+		{
+			state.hand[player][j] = rand() % (treasure_map + 1);
+		}
 
-		if (testG.coins != (G.coins + xtra_coins)) 
-			printf("FAILED - Invalid coin count\n");
-		if (testG.discardCount[thisPlayer] != (G.discardCount[thisPlayer]+discard_cards)) 
-			printf("FAILED - Invalid discarded card count\n");
+		memcpy(&game, &state, sizeof(struct gameState));
 
+		if(testingAdventurer(&state, &game) != 0)
+		{
+			errorCount++;
+		}
 	}
 
-	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+	printf("\n%d Random Testing completed with %d errors\n", MAX_TESTS, errorCount);
+
+
+	return 0;
+}
+
+int testingAdventurer(struct gameState *state, struct gameState *game)
+{
+	int p = 0;
+	p = whoseTurn(game);
+
+	cardEffect(adventurer, 0, 0, 0, state, 0, 0);
+
+	// Took the assert out since this is where the error is at (see randomhistory.c)
+	//assert(state->handCount[p] == 6);
+	if(state->handCount[p] != 6)
+	{
+		return 1;
+	}
 
 	return 0;
 }

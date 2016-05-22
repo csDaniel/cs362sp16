@@ -19,4 +19,12 @@ Changes   1) Added dominion/randomtestcard.c dominion/randomtestadventurer.c
 Date: 05/08/2016
 Changes   1) Added URLValidator and URLValidatorCorrect directories 
           2) Added URLValidator/ProjectPartA.txt for team: Justin Pareno, Samuel Jones, Jerry Hayes
-      
+
+Date: 05/19/2016
+Changes   1) Added teammate1Dominion and teammate2Dominion directories
+          2) Added dominion/BugsInTeammates.c and dominion/BugFixes.c
+
+Date: 05/21/2016
+Changes   1) Included priority/severity in BugsInTeammates.c and BugFixes.c 
+
+          

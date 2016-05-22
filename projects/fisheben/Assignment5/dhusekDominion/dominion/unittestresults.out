@@ -1,0 +1,320 @@
+Result for running unit tests:
+--------------------------------------------------------------------
+unittest1.c:
+-------------------------UNITTEST1---------------------------------
+Starting unittest1
+TESTING updateCoins():
+
+ >>>>> SUCCESS: Testing complete UPDATE_COINS <<<<<
+
+File 'unittest1.c'
+Lines executed:65.44% of 136
+Creating 'unittest1.c.gcov'
+
+File 'unittest1.c'
+Lines executed:65.44% of 136
+Branches executed:83.67% of 98
+Taken at least once:46.94% of 98
+Calls executed:39.53% of 43
+Creating 'unittest1.c.gcov'
+
+unittest2.c:
+-------------------------UNITTEST2--------------------------------
+Starting unittest2
+TESTING drawCard():
+
+ >>>>> SUCCESS: Testing complete DRAW_CARD <<<<<
+
+File 'unittest2.c'
+Lines executed:66.90% of 142
+Creating 'unittest2.c.gcov'
+
+File 'unittest2.c'
+Lines executed:66.90% of 142
+Branches executed:84.62% of 104
+Taken at least once:45.19% of 104
+Calls executed:36.59% of 41
+Creating 'unittest2.c.gcov'
+
+unittest3.c:
+--------------------------UNITTEST3------------------------------
+Starting unittest3
+TESTING discardCard():
+Error found in DISCARD_CARD, 4
+	post G->playedCardCount = 1  testPlayedCardCount = 0
+	post G->handCount[player] = 0  testHandPosition = 0
+	post testTrashFlag = 0 Player = 0
+
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 387389207 pre.numBuys = 387389207
+	post.NumAction = 387389207 pre.NumActions = 387389207
+	post.Coins = 387389207 pre.Coins = 387389207
+	post.HandCount = 0  pre.HandCount = 0
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 10 pre.deckCount[p] = 10
+
+ >>>>> FAILURES DETECTED: Examine test cases DISCARD_CARD <<<<<
+
+File 'unittest3.c'
+Lines executed:70.69% of 116
+Creating 'unittest3.c.gcov'
+
+File 'unittest3.c'
+Lines executed:70.69% of 116
+Branches executed:85.11% of 94
+Taken at least once:54.26% of 94
+Calls executed:57.50% of 40
+Creating 'unittest3.c.gcov'
+
+unittest4.c:
+-------------------------UNITTEST4----------------------------
+Starting unittest4
+TESTING getCost():
+All tests passed!
+End of unittest2
+File 'unittest4.c'
+Lines executed:70.68% of 133
+Creating 'unittest4.c.gcov'
+
+File 'unittest4.c'
+Lines executed:70.68% of 133
+Branches executed:100.00% of 70
+Taken at least once:75.71% of 70
+Calls executed:35.14% of 37
+Creating 'unittest4.c.gcov'
+
+cardtest1.c:
+----------------- Testing Card: smithy ----------------
+Error found in smithy 3
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 0 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 3  pre.HandCount = 3
+	postCall.hand[p][cardPosition] = 387389207  testHandPosition = 0
+	preCall.hand[p][cardPosition] = 387389207
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 13 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 7 pre.deckCount[p] = 7
+	smithy card = 13 Player = 0
+
+
+ >>>>> FAILURES DETECTED: Examine test cases smithy <<<<<
+
+File 'cardtest1.c'
+Lines executed:71.96% of 107
+Creating 'cardtest1.c.gcov'
+
+File 'cardtest1.c'
+Lines executed:71.96% of 107
+Branches executed:85.29% of 68
+Taken at least once:50.00% of 68
+Calls executed:62.50% of 40
+Creating 'cardtest1.c.gcov'
+
+cardtest2.c:
+----------------- Testing Card: adventurer ----------------
+Error found in adventurer, 2
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 4 pre.Coins = 4
+	post.HandCount = 1  pre.HandCount = 0
+	z = 0  
+	preCall.hand[p][z] = 4
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 5 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 8 pre.deckCount[p] = 10
+	treasure = 0 Player = 0
+
+Error found in adventurer, 3
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 4 pre.Coins = 4
+	post.HandCount = 1  pre.HandCount = 1
+	z = 0  
+	preCall.hand[p][z] = 5
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 5 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 8 pre.deckCount[p] = 8
+	treasure = 0 Player = 0
+
+ERROR noVictoryCardChanges
+Error found in adventurer, 10
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 0 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 11  pre.HandCount = 10
+	z = 0  
+	preCall.hand[p][z] = 7
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 7 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 8 pre.deckCount[p] = 10
+	treasure = 14 Player = 0
+
+Error found in adventurer, 7
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 0 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 6  pre.HandCount = 5
+	z = 0  
+	preCall.hand[p][z] = 4
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 4 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 9 pre.discardCount[p] = 0
+	post.deckCount[p] = 0 pre.deckCount[p] = 10
+	treasure = 3 Player = 0
+
+Error found in adventurer, 8
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 0 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 6  pre.HandCount = 6
+	z = 0  
+	preCall.hand[p][z] = 6
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 4 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 9 pre.discardCount[p] = 8
+	post.deckCount[p] = 0 pre.deckCount[p] = 0
+	treasure = 3 Player = 0
+
+Error found in adventurer, 12
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 0 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 4  pre.HandCount = 5
+	z = 0  
+	preCall.hand[p][z] = 4
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 4 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 11 pre.discardCount[p] = 0
+	post.deckCount[p] = 0 pre.deckCount[p] = 10
+	treasure = 3 Player = 0
+
+
+ >>>>> FAILURES DETECTED: Examine test cases adventurer <<<<<
+
+File 'cardtest2.c'
+Lines executed:80.98% of 163
+Creating 'cardtest2.c.gcov'
+
+File 'cardtest2.c'
+Lines executed:80.98% of 163
+Branches executed:73.58% of 106
+Taken at least once:47.17% of 106
+Calls executed:71.15% of 52
+Creating 'cardtest2.c.gcov'
+
+cardtest3.c:
+----------------- Testing Card: village ----------------
+Error found in village, 5
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 2 pre.NumActions = 2
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 387389207
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 14 pre.playedCards[0] = 14
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 9
+	treasure = 14 Player = 1
+
+
+ >>>>> FAILURES DETECTED: Examine test cases village <<<<<
+
+File 'cardtest3.c'
+Lines executed:69.30% of 114
+Creating 'cardtest3.c.gcov'
+
+File 'cardtest3.c'
+Lines executed:69.30% of 114
+Branches executed:77.50% of 80
+Taken at least once:43.75% of 80
+Calls executed:57.14% of 42
+Creating 'cardtest3.c.gcov'
+
+cardtest4.c:
+----------------- Testing Card: great_hall ----------------
+ERROR noVictoryCardChanges
+Error found in great_hall, 8
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 1 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 16
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 16 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 10
+	treasure = 16 Player = 1
+
+Error found in great_hall, 5
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 1 pre.NumActions = 0
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 16
+	post.playedCardCount = 1 pre.playedCardCount = 0
+	post.playCards[0] = 16 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 10
+	treasure = 16 Player = 1
+
+Error found in great_hall, 6
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 0 pre.numBuys = 0
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 1  pre.HandCount = 1
+	cardPosition = 0  
+	preCall.hand[p][cardPosition] = 387389207
+	post.playedCardCount = 1 pre.playedCardCount = 1
+	post.playCards[0] = 16 pre.playedCards[0] = 16
+	post.discardCount[p] = 1 pre.discardCount[p] = 0
+	post.deckCount[p] = 9 pre.deckCount[p] = 9
+	treasure = 16 Player = 1
+
+
+ >>>>> FAILURES DETECTED: Examine test cases great_hall <<<<<
+
+File 'cardtest4.c'
+Lines executed:72.65% of 117
+Creating 'cardtest4.c.gcov'
+
+File 'cardtest4.c'
+Lines executed:72.65% of 117
+Branches executed:76.74% of 86
+Taken at least once:45.35% of 86
+Calls executed:64.44% of 45
+Creating 'cardtest4.c.gcov'
+
+dominion.c:
+--------------------DOMINION CODE COVERAGE--------------------
+File 'dominion.c'
+Lines executed:39.34% of 572
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:39.34% of 572
+Branches executed:43.88% of 417
+Taken at least once:34.77% of 417
+Calls executed:20.79% of 101
+Creating 'dominion.c.gcov'
+
+dominion.c:
+dominion.c:
