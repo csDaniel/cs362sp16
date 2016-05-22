@@ -2,23 +2,30 @@ William Maillard
 5/20/16
 CS 362
 	
-The following is a description of bugs found in teammate 1 (murphet) and teammate 2 (chrijohn)'s code.  In addition to the description of bugs found, there is also a full test report and coverage information included at the end of this document.
+The following is a description of bugs found in teammate 1 (murphet) and teammate 2 (chrijohn)'s 
+code.  In addition to the description of bugs found, there is also a full test report and coverage 
+information included at the end of this document.
 
 
 ******************Bugs in teammate 1's code(murphet)
 
-The unit and random tests were run against teammate 1's code.  The full test report can be found at the end of this document.  Some small changes needed to be made so that tests ran correctly (function name changes and 1 parameter needed to be added to the adventurer_function() when it was run in the tests.
+The unit and random tests were run against teammate 1's code.  The full test report can be found at 
+the end of this document.  Some small changes needed to be made so that tests ran correctly 
+(function name changes and 1 parameter needed to be added to the adventurer_function() when it was 
+run in the tests.
 
 ***  Teammate 1: Bug 1. ***
 	
 Number: 1.1
 Function: smithy_function()
 Effect: The player's hand count does not match the expected hand count after playing the smithy card
-Possible location: Line 717: the discardCard function is being passed the incorrect player's location
+Possible location: Line 717: the discardCard function is being passed the incorrect player's 
+location
 
 This was determined based on the fact that the smithy_function() failed the following test:
 
---------Card Test 1: Test 1: Play Smithy and Check that 3 Cards are Drawn and 1 (Smithy) is Discarded---------
+--------Card Test 1: Test 1: Play Smithy and Check that 3 Cards are Drawn and 1 (Smithy) is 
+Discarded---------
 
 Failed
 
@@ -28,7 +35,8 @@ Failed
 Number: 1.2
 Function: council_room_function()
 Effect: The player's number of buys does not increase by 1
-Possible location: Line 658: The number of buys is incremented by a predetermined amount that may not equal 1
+Possible location: Line 658: The number of buys is incremented by a predetermined amount that may 
+not equal 1
 
 This was determined based on the fact that the council_room_function() failed the following test:
 
@@ -40,14 +48,19 @@ Failed
 	
 *******************Bugs in teammate 2's code (chrijohn)
 
-The unit and random tests were run against teammate 2's code.  The full test report can be found at the end of this document.  Some small changes needed to be made so that tests ran correctly (several of the functions had a different number of parameter than those originally tested, but this was easily remedied).
+The unit and random tests were run against teammate 2's code.  The full test report can be found at 
+the end of this document.  Some small changes needed to be made so that tests ran correctly 
+(several of the functions had a different number of parameter than those originally tested, but 
+this was easily remedied).
 
 *** Teammate 2: Bug 1 ***
 
 Number: 2.1
 Function: scoreFor()
-Effect: The score of having one of every card in the player's deck and an empty hand and discard pile returns a value of 0 when it should be 11
-Possible location: Line 444: The deck is iterated through up to state->discardCount[player] when it should
+Effect: The score of having one of every card in the player's deck and an empty hand and discard 
+pile returns a value of 0 when it should be 11
+Possible location: Line 444: The deck is iterated through up to state->discardCount[player] when it 
+should
 	go up to state->deckCount[player]
 	
 This was determined based on the fact that the scoreFor() failed the following test:
@@ -62,7 +75,8 @@ Count is 0 but should be 11
 Number: 2.2
 Function: playSmithy()
 Effect: Player's hand count does not match what it should be. 
-Possible location: Line 649: The comment says that 3 cards are added to the hand upon playing smithy, but the iterator that adds the cards only goes up to 2.
+Possible location: Line 649: The comment says that 3 cards are added to the hand upon playing 
+smithy, but the iterator that adds the cards only goes up to 2.
 	
 This was determined based on the fact that the playSmithy() failed the following test:
 
@@ -73,7 +87,8 @@ Failed
 	
 
 
-Here are the results and coverage information for running tests against teammate 1 (murphet) and teammate 2(chrijohn)'s code:
+Here are the results and coverage information for running tests against teammate 1 (murphet) and 
+teammate 2(chrijohn)'s code:
 	
 
 ************************           Teammate 1 Testing              **********************
@@ -199,7 +214,8 @@ Passed
 
 Failed
 
---------Test 3: Play Adventurer with a deck of 10 with the last 2 being silver cards, check -----------------
+--------Test 3: Play Adventurer with a deck of 10 with the last 2 being silver cards, check 
+-----------------
 -------- that 9 cards are discarded (viewed cards + Adventurer)---------
 
 Failed
@@ -212,15 +228,18 @@ Passed
 ************************    Card Test 3: Testing council_room_function()     **********************
 
 
---------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom should be in Played Cards ------------
+--------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom 
+should be in Played Cards ------------
 
 Failed
 
---------Test 2: Play CouncilRoom with 2 players. 1 Card should be added to every other player's hand------------
+--------Test 2: Play CouncilRoom with 2 players. 1 Card should be added to every other player's 
+hand------------
 
 Failed
 
---------Test 3: Play CouncilRoom with 4 players. 1 Card should be added to every other player's hand------------
+--------Test 3: Play CouncilRoom with 4 players. 1 Card should be added to every other player's 
+hand------------
 
 Failed
 
@@ -555,7 +574,8 @@ Passed
 
 Failed
 
---------Test 3: Play Adventurer with a deck of 10 with the last 2 being silver cards, check -----------------
+--------Test 3: Play Adventurer with a deck of 10 with the last 2 being silver cards, check 
+-----------------
 -------- that 9 cards are discarded (viewed cards + Adventurer)---------
 
 
@@ -569,15 +589,18 @@ Passed
 ************************    Card Test 3: Testing playCouncilRoom()     **********************
 
 
---------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom should be in Played Cards ------------
+--------Test 1: Play CouncilRoom. 4 Cards should be added to player's hand and the CouncilRoom 
+should be in Played Cards ------------
 
 Failed
 
---------Test 2: Play CouncilRoom with 2 players. 1 Card should be added to every other player's hand------------
+--------Test 2: Play CouncilRoom with 2 players. 1 Card should be added to every other player's 
+hand------------
 
 Passed
 
---------Test 3: Play CouncilRoom with 4 players. 1 Card should be added to every other player's hand------------
+--------Test 3: Play CouncilRoom with 4 players. 1 Card should be added to every other player's 
+hand------------
 
 Passed
 
