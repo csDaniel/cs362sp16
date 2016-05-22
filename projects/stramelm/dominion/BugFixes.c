@@ -1,3 +1,33 @@
+Cash Stramel
+CS362
+Spring 2016
+Assignment #5
+
+Summary:
+
+Listed below are 8 bug resolution reports.  4 of these resolved bugs reported by
+my teammates ohaverd and faesslek.  4 of these resolved bugs (or perceived bugs) found
+my my own tests.  Bugs were resolved for 4 different cards as well as for non-card
+functions such as isGameOver() and scoreFor().
+
+In some cases actual bugs were fixed with changes to the dominion source code.  In
+other cases bugs were resolved with a better understanding of what the code is suppossed
+to do versus the testers understanding.  For example, a point of confusion revolves around
+the number of cards in the discard pile and whether or not it should include the card
+currently being played (in fact that card gets returned to discard with a later call to
+endTurn()).
+
+Ultimately I was able resolve all bugs detected by my teammates as well as those detected
+by my previously constructed unit tests.  I reran my unit tests and the results are reported
+in an updated version of unittestresults.out.  All tests now pass.
+
+The key lessons I learned here is that confusion about the code requirements can lead to
+confusion about whether behavior is or isn't really a bug.  We can't write good tests if 
+we don't understand exactly what is desired or intended behavior.
+
+
+
+
 =================================================
 Bug Resolution Report #1
 =================================================
