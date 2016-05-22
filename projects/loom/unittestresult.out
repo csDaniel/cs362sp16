@@ -1,0 +1,28 @@
+profiling:/nfs/stak/students/g/guerraj/ecampus161/cs362:Cannot create directory
+profiling:/nfs/stak/students/g/guerraj/ecampus161/cs362/dominion/rngs.gcda:Skip
+profiling:/nfs/stak/students/l/loom/CS362/teammate1_guerraj/dominion.gcda:Version mismatch - expected 408R got 409*
+profiling:/nfs/stak/students/l/loom/CS362/teammate1_guerraj/unittest1.gcda:Version mismatch - expected 408R got 409*
+Testing numCards function
+Testing supplyCount function
+Testing updateCoins function
+The coin count is not correct!
+Testing whoseTurn function
+Testing smithy card
+Smithy does not add correct number of cards
+Smithy does not add correct number of cards
+Smithy does not add correct number of cards
+Testing adventurer card
+Two cards were not drawn from the deck
+Two cards were not added to the players hand!
+Testing village card
+The village card did not add two actions!
+The village card did not add two actions!
+The village card did not add two actions!
+The village card did not add two actions!
+The village card did not add two actions!
+Testing Great Hall card
+The great hall card did not add an action!
+The great hall card did not add an action!
+The great hall card did not add an action!
+The great hall card did not add an action!
+The great hall card did not add an action!

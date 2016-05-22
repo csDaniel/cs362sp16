@@ -44,8 +44,8 @@ int main() {
 		memcpy(&testG, &G, sizeof(struct gameState)); 
 
 		memcpy(testG.discard[p], testG.deck[p], sizeof(int) * testG.deckCount[p]);
-		testG.deckCount[p] =0;
 		cardEffect(adventurer, choice1, choice2, choice3, &testG, 0, &bonus);			
+		updateCoins(p, &testG, bonus);
 		printMetrics(&G, &testG,p, &testResult);	
 	
 	printf("Test 2: 2 coins on top of deck \n");
@@ -54,7 +54,8 @@ int main() {
 		testG.deck[p][testG.deckCount[p]] = copper;
 		testG.deck[p][testG.deckCount[p]+1] = copper;
 		testG.deckCount[p]++;
-	
+		cardEffect(adventurer, choice1, choice2, choice3, &testG, 0, &bonus);		
+		updateCoins(p, &testG, bonus);
 		printMetrics(&G, &testG,p, &testResult);	
 		
 	printf("Discard Count %d, expected discardCount: %d", testG.discardCount[p], G.discardCount[p]+1);

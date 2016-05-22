@@ -1,0 +1,503 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/* -----------------------------------------------------------------------
+        -:    2: * Ben Fisher
+        -:    3: * fisheben@oregonstate.edu
+        -:    4: * file: unittest1.c
+        -:    5: * Description: Skeleton taken from CS362 week4 module.
+        -:    6: * Demonstration of how to write unit tests for dominion-base
+        -:    7: * File tests the updateCoins in the dominion_helpers.h interface
+        -:    8: * implementation is in the dominion.c                                                       }
+        -:    9: *
+        -:   10: * Include the following lines in your makefile:
+        -:   11: *
+        -:   12: * unittest1: unittest1.c dominion.o rngs.o
+        -:   13: *      gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
+        -:   14: * -----------------------------------------------------------------------
+        -:   15: */
+        -:   16: 
+        -:   17: /*
+        -:   18: * UPDATE COINS FUNCTION
+        -:   19: * No documentation in the implementation or the interface
+        -:   20: * Description: Function update coins will count the number of coins and bonus coins
+        -:   21: * in the players hand, and then update the state
+        -:   22: * Preconditions: player and state are valid states of the game, bonus is >= 0
+        -:   23: * Postconditions: The state of the correct players coins has been updated to reflect the 
+        -:   24: * the correct sum of the treasure cards and the bonus treasure.
+        -:   25: * Testing Requirements: 
+        -:   26: * Only players coins should be updated all other players coins should remaining unchanged
+        -:   27: * Ony the treasure cards in players hand should be summed
+        -:   28: * The cards in the players hand should not be changed
+        -:   29: * The bonus value is a value >= 0
+        -:   30: * Player should be a number between 2 and MAX_PLAYERS
+        -:   31: * A hand with no treasure cards and no bonus should return 0
+        -:   32: * 
+        -:   33: int updateCoins(int player, struct gameState *state, int bonus)
+        -:   34:{
+        -:   35:  int i;
+        -:   36:	
+        -:   37:  //reset coin count
+        -:   38:  state->coins = 0;
+        -:   39:
+        -:   40:  //add coins for each Treasure card in player's hand
+        -:   41:  for (i = 0; i < state->handCount[player]; i++)
+        -:   42:    {
+        -:   43:		  if (state->hand[player][i] == copper)
+        -:   44:		{
+        -:   45:		  state->coins += 1;
+        -:   46:		}
+        -:   47:		  else if (state->hand[player][i] == silver)
+        -:   48:		{
+        -:   49:		  state->coins += 2;
+        -:   50:		}
+        -:   51:		  else if (state->hand[player][i] == gold)
+        -:   52:		{
+        -:   53:		  state->coins += 3;
+        -:   54:		}	
+        -:   55:    }	
+        -:   56:
+        -:   57:  //add bonus
+        -:   58:  state->coins += bonus;
+        -:   59:
+        -:   60:  return 0;
+        -:   61:}
+        -:   62: */
+        -:   63:
+        -:   64:#include "dominion.h"
+        -:   65:#include "dominion_helpers.h"
+        -:   66:#include <string.h>
+        -:   67:#include <stdio.h>
+        -:   68:#include <assert.h>
+        -:   69:#include "rngs.h" //random number generator multiple streams
+        -:   70:
+        -:   71:
+        -:   72:#define TEST "UPDATE_COINS"
+        -:   73:#define TEST_EMPTY 0
+        -:   74:#define TEST_NO_TREASURE 1
+        -:   75:#define TEST_SMALL_HAND 2
+        -:   76:#define TEST_BIG_HAND 3
+        -:   77:
+        -:   78://Function will initialize the gameState struct
+        -:   79:int initializeMyGame(struct gameState *G, int actionCards[], int seed, int numPlayer);
+        -:   80://Function will print the state of the test variable if error is found
+        -:   81:void printState(struct gameState *G, int hand[], int testTreasureHand, int testHandCount, int bonus, int player, int test);
+        -:   82:
+        -:   83:int noPlayerStateChanges(struct gameState *preCall, struct gameState *postCall, int p);
+        -:   84:int noVictoryCardChanges(struct gameState *preCall, struct gameState *postCall, int p);
+        -:   85:int noDominionCardChanges(struct gameState *preCall, struct gameState *postCall, int p, int deckSize);
+        -:   86:
+function main called 1 returned 100% blocks executed 63%
+        1:   87:int main() {
+        -:   88:    int i;
+        1:   89:    int seed = 1000; //used in rngs
+        1:   90:    int numPlayer = 2;
+        1:   91:    int maxBonus = 10;
+        -:   92:    int p;//player counter
+        1:   93:    int bonus = 0;
+        -:   94:	
+        1:   95:	int errorFlag1 = 0, errorFlag2 = 0, errorFlag3 = 0, errorFlag4 = 0, errorFlag5 = 0, errorFlag6 = 0, errorFlag7 = 0, errorFlag8 = 0;
+        1:   96:	int errorFlagP = 0, errorFlagV = 0, errorFlagD = 0;
+        -:   97:	
+        1:   98:	int kingdomCards[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   99:			sea_hag, tribute, smithy, council_room};
+        -:  100:	
+        1:  101:	const int ACTION_CARD_TOTAL = 10;
+        1:  102:    int actionCards[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:  103:		sea_hag, tribute, smithy, council_room};   
+        -:  104:            
+        -:  105:    struct gameState preCall;
+        -:  106:    struct gameState postCall;   
+        -:  107:	  
+        -:  108:
+        -:  109:	//used to test a hand with no cards
+        1:  110:	const int TEST_ZERO_HAND_COUNT = 0;	
+        -:  111:		
+        -:  112:	// hand of copper, silver, and gold of size 3
+        1:  113:	const int SMALL_HAND_COUNT = 3;
+        1:  114:    int testSmallHand[SMALL_HAND_COUNT];
+        1:  115:	int testSmallCoins = 6;
+        -:  116:	
+        -:  117:    // hand of all coppers, silvers, and golds of size MAX_HAND
+        -:  118:    int testBigHand[MAX_HAND];   
+        1:  119:	int testBigCoins = 0;   
+        -:  120:	
+        -:  121:	/*
+        -:  122:	* Initialize the test hands
+        -:  123:	* Iterate from 0 to MAX_HAND and create the test hands 
+        -:  124:	*/
+      501:  125:    for (i = 0; i < MAX_HAND; ++i)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  126:    {		
+      500:  127:		if(i < 1){
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        1:  128:			testSmallHand[i] = copper;
+        1:  129:			testSmallHand[i+1] = silver;
+        1:  130:			testSmallHand[i+2] = gold;                     
+        -:  131:		}
+        -:  132:		
+        -:  133:		if(MAX_HAND % 3 == 0){
+        -:  134:			testBigHand[i] = copper;
+        -:  135:			testBigCoins += 1;
+        -:  136:		}else if(MAX_HAND % 3 == 1){
+        -:  137:			testBigHand[i] = silver;
+        -:  138:			testBigCoins += 2;
+        -:  139:		}else{
+      500:  140:			testBigHand[i] = gold;
+      500:  141:			testBigCoins += 3;
+        -:  142:		}
+        -:  143:    }
+        -:  144:	
+        1:  145:    printf ("Starting unittest1\nTESTING updateCoins():\n");
+call    0 returned 100%
+        -:  146:	
+        -:  147:	//test both players
+        3:  148:    for (p = 0; p < numPlayer; p++){
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:  149:		//test bonus from 0 to maxBonus
+       24:  150:		for (bonus = 0; bonus <= maxBonus; bonus++){
+branch  0 taken 92%
+branch  1 taken 8% (fallthrough)
+        -:  151:		
+       22:  152:			initializeMyGame(&preCall, kingdomCards, seed++, numPlayer);           
+call    0 returned 100%
+        -:  153:								
+        -:  154:			//****************test EMPTY (case 0) where player has no cards************************************
+       22:  155:			preCall.handCount[p] = TEST_ZERO_HAND_COUNT; // set hand size to 0 
+       22:  156:			preCall.whoseTurn = p;	//set turn
+       22:  157:			preCall.discardCount[p] = 0;
+       22:  158:			preCall.deckCount[p] = 0;
+       22:  159:            preCall.playedCardCount = 0;
+       22:  160:            memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
+       22:  161:			updateCoins(p, &postCall, bonus);
+call    0 returned 100%
+        -:  162:			
+       22:  163:			if((p == 0) && !errorFlagP){
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+       22:  164:				if(noPlayerStateChanges(&preCall, &postCall, 1) < 0){
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  165:					printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
+call    0 never executed
+    #####:  166:					errorFlagP = 1;
+        -:  167:				}
+       11:  168:			}else if(!errorFlagP){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+       11:  169:				if(noPlayerStateChanges(&preCall, &postCall, 0) < 0){
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  170:					printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
+call    0 never executed
+    #####:  171:					errorFlagP = 1;
+        -:  172:				}
+        -:  173:			}
+        -:  174:			
+       22:  175:			if(!errorFlagV && (noVictoryCardChanges(&preCall, &postCall, p) < 0) ){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+    #####:  176:				printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
+call    0 never executed
+    #####:  177:				errorFlagV = 1;
+        -:  178:			}			
+        -:  179:			
+       22:  180:			if(postCall.coins != bonus && !errorFlag1){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  181:				printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
+call    0 never executed
+    #####:  182:				errorFlag1 = 1;
+        -:  183:			}
+        -:  184:            //make sure coins are correct and game state hasn't changed
+       22:  185:			assert(postCall.coins == bonus);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+       22:  186:            preCall.coins = bonus;
+        -:  187:			
+       22:  188:			if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 && !errorFlag2){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  189:				printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
+call    0 never executed
+    #####:  190:				errorFlag2 = 1;
+        -:  191:			}
+        -:  192:            //assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);
+        -:  193:			
+       22:  194:			initializeMyGame(&preCall, kingdomCards, seed++, numPlayer);
+call    0 returned 100%
+        -:  195:			
+        -:  196:			//*******************test TEST_NO_TREASURE (case 1) where player has no treasure cards***************
+       22:  197:			memcpy(preCall.hand[p], actionCards, sizeof(int) * ACTION_CARD_TOTAL);
+       22:  198:            preCall.handCount[p] = ACTION_CARD_TOTAL;
+       22:  199:			preCall.deckCount[p] = ACTION_CARD_TOTAL;
+       22:  200:			memcpy(preCall.deck[p], kingdomCards, sizeof(int) * ACTION_CARD_TOTAL);
+       22:  201:            memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
+       22:  202:			updateCoins(p, &postCall, bonus);
+call    0 returned 100%
+        -:  203:			
+       22:  204:			if (!errorFlagD && (noDominionCardChanges(&preCall, &postCall, p, ACTION_CARD_TOTAL) < 0) ){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+    #####:  205:				printState(&postCall, 0, 0, TEST_ZERO_HAND_COUNT, bonus, p, TEST_EMPTY); 
+call    0 never executed
+    #####:  206:				errorFlagD = 1;
+        -:  207:			}
+        -:  208:			
+       22:  209:            if(postCall.coins != bonus && !errorFlag3){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  210:				printState(&postCall, actionCards, 0, ACTION_CARD_TOTAL, bonus, 
+call    0 never executed
+        -:  211:                        p, TEST_NO_TREASURE); 
+    #####:  212:				errorFlag3 = 1;		
+        -:  213:			}
+        -:  214:            //make sure coins are correct and game state hasn't changed
+        -:  215:			//assert(postCall.coins == bonus);
+       22:  216:            preCall.coins = bonus;
+        -:  217:			
+       22:  218:			if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 && !errorFlag4){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  219:				printState(&postCall, actionCards, 0, ACTION_CARD_TOTAL, bonus, 
+call    0 never executed
+        -:  220:                        p, TEST_NO_TREASURE); 
+    #####:  221:				errorFlag4 = 1;		
+        -:  222:			}			
+        -:  223:            //assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);
+        -:  224:			
+       22:  225:			initializeMyGame(&preCall, kingdomCards, seed++, numPlayer);
+call    0 returned 100%
+        -:  226:			
+        -:  227:			//*********************test TEST_SMALL_HAND (case 2) where player has one gold, silver and copper card***
+       22:  228:			memcpy(preCall.hand[p], testSmallHand, sizeof(int) * SMALL_HAND_COUNT);
+       22:  229:            preCall.handCount[p] = SMALL_HAND_COUNT;
+       22:  230:            memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
+       22:  231:			updateCoins(p, &postCall, bonus);
+call    0 returned 100%
+        -:  232:			
+       22:  233:            if( postCall.coins != (testSmallCoins + bonus ) && !errorFlag5){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  234:				printState(&postCall, testSmallHand, testSmallCoins, SMALL_HAND_COUNT, 
+call    0 never executed
+        -:  235:                        bonus, p, TEST_SMALL_HAND); 
+    #####:  236:				errorFlag5 = 1;
+        -:  237:			}
+        -:  238:            //make sure coins are correct and game state hasn't changed
+        -:  239:			//assert(postCall.coins == testSmallCoins + bonus);
+       22:  240:            preCall.coins = testSmallCoins + bonus;
+        -:  241:			
+       22:  242:			if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 &&  !errorFlag6){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  243:				printState(&postCall, testSmallHand, testSmallCoins, SMALL_HAND_COUNT, 
+call    0 never executed
+        -:  244:                        bonus, p, TEST_SMALL_HAND); 
+    #####:  245:				errorFlag6 = 1;
+        -:  246:			}
+        -:  247:            //assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);
+        -:  248:			
+       22:  249:			initializeMyGame(&preCall, kingdomCards, seed++, numPlayer);
+call    0 returned 100%
+        -:  250:			
+        -:  251:			//***************test TEST_BIG_HAND (case 3) where player has MAX gold, silver and copper cards************
+       22:  252:			memcpy(preCall.hand[p], testBigHand, sizeof(int) * MAX_HAND);
+       22:  253:            preCall.handCount[p] = MAX_HAND;
+       22:  254:            memcpy(&postCall, &preCall, sizeof(struct gameState));//save game state before calling updateCoins
+       22:  255:			updateCoins(p, &postCall, bonus);
+call    0 returned 100%
+        -:  256:			
+       22:  257:            if(postCall.coins != (testBigCoins + bonus) &&  !errorFlag7){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  258:				printState(&postCall, testBigHand, testBigCoins, MAX_HAND, bonus, p, 
+call    0 never executed
+        -:  259:                        TEST_BIG_HAND); 
+    #####:  260:				errorFlag7 = 1;		
+        -:  261:			}
+        -:  262:            //make sure coins are correct and game state hasn't changed
+        -:  263:			//assert(postCall.coins == testBigCoins + bonus);
+       22:  264:            preCall.coins = testBigCoins + bonus;
+        -:  265:			
+       22:  266:			if(memcmp(&preCall, &postCall, sizeof(struct gameState)) != 0 && !errorFlag8){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+branch  2 never executed
+branch  3 never executed
+    #####:  267:				printState(&postCall, testBigHand, testBigCoins, MAX_HAND, bonus, p, 
+call    0 never executed
+        -:  268:                        TEST_BIG_HAND); 
+    #####:  269:				errorFlag8 = 1;		
+        -:  270:			}
+        -:  271:            //assert(memcmp(&preCall, &postCall, sizeof(struct gameState)) == 0);           
+        -:  272:        }
+        -:  273:    }
+        -:  274:
+        -:  275:    
+        1:  276:    if(!errorFlag1 && !errorFlag2 && !errorFlag3 && !errorFlag4 && !errorFlag5 && !errorFlag6 && !errorFlag7 && !errorFlag8 &&
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0%
+branch  8 taken 100% (fallthrough)
+branch  9 taken 0%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0%
+branch 12 taken 100% (fallthrough)
+branch 13 taken 0%
+branch 14 taken 100% (fallthrough)
+branch 15 taken 0%
+branch 16 taken 100% (fallthrough)
+branch 17 taken 0%
+        1:  277:		!errorFlagP && ! errorFlagV && ! errorFlagD){
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        1:  278:		printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TEST);
+call    0 returned 100%
+        -:  279:	}else{
+    #####:  280:		printf("\n >>>>> FAILURES DETECTED: Examine test cases %s <<<<<\n\n", TEST);
+call    0 never executed
+        -:  281:	} 
+        -:  282:
+        1:  283:    return 0;
+        -:  284:}
+        -:  285:
+function initializeMyGame called 88 returned 100% blocks executed 100%
+       88:  286:int initializeMyGame(struct gameState *G, int actionCards[], int seed, int numPlayer){
+        -:  287:	
+       88:  288:		memset(G, 23, sizeof(struct gameState));   // clear the game state
+       88:  289:        return initializeGame(numPlayer, actionCards, seed, G); // initialize a new game
+call    0 returned 100%
+        -:  290:}
+        -:  291:
+function printState called 0 returned 0% blocks executed 0%
+    #####:  292:void printState(struct gameState *G, int hand[], int testTreasureHand, int testHandCount, 
+        -:  293:        int bonus, int player, int test){
+        -:  294:	
+    #####:  295:	printf("Error found in %s %d\n", TEST, test );
+call    0 never executed
+    #####:  296:	printf("\tG->handCount = %d  testHandCount = %d\n", G->handCount[player], testHandCount);
+call    0 never executed
+    #####:  297:	printf("\tBonus = %d  Player = %d\n", bonus, player);
+call    0 never executed
+    #####:  298:	printf("\tG->Coins = %d testTreasureHand = %d\n\n", G->coins, testTreasureHand);
+call    0 never executed
+    #####:  299:}
+        -:  300:
+function noPlayerStateChanges called 22 returned 100% blocks executed 40%
+       22:  301:int noPlayerStateChanges(struct gameState *preCall, struct gameState *postCall, int p){
+        -:  302:    //int i = 0;	
+        -:  303:	//test no other changes occured to game state	
+       22:  304:	if(preCall->deckCount[p] != postCall->deckCount[p]){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  305:		printf("ERROR noPlayerStateChanges DECKCOUNT's off\n");
+call    0 never executed
+    #####:  306:		return -1;
+        -:  307:	}
+       22:  308:	if(preCall->discardCount[p] != postCall->discardCount[p]){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  309:		printf("ERROR noPlayerStateChanges DISCARDCOUNT's off\n");
+call    0 never executed
+    #####:  310:		return -1;
+        -:  311:	}
+       22:  312:	if(preCall->handCount[p] != postCall->handCount[p]){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  313:		printf("ERROR noPlayerStateChanges HANDCOUNT's off\n");
+call    0 never executed
+    #####:  314:		return -1;
+        -:  315:	}
+       22:  316:	if(memcmp(&preCall->deck[p], &postCall->deck[p], MAX_DECK) != 0){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  317:		printf("ERROR noPlayerStateChanges DECK is off\n");
+call    0 never executed
+        -:  318:
+        -:  319:		//for testing
+        -:  320:        //for(i=0; i < MAX_DECK ; ++i){
+        -:  321:        //    printf("\tpreCall-deck[%d][%d] = %d, postCall-deck[%d][%d] = %d\n",p, i, preCall->deck[p][i], p, i, postCall->deck[p][i]);
+        -:  322:        //}
+        -:  323:
+    #####:  324:		return -1;
+        -:  325:	}
+       22:  326:	if(memcmp(&preCall->discard[p], &postCall->discard[p], MAX_DECK) != 0){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  327:		printf("ERROR noPlayerStateChanges DISCARD DECK is off\n");
+call    0 never executed
+    #####:  328:		return -1;
+        -:  329:	}
+       22:  330:	if(memcmp(&preCall->hand[p], &postCall->hand[p], MAX_HAND) != 0){ 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  331:		printf("ERROR noPlayerStateChanges HAND is off\n");
+call    0 never executed
+    #####:  332:		return -1;
+        -:  333:	}
+       22:  334:	return 0;
+        -:  335:}
+        -:  336:
+function noVictoryCardChanges called 22 returned 100% blocks executed 71%
+       22:  337:int noVictoryCardChanges(struct gameState *preCall, struct gameState *postCall, int p){
+       22:  338:	if(scoreFor(p, preCall) != scoreFor(p, postCall)){
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+    #####:  339:		printf("ERROR noVictoryCardChanges\n");
+call    0 never executed
+    #####:  340:		return -1;
+        -:  341:	}
+       22:  342:	return 0;
+        -:  343:}
+        -:  344:
+function noDominionCardChanges called 22 returned 100% blocks executed 60%
+       22:  345:int noDominionCardChanges(struct gameState *preCall, struct gameState *postCall, int p, int deckSize){
+       22:  346:	if(memcmp(&preCall->deck[p], &postCall->deck[p], sizeof(int) *  deckSize) != 0){
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:  347:		printf("ERROR noDominionCardChanges\n");
+call    0 never executed
+    #####:  348:		return -1;
+        -:  349:	}
+       22:  350:	return 0;
+        -:  351:}

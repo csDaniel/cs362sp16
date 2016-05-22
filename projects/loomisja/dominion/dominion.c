@@ -402,7 +402,7 @@ int isGameOver(struct gameState *state) {
 
 	//if three supply pile are at 0, the game ends
 	j = 0;
-	for (i = 0; i < 25; i++)
+	for (i = curse; i <= treasure_map; i++) // fix for [isGameOver1], fixed loop termination condition
 	{
 		if (state->supplyCount[i] == 0)
 		{
@@ -421,6 +421,16 @@ int scoreFor(int player, struct gameState *state) {
 
 	int i;
 	int score = 0;
+
+	// fix for [scoreFor1], add the victory point worth of the gardens cards
+	score +=
+		fullDeckCount(player, gardens, state) * // number of gardens cards
+		(
+			(state->deckCount[player] + // cards in deck
+			state->handCount[player] + // cards in hand
+			state->discardCount[player]) // cards in discard
+		/ 10); // total number of player's cards, divided by 10
+
 	//score from hand
 	for (i = 0; i < state->handCount[player]; i++)
 	{
@@ -429,7 +439,7 @@ int scoreFor(int player, struct gameState *state) {
 		if (state->hand[player][i] == duchy) { score = score + 3; };
 		if (state->hand[player][i] == province) { score = score + 6; };
 		if (state->hand[player][i] == great_hall) { score = score + 1; };
-		if (state->hand[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+		//if (state->hand[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); }; // fix for [scoreFor1], remove incorrect calculation
 	}
 
 	//score from discard
@@ -440,18 +450,18 @@ int scoreFor(int player, struct gameState *state) {
 		if (state->discard[player][i] == duchy) { score = score + 3; };
 		if (state->discard[player][i] == province) { score = score + 6; };
 		if (state->discard[player][i] == great_hall) { score = score + 1; };
-		if (state->discard[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+		//if (state->discard[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); }; // fix for [scoreFor1], remove incorrect calculation
 	}
 
 	//score from deck
-	for (i = 0; i < state->discardCount[player]; i++)
+	for (i = 0; i < state->deckCount[player]; i++) // fix for [scoreFor2], fixed loop termination variable
 	{
 		if (state->deck[player][i] == curse) { score = score - 1; };
 		if (state->deck[player][i] == estate) { score = score + 1; };
 		if (state->deck[player][i] == duchy) { score = score + 3; };
 		if (state->deck[player][i] == province) { score = score + 6; };
 		if (state->deck[player][i] == great_hall) { score = score + 1; };
-		if (state->deck[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+		//if (state->deck[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); }; // fix for [scoreFor1], remove incorrect calculation
 	}
 
 	return score;
@@ -653,32 +663,34 @@ int cardEffectAdventurer(int player, int handPos, struct gameState *state)
 	int cardDrawn;
 	int z = 0;
 	int temphand[MAX_HAND];// moved above the if statement
-	int shuffled = 0;
-	while (drawntreasure <= 2) {
+	int shuffled = 0; // fix for [Adventurer3], count shuffles
+	while (drawntreasure < 2) { // fix for [Adventurer1], fixed loop termination condition
 		if (state->deckCount[player] < 1) {//if the deck is empty we need to shuffle discard and add to deck
-			if (shuffled) break; // only allowed to shuffle once
-			else
-			{
-				shuffle(player, state);
-				shuffled++;
-			}
+			if (shuffled) break; // fix for [Adventurer3], allow only 1 shuffle
+			shuffle(player, state);
+			shuffled++; // fix for [Adventurer3], update shuffle count
 		}
-		drawCard(player, state);
+		if(drawCard(player, state) < 0) break; // fix for [Adventurer4], check whether drawCard has succeeded
 		cardDrawn = state->hand[player][state->handCount[player] - 1];//top card of hand is most recently drawn card.
-		if (cardDrawn == copper || cardDrawn == copper || cardDrawn == gold)
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) // fix for [Adventurer2], added check cardDrawn == silver
 			drawntreasure++;
 		else {
-			temphand[z] = cardDrawn;
-			state->handCount[player]--; //this should just remove the top card (the most recently drawn one).
-			z++;
+			if (z < MAX_HAND) // additional fix for [Adventurer4], bounds checking
+			{
+				temphand[z] = cardDrawn;
+				state->handCount[player]--; //this should just remove the top card (the most recently drawn one).
+				z++;
+			}
+			else break;
 		}
 	}
 	while (z - 1 >= 0) {
-		state->discard[player][state->discardCount[player]++] = temphand[z - 1]; // discard all cards in play that have been drawn
+		if(z <= MAX_HAND) // additional fix for [Adventurer4], bounds checking
+			state->discard[player][state->discardCount[player]++] = temphand[z - 1]; // discard all cards in play that have been drawn
 		z = z - 1;
 	}
 	//discard card from hand
-	discardCard(handPos, player, state, 0);
+	discardCard(handPos, player, state, 0); // fix for [Adventurer5]
 	return 0;
 }
 
@@ -698,7 +710,7 @@ int cardEffectCouncilRoom(int player, int handPos, struct gameState *state)
 	//Each other player draws a card
 	for (i = 0; i < state->numPlayers; i++)
 	{
-		if (i < player)
+		if (i != player) //  fix for [CouncilRoom1], changed conditional
 		{
 			drawCard(i, state);
 		}
@@ -749,7 +761,7 @@ int cardEffectFeast(int player, int handPos, int choice1, struct gameState *stat
 				printf("Deck Count: %d\n", state->handCount[player] + state->deckCount[player] + state->discardCount[player]);
 			}
 
-			gainCard(choice1, state, 2, player);//Gain the card
+			gainCard(choice1, state, 0, player);//Gain the card // fix for [Feast1], changed toFlag argument to 0
 			x = 0;//No more buying cards
 
 			if (DEBUG) {
@@ -782,12 +794,13 @@ int cardEffectMine(int player, int handPos, int choice1, int choice2, struct gam
 		return -1;
 	}
 
-	if (choice2 > treasure_map || choice2 < curse)
+	//if (choice2 > treasure_map || choice2 < curse)
+	if (choice2 < copper || choice2 > gold) // fix for [Mine2], change choice2 validation condition, allow only treasure cards
 	{
 		return -1;
 	}
 
-	if ((getCost(state->hand[player][choice1]) + 3) > getCost(choice2))
+	if ((getCost(state->hand[player][choice1]) + 3) < getCost(choice2)) // fix for [Mine3], change condition to check if the gained card cost is greater than [discarded card cost + 3]
 	{
 		return -1;
 	}
@@ -802,7 +815,7 @@ int cardEffectMine(int player, int handPos, int choice1, int choice2, struct gam
 	{
 		if (state->hand[player][i] == j)
 		{
-			discardCard(i, player, state, 0);
+			discardCard(i, player, state, 1); // fix for [Mine1], set trashFlag for the card being discarded so the card is actually trashed
 			break;
 		}
 	}
@@ -817,12 +830,12 @@ int cardEffectRemodel(int player, int handPos, int choice1, int choice2, struct 
 
 	j = state->hand[player][choice1];  //store card we will trash
 
-	if ((getCost(state->hand[player][choice1]) + 2) > getCost(choice2))
+	if ((getCost(state->hand[player][choice1]) + 2) < getCost(choice2)) // fix for [Remodel2], fixed cost comparison
 	{
 		return -1;
 	}
 
-	gainCard(choice1, state, 0, player);
+	gainCard(choice2, state, 0, player); // fix for [Remodel1], fixed card gained.
 
 	//discard card from hand
 	discardCard(handPos, player, state, 0);
@@ -846,7 +859,7 @@ int cardEffectSmithy(int player, int handPos, struct gameState *state)
 	int i;
 
 	//+3 Cards
-	for (i = 0; i <= 3; i++)
+	for (i = 0; i < 3; i++) // fix for [Smithy1], loop termination condition changed to 3
 	{
 		drawCard(player, state);
 	}

@@ -1281,25 +1281,28 @@ int adventureCard(int handPos, int currentPlayer, struct gameState *state)
 int greatHallCard(int handPos, int currentPlayer, struct gameState *state)
 {
 	 //+1 Card
-	  drawCard(currentPlayer, state);
-	
-      state->numActions+=2;
+      drawCard(currentPlayer, state);
+			
+      //+1 Actions
+      state->numActions++;
 			
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
-	  return 0;
+      return 0;
 }
 int councilRoomCard(int handPos, int currentPlayer, struct gameState *state)
 {
 	int i = 0;
 	     //+4 Cards
-      for (i = 0; i <= 4; i++)
+		 //**FIXED BUG HERE **//
+      for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
 			
       //+1 Buy
-      state->numActions++;
+      //**FIXED BUG HERE **
+	  state->numBuy++;
 			
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
@@ -1320,7 +1323,8 @@ minionCard(int choice1, int choice2, int choice3, int handPos, int currentPlayer
 //+1 action
 	 int i = 0;
 	 int j = 0;
-	 state->numBuys++;
+	 //** FIXED BUG HERE **//
+	 state->numActions++;
 			
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1357,8 +1361,8 @@ minionCard(int choice1, int choice2, int choice3, int handPos, int currentPlayer
 			  discardCard(handPos, i, state, 0);
 			}
 							
-		      //draw 4
-		      for (j = 0; j <= 4; j++)
+		      //draw 4 //** FIXED BUG HERE **//
+		      for (j = 0; j < 4; j++)
 			{
 			  drawCard(i, state);
 			}

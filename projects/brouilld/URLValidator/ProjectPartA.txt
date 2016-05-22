@@ -1,0 +1,114 @@
+﻿Nathalie Blume (Id: 932227322)
+David Brouillette (Id: 932498797) 
+Rick Garnica (ID:  932442302)
+(Ian Cates was part of the early team but did not contribute to the report)
+CS362-400 Software Engineering II
+Spring 2016
+
+
+CS362 Project Part A
+
+
+1- Explain testIsValid Function of UrlValidator test code. 
+
+
+Purpose: A JUnit testing unit that confirms whether the ‘isValid’ method works. 
+
+
+Overview of the work it performs:
+1. A ‘UrlValidator’ object is created.
+2. A public version of ‘testIsValid’ calls the primary version of testIsValid().
+3. Two "asserts" are made to verify that "isValid" returns True with known valid URLs.
+4. Then urls are built into ‘testBuffer’, passed to the string variable “url”, and tested.
+   1. For each url, 5 parts are strung together. 
+      1. These include the scheme, authority, port, path, and query.
+      2. Each part is associated with a boolean value indicating whether or not it renders the url invalid (value is true is the part fits a valid url).
+   1. The truth value of the url is saved to the variable “expected”
+      1. The expected validity of the url is determined by bitwise AND of the truth values of the different parts. 
+      2. If all parts evaluate valid/true, then the url is value/true.
+1. The url is then submitted as an argument to isValid() and the result is saved. 
+2. Finally,  if the output detail variables are set to true one of the following happens:
+   1. If the result is what was expected, a "." is printed next to the url.
+   2. Otherwise a "X" is printed there. 
+
+
+2- Give how many total number of urls it is testing. 
+
+
+Answer: 
+35,911 unique urls are tested. 
+53,912 tests are performed (one url is tested twice, using 2 methods)
+
+
+Explanation:
+* Two urls are explicitly written out (i.e. without constructing the url from a combination of parts) and are tested using assertTrue()
+* 35,910 urls are tested using the url construction scheme: 35,910 permutations = 9 testUrlScheme options * 19 testUrlAuthority options * 7 testUrlPort options * 10 testPath options * 3 testUrlQuery options.
+* One of the two urls explicitly written out is also included among the 35,910 urls that are constructed from parts. 
+
+
+3- Also, explain how it is building all the urls. 
+
+
+The urls are built within a do-while loop. Within this loop each respective url part is iterated over while being pieced together. This results in urls composed of each possible combination of url parts. Each respective part is tested for its validity. This is determined by bitwise AND (&=) of the truth values for each part. If each individual url part is valid/true, then the overall url is valid/true. This overall url is then submitted as an argument to isValid() and the result is saved. 
+If output variables have been set to true, the results are output: if the result is equivalent to what was expected, a "." is printed next to the url. Otherwise a "X" is printed there.
+
+
+The do-while loop continues as long as incrementTestPartsIndex returns true. This variable is set by incrementTestPartsIndex() which is called at the end of every do-while loop.
+This method increments the index for one set of url parts until exhaustion. When exhausted, the index for that part is reset and the next element in TestPartsIndex is selected. This process repeats until all parts have been exhausted. Thus all permutations are examined.
+
+
+There are five divisions of urls into parts: scheme, authority, port, path, and query.This following shows the mapping of each term to the respective portion of a url:
+<scheme>://<authority><port><path>?<query>
+
+
+The parts are taken from the following arrays of item-valid pairs listed in testUrlParts:
+ResultPair[] testUrlScheme
+ResultPair[] testUrlAuthority
+ResultPair[] testUrlPort
+ResultPair[] testUrlPath
+ResultPair[] testUrlQuery
+
+
+The following object array and the following int array act as building tools:
+Object[] testUrlParts
+int[] testPartsIndex = {0,0,0,0,0}
+
+
+
+
+4- Give an example of valid url being tested and an invalid url being tested by testIsValid() method.  
+
+
+Valid:            http://www.google.com/test1?action=view
+Invalid:   3ht://1.2.3.4.5/../?action=view
+        
+
+
+5- Do you think that a real world test (URL Validator's testIsValid() test in this case) is very different than the unit tests and card tests that we wrote (in terms of concepts & complexity)? Explain in few lines. 
+
+
+Real world tests are not very different from the unit tests we’ve written for class. They share the same basic process (see Series of Steps (Concepts) below). They may differ in complexity: in particular, real world tests are generally more complex, although testIsValid is in some ways less complex than the work we’ve completed in class (see Complexity below).
+
+
+Series of Steps (Concepts)
+
+
+For both real-world and in-class testing, the basic testing process consist of the following steps:
+(1) define a population of inputs, 
+(2) define a method of sampling from that population → generate a sample, 
+(3) determine the expected result for each element in the sample, 
+(4) determine the actual result by running the unit-under-test with a given element in the sample,
+(5) assert that the expected result and the matching actual result are identical and communicate to the user the outcome of that assertion, together with the parameters of the test to indicate the context of a failure or of a success.
+Conceptually, the two are therefore similar.
+
+
+Complexity
+
+
+In general, real-world tests use a larger sample of input than in-class tests do because (1) real-world programmers often have access to greater computational power than individual students do and (2) real-world programmers aim to satisfy a more stringent coverage criterion than in-class tests do. However this is not always the case. 
+
+
+* testIsValid() used a less representative sample: The method testIsValid() for instance models the population of urls using very small subsets of the universe of possible parts. On the one hand, it covers a known set of valid vs. invalid cases. It is also exhaustive in looking at all permutations of parts. On the other hand, it misses a large number of known invalid and valid cases that might have been generated using a different algorithm. For example, it does not test uppercase urls or urls with ICANN registered vs, non-registered top-level domains. By contrast, the tests we’ve generated for class (e.g. generating strings by sampling from all printable characters) used input-generation algorithm that were less constrained and that produced a more representative sample of the population of possible inputs. 
+
+
+* testIsValid() completed a comparable number of tests to some in-class implementations: The method testIsValid ran approximately 50 thousand tests. Members of this class have implemented tests of similar magnitude  for class.

@@ -1222,22 +1222,44 @@ int playAdventurer(struct gameState *state,int handPos){
   int currentPlayer= state->whoseTurn;
   int drawntreasure = 0;
   int cardDrawn;
+  int shuffleCount = 0;
   int temphand[MAX_HAND];
   int i;//temphand counter
   int z = 0;
   while(drawntreasure<2){
-    if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
-      shuffle(currentPlayer, state);
+    if (state->deckCount[currentPlayer] <1){
+      //if the deck is empty we need to shuffle discard and add to deck
+      if (shuffleCount <= 1){
+        //Move discard to deck
+        for (i = 0; i < state->discardCount[currentPlayer];i++){
+          state->deck[currentPlayer][i] = state->discard[currentPlayer][i];
+          state->discard[currentPlayer][i] = -1;
+        }
+
+        state->deckCount[currentPlayer] = state->discardCount[currentPlayer];
+        state->discardCount[currentPlayer] = 0;//Reset discard
+        shuffle(currentPlayer, state);
+        ++shuffleCount;
+        if (shuffleCount==2) break;
+      }
     }
-    drawCard(currentPlayer, state);
-    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-    printf("Card drawn: %d\n",cardDrawn);
-    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-      drawntreasure++;
-    else{
-      temphand[z]=cardDrawn;
-      state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-      z++;
+    if (shuffleCount <2){
+      for (i=0;i<state->handCount[currentPlayer];i++){
+        if (state->hand[currentPlayer][i] == copper || 
+            state->hand[currentPlayer][i] == silver ||
+            state->hand[currentPlayer][i] == gold) drawntreasure++;
+      }
+      if (drawntreasure<2){
+        drawCard(currentPlayer, state);
+        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+          drawntreasure++;
+        else{
+          temphand[z]=cardDrawn;
+          state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+          z++;
+        }
+      }
     }
   }
   while(z-1>=0){
@@ -1252,6 +1274,7 @@ int playSmithy(struct gameState *state,int handPos){
       //currentPlayer
       int currentPlayer = whoseTurn(state);
       int i;
+      if (state->deckCount[currentPlayer]<3) return true;
       //+3 Cards
       for (i = 0; i < 3; i++)
       {
@@ -1272,6 +1295,9 @@ int playGreatHall(struct gameState *state, int handPos){
       
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
+      if (handPos < state->handCount[currentPlayer]){
+        state->hand[currentPlayer][handPos] = handPos;
+      }
 }
 
 int playAmbassador(struct gameState *state, int handPos, int choice1, int choice2){
@@ -1291,7 +1317,7 @@ int playAmbassador(struct gameState *state, int handPos, int choice1, int choice
 
       for (i = 0; i < state->handCount[currentPlayer]; i++)
   {
-    if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+    if (i != handPos && i == state->hand[currentPlayer][choice2] && i != choice1)
       {
         j++;
       }
@@ -1326,7 +1352,7 @@ int playAmbassador(struct gameState *state, int handPos, int choice1, int choice
       {
         if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
     {
-      discardCard(i, currentPlayer, state, 1);
+      discardCard(i, currentPlayer, state, 0);
       break;
     }
       }
@@ -1356,7 +1382,7 @@ int playSteward(struct gameState *state,int handPos,int choice1,int choice2,int 
   }
       
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 

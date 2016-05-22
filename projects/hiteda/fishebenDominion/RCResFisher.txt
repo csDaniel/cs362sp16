@@ -1,0 +1,67 @@
+Result for running random test:
+--------------------------------------------------------------------
+randomtestcard.c:
+-------------------------RANDOM TESTER SMITHY---------------------------------
+----------------- Testing Card: smithy ----------------
+Error found in smithy, 4
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 392  pre.HandCount = 392
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 38 pre.discardCount[p] = 38
+	post.deckCount[p] = 446 pre.deckCount[p] = 446
+	treasure cards in deck = 122 Player = 1
+
+Error found in smithy, 7
+	post.whoseTurn = 1 pre.whoseTurn = 1
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 392  pre.HandCount = 392
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 38 pre.discardCount[p] = 38
+	post.deckCount[p] = 446 pre.deckCount[p] = 446
+	treasure cards in deck = 122 Player = 1
+
+Error found in smithy, 5
+	post.whoseTurn = 0 pre.whoseTurn = 0
+	post.numBuys = 1 pre.numBuys = 1
+	post.NumAction = 1 pre.NumActions = 1
+	post.Coins = 0 pre.Coins = 0
+	post.HandCount = 363  pre.HandCount = 363
+	post.playedCardCount = 0 pre.playedCardCount = 1
+	post.playCards[0] = 387389207 pre.playedCards[0] = 387389207
+	post.discardCount[p] = 0 pre.discardCount[p] = 0
+	post.deckCount[p] = 497 pre.deckCount[p] = 497
+	treasure cards in deck = 139 Player = 0
+
+Random testing complete.
+Executed 300000 random tests.
+ >>>>> FAILURES DETECTED: Examine test cases smithy <<<<<
+
+File 'randomtestcard.c'
+Lines executed:78.98% of 157
+Creating 'randomtestcard.c.gcov'
+
+File 'randomtestcard.c'
+Lines executed:78.98% of 157
+Branches executed:84.91% of 106
+Taken at least once:60.38% of 106
+Calls executed:70.00% of 60
+Creating 'randomtestcard.c.gcov'
+
+File 'dominion.c'
+Lines executed:33.16% of 567
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:33.16% of 567
+Branches executed:40.05% of 417
+Taken at least once:33.57% of 417
+Calls executed:17.89% of 95
+Creating 'dominion.c.gcov'
+

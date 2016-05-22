@@ -1,0 +1,199 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://gainCard function
+        -:    2://unittest1.c
+        -:    3:#include "dominion.h"
+        -:    4:#include "dominion_helpers.h"
+        -:    5:#include <string.h>
+        -:    6:#include <stdio.h>
+        -:    7:#include <assert.h>
+        -:    8:#include "rngs.h"
+        -:    9:#include <stdlib.h>
+        -:   10:#include "interface.h"
+        -:   11:
+        -:   12:#define FUNCTION "gainCard"
+        -:   13:
+        1:   14:int main() {
+        1:   15:	int numPlayers = 2;
+        1:   16:	int thisPlayer = 0;
+        1:   17:	int seed = 1000;
+        -:   18:	int supplyPos;
+        1:   19:	int toFlag = 0;
+        -:   20:	struct gameState G, testG;
+        -:   21:	int currDeckCount, currHandCount, currDiscardCount, currSupplyCount;
+        1:   22:	int k[10] = {curse, estate, village, remodel, 
+        -:   23:		council_room, adventurer, province, smithy, steward, tribute};
+        -:   24:	//initialize game, state and player cards
+        1:   25:	initializeGame(numPlayers, k, seed, &G);
+        1:   26:	printf("\n\n\n\n----------------- Testing Function: %s ----------------\n", FUNCTION);
+        1:   27:	printf("\n-------------Saving Starting Game State----------------\n");
+        1:   28:	memcpy(&testG, &G, sizeof(struct gameState));
+        -:   29:	//output supply
+        1:   30:	printSupply(&testG);
+        1:   31:	printf("\n------------TEST 1: Testing if Card isn't in game-------------\n");
+        1:   32:	supplyPos = -1;
+        1:   33:	if(gainCard(supplyPos, &testG, toFlag, thisPlayer) == -1)
+    #####:   34:		printf("RETURNED ERROR FOR CARD NOT IN GAME: SUCCESS\n");
+        1:   35:	printf("\n-------------TEST 2: Testing when toFlag == 1...................\n");
+        -:   36:	//revert to starting game state
+        1:   37:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   38:	//set to flag
+        1:   39:	toFlag = 1;
+        -:   40:	//set supply pos
+        1:   41:	supplyPos = 1;
+        -:   42:	//get starting counts
+        1:   43:	currDeckCount = testG.deckCount[thisPlayer];
+        1:   44:	currHandCount = testG.handCount[thisPlayer];
+        1:   45:	currDiscardCount = testG.discardCount[thisPlayer];
+        1:   46:	currSupplyCount = testG.supplyCount[supplyPos];
+        1:   47:	printf("Current deck count: %d\n", testG.deckCount[thisPlayer]);
+        1:   48:	printf("Current hand count: %d\n", testG.handCount[thisPlayer]);
+        1:   49:	printf("Current discard count: %d\n", testG.discardCount[thisPlayer]);
+        1:   50:	printf("Current Supply Count: %d\n", testG.supplyCount[supplyPos]);
+        -:   51:	//run function
+        1:   52:	gainCard(supplyPos, &testG, toFlag, thisPlayer);
+        -:   53:	//output counts
+        1:   54:	printf("Final deck count: %d\n", testG.deckCount[thisPlayer]);
+        1:   55:	printf("Final hand count: %d\n", testG.handCount[thisPlayer]);
+        1:   56:	printf("Final discard count: %d\n", testG.discardCount[thisPlayer]);	
+        1:   57:	printf("Final Supply Count: %d\n", testG.supplyCount[supplyPos]);
+        -:   58:	//output failure/success statements
+        1:   59:	printf("DECK\n");
+        1:   60:	if ((currDeckCount + 1) == testG.deckCount[thisPlayer])
+        1:   61:		printf("Card Added to Deck: SUCCESS\n");
+    #####:   62:	else if (currDeckCount == testG.deckCount[thisPlayer])
+    #####:   63:		printf("Card Not Added to Deck: FAILURE\n");
+        -:   64:	else
+    #####:   65:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:   66:	
+        1:   67:	printf("HAND\n");
+        1:   68:	if ((currHandCount) == testG.handCount[thisPlayer])
+        1:   69:		printf("No Cards Added to Hand: SUCCESS\n");
+        -:   70:	else
+    #####:   71:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:   72:	
+        1:   73:	printf("DISCARD\n");
+        1:   74:	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer])
+    #####:   75:		printf("No Cards Added to Discard: SUCCESS\n");
+        -:   76:	else
+        1:   77:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:   78:	
+        1:   79:	printf("SUPPLY\n");
+        1:   80:	if ((currSupplyCount - 1) == testG.supplyCount[supplyPos])
+        1:   81:		printf("Card Taken From Supply: SUCCESS\n");
+    #####:   82:	else if (currSupplyCount == testG.supplyCount[supplyPos])
+    #####:   83:		printf("Card Not taken from Supply: FAILURE\n");
+        -:   84:	else
+    #####:   85:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:   86:	
+        1:   87:	printf("\n-------------Testing when toFlag == 2...................\n");
+        -:   88:	//revert to starting game state
+        1:   89:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   90:	//set flag to 2
+        1:   91:	toFlag = 2;
+        1:   92:	supplyPos = 1;
+        -:   93:	//set starting counts
+        1:   94:	currDeckCount = testG.deckCount[thisPlayer];
+        1:   95:	currHandCount = testG.handCount[thisPlayer];
+        1:   96:	currDiscardCount = testG.discardCount[thisPlayer];
+        1:   97:	currSupplyCount = testG.supplyCount[supplyPos];
+        -:   98:	//output starting counts
+        1:   99:	printf("Current deck count: %d\n", testG.deckCount[thisPlayer]);
+        1:  100:	printf("Current hand count: %d\n", testG.handCount[thisPlayer]);
+        1:  101:	printf("Current discard count: %d\n", testG.discardCount[thisPlayer]);
+        1:  102:	printf("Current Supply Count: %d\n", testG.supplyCount[supplyPos]);
+        -:  103:	//run function
+        1:  104:	gainCard(supplyPos, &testG, toFlag, thisPlayer);
+        -:  105:	//get counts post function 
+        1:  106:	printf("Final deck count: %d\n", testG.deckCount[thisPlayer]);
+        1:  107:	printf("Final hand count: %d\n", testG.handCount[thisPlayer]);
+        1:  108:	printf("Final discard count: %d\n", testG.discardCount[thisPlayer]);
+        1:  109:	printf("Final Supply Count: %d\n", testG.supplyCount[supplyPos]);
+        -:  110:	//output the statements 
+        1:  111:	printf("DECK\n");
+        1:  112:	if ((currDeckCount) == testG.deckCount[thisPlayer])
+        1:  113:		printf("Card Not Added to Deck: SUCCESS\n");
+        -:  114:	else
+    #####:  115:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  116:	
+        1:  117:	printf("HAND\n");
+        1:  118:	if ((currHandCount + 1) == testG.handCount[thisPlayer])
+        1:  119:		printf("Card Added to Hand: SUCCESS\n");
+    #####:  120:	else if (currHandCount == testG.handCount[thisPlayer])
+    #####:  121:		printf("Card Not Added to Deck: FAILURE\n");
+        -:  122:	else
+    #####:  123:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  124:	
+        1:  125:	printf("DISCARD\n");
+        1:  126:	if ((currDiscardCount) == testG.discardCount[thisPlayer])
+        1:  127:		printf("Card Not Added to Discard: SUCCESS\n");
+        -:  128:	else
+    #####:  129:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  130:	
+        1:  131:	printf("SUPPLY\n");
+        1:  132:	if ((currSupplyCount - 1) == testG.supplyCount[supplyPos])
+        1:  133:		printf("Card Taken From Supply: SUCCESS\n");
+    #####:  134:	else if (currSupplyCount == testG.supplyCount[supplyPos])
+    #####:  135:		printf("Card Not taken from Supply: FAILURE\n");
+        -:  136:	else
+    #####:  137:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  138:
+        1:  139:	printf("\n-------------Testing when toFlag == 0...................\n");
+        -:  140:	//revert to starting game state
+        1:  141:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:  142:	//set flag to zero
+        1:  143:	toFlag = 0;
+        1:  144:	supplyPos = 1;
+        -:  145:	//get starting counts
+        1:  146:	currDeckCount = testG.deckCount[thisPlayer];
+        1:  147:	currHandCount = testG.handCount[thisPlayer];
+        1:  148:	currDiscardCount = testG.discardCount[thisPlayer];
+        1:  149:	currSupplyCount = testG.supplyCount[supplyPos];
+        -:  150:	//output starting counts
+        1:  151:	printf("Current deck count: %d\n", testG.deckCount[thisPlayer]);
+        1:  152:	printf("Current hand count: %d\n", testG.handCount[thisPlayer]);
+        1:  153:	printf("Current discard count: %d\n", testG.discardCount[thisPlayer]);
+        1:  154:	printf("Current Supply Count: %d\n", testG.supplyCount[supplyPos]);
+        -:  155:	//run function
+        1:  156:	gainCard(supplyPos, &testG, toFlag, thisPlayer);
+        -:  157:	//output results
+        1:  158:	printf("Final deck count: %d\n", testG.deckCount[thisPlayer]);
+        1:  159:	printf("Final hand count: %d\n", testG.handCount[thisPlayer]);
+        1:  160:	printf("Final discard count: %d\n", testG.discardCount[thisPlayer]);
+        1:  161:	printf("Final Supply Count: %d\n", testG.supplyCount[supplyPos]);
+        -:  162:	//output success/failure
+        1:  163:	printf("DECK\n");
+        1:  164:	if ((currDeckCount) == testG.deckCount[thisPlayer])
+        1:  165:		printf("Card Not Added to Deck: SUCCESS\n");
+        -:  166:	else
+    #####:  167:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  168:
+        1:  169:	printf("HAND\n");
+        1:  170:	if ((currHandCount) == testG.handCount[thisPlayer])
+        1:  171:		printf("No Cards Added to Hand: SUCCESS\n");
+        -:  172:	else
+    #####:  173:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  174:	
+        1:  175:	printf("DISCARD\n");
+        1:  176:	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer])
+        1:  177:		printf("Card Added to Discard: SUCCESS\n");
+    #####:  178:	else if (currDiscardCount == testG.discardCount[thisPlayer])
+    #####:  179:		printf("Card Not Added to Discard: FAILURE\n");
+        -:  180:	else
+    #####:  181:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  182:	
+        1:  183:	printf("SUPPLY\n");
+        1:  184:	if ((currSupplyCount - 1) == testG.supplyCount[supplyPos])
+        1:  185:		printf("Card Taken From Supply: SUCCESS\n");
+    #####:  186:	else if (currSupplyCount == testG.supplyCount[supplyPos])
+    #####:  187:		printf("Card Not taken from Supply: FAILURE\n");
+        -:  188:	else
+    #####:  189:		printf("Too Many or Too Few Cards Added: FAILURE\n");
+        -:  190:	//revert to starting game state
+        1:  191:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:  192:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", FUNCTION);
+        1:  193:	return 0;
+        -:  194:}

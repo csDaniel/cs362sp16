@@ -1,0 +1,115 @@
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <assert.h>
+        -:    3:#include <string.h>
+        -:    4:#include "dominion.h"
+        -:    5:#include "dominion_helpers.h"
+        -:    6:#include "rngs.h"
+        -:    7:
+function main called 1 returned 100% blocks executed 61%
+        -:    8:int main(){
+        -:    9:
+        -:   10:   struct gameState state, saveState;
+        1:   11:   int numPlayers = 2, i;
+        1:   12:   int kingdom[10] = {council_room, mine, gardens, feast, ambassador, tribute, 
+        -:   13:                     steward, minion, sea_hag, treasure_map};
+        1:   14:   int seed = 874;
+        -:   15:
+        1:   16:   initializeGame(numPlayers, kingdom, seed, &state);
+        1:   17:   int currentPlayer = state.whoseTurn;
+        -:   18:   // Save the state as-is
+        1:   19:   memcpy(&saveState, &state, sizeof(struct gameState));
+        -:   20:   
+        -:   21:   /* business requirements
+        -:   22:      
+        -:   23:      description: testing buyCard(int supplyPos, struct gameState *state), 
+        -:   24:      which adds a card into the player's discard pile, which can eventually
+        -:   25:      get into the player's deck.
+        -:   26:
+        -:   27:      1. Bought cards should have been added to player's discard pile.
+        -:   28:      2. Assuming no +buy cards were played, only 1 buys were allowed.
+        -:   29:      3. Should not be able to buy cards without enough coins.
+        -:   30:      4. Cannot buy more cards than available in supply.
+        -:   31:      5. Supply card should have been reduced by amount bought.
+        -:   32:
+        -:   33:      end requirements*/
+        1:   34:   printf("<----------BEGIN unittest4-buyCard()---------->\n\n");
+        -:   35:
+        -:   36:// ----------------- TEST 1 ---------------------------------------------------
+        1:   37:   printf(" TEST 1: Bought cards should have been added to player's discard pile.\n");
+        1:   38:   state.coins = 8;
+        1:   39:   buyCard(province, &state);
+        1:   40:   printf("    top card on discard pile is: %i, expected: %i\n", state.discard[currentPlayer][state.discardCount[currentPlayer]-1], province);
+        2:   41:   assert(state.discard[currentPlayer][state.discardCount[currentPlayer]-1] == province);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   42:
+        -:   43:// ----------------- TEST 2 ---------------------------------------------------
+        1:   44:   printf("\n");
+        1:   45:   printf(" TEST 2: Assuming no +buy cards were played, only 1 buys were allowed.\n");
+        1:   46:   printf("    current player's buys left: %i, expected: 0\n", state.numBuys);
+        2:   47:   assert(state.numBuys == 0);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   48:
+        -:   49:// ----------------- TEST 3 ---------------------------------------------------
+        1:   50:   printf("\n");
+        1:   51:   printf(" TEST 3: Buying cards without enough coins.\n");
+        -:   52:   // Restore state to original state
+        1:   53:   memcpy(&state, &saveState, sizeof(struct gameState));
+        1:   54:   state.coins = 0;
+        1:   55:   state.numBuys = 1;
+        1:   56:   int discardBeforeBuy = state.discardCount[currentPlayer];
+        1:   57:   buyCard(estate, &state);
+        1:   58:   printf("    discard count: %i, expected: %i\n", state.discardCount[currentPlayer], discardBeforeBuy);    
+        2:   59:   assert(state.discardCount[currentPlayer] == discardBeforeBuy);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   60:
+        -:   61:// ----------------- TEST 4 ---------------------------------------------------
+        1:   62:   printf("\n");
+        1:   63:   printf(" TEST 4: Buying cards that are out of supply.\n");
+        -:   64:   // Restore state to original state
+        1:   65:   memcpy(&state, &saveState, sizeof(struct gameState));
+        1:   66:   state.coins = 10;
+        1:   67:   state.numBuys = 1;
+        -:   68:   // Find a card pile that is empty
+      110:   69:   for (i = 0; i <= treasure_map; ++i) if (state.supplyCount[i] == 0) break;
+branch  0 taken 96%
+branch  1 taken 4%
+branch  2 taken 0%
+branch  3 taken 100%
+        1:   70:   discardBeforeBuy = state.discardCount[currentPlayer];
+        1:   71:   buyCard(i, &state);
+        1:   72:   printf("    discard count: %i, expected: %i\n", state.discardCount[currentPlayer], discardBeforeBuy);
+        2:   73:   assert(state.discardCount[currentPlayer] == discardBeforeBuy);
+branch  0 taken 0%
+branch  1 taken 100%
+        -:   74:
+        -:   75:// ----------------- TEST 5 ---------------------------------------------------
+        1:   76:   printf("\n");
+        1:   77:   printf(" TEST 5: Purchased supply card should have their supply pile reduced by 1.\n");
+        -:   78:   // Restore state to original state
+        1:   79:   memcpy(&state, &saveState, sizeof(struct gameState));
+        1:   80:   state.coins = 10;
+        1:   81:   state.numBuys = 1;
+        -:   82:   // Find a card pile that has available cards to buy
+        4:   83:   for (i = 0; i <= treasure_map; ++i) if (state.supplyCount[i] > 0) break;
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 100%
+branch  3 taken 0%
+        1:   84:   int supplyBeforeBuy = state.supplyCount[i];
+        1:   85:   buyCard(i, &state);
+        2:   86:   printf("    supply count: %i, expected: %i\n", state.supplyCount[i], supplyBeforeBuy - 1); assert(state.supplyCount[i] == supplyBeforeBuy - 1);
+branch  0 taken 0%
+branch  1 taken 100%
+        1:   87:   printf("\n<----------END unittest4-buyCard()---------->\n\n");   
+        -:   88:
+        1:   89:   return 0;
+        -:   90:}
+        -:   91:
