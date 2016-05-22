@@ -1291,7 +1291,7 @@ int smithyCard(int handPos, int currentPlayer, struct gameState *state) {
 
 int adventurerCard(int drawntreasure, struct gameState *state, int z, int currentPlayer) {
     int temphand[MAX_HAND];
-    while(drawntreasure<3){
+    while(drawntreasure<2){
         if (state->deckCount[currentPlayer] <1){
           shuffle(currentPlayer, state);
         }
@@ -1318,7 +1318,7 @@ int greathallCard(int handPos, int currentPlayer, struct gameState *state) {
 
       state->numActions++;
 
-      drawCard(currentPlayer, state);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 
