@@ -1,0 +1,359 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <assert.h>
+        -:    4:#include <string.h>
+        -:    5:#include "dominion.h"
+        -:    6:#include "dominion_helpers.h"
+        -:    7:#include "rngs.h"
+        -:    8:#include <time.h>
+        -:    9:
+        -:   10:void oracle1(struct gameState *, struct gameState *, int);
+        -:   11:void oracle2(struct gameState *, struct gameState *, int);
+        -:   12:void oracle3(struct gameState *, struct gameState *, int);
+        -:   13:void oracle4(struct gameState *, struct gameState *, int);
+        -:   14:
+function main called 2 returned 100% blocks executed 97%
+        -:   15:int main(){
+        -:   16:
+        2:   17:	srand(time(NULL));
+        -:   18:   struct gameState state, savedState;
+        2:   19:   int numPlayers = 2, i, j;
+        2:   20:   int handPos = 0, choice1 = 0, choice2 = 0, choice3 = 0;
+        2:   21:   int *bonus = NULL;
+        -:   22:
+        2:   23:   int kingdom[10] = {village, adventurer, gardens, mine, ambassador,  
+        -:   24:                     remodel, great_hall, minion, sea_hag, outpost};
+        2:   25:   int seed = 1020;
+        -:   26:
+        2:   27:   initializeGame(numPlayers, kingdom, seed, &state);
+        2:   28:   int currentPlayer = state.whoseTurn;
+        -:   29:   // Save the state as-is
+        2:   30:   memcpy(&savedState, &state, sizeof(struct gameState));
+        -:   31:	/*
+        -:   32:	Random Test plan for Village Card
+        -:   33:
+        -:   34:		1. Draw cards at random to initiate game at different states of the
+        -:   35:			deck. Also, try to get a state where the deck becomes empty.
+        -:   36:		2. Randomize the number of kingdom cards in the supply pile from 0 to 
+        -:   37:			10.
+        -:   38:		3. Randomize number of players from 0 to maximum number of players.
+        -:   39:		4. Randomize seed number.
+        -:   40:
+        -:   41:	End of Random Test Plan
+        -:   42:   
+        -:   43:	Test oracles - Used on EACH Random Test
+        -:   44:      
+        -:   45:      1. Hand should have 1 extra card minus this one that's played. There
+        -:   46:         should also be two additional actions allowed.
+        -:   47:      2. Number of buys or coins should not change.
+        -:   48:      3. No state change should occur for other players.
+        -:   49:      4. No state change should occur to the victory and kingdom card piles.
+        -:   50:
+        -:   51:	end oracles
+        -:   52:	*/
+        -:   53:
+        2:   54:   printf("########----BEGIN random test on village card----########\n\n");
+        2:   55:	printf("########--------Test 1--------########\n");
+        2:   56:	printf("    Randomly draw cards from deck before starting game.\n");
+        2:   57:	printf("    Starting at different deck counts.\n");
+        -:   58:
+      404:   59:	for ( j = 0 ; j < 100 ; ++j){
+branch  0 taken 99%
+branch  1 taken 1%
+        -:   60:
+        -:   61:		// draw random number of cards from 0 to 5 cards from deck
+      200:   62:		int numDraw = rand() % 6;
+     1380:   63:		for ( i = 0 ; i < numDraw ; ++i ){
+branch  0 taken 71%
+branch  1 taken 29%
+      490:   64:			drawCard(currentPlayer, &state);	
+      490:   65:		}
+        -:   66:
+      200:   67:		printf("########-------Random Sample %i--------########\n\n", j);
+      200:   68:		printf("        Sample: Drew %i cards from deck\n", numDraw );
+      200:   69:		printf("        deck count: %i\n", state.deckCount[currentPlayer]);
+        -:   70:		// play card
+      200:   71:		cardEffect(village, choice1, choice2, choice3, &state, handPos, bonus);
+        -:   72:		// assert oracles
+      200:   73:		oracle1(&state, &savedState, currentPlayer);
+      200:   74:		oracle2(&state, &savedState, currentPlayer);
+      200:   75:		oracle3(&state, &savedState, currentPlayer);
+      200:   76:		oracle4(&state, &savedState, currentPlayer);
+        -:   77:		// restore initial state for next random test
+      200:   78:		memcpy(&state, &savedState, sizeof(struct gameState));
+        -:   79:
+      200:   80:	}
+        -:   81:
+        2:   82:	printf("########--------Test 2--------########\n");
+        2:   83:	printf("    Randomize each number of kingdom cards in supply pile from 0 to 10.\n");
+        2:   84:	printf("    This simulates states that are later on in the game.\n");
+        -:   85:
+      404:   86:	for ( j = 0 ; j < 100 ; ++j){
+branch  0 taken 99%
+branch  1 taken 1%
+        -:   87:
+        -:   88:		// Set random number of kingdom cards to begin game state
+        -:   89:		// use array 'randomKingdomCount' to store the count number and record sample
+      200:   90:		int randomKingdomCount[20] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+     8400:   91:		for (i = adventurer; i <= treasure_map; i++){      	//loop all cards
+branch  0 taken 95%
+branch  1 taken 5%
+     4000:   92:				if (state.supplyCount[i] != -1){
+branch  0 taken 50%
+branch  1 taken 50%
+     2000:   93:					int numKingdom = rand() % 11;
+        -:   94:					//check if card is a 'Victory' Kingdom card
+     4000:   95:					if (state.supplyCount[i] == great_hall || state.supplyCount[i] == gardens){
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 80%
+branch  3 taken 20%
+     1600:   96:						if (numPlayers == 2){ 
+branch  0 taken 100%
+branch  1 taken 0%
+        -:   97:							// limit random number up to eight cards
+     1600:   98:							numKingdom = rand() % 9;
+     1600:   99:							randomKingdomCount[i - adventurer] = numKingdom;
+     1600:  100:							state.supplyCount[i] = numKingdom;//8; 
+     1600:  101:						} else { 
+        -:  102:							// limit random number up to 12 cards
+    #####:  103:							numKingdom = rand() % 13;
+    #####:  104:							randomKingdomCount[i - adventurer] = numKingdom;
+    #####:  105:							state.supplyCount[i] = numKingdom;//12; 
+        -:  106:						}
+     1600:  107:					} else {
+      400:  108:						randomKingdomCount[i - adventurer] = numKingdom;
+      400:  109:						state.supplyCount[i] = numKingdom;
+        -:  110:					}
+     2000:  111:				}
+     4000:  112:			}
+        -:  113:
+        -:  114:		struct gameState randKingState;
+      200:  115:		memcpy(&randKingState, &state, sizeof(struct gameState));
+      200:  116:		printf("########-------Random Sample %i--------########\n\n", j);
+      200:  117:		printf("        kingdom card ");
+        -:  118:
+     8400:  119:		for (i = adventurer ; i <= treasure_map ; ++i){
+branch  0 taken 95%
+branch  1 taken 5%
+     4000:  120:			printf(",");
+     4000:  121:			printf("[%i]=%i",i - adventurer,randomKingdomCount[i - adventurer]);
+     4000:  122:		}
+        -:  123:
+      200:  124:		printf("\n");
+        -:  125:		// play card
+      200:  126:		cardEffect(village, choice1, choice2, choice3, &state, handPos, bonus);
+        -:  127:		// assert oracles
+      200:  128:		oracle1(&state, &randKingState, currentPlayer);
+      200:  129:		oracle2(&state, &randKingState, currentPlayer);
+      200:  130:		oracle3(&state, &randKingState, currentPlayer);
+      200:  131:		oracle4(&state, &randKingState, currentPlayer);
+        -:  132:		// restore initial state for next random test
+      200:  133:		memcpy(&state, &savedState, sizeof(struct gameState));
+        -:  134:
+      200:  135:	}
+        -:  136:
+        2:  137:	printf("########--------Test 3--------########\n");
+        2:  138:	printf("    Randomize number of players from 2 to maximum number of players."); 
+        -:  139:
+       84:  140:	for ( j = 0 ; j < 20 ; ++j){
+branch  0 taken 95%
+branch  1 taken 5%
+        -:  141:
+        -:  142:		// get random number of players from 2 to 4 players
+       40:  143:		int numRandPlayers = 2 + (rand() % (MAX_PLAYERS - 1));
+        -:  144:
+       40:  145:		printf("########-------Random Sample %i--------########\n\n", j);
+       40:  146:		printf("        Sample: %i number of players\n", numRandPlayers );
+       40:  147:		initializeGame(numRandPlayers, kingdom, seed, &state);
+       40:  148:		memcpy(&savedState, &state, sizeof(struct gameState));
+        -:  149:		// play card
+       40:  150:		cardEffect(village, choice1, choice2, choice3, &state, handPos, bonus);
+        -:  151:		// assert oracles
+       40:  152:		oracle1(&state, &savedState, currentPlayer);
+       40:  153:		oracle2(&state, &savedState, currentPlayer);
+       40:  154:		oracle3(&state, &savedState, currentPlayer);
+       40:  155:		oracle4(&state, &savedState, currentPlayer);
+        -:  156:		// restore initial state for next random test
+       40:  157:		memcpy(&state, &savedState, sizeof(struct gameState));
+        -:  158:
+       40:  159:	}
+        -:  160:
+        2:  161:	printf("########--------Test 4--------########\n");
+        2:  162:	printf("    Randomize seed number."); 
+        -:  163:
+     4004:  164:	for ( j = 0 ; j < 1000 ; ++j){
+branch  0 taken 99%
+branch  1 taken 1%
+        -:  165:
+        -:  166:		// get random number of players from 2 to 4 players
+     2000:  167:		int randSeed = rand() % 8000;
+        -:  168:
+     2000:  169:		printf("########-------Random Sample %i--------########\n\n", j);
+     2000:  170:		printf("        Sample: Seed is %i\n", numPlayers );
+     2000:  171:		initializeGame(numPlayers, kingdom, randSeed, &state);
+     2000:  172:		memcpy(&savedState, &state, sizeof(struct gameState));
+        -:  173:		// play card
+     2000:  174:		cardEffect(village, choice1, choice2, choice3, &state, handPos, bonus);
+        -:  175:		// assert oracles
+     2000:  176:		oracle1(&state, &savedState, currentPlayer);
+     2000:  177:		oracle2(&state, &savedState, currentPlayer);
+     2000:  178:		oracle3(&state, &savedState, currentPlayer);
+     2000:  179:		oracle4(&state, &savedState, currentPlayer);
+        -:  180:		// restore initial state for next random test
+     2000:  181:		memcpy(&state, &savedState, sizeof(struct gameState));
+        -:  182:
+     2000:  183:	}
+        -:  184:
+        2:  185:   printf("\n");
+        2:  186:   printf("<----------END random test on adventurer card---------->\n\n");
+        2:  187:   return 0;
+        -:  188:
+        -:  189:}
+        -:  190:
+function oracle1 called 2440 returned 100% blocks executed 90%
+        -:  191:void oracle1(struct gameState *state, struct gameState *savedState, int currentPlayer){
+     2440:  192:   int newCards = 1, discard = 1, addActions = 2;
+     2440:  193:   printf("        Oracle 1: Hand should have +1 card minus this card. Current"
+        -:  194:			 "\n");
+     2440:  195:   printf("                  player should also have +2 actions.\n");
+     4880:  196:   printf("        hand count = %i, expected = %i\n", state->handCount[currentPlayer], 
+     2440:  197:			savedState->handCount[currentPlayer] + newCards - discard);  
+     2440:  198:	printf("        test ");
+     2440:  199:   if (state->handCount[currentPlayer] == savedState->handCount[currentPlayer] + newCards - discard){
+branch  0 taken 93%
+branch  1 taken 7%
+     2277:  200:		printf(" passes (+)\n");
+     2277:  201:	} else {
+      163:  202:		printf(" fails (-)\n");
+        -:  203:	}
+        -:  204:
+     4880:  205:   printf("        deck count = %i, expected = %i\n", state->deckCount[currentPlayer], 
+     2440:  206:			savedState->deckCount[currentPlayer] - newCards);
+     2440:  207:	printf("        test ");
+     2440:  208:   if(state->deckCount[currentPlayer] == savedState->deckCount[currentPlayer] - newCards){
+branch  0 taken 93%
+branch  1 taken 7%
+     2277:  209:		printf(" passes (+)\n");
+     2277:  210:	} else {
+      163:  211:		printf(" fails (-)\n");
+        -:  212:	}
+        -:  213:
+     4880:  214:   printf("        action count = %i, expected = %i\n", state->numActions, 
+     2440:  215:			savedState->numActions + addActions);
+     2440:  216:	printf("        test ");
+     2440:  217:   if (state->numActions == savedState->numActions + addActions){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  218:		printf(" passes (+)\n");
+     2440:  219:	} else {
+    #####:  220:		printf(" fails (-)\n");
+        -:  221:	}
+     2440:  222:}
+        -:  223:
+function oracle2 called 2440 returned 100% blocks executed 75%
+        -:  224:void oracle2(struct gameState *state, struct gameState *savedState, int currentPlayer){
+     2440:  225:   printf("\n");
+     2440:  226:   printf("        Oracle 2: Number of buys or coins should not change\n");
+     2440:  227:   printf("        buy count = %i, expected = %i\n", state->numBuys, savedState->numBuys);
+     2440:  228:	printf("        test ");
+     2440:  229:   if(state->numBuys == savedState->numBuys){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  230:		printf(" passes (+)\n");
+     2440:  231:	} else {
+    #####:  232:		printf(" fails (-)\n");
+        -:  233:	}
+        -:  234:
+     2440:  235:   printf("        coin count = %i, expected = %i\n", state->coins, savedState->coins);
+     2440:  236:	printf("        test ");
+     2440:  237:   if(state->coins == savedState->coins){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  238:		printf(" passes (+)\n");	
+     2440:  239:	} else {
+    #####:  240:		printf(" fails (-)\n");
+        -:  241:	}
+     2440:  242:}
+        -:  243:
+function oracle3 called 2440 returned 100% blocks executed 80%
+        -:  244:void oracle3(struct gameState *state, struct gameState *savedState, int currentPlayer){
+     2440:  245:   printf("\n");
+     2440:  246:   printf("        Oracle 3: No state change should occur for other players.\n");
+     4880:  247:   printf("        deck count = %i, expected = %i\n", state->deckCount[!currentPlayer], 
+     2440:  248:			savedState->deckCount[!currentPlayer]);
+     4880:  249:   printf("        discard pile count = %i, expected %i\n", state->discardCount[!currentPlayer], 
+     2440:  250:			savedState->discardCount[!currentPlayer]);
+     2440:  251:	if (savedState->deckCount[!currentPlayer] == state->deckCount[!currentPlayer]){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  252:		printf("        test passes (+)\n");
+     2440:  253:	} else {
+    #####:  254:		printf("        test fails (-)\n");
+        -:  255:	}
+     2440:  256:}
+        -:  257:
+function oracle4 called 2440 returned 100% blocks executed 81%
+        -:  258:void oracle4(struct gameState *state, struct gameState *savedState, int currentPlayer){
+        -:  259:	int i;
+     2440:  260:   printf("\n");
+     2440:  261:   printf("        Oracle 4: No state change should occur to victory and kingdom cards piles.\n");
+     4880:  262:   printf("        estate count = %i, expected = %i\n", state->supplyCount[estate], 
+     2440:  263:			savedState->supplyCount[estate]);
+        -:  264:
+     2440:  265:	printf("        estate count ");
+     2440:  266:	if (savedState->supplyCount[estate] == state->supplyCount[estate]){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  267:		printf("passes (+)\n");
+     2440:  268:	} else {
+    #####:  269:		printf("fails (-)\n");
+        -:  270:	}
+        -:  271:
+     4880:  272:   printf("        duchy count = %i, expected = %i\n", state->supplyCount[duchy], 
+     2440:  273:			savedState->supplyCount[duchy]);
+     2440:  274:	printf("        duchy count ");
+     2440:  275:	if (savedState->supplyCount[duchy] == state->supplyCount[duchy]){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  276:		printf("passes (+)\n");
+     2440:  277:	} else {
+    #####:  278:		printf("fails (-)\n");
+        -:  279:	}
+        -:  280:
+     4880:  281:   printf("        province count = %i, expected = %i\n", state->supplyCount[province], 
+     2440:  282:			savedState->supplyCount[province]);
+     2440:  283:	printf("        province count ");
+     2440:  284:	if (savedState->supplyCount[province] == state->supplyCount[province]){
+branch  0 taken 100%
+branch  1 taken 0%
+     2440:  285:		printf("passes (+)\n");
+     2440:  286:	} else {
+    #####:  287:		printf("fails (-)\n");
+        -:  288:	}
+        -:  289:
+   102480:  290:   for( i = adventurer; i <= treasure_map; ++i){
+branch  0 taken 95%
+branch  1 taken 5%
+    97600:  291:      printf("        kingdomCard '%i' count = %i, expected = %i\n", i, state->supplyCount[i], 
+    48800:  292:				savedState->supplyCount[i]);
+    48800:  293:   }
+   102480:  294:   for( i = adventurer; i <= treasure_map; ++i){
+branch  0 taken 95%
+branch  1 taken 5%
+    48800:  295:		printf("        supply card %i - count is ",i);
+    48800:  296:      if (savedState->supplyCount[i] == state->supplyCount[i]){
+branch  0 taken 100%
+branch  1 taken 0%
+    48800:  297:			printf("correct: passes (+)\n");
+    48800:  298:		} else {
+    #####:  299:			printf("incorrect: fails (-)\n");
+        -:  300:		}
+    48800:  301:   }
+     2440:  302:}
+        -:  303:

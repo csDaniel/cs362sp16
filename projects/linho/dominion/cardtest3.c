@@ -56,7 +56,7 @@ int main() {
 
 	// copy the game state to a test case
 	memcpy(&testGame, &game, sizeof(struct gameState));
-	cardEffect(steward, choice1, choice2, choice3, &testGame, handpos, &bonus);
+	cardEffect(council_room, choice1, choice2, choice3, &testGame, handpos, &bonus);
 
 	newCards = 0;
 	buy = 1;
