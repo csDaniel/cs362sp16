@@ -72,12 +72,12 @@ int main() {
     testG.deck[thisPlayer][3] = estate;
     testG.deck[thisPlayer][4] = duchy;
     // Discard all but one
-    discardCard(1, thisPlayer, &testG, 0);
-    discardCard(2, thisPlayer, &testG, 0);
-    discardCard(3, thisPlayer, &testG, 0);
     discardCard(4, thisPlayer, &testG, 0);
+    discardCard(3, thisPlayer, &testG, 0);
+    discardCard(2, thisPlayer, &testG, 0);
+    discardCard(1, thisPlayer, &testG, 0);
 
-    if(discardCard(0, thisPlayer, &testG, 0) == 0 && testG.handCount[thisPlayer] == G.handCount[thisPlayer] -1) {
+    if(testG.handCount[thisPlayer] == 0) {
         printf("SUCCESS\n");
     }
     else {
@@ -96,7 +96,7 @@ int main() {
     // Discard all but one
     returnValue = discardCard(2, thisPlayer, &testG, 0);
 
-    if(returnValue == 0 && testG.handCount[thisPlayer] == G.handCount[thisPlayer] -1 && testG.deck[thisPlayer][2] == duchy) {
+    if(testG.deck[thisPlayer][2] == duchy) {
         printf("SUCCESS\n");
     }
     else {

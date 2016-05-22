@@ -61,7 +61,7 @@ int main() {
 			G.hand[p][handCount - 1] = embargo;
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-			playEmbargo(p, &G, handCount - 1, 0);			// call playEmbargo with current player
+			playEmbargo(&G, handCount - 1, 0);			// call playEmbargo with current player
 
 			// Check current player get +2 coins.
 			if (G.coins != controlG.coins + 2) {
@@ -85,11 +85,6 @@ int main() {
 			// Check no change to the victory card piles and kingdom card piles.
 			checkSupply(G, controlG);
 
-			// Check embargo card was discarded.
-			if((G.hand[p][handCount - 1] == embargo) && (G.discardCount[p] == controlG.discardCount[p])) {
-				printf("\tEmbargo was not discarded.\n");
-			}
-
 			// TEST 2 ******************************************************************************
 			printf("TEST 2 *****************************************************************\n");
 			// Check depeleted supply pile
@@ -100,14 +95,14 @@ int main() {
 			G.supplyCount[1] = 0;										//no supply left
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-			r = playEmbargo(p, &G, handCount - 1, 1);			// call playEmbargo with current player
+			r = playEmbargo(&G, handCount - 1, 1);			// call playEmbargo with current player
 
 			if (r == 0) {
 				printf("playEmbargo returned successfully, but choosen supply Pile was empty.\n");
 			}
 			// Check current player get 0 coins.
-			if (G.coins != controlG.coins) {
-				printf("\tCoins = %d, Expected Coins = %d\n", G.coins, controlG.coins);
+			if (G.coins != controlG.coins + 2) {
+				printf("\tCoins = %d, Expected Coins = %d\n", G.coins, controlG.coins + 2);
 			}
 
 			// Check no embargo token gets added to the to supply pile.

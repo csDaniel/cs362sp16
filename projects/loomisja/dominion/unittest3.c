@@ -27,7 +27,7 @@
 **		...in hand; deck, discard empty (return = 10 + 27/10 = 12)
 **		...in deck; hand, discard empty (return = 10 + 27/10 = 12)
 **		...in discard; deck, hand empty (return = 10 + 27/10 = 12)
-**		...in hand, deck, and discard (return = 30 + 81/10 = 38)
+**		...in hand, deck, and discard (return = 30 + 3 * (81/10) = 54)
 *******************************************************************************/
 
 #include <stdio.h>
@@ -267,11 +267,11 @@ int main()
 
 				/* set card configuration */
 				if (OUTPUTLEVEL > 1) printf("Test Condition: deck = 2, hand = 2, discard = 2\n");
-				pre.deckCount[player] = 1;
+				pre.deckCount[player] = 2;
 				for (i = 0; i < pre.deckCount[player]; i++) pre.deck[player][i] = card;
-				pre.handCount[player] = 1;
+				pre.handCount[player] = 2;
 				for (i = 0; i < pre.handCount[player]; i++) pre.hand[player][i] = card;
-				pre.discardCount[player] = 1;
+				pre.discardCount[player] = 2;
 				for (i = 0; i < pre.discardCount[player]; i++) pre.discard[player][i] = card;
 				/* retain a copy the initial game state for post-comparison */
 				copyGameState(&post, &pre);
@@ -376,19 +376,19 @@ int main()
 			}
 			updateTestResult(result == FALSE, &passes, &failures);
 
-			/* ...in hand, deck, and discard (return = 30 + 81/10 = 38) */
+			/* ...in hand, deck, and discard (return = 30 + 3 * (81/10) = 54) */
 			copyGameState(&pre, &state);
 			if (OUTPUTLEVEL > 1) printf("Test Condition: deck = 1 of each, hand = 1 of each, discard = 1 of each\n");
-			pre.deckCount[player] = 0;
+			pre.deckCount[player] = treasure_map + 1;
 			for (i = 0; i < pre.deckCount[player]; i++) pre.deck[player][i] = i;
-			pre.handCount[player] = 0;
+			pre.handCount[player] = treasure_map + 1;
 			for (i = 0; i < pre.handCount[player]; i++) pre.hand[player][i] = i;
 			pre.discardCount[player] = treasure_map + 1;
 			for (i = 0; i < pre.discardCount[player]; i++) pre.discard[player][i] = i;
 			/* retain a copy the initial game state for post-comparison */
 			copyGameState(&post, &pre);
 			result = TESTFUNC(player, &post);
-			expected = 30 + 81 / 10;
+			expected = 30 + 3 * (81 / 10);
 			/* 1) return value */
 			if (OUTPUTLEVEL > 1) printf("Result: score %d, expected %d. ", result, expected);
 			updateTestResult(result == expected, &passes, &failures);

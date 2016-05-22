@@ -119,5 +119,12 @@
 * BUG3 - the discardCard function allows you to call it with an invalid hand position
 * and then decreases the handcount even though the card position was invalid.
 * --------------------------------------------------------------------------------------
-*
+* 
+* Interesting Bugs: Overall, I do not htink the bugs I found were super interesting. Maybe
+* the most interesting would be that you can discard from an invalid hand position. The
+* bugs you find are only as interesting as the tests you write. The more you understand
+* the "business rules" and the more in depth you making your test orable, the more
+* interesting bugs you will find. I think the discard card bug I found is just scratching
+* the surface of the intersting bugs you can find if you have a good understanding of the
+* business rules.
 ****************************************************************************************/

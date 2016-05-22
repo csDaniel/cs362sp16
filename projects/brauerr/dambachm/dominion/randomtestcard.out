@@ -1,0 +1,23 @@
+Testing Smithy 250 times...
+Decrement Deck Passed 0 times
+Increment Hand Passed 0 times
+Other Player State Passed 250 times
+Decrement Actions Passed 250 times
+File 'dominion.c'
+Lines executed:65.43% of 567
+Branches executed:66.75% of 415
+Taken at least once:54.22% of 415
+Calls executed:66.67% of 96
+Creating 'dominion.c.gcov'
+
+Testing cardtest1 for smithy
+Testing that card won't play with zero actions left
+SUCCESS
+Testing that deck has been decremented by 3
+FAIL
+Testing that hand has been incremented by 2
+FAIL - hand count 9
+Testing that state of other player hasn't changed
+SUCCESS
+Checking that actions have been decremented
+SUCCESS

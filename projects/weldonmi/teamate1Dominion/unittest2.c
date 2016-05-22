@@ -1,57 +1,92 @@
-//Assignment #3 - Joseph Cuellar
-//CS - 362
-//This is to test shuffle() and see if cards are properly shuffled
+/*
+ * Miranda Weldon
+ * April 24, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * unittest3.c
+ */
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
-const int CARDS_TO_PLAY[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+//function to print results of updateCoins test
+void updateCoinsTest(int expected, int actual){
+	if(expected == actual)
+		printf("\tTest Pass\n");
+	else
+		printf("\tTest Fail\n");
+}
 
+//main function
 int main(){
-	int numberOfcurrentPlayers, currentPlayer, deckCount;
-	struct gameState postGameState; 
+	//declare variables
+	int bonus = 0, numPlayers = 3, handSize = 5, seed = 1000;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, salvager, remodel, sea_hag, mine, cutpurse, ambassador, great_hall, smithy};
+	int testHand[5] = {smithy, copper, copper, copper, copper};
 
-	SelectStream(2);
-	PutSeed(3);
-	printf("START - Running shuffle() unittest1.\n");
-	
-	for(numberOfcurrentPlayers = 2; numberOfcurrentPlayers <= MAX_PLAYERS; numberOfcurrentPlayers++){
-		for(currentPlayer = 0;  currentPlayer < numberOfcurrentPlayers; currentPlayer++){
-			for(deckCount = 4; deckCount < 50; deckCount++) 
-			{
-				int i;
-				for (i = 0; i < sizeof(struct gameState); i++) { 
-					((char*)&postGameState)[i] = floor(Random() * 256);
-				}
-				
-				int j;
-				for(j = 0; j < deckCount; j++){
-					int card = floor(Random() * 10);
-					postGameState.deck[currentPlayer][j] = CARDS_TO_PLAY[card];
-				}
-				
-				postGameState.numPlayers = numberOfcurrentPlayers;
-				postGameState.deckCount[currentPlayer] = deckCount;
-				
-				struct gameState preGameState;
-				memcpy(&preGameState, &postGameState, sizeof(struct gameState));
-				
-				if(shuffle(currentPlayer, &postGameState) != 0){
-					printf("ERROR! shuffle failed.\n\n");
-				}
-				else if(preGameState.deckCount[currentPlayer] != postGameState.deckCount[currentPlayer]){
-					printf("ERROR! Deck counts are NOT equal.\n\n");
-				}
-				else if(memcmp(&preGameState.deck[currentPlayer], postGameState.deck[currentPlayer], sizeof(int) * preGameState.deckCount[currentPlayer]) == 0){
-					printf("ERROR! Deck failed to shuffle.\n");
-				}
-			}
-		}
-	}
-	printf ("END - Running shuffle() unittest1.\n\n");
+	//start up original game and make a copy
+	initializeGame(numPlayers, k, seed, &Game);
+	memcpy(Game.hand[0], testHand, sizeof(int) * handSize);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	printf("Testing updateCoins()\n\n");
+
+	//test at beginning of game, should be no changes
+	updateCoins(0, &testGame, bonus);
+	printf("Beginning of Game:\n\tExpected: %d\n\tActual: %d\n", Game.coins, testGame.coins);
+	updateCoinsTest(Game.coins, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 1 copper card added, should be +1
+	//[0][0] is first player, first card in hadn; can be changed
+	testGame.hand[0][0] = copper;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Copper to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 1, testGame.coins);
+	updateCoinsTest(Game.coins + 1, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 1 silver card added, should be +2
+	testGame.hand[0][0] = silver;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Silver to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 2, testGame.coins);
+	updateCoinsTest(Game.coins + 2, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 1 gold card added, should be +3
+	testGame.hand[0][0] = gold;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Gold to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 3, testGame.coins);
+	updateCoinsTest(Game.coins + 3, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//test after 4 bonus added, should be +4
+	bonus = 4;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 4 Bonus:\n\tExpected: %d\n\tActual: %d\n", Game.coins + 4, testGame.coins);
+	updateCoinsTest(Game.coins + 4, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+	bonus = 0;
+
+	//test after 1 kingdom card added to 2nd position, should be -1
+	testGame.hand[0][1] = feast;
+	updateCoins(0, &testGame, bonus);
+	printf("Add 1 Kingdom Card to Hand:\n\tExpected: %d\n\tActual: %d\n", Game.coins - 1, testGame.coins);
+	updateCoinsTest(Game.coins - 1, testGame.coins);
+
+	memcpy(&testGame, &Game, sizeof(struct gameState));
+
+	//zero if no errors
 	return 0;
 }
+
