@@ -5,7 +5,7 @@ make clean
 make randomtestadventurer
 randomtestadventurer &> /dev/null
 echo "-- gcov for function 'playAdventurer' in randomtestadventurer --" >> $fout
-gcov -fb dominion.c | grep -A 4 "^Function 'playAdventurer'" >> $fout
+gcov -fb dominion.c | grep -A 4 "^Function 'adventurerEffect'" >> $fout
 echo >> $fout
 echo >> $fout
 echo "Total code coverage for all functions in dominion.c" >> $fout
