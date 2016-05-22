@@ -59,3 +59,10 @@ int useSmithy(struct gameState *state, int handPos, int currentPlayer){
 };
 
 ************************/
+
+/************************
+Teammate - John Brown
+
+As noted in BudsinTeammates.C, I cannot get this code to compile on flip2 server.
+
+************************/
