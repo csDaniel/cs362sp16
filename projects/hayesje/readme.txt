@@ -27,4 +27,6 @@ Changes   1) Added teammate1Dominion and teammate2Dominion directories
 Date: 05/21/2016
 Changes   1) Included priority/severity in BugsInTeammates.c and BugFixes.c 
 
+Date: 05/21/2016
+Changes   1) Included discussion of teammates refactor.c bugs in dominion/BugFixes.c
           
