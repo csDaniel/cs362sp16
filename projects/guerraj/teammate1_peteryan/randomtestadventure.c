@@ -1,10 +1,8 @@
-/* -----------------------------------------------------------------------
- This unit test will test the adventeruer card in dominion.c  
-we will test that after the adventeruer card is played a card is discarded and two cards are drawn
- Created by James Guerra
- 
- * -----------------------------------------------------------------------
- */
+/*
+James Guerra
+random adventure test for assignment 4
+
+*/
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -12,39 +10,38 @@ we will test that after the adventeruer card is played a card is discarded and t
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include <time.h>
 
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 1
+//helper function for random.  
+int randInt(int min, int max);
 
-int main() {
-    int j;
-    int seed = 1000;
-    int numPlayer = 2;
-    int maxBonus = 10;
-    int p, r, handCount;
-    int bonus;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState G;
-    int maxHandCount = 5;
-    int pass =0;
-
-    printf ("TESTING adventeruer Card:\n"); //handpos = 6 in k
-   
-            
-
-				p = 0;
-				handCount =0;
-             
-                memset(&G, 23, sizeof(struct gameState));   // clear the game state
-                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
-                G.handCount[p] = handCount;                 // set the number of cards on hand
+int main(){
+	time_t sysClock;
+	srand((unsigned) time(&sysClock));
+	struct gameState G;
+	int numPlayer, seed, r, handCount;
+	int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, salvager, great_hall};
+			   
+	int j;		   
+	int maxHandCount = 5;
+    int pass =0;		   
+	int p = 0;
+	
+	printf("Now testing, random test for Adventure card\n");  
+	 numPlayer = randInt(2,4);
+	 seed = randInt(500, 1500);
+	 r = initializeGame(numPlayer, k, seed, &G);
+	
+	handCount = randInt(0,4);
+	
+	G.handCount[p] = handCount;                 // set the number of cards on hand
                 gainCard(adventurer, &G, 2, p);
 				handCount++;
                 cardEffect(adventurer, 0, 0, 0, &G, G.hand[p][0], 0);
-#if (NOISY_TEST == 1)
+
                 printf("G.handCount = %d, expected = %d\n", G.handCount[p], handCount + 1); //adventeruer card should have 2 added
-#endif
+
                 if(G.handCount[p] == handCount + 1){ // check if the number of cards is correct
 					printf("Test 1 passed, expected card number in hand \n");                
 				}
@@ -74,5 +71,13 @@ int main() {
        if(pass == 0){
     printf("All tests passed!\n");
 	   }
-    return 0;
+	
+	
+	
+	return 0;
+}
+
+int randInt(int min, int max)
+{   
+    return rand() % (max - min + 1) + min;
 }
