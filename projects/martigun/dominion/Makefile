@@ -43,9 +43,10 @@ clean_rand:
 	rm -f randomtestadventurer.out
 	
 randomtestcard.out: clean_rand dominion.o rngs.o
-	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestcard -g randomtestcard_a05.c dominion.o rngs.o $(CFLAGS)
 	./randomtestcard >> randomtestcard.out
 
+
 randomtestadventurer.out: clean_rand dominion.o rngs.o
-	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestadventurer -g randomtestadventurer_a05.c dominion.o rngs.o $(CFLAGS)
 	./randomtestadventurer >> randomtestadventurer.out

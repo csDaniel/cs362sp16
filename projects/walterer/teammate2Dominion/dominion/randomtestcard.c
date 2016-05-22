@@ -88,7 +88,8 @@ int main(){
             preGame.whoseTurn = player;
             
             /* Play the adventurer card to see the behavior */
-            playSmithy(player, &preGame, handPos, 0);
+            //playSmithy(player, &preGame, handPos, 0);
+            smithyPlay(handPos, &preGame);
         
             
             /* Find the number of cards Post */
