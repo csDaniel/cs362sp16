@@ -2,7 +2,9 @@ Alex Samuel
 Assignment 5
 BugsInTeammates.c
 
-Teammate 1 - Josh Geller (gellerj@oregonstate.edu)
+Card tests, Unit tests, and random tests were run on teammates' code and the results are listed below.
+
+Teammate 1 - Josh Geller (gellerj)
 BUG: Smithy is not trashed when Smithy card is played.
 BUG: Adventurer card does not consider Gold cards as Treasure cards when drawing 2 Treasure cards.
 BUG: When Village card is played, player's actions are incremented by only +1 rather than +2.
@@ -17,7 +19,7 @@ card. As a result, the fullDeckCount function will only return the total number 
 rather than the total number of all cards in the player's poessession. As a result, gardens cards do not grant as many points 
 to players as they should.
 
-Teammate 2 - Daniel Ofarrell (ofarreld@oregonstate.edu)
+Teammate 2 - Daniel Ofarrell (ofarreld)
 BUG: 4 cards are drawn instead of 3 cards when Smithy card is played.
 BUG: When Village card is played, player's action count is decremented by 2 instead of increased by 2.
 BUG: scoreFor() does not calculate the total scores for each player correctly. scoreFor()

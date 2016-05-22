@@ -1317,7 +1317,7 @@ int playAdventurer(int drawntreasure, struct gameState *state, int currentPlayer
 
 int playSmithy(int currentPlayer, struct gameState *state, int handPos, int trashFlag) {
   int index;
-  for (index = 0; index < 4; index++) {
+  for (index = 0; index < 3; index++) {
 	drawCard(currentPlayer, state);
   }
 
@@ -1328,7 +1328,6 @@ int playSmithy(int currentPlayer, struct gameState *state, int handPos, int tras
 int playVillage(int currentPlayer, struct gameState *state, int handPos) {
 	drawCard(currentPlayer, state);
   state->numActions = state->numActions + 2;
-  // state->numActions = state->numActions + 3;
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
@@ -1336,11 +1335,11 @@ int playVillage(int currentPlayer, struct gameState *state, int handPos) {
 int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos, int trashFlag) {
 	int index;
 
-	for (index = 0; index < 3; index++) {
+	for (index = 0; index < 4; index++) {
 		drawCard(currentPlayer, state);
 	}
 
-	state->numBuys--;
+	state->numBuys++;
 
 	for (index = 0; index < state->numPlayers; index++) {
 		if (index != currentPlayer) {
@@ -1354,7 +1353,7 @@ int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos, in
 }
 
 int playGardens() {
-	return 0;
+	return -1;
 }
 
 //end of dominion.c

@@ -1,68 +1,239 @@
-/*
-Behnam Saeedi
-Saeedib
-93227697
-Unit test
-*/
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <assert.h>
-#include <string.h>
-#include <time.h>
-
 #include "dominion.h"
 #include "dominion_helpers.h"
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
 #include "rngs.h"
+#include <stdlib.h>
 
-#define UNITTEST "scoreFor"
+int checkGainCard(struct gameState * game) {
+	int r, i;
+	struct gameState testGame;
+	int thisPlayer = whoseTurn(game);
 
-int main(int argc, char ** argv)
-{
-	srand(time(NULL));
-	//Generating player:
-	int out;
+	// toFlag = 0 : add to discard
+	// toFlag = 1 : add to deck
+	// toFlag = 2 : add to hand
+
+	printf("\nTest 1: gain adventurer to discard\n");
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = gainCard(adventurer, game, 0, thisPlayer);
+	assert(r == 0);
+
+	printf("Checking player's state\n");
+	// make sure the appropriate number of cards has been added to the player's hand
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	// make sure the cards came from the player's deck
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
+
+	// check that other players' state hasn't been modified
+	printf("\nTesting other players' state:\n");
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		if (i == adventurer)
+			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+		else
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+
+	printf("\nTest 2: gain adventurer to deck\n");
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = gainCard(adventurer, game, 1, thisPlayer);
+	assert(r == 0);
+
+	printf("Checking player's state\n");
+	// make sure the appropriate number of cards has been added to the player's hand
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	// make sure the cards came from the player's deck
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer] + 1);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer] + 1);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+
+	// check that other players' state hasn't been modified
+	printf("\nTesting other players' state:\n");
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		if (i == adventurer)
+			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+		else
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+	printf("\nTest 3: gain adventurer to hand\n");
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = gainCard(adventurer, game, 2, thisPlayer);
+	assert(r == 0);
+
+	printf("Checking player's state\n");
+
+	// make sure the appropriate number of cards has been added to the player's hand
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer] + 1);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer] + 1);
+
+	// make sure the cards came from the player's deck
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+
+	// check that other players' state hasn't been modified
+	printf("\nTesting other players' state:\n");
+
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	printf("\nTesting victory and kingdom cards:\n");
+
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		if (i == adventurer)
+			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+		else
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+	printf("\nTest 4: try to gain card not in supply\n");
+
+	game->supplyCount[adventurer] = 0;
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+
+	r = gainCard(adventurer, game, 0, thisPlayer);
+	assert(r != 0);
+
+	// make sure the appropriate number of cards has been added to the player's hand
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	// make sure the cards came from the player's deck
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+
+	// check that other players' state hasn't been modified
+
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i) {
+		assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+
+	return 0;
+}
+
+
+
+int main() {
+	
+	int k[10] = { adventurer, gardens, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy };
+
+
+	struct gameState G;
+
 	int seed = 1000;
 	int numPlayers = 2;
-	int thisPlayer = 0;
-	struct gameState G, testG;
 
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
-	// initialize a game state and player cards
+
+	printf("Testing gainCard\n");
+
+
 	initializeGame(numPlayers, k, seed, &G);
-	// generating a random state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	int count;
-	count = testG.handCount[thisPlayer];
-	for(int i = 0; i < count; i++)
-		testG.hand[thisPlayer][i] = estate;
-	testG.hand[thisPlayer][0] = duchy;	//3
-	testG.hand[thisPlayer][1] = province;	//6
-	testG.hand[thisPlayer][2] = great_hall;	//1
-	testG.hand[thisPlayer][3] = estate; //1
-	testG.hand[thisPlayer][4] = estate; //1
-	for(int i = 0; i < testG.discardCount[thisPlayer]; i++)
-		testG.discard[thisPlayer][i] = estate;
-	//Total should add up to 12
-	// Starting test
-	printf("\n\nTesting Unit %s\n\n", UNITTEST);
-	printf("Test 1: Checking the function.\n");
-	out = scoreFor(thisPlayer,&testG);
-	printf("ScoreFor returned: %d(expected 12).\n",out);
-	assert(out == 12);
-	testG.hand[thisPlayer][3] = province; //6
-	out = scoreFor(thisPlayer,&testG);
-	printf("new ScoreFor returned: %d (expected 17).\n",out);
-	assert(out == 17);
-	printf("Test 1 Passed\n");
 
-	printf("\nTest 2: discarding a card.\n");
-	out = discardCard(4,thisPlayer,&testG,0);
-	out = discardCard(3,thisPlayer,&testG,0);
-	out = scoreFor(thisPlayer,&testG);
-	printf("new ScoreFor returned: %d (expected 10).\n",out);
-	assert(out == 10);
-	printf("Test 2 Passed\n");
 
-	return 0;	//No bugs found
+	checkGainCard(&G);
+
+
+
+	return 0;
 }

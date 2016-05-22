@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="UrlValidatorTest" project="URLValidator" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="UrlValidatorTest" time="0.0">
-    <testcase name="testManualTest" classname="UrlValidatorTest" time="0.0"/>
-    <testcase name="testSuccessfullyWorkingAsExpected" classname="UrlValidatorTest" time="0.0"/>
-    <testcase name="testSuccessfullyFailingAsExpected" classname="UrlValidatorTest" time="0.0"/>
-    <testcase name="testShouldBeNotWorkingButAreWorking" classname="UrlValidatorTest" time="0.0"/>
-    <testcase name="testShouldBeWorkingButAreNotWorking" classname="UrlValidatorTest" time="0.0"/>
-  </testsuite>
-</testrun>

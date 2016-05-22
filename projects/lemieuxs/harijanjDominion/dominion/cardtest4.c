@@ -1,19 +1,3 @@
-/*
- * cardtest1.c
- *
- 
- */
-
-/*
- * Using cardtest4.c template.
- * -------------------------------------------
- * TESTCARD #4: Council Room.
- *--------------------------------------------
- * cardtest4: cardtest4.c dominion.o rngs.o
- *      gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
- */
-
-
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
@@ -22,142 +6,162 @@
 #include "rngs.h"
 #include <stdlib.h>
 
-#define TESTCARD "council_room"
+int checkFeast(int choice1, int choice2, int choice3, struct gameState *game, int handPos, int *bonus) {
+	int r, i, cardFound = 0;
+	struct gameState testGame;
+	int thisPlayer = whoseTurn(game);
 
-int main() {
-    int newCards = 0;
-    int newBuy = 0;
-    int discarded = 1;
-    int cardTemp = 0;
-    int i;
-    int equal;
-    int successFlag = 0;
-    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-    int seed = 1000;
-    int numPlayers = 2;
-    int thisPlayer = 0;
-    int thatPlayer = 1;
-	struct gameState originalG, testingG;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, council_room};
 
-/*
-What I'm going to test:
+	memcpy(&testGame, game, sizeof(struct gameState));
 
-1. Current player should receive exactly 4 cards & deck --> Check hand card
-
-2. Current player should receive exactly 1 buy --> Check action
-
-3. Other player should receive 1 card --> Check other's hand and deck
-
-4. No state change should occur to the victory card piles and kingdom card piles. --> Check victory & kingdom.
-*/
-
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &originalG);
-
-	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
-
-	// -----------------------------------------------------------------------
-	printf("\nTEST 1: Check current player's hand card.\n");
-
-	memcpy(&testingG, &originalG, sizeof(struct gameState));
-	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
-	
-	newCards = 4;
-	printf("Hand count = %d, expected = %d\n", testingG.handCount[thisPlayer], originalG.handCount[thisPlayer] + newCards - discarded);
-	if (testingG.handCount[thisPlayer] == originalG.handCount[thisPlayer] + newCards - discarded) {
-		printf ("Test 1 Passed: +4 cards.\n");
-      	successFlag += 1;
-    }
-    else {
-      printf ("Test 1 Failed: More / Less than 4 cards.\n");
-    }
-
-	// -----------------------------------------------------------------------
-	printf("\nTEST 2: Check current player's buy.\n");
-
-	memcpy(&testingG, &originalG, sizeof(struct gameState));
-	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
-	
-	newBuy = 1;
-	printf("Player's buy = %d, expected = %d\n", testingG.numBuys, originalG.numBuys + newBuy);
-	if (testingG.numBuys == originalG.numBuys + newBuy) {
-		printf ("Test 2 Passed: + 1 buy.\n");
-      	successFlag += 1;
-    }
-    else {
-      printf ("Test 2 Failed: More / Less than 1 buy.\n");
-    }
-
-	// -----------------------------------------------------------------------
-	printf("\nTEST 3: Check OTHER player's hand card & deck. \n");
-
-	memcpy(&testingG, &originalG, sizeof(struct gameState));
-	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
-	
-	// "thatPlayer" still has 0 card in hand since it is not endTurn yet.
-	// Thus, need to add +5 cards manually to "thatPlayer" hand & (-5) cards from deck.
-	// so can be tested at that round whether "village" works or not.
-	newCards = 5;
-	printf("Other Hand count = %d, expected = %d\n", testingG.handCount[thatPlayer] + newCards, originalG.handCount[thisPlayer] + 1);
-	printf("Other Deck count = %d, expected = %d\n", testingG.deckCount[thatPlayer] - newCards, originalG.deckCount[thisPlayer] - 1);
-	if (((testingG.handCount[thatPlayer] + newCards) == originalG.handCount[thisPlayer] + 1) && ((testingG.deckCount[thatPlayer] - newCards) == (originalG.deckCount[thisPlayer] - 1))) {
-		printf ("Test 3 Passed: Other player's state changes +1 card TO hand.\n");
-      	successFlag += 1;
-    }
-    else {
-      printf ("Test 3 Failed: Other player's state doesn't change +1 card TO hand.\n");
-    }
-
-	// -----------------------------------------------------------------------
-	printf("\nTEST 4: Check Victory piles.\n");
-	
-	memcpy(&testingG, &originalG, sizeof(struct gameState));
-	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
-	
-	if (testingG.supplyCount[copper] == originalG.supplyCount[copper]) {
-		equal++;
-	}
-	if (testingG.supplyCount[silver] == originalG.supplyCount[silver]) {
-		equal++;
-	}
-	if (testingG.supplyCount[gold] == originalG.supplyCount[gold]) {
-		equal++;
+	for (i = 0; i < game->handCount[thisPlayer]; ++i) {
+		printf("\nCard number %d: %d\n", i + 1, game->hand[thisPlayer][i]);
 	}
 
-	if (equal == 3) {
-		printf ("Test 4 Passed: Victory piles NO CHANGE.\n");
-      	successFlag += 1;
-    }
-    else {
-      printf ("Test 4 Failed: Victory piles CHANGE.\n");
-    }
 
-    // -----------------------------------------------------------------------
-	printf("\nTEST 5: Check Kingdom piles.\n");
+	printf("\nTest 1: choose embargo\n");
+
+	choice1 = embargo;
+
+
+	r = cardEffect(feast, choice1, choice2, choice3, game, handPos, bonus);
+
+	assert(r == 0);
+
+	printf("Checking handCount:\n");
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("Checking deckCount:\n");
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("Checking discardCount:\n");
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
 	
-	memcpy(&testingG, &originalG, sizeof(struct gameState));
-	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
-	
-	equal = 0;
-    for (i = 0; i < 10; i++) {
-    	cardTemp = k[i];
-        if (testingG.supplyCount[cardTemp] == originalG.supplyCount[cardTemp]) {
-            equal++;
-        }
-    }
+	assert(game->playedCards[game->playedCardCount - 1] != feast);
 
-	if (equal == 10) {
-		printf ("Test 5 Passed: Kingdom piles NO CHANGE.\n");
-      	successFlag += 1;
-    }
-    else {
-      printf ("Test 5 Failed: Kingdom piles CHANGE.\n");
-    }
+	printf("\nTesting that embargo is in the discard pile:\n");
+	for (i = 0; i < game->discardCount[thisPlayer]; ++i) {
+		printf("\nCard number %d: %d\n", i + 1, game->discard[thisPlayer][i]);
+		if (game->discard[thisPlayer][i] == embargo)
+			cardFound = 1;
+	}
 
-	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+	assert(cardFound = 1);
+
+	// check that other players' state hasn't been modified
+	printf("\nTesting other players' state:\n");
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		if (i == embargo) {
+			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+		}
+		else
+		assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+	// test with mine
+	printf("\nTest 2: choose mine\n");
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	choice1 = mine;
+	r = cardEffect(feast, choice1, choice2, choice3, game, handPos, bonus);
+	assert(r == 0);
+
+	printf("Checking handCount:\n");
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("Checking deckCount:\n");
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("Checking discardCount:\n");
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
+
+	assert(game->playedCards[game->playedCardCount - 1] != feast);
+
+	printf("\nTesting that mine is in the discard pile:\n");
+	for (i = 0; i < game->discardCount[thisPlayer]; ++i) {
+		printf("\nCard number %d: %d\n", i + 1, game->discard[thisPlayer][i]);
+		if (game->discard[thisPlayer][i] == mine)
+			cardFound = 1;
+	}
+
+
+	// test with adventurer (causes infinite loop)
+	printf("\nTest 3: choose Adventurer (too expensive)\n");
+
+	printf("(this test causes an infinite loop, so I have commented it out)\n");
+
+	/*memcpy(&testGame, game, sizeof(struct gameState));
+
+
+	choice1 = adventurer;
+
+	r = cardEffect(feast, choice1, choice2, choice3, game, handPos, bonus);
+
+	assert(r == 0);
+
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);*/
+
 
 	return 0;
 }
 
+
+
+int main() {
+
+	int k[10] = { adventurer, gardens, embargo, village, minion, mine, cutpurse,
+		sea_hag, feast,  };
+
+	struct gameState G;
+
+	int seed = 1000;
+	int numPlayers = 2;
+
+	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+
+	printf("Testing Feast Card\n");
+
+
+	initializeGame(numPlayers, k, seed, &G);
+
+
+	checkFeast(choice1, choice2, choice3, &G, handpos, &bonus);
+
+
+
+	return 0;
+}
