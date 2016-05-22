@@ -58,7 +58,7 @@ int main (){
 	
 	//assert that current player got 3 new cards
 	printf("Confirm 3 cards: post deck should be 3 less then pre. post: %d and pre: %d\n", (post.deckCount[currentPlayer]), (pre.deckCount[currentPlayer]));
-	if(post.deck[currentPlayer][post.deckCount[currentPlayer]] == (pre.deck[currentPlayer][pre.deckCount[currentPlayer]]-3))
+	if((post.deckCount[currentPlayer]+3) == pre.deckCount[currentPlayer])
 		printf("PASSED\n");
 	else{
 		bugFlag++;

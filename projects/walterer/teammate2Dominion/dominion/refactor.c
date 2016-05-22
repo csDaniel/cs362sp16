@@ -1,25 +1,25 @@
 /*
- * refactor.c
- *
- *  Created on: April 10, 2016
- *      Author: Brian Brown
- */
 
-/* Documentation of changes to dominion.c for Homework 2.
- *
- * adventure_card -- z is initialized to 1 instead of 0 to start.
- *
- * smithy_card -- in the for loop, i is pre-incremented instead of post-incremented
- *
- * great_hall_card -- changed state->numActions++; to state->numActions+=2;
- *
- * council_room_card -- changed for (i = 0; i < state->numPlayers; i++) to
- * for (i = 0; i <= state->numPlayers; i++) .. should also draw a card for current
- * player
- *
- * village_card
- *
- *
- */
+Adventurer Card:   If the deck is empty it should shuffle discarded cards and add to deck.
+                   I changed state->deckCount[currentPlayer] < 1; to
+                   state->deckCount[currentPlayer] > 1;
+				   Now, discarded cards will be shuffled and added to the deck while deck
+				   has more then one card.
 
+Smithy Card:       It should add three cards to the player's hand. I changed for (i = 0; i < 3; i++) to 
+                   for (i = 0; i <= 3; i++)
+				   Now, it add one more card, 4 total.
 
+Minion Card:       It should add one action to the current player. I removed the line state->numActions++;
+                   Now, it does not increment the action count.
+
+Remodel Card:      It should store the cards that will be trashed. I changed
+                   j = state->hand[currentPlayer][choice1]; to
+			       j = state->hand[currentPlayer][choice2];
+				   Now, it stores wrong cards that will be trashed.
+
+Council Room Card: It makes each other player draws a card. I changed
+                   i != currentPlayer to
+				   i == currentPlayer
+                   Now, the current player draws a card.
+*/

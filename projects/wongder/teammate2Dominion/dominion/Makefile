@@ -29,73 +29,107 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-randomtests: randomtestcard randomAdventurer dominion.o rngs.o
-	echo "Results for Dominion Random testcard" > randomtestcard.out
-	randomtestcard >> randomtestcard.out
-	gcov -b dominion.c >> randomtestcard.out
-	echo "Results for AdventureRandomTestCard" > randomtestadventurer.out
-	randomAdventurer >> randomtestadventurer.out
-	gcov -b dominion.c >> randomtestadventurer.out
-	
-	
-randomtestcard:  randomtestcard.c dominion.o rngs.o
-	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
-		
 
-randomAdventurer: adventureRandom.c dominion.o rngs.o
-	gcc -o randomAdventurer -g adventureRandom.c dominion.o rngs.o $(CFLAGS)
+player: player.c interface.o
+	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
+
+testUpdateCoins: testUpdateCoins.c dominion.o rngs.o
+	gcc -o testUpdateCoins -g  testUpdateCoins.c dominion.o rngs.o $(CFLAGS)
 	
-		
-unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 dominion.o rngs.o
-	echo "Results for Dominion Unit Tests" > unittestresults.out	
-	 
-	unittest1 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out
-	
-	
-	unittest2 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	unittest3 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	unittest4 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	cardtest1 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	cardtest2 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	cardtest3 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	cardtest4 >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	cat dominion.c.gcov >> unittestresults.out
 unittest1: unittest1.c dominion.o rngs.o
 	gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
-	
+
 unittest2: unittest2.c dominion.o rngs.o
 	gcc -o unittest2 -g  unittest2.c dominion.o rngs.o $(CFLAGS)
 
-	
 unittest3: unittest3.c dominion.o rngs.o
 	gcc -o unittest3 -g  unittest3.c dominion.o rngs.o $(CFLAGS)
 
 unittest4: unittest4.c dominion.o rngs.o
-	gcc -o unittest4 -g  unittest4.c dominion.o rngs.o $(CFLAGS)	
-	
+	gcc -o unittest4 -g  unittest4.c dominion.o rngs.o $(CFLAGS)
+
 cardtest1: cardtest1.c dominion.o rngs.o
-	gcc -o cardtest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
-	
+	gcc -o cardtest1 -g  cardtest1.c dominion.o rngs.o $(CFLAGS)
+
 cardtest2: cardtest2.c dominion.o rngs.o
-	gcc -o cardtest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+	gcc -o cardtest2 -g  cardtest2.c dominion.o rngs.o $(CFLAGS)
 
 cardtest3: cardtest3.c dominion.o rngs.o
-	gcc -o cardtest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
-cardtest4: cardtest4.c dominion.o rngs.o
-	gcc -o cardtest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
-	
-player: player.c interface.o
-	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
+	gcc -o cardtest3 -g  cardtest3.c dominion.o rngs.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard
+cardtest4: cardtest4.c dominion.o rngs.o
+	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestcard: randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	
+randomtestcard.out: randomtestcard
+	echo "Result for randomtestcard:" > randomtestcard.out
+	
+	echo "Coverage Test: randomtestcard" >> randomtestcard.out
+	randomtestcard >> randomtestcard.out
+	gcov randomtestcard.c -b >> randomtestcard.out
+	gcov dominion.c -b >> randomtestcard.out
+	gcov -f -b dominion.c >> randomtestcard.out
+
+randomtestadventurer.out: randomtestadventurer
+	echo "Result for randomtestcard:" > randomtestcard.out
+	
+	echo "Coverage Test: randomtestcard" >> randomtestadventurer.out
+	randomtestadventurer >> randomtestadventurer.out
+	gcov randomtestcard.c -b >> randomtestadventurer.out
+	gcov dominion.c -b >> randomtestadventurer.out
+	gcov -f -b dominion.c >> randomtestadventurer.out
+	
+unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
+	echo "Result for running unit tests:" > unittestresults.out
+	
+	echo "Coverage Test: unittest1" >> unittestresults.out
+	unittest1 >> unittestresults.out
+	gcov unittest1.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+	echo "Coverage Test: unittest2" >> unittestresults.out
+	unittest2 >> unittestresults.out
+	gcov unittest2.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresult
+	
+	echo "Coverage Test: unittest3" >> unittestresults.out
+	unittest3 >> unittestresults.out
+	gcov unittest3.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+	echo "Coverage Test: unittest4" >> unittestresults.out
+	unittest4 >> unittestresults.out
+	gcov unittest4.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+	echo "Coverage Test: cardtest1" >> unittestresults.out
+	cardtest1 >> unittestresults.out
+	gcov cardtest1.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+	echo "Coverage Test: cardtest2" >> unittestresults.out
+	cardtest2 >> unittestresults.out
+	gcov cardtest2.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+	echo "Coverage Test: cardtest3" >> unittestresults.out
+	cardtest3 >> unittestresults.out
+	gcov cardtest3.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+	echo "Coverage Test: cardtest4" >> unittestresults.out
+	cardtest4 >> unittestresults.out
+	gcov cardtest4.c -b >> unittestresults.out
+	gcov dominion.c -b >> unittestresults.out
+	
+
+
+all: playdom player testDrawCard testBuyCard badTestDrawCard testUpdateCoins unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 
 
 clean:
-	rm -f *.o randomtestcard randomAdventurer unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 unittestresults.out playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittestresults.out
