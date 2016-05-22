@@ -49,7 +49,8 @@ int main() {
     newCards = 3;
     
     printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
-    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
+    printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards - discarded);
+    printf("played card count = %d, expected %d\n", testG.playedCardCount, G.playedCardCount + 1);
  
     if(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded){
         printf("handcount test passed\n");
@@ -57,11 +58,17 @@ int main() {
     else{
         printf("handcount test failed\n");
     }
-    if(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards){
+    if(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards - discarded){
         printf("deck count test passed\n");
     }
     else{
         printf("deck count test failed\n");
+    }
+    if (testG.playedCardCount == G.playedCardCount + 1){
+        printf("playedCardCount test passed\n");
+    }
+    else{
+        printf("playedCardCount test failed\n");
     }
 
     printf("\n >>>>> Testing complete %s <<<<<\n\n", TESTCARD);
