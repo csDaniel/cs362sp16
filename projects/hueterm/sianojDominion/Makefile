@@ -1,4 +1,4 @@
-FLAGS = -Wall -fpic -coverage -lm -std=c99
+CFLAGS = -Wall -fpic -coverage -lm
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -27,14 +27,14 @@ interface.o: interface.h interface.c
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testDrawCard testBuyCard badTestDrawCard	
-	
-runtests: testDrawCard 
+all: playdom player testDrawCard testBuyCard badTestDrawCard
+
+runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
-	
-#unit/card tests	
+
+#unit/card tests
 unittests: dominion.o unittest1.c unittest2.c unittest3.c unittest4.c rngs.o $(CFLAGS)
 	gcc -o unittest1 unittest1.c -g dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest2 unittest2.c -g dominion.o rngs.o $(CFLAGS)
@@ -46,7 +46,7 @@ cardtests: dominion.o cardtests1.c cardtests2.c cardtests3.c cardtests4.c rngs.o
 	gcc -o cardtest2 cardtest2.c -g dominion.o rngs.o $(CFLAGS)
 	gcc -o cardtest3 cardtest3.c -g dominion.o rngs.o $(CFLAGS)
 	gcc -o cardtest4 cardtest4.c -g dominion.o rngs.o $(CFLAGS)
-	
+
 unittestresults.out: unittests cardtests dominion.c
 	./unittest1 > unittestresults.out
 	./unittest2 >> unittestresults.out
@@ -58,11 +58,11 @@ unittestresults.out: unittests cardtests dominion.c
 	./cardtest4 >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
-	
+
 #random card tests
 randomtestadventurer: dominion.o randomtestadventurer.c
 	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
-	
+
 randomtestcard: dominion.o randomtestcard.c
 	gcc -o randomtestcard randomtestcard.c -g dominion.o rngs.o $(CFLAGS)
 
@@ -76,8 +76,36 @@ randomtestcard.out: randomtestcard dominion.c
 	gcov -b dominion.c >> randomtestcard.out
 	cat dominion.c.gcov >> randomtestcard.out
 
-clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
-	rm -f unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 *.out
-	rm -f randomtestadventurer randomtestcard
+unittest1hueterm: unittest1hueterm.c dominion.o rngs.o
+	gcc -o unittest1hueterm -g  unittest1hueterm.c dominion.o rngs.o $(CFLAGS)
+unittest2hueterm: unittest2hueterm.c dominion.o rngs.o
+	gcc -o unittest2hueterm -g  unittest2hueterm.c dominion.o rngs.o $(CFLAGS)
+unittest3hueterm: unittest3hueterm.c dominion.o rngs.o
+	gcc -o unittest3hueterm -g  unittest3hueterm.c dominion.o rngs.o $(CFLAGS)
+unittest4hueterm: unittest4hueterm.c dominion.o rngs.o
+	gcc -o unittest4hueterm -g  unittest4hueterm.c dominion.o rngs.o $(CFLAGS)
+cardtest1hueterm: cardtest1hueterm.c dominion.o rngs.o
+	gcc -o cardtest1hueterm -g  cardtest1hueterm.c dominion.o rngs.o $(CFLAGS)
+cardtest2hueterm: cardtest2hueterm.c dominion.o rngs.o
+	gcc -o cardtest2hueterm -g  cardtest2hueterm.c dominion.o rngs.o $(CFLAGS)
+randomtestadventurerhueterm: randomtestadventurerhueterm.c dominion.o rngs.o
+	gcc -o randomtestadventurerhueterm -g randomtestadventurerhueterm.c dominion.o rngs.o $(CFLAGS)
 
+
+unittestresultshueterm.out: unittest1hueterm unittest2hueterm unittest3hueterm unittest4hueterm cardtest1hueterm cardtest2hueterm randomtestadventurerhueterm  dominion.o rngs.o
+	./unittest1hueterm &> unittestresultshueterm.out
+	gcov -b dominion.c >> unittestresultshueterm.out
+	./unittest2hueterm >> unittestresultshueterm.out
+	gcov -b dominion.c >> unittestresultshueterm.out
+	./unittest3hueterm >> unittestresultshueterm.out
+	gcov -b dominion.c >> unittestresultshueterm.out
+	./unittest4hueterm >> unittestresultshueterm.out
+	gcov -b dominion.c >> unittestresultshueterm.out
+	./cardtest1hueterm >> unittestresultshueterm.out
+	gcov -b dominion.c >> unittestresultshueterm.out
+	./cardtest2hueterm >> unittestresultshueterm.out
+	gcov -b dominion.c >> unittestresultshueterm.out
+	cat dominion.c.gcov >> unittestresultshueterm.out
+	./randomtestadventurerhueterm >> randomtestadventurerhueterm.out
+	gcov -b dominion.c >> randomtestadventurerhueterm.out
+	cat dominion.c.gcov >> randomtestadventurerhueterm.out
