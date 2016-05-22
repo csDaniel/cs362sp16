@@ -811,7 +811,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case village:
 
-      if(playVillage(state, handPos, nextPlayer) < 0){
+      if(playVillage(state, handPos, currentPlayer) < 0){
 
         return -1;
       }
@@ -1133,7 +1133,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case salvager:
 
-    if(playSalvager(state, currentPlayer, handPos, choice1) > 0){
+    if(playSalvager(state, currentPlayer, handPos, choice1) < 0){
 
       return -1;
     }
@@ -1299,7 +1299,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
     drawCard(currentPlayer, state);
   }
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
 
       return 0;
 
@@ -1313,7 +1313,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
   int cardDrawn;
   int z = 0;
 
-      while(drawntreasure<=2){
+      while(drawntreasure<2){
   if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
     shuffle(currentPlayer, state);
   }
@@ -1327,7 +1327,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
     z++;
   }
       }
-      while(drawntreasure-1>=0){
+      while(z-1>=0){
   state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
   drawntreasure=drawntreasure-1;
       }
@@ -1341,7 +1341,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
       drawCard(currentPlayer, state);
       
       //+2 Actions
-      state->numActions = state->numActions + handPos;
+      state->numActions = state->numActions + 2;
       
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1383,7 +1383,7 @@ int playSalvager(struct gameState *state, int currentPlayer, int handPos, int ch
       //+1 buy
       state->numBuys++;
       
-      if (handPos)
+      if (choice1)
   {
     //gain coins equal to trashed card
     state->coins = state->coins + getCost( handCard(choice1, state) );
