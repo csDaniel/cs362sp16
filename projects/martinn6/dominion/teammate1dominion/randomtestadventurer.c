@@ -116,7 +116,7 @@ int main() {
 		before_deckCount = testG.deckCount[thisPlayer];
 		
 		//test
-		adventurerEffect(&testG, thisPlayer, handpos);
+		cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 		
 		after_handCount = testG.handCount[thisPlayer];
 		after_discardCount = testG.discardCount[thisPlayer]; 
