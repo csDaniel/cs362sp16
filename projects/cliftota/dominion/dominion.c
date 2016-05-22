@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-void adventurerPlay(struct gameState *state){
+void adventurerPlay(int handPos, struct gameState *state){
 	int drawntreasure = 0;
 	int currentPlayer = whoseTurn(state);
 	int cardDrawn;
@@ -13,7 +13,7 @@ void adventurerPlay(struct gameState *state){
 	int temphand[MAX_HAND];// moved above the if statement
 
 	while(drawntreasure<2){	
-		if (state->deckCount[currentPlayer] > 1){//if the deck is empty we need to shuffle discard and add to deck
+		if (state->deckCount[currentPlayer] < 1){//if the deck is empty we need to shuffle discard and add to deck
 		  shuffle(currentPlayer, state);
 		}
 		
@@ -33,6 +33,8 @@ void adventurerPlay(struct gameState *state){
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 		z=z-1;
 	}
+	//discard card from hand
+    discardCard(handPos, currentPlayer, state, 0);
 }
 
 void smithyPlay(int handPos, struct gameState *state){
@@ -40,7 +42,7 @@ void smithyPlay(int handPos, struct gameState *state){
     int currentPlayer = whoseTurn(state);
   
     //+3 Cards
-    for (i = 0; i <= 3; i++){
+    for (i = 0; i < 3; i++){
 		drawCard(currentPlayer, state);
 	}
 			
@@ -53,6 +55,9 @@ void minionPlay(int handPos, struct gameState *state, int choice1, int choice2){
 	int i;
 	int cardDrawn;
 	int j;
+	
+	//+1 action
+      state->numActions++;
 			
     //discard card from hand
     discardCard(handPos, currentPlayer, state, 0);
@@ -95,7 +100,7 @@ void remodelPlay(int handPos, struct gameState *state, int choice1, int choice2)
 	int j;
 	int currentPlayer = whoseTurn(state);
 	
-	j = state->hand[currentPlayer][choice2];  //store card we will trash
+	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
     if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) ){
 		return -1;
@@ -129,7 +134,7 @@ void councilRoomPlay(int handPos, struct gameState *state){
 			
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++){
-		if ( i == currentPlayer ){
+		if ( i != currentPlayer ){
 			drawCard(i, state);
 	    }
 	}
@@ -532,7 +537,7 @@ int isGameOver(struct gameState *state) {
 
   //if three supply pile are at 0, the game ends
   j = 0;
-  for (i = 0; i < 25; i++)
+  for (i = 0; i <= 26; i++)
     {
       if (state->supplyCount[i] == 0)
 	{
@@ -574,7 +579,7 @@ int scoreFor (int player, struct gameState *state) {
     }
 
   //score from deck
-  for (i = 0; i < state->discardCount[player]; i++)
+  for (i = 0; i < state->deckCount[player]; i++)
     {
       if (state->deck[player][i] == curse) { score = score - 1; };
       if (state->deck[player][i] == estate) { score = score + 1; };
@@ -799,7 +804,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      adventurerPlay(state);
+      adventurerPlay(handPos, state);
       return 0;
 			
     case council_room:

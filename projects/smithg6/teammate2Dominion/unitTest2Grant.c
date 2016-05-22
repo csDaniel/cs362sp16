@@ -43,39 +43,39 @@ int main()
 
 	who = game.whoseTurn;
 	cardTotalBefore = game.handCount[who];
-	i = gainCard(p, game, 2, who);
+	i = gainCard(p, &game, 2, who);
 	cardTotalAfter = game.handCount[who];
 
 
 	//Test number of cards in designated player's hand after gainCard called to hand
 	if(cardTotalBefore == cardTotalAfter)
 	{
-		printf("Failure! gainCard failed to draw a card for given player.");
+		printf("Failure! gainCard failed to draw a card for given player.\n");
 	}
 
 	if(cardTotalBefore < cardTotalAfter)
 	{
-		printf("Success! Card total increased!");
+		printf("Success! Card total increased!\n");
 	}
 
 
 	cardTotalBefore = game.deckCount[who];
-	j = gainCard(p, game, 1, who);
+	j = gainCard(p, &game, 1, who);
 	cardTotalAfter = game.deckCount[who];
 
 
 	//Test number of cards in designated player's hand after gainCard called to deck
 	if(cardTotalBefore == cardTotalAfter)
 	{
-		printf("Failure! gainCard failed to add a card to the deck.");
+		printf("Failure! gainCard failed to add a card to the deck.\n");
 	}
 
 	if(cardTotalBefore < cardTotalAfter)
 	{
-		printf("Success! Deck total increased!");
+		printf("Success! Deck total increased!\n");
 	}
 
-
+	return 0;
 }
 
 

@@ -425,6 +425,11 @@ int scoreFor (int player, struct gameState *state) {
 
   int i;
   int score = 0;
+
+
+	int totalCards = (state->handCount[player] + state->deckCount[player] 
+		+ state->discardCount[player]);
+
   //score from hand
   for (i = 0; i < state->handCount[player]; i++)
     {
@@ -433,7 +438,7 @@ int scoreFor (int player, struct gameState *state) {
       if (state->hand[player][i] == duchy) { score = score + 3; };
       if (state->hand[player][i] == province) { score = score + 6; };
       if (state->hand[player][i] == great_hall) { score = score + 1; };
-      if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+      if (state->hand[player][i] == gardens) { score = score + ( floor(totalCards) / 10 ); };
     }
 
   //score from discard
@@ -444,18 +449,18 @@ int scoreFor (int player, struct gameState *state) {
       if (state->discard[player][i] == duchy) { score = score + 3; };
       if (state->discard[player][i] == province) { score = score + 6; };
       if (state->discard[player][i] == great_hall) { score = score + 1; };
-      if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+      if (state->discard[player][i] == gardens) { score = score + ( floor(totalCards) / 10 ); };
     }
 
   //score from deck
-  for (i = 0; i < state->discardCount[player]; i++)
+  for (i = 0; i < state->deckCount[player]; i++)
     {
       if (state->deck[player][i] == curse) { score = score - 1; };
       if (state->deck[player][i] == estate) { score = score + 1; };
       if (state->deck[player][i] == duchy) { score = score + 3; };
       if (state->deck[player][i] == province) { score = score + 6; };
       if (state->deck[player][i] == great_hall) { score = score + 1; };
-      if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+      if (state->deck[player][i] == gardens) { score = score + ( floor(totalCards) / 10 ); };
     }
 
   return score;
@@ -1355,7 +1360,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 int _cardSmithy(int currentPlayer, struct gameState *state, int handPos, int num) {
 	int i;
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < 3; i++) {
 		drawCard(currentPlayer, state);
 	}
 	// discard card from hand
@@ -1369,7 +1374,7 @@ int _cardVillage(int currentPlayer, struct gameState *state, int handPos, int nu
 	drawCard(currentPlayer, state);
 
 	// +2 actions
-	state->numActions = state->numActions - 2;
+	state->numActions = state->numActions + 2;
 
 	// discard played card from hand
 	discardCard(handPos, currentPlayer, state, num);

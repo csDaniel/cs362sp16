@@ -85,7 +85,7 @@ void checkAdventurer(int player1, struct gameState *G, int treasureBefore){
     memcpy (&testG, G, sizeof(struct gameState));
     deckBefore = testG.deckCount[player1];
 	player2 = (player1 == 1) ? 0 : 1;
-    result = callAdventurerCard(&testG, player1);
+    result = adventurerCard(&testG, player1);
 
     for (i = 0; i < testG.handCount[player1]; i++)  {
         if (testG.hand[player1][i] <= gold && testG.hand[player1][i] >= copper)

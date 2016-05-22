@@ -1,0 +1,13 @@
+Program by James Guerra Result for running random test fpr cards:
+results for running randomtestcard.c
+Now testing, random test for Smithy card
+G.handCount = 4, expected = 3
+Test 1 failed, expected card number not found in hand 
+Test 2 passed, expected card number in hand player 2 
+File 'randomtestcard.c'
+Lines executed:86.21% of 29
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:81.25% of 16
+Creating 'randomtestcard.c.gcov'
+

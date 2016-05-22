@@ -656,7 +656,7 @@ int playAdventurer(struct gameState *state, int handPos, int currentPlayer) {
       shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
-    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]];
+    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
     //top card of hand is most recently drawn card.
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
       drawnTreasure++;
@@ -667,6 +667,8 @@ int playAdventurer(struct gameState *state, int handPos, int currentPlayer) {
       z++;
     }
   }
+  
+  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 
@@ -678,7 +680,8 @@ int playSmithy(struct gameState *state, int handPos, int currentPlayer) {
   {
     drawCard(currentPlayer, state);
   }
-
+  
+  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 

@@ -26,14 +26,17 @@ int main(){
 
 	beforeCards = gS.handCount[currPlayer];
 	beforeActions = gS.numActions;
+
+	printf("Before actions: %d\n",beforeActions);
 	result = cardEffect(great_hall, 0, 0, 0, &gS, handPos, 0);
-	
+	printf("After actions: %d\n",gS.numActions);
+
 	if(beforeCards == gS.handCount[currPlayer])
 		printf("Great Hall card test passed.\n");
 	else
 		printf("Great Hall card test failed.\n");
 
-	if(beforeActions == gS.numActions)
+	if(beforeActions + 1 == gS.numActions)
 		printf("Great Hall action test passed.\n");
         else
                 printf("Great Hall action test failed.\n");
