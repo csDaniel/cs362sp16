@@ -1,5 +1,5 @@
 /************************
-Team Mate - Gunnar Martin
+Teammate - Gunnar Martin
 
 I was able to find two bugs when running my tests on this code.
 
@@ -34,5 +34,14 @@ Deck count = 10, expected = 10
  When checking refactor.c for this teammate, it does appear that the adventurer card discards extra cards, which accounts for that discrepency.
 
 
+
+************************/
+
+/************************
+Teammate - John Brown
+
+Unforunately, I was unable to get this teammates code to compile at all on flip.  I suspect there is an error with dominion.h, but even when I used the original dominion.h I get the same compile time errors.  I am currently working on trying to get it to compile.  Here is a sample of the errors i'm getting: http://i.imgur.com/Ks5FbYn.png
+
+Note, that this is using his makefile.  I also tried with my makefile and getting the same errors.
 
 ************************/
