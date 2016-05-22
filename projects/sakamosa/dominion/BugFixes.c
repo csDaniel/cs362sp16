@@ -2,7 +2,7 @@ Summary
 
 Before I was able to find the bugs in my teammate's code, or fix them in my own, I needed to fix a couple of bugs I found in my test code. When I ran teh tests against my teammates code, I found a number of errors that were identical between all three sets, but aparently unrelaetd to errors that were part of the original code base. Thi led me to realize that I hadn't properly initialized ome of my test game states. After I fixed the issue, I was able to effectively test my teammate's code and my own.
 
-In testing, I discovered that good coverage was helpful in catching some bugs, but that unit tests with explicit return values were the most helpful in catching problems in functions used by all the other functions. For example, bugs that I found related to the number of cards in a player's hand or discard hand after calling the playAdeventurer function could be from the adeventurer function or from one of the functions that the playAdventurer function calls. Unit tests of the discard, draw and end turn functions offered much more insight into those problems even though it didn't increase coverage. 
+In testing, I discovered that good coverage was helpful in catching some bugs, but that unit tests with explicit return values were the most helpful in catching problems in functions used by all the other functions. For example, bugs that I found related to the number of cards in a player's hand or discard hand after calling the playAdventurer function could be from the adventurer function or from one of the functions that the playAdventurer function calls. Unit tests of the discard, draw and end turn functions offered much more insight into those problems even though it didn't increase coverage. 
 
 Bugs Fixed:
 Adventurer

@@ -441,7 +441,7 @@ int scoreFor (int player, struct gameState *state) {
     }
 
   //score from deck
-  for (i = 0; i < state->discardCount[player]; i++)
+  for (i = 0; i < state->deckCount[player]; i++) 
     {
       if (state->deck[player][i] == curse) { score = score - 1; };
       if (state->deck[player][i] == estate) { score = score + 1; };
@@ -1290,7 +1290,7 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
     int drawntreasure = 0;
     int temphand[MAX_HAND];
     int z = 0;
-    while(drawntreasure < 2){
+    while(drawntreasure < 2 && (deckCount + discardCount) > 0){
    
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
