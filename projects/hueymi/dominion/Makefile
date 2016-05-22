@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 CFLAGS = -Wall -fpic -coverage -lm
 
 rngs.o: rngs.h rngs.c
@@ -39,13 +40,29 @@ cardsuite:
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.out
 
 printout:
 	./mirTestSuite > unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
-	gcov -b dominion.c >> unittestresults.out
-	
+	gcov -b dominion.c >> unittestresults.out	
 
 unittestresults.out: cardsuite printout
+
+randomtestadventurer.out: 
+	gcc -coverage randomtestadventurer.c dominion.c rngs.c -o mirRandomAdventurer -lm
+	-./mirRandomAdventurer > randomtestadventurer.out
+	-gcov dominion.c >> randomtestadventurer.out
+	-gcov -f dominion.c >> randomtestadventurer.out
+	-gcov -b dominion.c >> randomtestadventurer.out
+
+randomtestcard.out: 
+	gcc -coverage randomtestcard.c dominion.c rngs.c -o mirRandomCard -lm
+	-./mirRandomCard > randomtestcard.out
+	-gcov dominion.c >> randomtestcard.out
+	-gcov -f dominion.c >> randomtestcard.out
+	-gcov -b dominion.c >> randomtestcard.out
+
+
+

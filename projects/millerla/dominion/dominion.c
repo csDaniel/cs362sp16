@@ -7,7 +7,7 @@
 
 //two treasure cards are drawn and the rest of the drawn cards are discarded
 //takes the int representing the current player, the pointer to the state of the game, and the temphand array and updates
-int adventurer_card(int currentPlayer, struct gameState *state, int *temphand) {
+int adventurer_card(int currentPlayer, struct gameState *state, int *temphand, int handPos) {
 	int drawntreasure = 0;//the number of treasure cards drawn
 	int z = 0;// this is the counter for the temp hand
 	int cardDrawn;//the array placement of the card drawn
@@ -23,13 +23,17 @@ int adventurer_card(int currentPlayer, struct gameState *state, int *temphand) {
 		else{
 			temphand[z]=cardDrawn;
 			state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-			
+			z++;
 		}
     }
     while(z-1>=0){
-	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-	z=z-1;
+		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+		z=z-1;
     }
+	
+	//discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+	
 	return 0;
 }
 
@@ -39,7 +43,7 @@ int smithy_card(int currentPlayer, struct gameState *state, int handPos, int *bo
 	int i;
 	
 	//+3 Cards
-    for (i = 0; i <= 3; i++) {
+    for (i = 0; i < 3; i++) {
 	  drawCard(currentPlayer, state);
 	}
 			
@@ -63,7 +67,7 @@ int council_room_card(struct gameState *state, int currentPlayer,int handPos) {
 	state->numBuys++;
 		
 	//Each other player draws a card
-	for (i = 0; i < currentPlayer; i++)
+	for (i = 0; i < state->numPlayers; i++)
 	{
 	    if ( i != currentPlayer ) {
 	      drawCard(i, state);
@@ -74,6 +78,7 @@ int council_room_card(struct gameState *state, int currentPlayer,int handPos) {
 	discardCard(handPos, currentPlayer, state, 0);
 	
 	return 0;
+	
 }
 
 //trashes the treasure map currently in play and another treasure map in hand in exchange for 4 gold
@@ -788,7 +793,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
 	
-	return adventurer_card(currentPlayer, state, temphand);
+	return adventurer_card(currentPlayer, state, temphand, handPos);
 	/*
       while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck

@@ -48,6 +48,7 @@ int main() {
     testG.hand[thisPlayer][2] = copper;
     testG.hand[thisPlayer][3] = copper;
     testG.hand[thisPlayer][4] = copper;
+    testG.handCount[thisPlayer] = 5;
     updateCoins(thisPlayer, &testG, 0);
     if(testG.coins == G.coins + 5) {
         printf("SUCCESS\n");

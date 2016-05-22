@@ -38,12 +38,12 @@
 **		also, does not skip treasure cards
 **		deck: 1 estate on top, followed by gold, estate, silver, estate, copper, estate
 **		discard: empty
-**		(verify discard contains 1 estate card, hand contains gold + silver)
+**		(verify discard contains 2 estate cards, hand contains gold + silver)
 ** 5) Ensure that card effect picks only treasure cards when mixed with non-treasure cards;
 **		also, does not skip treasure cards
 **		deck: 1 estate on top, followed by copper, estate, silver, estate, gold, estate
 **		discard: empty
-**		(verify discard contains only estate card, hand contains copper + silver)
+**		(verify discard contains 2 estate cards, hand contains copper + silver)
 ** 6) Ensure card effect causes deck to be reshuffled when cards run out
 **		deck: empty
 **		discard: 1 gold, 1 silver, 1 copper
@@ -537,15 +537,15 @@ int main()
 
 				if (OUTPUTLEVEL > 1) printf("Test Extra Conditions\n");
 
-				/* verify discard contains only 1 estate card */
-				if (OUTPUTLEVEL > 1) printf("Test: Added 1 estate to discard...\n");
+				/* verify discard contains 2 estate cards */
+				if (OUTPUTLEVEL > 1) printf("Test: Added 2 estates to discard...\n");
 				deltaPlayerCardTypesInDiscard(&pre, &post, player, discardDeltas);
 				result = TRUE;
 				for (i = 0; i <= treasure_map; i++)
 				{
 					if (i == estate)
 					{
-						if (discardDeltas[i] != 1) result = FALSE;
+						if (discardDeltas[i] != 2) result = FALSE;
 					}
 					else
 					{
@@ -631,15 +631,15 @@ int main()
 
 				if (OUTPUTLEVEL > 1) printf("Test Extra Conditions\n");
 
-				/* verify discard contains only 1 estate card */
-				if (OUTPUTLEVEL > 1) printf("Test: Added 1 estate to discard...\n");
+				/* verify discard contains 2 estate cards */
+				if (OUTPUTLEVEL > 1) printf("Test: Added 2 estate to discard...\n");
 				deltaPlayerCardTypesInDiscard(&pre, &post, player, discardDeltas);
 				result = TRUE;
 				for (i = 0; i <= treasure_map; i++)
 				{
 					if (i == estate)
 					{
-						if (discardDeltas[i] != 1) result = FALSE;
+						if (discardDeltas[i] != 2) result = FALSE;
 					}
 					else
 					{
@@ -1014,10 +1014,6 @@ int main()
 					if (i == estate)
 					{
 						if (discardDeltas[i] != 5) result = FALSE;
-					}
-					else if (i == CARDUNDERTEST) /* card that was played */
-					{
-						if (discardDeltas[i] != -1) result = FALSE;
 					}
 					else
 					{

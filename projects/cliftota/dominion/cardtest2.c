@@ -26,7 +26,7 @@ int main() {
     int discardBefore = G.discardCount[0] = 3;
     G.hand[0][0] = adventurer;
     G.handCount[0] = 1;
-    adventurerPlay(&G);
+    adventurerPlay(0, &G);
     printf("Test with the empty deck if discard was added to the deck\n");
     //should be 1 since discard had three cards, two came to hand; one should be in deck
     if (G.deckCount[0] == 1){
@@ -71,7 +71,7 @@ int main() {
         }
     }
 
-    adventurerPlay(&G);
+    adventurerPlay(0, &G);
     //since adventurer should go to discard hand count will be changed by one
     if (G.handCount[0] == handCount1+1){
         printf ("PASS. EXPECTED: hand count %d. ACTUAL: hand count %d.\n\n", handCount1+1, G.handCount[0]);
