@@ -175,7 +175,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the other player.\n\n");
+        printf("\tPASSED: No state change has occurred for the other player.\n\n");
         passedTests++;
     } else {
         printf("\n");
@@ -201,7 +201,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the victory card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the victory card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");
@@ -227,13 +227,13 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the treasure card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the treasure card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");
     }
     
-    // ----------- No state change should occur for the victory card piles. --------------
+    // ----------- No state change should occur for the kingdom card piles. --------------
     printf("Testing: No state change should occur for the kingdom card piles.\n");
     errorCount = 0;
     for(i = 0; i < 10; i++) {
@@ -245,7 +245,7 @@ int main() {
     }
     
     if(errorCount == 0) {
-        printf("\tPASSED: No state change has occured for the victory card piles.\n\n");
+        printf("\tPASSED: No state change has occurred for the kingdom card piles.\n\n");
         passedTests++;
     } else {
         printf("\n");

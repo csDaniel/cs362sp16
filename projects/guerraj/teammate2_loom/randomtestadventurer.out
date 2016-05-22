@@ -1,0 +1,36 @@
+Testing Adventure Card.
+-------- START TEST 0 --------
+playAdventurer: FAIL two cards added to player hand.
+playAdventurer: PASS exit code 0.
+playAdventurer: FAIL draw two treasure cards.
+playAdventurer: PASS other player 0 did not draw card.
+playAdventurer: PASS other player 0 deck is same size.
+playAdventurer: PASS other player 0 did not discard cards.
+playAdventurer: PASS other player 1 did not draw card.
+playAdventurer: PASS other player 1 deck is same size.
+playAdventurer: PASS other player 1 did not discard cards.
+playAdventurer: PASS treasure not discarded.
+playAdventurer: PASS player discarded cards.
+-------- END TEST 0 --------
+
+-------- TEST STATISTICS --------
+Tests passed for player drawing two cards: 0
+Tests passed for return value: 1
+Tests passed for player drawing treasure cards: 0
+Tests passed for other players not drawing cards: 2
+Tests failed for other players not drawing cards: 0
+Tests passed for other players not deck the same size: 2
+Tests failed for other players not deck the same size: 0
+Tests passed for other players not discarding cards: 2
+Tests failed for other players not discarding cards: 0
+Tests passed for player not discarding treasure cards: 1
+Tests passed for players discarding cards: 1
+-------- END STATISTICS --------
+
+File 'dominion.c'
+Lines executed:55.26% of 570
+Branches executed:54.22% of 415
+Taken at least once:45.30% of 415
+Calls executed:39.00% of 100
+Creating 'dominion.c.gcov'
+

@@ -8,8 +8,9 @@ BUG 1: Teammate 1 - Smithy Card
        Description: Test results show that only 2 cards are drawn from the deck
 
        Bug Identification: Looking at teammate1 smithyCard code, the bug is easily
-            spotted in the for loop controlling the number of cards.
-
+            spotted in the for loop controlling the number of cards. Bug is located
+            on line 1043 in teammate1Dominion/domonion.c
+            
             Bad code:  loop only iterates 2 times.
                  for (i = 0; i < 2; i++) {
                     drawCard(currentPlayer, state);
@@ -38,7 +39,8 @@ BUG 2: Teammate 1 - Adventurer Card
                been revealed
 
        Bug Identification: Looking at teammate1 adventurerCard code, the bug is easily
-               spotted in the while loop controlling the number of treasure cards to be drawn
+               spotted in the while loop controlling the number of treasure cards to be drawn.
+               The bug is located on line 1053 in teammate1Dominion/domonion.c
 
                Bad code:  loop attempts to find 4 treasure cards.
                     while(drawntreasure<4){
@@ -69,7 +71,7 @@ BUG 3: Teammate 1 - Adventurer Card
 
        Bug Identification: Looking at teammate1 adventurerCard code, the bug is easily 
            spotted in the condition statement that determines if a drawn card is a treasure
-           card.
+           card.  The bug is located on line 1059 in teammate1Dominion/domonion.c
 
            Bad code: The code only recognizes copper and silver as treasure cards.
                   if (cardDrawn == copper || cardDrawn == silver)
@@ -99,6 +101,8 @@ BUG 4: Teammate 2 - Smithy Card
 
        Bug Identification: Looking at teammate2 smithyCard code, the bug is easily 
               spotted in the for loop controlling the number of cards.
+              The bug is located on line 1283 in teammate2Dominion/domonion.c
+
 
               Bad code:  loop never iterates.
                    for (i = 0; i > 3; i++)
@@ -129,7 +133,7 @@ BUG 5: Teammate 2 - Adventurer Card
        Description: Segmentation fault occurred when running both unit test and random test
 
        Bug Identification: Looking at teammate2 adventurerCard code, a bug is easily spotted in 
-              a Boolean statement 
+              a Boolean statement.  The bug is located on line 1259 in teammate2Dominion/domonion.c 
 
               Bad code: Assignment used rather than comparison in Boolean expression.
                    if (state->deckCount[currentPlayer] = 0) { 

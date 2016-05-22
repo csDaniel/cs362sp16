@@ -21,21 +21,40 @@ int main(){
 	memset(&gS, 23, sizeof(struct gameState));
 	r = initializeGame(players, c, seed, &gS);
 
-	int beforeCoins = 0, afterCoins = 0;
-	int beforeCount, card, i;
 	int currPlayer = whoseTurn(&gS);
+	//beforeCoins will be hand total pre-adventurer
+	int beforeCoins = gS.handCount[currPlayer], afterCoins = 0;
+	int count, card, i;
+	int beforeTreasure = 0;
+
+	//Added check
+	//printf("Current player hand count: %d", gS.handCount[currPlayer]);
+
+	//Added preloop to count treasures in player's hand
+	count = gS.handCount[currPlayer];
+	for(i = 0; i < count; i++)
+	{
+		card = gS.hand[currPlayer][i];
+		if(card == copper || card == silver || card == gold)
+			beforeTreasure++;
+	}
 	
-	beforeCount = gS.handCount[currPlayer];
-	for(i = 0; i < beforeCount; i++){
+
+	r = playAdventurerCard(&gS);
+	
+	count = gS.handCount[currPlayer];
+	for(i = 0; i < count; i++)
+	{
 		card = gS.hand[currPlayer][i];
 		if(card == copper || card == silver || card == gold)
 			afterCoins++;
 	}
 
-	if((beforeCoins + 1 == gS.handCount[currPlayer]) && (beforeCoins + 2 == afterCoins))
-		printf("Adventurer test passed.\n");
+	//Updated output to clarify what was failing.
+	if((beforeCoins + 2 == gS.handCount[currPlayer]) && (beforeTreasure + 2 == afterCoins))
+		printf("Adventurer test passed. Treasure total matches.\n");
 	else
-		printf("Adventurer test failed.\n");
+		printf("Adventurer test failed.\n gS.handCount[currPlayer] should be: %d, but is %d \n afterCoins should be: %d,  but is %d \n Incorrect treasure drawn.\n", beforeCoins + 2, gS.handCount[currPlayer], beforeTreasure + 2, afterCoins);
 
 	return 0;
 }	

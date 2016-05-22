@@ -1,28 +1,50 @@
 Author: Patrick Ho
 Assignment 5
-Due April 22, 2016
+Due May 22, 2016
+File: BugFixes.c
 Description: Documentation of fixes to dominion.c based on bug reports and by using GDB.
-
 
 Files Changed:
    dominion.c
 
 Details:
 
-playAdventurer()
+Fixes to playAdventurer() function:
 
-Bug: Changed "while(drawntreasure<2)" to a for loop. The intent is for the loop to exit if drawntreasure > 2, however a bug is introduced. On line: "if (drawntreasure++ > 2) break;", the increment of drawntreasure is post-increment, which means it will not evaluate true at the appropriate instance.
++ Bug 1: Noticed first for loop was not exiting when drawntreasure reaches 2. 
+	In GDB, set watchpoint to drawntreasure and loop was not exiting until 
+	drawntreasure has a value of 3.  Fixed post-increment of drawntreasure to 
+	pre-increment. Bug fixed.
 
-   playSmithy()
-Bug: Introduced a bug by adding a ";" at the end of the card drawing for loop.  This will only call drawCard() once instead of 3
-Bug: In the call to discardCard(), passing in arguments for handPos and currentPlayer are switched. Another bug.
-Bug: In the switch statement, under the case "smithy", did not add a "break" statement after the call to playSmithy(). This is a bug.
+Fixes to playSmithy() function:
+
++ Bug 2: Teammate Hong lin noticed my smithy card play draws only 1 card. 
+	Bug was found at the loop controlling the draw card procedure. A ';' was
+	terminating the for loop pre-maturely. Removed the ';' and 3 cards are now 
+	drawn as expected.
+
++ Bug 3: Teammate Jordan White noticed the number of actions changed while
+	playing smithy card. While using GDB to trace the state.numActions[currentPlayer]
+	variable, found that playSmithy() was inproperly terminated via a break statement
+	in the switch structure. This caused playSmithy() to fall thru and execute 
+	playVillage(), which gives the player extra actions to play. After adding the break
+	statement immediately after playSmithy(), the number of actions do not change.
 
 
-   playFeast()
-Bug: The for loop control is changed from "for (i=0; i <= state->handCount[currentPlayer]; i++)" to "for(i=0; i < state->handCount[currentPlayer]; ++i)".  The change from post-increment to pre-increment is a cosmetic change and is benign. However, the end loop condition change from "<=" to "<" is a bug. The last hand will not be recovered at the end of this play.
-Bug: Changed statement "if (supplyCount(choice1, state) <= 0)" to "if(supplyCount(choice1, state) >= 0)"
+Fixes to playFeast() function:
+
++ Bug 4: Fixed the for loop conditional. i.e. "for (i=0; i <= state->handCount[currentPlayer]; i++)"
+	My unit tests, random tests, nor card test caught this induced bug. Coverage for the bug is 
+	one statement less than when it's fixed. The coverage information gives a hint, but it's subtle and
+	if I did not keep a record of its change, I don't think I would have noticed it.
+
++ Bug 5: Fixed the condition to "if (supplyCount(choice1, state) <= 0)". Again, my unit test,
+	card tests, and random tests do not reveal this as a bug. Coverage information also does not provide
+	a clue that this is a bug.
 
 
-playCouncil_Room
-Bug: Removed call to "discardCard()" entirely. This is an introduced bug. Card is not placed in the discard pile and the game state is not updated to reflect the play of the council room.
+Fixes to playCouncil_Room() function:
+
++ Bug 6: The final call to discardCard() was removed entirely in playCouncil_Room(). This appears to 
+	be an unnecessary statement. Gcov coverage statistics does not help much with this bug because one
+	line removed as a percentage of the entire code changes 1/643 or 0.1% of the statements.
