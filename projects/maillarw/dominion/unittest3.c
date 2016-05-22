@@ -53,12 +53,12 @@ int main () {
 	  G->hand[1][i] = allCards[i];
   }
    
-  if(scoreFor(1, G) == 11){
+  if(scoreFor(1, G) == 12){
 	  printf("Passed\n");
   }
   else{
 	  printf("Failed\n");
-    printf("Count is %d but should be 11\n", scoreFor(1, G));
+    printf("Score is %d but should be 12\n", scoreFor(1, G));
   }
   
   printf ("\n--------Test 3: Discard that has one of every card, empty deck ---------\n\n");
@@ -75,12 +75,12 @@ int main () {
 	  G->discard[1][i] = allCards[i];
   }
    
-  if(scoreFor(1, G) == 11){
+  if(scoreFor(1, G) == 12){
 	  printf("Passed\n");
   }
   else{
 	  printf("Failed\n");
-    printf("Count is %d but should be 11\n", scoreFor(1, G));
+    printf("Count is %d but should be 12\n", scoreFor(1, G));
   }
   
   
@@ -94,12 +94,12 @@ printf ("\n--------Test 4: Deck that has one of every card ---------\n\n");
 	  G->deck[1][i] = allCards[i];
   }
    
-  if(scoreFor(1, G) == 11){
+  if(scoreFor(1, G) == 12){
 	  printf("Passed\n");
   }
   else{
 	  printf("Failed\n");
-    printf("Count is %d but should be 11\n\n", scoreFor(1, G));
+    printf("Count is %d but should be 12\n\n", scoreFor(1, G));
   }
   }
  

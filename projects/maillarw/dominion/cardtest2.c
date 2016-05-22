@@ -36,7 +36,7 @@ int main () {
 	
 	playAdventurer(G);
 
-	if(G->handCount[1] == 7 && G->hand[1][5] == gold && G->hand[1][6] == gold){											 
+	if(G->handCount[1] == 6 && G->hand[1][0] == gold && G->hand[1][5] == gold){											 
 		 printf("Passed\n");
 	}
 	else{
@@ -83,14 +83,16 @@ int main () {
 	for(int i = 8; i < 10; i++){				
 		G->deck[1][i] = silver;
 	}
+
 	
 	playAdventurer(G);
 
-	if(G->discardCount[1] == 8 && G->playedCards[0] == adventurer){											 
+	if((G->discardCount[1] == 9) && G->playedCards[0] == adventurer){											 
 		 printf("Passed\n");
 	}
 	else{
-		printf("Failed\n");
+		printf("Failed\n", G->discardCount[1], G->deckCount[1]);
+		
 	}
 
 
@@ -111,7 +113,7 @@ int main () {
 
 	playAdventurer(G);
 
-	if(G->handCount[1] == 7 && G->hand[1][5] == copper && G->hand[1][6] == copper){											 
+	if(G->handCount[1] == 6 && G->hand[1][5] == copper && G->hand[1][0] == copper){											 
 		 printf("Passed\n");
 	}
 	else{
