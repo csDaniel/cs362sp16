@@ -18,10 +18,11 @@ int main() {
   int player = 0;
   int other_player = 1;
   initializeGame(2, cards, 1, &game);
+  game.whoseTurn = player;
 
   // Test if hand size increased by two (+3, -1 for played card)
   game.handCount[player] = 2;
-  pSmithy(player, 0, &game);
+  pSmithy(&game, 0);
   if (game.handCount[player] == 4) {
     printf("handCount incremented correctly.\n");
   } else {
@@ -30,7 +31,7 @@ int main() {
 
   //Test if three cards drawn from player's deck
   game.deckCount[player] = 4;
-  pSmithy(player, 0, &game);
+  pSmithy(&game, 0);
   if (game.deckCount[player] == 1) {
     printf("deckCount decremented correctly.\n");
   } else {
@@ -41,7 +42,7 @@ int main() {
   game.deckCount[player] = 4;
   game.playedCardCount = 1;
   game.playedCards[game.playedCardCount] = gardens;
-  pSmithy(player, 0, &game);
+  pSmithy(&game, 0);
 
   if (game.playedCardCount == 2) {
     printf("playedCardCount incremented correctly.\n");
@@ -58,7 +59,7 @@ int main() {
   //Test if other players are unaffected.
   int orig_deck_count = game.deckCount[other_player];
   int orig_hand_count = game.handCount[other_player];
-  pSmithy(player, 0, &game);
+  pSmithy(&game, 0);
   if (orig_deck_count == game.deckCount[other_player]) {
     printf("Other player's deck unaffected.\n");
   } else {
@@ -80,7 +81,7 @@ int main() {
   for (i = 0; i < 17; i++) {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
-  pSmithy(player, 0, &game);
+  pSmithy(&game, 0);
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;
