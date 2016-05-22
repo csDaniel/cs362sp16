@@ -1281,7 +1281,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 int smithyCard(int handPos, int currentPlayer, struct gameState *state) {
     int i;
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 3; i++) {
 	  drawCard(currentPlayer, state);
 	}
 
