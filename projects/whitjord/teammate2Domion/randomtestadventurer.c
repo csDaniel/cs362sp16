@@ -1,4 +1,4 @@
-/* random card test for smithy card
+/* random card test for adventure card
  * cs 362 Jordan White
 */
 
@@ -17,17 +17,18 @@ int main() {
          
     struct gameState og, cg; // original, changed game states
     int i, j, handPos, cardEffectReturn, coin_bonus, card_played;
+    int cg_tcards, og_tcards;
     // main test loop
     for( i = 0; i < 1000; i++) {
         randomGameState(&og);
         memcpy(&cg, &og, sizeof(struct gameState));
         card_played = 0;
-        // check for smithy card, if it's in hand play it
+        // check for adventure card, if it's in hand play it
         for(handPos = 0; handPos < cg.handCount[cg.whoseTurn]; handPos++) {
-            if (cg.hand[cg.whoseTurn][handPos] == smithy) {
+            if (cg.hand[cg.whoseTurn][handPos] == adventurer) {
                 // choosing to call cardEffect vs playCard
                 // so we don't have to take into account playCard()'s changes
-                cardEffectReturn = cardEffect(smithy,0,0,0,&cg,handPos,&coin_bonus);
+                cardEffectReturn = cardEffect(adventurer,0,0,0,&cg,handPos,&coin_bonus);
                 card_played = 1;
                 break;
             }
@@ -36,12 +37,12 @@ int main() {
         if ( card_played == 1 ) {
 
             printf("####################################################\n");
-            printf("smithy card was played\n");
+            printf("adventurer card was played\n");
             myAssert(og.numPlayers, cg.numPlayers, "number of players shouldn't change");
             myAssert(og.whoseTurn, cg.whoseTurn, "turn should not change");
             myAssert(og.coins, cg.coins, "coins should not change");
             myAssert(og.numActions, cg.numActions, "num actions should not change");
-            myAssert((og.handCount[og.whoseTurn] + 3 -1),cg.handCount[og.whoseTurn], "player should now have a handCount +2 (+3 -1)");  
+            myAssert((og.handCount[og.whoseTurn] + 2),cg.handCount[og.whoseTurn], "player should now have a handCount +2");  
             // check to see that other players info didn't change
             for ( j = 0; j < cg.numPlayers; j++) {
                 if (j != cg.whoseTurn) {
@@ -49,6 +50,26 @@ int main() {
                     myAssert(cg.deckCount[j], og.deckCount[j], "other players deckCounts should not change");
                 }
             }
+            //  check to see that cg has two more treasure cards than og
+            cg_tcards = 0;
+            og_tcards = 0;
+            for ( handPos = 0; handPos < cg.handCount[cg.whoseTurn]; handPos++) {
+                if ( cg.hand[cg.whoseTurn][handPos] == copper || 
+                     cg.hand[cg.whoseTurn][handPos] == silver || 
+                     cg.hand[cg.whoseTurn][handPos] == gold) {
+                   cg_tcards += 1;
+               }
+            }
+            for ( handPos = 0; handPos < og.handCount[cg.whoseTurn]; handPos++) {
+                if ( og.hand[og.whoseTurn][handPos] == copper || 
+                     og.hand[og.whoseTurn][handPos] == silver || 
+                     og.hand[og.whoseTurn][handPos] == gold) {
+                   og_tcards += 1;
+               }
+            }
+            myAssert(cg_tcards, og_tcards, "player should now have 2 more treasure cards");
+            
+            //for(handPos = 0; handPos < cg.handCount[cg.whoseTurn
         }
     }
 
