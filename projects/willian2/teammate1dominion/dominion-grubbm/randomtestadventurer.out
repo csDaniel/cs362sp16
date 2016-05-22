@@ -1,0 +1,542 @@
+TESTING playAdventurer():
+
+===========================
+== TEST REPORT FOR 10000 TESTS
+===========================
+Failed tests:
+Adventurer player's deck + discard -2 treasures: 23 failed
+Adventurer player's handCount +1: 9991 failed
+SPECIAL CASE, adventurer player's hand +1/0 if <2 treasures: 7 failed
+SPECIAL CASE, adventurer player's deck + discard -1/0 if <2 treasures: 7 failed
+SPECIAL CASE, adventurer player's handCount +0/-1 if <2 treasures: 8 failed
+Another player's discardCount adjusted: 82 failed
+
+File 'dominion.c'
+Lines executed:37.96% of 548
+Branches executed:49.16% of 417
+Taken at least once:37.17% of 417
+Calls executed:26.67% of 90
+Creating 'dominion.c.gcov'
+
+File 'randomtestadventurer.c'
+Lines executed:93.48% of 138
+Branches executed:100.00% of 110
+Taken at least once:87.27% of 110
+Calls executed:89.66% of 29
+Creating 'randomtestadventurer.c.gcov'
+
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/******************************************************************************
+        -:    2:* ASSIGNMENT 5 - randomtestadventurer.c
+        -:    3:* AUTHOR: Nickolas A. Williams
+        -:    4:* CLASS: CS362
+        -:    5:* DATE: 05/22/2016
+        -:    6:* NOTES: random testing Max Grubb's refactored playAdventurer() function
+        -:    7:* REQUIREMENTS for adventurer:
+        -:    8:*  1. Draw cards from deck and discard pile until two treasure cards are drawn
+        -:    9:*  2. Discard cards drawn that are not treasure cards
+        -:   10:*  3. All cards must be drawn from the player's deck/discard
+        -:   11:*  4. Adventurer card is discarded
+        -:   12:* TESTING tasks for adventurer:
+        -:   13:*  1. Test that two cards are added to hand
+        -:   14:*  2. Test that two cards are drawn from deck and discard pile
+        -:   15:*  3. Test that player ends up with one more card in hand than start (+2 treasure,
+        -:   16:*     -1 adventurer card)
+        -:   17:*  4. Test that if there are <2 treasure, 1/0 treasure cards added to hand
+        -:   18:*  5. Test that if there are <2 treasure, 1/0 cards removed from deck/discard
+        -:   19:*  6. Test that if there are <2 treasure, player ends up with 0 or -1 card in
+        -:   20:*     hand than start (+1/0 treasure, -1 adventurer card)
+        -:   21:*  7. Test that other players' hands are not adjusted
+        -:   22:*  8. Test that other players' decks are not adjuste
+        -:   23:*  9. Test that other players' discards are not adjusted
+        -:   24:******************************************************************************/
+        -:   25:
+        -:   26:#include "dominion.h"
+        -:   27:#include "dominion_helpers.h"
+        -:   28:#include <string.h>
+        -:   29:#include <stdio.h>
+        -:   30:#include <assert.h>
+        -:   31:#include "rngs.h"
+        -:   32:#include <math.h>
+        -:   33:#include <stdlib.h>
+        -:   34:#include <time.h>
+        -:   35:
+        -:   36:// set NOISY_TEST to 0 to remove printfs from output
+        -:   37:#define NOISY_TEST 0
+        -:   38:// set number of tests to perform
+        -:   39:#define NUM_TESTS 10000
+        -:   40://number of cards in the game as of this build
+        -:   41:#define CARDS_IN_GAME 26
+        -:   42:
+function main called 1 returned 100% blocks executed 95%
+        1:   43:int main() 
+        -:   44:{
+        -:   45:	int i, j;
+        -:   46:    int test, player;
+        -:   47:    int seed, numPlayer;
+        -:   48:    int r, handCount;
+        1:   49:	int maxHandCount = 10;
+        -:   50:    int trashflag;
+        1:   51:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   52:               , remodel, smithy, village, baron, great_hall};
+        -:   53:    struct gameState StartState;
+        -:   54:	struct gameState TestState;
+        -:   55:	int errorflag, generalErrorFlag;
+        1:   56:	srand(time(NULL));
+call    0 returned 100%
+call    1 returned 100%
+        1:   57:	int case1 = 0;
+        1:   58:	int case2 = 0;
+        1:   59:	int case3 = 0;
+        1:   60:	int case4 = 0;
+        1:   61:	int case5 = 0;
+        1:   62:	int case6 = 0;
+        1:   63:	int case7 = 0;
+        1:   64:	int case8 = 0;
+        1:   65:	int case9 = 0;
+        -:   66:
+        1:   67:	printf("TESTING playAdventurer():\n");
+call    0 returned 100%
+        -:   68:	
+    10001:   69:	for (test = 0; test < NUM_TESTS; test++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   70:	{
+    10000:   71:		seed = rand(); //provide dominion's fancy RNGesus with a random number
+call    0 returned 100%
+    10000:   72:		numPlayer = (rand() % 3) + 2; //no fewer than 2 players, no more than 4
+call    0 returned 100%
+    10000:   73:		errorflag = 0;
+        -:   74:		
+    10000:   75:		memset(&StartState, 23, sizeof(struct gameState)); //ensures state clear
+    10000:   76:		initializeGame(numPlayer, k, seed, &StartState);
+call    0 returned 100%
+        -:   77:		
+        -:   78:		//create hands for every player
+    40005:   79:		for (player = 0; player < numPlayer; player++) //for each player
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+        -:   80:		{
+        -:   81:			//give player random number of cards in deck, discard, & hand
+    30005:   82:			StartState.deckCount[player] = floor(Random() * MAX_DECK);
+call    0 returned 100%
+    30005:   83:			StartState.discardCount[player] = floor(Random() * MAX_DECK);
+call    0 returned 100%
+    30005:   84:			StartState.handCount[player] = floor(Random() * MAX_HAND);
+call    0 returned 100%
+        -:   85:			
+  7526323:   86:			for (i = 0; i < StartState.deckCount[player]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   87:			{
+        -:   88:				//fill deck with random cards
+  7496318:   89:				StartState.deck[player][i] = floor(Random() * CARDS_IN_GAME);
+call    0 returned 100%
+        -:   90:			}
+  7493013:   91:			for (i = 0; i < StartState.discardCount[player]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   92:			{
+        -:   93:				//fill discard with random cards
+  7463008:   94:				StartState.discard[player][i] = floor(Random() * CARDS_IN_GAME);
+call    0 returned 100%
+        -:   95:			}
+  7501949:   96:			for (i = 0; i < StartState.handCount[player]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   97:			{
+        -:   98:				//fill hand with random cards
+  7471944:   99:				StartState.hand[player][i] = floor(Random() * CARDS_IN_GAME);
+call    0 returned 100%
+        -:  100:			}
+        -:  101:		}
+        -:  102:		
+        -:  103:		//pick random player, verify adventurer is in hand, if not give them one
+        -:  104:		//then, save state and call playAdventurer
+    10000:  105:		player = rand() % numPlayer;
+call    0 returned 100%
+    10000:  106:		int adventurerInHand = 0;
+        -:  107:		int handPos;
+   246546:  108:		for (handPos = 0; handPos < StartState.handCount[player]; handPos++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  109:		{
+   246027:  110:			if (StartState.hand[player][handPos] == adventurer)
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+        -:  111:			{
+     9481:  112:				adventurerInHand = 1;
+     9481:  113:				break;
+        -:  114:			}
+        -:  115:		}
+    10000:  116:		if (adventurerInHand == 0)
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+        -:  117:		{
+      519:  118:			handPos = floor(Random() * StartState.handCount[player]);
+call    0 returned 100%
+      519:  119:			StartState.hand[player][handPos] = adventurer;
+        -:  120:		}
+        -:  121:
+        -:  122:		//count where all the treasure cards are
+    10000:  123:		int treasureInHand = 0;
+    10000:  124:		int treasureInDeck = 0;
+    10000:  125:		int treasureInDiscard = 0;
+    10000:  126:		int lessThanTwoTreasures = -1;
+  2503705:  127:		for (i = 0; i < StartState.handCount[player]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  128:		{
+  4891929:  129:			if (StartState.hand[player][i] == copper ||
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+  4700609:  130:				StartState.hand[player][i] == silver ||
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+  2302385:  131:				StartState.hand[player][i] == gold)
+        -:  132:			{
+   287462:  133:				treasureInHand++;
+        -:  134:			}
+        -:  135:		}			
+  2522382:  136:		for (i = 0; i < StartState.deckCount[player]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  137:		{
+  4928662:  138:			if (StartState.deck[player][i] == copper ||
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+  4736133:  139:				StartState.deck[player][i] == silver ||
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+  2319853:  140:				StartState.deck[player][i] == gold)
+        -:  141:			{
+   289312:  142:				treasureInDeck++;
+        -:  143:			}
+        -:  144:		}
+  2495034:  145:		for (i = 0; i < StartState.discardCount[player]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  146:		{
+  4874295:  147:			if (StartState.discard[player][i] == copper ||
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+  4682383:  148:				StartState.discard[player][i] == silver ||
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+  2293122:  149:				StartState.discard[player][i] == gold)
+        -:  150:			{
+   287245:  151:				treasureInDiscard++;
+        -:  152:			}
+        -:  153:		}
+        -:  154:		//lessThanTwoTreasures > -1 if there are less than 2 treasures to draw
+        -:  155:		//otherwise, we will later check to see if it's -1 to indicate this special case
+    10000:  156:		if ((treasureInDeck + treasureInDiscard < 2))
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  157:		{
+        9:  158:			lessThanTwoTreasures = treasureInDeck + treasureInDiscard;
+        -:  159:		}
+        -:  160:		
+        -:  161:		//set StartState whoseTurn to the playing player for this test
+    10000:  162:		StartState.whoseTurn = player;
+        -:  163:		//save gamestate for comparison
+    10000:  164:		memcpy(&TestState, &StartState, sizeof(struct gameState));
+        -:  165:		//call playAdventurer()
+        -:  166:		//playAdventurer(&TestState, player, handPos); --old call
+    10000:  167:		cardEffect(adventurer, 0, 0, 0, &TestState, handPos, 0); //new call
+call    0 returned 100%
+        -:  168:
+        -:  169:#if (NOISY_TEST == 1)
+        -:  170:		printf("\n===========================\n");
+        -:  171:		printf("==   TEST #%d\n", test);
+        -:  172:		printf("===========================\n");
+        -:  173:		printf("Player #%d has adventurer card.\n", player);
+        -:  174:		printf("Treasures: %d hand, %d deck, %d discard, %d deck + discard\n", treasureInHand, treasureInDeck, treasureInDiscard, treasureInDeck + treasureInDiscard);
+        -:  175:#endif
+        -:  176:		//PERFORM TESTS ON ALL PLAYERS
+    40005:  177:		for (j = 0; j < numPlayer; j++)
+branch  0 taken 75%
+branch  1 taken 25% (fallthrough)
+        -:  178:		{
+        -:  179:#if (NOISY_TEST == 1)
+        -:  180:			printf("TESTING PLAYER #%d\n", j);
+        -:  181:#endif	
+    30005:  182:			if (j == player) //current player tested is caller of playAdventurer()
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
+        -:  183:			{
+        -:  184:#if (NOISY_TEST == 1)
+        -:  185:				printf("Testing treasure card counts for adventurer player\n");
+        -:  186:#endif	
+        -:  187:				//now test the treasure card counts for the test state
+    10000:  188:				int testTreasureInHand = 0;
+    10000:  189:				int testTreasureInDeck = 0;
+    10000:  190:				int testTreasureInDiscard = 0;
+  2523683:  191:				for (i = 0; i < TestState.handCount[j]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  192:				{
+  4925124:  193:					if (TestState.hand[j][i] == copper ||
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+  4720488:  194:						TestState.hand[j][i] == silver ||
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+  2309047:  195:						TestState.hand[j][i] == gold)
+        -:  196:					{
+   307451:  197:						testTreasureInHand++;
+        -:  198:					}
+        -:  199:				}			
+  2433795:  200:				for (i = 0; i < TestState.deckCount[j]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  201:				{
+  4754939:  202:					if (TestState.deck[j][i] == copper ||
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+  4569030:  203:						TestState.deck[j][i] == silver ||
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+  2237886:  204:						TestState.deck[j][i] == gold)
+        -:  205:					{
+   279344:  206:						testTreasureInDeck++;
+        -:  207:					}
+        -:  208:				}
+  2552343:  209:				for (i = 0; i < TestState.discardCount[j]; i++)
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:  210:				{
+  4992609:  211:					if (TestState.discard[j][i] == copper ||
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+  4808187:  212:						TestState.discard[j][i] == silver ||
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+  2357921:  213:						TestState.discard[j][i] == gold)
+        -:  214:					{
+   275971:  215:						testTreasureInDiscard++;
+        -:  216:					}
+        -:  217:				}
+        -:  218:				
+        -:  219:				//if there are at least two treasure in deck/discard, lessThanTwoTreasures
+        -:  220:				//will be -1, otherwise it will be 0 (no treasures) or 1 (1 treasure)
+    10000:  221:				if (lessThanTwoTreasures == -1)
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+        -:  222:				{
+        -:  223:					//test that hand has +2 treasures
+     9991:  224:					if (testTreasureInHand != (treasureInHand + 2))
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  225:					{
+    #####:  226:						case1++;
+    #####:  227:						errorflag = 1;
+        -:  228:					}
+        -:  229:					//test that deck + discard is -2 treasures
+     9991:  230:					if ((testTreasureInDeck + testTreasureInDiscard) != (treasureInDeck + treasureInDiscard - 2))
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  231:					{
+       23:  232:						case2++;
+       23:  233:						errorflag = 1;
+        -:  234:					}
+        -:  235:#if (NOISY_TEST == 1)
+        -:  236:					printf("Adventurer player has %d treasures in hand, %d treasures in deck and discard.\n", testTreasureInHand, testTreasureInDeck + testTreasureInDiscard);
+        -:  237:					printf("             Expected %d treasures in hand, %d treasures in deck and discard.\n", (treasureInHand + 2), (treasureInDeck + treasureInDiscard - 2));
+        -:  238:#endif				
+        -:  239:					//test that hand count is up by 1
+     9991:  240:					if (TestState.handCount[j] != (StartState.handCount[j] + 1))
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  241:					{
+     9991:  242:						case3++;
+     9991:  243:						errorflag = 1;
+        -:  244:					}
+        -:  245:#if (NOISY_TEST == 1)
+        -:  246:					printf("TestState.handCount[%d] = %d, expected = %d\n", j, TestState.handCount[j], StartState.handCount[j] + 1);
+        -:  247:#endif
+        -:  248:				}
+        -:  249:				
+        -:  250:				//there are only 1 or 0 treasure cards to put into player's hand
+        -:  251:				else
+        -:  252:				{
+        -:  253:					//test that either 1 or 0 cards have been placed in hand
+        9:  254:					if ((testTreasureInHand + lessThanTwoTreasures) != (treasureInHand + lessThanTwoTreasures))
+branch  0 taken 78% (fallthrough)
+branch  1 taken 22%
+        -:  255:					{
+        7:  256:						case4++;
+        7:  257:						errorflag = 1;
+        -:  258:					}
+        -:  259:					//test that either 1 or 0 cards have been removed from deck/discard
+        9:  260:					if ((testTreasureInDeck + testTreasureInDiscard - lessThanTwoTreasures) != (treasureInDeck + treasureInDiscard - lessThanTwoTreasures))
+branch  0 taken 78% (fallthrough)
+branch  1 taken 22%
+        -:  261:					{
+        7:  262:						case5++;
+        7:  263:						errorflag = 1;
+        -:  264:					}
+        -:  265:#if (NOISY_TEST == 1)
+        -:  266:					printf("Adventurer player has %d treasures in hand, %d treasures in deck and discard.\n", testTreasureInHand, testTreasureInDeck + testTreasureInDiscard);
+        -:  267:					printf("             Expected %d treasures in hand, %d treasures in deck and discard.\n", (treasureInHand + lessThanTwoTreasures), (treasureInDeck + treasureInDiscard - lessThanTwoTreasures));
+        -:  268:#endif				
+        -:  269:					//test that hand count is up by 0 (replace advent w/treasure) or down by 1 (no treasure, discard adven)
+        9:  270:					if (TestState.handCount[j] != (StartState.handCount[j] + (lessThanTwoTreasures - 1)))
+branch  0 taken 89% (fallthrough)
+branch  1 taken 11%
+        -:  271:					{
+        8:  272:						case6++;
+        8:  273:						errorflag = 1;
+        -:  274:					}
+        -:  275:#if (NOISY_TEST == 1)
+        -:  276:					printf("TestState.handCount[%d] = %d, expected = %d\n", j, TestState.handCount[j], StartState.handCount[j] + (lessThanTwoTreasures - 1));
+        -:  277:#endif
+        -:  278:				}
+        -:  279:			}
+        -:  280:
+        -:  281:			//test the rest of the players
+        -:  282:			else
+        -:  283:			{
+        -:  284:				//test handcount
+    20005:  285:				if (TestState.handCount[j] != (StartState.handCount[j]))
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  286:				{	
+    #####:  287:					case7++;
+    #####:  288:					errorflag = 1;
+        -:  289:				}
+        -:  290:#if (NOISY_TEST == 1)
+        -:  291:				printf("TestState.handCount[%d] = %d, expected = %d\n", j, TestState.handCount[j], StartState.handCount[j]);
+        -:  292:#endif
+        -:  293:
+        -:  294:				//test deckcount
+    20005:  295:				if (TestState.deckCount[j] != (StartState.deckCount[j]))
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  296:				{
+    #####:  297:					case8++;
+    #####:  298:					errorflag = 1;
+        -:  299:				}
+        -:  300:#if (NOISY_TEST == 1)
+        -:  301:				printf("TestState.deckCount[%d] = %d, expected = %d\n", j, TestState.deckCount[j], StartState.deckCount[j]);
+        -:  302:#endif	
+        -:  303:				
+        -:  304:				//test discardcount
+    20005:  305:				if (TestState.discardCount[j] != (StartState.discardCount[j]))
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  306:				{
+       82:  307:					case9++;
+       82:  308:					errorflag = 1;
+        -:  309:				}
+        -:  310:#if (NOISY_TEST == 1)
+        -:  311:				printf("TestState.discardCount[%d] = %d, expected = %d\n", j, TestState.discardCount[j], StartState.discardCount[j]);
+        -:  312:#endif	
+        -:  313:			}
+        -:  314:		}
+    10000:  315:		if (errorflag = 1)
+        -:  316:		{
+    10000:  317:			generalErrorFlag = 1;
+        -:  318:#if (NOISY_TEST == 1)
+        -:  319:			printf("TEST #%d has failed.\n", test);
+        -:  320:#endif	
+        -:  321:		}
+        -:  322:	}
+        -:  323:	
+        -:  324:	//give error even if not in NOISY_TEST mode
+        1:  325:	if (generalErrorFlag)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  326:	{
+        1:  327:		printf("\n===========================\n");
+call    0 returned 100%
+        1:  328:		printf("== TEST REPORT FOR %d TESTS\n", NUM_TESTS);
+call    0 returned 100%
+        1:  329:		printf("===========================\n");
+call    0 returned 100%
+        1:  330:		printf("Failed tests:\n");
+call    0 returned 100%
+        1:  331:		if (case1 > 0) 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  332:		{ 
+    #####:  333:			printf("Adventurer player's hand has +2 treasures: %d failed\n", case1);
+call    0 never executed
+        -:  334:		}
+        1:  335:		if (case2 > 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  336:		{ 
+        1:  337:			printf("Adventurer player's deck + discard -2 treasures: %d failed\n", case2);
+call    0 returned 100%
+        -:  338:		}
+        1:  339:		if (case3 > 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  340:		{ 
+        1:  341:			printf("Adventurer player's handCount +1: %d failed\n", case3);
+call    0 returned 100%
+        -:  342:		}
+        1:  343:		if (case4 > 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  344:		{ 
+        1:  345:			printf("SPECIAL CASE, adventurer player's hand +1/0 if <2 treasures: %d failed\n", case4);
+call    0 returned 100%
+        -:  346:		}
+        1:  347:		if (case5 > 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  348:		{ 
+        1:  349:			printf("SPECIAL CASE, adventurer player's deck + discard -1/0 if <2 treasures: %d failed\n", case5);
+call    0 returned 100%
+        -:  350:		}
+        1:  351:		if (case6 > 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  352:		{ 
+        1:  353:			printf("SPECIAL CASE, adventurer player's handCount +0/-1 if <2 treasures: %d failed\n", case6);
+call    0 returned 100%
+        -:  354:		}
+        1:  355:		if (case7 > 0)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  356:		{ 
+    #####:  357:			printf("Another player's handCount adjusted: %d failed\n", case7);
+call    0 never executed
+        -:  358:		}
+        1:  359:		if (case8 > 0)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -:  360:		{ 
+    #####:  361:			printf("Another player's deckCount adjusted: %d failed\n", case8);
+call    0 never executed
+        -:  362:		}
+        1:  363:		if (case9 > 0)
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        -:  364:		{ 
+        1:  365:			printf("Another player's discardCount adjusted: %d failed\n", case9);
+call    0 returned 100%
+        -:  366:		}
+        1:  367:		printf("\n");
+call    0 returned 100%
+        -:  368:	}
+        1:  369:	return 0;
+        -:  370:}

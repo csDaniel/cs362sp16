@@ -184,69 +184,13 @@ Creating 'dominion.c.gcov'
 
 -- randomtestadventurer results --
 TESTING adventurer card
-Testing with treasures [silver] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [copper] [silver]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [silver] [gold]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [silver] [silver]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [copper] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [silver] [silver]
+Testing with treasures [copper] [copper]
 FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [copper] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [silver] [silver]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [gold] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
 Testing with treasures [gold] [copper]
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
@@ -254,62 +198,13 @@ FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [gold]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [silver] [silver]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [copper] [gold]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [silver] [gold]
+Testing with treasures [copper] [copper]
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [copper] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [copper] [gold]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [gold] [silver]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
 Testing with treasures [copper] [silver]
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
@@ -318,6 +213,76 @@ FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
 Testing with treasures [copper] [gold]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+Testing with treasures [gold] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [silver] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [copper] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [copper] [gold]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+Testing with treasures [silver] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [silver] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [copper] [gold]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+Testing with treasures [copper] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [silver]
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
@@ -325,19 +290,26 @@ FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
 Testing with treasures [silver] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [silver] [copper]
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [copper] [copper]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
+Testing with treasures [silver] [copper]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
 Testing with treasures [gold] [gold]
 FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
@@ -345,7 +317,21 @@ FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [silver] [gold]
+Testing with treasures [silver] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [copper] [copper]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+Testing with treasures [copper] [silver]
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
@@ -359,35 +345,7 @@ FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [copper] [silver]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [copper] [copper]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [gold]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [copper]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [silver] [gold]
+Testing with treasures [gold] [silver]
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
@@ -401,70 +359,14 @@ FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [silver] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [gold] [silver]
+Testing with treasures [gold] [gold]
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [silver]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [gold] [copper]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [copper] [silver]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [silver] [gold]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [silver]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [silver] [gold]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [copper] [copper]
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
-Testing with treasures [silver] [gold]
+Testing with treasures [silver] [copper]
 FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
@@ -478,7 +380,70 @@ FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [copper] [gold]
+Testing with treasures [gold] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [gold]
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
+Testing with treasures [silver] [gold]
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
+Testing with treasures [gold] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [copper]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+Testing with treasures [silver] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [gold]
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
@@ -486,6 +451,62 @@ FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
 Testing with treasures [copper] [gold]
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+Testing with treasures [silver] [gold]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [copper] [copper]
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
+Testing with treasures [silver] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [copper] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [silver] [silver]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
+Testing with treasures [gold] [copper]
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
+Testing with treasures [gold] [copper]
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
@@ -499,13 +520,13 @@ FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [gold] [silver]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
+Testing with treasures [silver] [copper]
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
 Testing with treasures [gold] [silver]
 FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
 FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
@@ -514,31 +535,10 @@ FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
 SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
 SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
 Testing with treasures [gold] [gold]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [copper] [silver]
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 2] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 2] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 2] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 2] Adventurer card was discarded
-Testing with treasures [gold] [silver]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
-Testing with treasures [copper] [silver]
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-FAIL: [playAdventurer] [player: 1] We did not gain two treasure cards
-FAIL: [playAdventurer] [player: 1] Adventurer card was not discarded
-SUCCESS: [playAdventurer] [player: 1] No treasure cards gained
-SUCCESS: [playAdventurer] [player: 1] Adventurer card was discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+FAIL: [playAdventurer] [player: 0] We did not gain two treasure cards
+FAIL: [playAdventurer] [player: 0] Adventurer card was not discarded
+SUCCESS: [playAdventurer] [player: 0] No treasure cards gained
+SUCCESS: [playAdventurer] [player: 0] Adventurer card was discarded
 

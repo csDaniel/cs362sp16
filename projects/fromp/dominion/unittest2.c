@@ -21,7 +21,7 @@ void buyCardTest(){
 	struct gameState game, compareGame, startState, compareStartState;
 	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
 
-	printf("Testing gainCard.\n\n");
+	printf("Testing buyCardTest.\n\n");
 
 	int numberOfPlayers = 2;
 	int randomSeed = 1000;
@@ -62,7 +62,6 @@ void buyCardTest(){
 			if(supplyCount(card, &compareGame) > 0 && compareGame.coins >= getCost(card) && compareGame.numBuys > 0){
 				compareGame.coins = compareGame.coins - getCost(card);
 				compareGame.numBuys--;
-				compareGame.phase = 1;
 				gainCard(card, &compareGame, 0, player);
 			}
 

@@ -56,8 +56,8 @@ int main (){
 	cardEffect(village, choice1, choice2, choice3, &post, handpos, &bonus);
 	
 	//assert 1 card was drawn from deck and added to handCount
-	printf("Confirm current player recieved 1 new card in hand. post deck count: %d  and pre deck count: %d \n", post.deckCount[currentPlayer], pre.deckCount[currentPlayer]);
-	if(post.deckCount[currentPlayer] < pre.deckCount[currentPlayer])
+	printf("Confirm current player recieved 1 new card in hand (net 0 with discard). post deck count: %d  and pre deck count: %d \n", post.handCount[currentPlayer], pre.handCount[currentPlayer]);
+	if(post.handCount[currentPlayer] == pre.handCount[currentPlayer])
 		printf("PASSED\n");
 	else{
 		bugFlag++;

@@ -1,6 +1,14 @@
 ## Michael Hueter's CS362 folder
 hueterm | hueterm@oregonstate.edu | @mhueter
 
+#### Assignment 5 [21 May 2016]
+Fixed bugs in dominion.c and ran my test suite against my teammates' projects.
+
+1. dominion/BugFixes.c
+2. dominion/BugsInTeammates.c
+3. sianojDominion/*
+4. smithg6Dominion/*
+
 #### Assignment 4 [8 May 2016]
 Generated random tests for adventurer and village cards. New files:
 

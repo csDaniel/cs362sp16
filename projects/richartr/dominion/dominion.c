@@ -1252,7 +1252,7 @@ int playAdventurer(int currentPlayer, struct gameState *state){
      int z = 0;// this is the counter for the temp hand
      int temphand[MAX_HAND];
 
-while(drawntreasure<3){
+while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <=1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -1276,7 +1276,7 @@ while(drawntreasure<3){
 int playSmithy(int currentPlayer, struct gameState *state, int handPos){
     int i;
     //+ 3 cards
-     for (i = 1; i < 3; i++)
+     for (i = 0; i < 3; i++)
 	 {
 	  drawCard(currentPlayer, state);
 	 }
@@ -1292,7 +1292,7 @@ int playVillage(int currentPlayer, struct gameState *state, int handPos){
       drawCard(currentPlayer, state);
 
       //+2 Actions
-      state->numActions = state->numActions + 4;
+      state->numActions = state->numActions + 2;
 
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1311,7 +1311,7 @@ int playCutpurse(int currentPlayer, struct gameState *state, int handPos){
 	    {
 	      for (j = 0; j < state->handCount[i]; j++)
 		{
-		  if (state->hand[i][j] == gold)
+		  if (state->hand[i][j] == copper)
 		    {
 		      discardCard(j, i, state, 0);
 		      break;
@@ -1370,6 +1370,8 @@ int playSalvager(int currentPlayer, struct gameState *state, int handPos, int ch
 /********************************
 ** END OF REFACTORED CODE
 ********************************/
+
+//REFACTORED CODE BUGS FIXED FOR ASSIGNMENT 5 ********
 
 
 

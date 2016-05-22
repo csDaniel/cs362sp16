@@ -14,7 +14,7 @@ int main(){
 //create game
 //4 players, cards, seed, 
 	initializeGame(4, k, 10, &game);
-	handCountShouldBe = game.handCount[0] + 2;
+	handCountShouldBe = game.handCount[0] + 2 - 1;
 	printf("Current Hand: %d \n", game.handCount[0]);	
 //line 646 dominion.c
 //pass card (smithy since we are testing it), choice1-3, struct gameState, the handPos and the bonus (which we have none yet)

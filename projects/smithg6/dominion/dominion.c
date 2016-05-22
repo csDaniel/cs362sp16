@@ -1336,7 +1336,7 @@ int cardSmithy(int currentPlayer, struct gameState *state, int handPos)
 		drawCard(currentPlayer, state);
 	}
 
-	discardCard(handPos, currentPlayer, state, i);
+	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
@@ -1357,7 +1357,7 @@ int cardAdventurer(int currentPlayer, struct gameState *state)
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
 		if (cardDrawn == silver ||
-			cardDrawn == copper)
+			cardDrawn == copper || cardDrawn == gold)
 			{
 				drawntreasure ++;
 			}
@@ -1420,16 +1420,13 @@ int cardCouncil_room(int currentPlayer, struct gameState *state, int handPos)
 
 int cardOutpost(int currentPlayer, struct gameState *state, int handPos)
 {
-	//check outpost flag
-	int i;
-	i = state->outpostPlayed;
 
-	//set outpost flag
-	if (i != NULL)
-	{
-		state->outpostPlayed++;		
-	}
-
+  int i = 0;
+   
+  if(i)
+  	{
+      state->outpostPlayed++;		
+    }
 	//discard card
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
