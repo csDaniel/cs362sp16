@@ -18,10 +18,11 @@ int main() {
   int player = 0;
   int other_player = 1;
   initializeGame(2, cards, 1, &game);
+  game.whoseTurn = player;
 
   // Test if card drawn from player's deck
   int expec_deck_count = game.deckCount[player] - 1;
-  pVillage(player, 0, &game);
+  pVillage(&game, 0);
   if (expec_deck_count == game.deckCount[player]) {
     printf("Card correctly drawn from player's deck\n");
   } else {
@@ -32,7 +33,7 @@ int main() {
   game.hand[player][1] = village;
   game.hand[player][0] = smithy;
   game.handCount[player] = 2;
-  pVillage(player, 1, &game);
+  pVillage(&game, 1);
   if (game.hand[player][1] != village) {
     printf("Card correctly discarded from player's hand\n");
   } else {
@@ -42,7 +43,7 @@ int main() {
 
   // Test if actions given to player
   game.numActions = 1;
-  pVillage(player, 1, &game);
+  pVillage(&game, 1);
   if (game.numActions == 3) {
     printf("Actions correctly awarded to player.\n");
   } else {
@@ -52,7 +53,7 @@ int main() {
   // Test if other players are unaffected.
   int orig_deck_count = game.deckCount[other_player];
   int orig_hand_count = game.handCount[other_player];
-  pVillage(player, 0, &game);
+  pVillage(&game, 0);
   if (orig_deck_count == game.deckCount[other_player]) {
     printf("Other player's deck unaffected.\n");
   } else {
@@ -73,7 +74,7 @@ int main() {
   for (i = 0; i < 17; i++) {
     orig_supplies[i] = game.supplyCount[all_cards[i]];
   }
-  pVillage(player, 0, &game);
+  pVillage(&game, 0);
   for (i = 0; i < 17; i++) {
     if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
       changed = 1;
