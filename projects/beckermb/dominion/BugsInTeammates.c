@@ -20,18 +20,30 @@ Adventurer Function:
   - With multiple treasures in the deck, the player's hand size should have increased by 1. Instead it stayed the same size.
 
 * Random testing uncovered the following bugs. They may all have the same root cause, but manifested in different ways:
-  - Two money in deck or discard, so number of coins should be +2 in hand and -2 in deck, but was not.
-  - One money in deck or discard, so handsize should stay the same, but did not.
-  - At least two money in deck or discard, so handsize should increase by 1, but did not.
+  - Two coins in deck or discard, so number of coins should be +2 in hand and -2 in deck, but was not.
+  - One coin in deck or discard, so handsize should stay the same, but did not.
+  - At least two coins in deck or discard, so handsize should increase by 1, but did not.
 
 
-Tests run poolj code:
+Tests run on poolj code:
 
 Village Function:
+* No bugs uncovered with unit test.
 
 Adventurer Function:
+* Bugs uncovered with unit testing:
+  - Expected handsize to increase by 1 with two treasures drawn. Instead, handsize decreased by 2.
+  - Expected total number of treasures in player's deck, hand, and discard to stay the same. Instead, it changed.
+
+* Bugs uncovered with random testing:
+  - Two coins in deck or discard, so number of coins should be +2 in hand and -2 in deck, but was not.
+  - One coin in deck or discard, so handsize should stay the same, but did not.
+  - No coins in deck or discard, so handsize should decrease by 1, but did not.
 
 Smithy Function:
 
+* Unit test uncovered 2 bugs:
+  - Expected hand size to increase by 2 after smithy was played. Instead it increased by 3.
+  - Expected deck size to decrease by 3. Instead, decreased by 4.
 
 */
