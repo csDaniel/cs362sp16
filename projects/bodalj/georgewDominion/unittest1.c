@@ -1,194 +1,159 @@
-//gainCard function
-//unittest1.c
+/******************************************************************************
+ * Filename: unittest1.c
+ * Author: Jens Bodal
+ * Date: April 22, 2016
+ * Description: testing shuffle function
+ *****************************************************************************/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "assert.h"
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
-#include "interface.h"
 
-#define FUNCTION "gainCard"
+// fills deck with one of each type of card
+void fillDeck(struct gameState *state);
+
+// checks inability to shuffle an empty deck by drawing all cards and trying to shuffle deck
+void testShuffleEmptyDeck(struct gameState *state);
+
+// checks count of deck, hand, and discard before and after shuffling
+void testPostShuffleCounts(struct gameState *state);
+
+// checks count of each card before and after shuffling
+void testPostShuffleCards(struct gameState *state, int *cards, int numCards);
 
 int main() {
-	int numPlayers = 2;
-	int thisPlayer = 0;
-	int seed = 1000;
-	int supplyPos;
-	int toFlag = 0;
-	struct gameState G, testG;
-	int currDeckCount, currHandCount, currDiscardCount, currSupplyCount;
-	int k[10] = {curse, estate, village, remodel, 
-		council_room, adventurer, province, smithy, steward, tribute};
-	//initialize game, state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-	printf("\n\n\n\n----------------- Testing Function: %s ----------------\n", FUNCTION);
-	printf("\n-------------Saving Starting Game State----------------\n");
-	memcpy(&testG, &G, sizeof(struct gameState));
-	//output supply
-	printSupply(&testG);
-	printf("\n------------TEST 1: Testing if Card isn't in game-------------\n");
-	supplyPos = -1;
-	if(gainCard(supplyPos, &testG, toFlag, thisPlayer) == -1)
-		printf("RETURNED ERROR FOR CARD NOT IN GAME: SUCCESS\n");
-	printf("\n-------------TEST 2: Testing when toFlag == 1...................\n");
-	//revert to starting game state
-	memcpy(&G, &testG, sizeof(struct gameState));
-	//set to flag
-	toFlag = 1;
-	//set supply pos
-	supplyPos = 1;
-	//get starting counts
-	currDeckCount = testG.deckCount[thisPlayer];
-	currHandCount = testG.handCount[thisPlayer];
-	currDiscardCount = testG.discardCount[thisPlayer];
-	currSupplyCount = testG.supplyCount[supplyPos];
-	printf("Current deck count: %d\n", testG.deckCount[thisPlayer]);
-	printf("Current hand count: %d\n", testG.handCount[thisPlayer]);
-	printf("Current discard count: %d\n", testG.discardCount[thisPlayer]);
-	printf("Current Supply Count: %d\n", testG.supplyCount[supplyPos]);
-	//run function
-	gainCard(supplyPos, &testG, toFlag, thisPlayer);
-	//output counts
-	printf("Final deck count: %d\n", testG.deckCount[thisPlayer]);
-	printf("Final hand count: %d\n", testG.handCount[thisPlayer]);
-	printf("Final discard count: %d\n", testG.discardCount[thisPlayer]);	
-	printf("Final Supply Count: %d\n", testG.supplyCount[supplyPos]);
-	//output failure/success statements
-	printf("DECK\n");
-	if ((currDeckCount + 1) == testG.deckCount[thisPlayer])
-		printf("Card Added to Deck: SUCCESS\n");
-	else if (currDeckCount == testG.deckCount[thisPlayer])
-		printf("Card Not Added to Deck: FAILURE\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("HAND\n");
-	if ((currHandCount) == testG.handCount[thisPlayer])
-		printf("No Cards Added to Hand: SUCCESS\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("DISCARD\n");
-	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer])
-		printf("No Cards Added to Discard: SUCCESS\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("SUPPLY\n");
-	if ((currSupplyCount - 1) == testG.supplyCount[supplyPos])
-		printf("Card Taken From Supply: SUCCESS\n");
-	else if (currSupplyCount == testG.supplyCount[supplyPos])
-		printf("Card Not taken from Supply: FAILURE\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("\n-------------Testing when toFlag == 2...................\n");
-	//revert to starting game state
-	memcpy(&G, &testG, sizeof(struct gameState));
-	//set flag to 2
-	toFlag = 2;
-	supplyPos = 1;
-	//set starting counts
-	currDeckCount = testG.deckCount[thisPlayer];
-	currHandCount = testG.handCount[thisPlayer];
-	currDiscardCount = testG.discardCount[thisPlayer];
-	currSupplyCount = testG.supplyCount[supplyPos];
-	//output starting counts
-	printf("Current deck count: %d\n", testG.deckCount[thisPlayer]);
-	printf("Current hand count: %d\n", testG.handCount[thisPlayer]);
-	printf("Current discard count: %d\n", testG.discardCount[thisPlayer]);
-	printf("Current Supply Count: %d\n", testG.supplyCount[supplyPos]);
-	//run function
-	gainCard(supplyPos, &testG, toFlag, thisPlayer);
-	//get counts post function 
-	printf("Final deck count: %d\n", testG.deckCount[thisPlayer]);
-	printf("Final hand count: %d\n", testG.handCount[thisPlayer]);
-	printf("Final discard count: %d\n", testG.discardCount[thisPlayer]);
-	printf("Final Supply Count: %d\n", testG.supplyCount[supplyPos]);
-	//output the statements 
-	printf("DECK\n");
-	if ((currDeckCount) == testG.deckCount[thisPlayer])
-		printf("Card Not Added to Deck: SUCCESS\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("HAND\n");
-	if ((currHandCount + 1) == testG.handCount[thisPlayer])
-		printf("Card Added to Hand: SUCCESS\n");
-	else if (currHandCount == testG.handCount[thisPlayer])
-		printf("Card Not Added to Deck: FAILURE\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("DISCARD\n");
-	if ((currDiscardCount) == testG.discardCount[thisPlayer])
-		printf("Card Not Added to Discard: SUCCESS\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("SUPPLY\n");
-	if ((currSupplyCount - 1) == testG.supplyCount[supplyPos])
-		printf("Card Taken From Supply: SUCCESS\n");
-	else if (currSupplyCount == testG.supplyCount[supplyPos])
-		printf("Card Not taken from Supply: FAILURE\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
+    int players = 4;
+    int cards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    int seed = 187;
 
-	printf("\n-------------Testing when toFlag == 0...................\n");
-	//revert to starting game state
-	memcpy(&G, &testG, sizeof(struct gameState));
-	//set flag to zero
-	toFlag = 0;
-	supplyPos = 1;
-	//get starting counts
-	currDeckCount = testG.deckCount[thisPlayer];
-	currHandCount = testG.handCount[thisPlayer];
-	currDiscardCount = testG.discardCount[thisPlayer];
-	currSupplyCount = testG.supplyCount[supplyPos];
-	//output starting counts
-	printf("Current deck count: %d\n", testG.deckCount[thisPlayer]);
-	printf("Current hand count: %d\n", testG.handCount[thisPlayer]);
-	printf("Current discard count: %d\n", testG.discardCount[thisPlayer]);
-	printf("Current Supply Count: %d\n", testG.supplyCount[supplyPos]);
-	//run function
-	gainCard(supplyPos, &testG, toFlag, thisPlayer);
-	//output results
-	printf("Final deck count: %d\n", testG.deckCount[thisPlayer]);
-	printf("Final hand count: %d\n", testG.handCount[thisPlayer]);
-	printf("Final discard count: %d\n", testG.discardCount[thisPlayer]);
-	printf("Final Supply Count: %d\n", testG.supplyCount[supplyPos]);
-	//output success/failure
-	printf("DECK\n");
-	if ((currDeckCount) == testG.deckCount[thisPlayer])
-		printf("Card Not Added to Deck: SUCCESS\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
+    struct gameState game;
+    initializeGame(players, cards, seed, &game);
 
-	printf("HAND\n");
-	if ((currHandCount) == testG.handCount[thisPlayer])
-		printf("No Cards Added to Hand: SUCCESS\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("DISCARD\n");
-	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer])
-		printf("Card Added to Discard: SUCCESS\n");
-	else if (currDiscardCount == testG.discardCount[thisPlayer])
-		printf("Card Not Added to Discard: FAILURE\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	
-	printf("SUPPLY\n");
-	if ((currSupplyCount - 1) == testG.supplyCount[supplyPos])
-		printf("Card Taken From Supply: SUCCESS\n");
-	else if (currSupplyCount == testG.supplyCount[supplyPos])
-		printf("Card Not taken from Supply: FAILURE\n");
-	else
-		printf("Too Many or Too Few Cards Added: FAILURE\n");
-	//revert to starting game state
-	memcpy(&G, &testG, sizeof(struct gameState));
-	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", FUNCTION);
-	return 0;
+    printf("Testing shuffle\n");
+    printf("-- SIMPLE FIXED TESTS --\n");
+    
+    printf(" -- TESTING INABILITY TO SHUFFLE EMPTY DECK -- \n");
+    initializeGame(players, cards, seed, &game);
+    fillDeck(&game);
+    testShuffleEmptyDeck(&game);
+   
+    printf(" -- TESTING COUNT OF DECK, HAND, & DISCARD PRE AND POST SHUFFLE -- \n");
+    initializeGame(players, cards, seed, &game);
+    fillDeck(&game);    
+    testPostShuffleCounts(&game);
+    
+    printf(" -- TESTING COUNT OF KNOWN CARDS PRE & POST SHUFFLE -- \n");
+    initializeGame(players, cards, seed, &game);
+    fillDeck(&game);
+    testPostShuffleCards(&game, cards, 10);
+
+    printf(" -- TESTING COUNT OF INITIALIZED CARDS PRE & POST SHUFFLE -- \n");
+    initializeGame(players, cards, seed, &game);
+    testPostShuffleCards(&game, cards, 10);
+    return 0;
 }
+
+void fillDeck(struct gameState *state) {
+    int i;
+    for (i = 0; i < state->numPlayers; i++) {
+        state->deckCount[i] = 10;
+        state->deck[i][0] = adventurer;
+        state->deck[i][1] = gardens;
+        state->deck[i][2] = embargo;
+        state->deck[i][3] = village;
+        state->deck[i][4] = minion;
+        state->deck[i][5] = mine;
+        state->deck[i][6] = cutpurse;
+        state->deck[i][7] = sea_hag;
+        state->deck[i][8] = tribute;
+        state->deck[i][9] = smithy;
+    }
+}
+
+void testShuffleEmptyDeck(struct gameState *state) {
+    int p = state->whoseTurn;
+    int i;
+    // draw cards until we have no more cards in our deck
+    for (i = state->deckCount[p]; i > 0; i--) {
+        drawCard(p, state);
+    }
+    // assert there are no cards in deck
+    assert(state->deckCount[p] == 0);
+    int shuffleResult = shuffle(p, state);
+    // assert that we cannot shuffle an empty deck
+    assert(shuffleResult == -1);
+    printf("SUCCESS: Cannot shuffle an empty deck\n");
+}
+
+void testPostShuffleCounts(struct gameState *state) {
+    int player = state->whoseTurn;
+    int players = state->numPlayers;
+    int preDeckCount[players];
+    int preHandCount[players];
+    int preDiscardCount[players];
+    int postDeckCount[players];
+    int postHandCount[players];
+    int postDiscardCount[players];
+    int i;
+
+    for (i = 0; i < players; i++) {
+        preDeckCount[i] = state->deckCount[i];
+        preHandCount[i] = state->deckCount[i];
+        preDiscardCount[i] = state->deckCount[i];
+    }
+    
+    shuffle(player, state);
+    
+    for (i = 0; i < players; i++) {
+        postDeckCount[i] = state->deckCount[i];
+        postHandCount[i] = state->deckCount[i];
+        postDiscardCount[i] = state->deckCount[i];
+        assert(preDeckCount[i] == postDeckCount[i]);
+        printf("SUCCESS: deckCount for player [%d] same size before and after shuffling\n", i);
+        assert(preHandCount[i] == postHandCount[i]);
+        printf("SUCCESS: handCount for player [%d] same size before and after shuffling\n", i);
+        assert(preDiscardCount[i] == postDiscardCount[i]);
+        printf("SUCCESS: discardCount for player [%d] same size before and after shuffling\n", i);
+    }
+}
+
+void testPostShuffleCards(struct gameState *state, int *cards, int numCards) {
+    int i, j;
+    int preCounts[state->numPlayers][MAX_DECK];
+    int postCounts[state->numPlayers][MAX_DECK];
+
+    // initialize all counts to 0
+    for (i = 0; i < state->numPlayers; i++) {
+        for (j = 0; j < MAX_DECK; j++) {
+            preCounts[i][j] = 0;
+            postCounts[i][j] = 0;
+        }
+    }
+
+    // use card's enum value as index and increment counter
+    for (i = 0; i < state->numPlayers; i++) {
+        for (j = 0; j < state->deckCount[i]; j++) {
+            int card = state->deck[i][j];
+            preCounts[i][card]++;
+        }
+        // after counting cards in players' deck, shuffle their deck
+        shuffle(i, state);
+
+        // count the number of cards in each player's deck after it's been shuffled
+        for (j = 0; j < state->deckCount[i]; j++) {
+            int card = state->deck[i][j];
+            postCounts[i][card]++;
+        }
+    }
+
+    // using the enum value of each card in our game, check the pre and post counts for that card
+    for (i = 0; i < state->numPlayers; i++) {
+        for (j = 0; j < numCards; j++) {
+            int card = cards[j];
+            assert(postCounts[i][card] == preCounts[i][card]);
+        }
+        printf("SUCCESS: player [%d] has same card counts before and after shuffling\n", i);
+    }
+}
+

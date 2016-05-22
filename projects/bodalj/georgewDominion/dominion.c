@@ -1446,3 +1446,30 @@ int councilRoomCard(int handPos, int currentPlayer, struct gameState *state){
 }
 //end of dominion.c
 
+// helper functions for testing
+int playAdventurer(int currentPlayer, struct gameState *state) {
+    int temphand[MAX_HAND];
+    return adventurerCard(currentPlayer, state, temphand);
+}
+int playBaron(int currentPlayer, int choice1, struct gameState *state) {
+    int bonus = -1;
+    return cardEffect(baron, choice1, -1, -1, state, -1, &bonus);
+}
+int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state) {
+    return councilRoomCard(handPos, currentPlayer, state);
+}
+int playFeast(int currentPlayer, int choice1, struct gameState *state) {
+    int bonus = -1;
+    return cardEffect(feast, choice1, -1, -1, state, -1, &bonus);
+}
+int playSmithy(int currentPlayer, int handPos, struct gameState *state) {
+    return smithyCard(handPos, currentPlayer, state);
+}
+int playVillage(int currentPlayer, int handPos, struct gameState *state) {
+    int bonus = -1;
+    return cardEffect(village, -1, -1, -1, state, handPos, &bonus);
+}
+int playGreatHall(int currentPlayer, int handPos, struct gameState *state) {
+    return greatHallCard(handPos, currentPlayer, state);
+}
+

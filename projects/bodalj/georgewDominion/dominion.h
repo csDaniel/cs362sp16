@@ -141,4 +141,13 @@ int greatHallCard(int handPos, int currentPlayer, struct gameState *state);
 int stewardCard (int handPos, int choice1, int choice2, int choice3, int currentPlayer, struct gameState *state);
 int councilRoomCard(int handPos, int currentPlayer, struct gameState *state);			    
 
+// inline functions to faciliate testing
+int playAdventurer(int currentPlayer, struct gameState *state);
+int playBaron(int currentPlayer, int choice1, struct gameState *state);
+int playCouncilRoom(int currentPlayer, int handPos, struct gameState *state);
+int playFeast(int currentPlayer, int choice1, struct gameState *state);
+int playSmithy(int currentPlayer, int handPos, struct gameState *state);
+int playVillage(int currentPlayer, int handPos, struct gameState *state);
+int playGreatHall(int currentPlayer, int handPos, struct gameState *state);
+
 #endif

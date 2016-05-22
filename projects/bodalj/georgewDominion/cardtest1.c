@@ -1,84 +1,110 @@
-//cardtest1.c
+/******************************************************************************
+ * Filename: cardtest1.c
+ * Author: Jens Bodal
+ * Date: April 23, 2016
+ * Description: Testing smithy
+ *****************************************************************************/
+
 #include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
+#include "dominion_helpers.h" 
+#include "assert.h"
 #include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
 
-#define TESTCARD "smithy"
+int drawSpecificCard(struct gameState *state, int player, int card);
+int placeOnDeck(struct gameState *state, int player, int card);
+void printHand(int *phand, int numCards);
+int countCardInHand(struct gameState *state, int player, int card);
 
-int main() {	// copy the game state to a test case 
-  	int seed = 1000;
-	int numPlayers = 2;
-	int thisPlayer = 0;
-	int handPos = 0;
-	int currDeckCount, currHandCount, currDiscardCount;
-	//int choice1 = 0;
-	//int choice2 = 0;
-	//int choice3 = 0;
-	struct gameState G, testG;
-	int currCard;
-	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, council_room};
+int main() {
+    int players = 4;
+    int cards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    int seed = 187;
+    int trash = 1;
+    int targetPlayer = 0;
+    int i;
+    int iterations = 10;
+    int FOUND_BUG = 0;
+    struct gameState game;
+    struct gameState *state = &game;
+    initializeGame(players, cards, seed, &game);
 
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-	//set initial game state
-	printf("Testing for: ");
-	printf("1. 3 Cards Taken From Deck");
-	printf("2. 3 Cards Added To Hand");
-	printf("3. 1 Card Discarded From Hand");
-	printf("4. 1 Cards Added To Discarded Pile");
+    printf("TESTING smithy card\n");
 
-	memcpy(&testG, &G, sizeof(struct gameState));
-	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
-	printf("---------------TEST 1: CHECKING DRAW CARD FUNCTION\n-----------");
-	//get starting game state
-	memcpy(&testG, &G, sizeof(struct gameState));
-	currDeckCount = testG.deckCount[thisPlayer];
-	currHandCount = testG.handCount[thisPlayer];
-	currDiscardCount = testG.discardCount[thisPlayer];
-	//currCard = testG.deck[player][currDeckCount - 1];
-	printf("Deck Count Before: %d\n", testG.deckCount[thisPlayer]);
-	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
-	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
-	//run function
-	smithyCard(handPos, thisPlayer, &testG);
-	//check deck count
-	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
-	if ((currDeckCount - 3) == testG.deckCount[thisPlayer]){
-		printf("DECK COUNT DECREASED BY 3: SUCCESS\n");
-	}
-	else if (currDeckCount == testG.deckCount[thisPlayer])
-	{
-		printf("DECK COUNT STAYED THE SAME: FAILURE\n");
-	}
-	else
-		printf("DECK COUNT CHANGED INCORRECTLY: FAILURE\n");
-	//check hand count
-	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
-	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
-		printf("HAND COUNT INCREASED BY 3: SUCCESS\n");
-	}
-	else if (currHandCount == testG.handCount[thisPlayer])
-	{
-		printf("HAND COUNT DIDN'T CHANGE: FAILURE\n");
-	}
-	else
-		printf("HAND COUNT CHANGE INCORRECT: FAILURE\n");
-	//check discard count
-	printf("Discard Count After: %d\n", testG.discardCount[thisPlayer]);
-	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer]){
-		printf("DISCARD COUNT INCREASED BY 1: SUCCESS\n");	
-	}
-	else
-		printf("DISCARD COUNT INCORRECT: FAILURE\n");
-	// if (state->hand[thisPlayer][currHandCount] == currCard)
-	// 	printf("CARD ADDED TO HAND: SUCCESS\n");
-	// else
-	// 	printf("CARD NOT ADDED TO HAND: FAILURE\n");
-	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
-return 0;
+    // get card order and count before smithy
+    int oldCount = state->handCount[targetPlayer];
+    int oldPos[oldCount];
+    memcpy(oldPos, state->hand[targetPlayer], oldCount * sizeof(int));
+    // draw smithy
+    int smithyPos = drawSpecificCard(state, targetPlayer, smithy);
+    
+    // put three minion cards on top of deck to ensure they are the ones drawn with smithy
+    placeOnDeck(state, targetPlayer, adventurer);
+    placeOnDeck(state, targetPlayer, minion);
+    placeOnDeck(state, targetPlayer, mine);
+    // play smithy from previously acquired position
+    playSmithy(targetPlayer, smithyPos, state);
+    // compare order of cards before Smithy and after playing Smithy, order should not change
+    // NOTE: This does not concern that cards that Smithy draws, only those that were there before playing Smithy
+    int comparePos;
+    if (comparePos = memcmp(oldPos, state->hand[targetPlayer], oldCount *sizeof(int))) {
+        printf("FAIL: [playSmithy] Card order has changed (%d)\n", comparePos);
+    }
+    else {
+        printf("SUCCESS: [playSmithy] Card order unchanged\n");
+    }
+
+    // check that we drew three cards and discarded one
+    if ((oldCount+3) != state->handCount[targetPlayer]) {
+        printf("FAIL: [playSmithy] Wrong number of cards in hand after playing smithy\n");
+    }
+    else {
+        printf("SUCCESS: [playSmithy] Correct number of cards drawn and discarded\n");
+    }
+    // make sure we have no Smithys in hand and that he was discarded
+    int smithyCount = countCardInHand(state, targetPlayer, smithy);    
+    if (smithyCount != 0) {
+        printf("FAIL: [playSmithy] We have %d Smithy in hand and we should have %d\n", smithyCount, 0);
+    }
+    else {
+        printf("SUCCESS: [playSmithy] Smithy has been discarded\n");
+    }
+         
+    return 0;
 }
+
+// places specified card in deck then draws it
+int drawSpecificCard(struct gameState *state, int player, int card) {
+    int i;
+    int pos = state->deckCount[player]++;
+    state->deck[player][pos] = card;
+    if (drawCard(player, state) == -1) {
+        return -1;   
+    }
+    return pos; 
+}
+
+int placeOnDeck(struct gameState *state, int player, int card) {
+    int i;
+    int pos = state->deckCount[player]++;
+    state->deck[player][pos] = card;
+    return 1;
+}
+
+void printHand(int *pHand, int numCards) {
+    int i;
+    printf("Printing current hand:\n");
+    for (i = 0; i < numCards; i++) {
+        printf("  Pos [%d] Card [%d]\n", i, pHand[i]);
+    }
+}
+
+int countCardInHand(struct gameState *state, int player, int card) {
+    int i;
+    int count = 0;
+    for (i = 0; i < state->handCount[player]; i++) {
+        if (state->hand[player][i] == card) count++;
+    }
+    return count;
+}
+
+

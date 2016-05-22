@@ -1,103 +1,201 @@
-//unittest2.c
-//shuffle function
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
+/******************************************************************************
+ * Filename: unittest2.c
+ * Author: Jens Bodal
+ * Date: April 22, 2016
+ * Description: testing getCost function
+ *****************************************************************************/
 
-#define FUNCTION "shuffle"
+#include "dominion.h"
+#include "dominion_helpers.h" // getCost
+#include "assert.h"
+#include <stdio.h>
+
+int compareCost(int, int);
 
 int main() {
-	int i, j, l;
-	int tempDeck[MAX_DECK];
-	int seed = 1000;
-	int numPlayers = 2;
-	int thisPlayer = 0;
-	int currDeckCount, startingDeckCount, endingDeckCount;
-	int deckPos = 0;
-	int sameCount = 0;
-	struct gameState G, testG;
+    int cost, expectedCost;
+    char *cardName;
+    
+    printf("Testing getCost\n");
+    printf("-- SIMPLE FIXED TESTS --\n");
+    // comparing values to those found on official wiki: http://wiki.dominionstrategy.com/index.php
+    // card [cost]
+    //
+    // curse [0]
+    cost = getCost(curse);
+    expectedCost = 0;
+    cardName = "curse";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // estate [2]
+    cost = getCost(estate);
+    expectedCost = 2;
+    cardName = "estate";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // duchy [5]
+    cost = getCost(duchy);
+    expectedCost = 5;
+    cardName = "duchy";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // province [8]
+    cost = getCost(province);
+    expectedCost = 8;
+    cardName = "province";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // copper [0]
+    cost = getCost(copper);
+    expectedCost = 0;
+    cardName = "copper";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // silver [3]
+    cost = getCost(silver);
+    expectedCost = 3;
+    cardName = "silver";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // gold [6]
+    cost = getCost(gold);
+    expectedCost = 6;
+    cardName = "gold";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // adventurer [6]
+    cost = getCost(adventurer);
+    expectedCost = 6;
+    cardName = "adventurer";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // council_room [5]
+    cost = getCost(council_room);
+    expectedCost = 5;
+    cardName = "council_room";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // feast [4]
+    cost = getCost(feast);
+    expectedCost = 4;
+    cardName = "feast";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // gardens [4]
+    cost = getCost(gardens);
+    expectedCost = 4;
+    cardName = "gardens";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // mine [5]
+    cost = getCost(mine);
+    expectedCost = 5;
+    cardName = "mine";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // remodel [4]
+    cost = getCost(remodel);
+    expectedCost = 4;
+    cardName = "remodel";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // smithy [4]
+    cost = getCost(smithy);
+    expectedCost = 4;
+    cardName = "smithy";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // village [3]
+    cost = getCost(village);
+    expectedCost = 3;
+    cardName = "village";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // baron [4]
+    cost = getCost(baron);
+    expectedCost = 4;
+    cardName = "baron";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // great_hall [3]
+    cost = getCost(great_hall);
+    expectedCost = 3;
+    cardName = "great_hall";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // minion [5]
+    cost = getCost(minion);
+    expectedCost = 5;
+    cardName = "minion";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // steward [3]
+    cost = getCost(steward);
+    expectedCost = 3;
+    cardName = "steward";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // tribute [5]
+    cost = getCost(tribute);
+    expectedCost = 5;
+    cardName = "tribute";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // ambassador [3]
+    cost = getCost(ambassador);
+    expectedCost = 3;
+    cardName = "ambassador";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // cutpurse [4]
+    cost = getCost(cutpurse);
+    expectedCost = 4;
+    cardName = "cutpurse";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // embargo [2]
+    cost = getCost(embargo);
+    expectedCost = 2;
+    cardName = "embargo";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // outpost [5]
+    cost = getCost(outpost);
+    expectedCost = 5;
+    cardName = "outpost";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // salvager [4]
+    cost = getCost(salvager);
+    expectedCost = 4;
+    cardName = "salvager";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // sea_hag [4]
+    cost = getCost(sea_hag);
+    expectedCost = 4;
+    cardName = "sea_hag";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
+    // treasure_map [4]
+    cost = getCost(treasure_map);
+    expectedCost = 4;
+    cardName = "treasure_map";
+    assert(compareCost(cost, expectedCost) == 0);
+    printf("SUCCESS: [%s] is of cost [%d]\n", cardName, cost);
 
-	int k[10] = {curse, estate, village, remodel, 
-		council_room, adventurer, province, smithy, steward, tribute};
-	//initialize game, state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-	printf("----------------- Testing Function: %s ----------------\n", FUNCTION);
-	printf("-------------Saving Current Game State----------------\n");
-	memcpy(&testG, &G, sizeof(struct gameState));
-	printf("--------------------Checking valid deckCount\n------------");
-	//store deckCount
-	currDeckCount = testG.deckCount[thisPlayer];
-	//change deckCount
-	testG.deckCount[thisPlayer] = 0;
-	//shuffle to find error condition
-	if (shuffle(thisPlayer, &testG) == -1)
-		printf("No Cards to Count: SUCCESS\n");
-	//restore deckCount
-	testG.deckCount[thisPlayer] = currDeckCount;
-	
-	printf("----------------------------Checking Each Player----------------------\n");
-	for (i=0; i < numPlayers; i++){
-		//revert to starting game 
-		memcpy(&G, &testG, sizeof(struct gameState));
-		//set current player
-		thisPlayer = i;
-		printf("\nPlayer Number: %d\n", thisPlayer);
-		if (testG.discardCount[i] == 0)
-			printf("Player %d: Current Discard Count: %d\n", i, testG.discardCount[i]);
-		else
-			printf("Discard Pile should be empty");
-		//output starting deck count
-		printf("Player %d: Starting Deck Count: %d\n",i ,testG.deckCount[i]);
-		//printf("----------Saving Current Deck--------\n");
-		startingDeckCount = testG.deckCount[thisPlayer];
-		j = testG.deckCount[thisPlayer];
-		//iterate through deck and save to tempDeck
-		//reset deckPos
-		deckPos = 0;
-		while (j > 0) {
-			j--;
-			tempDeck[j] = testG.deck[thisPlayer][j];
-			deckPos++;
-		}
-		//shuffle deck
-		shuffle(thisPlayer, &testG);
-		//get final deck count
-		endingDeckCount = testG.deckCount[thisPlayer];
-		printf("Player %d: Ending Deck Count: %d\n", i, testG.deckCount[i]);
-		//check if change in deckCount
-		if (startingDeckCount == endingDeckCount){
-			printf("Deck Count Start: %d Deck Count Finish: %d\n", startingDeckCount, endingDeckCount);
-		}
-		else
-			printf("Deck Count should stay the same: FAIL\n");
-		//output shuffled cards and check to see if shuffled
-		for (l = 0; l < deckPos; l++){
-			printf("\nBefore Shuffle Function Card at Position %d: %d", l, tempDeck[l]);
-			printf("\nAfter Shuffle Function Card at Position %d: %d", l, (testG.deck[thisPlayer][l]));
-			if (tempDeck[l] == testG.deck[thisPlayer][l]){
-				sameCount++;
-			}
-		}
-		if (sameCount == endingDeckCount){
-			printf("\nCards were not suffled: FAIL\n");
-		}
-		else
-			printf("\nCards Shuffled: SUCCESS\n");
-		//check for game state changes
-		//assert(testG.deckCount[thisPlayer] == testG.deckCount[thisPlayer]);
-		//assert(testG.coins == testG.coins);
-		//assert(testG.playedCardCount == testG.playedCardCount);
-		//assert(testG.numPlayers == testG.numPlayers);
-		//check discard
-		if (testG.discardCount[i] == 0)
-			printf("Player %d: Current Discard Count: %d\n",i ,testG.discardCount[i]);
-		else
-			printf("Discard Pile should be empty");
-	}
-		printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", FUNCTION);
-	return 0;
+    // test invalid cards
+    cost = getCost(-1);
+    assert(cost == -1);
+    printf("SUCCESS: [-1] returned for invalid cardNumber [-1]\n");
+
+    cost = getCost(9999);
+    assert(cost == -1);
+    printf("SUCCESS: [-1] returned for invalid cardNumber [9999]\n");
+    return 0;
+}
+
+int compareCost(int cost, int expectedCost) {
+    // if a-b == 0 then cards are equal; 0 is false so return !false if equal
+    return (expectedCost-cost);
 }
