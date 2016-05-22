@@ -40,3 +40,11 @@ Bug Fix: The second bug found was that Embargo Card increases player's number of
 number of coins by 2. This was fixed by incrementing the coins value in state rather than numActions.
 Specific Code Change:
 	state->numActions = state->numActions + 2; is changed to state->coins = state->coins + 2;
+
+isGameOver()
+Bug Fix: One bug was found in the isGameOver() function where the function only iterates between curse and salvager 
+cards to determine if any of the supply piles of these cards are empty. The function fails to check if sea_hag and 
+treasure_map piles are empty. This bug was fixed by increasing the range of the iteration of the for loop which 
+iterates over each of the 27 card types so that it will also check the supply piles of sea_hag and treasure_map cards.
+Specific Code Change:
+	for (i = 0; i < 25; i++) is changed to for (i = 0; i < 27; i++)
