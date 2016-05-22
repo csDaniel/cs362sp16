@@ -471,9 +471,10 @@ public class UrlValidatorTest extends TestCase {
 }
    public void testIsValid()
    {
-	  /*By breaking down the URL into partitions and testing each one, we were able to single out various
-	   * bugs.
-	   */
+	   for(int i = 0;i<10000;i++)
+	   {
+		   
+	   }
    }
    
    /*
