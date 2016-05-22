@@ -36,9 +36,9 @@ int main(int argc, char *argv[]) {
     state->discard[pNum][i] = state->deck[pNum][i];
   } */
 
-  i = state->deckCount[pNum];
-  state->deckCount[pNum] = state->discardCount[pNum];
-  state->discardCount[pNum] = i;
+  //i = state->deckCount[pNum];
+  //state->deckCount[pNum] = state->discardCount[pNum];
+  //state->discardCount[pNum] = i;
 
   /* printf("PRETEST: HAND=%d, DECK=%d, DISC=%d\n",
     state->handCount[pNum], state->deckCount[pNum], state->discardCount[pNum]);
@@ -49,12 +49,15 @@ int main(int argc, char *argv[]) {
     printf("PRETEST: DISCARD CARD=%d\n", state->discard[pNum][i]);
   } */
 
+  state->handCount[1] = 1; // 1st and only card in hand
+  state->hand[1][0] = 7; // adventurer card
+
   // make copy of gamestate
   struct gameState* copy = malloc(sizeof(struct gameState));
   memcpy(copy, state, sizeof(struct gameState));
 
   // use adventurer card for player 2 (index 1)
-  int r = adventurerCardEffect(1, state);
+  int r = adventurerCardEffect(1, 0, state);
 
   // -------------------------------------------------------------------------------------
   // REQT: FUNCTION SUCCESSFULLY COMPLETES
@@ -108,18 +111,30 @@ int main(int argc, char *argv[]) {
   printf("        EXPECTATION IS +2 TREASURE CARDS\n");
 
   // -------------------------------------------------------------------------------------
-  // REQT: 2 CARDS SHOULD COME FROM HIS OWN PILE, BUT ADVENTURER WILL BE ADDED BACK TO THE DISCARD, NET -1
+  // REQT: 2 CARDS SHOULD COME FROM HIS OWN PILE
   // -------------------------------------------------------------------------------------
-  before = copy->discardCount[pNum] + copy->deckCount[pNum];
-  after = state->discardCount[pNum] + state->deckCount[pNum];
-  if (before - after == 1) {
+  before = copy->discardCount[pNum];
+  after = state->discardCount[pNum];
+  int deltaDisc = after - before;
+  printf("ED: CURRENT PLAYER CARDS IN DISCARD WENT FROM %d TO %d\n", before, after);
+
+  before = copy->deckCount[pNum];
+  after = state->deckCount[pNum];
+  int deltaDeck = after - before;
+  printf("ED: CURRENT PLAYER CARDS IN DECK WENT FROM %d TO %d\n", before, after);
+
+  before = copy->handCount[pNum];
+  after = state->handCount[pNum];
+  int deltaHand = after - before;
+  printf("ED: CURRENT PLAYER CARDS IN HAND WENT FROM %d TO %d\n", before, after);
+
+  if (deltaDeck * -1 == (deltaHand + 1) + deltaDisc) {
     printf("PASS");
   }
   else {
     printf("FAIL");
   }
-  printf("ED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM %d TO %d\n", before, after);
-  printf("        EXPECTATION IS -1 CARDS\n");
+  printf("\n");
 
   // -------------------------------------------------------------------------------------
   // REQT: NO STATE CHANGE FOR OTHER PLAYER (player 1, index 0)

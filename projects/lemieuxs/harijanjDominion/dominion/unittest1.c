@@ -4,154 +4,74 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include <stdlib.h>
 
-/* Using testUpdateCoins.c template
-According to documentation: scoreFor()
-Description: Calculates a specific player’s current score.
-Input: 1) struct gameState state – holds a pointer to a gameState variable 
-	     2) int player
-Return: score
+int checkWhoseTurn(struct gameState *game) {
+	int i;
+	struct gameState testGame;
 
----------------------------------------------------------------------------
-unittest1: unittest1.c dominion.o rngs.o
-    gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
+	memcpy(&testGame, game, sizeof(struct gameState));
 
-*/
+	game->whoseTurn = 0;
+
+	printf("Setting game->whoseTurn to 0, checking that whoseTurn returns 0\n");
+	assert(whoseTurn(game) == 0);
+
+	game->whoseTurn = 1;
+
+	printf("Setting game->whoseTurn to 1, checking that whoseTurn returns 1\n");
+
+	assert(whoseTurn(game) == 1);
+
+	printf("\nTesting other players' state:\n");
+	// check that players' state hasn't been modified
+	for (i = 0; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+	return 0;
+}
+
+
 
 int main() {
-    int i;
-    int player=1;
-    int score;
-    int seed = 1000;
-    struct gameState originalG, testingG;
-    int maxHandCount = 5;
-    int successFlag = 0;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
+	
+	int k[10] = { adventurer, gardens, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy };
 
-    // -------------------------------------------------------
+	struct gameState G;
 
-    printf ("TESTING scoreFor():\n");
+	int seed = 1000;
+	int numPlayers = 2;
 
-    initializeGame(player, k, seed, &originalG);
-    // -------------------------------------------------------
+	printf("Testing whoseTurn()\n");
 
-    printf ("TEST 1: Test score for all zero.\n");
 
-    // Reset
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
+	initializeGame(numPlayers, k, seed, &G);
 
-    // Zero value
-    for (i=0;i<maxHandCount;i++) {
-      testingG.hand[player][i] = adventurer;
-    }
-    for (i=0;i<maxHandCount;i++) {
-      testingG.discard[player][i] = adventurer;
-    }
-    for (i=0;i<maxHandCount;i++) {
-      testingG.deck[player][i] = adventurer;
-    }
 
-/*
-    // Score from hand
-  	for (i = 0; i < maxHandCount; i++)
-    {
-      if (testingG.hand[player][i] == curse) { score = score - 1; };
-      if (testingG.hand[player][i] == estate) { score = score + 1; };
-      if (testingG.hand[player][i] == duchy) { score = score + 3; };
-      if (testingG.hand[player][i] == province) { score = score + 6; };
-      if (testingG.hand[player][i] == great_hall) { score = score + 1; };
-      if (testingG.hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, &testingG) / 10 ); };
-    }
-*/
-    testingG.handCount[player] = maxHandCount;
-    testingG.discardCount[player] = maxHandCount;
-    testingG.deckCount[player] = maxHandCount;
-    score = scoreFor(player, &testingG);
+	checkWhoseTurn(&G);
 
-    printf("Score value: %d. Expected value: 0. \n", score);
-    if (score == 0) {
-      printf ("Test 1 Passed.\n");
-      successFlag += 1;
-    } 
-    else {
-      printf ("Test 1 Failed.\n");
-    }
 
-    // -------------------------------------------------------
 
-    printf ("TEST 2: Test score combining positive & negative.\n");
-    
-    // Reset
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
-
-    // Combining positive and negative value
-    testingG.hand[player][0] = province; // +6
-    testingG.hand[player][1] = curse; //-1
-    testingG.hand[player][2] = estate; //+1
-    testingG.hand[player][3] = estate; //+1
-    testingG.hand[player][4] = estate; //+1
-
-    testingG.discard[player][0] = adventurer;
-    testingG.discard[player][1] = curse; //-1
-    testingG.discard[player][2] = estate; //+1
-    testingG.discard[player][3] = province; //+6
-    testingG.discard[player][4] = curse; //-1
-
-    testingG.deck[player][0] = adventurer;
-    testingG.deck[player][1] = adventurer;
-    testingG.deck[player][2] = curse; //-1
-    testingG.deck[player][3] = curse; //-1
-    testingG.deck[player][4] = curse; //-1
-
-    testingG.handCount[player] = maxHandCount;
-    testingG.discardCount[player] = maxHandCount;
-    testingG.deckCount[player] = maxHandCount;
-    score = scoreFor(player, &testingG);
-
-    printf("Score value: %d. Expected value: 10. \n", score);
-    if (score == 10) {
-      printf ("Test 2 Passed.\n");
-      successFlag += 1;
-    } 
-    else {
-      printf ("Test 2 Failed.\n");
-    }
-
-    // -------------------------------------------------------
-
-    printf ("TEST 3: Test score combining positive only.\n");
-    
-    // Reset
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
-
-    // Positive value only
-    for (i=0;i<maxHandCount;i++) {
-      testingG.hand[player][i] = estate; //5
-    }
-    for (i=0;i<maxHandCount;i++) {
-      testingG.discard[player][i] = province; //30
-    }
-    for (i=0;i<maxHandCount;i++) {
-      testingG.deck[player][i] = estate; //5
-    }
-
-    testingG.handCount[player] = maxHandCount;
-    testingG.discardCount[player] = maxHandCount;
-    testingG.deckCount[player] = maxHandCount;
-    score = scoreFor(player, &testingG);
-
-    printf("Score value: %d. Expected value: 40. \n", score);
-    if (score == 40) {
-      printf ("Test 3 Passed.\n");
-      successFlag += 1;
-    } 
-    else {
-      printf ("Test 3 Failed.\n");
-    }
-  if (successFlag == 3) {
-      printf ("All tests passed!\n");
-  }
-  return 0;
-
+	return 0;
 }
