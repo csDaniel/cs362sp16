@@ -13,7 +13,116 @@
 
 Adventurer Card: Player drew non treasure card to hand.
 
-Remodel Card: wrong card added when trading (card action returns -1 on applicable card effect ie returns as non legal move when it is legal)
+Remodel Card: wrong card added when trading (card action returns -1 on
+ applicable card effect ie returns as non legal move when it is legal)
  *
  *
+ */
+
+
+//Village card fix
+
+/*
+
+old code:
+
+ int playVillage(struct gameState *state, int handPos){
+
+  int currentPlayer = whoseTurn(state);
+  //+1 Card
+  drawCard(currentPlayer, state);
+
+  //+2 Actions
+  state->numActions = state->numActions;
+
+  //discard played card from hand
+  discardCard(handPos, currentPlayer, state, 1);
+  return 0;
+
+new code:
+
+int playVillage(struct gameState *state, int handPos){
+
+  int currentPlayer = whoseTurn(state);
+  //+1 Card
+  drawCard(currentPlayer, state);
+
+  //+2 Actions
+  state->numActions = state->numActions++;
+
+  //discard played card from hand
+  discardCard(handPos, currentPlayer, state, 0);
+  return 0;
+
+}
+
+
+//smithy card fix
+
+old code:
+
+ int playSmithy(struct gameState *state, int handPos){
+
+  int i;
+  int currentPlayer = whoseTurn(state);
+
+  for (i = 0; i < 2; i++)
+  {
+    drawCard(currentPlayer, state);
+  }
+
+  //discard card from hand
+  discardCard(handPos, currentPlayer, state, 1);
+
+  return 0;
+}
+
+ new code:
+
+ int playSmithy(struct gameState *state, int handPos){
+
+  int i;
+  int currentPlayer = whoseTurn(state);
+
+  for (i = 0; i < 3; i++)
+  {
+    drawCard(currentPlayer, state);
+  }
+
+  //discard card from hand
+  discardCard(handPos, currentPlayer, state, 1);
+
+  return 0;
+}
+
+ Remodel card:
+
+      j = state->hand[currentPlayer][choice1];  //store card we will trash
+
+      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+	{
+	  return -1;
+	}
+
+      gainCard(choice2, state, 0, currentPlayer);
+
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+
+      //discard trashed card
+      for (i = 0; i < state->handCount[currentPlayer]; i++)
+	{
+	  if (state->hand[currentPlayer][i] == j)
+	    {
+	      discardCard(i, currentPlayer, state, 0);
+	      break;
+	    }
+	}
+
+
+      return 0;
+
+Through testing, I did not find any errors with this card.
+
+
  */
