@@ -102,4 +102,11 @@ Adjusted unit tests and random tests to accomdated new changes to the code.
 * Test: cardtest4
 	Function: playCutpurse
 	Status: Passed
+-------------------------------------------------------------------------------------------
+
+After adjusted unit tests plud singhba's unit test has a gcov of 34.56% percent (not run on
+the OSU server). This is slighlty better thant he 32.10% coverage we saw after the use
+of my random testers. Overall there was pretty thorough coverage of the play card functions. 
+This is expected since we now removed some bugs that caused the functions to break/ return
+earlier than they were suppose to.
 ******************************************************************************************/
