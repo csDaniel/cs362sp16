@@ -1310,6 +1310,8 @@ int adventurerCard(int drawntreasure, struct gameState *state, int z, int curren
 	z=z-1;
     }
 
+    discardCard(handPos, currentPlayer, state, 0);
+
     return 0;
 }
 
@@ -1318,13 +1320,13 @@ int greathallCard(int handPos, int currentPlayer, struct gameState *state) {
 
       state->numActions++;
 
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 1);
       return 0;
 }
 
 int embargoCard(int handPos, int currentPlayer, struct gameState *state, int choice1) {
 
-      state->numActions = state->numActions + 2;
+      state->coins = state->coins + 2;
 
       if ( state->supplyCount[choice1] == -1 )
 	{

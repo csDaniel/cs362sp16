@@ -16,9 +16,27 @@ triggered execution of the while loop was modified.
 Specific Code Change:
 	while(drawntreasure<3) is changed to while(drawntreasure<2)
 
+Bug Fix: Another bug that was found was that the Adventurer Card was not discarded after it was played. This error 
+was corrected by calling the discardCard() function after both while loops within adventurerCard() had finished 
+executing.
+Specific Code Change:
+	discardCard(handPos, currentPlayer, state, 0); added before return statement.
+
 great_hallCard()
 Bug Fix: The original bug found was that when the player plays this card, the great_hall card is not discarded 
 and 2 cards are drawn instead of 1. This bug was fixed by replacing one of the calls to drawCard() with a call 
 to discardCard().
 Specific Code Change:
 	drawCard(currentPlayer, state); is changed to discardCard(handPos, currentPlayer, state, 0);
+
+embargoCard()
+Bug Fix: The first bug found in this implementation is that the Embargo Card is not trashed immediately after 
+it is played. It is merely added to the playedCard pile. This bug was fixed by changing the trashFlag for 
+discardCard() from 0 to 1.
+Specific Code Change:
+	discardCard(handPos, currentPlayer, state, 0); is changed to discardCard(handPos, currentPlayer, state, 1);
+
+Bug Fix: The second bug found was that Embargo Card increases player's number of actions by 2 rather than the 
+number of coins by 2. This was fixed by incrementing the coins value in state rather than numActions.
+Specific Code Change:
+	state->numActions = state->numActions + 2; is changed to state->coins = state->coins + 2;
