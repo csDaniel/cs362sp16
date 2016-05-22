@@ -1,0 +1,109 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:5
+        -:    0:Programs:1
+        -:    1:/******************************************************************************
+        -:    2:* ASSIGNMENT 5 - unittest2.c
+        -:    3:* AUTHOR: Nickolas A. Williams
+        -:    4:* CLASS: CS362
+        -:    5:* DATE: 05/22/2016
+        -:    6:* NOTES: unit testing of the fullDeckCount() function
+        -:    7:* REQUIREMENTS for fulLDeckCount():
+        -:    8:*  1. Count number of cards in deck
+        -:    9:*  2. Count number of cards in hand
+        -:   10:*  3. Count number of cards in discard
+        -:   11:*  4. Return total number of cards in game for this player
+        -:   12:* TESTING tasks for discardCard():
+        -:   13:*  1. Test that each card can be counted
+        -:   14:*  2. Test that each card can be counted from each pile
+        -:   15:*  3. Test that counts are correct
+        -:   16:*  4. Test that counts for each player are correct
+        -:   17:******************************************************************************/
+        -:   18:
+        -:   19:#include "dominion.h"
+        -:   20:#include "dominion_helpers.h"
+        -:   21:#include <string.h>
+        -:   22:#include <stdio.h>
+        -:   23:#include <assert.h>
+        -:   24:#include "rngs.h"
+        -:   25:
+        -:   26:// set NOISY_TEST to 0 to remove printfs from output
+        -:   27:#define NOISY_TEST 0
+        -:   28:
+        5:   29:int main() 
+        -:   30:{
+        5:   31:    int seed = 1000;
+        5:   32:    int numPlayer = 2;
+        -:   33:    int player, r, deckCount, handCount, discardCount, totalCount, result, failflag;
+        5:   34:	int maxCardCount = 10;
+        5:   35:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   36:               , remodel, smithy, village, baron, great_hall};
+        -:   37:    struct gameState G;
+        -:   38:
+        5:   39:    printf ("TESTING fullDeckCount():\n");
+       15:   40:    for (player = 0; player < numPlayer; player++)
+        -:   41:    {
+        -:   42:		int cardType, cardPosition;
+      280:   43:		for (cardType = 0; cardType <= 26; cardType++)
+        -:   44:		{
+     3240:   45:			for (deckCount = 0; deckCount <= maxCardCount; deckCount++)
+        -:   46:			{
+    35640:   47:				for (handCount = 0; handCount <= maxCardCount; handCount++)
+        -:   48:				{
+   392040:   49:					for (discardCount = 0; discardCount <= maxCardCount; discardCount++)
+        -:   50:					{
+   359370:   51:						totalCount = deckCount + handCount + discardCount;
+        -:   52:						
+        -:   53:						//create test decks for this *Count (deck,hand,discard)
+   359370:   54:						int testDeck[deckCount];
+  2156220:   55:						for (cardPosition = 0; cardPosition < deckCount; cardPosition++)
+        -:   56:						{
+  1796850:   57:							testDeck[cardPosition] = cardType;
+        -:   58:						}
+        -:   59:						
+   359370:   60:						int testHand[handCount];
+  2156220:   61:						for (cardPosition = 0; cardPosition < deckCount; cardPosition++)
+        -:   62:						{
+  1796850:   63:							testHand[cardPosition] = cardType;
+        -:   64:						}
+        -:   65:						
+   359370:   66:						int testDiscard[discardCount];
+  2156220:   67:						for (cardPosition = 0; cardPosition < deckCount; cardPosition++)
+        -:   68:						{
+  1796850:   69:							testDiscard[cardPosition] = cardType;
+        -:   70:						}
+        -:   71:
+   359370:   72:						memset(&G, 23, sizeof(struct gameState));   // clear the game state
+   359370:   73:						r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+   359370:   74:						G.deckCount[player] = deckCount;            // set the number of cards on deck
+   359370:   75:						G.handCount[player] = handCount;            // set the number of cards on hand
+   359370:   76:						G.discardCount[player] = discardCount;      // set the number of cards on discard
+        -:   77:											
+   359370:   78:						memcpy(G.deck[player], testDeck, sizeof(int) * deckCount); // set to testDeck
+   359370:   79:						memcpy(G.hand[player], testHand, sizeof(int) * handCount); // set to testHand
+   359370:   80:						memcpy(G.discard[player], testDiscard, sizeof(int) * discardCount); // set to testDiscard
+        -:   81:						
+   359370:   82:						result = fullDeckCount(player, cardType, &G);
+   359370:   83:						if (result != totalCount)
+        -:   84:						{
+   122235:   85:							failflag = 1;
+        -:   86:						}
+        -:   87:#if (NOISY_TEST == 1)
+        -:   88:						printf("fullDeckCount = %d, expected %d\n", result, totalCount);
+        -:   89:#endif
+        -:   90:					}
+        -:   91:				}
+        -:   92:			}
+        -:   93:		}
+        -:   94:	}
+        5:   95:	if (failflag != 1)
+        -:   96:	{
+    #####:   97:		printf("All tests passed!\n");
+        -:   98:	}
+        -:   99:	else
+        -:  100:	{
+        5:  101:		printf("There were errors.\n");
+        -:  102:	}
+        5:  103:	return 0;
+        -:  104:}
