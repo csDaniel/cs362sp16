@@ -122,20 +122,20 @@ all: playdom player testDrawCard testBuyCard badTestDrawCard unittest1 unittest2
 clean:
 	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so
 
-bencardTest1: ben_cardtest1.c dominion.o rngs.o
+ben_cardTest1: ben_cardtest1.c dominion.o rngs.o
 	gcc -o ben_cardTest1 -g  ben_cardtest1.c dominion.o rngs.o $(CFLAGS)
 
-bencardTest2: ben_cardtest2.c dominion.o rngs.o
+ben_cardTest2: ben_cardtest2.c dominion.o rngs.o
 	gcc -o ben_cardTest2 -g  ben_cardtest2.c dominion.o rngs.o $(CFLAGS)
 
-bencardTest3: ben_cardtest3.c dominion.o rngs.o
+ben_cardTest3: ben_cardtest3.c dominion.o rngs.o
 	gcc -o ben_cardTest3 -g ben_cardtest3.c dominion.o rngs.o $(CFLAGS)
 
-bencardTest4: ben_cardtest4.c dominion.o rngs.o
+ben_cardTest4: ben_cardtest4.c dominion.o rngs.o
 	gcc -o ben_cardTest4 -g ben_cardtest4.c dominion.o rngs.o $(CFLAGS)
 
-benrandTestAdventurer: ben_randomtestadventurer.c dominion.o rngs.o
+ben_randTestAdventurer: ben_randomtestadventurer.c dominion.o rngs.o
 	gcc -o ben_randTestAdventurer -g ben_randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 
-benrandTestCard: ben_randomtestcard.c dominion.o rngs.o
+ben_randTestCard: ben_randomtestcard.c dominion.o rngs.o
 	gcc -o ben_randTestCard -g ben_randomtestcard.c dominion.o rngs.o $(CFLAGS)
