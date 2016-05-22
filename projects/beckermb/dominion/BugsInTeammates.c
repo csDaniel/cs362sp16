@@ -29,5 +29,9 @@ Tests run poolj code:
 
 Village Function:
 
+Adventurer Function:
+
+Smithy Function:
+
 
 */
