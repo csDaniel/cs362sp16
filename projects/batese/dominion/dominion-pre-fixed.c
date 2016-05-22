@@ -667,7 +667,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return adventurerCard(currentPlayer, state, handPos);
+		return adventurerCard(currentPlayer, state);
 			
     case council_room:
 		return council_roomCard(currentPlayer, state, handPos);
@@ -1259,7 +1259,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
   return 0;
 }
 
-int adventurerCard(int currentPlayer, struct gameState *state, int handPos)
+int adventurerCard(int currentPlayer, struct gameState *state)
 {
 	int temphand[MAX_HAND];// moved above the if statement
 	int drawntreasure=0;
@@ -1281,12 +1281,9 @@ int adventurerCard(int currentPlayer, struct gameState *state, int handPos)
 	}
       }
       while(z-1>=0){
-		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-		z=z-1;
+	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+	z=z-1;
       }
-	  //Discard card from hand
-	  discardCard(handPos, currentPlayer, state, 0);
-	  
       return 0;
 }
 
@@ -1294,7 +1291,7 @@ int smithyCard(int currentPlayer, struct gameState *state, int handPos)
 {
 	int i = 0;
       //+3 Cards
-      for (i = 0; i < 3; i++)
+      for (i = 0; i > 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1309,7 +1306,7 @@ int villageCard(int currentPlayer, struct gameState *state, int handPos) {
       drawCard(currentPlayer, state);
 			
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      state->numActions = state->numActions + 1;
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1328,7 +1325,7 @@ int council_roomCard(int currentPlayer, struct gameState *state, int handPos) {
       state->numBuys++;
 			
       //Each other player draws a card
-      for (i = 0; i < state->numPlayers; i++)
+      for (i = 1; i < state->numPlayers; i++)
 	{
 	  if ( i != currentPlayer )
 	    {
@@ -1356,7 +1353,7 @@ int embargoCard(int currentPlayer, struct gameState *state, int choice1, int han
       state->embargoTokens[choice1]++;
 			
       //trash card
-      discardCard(handPos, currentPlayer, state, 1);		
+      discardCard(handPos, currentPlayer, state, 0);		
       return 0;
 }
 
