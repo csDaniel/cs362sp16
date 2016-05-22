@@ -4,7 +4,7 @@ rtc_out='randomtestcard.out'
 make clean
 make randomtestadventurer
 randomtestadventurer &> /dev/null
-echo "-- gcov for function 'playAdventurer' in randomtestadventurer --" >> $fout
+echo "-- gcov for function 'adventurerEffect' in randomtestadventurer --" >> $fout
 gcov -fb dominion.c | grep -A 4 "^Function 'adventurerEffect'" >> $fout
 echo >> $fout
 echo >> $fout
