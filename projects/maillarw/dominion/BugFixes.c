@@ -80,7 +80,7 @@ cards are not drawn or the Smithy card is not dicarded, or both.
 either three cards are not drawn or the Smithy card is not dicarded, or both.
 	
 Bug #3
-//Effect: playAdventurer is not having the desire effect (up 2 two treasure cards (depending on the 
+Effect: playAdventurer is not having the desire effect (up 2 two treasure cards (depending on the 
 number of treasure cards in the players deck and discard) are added to the player's hand)
 
 Fix 3.1: This line: 
