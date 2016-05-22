@@ -42,7 +42,9 @@ void remodelCardTest(){
 	compareGame.hand[1][2] = smithy;
 	compareGame.hand[1][3] = copper;
 	compareGame.hand[1][4] = copper;
-
+	
+	printResults(&game, &compareGame);
+printf("\n\n\n\n");
 	int gameRemodelResult = remodelCard(1, 1, 2, adventurer, &game);
 
 	//compareGame
@@ -51,6 +53,7 @@ void remodelCardTest(){
 	gainCard(adventurer, &compareGame, 0, 1);
 	int compRemodelResult = 0;
 
+	printResults(&game, &compareGame);
 	printf("+++++ Testing game vs compare state for player 2. +++++\n");
 
 	if( gameRemodelResult == compRemodelResult )
@@ -66,7 +69,7 @@ void remodelCardTest(){
 	   	printResults(&game, &compareGame);
 		problems++;
 	}
-
+/*
 	initializeGame(numberOfPlayers, k, randomSeed, &game);
 	memcpy(&compareGame, &game, sizeof(struct gameState));
 
@@ -105,7 +108,7 @@ void remodelCardTest(){
 	   	printResults(&game, &compareGame);
 		problems++;
 	}
-
+*/
 	printf("\n\nNumber of operations where problems were found: %i\n\n", problems);
 
 	printf("<--- Remodel Testing Completed successfully --->\n\n");
