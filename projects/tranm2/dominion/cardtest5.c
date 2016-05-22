@@ -7,8 +7,8 @@
 /*
  * Include the following lines in your makefile:
  *
- * cardtest1: cardtest1.c dominion.o rngs.o
- *      gcc -o cardtest1 -g  cardtest1.c dominion.o rngs.o $(CFLAGS)
+ * cardtest5: cardtest5.c dominion.o rngs.o
+ *      gcc -o cardtest5 -g  cardtest5.c dominion.o rngs.o $(CFLAGS)
  */
 
 
@@ -22,7 +22,7 @@
 #include <time.h> 
 #include <stdbool.h>
 
-#define TESTCARD "adventurer"
+#define TESTCARD "mine"
 #define CUR_DECK 5
 #define max(a,b) \
    ({ __typeof__ (a) _a = (a); \
@@ -50,8 +50,6 @@ int main() {
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 	// ----------- TEST 1: Treasure card on deck < 2 --------------
-	printf("\nTEST 1: Treasure card on deck < 2\n");
-	// setup treasure card in deck
 	treas_pos = rand() % CUR_DECK; // random treasure card pos
 	// print deck
 	printf("Deck Content: \n");
@@ -66,7 +64,7 @@ int main() {
 		printf("(%d) ", G.deck[thisPlayer][i]);
 	}
 	// prepare hand
-	G.hand[thisPlayer][handpos] = adventurer;
+	G.hand[thisPlayer][handpos] = mine;
 	//updateCoins(thisPlayer, &G, bonus);
 
 	// print hand
@@ -79,18 +77,18 @@ int main() {
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
 	// play adventurer
-	cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
+	cardEffect(mine, 3, 27, choice3, &testG, handpos, &bonus);
 
 	printf("-AFTER- hand count: %d\n",testG.handCount[thisPlayer]);
 	// check hand
 	for (i=0; i<testG.handCount[thisPlayer]; i++)
 	{
-		if (testG.hand[thisPlayer][i] == gold)
-			passed = true;
+		//if (testG.hand[thisPlayer][i] == gold)
+			
 		printf("(%d) ", testG.hand[thisPlayer][i]);
 	}
-	if (!passed) printf("FAILED - No gold card added!\n");
-
+	/*
+	
 	// ----------- TEST 2: Confirm the correct treasure cards added --------------
 	printf("\n\nTEST 2: Confirm the correct treasure cards added\n");
 	printf("Deck Content:\n");
@@ -164,7 +162,7 @@ int main() {
 		printf("FAILED - Invalid coin count\n");
 	if (testG.discardCount[thisPlayer] != (G.discardCount[thisPlayer]+discard_cards)) 
 		printf("FAILED - Invalid discarded card count\n");
-
+*/
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 
 
