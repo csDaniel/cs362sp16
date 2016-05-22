@@ -1,6 +1,6 @@
 /***********************************
 * Name: Trent Richardson
-* Assignment 4 - BugFixes.c
+* Assignment 5 - BugFixes.c
 * CS362-400
 ***********************************/
 

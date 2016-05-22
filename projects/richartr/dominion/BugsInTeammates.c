@@ -1,6 +1,6 @@
 /***********************************
 * Name: Trent Richardson
-* Assignment 4 - BugsInTeammates.c
+* Assignment 5 - BugsInTeammates.c
 * CS362-400
 ***********************************/
 
