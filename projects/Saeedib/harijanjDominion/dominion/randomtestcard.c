@@ -1,108 +1,61 @@
-#include "dominion.h"
+/*
+Behnam Saeedi
+Saeedib
+93227697
+Unit test
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
-#include <math.h>
+#include <string.h>
 #include <time.h>
+
+#include "dominion.h"
+#include "dominion_helpers.h"
 #include "rngs.h"
 
-#define MAX_TESTS 2000
+#define UNITTEST "Smithy"
 
-int main () {
+int main(int argc, char ** argv)
+{
+	srand(time(NULL));
+	int out;
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
+	int count;
+	struct gameState G, testG;
 
-  srand(time(NULL));
+	//Generating player:
+	for(int counter = 0; counter < 1000; counter++)
+	{
+		int numPlayers = rand() % 4 + 1;
+		int thisPlayer = rand() % 4;
+		int seed = rand() % 500 + 500;
 
-  int i; 
-  int j;
-  int k;
-  int player;
-  int numberPlayer;
-  int handCount; 
-  int deckCount;
-  int discardCount;
-  int seed;
-  int numberOfCard[4];
-  int notIncrease = 0;
+		initializeGame(numPlayers, k, seed, &G);
 
-  int cards[10] = {adventurer, council_room, feast, gardens, mine,
-         remodel, smithy, village, baron, great_hall};
+		memcpy(&testG, &G, sizeof(struct gameState));
+		count = G.handCount[thisPlayer];
+		printf("Hand count for G is: %d",count);
+		count = testG.handCount[thisPlayer];
+		printf("Hand count for testG is: %d",count);
 
-  struct gameState G;
+		for(int i = 0; i < count; i++)
+			testG.hand[thisPlayer][i] = estate;
+		for(int i = 0; i < 25; i++)
+			testG.supplyCount[i] = 10;
 
-  printf ("Random Test: Smithy Card.\n");
+		testG.hand[thisPlayer][0] = gold;
+		testG.hand[thisPlayer][1] = silver;
+		testG.hand[thisPlayer][2] = copper;
+		testG.discardCount[thisPlayer] = 0;
 
-  for (i = 0; i < MAX_TESTS; i++) {
-    
-    numberPlayer = (rand() % 4) + 1; // Range: 1 - 4 players
-
-    player = rand() % numberPlayer;
-
-    printf("Number of player playing: %d\n",numberPlayer);
-    printf("YOU are playing as player number : %d\n",player);
-
-    seed = rand();
-
-    initializeGame(numberPlayer, cards, seed, &G);
-
-    // Set hand cards and deck cards for each player
-    for (k = 0; k < numberPlayer; k++) {
-      G.deckCount[k] = rand() % MAX_DECK;
-      G.discardCount[k] = rand() % MAX_DECK;
-      G.handCount[k] = rand() % MAX_HAND;
-      for(j = 0; j < G.handCount[k]; j++){
-        G.hand[k][j] = rand() % (treasure_map);
-      }
-      for(j = 0; j < G.deckCount[k]; j++){
-        G.deck[k][j] = rand() % (treasure_map);
-      }
-    }
-
-    G.numPlayers = numberPlayer;
-    G.whoseTurn = player;
-
-    // copy state variable
-    deckCount = G.deckCount[player];
-    handCount = G.handCount[player];
-    printf("<----- BEFORE SMITHY ----->\n");
-    printf("Your total hand cards: %d\n",handCount);
-    printf("Your total deck cards: %d\n",deckCount);
-
-    // count number of card each player
-    for (k = 0; k < numberPlayer; k++) {
-      numberOfCard[k] = G.handCount[k];
-      printf("Player %d hand cards: %d\n",k, numberOfCard[k]);
-    }
-
-    cardEffect(smithy, 0, 0, 0, &G, 0, 0);
-
-    printf("<----- AFTER SMITHY ----->\n");
-    printf("Your total hand cards: %d\n",G.handCount[player]);
-    printf("Your total deck cards: %d\n",G.deckCount[player]);
-    
-    for (k = 0; k < numberPlayer; k++) {
-      numberOfCard[k] = G.handCount[k];
-      printf("Player %d hand cards: %d\n",k, numberOfCard[k]);
-    }
-
-    // check if current player gain 3 cards
-    if (G.handCount[player] != (handCount + 3)) {
-      printf("Current player FAILS to gain 3 cards!\n");
-    }  
-
-    // check if current player gain 3 cards from his/her deck
-    if (G.deckCount[player] != deckCount - 3) {
-      printf("Current player's deck FAILS to reduced by 3 cards!\n");
-    }
-
-    for (k = 0; k < numberPlayer; k++) {
-      if ((k != player) && (G.handCount[k] == numberOfCard[k])) {
-        notIncrease += 1;
-      }
-    }
-    printf("There are %d players from %d number of players (exclude YOU) that's not effected by smithy.\n\n", notIncrease, numberPlayer-1);
-    notIncrease = 0;
-  }
-  
-  printf("\nTEST FOR SMITHY CARD COMPLETE!\n");
-  return 0;
+		smithyCard(thisPlayer, rand() % 4, &testG);
+		out = 0;
+		printf("smithy function should return cost of smithy card : %d.\n",out);
+		
+		printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
+		printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
+	}
+	return 0;
 }
