@@ -1,95 +1,262 @@
+/***************************************************************************
+** Author: James Pool
+** ONID: 932664412
+** OSU Email: poolj@oregonstate.edu
+** Date: 24 April 2016
+**
+** Program Filename: cardtest1.c
+** Description: This is the source file for card test 1 which covers
+**				the Smithy card in dominion.c
+***************************************************************************/
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
 
-
-// This is a test for the smithy card / function from dominion.c
+#define PLAYERS 2  /* Must be 1 to 4 */
+#define RANDOM_SEED 1  /* Must be positive number, 9 digits or less */
+#define TEST_CARD "smithy"
 
 int main() {
-  printf("*** Testing smithyCardEffect *** \n");
+	printf("*** Card test for: %s ***\n", TEST_CARD);
 
-  struct gameState game;
-  int cards[10] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall };
-  int all_cards[17] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall, copper, silver, gold, estate, duchy, province, curse };
-  int player = 0;
-  int other_player = 1;
-  initializeGame(2, cards, 1, &game);
+	/* Smithy Card Modifications */
+	int nActions = 0;  /* Number of additional actions */
+	int nBuys = 0;  /* Number of additional buys */
+	int nCards = 3;  /* Number of additional cards */
+	int nCoins = 0;  /* Nmber of additional coins */
+	int pCards = 1;  /* Number of cards played */
+	int handPos = 0;  /* Initial location of card */
+	int choice1 = 0, choice2 = 0, choice3 = 0;  /* Card choice options */
+	
 
-  // Test if hand size increased by two (+3, -1 for played card)
-  game.handCount[player] = 2;
-  smithyCardEffect(player, 0, &game);
-  if (game.handCount[player] == 4) {
-    printf("handCount incremented correctly.\n");
-  } else {
-    printf("FAIL: handCount did not increment correctly. Got %d, expected %d.\n", game.handCount[player], 4);
-  }
+	/* Initalize gamestate */
+	struct gameState testGame;
+	struct gameState origGame;
+	int cards[10] = { adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall };
+	int baseCards[7] = { curse, estate, duchy, province, copper, silver, gold };
+	int bonus = 0;  /* Player's bonus */
+	int testValue;
+	int origValue;
+	assert(initializeGame(PLAYERS, cards, RANDOM_SEED, &testGame) == 0);  /* Initalize game and verify completion */
 
-  //Test if three cards drawn from player's deck
-  game.deckCount[player] = 4;
-  smithyCardEffect(player, 0, &game);
-  if (game.deckCount[player] == 1) {
-    printf("deckCount decremented correctly.\n");
-  } else {
-    printf("FAIL: deckCount did not increment correctly. Got %d, expected %d.\n", game.deckCount[player], 1);
-  }
+	/* Initalize test counters */
+	int passCount = 0;  /* Number of tests passed */
+	int failCount = 0;  /* Number of tests failed */
 
-  //Test if smithy added to played cards
-  game.deckCount[player] = 4;
-  game.playedCardCount = 1;
-  game.playedCards[game.playedCardCount] = gardens;
-  smithyCardEffect(player, 0, &game);
+	/* The smithy card adds +3 cards to hand */
+	int testPlayer = 0;
+	testGame.whoseTurn = testPlayer;
+	testGame.hand[testPlayer][handPos] = smithy;  /* Add smithy to test player's hand*/
+	testGame.phase = 0;  /* Set phase to action */
+	testGame.numActions = 1;  /* Set number of actions to 1*/
+	memcpy(&origGame, &testGame, sizeof(struct gameState)); /* Copy to preserve original state */
+	printf("\n--- Verify %s card effects are correct ---\n", TEST_CARD);
+	if (cardEffect(smithy, choice1, choice2, choice3, &testGame, handPos, &bonus) == 0) { /* Play smithy card */
+		printf("  PASS: cardEffect() method completed successfully\n");
+		passCount++;
+		
+		/* Compare hand count with predicted */
+		testValue = testGame.handCount[testPlayer];
+		origValue = origGame.handCount[testPlayer] + nCards - pCards;
+		if (testValue == origValue) {
+			printf("  PASS: Hand Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Hand Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			failCount++;
+		}
+		
+		/* Compare deck count with predicted */
+		testValue = testGame.deckCount[testPlayer];
+		origValue = origGame.deckCount[testPlayer] - nCards;
+		if (testValue == origValue) {
+			printf("  PASS: Deck Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Deck Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			failCount++;
+		}
 
-  if (game.playedCardCount == 2) {
-    printf("playedCardCount incremented correctly.\n");
-  } else {
-    printf("FAIL: playedCardCount did not increment correctly. Got %d, expected %d.\n", game.playedCardCount, 2);
-  }
+		/* Compare played count with predicted */
+		testValue = testGame.playedCardCount;
+		origValue = origGame.playedCardCount + pCards;
+		if (testValue == origValue) {
+			printf("  PASS: Played Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Played Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			failCount++;
+		}
 
-  if (game.playedCards[game.playedCardCount - 1] == smithy) {
-    printf("smithy added to playedCards.\n");
-  } else {
-    printf("FAIL: smithy was not added to played cards.\n");
-  }
+		/* Compare actions with predicted */
+		testValue = testGame.numActions;
+		origValue = origGame.numActions + nActions;
+		if (testValue == origValue) {
+			printf("  PASS: Action Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Action Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			failCount++;
+		}
 
-  //Test if other players are unaffected.
-  int orig_deck_count = game.deckCount[other_player];
-  int orig_hand_count = game.handCount[other_player];
-  smithyCardEffect(player, 0, &game);
-  if (orig_deck_count == game.deckCount[other_player]) {
-    printf("Other player's deck unaffected.\n");
-  } else {
-    printf("FAIL: other player's deck changed\n");
-  }
+		/* Compare buys with predicted */
+		testValue = testGame.numBuys;
+		origValue = origGame.numBuys + nBuys;
+		if (testValue == origValue) {
+			printf("  PASS: Buy Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Buy Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			failCount++;
+		}
 
-  if (orig_hand_count == game.handCount[other_player]) {
-    printf("Other player's hand unaffected.\n");
-  } else {
-    printf("FAIL: other player's hand changed\n");
-  }
+		/* Compare coin count with predicted */
+		testValue = testGame.coins;
+		origValue = origGame.coins + nCoins;
+		if (testValue == origValue) {
+			printf("  PASS: Coin Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Coin Count - Actual = %d; Expected = %d\n", testValue, origValue);
+			failCount++;
+		}
 
+		printf("\n--- Verify other players have not been effected ---\n");
+		/* Verify other players were not effected */
+		int passFlag = 1;
+		for (int i = 0; i < PLAYERS; i++) {
+			if (i == testPlayer) {
+				printf("Player %d of %d is tested player\n", i+1, PLAYERS);
+				continue;  /* Skip test player*/
+			}
+			printf("Verifying Player %d of %d\n", i+1, PLAYERS);
+			
+			/* Test other player's hand*/
+			if (testGame.handCount[i] == origGame.handCount[i]) {
+				passFlag = 1;
+				for (int j = 0; j < testGame.handCount[i]; j++) {
+					if (testGame.hand[i][j] != origGame.hand[i][j]) {
+						passFlag = 0;
+						break;
+					}
+				}
+			}
+			else {
+				passFlag = 0;
+			}
+			if (passFlag == 1) {
+				printf("  PASS: Player %d hand is uneffected\n", i + 1);
+				passCount++;
+			}
+			else {
+				printf("  FAIL: Player %d hand is effected\n", i + 1);
+				failCount++;
+			}
 
-  //Test if global supplies unaffected
-  int i;
-  int changed = 0;
-  int changed_card;
-  int orig_supplies[17];
-  for (i = 0; i < 17; i++) {
-    orig_supplies[i] = game.supplyCount[all_cards[i]];
-  }
-  smithyCardEffect(player, 0, &game);
-  for (i = 0; i < 17; i++) {
-    if (orig_supplies[i] != game.supplyCount[all_cards[i]]) {
-      changed = 1;
-      changed_card = all_cards[i];
-    }
-  }
-  if (changed == 0) {
-    printf("Supplies unchanged.\n");
-  } else {
-    printf("FAIL: supplies changed. Last cards supply changed was #%d\n.", changed_card);
-  }
+			/* Test other player's deck */
+			if (testGame.deckCount[i] == origGame.deckCount[i]) {
+				passFlag = 1;
+				for (int j = 0; j < testGame.deckCount[i]; j++) {
+					if (testGame.deck[i][j] != origGame.deck[i][j]) {
+						passFlag = 0;
+						break;
+					}
+				}
+			}
+			else {
+				passFlag = 0;
+			}
+			if (passFlag == 1) {
+				printf("  PASS: Player %d deck is uneffected\n", i+1);
+				passCount++;
+			}
+			else {
+				printf("  FAIL: Player %d deck is effected\n", i+1);
+				failCount++;
+			}
 
-  return 0;
+			/* Test other player's discard */
+			if (testGame.discardCount[i] == origGame.discardCount[i]) {
+				passFlag = 1;
+				for (int j = 0; j < testGame.discardCount[i]; j++) {
+					if (testGame.discard[i][j] != origGame.discard[i][j]) {
+						passFlag = 0;
+						break;
+					}
+				}
+			}
+			else {
+				passFlag = 0;
+			}
+			if (passFlag == 1) {
+				printf("  PASS: Player %d discard is uneffected\n", i + 1);
+				passCount++;
+			}
+			else {
+				printf("  FAIL: Player %d discard is effected\n", i + 1);
+				failCount++;
+			}
+			
+		}
+
+		printf("\n--- Verify card supply has not been effected ---\n");
+		/* Action Cards */
+		passFlag = 1;
+		for (int i = 0; i < 10; i++) { 
+			testValue = supplyCount(cards[i], &testGame);
+			origValue = supplyCount(cards[i], &origGame);
+			if (testValue != origValue) {
+				passFlag = 0;
+				break;
+			}
+		}
+		if (passFlag == 1) {
+			printf("  PASS: Action Card Supply is uneffected\n");
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Action Card Supply is effected\n");
+			failCount++;
+		}
+
+		/* Basic Cards */
+		passFlag = 1;
+		for (int i = 0; i < 7; i++) {  
+			testValue = supplyCount(baseCards[i], &testGame);
+			origValue = supplyCount(baseCards[i], &origGame);
+			if (testValue != origValue) {
+				passFlag = 0;
+				break;
+			}
+		}
+		if (passFlag == 1) {
+			printf("  PASS: Basic Card Supply is uneffected\n");
+			passCount++;
+		}
+		else {
+			printf("  FAIL: Basic Card Supply is effected\n");
+			failCount++;
+		}
+
+	}
+	else {
+		printf("  FAIL: cardEffect() method did not complete successfully\n");
+		failCount++;
+	}
+
+	/* Print overall results */
+	printf("\n--- Overall test results ---\n");
+	printf("  PASS: %d of %d\n", passCount, passCount + failCount);
+	printf("  FAIL: %d of %d\n", failCount, passCount + failCount);
+
+	return 0;
 }
