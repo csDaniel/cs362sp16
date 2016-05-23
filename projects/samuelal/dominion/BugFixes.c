@@ -48,3 +48,38 @@ treasure_map piles are empty. This bug was fixed by increasing the range of the 
 iterates over each of the 27 card types so that it will also check the supply piles of sea_hag and treasure_map cards.
 Specific Code Change:
 	for (i = 0; i < 25; i++) is changed to for (i = 0; i < 27; i++)
+
+scoreFor()
+Bug Fix: scoreFor() tends to undercalculate the true score. One error in the function occurs when the function is trying
+to calculate the total score from the cards in the deck. In this portion of the code, the function iterates 
+between 0 and discardCount pile rather than deckCount when calculating the portion of the score earned from the player's 
+deck. This bug is fixed by changing the for loop iteration.
+Specific Code Change:
+	for (i = 0; i < state->discardCount[player]; i++) is changed to for (i = 0; i < state->deckCount[player]; i++)
+
+Bug Fix: Another error in this function occurs when it calculates the scores from gardens cards present in the player's
+entire deck. scoreFor() calls the fullDeckCount() function but passes in the card number of curses and not any other 
+card. As a result, the fullDeckCount function will only return the total number of curses cards in the player's possession 
+rather than the total number of all cards in the player's poessession. As a result, gardens cards do not grant as many points 
+to players as they should.
+Specific Code Change:
+	if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+	has been changed to
+	if (state->hand[player][i] == gardens) { score = score + ( (state->handCount[player] + state->discardCount[player] + state->deckCount[player]) / 10 ); };
+
+	and
+
+	if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+	has been changed to
+	if (state->discard[player][i] == gardens) { score = score + ( (state->handCount[player] + state->discardCount[player] + state->deckCount[player]) / 10 ); };
+
+	and
+
+	if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+	has been changed to
+	if (state->deck[player][i] == gardens) { score = score + ( (state->handCount[player] + state->discardCount[player] + state->deckCount[player]) / 10 ); };
+
+Comments: Based on these bugs, I think the scoreFor() and isGameOver() bugs have the highest priority relative to the other bugs that were fixed.
+ This is because the bugs in these functions affect the fundamental gameplay for all players and their deleterious effects are not limited to when 
+ a particular card is played. In addition, the scoreFor() bug in particular is more severe than any of the other bugs since most of the other 
+ only slightly change gameplay. My teammates bug reports confirmed the presence of many of these bugs in my dominion.c code.
