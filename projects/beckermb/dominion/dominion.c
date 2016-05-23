@@ -1330,8 +1330,7 @@ int villageCardEffect(int currentPlayer, int handPos, struct gameState *state) {
   drawCard(currentPlayer, state);
 
   //+2 Actions
-  int actions;
-  actions = state->numActions + 2;
+  state->numActions = state->numActions + 2;
 
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
