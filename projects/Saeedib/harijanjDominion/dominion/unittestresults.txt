@@ -1,0 +1,89 @@
+TESTING scoreFor():
+TEST 1: Test score for all zero.
+Score value: 0. Expected value: 0. 
+Test 1 Passed.
+TEST 2: Test score combining positive & negative.
+Score value: 10. Expected value: 10. 
+Test 2 Passed.
+TEST 3: Test score combining positive only.
+Score value: 40. Expected value: 40. 
+Test 3 Passed.
+All tests passed!
+_________________________________________________________
+_________________________________________________________
+TESTING scoreFor():
+TEST 1: Test if no coins.
+Coin value: 0. Expected value: 0. 
+Test 1 Passed.
+TEST 2: Test all coopers.
+Coin value: 5. Expected value: 5. 
+Test 2 Passed.
+TEST 3: Test mix between coopers,silvers,and golds.
+Coin value: 10. Expected value: 10. 
+Test 3 Passed.
+TEST 4: Test with bonus.
+Coin value: 10. Expected value: 10. 
+Test 4 Passed.
+All tests passed!
+_________________________________________________________
+_________________________________________________________
+TESTING isGameOver():
+TEST 1: Test if province is negative.
+# of province card in supply: -8. Dominion need condition state->supplyCount[province] =< 0!
+Result value: 0. Expected value: 0 (Game Not Over). 
+Test 1 Failed.
+TEST 2: Test if dutchy empty.
+Result value: 0. Expected value: 0 (Game Not Over). 
+Test 2 Passed.
+TEST 3: Test if estate empty.
+Result value: 0. Expected value: 0 (Game Not Over). 
+Test 3 Passed.
+TEST 4: Test when 4 supplies zero
+Testing with duchy, estate, curse and gold
+Result value: 1. Expected value: 1 (Game Is Over). 
+Test 4 Passed.
+TEST 5: Test when 2 supplies zero but 1 with province.
+Testing with provice and gold
+Result value: 1. Expected value: 1 (Game Is Over). 
+Test 5 Passed.
+All tests passed, except test # 1 since it is intentional.
+_________________________________________________________
+_________________________________________________________
+TESTING fullDeckCount():
+Specific card for this test: 'ADVENTURER'. Assume using Player 1 Point of View.
+TEST 1: No Adventurer at deck, discard and hand
+Result value: 0. Expected value: 0. 
+Test 1 Passed.
+TEST 2: No Adventurer at deck, discard. 1 Adventurer at hand
+Result value: 1. Expected value: 1. 
+Test 2 Passed.
+TEST 3: No Adventurer at deck and discard. 1 Adventurer at player 1 and player 2 hand.
+Result value: 1. Expected value: 1. 
+Test 3 Passed.
+TEST 4: 1 Adventurer at Player 1 deck, discard and hand.
+Result value: 3. Expected value: 3. 
+Test 4 Passed.
+All tests passed.
+_________________________________________________________
+_________________________________________________________
+
+
+Testing card: Smithy
+
+Test 1: Checking the function.
+smithy function should return cost of smithy card : 4.
+New Hand count is: 9.
+Test 1 Passed
+Test 2: Discard Pile.
+Discard count is: 0.
+Test 2 failed, discard count is not correct.
+_________________________________________________________
+_________________________________________________________
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 5 (should be 8)

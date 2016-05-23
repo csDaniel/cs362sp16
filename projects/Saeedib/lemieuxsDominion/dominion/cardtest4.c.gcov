@@ -1,0 +1,172 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:#include <stdlib.h>
+        -:    8:
+        1:    9:int checkFeast(int choice1, int choice2, int choice3, struct gameState *game, int handPos, int *bonus) {
+        1:   10:	int r, i, cardFound = 0;
+        -:   11:	struct gameState testGame;
+        1:   12:	int thisPlayer = whoseTurn(game);
+        -:   13:
+        -:   14:
+        1:   15:	memcpy(&testGame, game, sizeof(struct gameState));
+        -:   16:
+        6:   17:	for (i = 0; i < game->handCount[thisPlayer]; ++i) {
+        5:   18:		printf("\nCard number %d: %d\n", i + 1, game->hand[thisPlayer][i]);
+        -:   19:	}
+        -:   20:
+        -:   21:
+        1:   22:	printf("\nTest 1: choose embargo\n");
+        -:   23:
+        1:   24:	choice1 = embargo;
+        -:   25:
+        -:   26:
+        1:   27:	r = cardEffect(feast, choice1, choice2, choice3, game, handPos, bonus);
+        -:   28:
+        1:   29:	assert(r == 0);
+        -:   30:
+        1:   31:	printf("Checking handCount:\n");
+        1:   32:	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+        1:   33:	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+        -:   34:
+        1:   35:	printf("Checking deckCount:\n");
+        1:   36:	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+        1:   37:	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+        -:   38:
+        1:   39:	printf("Checking discardCount:\n");
+        1:   40:	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+        1:   41:	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
+        -:   42:	
+        1:   43:	assert(game->playedCards[game->playedCardCount - 1] != feast);
+        -:   44:
+        1:   45:	printf("\nTesting that embargo is in the discard pile:\n");
+        2:   46:	for (i = 0; i < game->discardCount[thisPlayer]; ++i) {
+        1:   47:		printf("\nCard number %d: %d\n", i + 1, game->discard[thisPlayer][i]);
+        1:   48:		if (game->discard[thisPlayer][i] == embargo)
+        1:   49:			cardFound = 1;
+        -:   50:	}
+        -:   51:
+        1:   52:	assert(cardFound = 1);
+        -:   53:
+        -:   54:	// check that other players' state hasn't been modified
+        1:   55:	printf("\nTesting other players' state:\n");
+        -:   56:	// start at 1 since the current player is 0.
+        2:   57:	for (i = 1; i < game->numPlayers; ++i) {
+        1:   58:		printf("\nChecking Player Number %d:\n", i);
+        -:   59:
+        1:   60:		printf("Checking handCount\n");
+        1:   61:		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+        1:   62:		assert(game->handCount[i] == testGame.handCount[i]);
+        -:   63:
+        1:   64:		printf("Checking deckCount\n");
+        1:   65:		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+        1:   66:		assert(game->deckCount[i] == testGame.deckCount[i]);
+        -:   67:
+        1:   68:		printf("Checking discardCount\n");
+        1:   69:		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+        1:   70:		assert(game->discardCount[i] == testGame.discardCount[i]);
+        -:   71:	}
+        -:   72:
+        1:   73:	printf("\nTesting victory and kingdom cards:\n");
+        -:   74:	// check that the victory and kingdom card piles are ok
+       28:   75:	for (i = 0; i <= treasure_map; ++i){
+       27:   76:		if (i == embargo) {
+        1:   77:			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+        -:   78:		}
+        -:   79:		else
+       26:   80:		assert(game->supplyCount[i] == testGame.supplyCount[i]);
+        -:   81:	}
+        -:   82:
+        -:   83:
+        -:   84:	// test with mine
+        1:   85:	printf("\nTest 2: choose mine\n");
+        -:   86:
+        1:   87:	memcpy(&testGame, game, sizeof(struct gameState));
+        -:   88:
+        1:   89:	choice1 = mine;
+        1:   90:	r = cardEffect(feast, choice1, choice2, choice3, game, handPos, bonus);
+        1:   91:	assert(r == 0);
+        -:   92:
+        1:   93:	printf("Checking handCount:\n");
+        1:   94:	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+        1:   95:	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+        -:   96:
+        1:   97:	printf("Checking deckCount:\n");
+        1:   98:	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+        1:   99:	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+        -:  100:
+        1:  101:	printf("Checking discardCount:\n");
+        1:  102:	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+        1:  103:	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
+        -:  104:
+        1:  105:	assert(game->playedCards[game->playedCardCount - 1] != feast);
+        -:  106:
+        1:  107:	printf("\nTesting that mine is in the discard pile:\n");
+        3:  108:	for (i = 0; i < game->discardCount[thisPlayer]; ++i) {
+        2:  109:		printf("\nCard number %d: %d\n", i + 1, game->discard[thisPlayer][i]);
+        2:  110:		if (game->discard[thisPlayer][i] == mine)
+        1:  111:			cardFound = 1;
+        -:  112:	}
+        -:  113:
+        -:  114:
+        -:  115:	// test with adventurer (causes infinite loop)
+        1:  116:	printf("\nTest 3: choose Adventurer (too expensive)\n");
+        -:  117:
+        1:  118:	printf("(this test causes an infinite loop, so I have commented it out)\n");
+        -:  119:
+        -:  120:	/*memcpy(&testGame, game, sizeof(struct gameState));
+        -:  121:
+        -:  122:
+        -:  123:	choice1 = adventurer;
+        -:  124:
+        -:  125:	r = cardEffect(feast, choice1, choice2, choice3, game, handPos, bonus);
+        -:  126:
+        -:  127:	assert(r == 0);
+        -:  128:
+        -:  129:	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+        -:  130:	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+        -:  131:
+        -:  132:	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+        -:  133:	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+        -:  134:
+        -:  135:	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+        -:  136:	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);*/
+        -:  137:
+        -:  138:
+        1:  139:	return 0;
+        -:  140:}
+        -:  141:
+        -:  142:
+        -:  143:
+        1:  144:int main() {
+        -:  145:
+        1:  146:	int k[10] = { adventurer, gardens, embargo, village, minion, mine, cutpurse,
+        -:  147:		sea_hag, feast,  };
+        -:  148:
+        -:  149:	struct gameState G;
+        -:  150:
+        1:  151:	int seed = 1000;
+        1:  152:	int numPlayers = 2;
+        -:  153:
+        1:  154:	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        -:  155:
+        1:  156:	printf("Testing Feast Card\n");
+        -:  157:
+        -:  158:
+        1:  159:	initializeGame(numPlayers, k, seed, &G);
+        -:  160:
+        -:  161:
+        1:  162:	checkFeast(choice1, choice2, choice3, &G, handpos, &bonus);
+        -:  163:
+        -:  164:
+        -:  165:
+        1:  166:	return 0;
+        -:  167:}
