@@ -59,16 +59,16 @@ supply count of 2 now is 0.
 Test 3 Passed
 
 Test 4: Checking unexpected input/Output
-Supplies 20, 13 and 9 are set to 0
-Supplies 15, 5 and 3 are set to 0
-Supplies 24, 9 and 13 are set to 0
-Supplies 18, 21 and 18 are set to 0
-Supplies 11, 18 and 16 are set to 0
-Supplies 19, 19 and 23 are set to 0
-Supplies 24, 2 and 14 are set to 0
-Supplies 15, 10 and 7 are set to 0
-Supplies 6, 16 and 5 are set to 0
-Supplies 23, 5 and 3 are set to 0
+Supplies 1, 14 and 15 are set to 0
+Supplies 16, 6 and 18 are set to 0
+Supplies 15, 18 and 17 are set to 0
+Supplies 7, 6 and 15 are set to 0
+Supplies 21, 17 and 21 are set to 0
+Supplies 15, 4 and 20 are set to 0
+Supplies 1, 20 and 19 are set to 0
+Supplies 7, 9 and 8 are set to 0
+Supplies 24, 2 and 11 are set to 0
+Supplies 15, 21 and 21 are set to 0
 Test 4 Passed
 _________________________________________________________
 _________________________________________________________
@@ -110,7 +110,7 @@ Testing card: Smithy
 
 Test 1: Checking the function.
 smithy function should return cost of smithy card : 4.
-New Hand count is: 9.
+New Hand count is: 8.
 Test 1 Passed
 Test 2: Discard Pile.
 Discard count is: 0.
@@ -124,4 +124,95 @@ Testing card: Adventurer
 Test 1: Checking the function.
 This should return Adventurer new coins in card: 6 (should be 6)
 This should return the value of Adventurer card: 6
-This should return Adventurer new coins in card: 5 (should be 8)
+This should return Adventurer new coins in card: 8 (should be 8)
+Test 1 Passed
+_________________________________________________________
+_________________________________________________________
+Testing Council Room Card
+Checking handCount
+hand count = 8, expected = 8
+Checking deckCount
+deck count = 1, expected = 1
+Checking buys
+buys = 2, expected = 2
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 1, expected = 1
+Checking deckCount
+deck count = 9, expected = 9
+Checking discardCount
+discard count = 0, expected = 0
+
+Checking Player Number 2:
+Checking handCount
+hand count = 1, expected = 1
+Checking deckCount
+deck count = 9, expected = 9
+Checking discardCount
+discard count = 0, expected = 0
+
+Checking Player Number 3:
+Checking handCount
+hand count = 1, expected = 1
+Checking deckCount
+deck count = 9, expected = 9
+Checking discardCount
+discard count = 0, expected = 0
+_________________________________________________________
+_________________________________________________________
+Testing Feast Card
+
+Card number 1: 4
+
+Card number 2: 4
+
+Card number 3: 1
+
+Card number 4: 4
+
+Card number 5: 4
+
+Test 1: choose embargo
+Checking handCount:
+hand count = 5, expected = 5
+Checking deckCount:
+deck count = 5, expected = 5
+Checking discardCount:
+discard count = 1, expected = 1
+
+Testing that embargo is in the discard pile:
+
+Card number 1: 22
+
+Testing other players' state:
+
+Checking Player Number 1:
+Checking handCount
+hand count = 0, expected = 0
+Checking deckCount
+deck count = 10, expected = 10
+Checking discardCount
+discard count = 0, expected = 0
+
+Testing victory and kingdom cards:
+
+Test 2: choose mine
+Checking handCount:
+hand count = 5, expected = 5
+Checking deckCount:
+deck count = 5, expected = 5
+Checking discardCount:
+discard count = 2, expected = 2
+
+Testing that mine is in the discard pile:
+
+Card number 1: 22
+
+Card number 2: 11
+
+Test 3: choose Adventurer (too expensive)
+(this test causes an infinite loop, so I have commented it out)
+_________________________________________________________
