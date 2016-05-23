@@ -39,3 +39,26 @@ _________________________
 Comments:
 Bugs were as reported This is the report of all bugs found and other tests ran fine.
 
+Raw report from card test on :
+
+Testing card: Smithy
+
+Test 1: Checking the function.
+smithy function should return cost of smithy card : 4.
+New Hand count is: 9.
+Test 1 Passed
+Test 2: Discard Pile.
+Discard count is: 0.
+Test 2 failed, discard count is not correct.
+
+And,
+
+
+Testing card: Adventurer
+
+Test 1: Checking the function.
+This should return Adventurer new coins in card: 6 (should be 6)
+This should return the value of Adventurer card: 6
+This should return Adventurer new coins in card: 5 (should be 8)
+
+Random test's Log was too large, please look at randomtestResults-HarijanJ.c
