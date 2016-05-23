@@ -667,7 +667,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      adventurerEffect(drawntreasure, state, currentPlayer, cardDrawn=0, z, temphand);
+      adventurerEffect(drawntreasure, state, currentPlayer, cardDrawn=0, z=0, temphand);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 			
     case council_room:
@@ -1248,9 +1249,10 @@ void adventurerEffect(int drawntreasure, struct gameState *state, int currentPla
     }
   }
   while(z-1>=0){
-    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z]; // discard all cards in play that have been drawn
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
+  state->numActions--;
 }
 
 // smithy
@@ -1261,9 +1263,9 @@ void smithyEffect(int currentPlayer, struct gameState *state, int handPos, int i
   {
     drawCard(currentPlayer, state);
   }
-      
+  state->numActions--;
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 1);
+  discardCard(handPos, currentPlayer, state, 0);
 }
 
 // treasure map
@@ -1292,7 +1294,7 @@ int treasuremapEffect(int index, struct gameState *state, int currentPlayer, int
       }
         
     //return success
-    return -1;
+    return 1;
   }
       
       //no second treasure_map found in hand
@@ -1303,7 +1305,7 @@ int treasuremapEffect(int index, struct gameState *state, int currentPlayer, int
 void seahagEffect(struct gameState *state, int currentPlayer, int i)
 {
   for (i = 0; i < state->numPlayers; i++){
-    if (i == currentPlayer){
+    if (i != currentPlayer){
       state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
       state->deckCount[i]--;
       state->discardCount[i]++;
@@ -1323,7 +1325,7 @@ void minionEffect(struct gameState *state, int handPos, int currentPlayer, int c
       
       if (choice1)    //+2 coins
   {
-    state->coins = state->coins + 1;
+    state->coins = state->coins + 2;
   }
       
       else if (choice2)   //discard hand, redraw 4, other players with 5+ cards discard hand and draw 4

@@ -1292,7 +1292,7 @@ int smithyCardEffect(int currentPlayer, int handPos, struct gameState *state) {
   }
 
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 1);
+  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 
@@ -1302,7 +1302,7 @@ int adventurerCardEffect(int currentPlayer, int handPos, struct gameState *state
   int z = 0; //counter for temp hand
   int temphand[MAX_HAND]; //array to hold hands temporarily drawn
 
-  while (drawntreasure < 2) {
+  while (drawntreasure < 2 && (state->deckCount[currentPlayer] > 0 || state->discardCount[currentPlayer] > 0)) {
     if (state->deckCount[currentPlayer] < 1) { //if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
     }
@@ -1322,6 +1322,7 @@ int adventurerCardEffect(int currentPlayer, int handPos, struct gameState *state
     z = z - 1;
   }
 
+  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 
@@ -1330,8 +1331,7 @@ int villageCardEffect(int currentPlayer, int handPos, struct gameState *state) {
   drawCard(currentPlayer, state);
 
   //+2 Actions
-  int actions;
-  actions = state->numActions + 2;
+  state->numActions = state->numActions + 2;
 
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
@@ -1340,7 +1340,7 @@ int villageCardEffect(int currentPlayer, int handPos, struct gameState *state) {
 
 int greatHallCardEffect(int currentPlayer, int handPos, struct gameState *state) {
   //+1 Card
-  drawCard(0, state);
+  drawCard(currentPlayer, state);
 
   //+1 Actions
   state->numActions++;

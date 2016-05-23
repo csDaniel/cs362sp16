@@ -73,9 +73,9 @@ void getRandomDeck(struct randomDeck* deck){
     deck->deckSize = ((int) (Random() * (RANDOM_MAX_DECK - RANDOM_MIN_DECK + 1))) + RANDOM_MIN_DECK;
     int numCoins;
     int numCoinsBias = (int) (Random() * 5);
-    if (numCoinsBias < 2){
+    if (numCoinsBias < 3){
         //edge cases 1, or 2 coins available
-        numCoins = numCoinsBias + 1;
+        numCoins = numCoinsBias;
     } else if (numCoinsBias < 4) {
         // random number of coins distributed in values greater than 2 and less than deckSize - 4
         numCoins = (int) (Random() * (deck->deckSize - 2)) + 2;

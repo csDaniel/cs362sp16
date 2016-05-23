@@ -21,8 +21,8 @@ hand are discarded.  The adventurer card itself should also be discarded.
 #include <string.h>
 
 int main() {
-	int handPos=0;
-	int player=0;
+	int player=1;
+	int handPos;
 	int seed = 1000;
 	int numPlayers = 2;
 	int k[10] = {feast, gardens, embargo, adventurer, tribute, mine, cutpurse, ambassador, great_hall, smithy};
@@ -36,11 +36,12 @@ int main() {
 
     // Fill player's deck
     T.deckCount[player] = 5;
+    T.deck[player][4] = smithy;
+    T.deck[player][3] = smithy;
+    T.deck[player][2] = silver;
+    T.deck[player][1] = copper;
     T.deck[player][0] = smithy;
-    T.deck[player][1] = smithy;
-    T.deck[player][2] = smithy;
-    T.deck[player][3] = silver;
-    T.deck[player][4] = copper;
+
 
     //Set up player's hand.
     T.handCount[player] = 1;
@@ -53,14 +54,14 @@ int main() {
     memcpy(&G, &T, sizeof(struct gameState));
 
     // Expected Results
-    int played = 4; // adventurer and 3 smithy cards on top of deck
+    int played = 3; // adventurer and 3 smithy cards on top of deck
     int estHand = 2; // There should just be the 2 treasure cards
-    int estDeck = 0; // treasure to hand and others discarded
+    int estDeck = 1; // treasure to hand and others discarded
 
     // Play adventurer card
-    adventurerCard(&G, player, handPos);
+    adventurerCard(player, &G, handPos);
 
-    //Check cards both treasure
+    //Check cards both treasured
     int card1 = handCard(0, &G);
     int card2 = handCard(1, &G);
     int areCoins = 1;
@@ -110,5 +111,6 @@ int main() {
     if (G.handCount[player] == estHand && G.playedCardCount == played && areCoins == 1 && G.deckCount[player] == estDeck){
         printf("All 4 tests passed!\n");
     }
+
     return 0;
 }

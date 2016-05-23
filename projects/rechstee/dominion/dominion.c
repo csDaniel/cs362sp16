@@ -397,6 +397,17 @@ int isGameOver(struct gameState *state) {
       return 1;
     }
 
+   if (state->supplyCount[adventurer] == 0 && state->supplyCount[sea_hag] == 0 && state->supplyCount[treasure_map] == 0)
+   {
+	   return 1;
+   }
+
+
+   if (state->supplyCount[treasure_map] == 0)
+   {
+	   return 1;
+   }
+
   //if three supply pile are at 0, the game ends
   j = 0;
   for (i = 0; i < 25; i++)
@@ -744,7 +755,7 @@ int playSmithy(struct gameState *state, int currentPlayer, int handPos, int i)
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 
@@ -763,7 +774,7 @@ int playAdventurer(struct gameState *state, int currentPlayer, int drawntreasure
 	  z++;
 	}
       }
-      while(z-2>=0){
+      while(z-1>=0){
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
@@ -795,6 +806,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
 		playAdventurer(state,currentPlayer, drawntreasure, cardDrawn, temphand, z);
+		return 0;
       /*while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
@@ -817,6 +829,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			
     case council_room:
     playCouncil_Room(state, handPos, i, currentPlayer); 
+	return 0;
 	/* 
 	//+4 Cards
       for (i = 0; i < 4; i++)
@@ -843,6 +856,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	*/		
     case feast:
 	playFeast(state,choice1, currentPlayer,i,temphand, x);
+	return 0;
 	/*
       //gain card with cost up to 5
       //Backup hand
@@ -963,6 +977,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     case smithy:
       //+3 Cards
 	playSmithy(state,currentPlayer, handPos, i);
+	return 0;
       /*for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
@@ -975,6 +990,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     case village:
       
 	 playVillage(state,currentPlayer, handPos);
+	 return 0;
       /*drawCard(currentPlayer, state); +1 card
 			
       //+2 Actions

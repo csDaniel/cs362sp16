@@ -51,7 +51,8 @@ int main() {
 
 		G.deckCount[thisPlayer] = (rand() % (MAX_DECK - 5) + 5);
 		G.discardCount[thisPlayer] = rand() % (MAX_DECK - G.deckCount[thisPlayer]);
-		G.handCount[thisPlayer] = rand() % (MAX_HAND - G.deckCount[thisPlayer]);
+		G.handCount[thisPlayer] = rand() % (MAX_HAND - G.deckCount[thisPlayer]) + 1;
+		G.playedCardCount = 0;
 
 
 		for (i = 0; i < G.deckCount[thisPlayer]; i++)
@@ -84,10 +85,14 @@ int main() {
 
 
 		// ----------- TEST 1: Current player receives two cards, both of which are treasure cards --------------
-		printf("TEST 1: Current player receives two cards, both of which are treasure cards\n\n");
+		printf("TEST 1: Current player receives two cards, both of which are treasure cards (unless the deck doesn't have two treasure cards)\n\n");
 
 		// copy the game state to a test case 
 		memcpy(&testG, &G, sizeof(struct gameState));
+
+
+		testG.hand[thisPlayer][handpos] = 7;
+		G.hand[thisPlayer][handpos] = 7;
 
 		cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 
@@ -96,10 +101,11 @@ int main() {
 
 		printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 		//Assert fails- Player has one too many cards on hand
-		//assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
+		assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
 
 		int treasureCardsTest = 0;
 		int treasureCardsCopy = 0;
+		int treasureCardsInDeck = 0;
 
 		for (i = 0; i < testG.handCount[thisPlayer]; i++)
 		{
@@ -117,8 +123,18 @@ int main() {
 			}
 		}
 
-		printf("treasure cards on hand = %d, expected = %d\n", treasureCardsTest, (treasureCardsCopy + 2));
-		assert(treasureCardsTest == (treasureCardsCopy + 2));
+		for (i = 0; i < testG.deckCount[thisPlayer]; i++)
+		{
+			if ((testG.deck[thisPlayer][i] == copper) || (testG.deck[thisPlayer][i] == silver) || (testG.deck[thisPlayer][i] == gold))
+			{
+				treasureCardsInDeck++;
+			}
+		}
+
+		printf("Treasure cards in deck: %d\n", treasureCardsInDeck);
+
+		printf("treasure cards on hand = %d, expected = %d (unless deck is short treasure cards)\n", treasureCardsTest, (treasureCardsCopy + 2));
+		assert((treasureCardsTest == (treasureCardsCopy + 2)) || (treasureCardsInDeck == 0));
 
 
 		printf("\n");
@@ -195,9 +211,9 @@ int main() {
 
 		cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-		printf("discarded cards = %d, expected = %d\n", testG.discardCount[thisPlayer], (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2));
+		printf("discarded cards = %d, expected = %d\n", testG.discardCount[thisPlayer], (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2 + G.discardCount[thisPlayer]));
 		//Assert fails: too many cards in discard pile
-		//assert(testG.playedCardCount == (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2));
+		assert(testG.discardCount[thisPlayer] == (G.deckCount[thisPlayer] - testG.deckCount[thisPlayer] - 2 + G.discardCount[thisPlayer]));
 
 
 		printf("\n");

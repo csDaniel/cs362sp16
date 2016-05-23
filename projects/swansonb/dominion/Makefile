@@ -49,6 +49,9 @@ unittestresults.out: unittest*.c cardtest*.c testUtilities.c dominion.o rngs.o
 	
 	gcc -o unittest4.out unittest4.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./unittest4.out >> unittestresults.out
+
+	gcc -o unittest5.out unittest5.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
+	./unittest5.out >> unittestresults.out
 	
 	gcc -o cardtest1.out cardtest1.c testUtilities.c dominion.o rngs.o -g  $(CFLAGS)
 	./cardtest1.out >> unittestresults.out

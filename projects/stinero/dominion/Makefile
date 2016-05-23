@@ -1,13 +1,15 @@
 
 CFLAGS = -Wall -fpic -coverage -lm
 
+markcardtest: markcardtest.c dominion.o rngs.o
+	gcc -o markcardtest -g  markcardtest.c dominion.o rngs.o $(CFLAGS)
 
-randomtestadventurer: randomtestadventure.c dominion.o rngs.o
-	gcc -o randomtestadventurer -g  randomtestadventure.c dominion.o rngs.o $(CFLAGS)
-
-randomtestcard: randomtestcard.c dominion.o rngs.o
-	gcc -o randomtestcard -g  randomtestcard.c dominion.o rngs.o $(CFLAGS)
-
+saiadven: saiadven.c dominion.o rngs.o
+	gcc -o saiadven -g  saiadven.c dominion.o rngs.o $(CFLAGS)
+	
+saieeSmithy: saieeSmithy.c dominion.o rngs.o
+	gcc -o saieeSmithy -g  saieeSmithy.c dominion.o rngs.o $(CFLAGS)	
+	
 unittest1: unittest1.c dominion.o rngs.o
 	gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
  
@@ -34,6 +36,10 @@ cardtest4: cardtest4.c dominion.o rngs.o
 
 cardtest5: cardtest5.c dominion.o rngs.o
 	gcc -o cardtest5 -g  cardtest5.c dominion.o rngs.o $(CFLAGS)
+
+randomtestadventurer: randomtestadventurer.c dominion.o
+	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -79,7 +85,7 @@ testRandom: randomtestcard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: randomtestcard randomtestadventurer playdom player testDrawCard testBuyCard badTestDrawCard cardtest5 cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4
+all: markcardtest saieeSmithy saiadven playdom player testDrawCard testBuyCard badTestDrawCard cardtest5 cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4
 
 clean:
-	rm -f *.o unittestresult.out randomtestcard unittestresult.out~ randomtestadventurer unittest2 playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest5 badTestDrawCard cardtest2 unittest3 cardtest3 cardtest4 unittest4 unittest1 testDrawCard
+	rm -f *.o markcardtest saieeSmithy saiadven unittestresult.out randomtestcard unittestresult.out~ randomtestadventurer unittest2 playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest5 badTestDrawCard cardtest2 unittest3 cardtest3 cardtest4 unittest4 unittest1 testDrawCard

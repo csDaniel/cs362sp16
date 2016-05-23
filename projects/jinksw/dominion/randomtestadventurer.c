@@ -9,6 +9,8 @@ Adventurer Card: Reveal/Draw cards from deck until you reveal/draw
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <assert.h>
 #include "rngs.h"
 #include "interface.h"

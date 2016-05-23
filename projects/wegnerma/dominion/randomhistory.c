@@ -38,7 +38,7 @@ Coverage: The coverage for the random village card tests was fairly low. 3.35%
 	and therefore gets discarded in the previous if statement.
 
 Bugs: 
-    1. The test found the bug taht I introduced into the code. When test ran, 
+    1. The test found the bug that I introduced into the code. When test ran, 
 	because the function does not call the draw card function, the part of the 
 	test that checks if a card is drawn fails each time.
 	2. In the discard card funtion the else if statement

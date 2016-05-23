@@ -65,18 +65,18 @@ int main(int argc, char *argv[]) {
   printf("        EXPECTATION IS +3 CARDS\n");
 
   // -------------------------------------------------------------------------------------
-  // REQT: 4 CARDS SHOULD COME FROM HIS OWN PILE, BUT COUNCIL_ROOM WILL BE ADDED BACK TO THE DISCARD, NET -3
+  // REQT: 4 CARDS SHOULD COME FROM HIS OWN PILE
   // -------------------------------------------------------------------------------------
   before = copy->discardCount[pNum] + copy->deckCount[pNum];
   after = state->discardCount[pNum] + state->deckCount[pNum];
-  if (before - after == 3) {
+  if (before - after == 4) {
     printf("PASS");
   }
   else {
     printf("FAIL");
   }
   printf("ED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM %d TO %d\n", before, after);
-  printf("        EXPECTATION IS -3 CARDS\n");
+  printf("        EXPECTATION IS -4 CARDS\n");
 
   // -------------------------------------------------------------------------------------
   // REQT: OTHER PLAYERS MUST DRAW ONE CARD (player 1, index 0)

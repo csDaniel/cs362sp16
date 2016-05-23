@@ -11,7 +11,7 @@ int salvagerEffect(int choice1, struct gameState *state, int currentPlayer, int 
 	//+1 buy
 	state->numBuys++;
 			
-	if (!choice1)
+	if (choice1)
 	{
 		//gain coins equal to trashed card
 		state->coins = state->coins + getCost( handCard(choice1, state) );
@@ -26,7 +26,7 @@ int salvagerEffect(int choice1, struct gameState *state, int currentPlayer, int 
 
 int embargoEffect(int choice1, struct gameState *state, int currentPlayer, int handPos){
 	//+2 Coins
-	state->coins = state->coins + 3;
+	state->coins = state->coins + 2;
 			
 	//see if selected pile is in play
 	if ( state->supplyCount[choice1] == -1 )
@@ -46,6 +46,7 @@ int stewardEffect(int choice1, int choice2, int choice3, struct gameState *state
 	if (choice1 == 1)
 	{
 		//+2 cards
+		drawCard(currentPlayer, state);
 		drawCard(currentPlayer, state);
 	}
 	else if (choice1 == 2)
@@ -71,7 +72,7 @@ int adventurerEffect(struct gameState *state, int currentPlayer, int handPos){
   int cardDrawn;
   int z = 0;// this is the counter for the temp hand
 	
-	while(drawntreasure<=2){
+	while(drawntreasure<2){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
 		}
