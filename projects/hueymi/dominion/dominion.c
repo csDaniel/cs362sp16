@@ -1357,10 +1357,10 @@ int playCutpurse(struct gameState * state, int handPos) {
 				{
 				  if (state->hand[i][j] == copper)
 					{
-					  discardCard(i, j, state, 0);
+					  discardCard(j, i, state, 0);
 					  break;
 					}
-				  if (j = state->handCount[i])
+				  if (j == state->handCount[i])
 					{
 					  for (k = 0; k < state->handCount[i]; k++)
 						{
@@ -1388,13 +1388,14 @@ int playCutpurse(struct gameState * state, int handPos) {
 		  if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1) j++;
 	}
 	 if (j < choice2) return -1;
-	 if (DEBUG) printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice2]);
+	 if (DEBUG) printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
      state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
 	for (i = 0; i < state->numPlayers; i++)
 		{
-		  if (i != currentPlayer) gainCard(state->hand[currentPlayer][choice1], state, 0, i);
+		  if (i != currentPlayer) 
+			  gainCard(state->hand[currentPlayer][choice1], state, 0, i);
 		}
-     discardCard(handPos, currentPlayer, state, 1);			
+     discardCard(handPos, currentPlayer, state, 0);			
 
     for (j = 0; j < choice2; j++)
 	{
@@ -1402,7 +1403,7 @@ int playCutpurse(struct gameState * state, int handPos) {
 	    {
 			if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
 			{
-				discardCard(i, currentPlayer, state, 0);
+				discardCard(i, currentPlayer, state, 1);
 				break;
 			}
 	    }
@@ -1433,19 +1434,19 @@ int playCutpurse(struct gameState * state, int handPos) {
 
 
 int playSmithy(struct gameState *state, int handPos){
-	int currentPlayer = whoseTurn(state), i;
+	int currentPlayer = whoseTurn(state), i = 0;
 	do {
 		drawCard(currentPlayer, state);
 		i++;
 	} while (i<3);
 	
-	discardCard(currentPlayer, handPos, state, 0);
+	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
  
  
  int playAdventurer(struct gameState *state) {
-	 int currentPlayer = whoseTurn(state), drawntreasure = 0, z = currentPlayer, temphand[MAX_HAND], cardDrawn;
+	 int currentPlayer = whoseTurn(state), drawntreasure = 0, z = 0, temphand[MAX_HAND], cardDrawn;
 	 
 	while(drawntreasure<= 1)
 	{
@@ -1453,20 +1454,24 @@ int playSmithy(struct gameState *state, int handPos){
 		  shuffle(currentPlayer, state);
 		}
 		drawCard(currentPlayer, state);
-		int count = state->handCount[currentPlayer];
-		cardDrawn = state->hand[currentPlayer][--count];
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 			drawntreasure++;
 		else{
 		  temphand[z]=cardDrawn;
-		  count--;
+		  state->handCount[currentPlayer]--;
 		  z++;
 		}
       }
       while(z-1>=0){
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; 
 		z=z-1;
+		
+		discardCard(handPos, currentPlayer, state, 0);
+		
       }
+	  
+	  
      return 0;
  }
  
