@@ -7,15 +7,17 @@
 
 int playSmithy(struct gameState *state, int handPos){
 	if(state->handCount[state->whoseTurn] < MAX_HAND){
-		int drawCounter;
-		for( drawCounter = 0; drawCounter < 3; drawCounter++ ){
-			drawCard(state->whoseTurn, state);
-		}
-		discardCard(handPos, state->whoseTurn, state, 0);
-		return 1;
+    if(state->deckCount[state->whoseTurn]>=3){
+  		int drawCounter;
+	   	for( drawCounter = 0; drawCounter < 3; drawCounter++ ){
+		  	drawCard(state->whoseTurn, state);
+		  }
+		  discardCard(handPos, state->whoseTurn, state, 0);
+		  return 1;
 	}
+}
 	else{
-		printf("Hand full\n");
+		printf("Hand full or reshuffle needs to happen.\n");
 		return -1;
 	} 	 
 }
@@ -28,43 +30,49 @@ int playAdventurer(struct gameState *state){
 	int tempHand[MAX_HAND];
 	int handIndex;
 	while(True==1){
-	if(drawnTreasure == 2){
-		True = 0;
-	}
-	drawCard(currentPlayer, state);
-	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
-	if(cardDrawn == copper || cardDrawn == silver || cardDrawn == gold){
-		drawnTreasure++;
-	}
-	else{
-		handIndex=0;
+  if(state->deckCount[currentPlayer] < 1){  
+  	if(drawnTreasure == 2){
+  		True = 0;
+  	}
+  	drawCard(currentPlayer, state);
+  	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
+  	if(cardDrawn == copper || cardDrawn == silver || cardDrawn == gold){
+  		drawnTreasure++;
+  	}
+  	else{
+  		handIndex=0;
 
-		tempHand[handIndex]=cardDrawn;
-		state->handCount[currentPlayer]--;
-		handIndex++;
-	}
+  		tempHand[handIndex]=cardDrawn;
+  		state->handCount[currentPlayer]--;
+  		handIndex++;
+  	}
+   } 
 	}
 	while(handIndex-1>=0){
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=tempHand[handIndex-1];
 		handIndex=handIndex-1;
 	}
+  
 	return 0;
 }
 
 int playRemodel(struct gameState *state, int handPos, int choice1, int choice2){ 
 	int currentPlayer = state->whoseTurn;
 	int trashedCard = state->hand[currentPlayer][choice1];
-	gainCard(choice2, state, 0, currentPlayer);
-	discardCard(handPos, currentPlayer, state, 0);
-	discardCard(choice1, currentPlayer, state, 1);
-	return 0;
+  if(getCost(choice2)<=getCost(choice1)){
+  	gainCard(choice2, state, 0, currentPlayer);
+  	discardCard(handPos, currentPlayer, state, 0);
+  	discardCard(choice1, currentPlayer, state, 1);
+  }  
+  	return 0;
+
 }
 
 
 int playVillage(struct gameState *state, int handPos){
 	drawCard(state->whoseTurn, state);
 	state->numActions = state->numActions+2;
-	discardCard(handPos, state->whoseTurn, state, 1);
+	discardCard(handPos, state->whoseTurn, state, 0);
 	return 0;
 }
 
@@ -470,7 +478,7 @@ int isGameOver(struct gameState *state) {
 
   //if three supply pile are at 0, the game ends
   j = 0;
-  for (i = 0; i < 25; i++)
+  for (i = 0; i < treasure_map+1; i++)
     {
       if (state->supplyCount[i] == 0)
 	{
@@ -1317,6 +1325,7 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
   //remove card from player's hand
   if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
     {
+      state->discard[currentPlayer]
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
     }

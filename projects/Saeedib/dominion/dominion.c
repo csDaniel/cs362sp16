@@ -8,7 +8,7 @@
 int Smithy(int currentPlayer, int handPos, struct gameState * state)
 {
 	// + 3 cards
-	for(int i = 0; i < 2; i++)
+	for(int i = 0; i < 3; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
@@ -40,7 +40,7 @@ int Adventurer(int currentPlayer, int handPos, struct gameState * state,int * te
 			z++;
 		}
 	}
-	while(z>=0)
+	while(z>=1)
 	{
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];
 		z=z-1;
@@ -53,7 +53,7 @@ int Feast(int currentPlayer, int handPos, struct gameState * state, int * tempha
 {
 	int x;
 	//Backup hand
-	for (int i = 1; i <= state->handCount[currentPlayer]; i++)
+	for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		temphand[i] = state->hand[currentPlayer][i];//Backup card
 		state->hand[currentPlayer][i] = -1;//Set to nothing
@@ -89,7 +89,7 @@ int Village(int currentPlayer, int handPos, struct gameState * state)
 	//+1 Card
 	drawCard(currentPlayer, state);
 	//+2 Actions
-	state->numActions = state->numActions + 1;
+	state->numActions = state->numActions + 2;
 	//discard played card from hand
 	discardCard(handPos, currentPlayer, state, 0);
 	return 3;
@@ -103,7 +103,7 @@ int Minion(int currentPlayer, int handPos, struct gameState * state, int choice1
 	discardCard(handPos, currentPlayer, state, 0);
 	if (choice1)		//+2 coins
 	{
-		state->coins = state->coins;
+		state->coins = state->coins+2;
 	}
 	else
 	if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4

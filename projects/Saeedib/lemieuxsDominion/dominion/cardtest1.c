@@ -1,96 +1,66 @@
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
+/*
+Behnam Saeedi
+Saeedib
+93227697
+Unit test
+*/
+
+#include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
+#include <time.h>
+
+#include "dominion.h"
+#include "dominion_helpers.h"
 #include "rngs.h"
-#include <stdlib.h>
 
-int checkSmithy(int choice1, int choice2, int choice3, struct gameState *game, int handPos, int *bonus) {
-	int r, i;
-	struct gameState testGame;
-	int thisPlayer = whoseTurn(game);
+#define UNITTEST "Smithy"
 
-	game->hand[thisPlayer][handPos] = smithy;
-
-	memcpy(&testGame, game, sizeof(struct gameState));
-
-	r = cardEffect(smithy, choice1, choice2, choice3, game, handPos, bonus);
-	assert(r == 0);
-
-	printf("Checking handCount:\n");
-	// make sure the appropriate number of cards has been added to the player's hand
-	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer] + 2);
-	//assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer] + 2);
-
-	printf("Checking deckCount:\n");
-	// make sure the cards came from the player's deck
-	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer] - 3);
-	//assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer] - 3);
-
-	printf("Checking discardCount:\n");
-	// check that this card has been discarded
-	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
-	//assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
-
-	// check that other players' state hasn't been modified
-	printf("\nTesting other players' state:\n");
-	// start at 1 since the current player is 0.
-	for (i = 1; i < game->numPlayers; ++i) {
-		printf("\nChecking Player Number %d:\n", i);
-
-		printf("Checking handCount\n");
-		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
-		assert(game->handCount[i] == testGame.handCount[i]);
-
-		printf("Checking deckCount\n");
-		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
-		assert(game->deckCount[i] == testGame.deckCount[i]);
-
-		printf("Checking discardCount\n");
-		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
-		assert(game->discardCount[i] == testGame.discardCount[i]);
-	}
-
-	printf("\nTesting victory and kingdom cards:\n");
-	// check that the victory and kingdom card piles are ok
-	for (i = 0; i <= treasure_map; ++i){
-		printf("pile %d count = %d, expected = %d\n", i, game->supplyCount[i], testGame.supplyCount[i]);
-		assert(game->supplyCount[i] == testGame.supplyCount[i]);
-	}
-
-	// check that the card has been added to the played pile
-	assert(game->playedCardCount == testGame.playedCardCount + 1);
-
-
-
-
-	return 0;
-}
-
-
-
-int main() {
-	
-	int k[10] = { adventurer, gardens, embargo, village, minion, mine, cutpurse,
-		sea_hag, tribute, smithy };
-
-	struct gameState G;
-
+int main(int argc, char ** argv)
+{
+	srand(time(NULL));
+	//Generating player:
+	int out;
 	int seed = 1000;
 	int numPlayers = 2;
+	int thisPlayer = 0;
+	struct gameState G, testG;
 
-	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-
-	printf("Testing Smithy Card\n");
-
-
+	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
+	// initialize a game state and player cards
 	initializeGame(numPlayers, k, seed, &G);
+	// generating a random state
+	memcpy(&testG, &G, sizeof(struct gameState));
+	int count;
+	count = testG.handCount[thisPlayer];
+	for(int i = 0; i < count; i++)
+		testG.hand[thisPlayer][i] = estate;
+	for(int i = 0; i < 25; i++)
+		testG.supplyCount[i] = 10;
+	testG.hand[thisPlayer][0] = gold;	
+	testG.hand[thisPlayer][1] = silver;	
+	testG.hand[thisPlayer][2] = copper;	
+	testG.discardCount[thisPlayer] = 0;
+	// Starting test
+	printf("\n\nTesting card: %s\n\n", UNITTEST);
 
+	printf("Test 1: Checking the function.\n");
+	play_smithy(thisPlayer, &testG,rand() % 4);
+	out = getCost(smithy);
+	printf("smithy function should return cost of smithy card : %d.\n",out);
+	assert(out==4);
+	printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
+	if(testG.handCount[thisPlayer] < 7)
+		printf("Test 1 failed, it needs to return: %d\n", 5 - 1 + 3);
+	else
+		printf("Test 1 Passed\n");
 
-	checkSmithy(choice1, choice2, choice3, &G, handpos, &bonus);
-
-
-
-	return 0;
+	printf("Test 2: Discard Pile.\n");
+	printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
+	if(testG.discardCount[thisPlayer] == 1 )
+		printf("Test 2 passed.\n");
+	else
+		printf("Test 2 failed, discard count is not correct.\n");
+	return 0;	//No bugs found
 }
