@@ -355,7 +355,7 @@ int main() {
 	}
 	
 	// ----------- TEST 7: 2 Treasure Cards are Drawn,  reshuffling needed, no discarding of drawn cards needed ---------- 
-	failFlag = 0;
+	/*failFlag = 0;
 	printf("\n\n******TEST 7: 2 Treasure Cards are drawn. Case 3: Reshuffling needed, no discarding of drawn cards needed.**** \n");
 	for( i=0; i<G.discardCount[thisPlayer]; i++ ){
 		G.discard[thisPlayer][i] = copper;
@@ -431,7 +431,7 @@ int main() {
 		printf( "\nTest 7 Passed" );
 		passCount++;
 	}
-	
+*/	
 
 
 	printf("\n >>>>> SUCCESS: Testing complete %s, %d tests failed, %d tests passed. <<<<<\n\n", TESTCARD, tests-passCount, passCount);

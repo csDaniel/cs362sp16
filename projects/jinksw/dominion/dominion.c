@@ -257,7 +257,7 @@ int playCard(int handPos, int choice1, int choice2, int choice3, struct gameStat
   //play card
   if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
     {
-      return -1;
+      //return -1; //prevents numactions from updating
     }
 	
   //reduce number of actions
@@ -356,6 +356,11 @@ int endTurn(struct gameState *state) {
   for (i = 0; i < state->handCount[currentPlayer]; i++){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
     state->hand[currentPlayer][i] = -1;//Set card to -1
+  }
+  state->handCount[currentPlayer] = 0;//Reset hand count
+  for (i = 0; i < state->playedCardCount; i++){
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->playedCards[i];//Discard
+    state->playedCards[i] = -1;//Set card to -1
   }
   state->handCount[currentPlayer] = 0;//Reset hand count
     
