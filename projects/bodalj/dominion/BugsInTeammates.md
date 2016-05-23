@@ -215,6 +215,7 @@ function or an issue with the random test itself.
 1. Bug in discardCard method
 2. Bug in Smithy card
 3. Bug in Adventurer card
+4. Bug in Village card (random tests)
 
 ### 1. Unit Test: `shuffle`
 
