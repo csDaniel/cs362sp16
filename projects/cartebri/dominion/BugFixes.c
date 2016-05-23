@@ -21,21 +21,29 @@ Team member reported bugs (only 1 team mate reported):
 	Adventurer: correct bug found
 
 
-	The first bug I am going to fix is the Smithy card. Using gdb I first ran the program without any debugging
+	The first bug I am going to fix is the Smithy card. Looking at the results of the random tester, there are
+a few tests failing and the coverage is very poor at only 50%. This could be due to the bugs in the code but 
+could also be caused by poor test cases. Using gdb I first ran the program without any debugging
 to see if it would fail. As expected, the code ran through to completion with no trouble. I then added a 
 breakpoint at the playSmithy function so I could step through and see what was being executed. Stepping through
 this function showed me that the discardCard function is executed immediately when the drawCard function should
 execute. Upon further investigation I saw that a nexPlayer variable is set and the correct code is only executed
 when nextPlayer is greater than the total number of players. This means if there are two total players and it is
 player ones turn (currentPlayer = 0), nextPlayer will be set to 1 and compared to the max position in the player
-array, in this case 1. The only time when this would be true is when it is the last players turn. To fix this, I 
-removed the conditional and reran the code. The resulting score was different but the Smithy card had the proper
-outcome. 
-	Next I will look at the but in the Adventurer card. I set a breakpoint at the playAdventurer function and 
-stepped through each line. The first thing I noticed was that all cards are placed in the temp hand to be discarded,
-not just the non-treasure cards. The second thing I noticed was that the code kept looping through the deck after
-two treasure cards were discovered. Upon closer examination of the code, I saw a while loop that kept the loop going
-as long as the player has cards in their hand. The other error is caused by a missing else statement.
+array, in this case 1. The only time when this would be true is when it is the last players turn. This explains 
+the poor coverage the random tester had with this test. Half of the code was skipped unless it was the last 
+players turn. To fix the bug, I removed the conditional and reran the code. The resulting score was different but
+the Smithy card had the proper outcome. 
+
+	Next I will look at the but in the Adventurer card. I ran my random tester on the buggy dominion code. I saw
+that the play adventurer function has 100% coverage and only one test failed. This tells me that something is 
+wrong but I have to examine the code closer to know if there is a problem with the test or with the code. The next 
+step is using gdb. I set a breakpoint at the playAdventurer function and stepped through each line. The first thing 
+I noticed was that all cards are placed in the temp hand to be discarded, not just the non-treasure cards. The second 
+thing I noticed was that the code kept looping through the deck after two treasure cards were discovered. Upon closer 
+examination of the code, I saw a while loop that kept the loop going as long as the player has cards in their hand. 
+The other error is caused by a missing else statement.
+
 	I applied the same process to the Feast card. I set a brakpoint and stepped through the function. I noticed that
 the loop continued even after the player chose a card. This was caused by the loop condition being equal to five
 instead of one and the loop continuing while it is 2 or higher. After the player chose a card, the loop condition 
@@ -47,4 +55,6 @@ a card.
 and the other players draw one card. This function fails to change the state of the other players cards. While 
 stepping through the code, it appears that the for loop cycles through the number of players but the conditional
 inside only allows the current player to draw a card. This should be changed to exclude only the current player as 
-they have already drawn four additional cards.
+they have already drawn four additional cards. 
+
+
