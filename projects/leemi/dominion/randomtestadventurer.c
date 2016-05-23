@@ -49,7 +49,7 @@ int main() {
 		memcpy(&compareGame, &game, sizeof(struct gameState));
 		int temphand[MAX_HAND];
 		//call adventurer
-		cardAdventurer(&game, 0, curPlay, temphand, 0, 0);
+		cardAdventurer(&game, 0, curPlay, temphand, 0, 0, 0);
 		errors = errors + testAdventurer(game, compareGame, curPlay);
 
 

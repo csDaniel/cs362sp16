@@ -210,6 +210,8 @@ int shuffle(int player, struct gameState *state) {
 
   if (state->deckCount[player] < 1)
     return -1;
+  if (state->deckCount[player] == 0)
+    return 0;
   qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare); 
   /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
 
@@ -667,7 +669,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		adventurer_effect(currentPlayer, state);
+		adventurer_effect(currentPlayer, state, handPos, bonus);
 		return 0;
 			
     case council_room:
@@ -1141,37 +1143,43 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   return -1;
 }
 
-int adventurer_effect(int currentPlayer, struct gameState *state)
+int adventurer_effect(int currentPlayer, struct gameState *state, int handPos, int bonus)
 {
 	int temphand[MAX_HAND];// moved above the if statement
 	int z = 0;// this is the counter for the temp hand
 	int drawntreasure=0;	
 	int cardDrawn;
-	  
+  
+  //discard adventurer card	
+  discardCard(handPos, currentPlayer, state, 0);
+  
 	//case adventurer:
-	while(drawntreasure<=2)
+	while(drawntreasure<2)
 	{
-		if (state->deckCount[currentPlayer] <1)
+		if (state->deckCount[currentPlayer] < 1) 
+    {
 		//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
+      break;
+    }
 
 		drawCard(currentPlayer, state);
+
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-			drawntreasure++;
+    {
+      drawntreasure++;
+    }
+			
 		else
 		{
-			temphand[z]=cardDrawn;
-			state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-			z++;
+      discardCard((state->handCount[currentPlayer]-1), currentPlayer, state, 0);
 		}
 	}
-	
-	while(z-1>=0)
-	{
-		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-		z=z-1;
-	}
+
+  //update coins
+  updateCoins(currentPlayer, state, 0);
+
 	return 0;
 }
 
@@ -1179,7 +1187,7 @@ int smithy_effect(int currentPlayer, struct gameState *state, int handPos)
 {
 	int i;
 	  //+3 Cards
-	for (i = 0; i <= 3; i++)
+	for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1198,7 +1206,7 @@ int village_effect(int currentPlayer, struct gameState *state, int handPos)
 	 state->numActions = state->numActions + 2;
 			
 	  //discard played card from hand
-	 discardCard(handPos, currentPlayer, state, 1);
+	 discardCard(handPos, currentPlayer, state, 0);
 	 return 0;
 }
 
@@ -1234,11 +1242,11 @@ int mine_effect(int choice1, int choice2, int currentPlayer, struct gameState *s
 	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
 	if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
-	{
+	{ 
 	  return -1;
 	}
 		
-    if (choice2 > treasure_map || choice2 < curse)
+  if (choice2 > treasure_map || choice2 < curse)
 	{
 	  return -1;
 	}
@@ -1274,8 +1282,11 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
       //add card to played pile
       state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
       state->playedCardCount++;
+      //add recently played card into discarded pile
+      state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][handPos];
     }
 	
+
   //set played card to -1
   state->hand[currentPlayer][handPos] = -1;
 	
@@ -1300,6 +1311,7 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
       state->handCount[currentPlayer]--;
     }
 	
+
   return 0;
 }
 
@@ -1349,20 +1361,20 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   //add coins for each Treasure card in player's hand
   for (i = 0; i < state->handCount[player]; i++)
-    {
+  {
       if (state->hand[player][i] == copper)
-	{
-	  state->coins += 1;
-	}
+    	{
+    	  state->coins += 1;
+    	}
       else if (state->hand[player][i] == silver)
-	{
-	  state->coins += 2;
-	}
+    	{
+    	  state->coins += 2;
+    	}
       else if (state->hand[player][i] == gold)
-	{
-	  state->coins += 3;
-	}	
-    }	
+    	{
+    	  state->coins += 3;
+    	}	
+  }	
 
   //add bonus
   state->coins += bonus;

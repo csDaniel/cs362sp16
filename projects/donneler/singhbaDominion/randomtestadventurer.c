@@ -12,6 +12,9 @@
 * 		replenish the deck once.
 * 4 - No change to the other player's hand or deck.
 * 5 - No change to the victory card piles and kingdom card piles.
+*
+*
+* Modified for adventurerEffect(struct gameState *state, int handPos)
 **************************************************************************/	
 
 #include "dominion.h"
@@ -36,9 +39,11 @@ int main() {
     struct gameState G, controlG;
 
 	int maxDeckCount = MAX_DECK;
+	int maxHandCount = MAX_HAND;
 
 	int numRandomTests = 100;
 	int testNum;
+	int adventurerPos, handCount;
 
 	for (testNum = 0; testNum < numRandomTests; testNum++) {
 
@@ -48,6 +53,21 @@ int main() {
 
 		p = rand() % numPlayers;
 		G.whoseTurn = p;
+
+		handCount = (rand() % maxHandCount) + 1;						// Create random hand
+		G.handCount[p] = handCount;
+		for (i = 0; i < handCount; i++) {
+			
+			j = rand() % 2;
+
+			if (j == 0)
+				G.hand[p][i] = k[rand() % 10];
+			else
+				G.hand[p][i] = treasure[rand() % 3];
+		}
+
+		adventurerPos = rand() % handCount;								// randomy place a adventurer
+		G.hand[p][adventurerPos] = adventurer;
 
 		deckCount = (rand() % maxDeckCount) + 1;						// Create random deck
 		G.deckCount[p] = deckCount;
@@ -76,7 +96,8 @@ int main() {
 
 		memcpy(&controlG, &G, sizeof(struct gameState));		// copy game state to test case
 
-		playAdventurer(p, &G);									// call playAdventurer w current player
+		//playAdventurer(p, &G);									// call playAdventurer w current player
+		adventurerEffect(&G, adventurerPos);
 
 		passedTest = adventurerTestOracle(testNum, p, G, controlG);
 

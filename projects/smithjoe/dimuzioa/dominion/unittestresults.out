@@ -1,0 +1,83 @@
+Testing isGameOver.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest1.c'
+Lines executed:97.67% of 43
+unittest1.c:creating 'unittest1.c.gcov'
+
+File 'unittest1.c'
+Lines executed:97.67% of 43
+Branches executed:100.00% of 16
+Taken at least once:75.00% of 16
+No calls
+unittest1.c:creating 'unittest1.c.gcov'
+
+Testing numHandCards.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest2.c'
+Lines executed:96.43% of 28
+unittest2.c:creating 'unittest2.c.gcov'
+
+File 'unittest2.c'
+Lines executed:96.43% of 28
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+unittest2.c:creating 'unittest2.c.gcov'
+
+Testing whoseTurn.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest3.c'
+Lines executed:95.65% of 23
+unittest3.c:creating 'unittest3.c.gcov'
+
+File 'unittest3.c'
+Lines executed:95.65% of 23
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+unittest3.c:creating 'unittest3.c.gcov'
+
+Testing supplyCount.
+RANDOM TESTS.
+ALL TESTS OK
+File 'unittest4.c'
+Lines executed:95.65% of 23
+unittest4.c:creating 'unittest4.c.gcov'
+
+File 'unittest4.c'
+Lines executed:95.65% of 23
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+unittest4.c:creating 'unittest4.c.gcov'
+
+----------------- Testing Card: village ----------------
+TEST 1: +1 card
+hand count = 5, expected = 5
+deck count = 4, expected = 4
+coins = 4, expected = 4
+TEST 2: +2 actions
+Number of actions expected: 3
+Number of actions found: 3
+
+ >>>>> SUCCESS: Testing complete village <<<<<
+
+File 'cardtest1.c'
+Lines executed:100.00% of 33
+cardtest1.c:creating 'cardtest1.c.gcov'
+
+File 'cardtest1.c'
+Lines executed:100.00% of 33
+Branches executed:100.00% of 8
+Taken at least once:50.00% of 8
+No calls
+cardtest1.c:creating 'cardtest1.c.gcov'
+
+----------------- Testing Card: great hall ----------------
+TEST 1: +1 card
+hand count = 6, expected = 5
+deck count = 4, expected = 4
+coins = 4, expected = 4

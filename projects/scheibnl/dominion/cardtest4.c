@@ -32,7 +32,7 @@ int main() {
 
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 
-	// ----------- TEST 1: Each player (besides current) discards top card of deck and gains curse card, so deck size remains the same and discard is one --------------
+	// ----------- TEST 1: Each player (besides current) discards top card of deck and gains curse card, so deck decreases by one and discard is one --------------
 	printf("TEST 1: Each player (besides current) discards top card of deck and gains curse card, so deck size remains the same and discard is one\n\n");
 
 	// copy the game state to a test case 
@@ -44,9 +44,9 @@ int main() {
 	{
 		if (i != thisPlayer)
 		{
-			printf("Player %d deck size= %d, expected = %d\n", i, testG.deckCount[i], G.deckCount[i]);
+			printf("Player %d deck size= %d, expected = %d\n", i, testG.deckCount[i], (G.deckCount[i] - 1));
 			//Assert fails. Deck is 3 cards smaller than it should be.
-			//assert(testG.deckCount[i] == G.deckCount[i]);
+			assert(testG.deckCount[i] == G.deckCount[i] - 1);
 
 			printf("Player %d discard size= %d, expected = %d\n", i, testG.discardCount[i], G.discardCount[i] + 1);
 			assert(testG.discardCount[i] == (G.discardCount[i] + 1));
@@ -65,7 +65,7 @@ int main() {
 		{
 			printf("Player %d: Top card = %d, expected = 0 (curse card)\n", i, testG.deck[i][testG.deckCount[i] - 1]);
 			//Assert fails. Card isn't curse card
-			//assert((testG.deck[i][testG.deckCount[i] - 1]) == curse);
+			assert((testG.deck[i][testG.deckCount[i] - 1]) == curse);
 		}
 
 		
@@ -96,7 +96,7 @@ int main() {
 	printf("TEST 4: Current player discards one card\n\n");
 	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + newCards - discarded);
 	//Assert fails. Player never discards
-	//assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
+	assert(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded);
 
 
 	printf("\n");
@@ -130,7 +130,7 @@ int main() {
 
 	printf("curse card count = %d, expected = %d\n", testG.supplyCount[0], G.supplyCount[0] - (numPlayers - 1));
 	//Assert fails. Supply count of curse remains the same.
-	//assert(testG.supplyCount[0] == (G.supplyCount[0] - (numPlayers - 1)));
+	assert(testG.supplyCount[0] == (G.supplyCount[0] - (numPlayers - 1)));
 
 
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);

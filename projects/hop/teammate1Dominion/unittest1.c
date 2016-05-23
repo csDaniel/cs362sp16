@@ -1,89 +1,63 @@
-// CS 362
-// Assignment 3 unittest1.c
-// Hong Lin
-// Unit test for updateCoins()
-
-
-#include "dominion.h"
-#include "dominion_helpers.h"
-#include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include "dominion.h"
 #include "rngs.h"
 
-#define PRINTS 1
+int main(){
 
-int main() {
-    int i, j, l, r;
-    int seed = 2000;
-    int numPlayer = 3;
-    int maxBonus = 10;
-    int cards[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
-    struct gameState game;
-    int maxHandCount = 5;
-    // arrays of all coppers, silvers, and golds
-    int coppers[MAX_HAND];
-    int silvers[MAX_HAND];
-    int golds[MAX_HAND];
-    for (i = 0; i < MAX_HAND; i++)
-    {
-        coppers[i] = copper;
-        silvers[i] = silver;
-        golds[i] = gold;
-    }
-    i = 0;
-    printf ("TESTING updateCoins():\n");
-    for (i = 1; i <= numPlayer; i++)
-    {
-        for (j = 1; j <= maxHandCount; j++)
-        {
-            for (l = 0; l <= maxBonus; l++)
-            {
-                memset(&game, 23, sizeof(struct gameState));   // clear the game state
-                r = initializeGame(numPlayer, cards, seed, &game); // initialize a new game
-                assert(r != -1); //check if initializeGame success
+   struct gameState state;
+   int currentPlayer = 0;
+   state.numPlayers = 2;
+   state.whoseTurn = 0;
+   state.hand[currentPlayer][0] = adventurer;
+   state.hand[currentPlayer][1] = feast;
+   state.hand[currentPlayer][2] = remodel;
+   state.hand[currentPlayer][3] = tribute;
+   state.hand[currentPlayer][4] = steward;
+   state.handCount[currentPlayer] = 5;
+   state.handCount[1] = 0;
+   state.numActions = 1;
+   state.numBuys = 1;
+   
+   /* business requirements
+      
+      description: testing handCard(int handNum, struct gameState *state), 
+      which returns the index of a player's card held at handNum. The index 
+      references the position of that card in the CARD enumeration.
+         
+      1. Manual initialization of cards in hand. Function should return card
+         number. adventurer = 7, feast = 9, remodel = 12, tribute = 19, and 
+         steward = 18.
+      2. No state changes should occur at all.  
 
-#if (PRINTS == 1)
-                printf("Test no treasure card and %d bonus for player %d .\n",l , i);
-#endif
-                game.handCount[i] = j;                 // set the number of cards on hand
-                memcpy(game.hand[i], cards, sizeof(int) * j); // set all the cards to non-treasure card
-                updateCoins(i, &game, l);
-#if (PRINTS == 1)
-                printf("game.coins = %d, expected = %d\n", game.coins, l);
-#endif
+      end requirements*/
+   printf("<----------BEGIN unittest1-handCard() ---------->\n\n");
 
+// ----------------- TEST 1 ---------------------------------------------------
+   printf(" TEST 1: Cards in hands revealed appropriately.\n");
+   printf("    card: %i, expected: 7\n", handCard(0, &state));
+   printf("    card: %i, expected: 9\n", handCard(1, &state));
+   printf("    card: %i, expected: 12\n", handCard(2, &state));
+   printf("    card: %i, expected: 19\n", handCard(3, &state));
+   printf("    card: %i, expected: 18\n", handCard(4, &state));
+   assert(handCard(0, &state) == 7);
+   assert(handCard(1, &state) == 9);
+   assert(handCard(2, &state) == 12);
+   assert(handCard(3, &state) == 19);
+   assert(handCard(4, &state) == 18);
 
-#if (PRINTS == 1)
-                printf("Test player %d with %d treasure card(s) and %d bonus.\n", i, j, l);
-#endif
-                
-                memcpy(game.hand[i], coppers, sizeof(int) * j); // set all the cards to copper
-                updateCoins(i, &game, l);
-#if (PRINTS == 1)
-                printf("game.coins = %d, expected = %d\n", game.coins, j * 1 + l);
-#endif
-                assert(game.coins == j * 1 + l); // check if the number of coins is correct
+// ----------------- TEST 2 ---------------------------------------------------
+   printf("\n"); 
+   printf(" TEST 2: No state changes should occur.\n");
+   printf("    hand count = %i, expected = 5\n", state.handCount[0]);
+   printf("    Player's turn = %i, expected = 0\n", state.whoseTurn);
+   printf("    No. Actions = %i, expected = 1\n", state.numActions);
+   printf("    No. Buys = %i, expected = 1\n", state.numBuys);
+   assert(state.handCount[0] == 5);
+   assert(state.whoseTurn == 0);
+   assert(state.numActions == 1);
+   assert(state.numBuys == 1);   
+   printf("\n<----------END unittest1-handCard() ---------->\n\n");
 
-                memcpy(game.hand[i], silvers, sizeof(int) * j); // set all the cards to silver
-                updateCoins(i, &game, l);
-#if (PRINTS == 1)
-                printf("game.coins = %d, expected = %d\n", game.coins, j * 2 + l);
-#endif
-                assert(game.coins == j * 2 + l); // check if the number of coins is correct
-
-                memcpy(game.hand[i], golds, sizeof(int) * j); // set all the cards to gold
-                updateCoins(i, &game, l);
-#if (PRINTS == 1)
-                printf("game.coins = %d, expected = %d\n", game.coins, j * 3 + l);
-#endif
-                assert(game.coins == j * 3 + l); // check if the number of coins is correct
-            }
-        }
-    }
-
-    printf("All tests passed!\n");
-
-    return 0;
+   return 0;
 }

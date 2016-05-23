@@ -1,80 +1,75 @@
-//Joseph Cuellar
-//CS - 362
-//TEST - Village Card 
+/*
+ * Miranda Weldon
+ * April 23, 2016
+ * CS 362 Spring 2016
+ * Assignment 3
+ * cardtest3.c
+ */
+
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
+#include "rngs.h"
 #include <stdio.h>
 #include <assert.h>
-#include "rngs.h"
-#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
-int VillageTEST(struct gameState *post, int handPos);
-
+//main function
 int main(){
-	int player = 0;
-	int numTests = 500;
-	int i, j, k, m, n, q, handPos;
-	struct gameState postGameState;
+	//declare variables
+	int i, numPlayers = 3;
+	struct gameState Game, testGame;
+	int k[10] = {feast, gardens, salvager, remodel, tribute, mine, cutpurse, ambassador, great_hall, smithy};
 
-	
-	SelectStream(2);
-	PutSeed(3);
-	printf ("START - Running callVillageCard().\n\n");
-	
-	for(k = 0; k < numTests; k++){
-		for (i = 0; i < sizeof(struct gameState); i++) {
-			((char*)&postGameState)[i] = floor(Random() * 256);
-		}
-		postGameState.whoseTurn = player;
-		postGameState.numActions = 1;
+	//start up original game and create a copy
+	initializeGame(numPlayers, k, 1000, &Game);
+	memcpy(&testGame, &Game, sizeof(struct gameState));
 
-		postGameState.handCount[player] = floor(Random() * MAX_HAND)+1;
-		postGameState.deckCount[player] = floor(Random() * MAX_DECK);
-		postGameState.discardCount[player] = floor(Random() * MAX_DECK);
-		postGameState.playedCardCount = floor(Random() * MAX_DECK);
-		
-		for(m = 0; m < postGameState.handCount[player]; m++)	{
-			postGameState.hand[player][m] = floor(Random() * treasure_map) + 1;
-		}
-		
-		for(j = 0; j < postGameState.discardCount[player]; j++)	{
-			postGameState.discard[player][j] = floor(Random() * treasure_map) + 1;
-		}
+	printf("Testing Salvager Card\n\n");
 
-		for(n = 0; n < postGameState.deckCount[player]; n++)	{
-			postGameState.deck[player][n] = floor(Random() * treasure_map) + 1;
-		}
-		for(q = 0; q < postGameState.playedCardCount; q++){
-			postGameState.playedCards[q] = floor(Random() * treasure_map) + 1;
-		}
-		
-		handPos = floor(Random() * postGameState.handCount[player]);
-		postGameState.hand[player][handPos] = village;
-		
-		VillageTEST(&postGameState, handPos);
-		
-	}
+	for(i = 0; i < numPlayers; i++){
+		//reset game copy 
+		memcpy(&testGame, &Game, sizeof(struct gameState));
 	
-	printf ("STOP - Running callVillageCard().\n\n");
-	return 0;
-}
+		//play card
+		cardEffect(salvager, 1, 0, 0, &testGame, 0, 0);
 
-int VillageTEST(struct gameState *postGameState, int handPos){
-	int player = postGameState->whoseTurn;
-	struct gameState pre;
-	memcpy(&pre, postGameState, sizeof(struct gameState));
-	
-	callVillageCard(player, postGameState, handPos);
-	
-	if(pre.handCount[player] != postGameState->handCount[player]){
-		printf("ERROR! hand counts should match. \n");
+		printf("Player %d:\n", i);
+
+		//test that the player lost 1 card (this card and an additional)
+		printf("\tExpected HandCount: %d\n\tActual HandCount: %d\n", Game.handCount[i] - 2, testGame.handCount[i]);
+		testGame.handCount[i] == Game.handCount[i] - 2 ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test that the player's deck has not changed
+		printf("\tExpected DeckCount: %d\n\tActual DeckCount: %d\n", Game.deckCount[i], testGame.deckCount[i]);
+		testGame.deckCount[i] == Game.deckCount[i] ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test that player has only gained 1 buy
+		printf("\tExpected Number of Buys: %d\n\tActual Number of Buys: %d\n", Game.numBuys + 1, testGame.numBuys);
+		testGame.numBuys == Game.numBuys + 1 ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test that player has gained at least the smallest
+		//card's amount of coins (2 unless curse or copper, 0)
+		printf("\tExpected CoinCount: at least %d\n\tActual CoinCount: %d\n", Game.coins + 2, testGame.coins);
+		if(Game.coins + 2 == testGame.coins)
+			printf("\tTest Pass\n");
+		//if player chose copper or curse, no change
+		else if(testGame.coins == Game.coins)
+			printf("\tTest Pass\n");
+		else
+			printf("\tTest Fail\n");
+
+		//test that only 2 cards is discarded
+		printf("\tExpected DiscardCount: %d\n\tActual DiscardCount: %d\n", Game.discardCount[i] + 2, testGame.discardCount[i]);
+		testGame.discardCount[i] == Game.discardCount[i] + 2 ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		//test which player's turn
+		printf("\tExpected Player's Turn: %d\n\tActual Player's Turn: %d\n", Game.whoseTurn, testGame.whoseTurn);
+		Game.whoseTurn == testGame.whoseTurn ? printf("\tTest Pass\n") : printf("\tTest Fail\n");
+
+		Game.whoseTurn++;
 	}
 
-	pre.numActions = pre.numActions + 2;
-	if(pre.numActions != postGameState->numActions){
-		printf("ERROR! number of actions should match. \n");
-	}
-	
+	//zero if no errors
 	return 0;
 }

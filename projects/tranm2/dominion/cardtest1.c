@@ -23,7 +23,7 @@
 #include <stdbool.h>
 
 #define TESTCARD "adventurer"
-#define CUR_DECK 10
+#define CUR_DECK 5
 #define max(a,b) \
    ({ __typeof__ (a) _a = (a); \
        __typeof__ (b) _b = (b); \
@@ -58,7 +58,7 @@ int main() {
 	for (i=0; i<CUR_DECK; i++)
 	{
 		if (i != treas_pos)
-			G.deck[thisPlayer][i] = k[rand()%10]; // randomly fill up deck
+			G.deck[thisPlayer][i] = k[rand()%5]; // randomly fill up deck
 		else {	
 			G.deck[thisPlayer][i] = gold;	// assign 1 gold card
 			printf("Gold-");
@@ -67,7 +67,7 @@ int main() {
 	}
 	// prepare hand
 	G.hand[thisPlayer][handpos] = adventurer;
-	updateCoins(thisPlayer, &G, bonus);
+	//updateCoins(thisPlayer, &G, bonus);
 
 	// print hand
 	printf("\nHand Content:\n");
@@ -94,12 +94,13 @@ int main() {
 	// ----------- TEST 2: Confirm the correct treasure cards added --------------
 	printf("\n\nTEST 2: Confirm the correct treasure cards added\n");
 	printf("Deck Content:\n");
+
 	// generate random number of treasure cards
-	treas_pos = rand() % CUR_DECK; // random treasure card 1 pos
+	treas_pos = (rand() % CUR_DECK); // random treasure card 1 pos
 	do treas_pos1 = rand() % CUR_DECK; // random treasure card 2 pos
 	while (treas_pos == treas_pos1);
 	// setup treasure card in deck
-	treas_pos = rand() % CUR_DECK; // random treasure card pos
+	
 	for (i=0; i<CUR_DECK; i++)
 	{
 		if (i == treas_pos)
@@ -107,36 +108,61 @@ int main() {
 		else if (i == treas_pos1) 
 			G.deck[thisPlayer][i] = silver;
 		else 
-			G.deck[thisPlayer][i] = k[rand()%10]; // randomly fill up deck;
+			G.deck[thisPlayer][i] = k[rand()%5]; // randomly fill up deck;
 		printf("(%d) ",G.deck[thisPlayer][i]);
 	}	
 
 	// calc total coins
-	xtra_coins = 3+2;
+	for (i = 0; i < G.deckCount[thisPlayer]; i++)
+	{
+	  if (G.deck[thisPlayer][i] == copper)
+		{
+		  xtra_coins += 1;
+		}
+	  else if (G.deck[thisPlayer][i] == silver)
+		{
+		  xtra_coins += 2;
+		}
+	  else if (G.deck[thisPlayer][i] == gold)
+		{
+		  xtra_coins += 3;
+		}	
+	}	
+
+
 	printf("\nxtra coins = %d\n", xtra_coins);
 	// calc total discard
-	discard_cards = max(treas_pos1, treas_pos)-1;
+	discard_cards = abs(treas_pos1 - treas_pos) + ((CUR_DECK-1) - max(treas_pos1, treas_pos));
 	printf("discarded cards = %d\n", discard_cards);
 
 	// run cardEffect on testG
 	G.hand[thisPlayer][handpos] = adventurer;
+
 	updateCoins(thisPlayer, &G, bonus);
 	memcpy(&testG, &G, sizeof(struct gameState));
+	//printf("deckcount = %d\n", testG.deckCount[thisPlayer]);
+	updateCoins(thisPlayer, &testG, bonus);
 	// print hand
-	printf("Hand Content:\n");
-	for (i=0; i<G.handCount[thisPlayer]; i++)
-		printf("(%d) ", G.hand[thisPlayer][i]);
+	printf("Hand Content:\nBEFORE:\n");
+	for (i=0; i<testG.handCount[thisPlayer]; i++)
+		printf("(%d) ", testG.hand[thisPlayer][i]);
 	printf("\n");
 	// play adventurer
 	cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 
+	// print hand
+	printf("Hand Content:\nAFTER:\n");
+	for (i=0; i<testG.handCount[thisPlayer]; i++)
+		printf("(%d) ", testG.hand[thisPlayer][i]);
+	printf("\n");
+
 	// compare testG.coins = count G.coins + total coins
 	printf("Coins count = %d, expected = %d\n", testG.coins, G.coins+xtra_coins); 
-	printf("Discarded count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer]+discard_cards+1); 
+	printf("Discarded count = %d, expected = %d\n", testG.discardCount[thisPlayer], G.discardCount[thisPlayer]+discard_cards); 
 	// remember to discard adventure card
 	if (testG.coins != (G.coins+xtra_coins)) 
 		printf("FAILED - Invalid coin count\n");
-	if (testG.discardCount[thisPlayer] != (G.discardCount[thisPlayer]+discard_cards+1)) 
+	if (testG.discardCount[thisPlayer] != (G.discardCount[thisPlayer]+discard_cards)) 
 		printf("FAILED - Invalid discarded card count\n");
 
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);

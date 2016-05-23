@@ -55,9 +55,9 @@ int main() {
 
 // ************************************** TEST 2 ****************************************************
 		printf("\nSTART TEST 1: Check to see what happens if no treasure cards are left in the deck or discard pile.\n");
-		printf("\tTest 1 has been disabled due to the bug in the card that causes it to crash.\n");
+		//printf("\tTest 1 has been disabled due to the bug in the card that causes it to crash.\n");
 		// Commented out because the infinite loop causes the program to abort
-		/*initializeGame(numPlayers, k, seed, &G);				// init a game state and player cards
+		initializeGame(numPlayers, k, seed, &G);				// init a game state and player cards
 		G.whoseTurn = p;
 		memcpy(G.deck[p], adventurers, sizeof(int) * maxDeckCount); 	// set all cards in deck to adv	
 		G.deckCount[p] = maxDeckCount;
@@ -66,7 +66,7 @@ int main() {
 		G.handCount[p] = 0;	
 		memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-		playAdventurer(p, &G);			// call playAdventurer with current player
+		playAdventurer(&G);			// call playAdventurer with current player
 
 		//check to see two cards were added
 		if(G.handCount[p] != controlG.handCount[p]) {
@@ -79,7 +79,7 @@ int main() {
 				checkDeck(i, G, controlG);		// check deck hasnt changed
 			}
 		}
-		checkSupply(G, controlG);		// check supply hasnt changed*/
+		checkSupply(G, controlG);		// check supply hasnt changed
 
 // ************************************** TEST 2 ****************************************************
 		printf("\nSTART TEST 2: Check to see if we the two treasure cards are being added.\n");
@@ -93,7 +93,7 @@ int main() {
 			G.handCount[p] = handCount;	
 			memcpy(G.hand[p], adventurers, sizeof(int) * handCount); 	// set all cards in deck to copper
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
-			playAdventurer(p, &G);			// call playAdventurer with current player
+			playAdventurer(&G);			// call playAdventurer with current player
 
 			//check to see two cards were added
 			if(G.handCount[p] != controlG.handCount[p] + 2) {
@@ -112,7 +112,7 @@ int main() {
 		}
 
 // ************************************** TEST 3 *********************************************************
-		printf("\nSTART TEST 3: Check to see if we can call the function with another player\n");
+		/*printf("\nSTART TEST 3: Check to see if we can call the function with another player\n");
 
 		for (handCount = 0; handCount <= maxHandCount; handCount++) {
 
@@ -124,20 +124,20 @@ int main() {
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
 			if (p == 0) {
-				playAdventurer(1, &G);			// call playAdventurer with other player
+				playAdventurer(&G);			// call playAdventurer with other player
 				printf("\tCalled playAdventurer with another player besides the current player.\n");
 			}
 			else {
-				playAdventurer(0, &G);
+				playAdventurer(&G);
 				printf("\tCalled playAdventurer with another player besides the current player.\n");
 			}
 
-		}
+		}*/
 
 // ************************************** TEST 4 *********************************************************
 // Check to function works when the deck is empty but cards are in the player's discard pile
 		printf("\nSTART TEST 4: Check to see if its getting cards from the player's discard pile if needed.\n");
-		for (handCount = 0; handCount <= maxHandCount; handCount++) {
+		for (handCount = 2; handCount <= maxHandCount; handCount++) {
 
 			initializeGame(numPlayers, k, seed, &G);				// init a game state and player cards
 			G.whoseTurn = p;
@@ -146,6 +146,7 @@ int main() {
 			memcpy(G.discard[p], coppers, sizeof(int) * maxDeckCount); 	// set all cards in deck to copper		
 			G.handCount[p] = handCount;	
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
+			playAdventurer(&G);
 			
 			//check to see two cards were added
 			if(G.handCount[p] != controlG.handCount[p] + 2) {

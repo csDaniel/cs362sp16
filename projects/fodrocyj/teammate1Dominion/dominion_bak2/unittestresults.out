@@ -1,0 +1,69 @@
+TESTING getWinners():
+-PASSED
+-PASSED
+-PASSED
+-PASSED
+-PASSED
+-PASSED
+-PASSED
+File 'dominion.c'
+Lines executed:38.29% of 551
+Branches executed:46.28% of 417
+Taken at least once:34.77% of 417
+Calls executed:15.22% of 92
+Creating 'dominion.c.gcov'
+
+TESTING fullDeckCount():
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+File 'dominion.c'
+Lines executed:38.29% of 551
+Branches executed:46.28% of 417
+Taken at least once:34.77% of 417
+Calls executed:15.22% of 92
+Creating 'dominion.c.gcov'
+
+TESTING isGameOver():
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+File 'dominion.c'
+Lines executed:38.29% of 551
+Branches executed:46.28% of 417
+Taken at least once:34.77% of 417
+Calls executed:15.22% of 92
+Creating 'dominion.c.gcov'
+
+TESTING scoreFor():
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+ - PASSED
+File 'dominion.c'
+Lines executed:38.29% of 551
+Branches executed:46.28% of 417
+Taken at least once:34.77% of 417
+Calls executed:15.22% of 92
+Creating 'dominion.c.gcov'
+
+TESTING Smithy Card:
+ - PASSED
+ - PASSED
+ - PASSED
+File 'dominion.c'
+Lines executed:38.29% of 551
+Branches executed:46.28% of 417
+Taken at least once:34.77% of 417
+Calls executed:15.22% of 92
+Creating 'dominion.c.gcov'
+

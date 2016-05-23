@@ -1,0 +1,131 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include <time.h>
+        -:    7:#include <unistd.h>
+        -:    8:#include "rngs.h"
+        -:    9:#include <stdlib.h>
+        -:   10:#include "interface.h"
+        -:   11:
+        -:   12:#define TESTCARD "minion"
+        -:   13:
+        -:   14:int callFunction(struct gameState *G, int numPlayers);
+        -:   15:
+        1:   16:int main() {
+        1:   17:  	int seed = 1000;
+        1:   18:	int testCounter = 0;
+        1:   19:	int failedTests = 0;
+        -:   20:	struct gameState G, testG;
+        -:   21:	//start and end variables
+        1:   22:	time_t start = time(NULL);
+        -:   23:	time_t end;
+        -:   24:	//5 minutes
+        1:   25:	time_t seconds = 300; 
+        1:   26:	end = start + seconds;
+        -:   27:	int numPlayers;
+        1:   28:	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
+        -:   29:			sea_hag, tribute, smithy, council_room};
+        1:   30:	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
+        -:   31:	//get random number of players
+ 48304743:   32:	while(start < end){
+ 48304741:   33:		testCounter++;
+        -:   34:		//wait 1 second
+        -:   35:		//sleep(1);
+        -:   36:		//set numPlayers
+        -:   37:		//printf("\nSetting Random Variables for CardEffect\n");
+        -:   38:		//set num players between 1 and 4
+ 48304741:   39:		numPlayers = rand()%MAX_PLAYERS + 1;
+        -:   40:		//printf("NumPlayers: %d ", numPlayers);
+ 48304741:   41:		assert(numPlayers != 0 && numPlayers < 5); 
+        -:   42:		//initialize a game state and player cards
+ 48304741:   43:		initializeGame(numPlayers, k, seed, &G);
+        -:   44:		//save current state	
+ 48304741:   45:		memcpy(&testG, &G, sizeof(struct gameState));
+        -:   46:		//set up CardEffect function
+ 48304741:   47:		failedTests += callFunction(&G, numPlayers);
+        -:   48:		//reset state
+ 48304741:   49:		memcpy(&G, &testG, sizeof(struct gameState));
+        -:   50:		//reset start	
+ 48304741:   51:		start = time(NULL);
+        -:   52:	}
+        1:   53:	printf("\n TOTAL TESTS RUN: %d\n", testCounter);
+        1:   54:	printf("\n FAILED TESTS: %d\n", failedTests);
+        1:   55:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
+        1:   56:return 0;
+        -:   57:}
+        -:   58:
+ 48304741:   59:int callFunction(struct gameState *G, int numPlayers){
+        -:   60:	int thisPlayer, choice1, choice2, choice3, handPos;
+ 48304741:   61:	int bonus = 0;
+ 48304741:   62:	int faults = 0;
+        -:   63:	int coinsStart, coins, actions;
+        -:   64:	//set current player
+ 48304741:   65:	thisPlayer = rand() % MAX_PLAYERS;
+        -:   66:	//get valid player
+149007954:   67:	while(thisPlayer >= numPlayers){
+ 52398472:   68:		thisPlayer = rand() % MAX_PLAYERS;
+        -:   69:	}
+        -:   70:	//set current player to whose turn
+ 48304741:   71:	G->whoseTurn = thisPlayer;
+        -:   72:	//set choices
+        -:   73:	//choice1 = 1;
+ 48304741:   74:	choice1 = rand() % 2;
+ 48304741:   75:	choice2 = rand() % 2;
+ 48304741:   76:	choice3 = rand() % 2;
+        -:   77:	//choice2 = 1;
+        -:   78:	//printf("choice 1: %d choice 2:  %d choice 3: %d ", choice1, choice2, choice3);
+ 48304741:   79:	assert(choice1 > -2 && choice2 > -2 && choice3 > -2);
+ 48304741:   80:	assert(choice1 < 2 && choice2 < 2 && choice3 < 2);
+        -:   81:	//set hand pos
+ 48304741:   82:	handPos = rand() % MAX_HAND;
+        -:   83:	//printf("HandPos: %d ", handPos);
+ 48304741:   84:	coinsStart = G->coins;
+ 48304741:   85:	actions = G->numActions;
+        -:   86:	//printf("\nCoins Before: %d", coinsStart);
+        -:   87:	//call cardEffect function for minion
+        -:   88:	//printf("\nCall Card Effect\n");
+ 48304741:   89:	cardEffect(minion, choice1, choice2, choice3, G, handPos, &bonus);
+ 48304741:   90:	coins = G->coins;
+        -:   91:	//printf("Coins After: %d\n", coins);
+ 48304741:   92:	if (G->numActions != (actions + 1)){
+        -:   93:		//printf("\nActions Before: %d Actions After: %d\n", actions, G->numActions);
+    #####:   94:		faults++;
+        -:   95:	}
+        -:   96:	//if choice1
+ 48304741:   97:	if (coins - coinsStart != 2 && (choice1 == 1 && choice2 == 0 && choice3 == 0)){
+        -:   98:		//printf("\nCoins Before: %d Coins After: %d\n", coinsStart, coins);
+  6037700:   99:		faults++;
+        -:  100:	}
+        -:  101:	//if choice2
+ 48304741:  102:	if (choice1 == 0 && choice2 == 1 && choice3 == 0){
+        -:  103:		int i;
+ 24097535:  104:		for(i = 0; i < G->numPlayers; i++){
+ 18071473:  105:			if(i == thisPlayer){
+        -:  106:				//printf("Current Player: %d Number of Cards: %d\n", i, G->handCount[i]);	
+  6026062:  107:				if(G->handCount[i] != 4){
+        -:  108:					//printf("\nExpected Hand Count: 4 Actual Hand Count: %d\n", G->handCount[i]);
+  2894779:  109:					faults++;
+        -:  110:				}
+        -:  111:			}
+ 18071473:  112:			if(G->handCount[i] > 4 && i != thisPlayer){
+        -:  113:				//printf("Player Number: %d Expected Hand Count: Less Than 4 Actual Hand Count: %d\n",i ,G->handCount[i]);
+        -:  114:				//printf("Player: %d Number of Cards: %d\n", i, G->handCount[i]);
+  2894779:  115:				faults++;
+        -:  116:			}
+        -:  117:		}
+        -:  118:	}
+ 48304741:  119:	if(faults != 0){
+        -:  120:		//printf("ERROR ERROR!! TEST DID NOT PERFORM AS EXPECTED!!!\n");
+        -:  121:		//printf("There were %d Error(s)\n", faults);
+        -:  122:		//printf("NumPlayers: %d, Current Player: %d, choice1: %d, choice2: %d, choice3: %d HandPos: %d\n\n", numPlayers, thisPlayer, choice1, choice2, choice3, handPos);
+  8932479:  123:		return 1;	
+        -:  124:	}
+ 39372262:  125:	return 0;	
+        -:  126:}

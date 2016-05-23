@@ -51,6 +51,7 @@ int main() {
 
 				printf("handCount = %d, expected = %d\n", G.handCount[p], testG.handCount[p]);
 				assert(G.playedCardCount == testG.playedCardCount);
+                assert(G.handCount[p] > -1);
 
             }
         }

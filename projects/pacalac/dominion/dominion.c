@@ -295,7 +295,7 @@ int buyCard(int supplyPos, struct gameState *state) {
   } else {
     state->phase=1;
     //state->supplyCount[supplyPos]--;
-    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+    gainCard(supplyPos, state, 2, who); //bugfix, used to add card to discard (0) instead of hand(2).
   
     state->coins = (state->coins) - (getCost(supplyPos));
     state->numBuys--;
@@ -649,7 +649,7 @@ int getCost(int cardNumber)
  ***************************************************************************************/
 
 //plays the adventurer card. Draws cards from the deck until 2 treasure cards revealed. Discards other drawn cards.
-int playAdventurer(struct gameState *state)
+int playAdventurer(struct gameState *state, int handPos)
 {
 	int cardDrawn;
 	int drawntreasure=0;
@@ -671,10 +671,13 @@ int playAdventurer(struct gameState *state)
 			z++;
 		}
 	}
-	while(z-1>0){
+	while(z-1>=0){	//bug fix, discard all drawn cards!
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 		z=z-1;
 	}
+	
+	discardCard(handPos, currentPlayer, state, 0);	//bug fix, discard the adventurer!
+	
 	return 0;
 }
 
@@ -690,6 +693,8 @@ int playSmithy(struct gameState *state, int handPos)
 		drawCard(currentPlayer, state);
 	}
 	
+	discardCard(handPos, currentPlayer, state, 0); //bug fix, discard the smithy!
+	
 	return 0;
 }
 
@@ -699,16 +704,20 @@ int playCouncil(struct gameState *state, int handPos)
 	int currentPlayer = whoseTurn(state);
 	int i = 0;
 	
+	//bugfix, increment buys!
+	state->numBuys++;
+	
 	//+4 Cards
 	for (i = 0; i < 4; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
-
+	
 	//Each other player draws a card
 	for (i = 0; i < state->numPlayers; i++)
 	{
-		drawCard(i, state);
+		if(i != currentPlayer)	//bugfix, prevent player from getting cards meant for others!
+			drawCard(i, state);
 	}
 
 	//put played card in played card pile
@@ -750,7 +759,7 @@ int playRemodel(int choice1, int choice2, struct gameState *state, int handPos)
 }
 
 //play Steward card. Choose to gain 2 cards, gain 2 gold, or trash 2 cards in your hand.
-int playSteward(int choice1, struct gameState *state, int handPos)
+int playSteward(int choice1, int choice2, int choice3, struct gameState *state, int handPos)
 {
 	
 	int currentPlayer = whoseTurn(state);
@@ -763,9 +772,14 @@ int playSteward(int choice1, struct gameState *state, int handPos)
 	}
 	else if (choice1 == 2)
 	{
-		state->coins = state->coins++;
+		state->coins += 2; //bugfix, add 2 coins, not 1 to coins
 	}
-
+	else	//bugfix, wasn't giving option of discarding 2 cards
+	{
+	  discardCard(choice2, currentPlayer, state, 1);
+	  discardCard(choice3, currentPlayer, state, 1);
+	}
+	
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
@@ -794,7 +808,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return playAdventurer(state);
+		return playAdventurer(state, handPos);
     /*  while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
@@ -1096,7 +1110,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case steward:
-		return playSteward(choice1, state, handPos);
+		return playSteward(choice1, choice2, choice3, state, handPos);
     /*  if (choice1 == 1)
 	{
 	  //+2 cards
