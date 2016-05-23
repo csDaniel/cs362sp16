@@ -46,7 +46,9 @@ int main() {
 	currHandCount = testG.handCount[thisPlayer];
 	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
 	//run function
-	adventurerCard(thisPlayer, &testG, tempHand);	
+	//printGameState(&testG);
+	adventurerCard(thisPlayer, &testG, tempHand);
+	//printGameState(&testG);	
 	//check hand count
 	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
 	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
