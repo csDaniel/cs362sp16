@@ -11,6 +11,7 @@ Teammates: Osbaldo Esquivel, Preston From
 * Bug Fixes
 * Discussion
   - bugs found in tests
+  - severity of bugs
   - unit tests vs random tests
   - how coverage helps
   - code inspection
@@ -171,7 +172,6 @@ Fix: Fixing this bug involved reversing the change that I made for assignment 2,
 
 === DISCUSSION ===
 
-
 *** Bugs Found in Tests! ***
 Upon inspection of the results of the debugged code, I found tests that were still failing. I checked my fixes carefully, then inspected the test. Then I checked the test code and found the problems.
 
@@ -182,6 +182,11 @@ In cardtest2.c, I also found an error in the oracle for the test ensuring that i
 In randomtestcard.c, I found an error as well. oracle2() is a function that checks to ensure that exactly 1 of the card under test has been played. This test was always failing. Debugging the test, I found that it was failing because in fact it was not finding that the card under test had been added to the played card pile. Instead, it was always finding the Adventurer card (in randomtestcard.c, the card under test is the Smithy). I traced the error back to another copy-paste fault in the code configuring the randomized hand--it was stacking the user's hand with Adventurer cards, not Smithy cards. This bug was fixed simply by changing the card being added to the randomized hand to a Smithy.
 
 Lesson learned! Of course, all code is subject to buts--and test code is, of course, no different. Once I had debugged the dominion code, I ended up using it as the "test" code for my unit tests and random tests, used the dominion code to localize the faults in my test code. I fixed these errors in the tests and re-ran them and found that my debugged code now passed. The results can be seen in "unittestresults_debugged.out", "randomtestadventurer_debugged.out", and "randomtestcard_debugged.out".
+
+
+
+*** Severity of Bugs ***
+Since this is not a production application, nor one that we have an explicit specification for (except, perhaps, the game rules), aside from bugs that make the program crash outright (e.g. segmentation faults), there is not a clear metric for accurately assessing the severity of the bugs. However, what we know is that this program is a game. And the game has rules. In my assessment, the bugs that were the most severe were those that caused the program to crash. The next most severe were those that broke game rules (e.g. not discarding cards, taking too many cards, etc.) so as to give a player an advantage (e.g. drawing too many cards when playing the Smithy) or cause the player a disadvantage (e.g. removing cards from his deck). I did not actually find any that I would classify this way, but I would say that the least severe category would be bugs that alter the game state in a way that does not confer any advantage.
 
 
 

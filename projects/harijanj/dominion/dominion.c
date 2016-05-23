@@ -581,38 +581,39 @@ int drawCard(int player, struct gameState *state)
 }
 
 //--------------------------------------------
-void adventurerCard(struct gameState *state){
+void adventurerCard(struct gameState *state, int handPos){
   int z = 0;
   int drawntreasure = 0;
   int currentPlayer = whoseTurn(state);
   int temphand[MAX_HAND];
   int cardDrawn;
 
-  while(drawntreasure<3){
+  while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
         shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
     cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-    if (cardDrawn == silver || cardDrawn == gold)
+    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
       drawntreasure++;
     else{
       temphand[z]=cardDrawn;
       state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
       z++;
     }
-    }
-    while(z-1>=0){
+  }
+  while(z-1>=0){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
-    }
+  }
+  discardCard(handPos, currentPlayer, state, 0);
 }
 
 void smithyCard(struct gameState *state, int handPos){
   int i;
   int currentPlayer = whoseTurn(state);
 
-  for (i = 0; i < 5; i++) {
+  for (i = 0; i < 3; i++) {
     drawCard(currentPlayer, state);
   }
       
@@ -624,12 +625,12 @@ void councilRoomCard(struct gameState *state, int handPos){
   int i;
   int currentPlayer = whoseTurn(state);
 
-  for (i = 0; i < 2; i++) {
+  for (i = 0; i < 4; i++) {
     drawCard(currentPlayer, state);
   }
       
   //+1 Buy
-  state->numBuys = state->numBuys + 2;
+  state->numBuys = state->numBuys + 1;
       
   //Each other player draws a card
   for (i = 0; i < state->numPlayers; i++) {
@@ -755,7 +756,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     // modified 1
     case adventurer:
-      adventurerCard(state);  
+      adventurerCard(state,handPos);  
       return 0;
 			
     // modified 2  

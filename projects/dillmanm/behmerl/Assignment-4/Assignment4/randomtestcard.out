@@ -1,0 +1,12 @@
+Result for random test for Smith card:
+randometestcard.c:
+This is a random test for the smithy card.
+This test failed. Three cards have not been added.
+This test failed. Three cards have not been added.
+This test failed. Three cards have not been added.
+This test failed. Three cards have not been added.
+This test failed. Three cards have not been added.
+File 'dominion.c'
+Lines executed:20.95% of 568
+Creating 'dominion.c.gcov'
+

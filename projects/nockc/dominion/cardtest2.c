@@ -65,7 +65,7 @@ int main()
             memcpy(previous.deck[turn], initdeck, sizeof(int) * 5);
 			/* The post game state will be a copy of the previous game state with tests ran on it */
             memcpy(&post, &previous, sizeof(struct gameState)); 
-            playAdventurer( &post, turn);
+            playAdventurer( &post, turn, 0);
 			tmp2 = previous.deckCount[turn];
 			tmp3 = previous.discardCount[turn];
 			tmp4 = previous.handCount[turn];
@@ -77,7 +77,7 @@ int main()
 			/* When Adventurer is played, it adds two cards to the players hand. */               
 			r = post.handCount[turn]; 
 			/* If hand count of post state is 2 more than previous state, this test is passed */
-            if (r == previous.handCount[turn] + 2) 
+            if( r < (tmp4+2)) 
             {
                 finalpass++;
             }
@@ -158,7 +158,7 @@ int main()
 #endif   
 			/* If post state deck count didn't decreasse by 2 its fail */
 			r = post.deckCount[turn];
-            if ( (tmp2 - 2) < r  ) 
+            if( r > (tmp2 - 2) ) 
             {
                finalfail++;
             }
@@ -167,7 +167,7 @@ int main()
                 finalpass++;
             }
 #if (NOISY_TEST == 1)
-          	if( (tmp2 - 2) < r  )
+          	if(  r > (tmp2 - 2))
 			{
 				printf("Test Result: Fail. Deck count not decreased by at least 2\r\n");
 				printf("Test Result: actual deckCount: %d, expected deckCount: %d\r\n", r, (tmp2 - 2));
