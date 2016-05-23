@@ -1,3 +1,4 @@
+
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -664,13 +665,13 @@ int getCost(int cardNumber)
 	}
 			
       //discard card from hand
-  discardCard(0, currentPlayer, state, 0);
+  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 
 int playAdventurer(struct gameState *state) {
   int currentPlayer = whoseTurn(state);
-  int drawntreasure = 1;
+  int drawntreasure = 0;
   int z = 0;// this is the counter for the temp hand
   int temphand[MAX_HAND];// moved above the if statement
     
@@ -710,7 +711,7 @@ int playCouncilRoom(struct gameState *state, int handPos) {
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
 	{
-	  if ( i == currentPlayer )
+	  if ( i != currentPlayer )
 	    {
 	      drawCard(i, state);
 	    }
@@ -842,6 +843,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
             
     case council_room:
         playCouncilRoom(state, handPos);
+	return 0;
     /*
       //+4 Cards
       for (i = 0; i < 4; i++)
@@ -996,7 +998,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0; */
-		
+	return 0;		
     case village:
       //+1 Card
       drawCard(currentPlayer, state);
@@ -1061,6 +1063,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case great_hall:
         playGreatHall(state, handPos);
+	return 0;
     /*
       //+1 Card
       drawCard(currentPlayer, state);
@@ -1074,6 +1077,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case minion:
         playMinion(state, handPos, choice1, choice2);
+	return 0;
     /*
       //+1 action
       state->numActions++;
