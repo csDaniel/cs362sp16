@@ -1289,7 +1289,7 @@ void card_adventurer(int currentPlayer, struct gameState *state){
 void card_councilRoom(int currentPlayer, struct gameState *state, int handPos){
     int i;
     //+4 Cards
-    for (i = 0; i < 4; ++i)
+    for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1312,7 +1312,7 @@ void card_councilRoom(int currentPlayer, struct gameState *state, int handPos){
 
 int card_remodel(int currentPlayer, struct gameState *state, int handPos, int choice1, int choice2){
     int i;
-    int j = state->hand[currentPlayer][choice2];  //store card we will trash
+    int j = state->hand[currentPlayer][choice1];  //store card we will trash
 
     if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
 	{
