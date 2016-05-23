@@ -97,10 +97,11 @@ int main(){
             
             preGame.whoseTurn = player;
             
-            int tempHand[500];
+            //int tempHand[500];
             
             /* Play the adventurer card to see the behavior */
-            playAdventurer(0, &preGame, player, tempHand, 0);
+            //playAdventurer(0, &preGame, player, tempHand, 0);
+            adventurerPlay(&preGame);
             
             /* Count the treasure cards Post */
             for(i = 0; i < preGame.handCount[player]; i++){

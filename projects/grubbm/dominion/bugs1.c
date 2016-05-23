@@ -201,3 +201,10 @@ If we removed playAdventurer this would go up!
 We will experience very similar findings for our playSmithy bug testing, as we have only modified 
 a small piece of the code, and for reasons of brevity, I will leave the actual results out of 
 this file. 
+
+For me, this was more of a lesson for moving forward in testing.  I examined the coverage after the fact, 
+as I am not in the habit(yet!) of predicting coverage changes and factoring that into my testing. 
+It was a good lesson to learn to identify places in our code to look for coverage and how it may change. 
+The obvious example is that playAdventurer should (and did) drop to 0% once we fixed our bug. 
+We can also look at things like, we want to see our discardCard function coverage change, as well 
+as our overall coverage of the dominion.c file. 

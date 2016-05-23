@@ -1,0 +1,22 @@
+Testing Smithy
+TEST 1: current player should get three cards
+hand count = 8, expected = 8
+TEST 2:  3 cards should come from his pile
+deck count = 1, expected = 2
+TEST 3: no state change should occur for other player
+next player deck count = 0, expected = 0
+TEST 4: no state change should occur to the victory pile
+estate count = 8, expected = 8
+Test complete.
+Testing Adventurer
+TEST 1: make sure other players deck untouched
+  adventurer: PASS other player's deck count unchanged.
+TEST 2: make sure that correct number of treasure cards are drawn
+  adventurer: PASS correct number of treasure cards were taken from deck.
+TEST 3: make sure that kingdom cards not altered
+  adventurer: PASS kingdom cards were not altered.
+Test Complete
+STARTED: Running random Adventurer Card test
+Test Failure: hand count is not greater after drawing adventurer
+handCount before: 498 
+handCount after: -72
