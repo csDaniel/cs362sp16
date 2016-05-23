@@ -71,6 +71,8 @@ struct gameState {
   int deckCount[MAX_PLAYERS];
   int discard[MAX_PLAYERS][MAX_DECK];
   int discardCount[MAX_PLAYERS];
+  int trash[MAX_PLAYERS * MAX_DECK];
+  int trashCount;
   int playedCards[MAX_DECK];
   int playedCardCount;
 };
@@ -130,7 +132,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
 
-int playAdventurer(struct gameState *state, const int currentPlayer);
+int playAdventurer(struct gameState *state, const int currentPlayer, const int handPos);
 int playSmithy(struct gameState *state, int handPos, const int currentPlayer);
 int playVillage(struct gameState *state, int handPos, const int currentPlayer);
 int playFeast(struct gameState *state, int choice1, const int currentPlayer);

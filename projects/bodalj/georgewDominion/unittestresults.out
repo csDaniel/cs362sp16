@@ -114,11 +114,11 @@ FAIL: [playSmithy] Wrong number of cards in hand after playing smithy
 SUCCESS: [playSmithy] Smithy has been discarded
 
 -- gcov for function 'playSmithy' in cardtest1 --
-Function 'playSmithy'
-Lines executed:100.00% of 2
-No branches
-Calls executed:100.00% of 1
-
+Function 'smithyCard'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
 
 -- cardtest2 results --
 TESTING adventurer card
@@ -136,11 +136,11 @@ SUCCESS: [playAdventurer] No treasure cards gained
 SUCCESS: [playAdventurer] Adventurer card was discarded
 
 -- gcov for function 'playAdventurer' in cardtest2 --
-Function 'playAdventurer'
-Lines executed:100.00% of 2
-No branches
-Calls executed:100.00% of 1
-
+Function 'adventurerCard'
+Lines executed:100.00% of 17
+Branches executed:100.00% of 12
+Taken at least once:91.67% of 12
+Calls executed:100.00% of 2
 
 -- cardtest3 results --
 TESTING village card
@@ -164,10 +164,10 @@ SUCCESS: [playGreatHall] correctly drew [1] card(s)
 SUCCESS: [playGreatHall] buy count increased by [0]
 
 -- gcov for function 'playGreatHall' in cardtest4 --
-Function 'playGreatHall'
-Lines executed:100.00% of 2
+Function 'greatHallCard'
+Lines executed:100.00% of 5
 No branches
-Calls executed:100.00% of 1
+Calls executed:100.00% of 2
 
 
 

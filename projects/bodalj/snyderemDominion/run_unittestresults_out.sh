@@ -43,7 +43,7 @@ echo "-- cardtest1 results --" >> $fout
 ./cardtest1 >> $fout
 echo >> $fout
 echo "-- gcov for function 'playSmithy' in cardtest1 --" >> $fout
-gcov -fb dominion.c | grep -A 4 "^Function 'playSmithy'" >> $fout
+gcov -fb dominion.c | grep -A 4 "^Function 'smithyEffect'" >> $fout
 
 make clean
 make cardtest2
@@ -52,7 +52,7 @@ echo "-- cardtest2 results --" >> $fout
 ./cardtest2 >> $fout
 echo >> $fout
 echo "-- gcov for function 'playAdventurer' in cardtest2 --" >> $fout
-gcov -fb dominion.c | grep -A 4 "^Function 'playAdventurer'" >> $fout
+gcov -fb dominion.c | grep -A 4 "^Function 'adventurerEffect'" >> $fout
 
 make clean
 make cardtest3

@@ -52,7 +52,7 @@ int main() {
   initializeGame(PLAYERS, kingdomCards, randomSeed, &state);
   player = state.whoseTurn;
   cardCounts(&state, countsBefore);
-  adventurerEffect(player, &state);
+  adventurerEffect(player, &state, 0);
   cardCounts(&state, countsAfter);
   otherPlayerCounts(player, countsBefore, countsAfter);
   
@@ -143,7 +143,7 @@ void testFirst(
     state->deck[player][i] = mine;
   }
   
-  adventurerEffect(player, state);
+  adventurerEffect(player, state, 0);
   
   handSizeAfter = state->handCount[player];
   for (i = 0; i < handSizeAfter; i++) {
@@ -185,7 +185,7 @@ void testLast(
   }
   state->deck[player][i] = treasureType;
   
-  adventurerEffect(player, state);
+  adventurerEffect(player, state, 0);
 
   handSizeAfter = state->handCount[player];
   for (i = 0; i < handSizeAfter; i++) {
@@ -233,7 +233,7 @@ void testMiddle(
     }
   }
   
-  adventurerEffect(player, state);
+  adventurerEffect(player, state, 0);
   
   handSizeAfter = state->handCount[player];
   for (i = 0; i < handSizeAfter; i++) {
@@ -274,7 +274,7 @@ void testAll(
     state->deck[player][i] = treasureType;
   }
   
-  adventurerEffect(player, state);
+  adventurerEffect(player, state, 0);
 
   handSizeAfter = state->handCount[player];
   for (i = 0; i < handSizeAfter; i++) {
@@ -313,7 +313,7 @@ void testNone(
     state->deck[player][i] = mine;
   }
   
-  adventurerEffect(player, state);
+  adventurerEffect(player, state, 0);
 
   handSizeAfter = state->handCount[player];
   for (i = 0; i < handSizeAfter; i++) {
@@ -355,7 +355,7 @@ void testEmptyDeck(
   deckSize = state->deckCount[player];
   discardSize = state->discardCount[player];
 
-  adventurerEffect(player, state);
+  adventurerEffect(player, state, 0);
 
   handSizeAfter = state->handCount[player];
   for (i = 0; i < handSizeAfter; i++) {
