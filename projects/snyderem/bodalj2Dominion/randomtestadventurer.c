@@ -72,7 +72,7 @@ int main () {
     memcpy(&postState, &preState, sizeof(struct gameState)); 
 
     // Play the adventurer card
-    adventurerEffect(player, &postState);
+    playAdventurer(player, &postState);
     
     // Check the results
     results = checkResults(&preState, &postState, amountTreasure, cardsDrawn, player);
