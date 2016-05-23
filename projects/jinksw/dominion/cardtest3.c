@@ -42,7 +42,6 @@ int main() {
 		int passCount = 0;
 		int tests = 4;
 		int newActions = 0;	
-		char *cardName = NULL;
 
 		struct gameState G, testG;
 		int k[10] = {village, embargo, adventurer, minion, mine, cutpurse,
@@ -53,10 +52,10 @@ int main() {
 	// initialize a game state and player cards
 	initializeGame(numPlayers, kTest, seed, &G);
 
-	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+	printf("\n----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 	// ----------- TEST 1: Hand Count, Deck Count, and Discard Count ------------- 
-	printf("TEST 1: Hand Count = 5 From new card, Action Count=2, Deck Count = Expected, Discard Count = Expected \n");
+	printf("\nTEST 1: Hand Count = 5 From new card, Action Count=2, Deck Count = Expected, Discard Count = Expected \n");
 
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
@@ -232,13 +231,11 @@ int main() {
 	printf("Player turn = %d, expected = %d\n", testG.whoseTurn, G.whoseTurn );
 	printf("Kingdom cards = ");
 	for( i=0; i< 10; i++ ){ 
-		cardNumToName( kTest[i], cardName );
-		printf( "(%s = %d)", cardName, testG.supplyCount[i] );
+		printf( "(Card: %d, Count = %d)", kTest[i], testG.supplyCount[i] );
 	}
 	printf(", expected = ");
 	for( i=0; i< 10; i++ ){
-		cardNumToName( k[i], cardName );
-		printf( "(%s = %d)", cardName, G.supplyCount[i] );
+		printf( "(Card: %d, count = %d)", k[i], G.supplyCount[i] );
 	}
 	
 	//Tests
@@ -268,13 +265,11 @@ int main() {
 	}
 	for( i=0; i< 10; i++ ){
 		if( !( kTest[i] == k[i] ) ){
-			cardNumToName( k[i], cardName );
-			printf( "Test 4 Failed:Kingdom card %s changed to enum %d \n", cardName, kTest[i] );
+			printf( "Test 4 Failed:Kingdom card %d changed to enum %d \n", k[i], kTest[i] );
 			failFlag = 1;
 		}
 		if( !( testG.supplyCount[i] == G.supplyCount[i] ) ){
-			cardNumToName( k[i], cardName );
-			printf( "Test 4 Failed:Kingdom card count %d for %s changed to %d \n", G.supplyCount[i], cardName, testG.supplyCount[i] );
+			printf( "Test 4 Failed:Kingdom card count %d for card %d changed to %d \n", G.supplyCount[i], k[i], testG.supplyCount[i] );
 			failFlag = 1;
 		}
 

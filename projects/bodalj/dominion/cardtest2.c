@@ -86,10 +86,10 @@ int main() {
     int adventurerPos = drawSpecificCard(state, targetPlayer, adventurer);
    
     // play adventurer from previously acquired position
-    playAdventurer(targetPlayer, state);
+    playAdventurer(targetPlayer, oldCount, state);
     
     // check treasure count has not increased by 2
-    if (countTreasureInHand(state, targetPlayer) != treasureCount) {
+    if (countTreasureInHand(state, targetPlayer) == treasureCount) {
         printf("FAIL: [playAdventurer] We have gained or loss treasure cards\n");
     }
     else {
@@ -237,7 +237,7 @@ void checkPlayAdventurer(struct gameState *state, int targetPlayer) {
     int adventurerPos = drawSpecificCard(state, targetPlayer, adventurer);
    
     // play adventurer from previously acquired position
-    playAdventurer(targetPlayer, state);
+    playAdventurer(targetPlayer, oldCount, state);
     
     // check treasure count has increased by 2
     if (countTreasureInHand(state, targetPlayer) != treasureCount + 2) {

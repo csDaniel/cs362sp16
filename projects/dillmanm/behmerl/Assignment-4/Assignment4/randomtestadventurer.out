@@ -1,0 +1,9 @@
+Result for random test for adventurer card:
+randomtestadventurer.c
+This is a random test for the adventurer card.
+The random test failed: 0 times
+The unit test failed. Wrong amount of cards have been added.
+File 'dominion.c'
+Lines executed:21.83% of 568
+Creating 'dominion.c.gcov'
+

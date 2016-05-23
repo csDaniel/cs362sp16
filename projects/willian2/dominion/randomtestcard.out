@@ -4,32 +4,30 @@ TESTING playSmithy():
 == TEST REPORT FOR playSmithy(), 10000 TESTS
 ===============================================
 Failed tests:
-Smithy player's hand has +3 cards: 9934 failed
-Smithy player's deck has -3 cards: 9934 failed
-Smithy player's discard has +1 cards: 9934 failed
-SPECIAL CASE, smithy player's hand added 0/1 or -1 cards: 66 failed
-SPECIAL CASE, smithy player's deck has 0 cards: 66 failed
-SPECIAL CASE, smithy player's discard has +1 cards: 66 failed
-Another player's hand adjusted: 12 failed
+Smithy player's discard has +1 cards: 9924 failed
+SPECIAL CASE, smithy player's hand added 0/1 or -1 cards: 63 failed
+SPECIAL CASE, smithy player's deck has 0 cards: 63 failed
+SPECIAL CASE, smithy player's discard has +1 cards: 76 failed
+Another player's hand adjusted: 11 failed
 
 File 'dominion.c'
-Lines executed:25.63% of 558
-Branches executed:21.69% of 415
-Taken at least once:19.52% of 415
-Calls executed:11.70% of 94
+Lines executed:36.72% of 561
+Branches executed:43.65% of 417
+Taken at least once:35.73% of 417
+Calls executed:25.00% of 96
 Creating 'dominion.c.gcov'
 
 File 'randomtestcard.c'
-Lines executed:93.81% of 97
+Lines executed:87.63% of 97
 Branches executed:100.00% of 60
-Taken at least once:70.00% of 60
-Calls executed:93.10% of 29
+Taken at least once:73.33% of 60
+Calls executed:86.21% of 29
 Creating 'randomtestcard.c.gcov'
 
         -:    0:Source:randomtestcard.c
         -:    0:Graph:randomtestcard.gcno
         -:    0:Data:randomtestcard.gcda
-        -:    0:Runs:1
+        -:    0:Runs:2
         -:    0:Programs:1
         -:    1:/******************************************************************************
         -:    2:* ASSIGNMENT 4 - randomtestcard.c
@@ -71,117 +69,117 @@ Creating 'randomtestcard.c.gcov'
         -:   38://number of cards in the game as of this build
         -:   39:#define CARDS_IN_GAME 26
         -:   40:
-function main called 1 returned 100% blocks executed 96%
-        1:   41:int main() 
+function main called 2 returned 100% blocks executed 91%
+        2:   41:int main() 
         -:   42:{
         -:   43:	int i, j;
         -:   44:    int test, player;
         -:   45:    int seed, numPlayer;
-        1:   46:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        2:   46:    int k[10] = {adventurer, council_room, feast, gardens, mine
         -:   47:               , remodel, smithy, village, baron, great_hall};
         -:   48:    struct gameState StartState;
         -:   49:	struct gameState TestState;
         -:   50:	int errorflag, generalErrorFlag;
-        1:   51:	srand(time(NULL));
+        2:   51:	srand(time(NULL));
 call    0 returned 100%
 call    1 returned 100%
-        1:   52:	int case1 = 0;
-        1:   53:	int case2 = 0;
-        1:   54:	int case3 = 0;
-        1:   55:	int case4 = 0;
-        1:   56:	int case5 = 0;
-        1:   57:	int case6 = 0;
-        1:   58:	int case7 = 0;
-        1:   59:	int case8 = 0;
-        1:   60:	int case9 = 0;
+        2:   52:	int case1 = 0;
+        2:   53:	int case2 = 0;
+        2:   54:	int case3 = 0;
+        2:   55:	int case4 = 0;
+        2:   56:	int case5 = 0;
+        2:   57:	int case6 = 0;
+        2:   58:	int case7 = 0;
+        2:   59:	int case8 = 0;
+        2:   60:	int case9 = 0;
         -:   61:
-        1:   62:	printf("TESTING playSmithy():\n");
+        2:   62:	printf("TESTING playSmithy():\n");
 call    0 returned 100%
         -:   63:	
-    10001:   64:	for (test = 0; test < NUM_TESTS; test++)
+    20002:   64:	for (test = 0; test < NUM_TESTS; test++)
 branch  0 taken 99%
 branch  1 taken 1% (fallthrough)
         -:   65:	{
-    10000:   66:		seed = rand(); //provide dominion's fancy RNGesus with a random number
+    20000:   66:		seed = rand(); //provide dominion's fancy RNGesus with a random number
 call    0 returned 100%
-    10000:   67:		numPlayer = (rand() % 3) + 2; //no fewer than 2 players, no more than 4
+    20000:   67:		numPlayer = (rand() % 3) + 2; //no fewer than 2 players, no more than 4
 call    0 returned 100%
-    10000:   68:		errorflag = 0;
+    20000:   68:		errorflag = 0;
         -:   69:		
-    10000:   70:		memset(&StartState, 23, sizeof(struct gameState)); //ensures state clear
-    10000:   71:		initializeGame(numPlayer, k, seed, &StartState);
+    20000:   70:		memset(&StartState, 23, sizeof(struct gameState)); //ensures state clear
+    20000:   71:		initializeGame(numPlayer, k, seed, &StartState);
 call    0 returned 100%
         -:   72:		
         -:   73:		//create hands for every player
-    40002:   74:		for (player = 0; player < numPlayer; player++) //for each player
+    79963:   74:		for (player = 0; player < numPlayer; player++) //for each player
 branch  0 taken 75%
 branch  1 taken 25% (fallthrough)
         -:   75:		{
         -:   76:			//give player random number of cards in deck, discard, & hand
-    30002:   77:			StartState.deckCount[player] = floor(Random() * MAX_DECK);
+    59963:   77:			StartState.deckCount[player] = floor(Random() * MAX_DECK);
 call    0 returned 100%
-    30002:   78:			StartState.discardCount[player] = floor(Random() * MAX_DECK);
+    59963:   78:			StartState.discardCount[player] = floor(Random() * MAX_DECK);
 call    0 returned 100%
-    30002:   79:			StartState.handCount[player] = floor(Random() * MAX_HAND);
+    59963:   79:			StartState.handCount[player] = floor(Random() * MAX_HAND);
 call    0 returned 100%
         -:   80:			
-  7517667:   81:			for (i = 0; i < StartState.deckCount[player]; i++)
+ 14973471:   81:			for (i = 0; i < StartState.deckCount[player]; i++)
 branch  0 taken 99%
 branch  1 taken 1% (fallthrough)
         -:   82:			{
         -:   83:				//fill deck with random cards
-  7487665:   84:				StartState.deck[player][i] = floor(Random() * CARDS_IN_GAME);
+ 14913508:   84:				StartState.deck[player][i] = floor(Random() * CARDS_IN_GAME);
 call    0 returned 100%
         -:   85:			}
-  7517508:   86:			for (i = 0; i < StartState.discardCount[player]; i++)
+ 15032828:   86:			for (i = 0; i < StartState.discardCount[player]; i++)
 branch  0 taken 99%
 branch  1 taken 1% (fallthrough)
         -:   87:			{
         -:   88:				//fill discard with random cards
-  7487506:   89:				StartState.discard[player][i] = floor(Random() * CARDS_IN_GAME);
+ 14972865:   89:				StartState.discard[player][i] = floor(Random() * CARDS_IN_GAME);
 call    0 returned 100%
         -:   90:			}
-  7521725:   91:			for (i = 0; i < StartState.handCount[player]; i++)
+ 15026208:   91:			for (i = 0; i < StartState.handCount[player]; i++)
 branch  0 taken 99%
 branch  1 taken 1% (fallthrough)
         -:   92:			{
         -:   93:				//fill hand with random cards
-  7491723:   94:				StartState.hand[player][i] = floor(Random() * CARDS_IN_GAME);
+ 14966245:   94:				StartState.hand[player][i] = floor(Random() * CARDS_IN_GAME);
 call    0 returned 100%
         -:   95:			}
         -:   96:		}
         -:   97:		
         -:   98:		//pick random player, verify smithy is in hand, if not give them one
         -:   99:		//then, save state and call playSmithy
-    10000:  100:		player = rand() % numPlayer;
+    20000:  100:		player = rand() % numPlayer;
 call    0 returned 100%
-    10000:  101:		int smithyInHand = 0;
+    20000:  101:		int smithyInHand = 0;
         -:  102:		int handPos;
-   248712:  103:		for (handPos = 0; handPos < StartState.handCount[player]; handPos++)
+   493483:  103:		for (handPos = 0; handPos < StartState.handCount[player]; handPos++)
 branch  0 taken 99%
 branch  1 taken 1% (fallthrough)
         -:  104:		{
-   248192:  105:			if (StartState.hand[player][handPos] == smithy)
+   492472:  105:			if (StartState.hand[player][handPos] == smithy)
 branch  0 taken 4% (fallthrough)
 branch  1 taken 96%
         -:  106:			{
-     9480:  107:				smithyInHand = 1;
-     9480:  108:				break;
+    18989:  107:				smithyInHand = 1;
+    18989:  108:				break;
         -:  109:			}
         -:  110:		}
-    10000:  111:		if (smithyInHand == 0)
+    20000:  111:		if (smithyInHand == 0)
 branch  0 taken 5% (fallthrough)
 branch  1 taken 95%
         -:  112:		{
-      520:  113:			handPos = floor(Random() * StartState.handCount[player]);
+     1011:  113:			handPos = floor(Random() * StartState.handCount[player]);
 call    0 returned 100%
-      520:  114:			StartState.hand[player][handPos] = smithy;
+     1011:  114:			StartState.hand[player][handPos] = smithy;
         -:  115:		}
         -:  116:
         -:  117:		//save gamestate for comparison
-    10000:  118:		memcpy(&TestState, &StartState, sizeof(struct gameState));
+    20000:  118:		memcpy(&TestState, &StartState, sizeof(struct gameState));
         -:  119:		//call playSmithy()
-    10000:  120:		playSmithy(&TestState, player, handPos);
+    20000:  120:		playSmithy(&TestState, player, handPos);
 call    0 returned 100%
         -:  121:
         -:  122:#if (NOISY_TEST == 1)
@@ -192,14 +190,14 @@ call    0 returned 100%
         -:  127:		printf("Cards: %d hand, %d deck, %d discard\n", StartState.handCount[player], StartState.deckCount[player], StartState.discardCount[player]);
         -:  128:#endif
         -:  129:		//PERFORM TESTS ON ALL PLAYERS
-    40002:  130:		for (j = 0; j < numPlayer; j++)
+    79963:  130:		for (j = 0; j < numPlayer; j++)
 branch  0 taken 75%
 branch  1 taken 25% (fallthrough)
         -:  131:		{
         -:  132:#if (NOISY_TEST == 1)
         -:  133:			printf("TESTING PLAYER #%d\n", j);
         -:  134:#endif	
-    30002:  135:			if (j == player) //current player tested is caller of playSmithy()
+    59963:  135:			if (j == player) //current player tested is caller of playSmithy()
 branch  0 taken 33% (fallthrough)
 branch  1 taken 67%
         -:  136:			{
@@ -208,33 +206,33 @@ branch  1 taken 67%
         -:  139:#endif	
         -:  140:				//test card counts for the test state
         -:  141:				//if there are cards in the deck, test that operations performed normally
-    10000:  142:				if (StartState.deckCount[j] > 3)
+    20000:  142:				if (StartState.deckCount[j] > 3)
 branch  0 taken 99% (fallthrough)
 branch  1 taken 1%
         -:  143:				{
         -:  144:					//test that hand has +2 cards (+3 from deck, -1 smithy card)
-     9934:  145:					if (TestState.handCount[j] != StartState.handCount[j] + 2)
-branch  0 taken 100% (fallthrough)
-branch  1 taken 0%
+    19842:  145:					if (TestState.handCount[j] != StartState.handCount[j] + 2)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
         -:  146:					{
-     9934:  147:						case1++;
-     9934:  148:						errorflag = 1;
+    #####:  147:						case1++;
+    #####:  148:						errorflag = 1;
         -:  149:					}
         -:  150:					//test that deck has -3 cards
-     9934:  151:					if (TestState.deckCount[j] != StartState.deckCount[j] - 3)
-branch  0 taken 100% (fallthrough)
-branch  1 taken 0%
+    19842:  151:					if (TestState.deckCount[j] != StartState.deckCount[j] - 3)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
         -:  152:					{
-     9934:  153:						case2++;
-     9934:  154:						errorflag = 1;
+    #####:  153:						case2++;
+    #####:  154:						errorflag = 1;
         -:  155:					}
         -:  156:					//test that discard has +1 cards (smithy card)
-     9934:  157:					if (TestState.discardCount[j] != StartState.discardCount[j] + 1)
+    19842:  157:					if (TestState.discardCount[j] != StartState.discardCount[j] + 1)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  158:					{
-     9934:  159:						case3++;
-     9934:  160:						errorflag = 1;
+    19842:  159:						case3++;
+    19842:  160:						errorflag = 1;
         -:  161:					}
         -:  162:#if (NOISY_TEST == 1)
         -:  163:					printf("Smithy player has: %d hand, %d deck, %d discard.\n", TestState.handCount[j], TestState.deckCount[j], TestState.discardCount[j]);
@@ -245,28 +243,28 @@ branch  1 taken 0%
         -:  168:				else
         -:  169:				{
         -:  170:					//test that hand has -1 cards (smithy discarded)
-       66:  171:					if (TestState.handCount[j] != StartState.handCount[j] + (StartState.deckCount[j] - 1))
-branch  0 taken 100% (fallthrough)
-branch  1 taken 0%
+      158:  171:					if (TestState.handCount[j] != StartState.handCount[j] + (StartState.deckCount[j] - 1))
+branch  0 taken 82% (fallthrough)
+branch  1 taken 18%
         -:  172:					{
-       66:  173:						case4++;
-       66:  174:						errorflag = 1;
+      130:  173:						case4++;
+      130:  174:						errorflag = 1;
         -:  175:					}
         -:  176:					//test that deck is now empty (either started with 0 cards, or all cards drawn)
-       66:  177:					if (TestState.deckCount[j] != 0)
-branch  0 taken 100% (fallthrough)
-branch  1 taken 0%
+      158:  177:					if (TestState.deckCount[j] != 0)
+branch  0 taken 82% (fallthrough)
+branch  1 taken 18%
         -:  178:					{
-       66:  179:						case5++;
-       66:  180:						errorflag = 1;
+      130:  179:						case5++;
+      130:  180:						errorflag = 1;
         -:  181:					}
         -:  182:					//test that smithy has been discarded
-       66:  183:					if (TestState.discardCount[j] != StartState.discardCount[j] + 1)
+      158:  183:					if (TestState.discardCount[j] != StartState.discardCount[j] + 1)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  184:					{
-       66:  185:						case6++;
-       66:  186:						errorflag = 1;
+      158:  185:						case6++;
+      158:  186:						errorflag = 1;
         -:  187:					}
         -:  188:#if (NOISY_TEST == 1)
         -:  189:					printf("Smithy player has: %d hand, %d deck, %d discard.\n", TestState.handCount[j], TestState.deckCount[j], TestState.discardCount[j]);
@@ -279,16 +277,16 @@ branch  1 taken 0%
         -:  196:			else
         -:  197:			{
         -:  198:				//test handcount
-    20002:  199:				if (TestState.handCount[j] != (StartState.handCount[j]))
+    39963:  199:				if (TestState.handCount[j] != (StartState.handCount[j]))
 branch  0 taken 1% (fallthrough)
 branch  1 taken 99%
         -:  200:				{	
-       12:  201:					case7++;
-       12:  202:					errorflag = 1;
+       13:  201:					case7++;
+       13:  202:					errorflag = 1;
         -:  203:				}
         -:  204:
         -:  205:				//test deckcount
-    20002:  206:				if (TestState.deckCount[j] != (StartState.deckCount[j]))
+    39963:  206:				if (TestState.deckCount[j] != (StartState.deckCount[j]))
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
         -:  207:				{
@@ -297,7 +295,7 @@ branch  1 taken 100%
         -:  210:				}
         -:  211:				
         -:  212:				//test discardcount
-    20002:  213:				if (TestState.discardCount[j] != (StartState.discardCount[j]))
+    39963:  213:				if (TestState.discardCount[j] != (StartState.discardCount[j]))
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
         -:  214:				{
@@ -310,9 +308,9 @@ branch  1 taken 100%
         -:  221:#endif		
         -:  222:			}
         -:  223:		}
-    10000:  224:		if (errorflag = 1)
+    20000:  224:		if (errorflag = 1)
         -:  225:		{
-    10000:  226:			generalErrorFlag = 1;
+    20000:  226:			generalErrorFlag = 1;
         -:  227:#if (NOISY_TEST == 1)
         -:  228:			printf("TEST #%d has failed.\n", test);
         -:  229:#endif	
@@ -320,83 +318,83 @@ branch  1 taken 100%
         -:  231:	}
         -:  232:	
         -:  233:	//give error even if not in NOISY_TEST mode
-        1:  234:	if (generalErrorFlag)
+        2:  234:	if (generalErrorFlag)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  235:	{
-        1:  236:		printf("\n===============================================\n");
+        2:  236:		printf("\n===============================================\n");
 call    0 returned 100%
-        1:  237:		printf("== TEST REPORT FOR playSmithy(), %d TESTS\n", NUM_TESTS);
+        2:  237:		printf("== TEST REPORT FOR playSmithy(), %d TESTS\n", NUM_TESTS);
 call    0 returned 100%
-        1:  238:		printf("===============================================\n");
+        2:  238:		printf("===============================================\n");
 call    0 returned 100%
-        1:  239:		printf("Failed tests:\n");
+        2:  239:		printf("Failed tests:\n");
 call    0 returned 100%
-        1:  240:		if (case1 > 0) 
-branch  0 taken 100% (fallthrough)
-branch  1 taken 0%
+        2:  240:		if (case1 > 0) 
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
         -:  241:		{ 
-        1:  242:			printf("Smithy player's hand has +3 cards: %d failed\n", case1);
-call    0 returned 100%
+    #####:  242:			printf("Smithy player's hand has +3 cards: %d failed\n", case1);
+call    0 never executed
         -:  243:		}
-        1:  244:		if (case2 > 0)
-branch  0 taken 100% (fallthrough)
-branch  1 taken 0%
+        2:  244:		if (case2 > 0)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
         -:  245:		{ 
-        1:  246:			printf("Smithy player's deck has -3 cards: %d failed\n", case2);
-call    0 returned 100%
+    #####:  246:			printf("Smithy player's deck has -3 cards: %d failed\n", case2);
+call    0 never executed
         -:  247:		}
-        1:  248:		if (case3 > 0)
+        2:  248:		if (case3 > 0)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  249:		{ 
-        1:  250:			printf("Smithy player's discard has +1 cards: %d failed\n", case3);
+        2:  250:			printf("Smithy player's discard has +1 cards: %d failed\n", case3);
 call    0 returned 100%
         -:  251:		}
-        1:  252:		if (case4 > 0)
+        2:  252:		if (case4 > 0)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  253:		{ 
-        1:  254:			printf("SPECIAL CASE, smithy player's hand added 0/1 or -1 cards: %d failed\n", case4);
+        2:  254:			printf("SPECIAL CASE, smithy player's hand added 0/1 or -1 cards: %d failed\n", case4);
 call    0 returned 100%
         -:  255:		}
-        1:  256:		if (case5 > 0)
+        2:  256:		if (case5 > 0)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  257:		{ 
-        1:  258:			printf("SPECIAL CASE, smithy player's deck has 0 cards: %d failed\n", case5);
+        2:  258:			printf("SPECIAL CASE, smithy player's deck has 0 cards: %d failed\n", case5);
 call    0 returned 100%
         -:  259:		}
-        1:  260:		if (case6 > 0)
+        2:  260:		if (case6 > 0)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  261:		{ 
-        1:  262:			printf("SPECIAL CASE, smithy player's discard has +1 cards: %d failed\n", case6);
+        2:  262:			printf("SPECIAL CASE, smithy player's discard has +1 cards: %d failed\n", case6);
 call    0 returned 100%
         -:  263:		}
-        1:  264:		if (case7 > 0)
+        2:  264:		if (case7 > 0)
 branch  0 taken 100% (fallthrough)
 branch  1 taken 0%
         -:  265:		{ 
-        1:  266:			printf("Another player's hand adjusted: %d failed\n", case7);
+        2:  266:			printf("Another player's hand adjusted: %d failed\n", case7);
 call    0 returned 100%
         -:  267:		}
-        1:  268:		if (case8 > 0)
+        2:  268:		if (case8 > 0)
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
         -:  269:		{ 
     #####:  270:			printf("Another player's deck adjusted: %d failed\n", case8);
 call    0 never executed
         -:  271:		}
-        1:  272:		if (case9 > 0)
+        2:  272:		if (case9 > 0)
 branch  0 taken 0% (fallthrough)
 branch  1 taken 100%
         -:  273:		{ 
     #####:  274:			printf("Another player's discard adjusted: %d failed\n", case9);
 call    0 never executed
         -:  275:		}
-        1:  276:		printf("\n");
+        2:  276:		printf("\n");
 call    0 returned 100%
         -:  277:	}
-        1:  278:	return 0;
+        2:  278:	return 0;
         -:  279:}

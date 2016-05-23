@@ -162,7 +162,7 @@ int main() {
 						printf( "TEST 2 Failed: %s discardCount = %d, expected = %d\n", stringify( currentCard ), Gtest.discardCount[player], G.discardCount[player] );
 						failFlag = 1;
 					}
-					if( !(Gtest.deckCount[player] == Gtest.deckCount[player]++ ) ){
+					if( !(Gtest.deckCount[player] == (G.deckCount[player])++ ) ){
 						printf( "TEST 2 Failed: %s deckCount = %d, expected = %d\n",stringify( currentCard ), Gtest.deckCount[player], G.deckCount[player] );
 						failFlag = 1;
 					}

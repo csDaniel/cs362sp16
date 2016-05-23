@@ -75,7 +75,7 @@ int main() {
             memcpy(&G, &T, sizeof(struct gameState));
 
             // Play adventurer card
-            result = cardEffect(adventurer, 0, 0, 0, &G, handPos, 0);
+            adventurerCard(player, &G, handPos);
 
             // Fill player's deck
             G.deckCount[player] = 5;

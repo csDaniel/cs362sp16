@@ -1,4 +1,4 @@
-FLAGS = -Wall -fpic -coverage -lm -std=c99
+CFLAGS = -Wall -fpic -coverage -lm
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -35,11 +35,21 @@ runtests: testDrawCard
 	cat dominion.c.gcov >> unittestresult.out
 	
 #unit/card tests	
-unittests: dominion.o unitTest1Grant.c unitTest2Grant.c unitTest3Grant.c unitTest4Grant.c rngs.o $(CFLAGS)
-	gcc -o unittest1 unitTest1Grant.c -g dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest2 unitTest2Grant.c -g dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest3 unitTest3Grant.c -g dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest4 unitTest4Grant.c -g dominion.o rngs.o $(CFLAGS)
+unittests: unitTest1Grant.c unitTest2Grant.c unitTest3Grant.c unitTest4Grant.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest1 -g unitTest1Grant.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest2 -g unitTest2Grant.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest3 -g unitTest3Grant.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest4 -g unitTest4Grant.c dominion.o rngs.o $(CFLAGS)
+
+unittest1: unitTest1Grant.c dominion.o rngs.o
+	gcc -o unittest1 -g  unitTest1Grant.c dominion.o rngs.o $(CFLAGS)
+unittest2: unitTest2Grant.c dominion.o rngs.o
+	gcc -o unittest2 -g  unitTest2Grant.c dominion.o rngs.o $(CFLAGS)
+unittest3: unitTest3Grant.c dominion.o rngs.o
+	gcc -o unittest3 -g  unitTest3Grant.c dominion.o rngs.o $(CFLAGS)
+unittest4: unitTest4Grant.c dominion.o rngs.o
+	gcc -o unittest4 -g  unitTest4Grant.c dominion.o rngs.o $(CFLAGS)
+
 
 cardtests: dominion.o cardtests1Michael.c cardtests2Michael.c cardtests3Michael.c cardtests4Michael.c rngs.o $(CFLAGS)
 	gcc -o cardtest1 cardtest1Michael.c -g dominion.o rngs.o $(CFLAGS)
@@ -58,7 +68,15 @@ unittestresults.out: unittests cardtests dominion.c
 	./cardtest4 >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
-	
+
+customout: unittest1 unittest2 unittest3 unittest4 dominion.o rngs.o
+	./unittest1 > unittestresults.out
+	./unittest2 >> unittestresults.out
+	./unittest3 >> unittestresults.out
+	./unittest4 >> unittestresults.out
+	gcov -b dominion.c >> unittestresults.out
+	cat dominion.c.gcov >> unittestresults.out
+
 #random card tests
 randomtestadventurer: dominion.o randomtestadventurerGrant.c
 	gcc -o randomtestadventurer randomtestadventurerGrant.c -g dominion.o rngs.o $(CFLAGS)

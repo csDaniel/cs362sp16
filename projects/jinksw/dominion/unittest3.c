@@ -18,8 +18,6 @@
 #include "rngs.h"
 #include <assert.h>
 #include <stdlib.h>
-#include "interface.h"
-#include "interface.c"
 
 
 int main() {
@@ -37,8 +35,6 @@ int main() {
 		int failCount = 0;
 		int passList[17] = { 0 };
 		int failList[17] = { 0 };
-		char *cardName = NULL;
-		cardNumToName( 1, cardName );
 		memcpy( &Gest, &G, sizeof(struct gameState));
 		endTurn( &Gest );
 	
@@ -68,13 +64,12 @@ int main() {
 
 	printf( "TEST 3. Embargo Count Shouldn't Change./n" );	
   for( i=0; i<=treasure_map; i++ ){
-		cardNumToName( i, cardName );
 		if( Gest.embargoTokens[i] != G.embargoTokens[i] ){
-			printf( "TEST 3 FAILED. Embargo Count for %s = %d, expected = %d./n", cardName, Gest.embargoTokens[i], G.embargoTokens[i] );
+			printf( "TEST 3 FAILED. Embargo Count for card  %d = %d, expected = %d./n", i, Gest.embargoTokens[i], G.embargoTokens[i] );
 			failList[failCount] = 3;
 			failCount++;
 		} else {
-			printf( "TEST 3 PASSED. Embargo Count for %s = %d, expected = %d./n", cardName, Gest.embargoTokens[i], G.embargoTokens[i] );
+			printf( "TEST 3 PASSED. Embargo Count for card %d = %d, expected = %d./n", i, Gest.embargoTokens[i], G.embargoTokens[i] );
 			passList[passCount] = 3;
 			passCount++;
 		}

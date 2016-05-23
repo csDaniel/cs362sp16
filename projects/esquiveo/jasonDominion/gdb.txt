@@ -1,0 +1,11 @@
+#0  0x000000000040323b in drawCard (player=1817024117, state=0x7fffffff7940) at dominion.c:532
+#1  0x00000000004043eb in cardEffectSmithy (player=1817024117, handPos=10, state=0x7fffffff7940) at dominion.c:850
+#2  0x00000000004046bf in cardEffect (card=13, choice1=0, choice2=0, choice3=0, state=0x7fffffff7940, handPos=10, 
+    bonus=0x0) at dominion.c:900
+#3  0x00000000004013d5 in smithyTest (state=0x7fffffff7940, pos=10, val=0) at cardtest2.c:57
+#4  0x00000000004012ea in main () at cardtest2.c:41
+A debugging session is active.
+
+	Inferior 1 [process 4063] will be killed.
+
+Quit anyway? (y or n) 

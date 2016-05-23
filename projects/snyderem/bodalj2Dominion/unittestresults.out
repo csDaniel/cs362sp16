@@ -1,0 +1,1097 @@
+****************************************************************
+***                        getCost()                         ***
+****************************************************************
+---------- TESTING CARD COSTS ----------
+  SUCCESS: all card costs are correct
+****************************************************************
+***                        shuffle()                         ***
+****************************************************************
+------- TESTING SHUFFLE ON EMPTY DECK -------
+SUCCESS: -1 returned when empty deck is shuffled
+
+------- TESTING SHUFFLE ON STANDARD DECK -------
+
+------- Status of Players' Piles -------
+Player 0	Before	After
+  Hand		5	5
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Player 2	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Player 3	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+SUCCESS: no card piles were changed
+
+------- TESTING THAT CARDS ARE NOT CHANGED -------
+Count of card 0 - Before: 0  After: 0
+Count of card 1 - Before: 2  After: 2
+Count of card 2 - Before: 0  After: 0
+Count of card 3 - Before: 0  After: 0
+Count of card 4 - Before: 3  After: 3
+Count of card 5 - Before: 0  After: 0
+Count of card 6 - Before: 0  After: 0
+Count of card 7 - Before: 0  After: 0
+Count of card 8 - Before: 0  After: 0
+Count of card 9 - Before: 0  After: 0
+SUCCESS: same cards are in the deck after shuffling
+****************************************************************
+***                        discard()                         ***
+****************************************************************
+-------Trash Flag Not Set -------
+ERROR card was not added to discard pile
+SUCCESS: other players' piles were not changed.
+
+Player 0	Before	After
+  Hand		5	4
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 0 After: 1
+
+-------Trash Flag Set -------
+ERROR: Cards played was not increased
+SUCCESS: other players' piles were not changed.
+
+Player 0	Before	After
+  Hand		5	4
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 0 After: 0
+
+------- Discard all cards -------
+CARD 0
+ERROR: card was not added to discard pile
+Player 0	Before	After
+  Hand		5	4
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 0 After: 1
+SUCCESS: other players' piles were not changed.
+
+CARD 1
+ERROR: card was not added to discard pile
+Player 0	Before	After
+  Hand		4	3
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 1 After: 2
+SUCCESS: other players' piles were not changed.
+
+CARD 2
+ERROR: card was not added to discard pile
+Player 0	Before	After
+  Hand		3	2
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 2 After: 3
+SUCCESS: other players' piles were not changed.
+
+CARD 3
+ERROR: card was not added to discard pile
+Player 0	Before	After
+  Hand		2	1
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 3 After: 4
+SUCCESS: other players' piles were not changed.
+
+CARD 4
+ERROR: card was not added to discard pile
+Player 0	Before	After
+  Hand		1	0
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 4 After: 5
+SUCCESS: other players' piles were not changed.
+
+
+------- Attempt to discard when hand count = 0 -------
+ERROR: card was not added to discard pile
+SUCCESS: other players' piles were not changed.
+
+Player 0	Before	After
+  Hand		0	-1
+  Deck		5	5
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 5 After: 6
+****************************************************************
+***                      isGameOver()                        ***
+****************************************************************
+------ TESTING 0 PROVINCE CARDS ------
+SUCCESS: game over when 0 province cards
+------ TESTING 1 PROVINCE CARDS ------
+SUCCESS: game not over when 1 province cards
+------ TESTING COMBINATIONS OF 3 Supply Piles -------
+ERROR: game NOT over when these supply piles are empty: 0, 1, 25
+ERROR: game NOT over when these supply piles are empty: 0, 1, 26
+ERROR: game NOT over when these supply piles are empty: 0, 2, 25
+ERROR: game NOT over when these supply piles are empty: 0, 2, 26
+ERROR: game NOT over when these supply piles are empty: 0, 4, 25
+ERROR: game NOT over when these supply piles are empty: 0, 4, 26
+ERROR: game NOT over when these supply piles are empty: 0, 5, 25
+ERROR: game NOT over when these supply piles are empty: 0, 5, 26
+ERROR: game NOT over when these supply piles are empty: 0, 6, 25
+ERROR: game NOT over when these supply piles are empty: 0, 6, 26
+ERROR: game NOT over when these supply piles are empty: 0, 7, 25
+ERROR: game NOT over when these supply piles are empty: 0, 7, 26
+ERROR: game NOT over when these supply piles are empty: 0, 8, 25
+ERROR: game NOT over when these supply piles are empty: 0, 8, 26
+ERROR: game NOT over when these supply piles are empty: 0, 9, 25
+ERROR: game NOT over when these supply piles are empty: 0, 9, 26
+ERROR: game NOT over when these supply piles are empty: 0, 10, 25
+ERROR: game NOT over when these supply piles are empty: 0, 10, 26
+ERROR: game NOT over when these supply piles are empty: 0, 11, 25
+ERROR: game NOT over when these supply piles are empty: 0, 11, 26
+ERROR: game NOT over when these supply piles are empty: 0, 12, 25
+ERROR: game NOT over when these supply piles are empty: 0, 12, 26
+ERROR: game NOT over when these supply piles are empty: 0, 13, 25
+ERROR: game NOT over when these supply piles are empty: 0, 13, 26
+ERROR: game NOT over when these supply piles are empty: 0, 14, 25
+ERROR: game NOT over when these supply piles are empty: 0, 14, 26
+ERROR: game NOT over when these supply piles are empty: 0, 15, 25
+ERROR: game NOT over when these supply piles are empty: 0, 15, 26
+ERROR: game NOT over when these supply piles are empty: 0, 16, 25
+ERROR: game NOT over when these supply piles are empty: 0, 16, 26
+ERROR: game NOT over when these supply piles are empty: 0, 17, 25
+ERROR: game NOT over when these supply piles are empty: 0, 17, 26
+ERROR: game NOT over when these supply piles are empty: 0, 18, 25
+ERROR: game NOT over when these supply piles are empty: 0, 18, 26
+ERROR: game NOT over when these supply piles are empty: 0, 19, 25
+ERROR: game NOT over when these supply piles are empty: 0, 19, 26
+ERROR: game NOT over when these supply piles are empty: 0, 20, 25
+ERROR: game NOT over when these supply piles are empty: 0, 20, 26
+ERROR: game NOT over when these supply piles are empty: 0, 21, 25
+ERROR: game NOT over when these supply piles are empty: 0, 21, 26
+ERROR: game NOT over when these supply piles are empty: 0, 22, 25
+ERROR: game NOT over when these supply piles are empty: 0, 22, 26
+ERROR: game NOT over when these supply piles are empty: 0, 23, 25
+ERROR: game NOT over when these supply piles are empty: 0, 23, 26
+ERROR: game NOT over when these supply piles are empty: 0, 24, 25
+ERROR: game NOT over when these supply piles are empty: 0, 24, 26
+ERROR: game NOT over when these supply piles are empty: 0, 25, 26
+ERROR: game NOT over when these supply piles are empty: 1, 2, 25
+ERROR: game NOT over when these supply piles are empty: 1, 2, 26
+ERROR: game NOT over when these supply piles are empty: 1, 4, 25
+ERROR: game NOT over when these supply piles are empty: 1, 4, 26
+ERROR: game NOT over when these supply piles are empty: 1, 5, 25
+ERROR: game NOT over when these supply piles are empty: 1, 5, 26
+ERROR: game NOT over when these supply piles are empty: 1, 6, 25
+ERROR: game NOT over when these supply piles are empty: 1, 6, 26
+ERROR: game NOT over when these supply piles are empty: 1, 7, 25
+ERROR: game NOT over when these supply piles are empty: 1, 7, 26
+ERROR: game NOT over when these supply piles are empty: 1, 8, 25
+ERROR: game NOT over when these supply piles are empty: 1, 8, 26
+ERROR: game NOT over when these supply piles are empty: 1, 9, 25
+ERROR: game NOT over when these supply piles are empty: 1, 9, 26
+ERROR: game NOT over when these supply piles are empty: 1, 10, 25
+ERROR: game NOT over when these supply piles are empty: 1, 10, 26
+ERROR: game NOT over when these supply piles are empty: 1, 11, 25
+ERROR: game NOT over when these supply piles are empty: 1, 11, 26
+ERROR: game NOT over when these supply piles are empty: 1, 12, 25
+ERROR: game NOT over when these supply piles are empty: 1, 12, 26
+ERROR: game NOT over when these supply piles are empty: 1, 13, 25
+ERROR: game NOT over when these supply piles are empty: 1, 13, 26
+ERROR: game NOT over when these supply piles are empty: 1, 14, 25
+ERROR: game NOT over when these supply piles are empty: 1, 14, 26
+ERROR: game NOT over when these supply piles are empty: 1, 15, 25
+ERROR: game NOT over when these supply piles are empty: 1, 15, 26
+ERROR: game NOT over when these supply piles are empty: 1, 16, 25
+ERROR: game NOT over when these supply piles are empty: 1, 16, 26
+ERROR: game NOT over when these supply piles are empty: 1, 17, 25
+ERROR: game NOT over when these supply piles are empty: 1, 17, 26
+ERROR: game NOT over when these supply piles are empty: 1, 18, 25
+ERROR: game NOT over when these supply piles are empty: 1, 18, 26
+ERROR: game NOT over when these supply piles are empty: 1, 19, 25
+ERROR: game NOT over when these supply piles are empty: 1, 19, 26
+ERROR: game NOT over when these supply piles are empty: 1, 20, 25
+ERROR: game NOT over when these supply piles are empty: 1, 20, 26
+ERROR: game NOT over when these supply piles are empty: 1, 21, 25
+ERROR: game NOT over when these supply piles are empty: 1, 21, 26
+ERROR: game NOT over when these supply piles are empty: 1, 22, 25
+ERROR: game NOT over when these supply piles are empty: 1, 22, 26
+ERROR: game NOT over when these supply piles are empty: 1, 23, 25
+ERROR: game NOT over when these supply piles are empty: 1, 23, 26
+ERROR: game NOT over when these supply piles are empty: 1, 24, 25
+ERROR: game NOT over when these supply piles are empty: 1, 24, 26
+ERROR: game NOT over when these supply piles are empty: 1, 25, 26
+ERROR: game NOT over when these supply piles are empty: 2, 4, 25
+ERROR: game NOT over when these supply piles are empty: 2, 4, 26
+ERROR: game NOT over when these supply piles are empty: 2, 5, 25
+ERROR: game NOT over when these supply piles are empty: 2, 5, 26
+ERROR: game NOT over when these supply piles are empty: 2, 6, 25
+ERROR: game NOT over when these supply piles are empty: 2, 6, 26
+ERROR: game NOT over when these supply piles are empty: 2, 7, 25
+ERROR: game NOT over when these supply piles are empty: 2, 7, 26
+ERROR: game NOT over when these supply piles are empty: 2, 8, 25
+ERROR: game NOT over when these supply piles are empty: 2, 8, 26
+ERROR: game NOT over when these supply piles are empty: 2, 9, 25
+ERROR: game NOT over when these supply piles are empty: 2, 9, 26
+ERROR: game NOT over when these supply piles are empty: 2, 10, 25
+ERROR: game NOT over when these supply piles are empty: 2, 10, 26
+ERROR: game NOT over when these supply piles are empty: 2, 11, 25
+ERROR: game NOT over when these supply piles are empty: 2, 11, 26
+ERROR: game NOT over when these supply piles are empty: 2, 12, 25
+ERROR: game NOT over when these supply piles are empty: 2, 12, 26
+ERROR: game NOT over when these supply piles are empty: 2, 13, 25
+ERROR: game NOT over when these supply piles are empty: 2, 13, 26
+ERROR: game NOT over when these supply piles are empty: 2, 14, 25
+ERROR: game NOT over when these supply piles are empty: 2, 14, 26
+ERROR: game NOT over when these supply piles are empty: 2, 15, 25
+ERROR: game NOT over when these supply piles are empty: 2, 15, 26
+ERROR: game NOT over when these supply piles are empty: 2, 16, 25
+ERROR: game NOT over when these supply piles are empty: 2, 16, 26
+ERROR: game NOT over when these supply piles are empty: 2, 17, 25
+ERROR: game NOT over when these supply piles are empty: 2, 17, 26
+ERROR: game NOT over when these supply piles are empty: 2, 18, 25
+ERROR: game NOT over when these supply piles are empty: 2, 18, 26
+ERROR: game NOT over when these supply piles are empty: 2, 19, 25
+ERROR: game NOT over when these supply piles are empty: 2, 19, 26
+ERROR: game NOT over when these supply piles are empty: 2, 20, 25
+ERROR: game NOT over when these supply piles are empty: 2, 20, 26
+ERROR: game NOT over when these supply piles are empty: 2, 21, 25
+ERROR: game NOT over when these supply piles are empty: 2, 21, 26
+ERROR: game NOT over when these supply piles are empty: 2, 22, 25
+ERROR: game NOT over when these supply piles are empty: 2, 22, 26
+ERROR: game NOT over when these supply piles are empty: 2, 23, 25
+ERROR: game NOT over when these supply piles are empty: 2, 23, 26
+ERROR: game NOT over when these supply piles are empty: 2, 24, 25
+ERROR: game NOT over when these supply piles are empty: 2, 24, 26
+ERROR: game NOT over when these supply piles are empty: 2, 25, 26
+ERROR: game NOT over when these supply piles are empty: 4, 5, 25
+ERROR: game NOT over when these supply piles are empty: 4, 5, 26
+ERROR: game NOT over when these supply piles are empty: 4, 6, 25
+ERROR: game NOT over when these supply piles are empty: 4, 6, 26
+ERROR: game NOT over when these supply piles are empty: 4, 7, 25
+ERROR: game NOT over when these supply piles are empty: 4, 7, 26
+ERROR: game NOT over when these supply piles are empty: 4, 8, 25
+ERROR: game NOT over when these supply piles are empty: 4, 8, 26
+ERROR: game NOT over when these supply piles are empty: 4, 9, 25
+ERROR: game NOT over when these supply piles are empty: 4, 9, 26
+ERROR: game NOT over when these supply piles are empty: 4, 10, 25
+ERROR: game NOT over when these supply piles are empty: 4, 10, 26
+ERROR: game NOT over when these supply piles are empty: 4, 11, 25
+ERROR: game NOT over when these supply piles are empty: 4, 11, 26
+ERROR: game NOT over when these supply piles are empty: 4, 12, 25
+ERROR: game NOT over when these supply piles are empty: 4, 12, 26
+ERROR: game NOT over when these supply piles are empty: 4, 13, 25
+ERROR: game NOT over when these supply piles are empty: 4, 13, 26
+ERROR: game NOT over when these supply piles are empty: 4, 14, 25
+ERROR: game NOT over when these supply piles are empty: 4, 14, 26
+ERROR: game NOT over when these supply piles are empty: 4, 15, 25
+ERROR: game NOT over when these supply piles are empty: 4, 15, 26
+ERROR: game NOT over when these supply piles are empty: 4, 16, 25
+ERROR: game NOT over when these supply piles are empty: 4, 16, 26
+ERROR: game NOT over when these supply piles are empty: 4, 17, 25
+ERROR: game NOT over when these supply piles are empty: 4, 17, 26
+ERROR: game NOT over when these supply piles are empty: 4, 18, 25
+ERROR: game NOT over when these supply piles are empty: 4, 18, 26
+ERROR: game NOT over when these supply piles are empty: 4, 19, 25
+ERROR: game NOT over when these supply piles are empty: 4, 19, 26
+ERROR: game NOT over when these supply piles are empty: 4, 20, 25
+ERROR: game NOT over when these supply piles are empty: 4, 20, 26
+ERROR: game NOT over when these supply piles are empty: 4, 21, 25
+ERROR: game NOT over when these supply piles are empty: 4, 21, 26
+ERROR: game NOT over when these supply piles are empty: 4, 22, 25
+ERROR: game NOT over when these supply piles are empty: 4, 22, 26
+ERROR: game NOT over when these supply piles are empty: 4, 23, 25
+ERROR: game NOT over when these supply piles are empty: 4, 23, 26
+ERROR: game NOT over when these supply piles are empty: 4, 24, 25
+ERROR: game NOT over when these supply piles are empty: 4, 24, 26
+ERROR: game NOT over when these supply piles are empty: 4, 25, 26
+ERROR: game NOT over when these supply piles are empty: 5, 6, 25
+ERROR: game NOT over when these supply piles are empty: 5, 6, 26
+ERROR: game NOT over when these supply piles are empty: 5, 7, 25
+ERROR: game NOT over when these supply piles are empty: 5, 7, 26
+ERROR: game NOT over when these supply piles are empty: 5, 8, 25
+ERROR: game NOT over when these supply piles are empty: 5, 8, 26
+ERROR: game NOT over when these supply piles are empty: 5, 9, 25
+ERROR: game NOT over when these supply piles are empty: 5, 9, 26
+ERROR: game NOT over when these supply piles are empty: 5, 10, 25
+ERROR: game NOT over when these supply piles are empty: 5, 10, 26
+ERROR: game NOT over when these supply piles are empty: 5, 11, 25
+ERROR: game NOT over when these supply piles are empty: 5, 11, 26
+ERROR: game NOT over when these supply piles are empty: 5, 12, 25
+ERROR: game NOT over when these supply piles are empty: 5, 12, 26
+ERROR: game NOT over when these supply piles are empty: 5, 13, 25
+ERROR: game NOT over when these supply piles are empty: 5, 13, 26
+ERROR: game NOT over when these supply piles are empty: 5, 14, 25
+ERROR: game NOT over when these supply piles are empty: 5, 14, 26
+ERROR: game NOT over when these supply piles are empty: 5, 15, 25
+ERROR: game NOT over when these supply piles are empty: 5, 15, 26
+ERROR: game NOT over when these supply piles are empty: 5, 16, 25
+ERROR: game NOT over when these supply piles are empty: 5, 16, 26
+ERROR: game NOT over when these supply piles are empty: 5, 17, 25
+ERROR: game NOT over when these supply piles are empty: 5, 17, 26
+ERROR: game NOT over when these supply piles are empty: 5, 18, 25
+ERROR: game NOT over when these supply piles are empty: 5, 18, 26
+ERROR: game NOT over when these supply piles are empty: 5, 19, 25
+ERROR: game NOT over when these supply piles are empty: 5, 19, 26
+ERROR: game NOT over when these supply piles are empty: 5, 20, 25
+ERROR: game NOT over when these supply piles are empty: 5, 20, 26
+ERROR: game NOT over when these supply piles are empty: 5, 21, 25
+ERROR: game NOT over when these supply piles are empty: 5, 21, 26
+ERROR: game NOT over when these supply piles are empty: 5, 22, 25
+ERROR: game NOT over when these supply piles are empty: 5, 22, 26
+ERROR: game NOT over when these supply piles are empty: 5, 23, 25
+ERROR: game NOT over when these supply piles are empty: 5, 23, 26
+ERROR: game NOT over when these supply piles are empty: 5, 24, 25
+ERROR: game NOT over when these supply piles are empty: 5, 24, 26
+ERROR: game NOT over when these supply piles are empty: 5, 25, 26
+ERROR: game NOT over when these supply piles are empty: 6, 7, 25
+ERROR: game NOT over when these supply piles are empty: 6, 7, 26
+ERROR: game NOT over when these supply piles are empty: 6, 8, 25
+ERROR: game NOT over when these supply piles are empty: 6, 8, 26
+ERROR: game NOT over when these supply piles are empty: 6, 9, 25
+ERROR: game NOT over when these supply piles are empty: 6, 9, 26
+ERROR: game NOT over when these supply piles are empty: 6, 10, 25
+ERROR: game NOT over when these supply piles are empty: 6, 10, 26
+ERROR: game NOT over when these supply piles are empty: 6, 11, 25
+ERROR: game NOT over when these supply piles are empty: 6, 11, 26
+ERROR: game NOT over when these supply piles are empty: 6, 12, 25
+ERROR: game NOT over when these supply piles are empty: 6, 12, 26
+ERROR: game NOT over when these supply piles are empty: 6, 13, 25
+ERROR: game NOT over when these supply piles are empty: 6, 13, 26
+ERROR: game NOT over when these supply piles are empty: 6, 14, 25
+ERROR: game NOT over when these supply piles are empty: 6, 14, 26
+ERROR: game NOT over when these supply piles are empty: 6, 15, 25
+ERROR: game NOT over when these supply piles are empty: 6, 15, 26
+ERROR: game NOT over when these supply piles are empty: 6, 16, 25
+ERROR: game NOT over when these supply piles are empty: 6, 16, 26
+ERROR: game NOT over when these supply piles are empty: 6, 17, 25
+ERROR: game NOT over when these supply piles are empty: 6, 17, 26
+ERROR: game NOT over when these supply piles are empty: 6, 18, 25
+ERROR: game NOT over when these supply piles are empty: 6, 18, 26
+ERROR: game NOT over when these supply piles are empty: 6, 19, 25
+ERROR: game NOT over when these supply piles are empty: 6, 19, 26
+ERROR: game NOT over when these supply piles are empty: 6, 20, 25
+ERROR: game NOT over when these supply piles are empty: 6, 20, 26
+ERROR: game NOT over when these supply piles are empty: 6, 21, 25
+ERROR: game NOT over when these supply piles are empty: 6, 21, 26
+ERROR: game NOT over when these supply piles are empty: 6, 22, 25
+ERROR: game NOT over when these supply piles are empty: 6, 22, 26
+ERROR: game NOT over when these supply piles are empty: 6, 23, 25
+ERROR: game NOT over when these supply piles are empty: 6, 23, 26
+ERROR: game NOT over when these supply piles are empty: 6, 24, 25
+ERROR: game NOT over when these supply piles are empty: 6, 24, 26
+ERROR: game NOT over when these supply piles are empty: 6, 25, 26
+ERROR: game NOT over when these supply piles are empty: 7, 8, 25
+ERROR: game NOT over when these supply piles are empty: 7, 8, 26
+ERROR: game NOT over when these supply piles are empty: 7, 9, 25
+ERROR: game NOT over when these supply piles are empty: 7, 9, 26
+ERROR: game NOT over when these supply piles are empty: 7, 10, 25
+ERROR: game NOT over when these supply piles are empty: 7, 10, 26
+ERROR: game NOT over when these supply piles are empty: 7, 11, 25
+ERROR: game NOT over when these supply piles are empty: 7, 11, 26
+ERROR: game NOT over when these supply piles are empty: 7, 12, 25
+ERROR: game NOT over when these supply piles are empty: 7, 12, 26
+ERROR: game NOT over when these supply piles are empty: 7, 13, 25
+ERROR: game NOT over when these supply piles are empty: 7, 13, 26
+ERROR: game NOT over when these supply piles are empty: 7, 14, 25
+ERROR: game NOT over when these supply piles are empty: 7, 14, 26
+ERROR: game NOT over when these supply piles are empty: 7, 15, 25
+ERROR: game NOT over when these supply piles are empty: 7, 15, 26
+ERROR: game NOT over when these supply piles are empty: 7, 16, 25
+ERROR: game NOT over when these supply piles are empty: 7, 16, 26
+ERROR: game NOT over when these supply piles are empty: 7, 17, 25
+ERROR: game NOT over when these supply piles are empty: 7, 17, 26
+ERROR: game NOT over when these supply piles are empty: 7, 18, 25
+ERROR: game NOT over when these supply piles are empty: 7, 18, 26
+ERROR: game NOT over when these supply piles are empty: 7, 19, 25
+ERROR: game NOT over when these supply piles are empty: 7, 19, 26
+ERROR: game NOT over when these supply piles are empty: 7, 20, 25
+ERROR: game NOT over when these supply piles are empty: 7, 20, 26
+ERROR: game NOT over when these supply piles are empty: 7, 21, 25
+ERROR: game NOT over when these supply piles are empty: 7, 21, 26
+ERROR: game NOT over when these supply piles are empty: 7, 22, 25
+ERROR: game NOT over when these supply piles are empty: 7, 22, 26
+ERROR: game NOT over when these supply piles are empty: 7, 23, 25
+ERROR: game NOT over when these supply piles are empty: 7, 23, 26
+ERROR: game NOT over when these supply piles are empty: 7, 24, 25
+ERROR: game NOT over when these supply piles are empty: 7, 24, 26
+ERROR: game NOT over when these supply piles are empty: 7, 25, 26
+ERROR: game NOT over when these supply piles are empty: 8, 9, 25
+ERROR: game NOT over when these supply piles are empty: 8, 9, 26
+ERROR: game NOT over when these supply piles are empty: 8, 10, 25
+ERROR: game NOT over when these supply piles are empty: 8, 10, 26
+ERROR: game NOT over when these supply piles are empty: 8, 11, 25
+ERROR: game NOT over when these supply piles are empty: 8, 11, 26
+ERROR: game NOT over when these supply piles are empty: 8, 12, 25
+ERROR: game NOT over when these supply piles are empty: 8, 12, 26
+ERROR: game NOT over when these supply piles are empty: 8, 13, 25
+ERROR: game NOT over when these supply piles are empty: 8, 13, 26
+ERROR: game NOT over when these supply piles are empty: 8, 14, 25
+ERROR: game NOT over when these supply piles are empty: 8, 14, 26
+ERROR: game NOT over when these supply piles are empty: 8, 15, 25
+ERROR: game NOT over when these supply piles are empty: 8, 15, 26
+ERROR: game NOT over when these supply piles are empty: 8, 16, 25
+ERROR: game NOT over when these supply piles are empty: 8, 16, 26
+ERROR: game NOT over when these supply piles are empty: 8, 17, 25
+ERROR: game NOT over when these supply piles are empty: 8, 17, 26
+ERROR: game NOT over when these supply piles are empty: 8, 18, 25
+ERROR: game NOT over when these supply piles are empty: 8, 18, 26
+ERROR: game NOT over when these supply piles are empty: 8, 19, 25
+ERROR: game NOT over when these supply piles are empty: 8, 19, 26
+ERROR: game NOT over when these supply piles are empty: 8, 20, 25
+ERROR: game NOT over when these supply piles are empty: 8, 20, 26
+ERROR: game NOT over when these supply piles are empty: 8, 21, 25
+ERROR: game NOT over when these supply piles are empty: 8, 21, 26
+ERROR: game NOT over when these supply piles are empty: 8, 22, 25
+ERROR: game NOT over when these supply piles are empty: 8, 22, 26
+ERROR: game NOT over when these supply piles are empty: 8, 23, 25
+ERROR: game NOT over when these supply piles are empty: 8, 23, 26
+ERROR: game NOT over when these supply piles are empty: 8, 24, 25
+ERROR: game NOT over when these supply piles are empty: 8, 24, 26
+ERROR: game NOT over when these supply piles are empty: 8, 25, 26
+ERROR: game NOT over when these supply piles are empty: 9, 10, 25
+ERROR: game NOT over when these supply piles are empty: 9, 10, 26
+ERROR: game NOT over when these supply piles are empty: 9, 11, 25
+ERROR: game NOT over when these supply piles are empty: 9, 11, 26
+ERROR: game NOT over when these supply piles are empty: 9, 12, 25
+ERROR: game NOT over when these supply piles are empty: 9, 12, 26
+ERROR: game NOT over when these supply piles are empty: 9, 13, 25
+ERROR: game NOT over when these supply piles are empty: 9, 13, 26
+ERROR: game NOT over when these supply piles are empty: 9, 14, 25
+ERROR: game NOT over when these supply piles are empty: 9, 14, 26
+ERROR: game NOT over when these supply piles are empty: 9, 15, 25
+ERROR: game NOT over when these supply piles are empty: 9, 15, 26
+ERROR: game NOT over when these supply piles are empty: 9, 16, 25
+ERROR: game NOT over when these supply piles are empty: 9, 16, 26
+ERROR: game NOT over when these supply piles are empty: 9, 17, 25
+ERROR: game NOT over when these supply piles are empty: 9, 17, 26
+ERROR: game NOT over when these supply piles are empty: 9, 18, 25
+ERROR: game NOT over when these supply piles are empty: 9, 18, 26
+ERROR: game NOT over when these supply piles are empty: 9, 19, 25
+ERROR: game NOT over when these supply piles are empty: 9, 19, 26
+ERROR: game NOT over when these supply piles are empty: 9, 20, 25
+ERROR: game NOT over when these supply piles are empty: 9, 20, 26
+ERROR: game NOT over when these supply piles are empty: 9, 21, 25
+ERROR: game NOT over when these supply piles are empty: 9, 21, 26
+ERROR: game NOT over when these supply piles are empty: 9, 22, 25
+ERROR: game NOT over when these supply piles are empty: 9, 22, 26
+ERROR: game NOT over when these supply piles are empty: 9, 23, 25
+ERROR: game NOT over when these supply piles are empty: 9, 23, 26
+ERROR: game NOT over when these supply piles are empty: 9, 24, 25
+ERROR: game NOT over when these supply piles are empty: 9, 24, 26
+ERROR: game NOT over when these supply piles are empty: 9, 25, 26
+ERROR: game NOT over when these supply piles are empty: 10, 11, 25
+ERROR: game NOT over when these supply piles are empty: 10, 11, 26
+ERROR: game NOT over when these supply piles are empty: 10, 12, 25
+ERROR: game NOT over when these supply piles are empty: 10, 12, 26
+ERROR: game NOT over when these supply piles are empty: 10, 13, 25
+ERROR: game NOT over when these supply piles are empty: 10, 13, 26
+ERROR: game NOT over when these supply piles are empty: 10, 14, 25
+ERROR: game NOT over when these supply piles are empty: 10, 14, 26
+ERROR: game NOT over when these supply piles are empty: 10, 15, 25
+ERROR: game NOT over when these supply piles are empty: 10, 15, 26
+ERROR: game NOT over when these supply piles are empty: 10, 16, 25
+ERROR: game NOT over when these supply piles are empty: 10, 16, 26
+ERROR: game NOT over when these supply piles are empty: 10, 17, 25
+ERROR: game NOT over when these supply piles are empty: 10, 17, 26
+ERROR: game NOT over when these supply piles are empty: 10, 18, 25
+ERROR: game NOT over when these supply piles are empty: 10, 18, 26
+ERROR: game NOT over when these supply piles are empty: 10, 19, 25
+ERROR: game NOT over when these supply piles are empty: 10, 19, 26
+ERROR: game NOT over when these supply piles are empty: 10, 20, 25
+ERROR: game NOT over when these supply piles are empty: 10, 20, 26
+ERROR: game NOT over when these supply piles are empty: 10, 21, 25
+ERROR: game NOT over when these supply piles are empty: 10, 21, 26
+ERROR: game NOT over when these supply piles are empty: 10, 22, 25
+ERROR: game NOT over when these supply piles are empty: 10, 22, 26
+ERROR: game NOT over when these supply piles are empty: 10, 23, 25
+ERROR: game NOT over when these supply piles are empty: 10, 23, 26
+ERROR: game NOT over when these supply piles are empty: 10, 24, 25
+ERROR: game NOT over when these supply piles are empty: 10, 24, 26
+ERROR: game NOT over when these supply piles are empty: 10, 25, 26
+ERROR: game NOT over when these supply piles are empty: 11, 12, 25
+ERROR: game NOT over when these supply piles are empty: 11, 12, 26
+ERROR: game NOT over when these supply piles are empty: 11, 13, 25
+ERROR: game NOT over when these supply piles are empty: 11, 13, 26
+ERROR: game NOT over when these supply piles are empty: 11, 14, 25
+ERROR: game NOT over when these supply piles are empty: 11, 14, 26
+ERROR: game NOT over when these supply piles are empty: 11, 15, 25
+ERROR: game NOT over when these supply piles are empty: 11, 15, 26
+ERROR: game NOT over when these supply piles are empty: 11, 16, 25
+ERROR: game NOT over when these supply piles are empty: 11, 16, 26
+ERROR: game NOT over when these supply piles are empty: 11, 17, 25
+ERROR: game NOT over when these supply piles are empty: 11, 17, 26
+ERROR: game NOT over when these supply piles are empty: 11, 18, 25
+ERROR: game NOT over when these supply piles are empty: 11, 18, 26
+ERROR: game NOT over when these supply piles are empty: 11, 19, 25
+ERROR: game NOT over when these supply piles are empty: 11, 19, 26
+ERROR: game NOT over when these supply piles are empty: 11, 20, 25
+ERROR: game NOT over when these supply piles are empty: 11, 20, 26
+ERROR: game NOT over when these supply piles are empty: 11, 21, 25
+ERROR: game NOT over when these supply piles are empty: 11, 21, 26
+ERROR: game NOT over when these supply piles are empty: 11, 22, 25
+ERROR: game NOT over when these supply piles are empty: 11, 22, 26
+ERROR: game NOT over when these supply piles are empty: 11, 23, 25
+ERROR: game NOT over when these supply piles are empty: 11, 23, 26
+ERROR: game NOT over when these supply piles are empty: 11, 24, 25
+ERROR: game NOT over when these supply piles are empty: 11, 24, 26
+ERROR: game NOT over when these supply piles are empty: 11, 25, 26
+ERROR: game NOT over when these supply piles are empty: 12, 13, 25
+ERROR: game NOT over when these supply piles are empty: 12, 13, 26
+ERROR: game NOT over when these supply piles are empty: 12, 14, 25
+ERROR: game NOT over when these supply piles are empty: 12, 14, 26
+ERROR: game NOT over when these supply piles are empty: 12, 15, 25
+ERROR: game NOT over when these supply piles are empty: 12, 15, 26
+ERROR: game NOT over when these supply piles are empty: 12, 16, 25
+ERROR: game NOT over when these supply piles are empty: 12, 16, 26
+ERROR: game NOT over when these supply piles are empty: 12, 17, 25
+ERROR: game NOT over when these supply piles are empty: 12, 17, 26
+ERROR: game NOT over when these supply piles are empty: 12, 18, 25
+ERROR: game NOT over when these supply piles are empty: 12, 18, 26
+ERROR: game NOT over when these supply piles are empty: 12, 19, 25
+ERROR: game NOT over when these supply piles are empty: 12, 19, 26
+ERROR: game NOT over when these supply piles are empty: 12, 20, 25
+ERROR: game NOT over when these supply piles are empty: 12, 20, 26
+ERROR: game NOT over when these supply piles are empty: 12, 21, 25
+ERROR: game NOT over when these supply piles are empty: 12, 21, 26
+ERROR: game NOT over when these supply piles are empty: 12, 22, 25
+ERROR: game NOT over when these supply piles are empty: 12, 22, 26
+ERROR: game NOT over when these supply piles are empty: 12, 23, 25
+ERROR: game NOT over when these supply piles are empty: 12, 23, 26
+ERROR: game NOT over when these supply piles are empty: 12, 24, 25
+ERROR: game NOT over when these supply piles are empty: 12, 24, 26
+ERROR: game NOT over when these supply piles are empty: 12, 25, 26
+ERROR: game NOT over when these supply piles are empty: 13, 14, 25
+ERROR: game NOT over when these supply piles are empty: 13, 14, 26
+ERROR: game NOT over when these supply piles are empty: 13, 15, 25
+ERROR: game NOT over when these supply piles are empty: 13, 15, 26
+ERROR: game NOT over when these supply piles are empty: 13, 16, 25
+ERROR: game NOT over when these supply piles are empty: 13, 16, 26
+ERROR: game NOT over when these supply piles are empty: 13, 17, 25
+ERROR: game NOT over when these supply piles are empty: 13, 17, 26
+ERROR: game NOT over when these supply piles are empty: 13, 18, 25
+ERROR: game NOT over when these supply piles are empty: 13, 18, 26
+ERROR: game NOT over when these supply piles are empty: 13, 19, 25
+ERROR: game NOT over when these supply piles are empty: 13, 19, 26
+ERROR: game NOT over when these supply piles are empty: 13, 20, 25
+ERROR: game NOT over when these supply piles are empty: 13, 20, 26
+ERROR: game NOT over when these supply piles are empty: 13, 21, 25
+ERROR: game NOT over when these supply piles are empty: 13, 21, 26
+ERROR: game NOT over when these supply piles are empty: 13, 22, 25
+ERROR: game NOT over when these supply piles are empty: 13, 22, 26
+ERROR: game NOT over when these supply piles are empty: 13, 23, 25
+ERROR: game NOT over when these supply piles are empty: 13, 23, 26
+ERROR: game NOT over when these supply piles are empty: 13, 24, 25
+ERROR: game NOT over when these supply piles are empty: 13, 24, 26
+ERROR: game NOT over when these supply piles are empty: 13, 25, 26
+ERROR: game NOT over when these supply piles are empty: 14, 15, 25
+ERROR: game NOT over when these supply piles are empty: 14, 15, 26
+ERROR: game NOT over when these supply piles are empty: 14, 16, 25
+ERROR: game NOT over when these supply piles are empty: 14, 16, 26
+ERROR: game NOT over when these supply piles are empty: 14, 17, 25
+ERROR: game NOT over when these supply piles are empty: 14, 17, 26
+ERROR: game NOT over when these supply piles are empty: 14, 18, 25
+ERROR: game NOT over when these supply piles are empty: 14, 18, 26
+ERROR: game NOT over when these supply piles are empty: 14, 19, 25
+ERROR: game NOT over when these supply piles are empty: 14, 19, 26
+ERROR: game NOT over when these supply piles are empty: 14, 20, 25
+ERROR: game NOT over when these supply piles are empty: 14, 20, 26
+ERROR: game NOT over when these supply piles are empty: 14, 21, 25
+ERROR: game NOT over when these supply piles are empty: 14, 21, 26
+ERROR: game NOT over when these supply piles are empty: 14, 22, 25
+ERROR: game NOT over when these supply piles are empty: 14, 22, 26
+ERROR: game NOT over when these supply piles are empty: 14, 23, 25
+ERROR: game NOT over when these supply piles are empty: 14, 23, 26
+ERROR: game NOT over when these supply piles are empty: 14, 24, 25
+ERROR: game NOT over when these supply piles are empty: 14, 24, 26
+ERROR: game NOT over when these supply piles are empty: 14, 25, 26
+ERROR: game NOT over when these supply piles are empty: 15, 16, 25
+ERROR: game NOT over when these supply piles are empty: 15, 16, 26
+ERROR: game NOT over when these supply piles are empty: 15, 17, 25
+ERROR: game NOT over when these supply piles are empty: 15, 17, 26
+ERROR: game NOT over when these supply piles are empty: 15, 18, 25
+ERROR: game NOT over when these supply piles are empty: 15, 18, 26
+ERROR: game NOT over when these supply piles are empty: 15, 19, 25
+ERROR: game NOT over when these supply piles are empty: 15, 19, 26
+ERROR: game NOT over when these supply piles are empty: 15, 20, 25
+ERROR: game NOT over when these supply piles are empty: 15, 20, 26
+ERROR: game NOT over when these supply piles are empty: 15, 21, 25
+ERROR: game NOT over when these supply piles are empty: 15, 21, 26
+ERROR: game NOT over when these supply piles are empty: 15, 22, 25
+ERROR: game NOT over when these supply piles are empty: 15, 22, 26
+ERROR: game NOT over when these supply piles are empty: 15, 23, 25
+ERROR: game NOT over when these supply piles are empty: 15, 23, 26
+ERROR: game NOT over when these supply piles are empty: 15, 24, 25
+ERROR: game NOT over when these supply piles are empty: 15, 24, 26
+ERROR: game NOT over when these supply piles are empty: 15, 25, 26
+ERROR: game NOT over when these supply piles are empty: 16, 17, 25
+ERROR: game NOT over when these supply piles are empty: 16, 17, 26
+ERROR: game NOT over when these supply piles are empty: 16, 18, 25
+ERROR: game NOT over when these supply piles are empty: 16, 18, 26
+ERROR: game NOT over when these supply piles are empty: 16, 19, 25
+ERROR: game NOT over when these supply piles are empty: 16, 19, 26
+ERROR: game NOT over when these supply piles are empty: 16, 20, 25
+ERROR: game NOT over when these supply piles are empty: 16, 20, 26
+ERROR: game NOT over when these supply piles are empty: 16, 21, 25
+ERROR: game NOT over when these supply piles are empty: 16, 21, 26
+ERROR: game NOT over when these supply piles are empty: 16, 22, 25
+ERROR: game NOT over when these supply piles are empty: 16, 22, 26
+ERROR: game NOT over when these supply piles are empty: 16, 23, 25
+ERROR: game NOT over when these supply piles are empty: 16, 23, 26
+ERROR: game NOT over when these supply piles are empty: 16, 24, 25
+ERROR: game NOT over when these supply piles are empty: 16, 24, 26
+ERROR: game NOT over when these supply piles are empty: 16, 25, 26
+ERROR: game NOT over when these supply piles are empty: 17, 18, 25
+ERROR: game NOT over when these supply piles are empty: 17, 18, 26
+ERROR: game NOT over when these supply piles are empty: 17, 19, 25
+ERROR: game NOT over when these supply piles are empty: 17, 19, 26
+ERROR: game NOT over when these supply piles are empty: 17, 20, 25
+ERROR: game NOT over when these supply piles are empty: 17, 20, 26
+ERROR: game NOT over when these supply piles are empty: 17, 21, 25
+ERROR: game NOT over when these supply piles are empty: 17, 21, 26
+ERROR: game NOT over when these supply piles are empty: 17, 22, 25
+ERROR: game NOT over when these supply piles are empty: 17, 22, 26
+ERROR: game NOT over when these supply piles are empty: 17, 23, 25
+ERROR: game NOT over when these supply piles are empty: 17, 23, 26
+ERROR: game NOT over when these supply piles are empty: 17, 24, 25
+ERROR: game NOT over when these supply piles are empty: 17, 24, 26
+ERROR: game NOT over when these supply piles are empty: 17, 25, 26
+ERROR: game NOT over when these supply piles are empty: 18, 19, 25
+ERROR: game NOT over when these supply piles are empty: 18, 19, 26
+ERROR: game NOT over when these supply piles are empty: 18, 20, 25
+ERROR: game NOT over when these supply piles are empty: 18, 20, 26
+ERROR: game NOT over when these supply piles are empty: 18, 21, 25
+ERROR: game NOT over when these supply piles are empty: 18, 21, 26
+ERROR: game NOT over when these supply piles are empty: 18, 22, 25
+ERROR: game NOT over when these supply piles are empty: 18, 22, 26
+ERROR: game NOT over when these supply piles are empty: 18, 23, 25
+ERROR: game NOT over when these supply piles are empty: 18, 23, 26
+ERROR: game NOT over when these supply piles are empty: 18, 24, 25
+ERROR: game NOT over when these supply piles are empty: 18, 24, 26
+ERROR: game NOT over when these supply piles are empty: 18, 25, 26
+ERROR: game NOT over when these supply piles are empty: 19, 20, 25
+ERROR: game NOT over when these supply piles are empty: 19, 20, 26
+ERROR: game NOT over when these supply piles are empty: 19, 21, 25
+ERROR: game NOT over when these supply piles are empty: 19, 21, 26
+ERROR: game NOT over when these supply piles are empty: 19, 22, 25
+ERROR: game NOT over when these supply piles are empty: 19, 22, 26
+ERROR: game NOT over when these supply piles are empty: 19, 23, 25
+ERROR: game NOT over when these supply piles are empty: 19, 23, 26
+ERROR: game NOT over when these supply piles are empty: 19, 24, 25
+ERROR: game NOT over when these supply piles are empty: 19, 24, 26
+ERROR: game NOT over when these supply piles are empty: 19, 25, 26
+ERROR: game NOT over when these supply piles are empty: 20, 21, 25
+ERROR: game NOT over when these supply piles are empty: 20, 21, 26
+ERROR: game NOT over when these supply piles are empty: 20, 22, 25
+ERROR: game NOT over when these supply piles are empty: 20, 22, 26
+ERROR: game NOT over when these supply piles are empty: 20, 23, 25
+ERROR: game NOT over when these supply piles are empty: 20, 23, 26
+ERROR: game NOT over when these supply piles are empty: 20, 24, 25
+ERROR: game NOT over when these supply piles are empty: 20, 24, 26
+ERROR: game NOT over when these supply piles are empty: 20, 25, 26
+ERROR: game NOT over when these supply piles are empty: 21, 22, 25
+ERROR: game NOT over when these supply piles are empty: 21, 22, 26
+ERROR: game NOT over when these supply piles are empty: 21, 23, 25
+ERROR: game NOT over when these supply piles are empty: 21, 23, 26
+ERROR: game NOT over when these supply piles are empty: 21, 24, 25
+ERROR: game NOT over when these supply piles are empty: 21, 24, 26
+ERROR: game NOT over when these supply piles are empty: 21, 25, 26
+ERROR: game NOT over when these supply piles are empty: 22, 23, 25
+ERROR: game NOT over when these supply piles are empty: 22, 23, 26
+ERROR: game NOT over when these supply piles are empty: 22, 24, 25
+ERROR: game NOT over when these supply piles are empty: 22, 24, 26
+ERROR: game NOT over when these supply piles are empty: 22, 25, 26
+ERROR: game NOT over when these supply piles are empty: 23, 24, 25
+ERROR: game NOT over when these supply piles are empty: 23, 24, 26
+ERROR: game NOT over when these supply piles are empty: 23, 25, 26
+ERROR: game NOT over when these supply piles are empty: 24, 25, 26
+****************************************************************
+***                         SMITHY                           ***
+****************************************************************
+
+------- Two extra cards in deck -------
+SUCCESS: other players' piles were not changed.
+
+Player 0	Before	After
+  Hand		5	7
+  Deck		5	2
+  Discard	0	0
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+Played Cards -  Before: 0 After: 1
+****************************************************************
+***                      ADVENTURER                          ***
+****************************************************************
+
+------- Status of Other Players' Piles -------
+Player 0 - current player
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+
+------- First Card -------
+	Before	After
+Hand	5	6
+Deck	5	0
+Discard	0	4	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- Middle Card -------
+	Before	After
+Hand	5	6
+Deck	5	2	ERROR - should be 0
+Discard	0	2	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- Last Card -------
+	Before	After
+Hand	5	6
+Deck	5	4	ERROR - should be 0
+Discard	0	0	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- All Treasure Cards -------
+	Before	After
+Hand	5	6	ERROR - should be 7
+Deck	5	4	ERROR - should be 3
+Discard	0	0
+Played	0	0	ERROR - should be 1
+Treasure	1	ERROR - should be 2
+
+------- First Card -------
+	Before	After
+Hand	5	6
+Deck	5	0
+Discard	0	4	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- Middle Card -------
+	Before	After
+Hand	5	6
+Deck	5	2	ERROR - should be 0
+Discard	0	2	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- Last Card -------
+	Before	After
+Hand	5	6
+Deck	5	4	ERROR - should be 0
+Discard	0	0	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- All Treasure Cards -------
+	Before	After
+Hand	5	6	ERROR - should be 7
+Deck	5	4	ERROR - should be 3
+Discard	0	0
+Played	0	0	ERROR - should be 1
+Treasure	1	ERROR - should be 2
+
+------- First Card -------
+	Before	After
+Hand	5	6
+Deck	5	0
+Discard	0	4	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- Middle Card -------
+	Before	After
+Hand	5	6
+Deck	5	2	ERROR - should be 0
+Discard	0	2	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- Last Card -------
+	Before	After
+Hand	5	6
+Deck	5	4	ERROR - should be 0
+Discard	0	0	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	1
+
+------- All Treasure Cards -------
+	Before	After
+Hand	5	6	ERROR - should be 7
+Deck	5	4	ERROR - should be 3
+Discard	0	0
+Played	0	0	ERROR - should be 1
+Treasure	1	ERROR - should be 2
+
+------- No Treasure Cards -------
+	Before	After
+Hand	5	-1	ERROR - should be 5
+Deck	5	0
+Discard	0	11	ERROR - should be 5
+Played	0	0	ERROR - should be 1
+Treasure	0
+
+------- Empty Deck -------
+	Before	After
+Hand	5	3	ERROR - should be 5
+Deck	0	0
+Discard	0	2	ERROR - should be 0
+Played	0	5	ERROR - should be 1
+Treasure	3	ERROR - should be 0
+****************************************************************
+***                      GREAT HALL                          ***
+****************************************************************
+	Before	After
+Hand	5	5
+Deck	5	4
+Discard	0	0	ERROR - should be 1
+Played	0	1
+Actions	1	2
+
+------- Status of Other Players' Piles -------
+Player 0 - current player
+Player 1	Before	After
+  Hand		0	0
+  Deck		10	10
+  Discard	0	0
+SUCCESS: Other players' piles were not changed.
+****************************************************************
+***                     COUNCIL ROOM                         ***
+****************************************************************
+	Before	After
+Hand	5	8
+Deck	5	1
+Discard	0	0	ERROR - should be 1
+Played	0	1
+Buys	1	2
+
+------- Status of Other Players' Piles -------
+Player 0 - current player
+Player 1	Before	After
+  Hand		0	5
+ERROR - should added 1 card
+  Deck		10	5
+ERROR - should drawn 1 card
+  Discard	0	0
+Player 2	Before	After
+  Hand		0	5
+ERROR - should added 1 card
+  Deck		10	5
+ERROR - should drawn 1 card
+  Discard	0	0
+Player 3	Before	After
+  Hand		0	5
+ERROR - should added 1 card
+  Deck		10	5
+ERROR - should drawn 1 card
+  Discard	0	0
+Function 'updateCoins'
+Lines executed:81.82% of 11
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:100.00% of 13
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+No calls
+
+Function 'playSmithy'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'playFeast'
+Lines executed:0.00% of 16
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 5
+
+Function 'playCouncilRoom'
+Lines executed:100.00% of 11
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+Calls executed:100.00% of 3
+
+Function 'playBaron'
+Lines executed:0.00% of 28
+Branches executed:0.00% of 18
+Taken at least once:0.00% of 18
+Calls executed:0.00% of 8
+
+Function 'playAdventurer'
+Lines executed:100.00% of 18
+Branches executed:100.00% of 12
+Taken at least once:100.00% of 12
+Calls executed:100.00% of 2
+
+Function 'playGreatHall'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 2
+
+Function 'playVillage'
+Lines executed:0.00% of 5
+No branches
+Calls executed:0.00% of 2
+
+Function 'cardEffect'
+Lines executed:6.02% of 166
+Branches executed:15.23% of 151
+Taken at least once:1.99% of 151
+Calls executed:6.38% of 47
+
+Function 'getCost'
+Lines executed:100.00% of 30
+Branches executed:100.00% of 28
+Taken at least once:100.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:77.27% of 22
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+Calls executed:100.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:93.55% of 62
+Branches executed:100.00% of 46
+Taken at least once:89.13% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:83.33% of 6
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:36.93% of 566
+Branches executed:37.95% of 419
+Taken at least once:30.79% of 419
+Calls executed:20.62% of 97
+Creating 'dominion.c.gcov'
+

@@ -1,5 +1,6 @@
 /*
 * Modified by James Guerra for Assignment 1 @ 4/10/16
+*modified by James Guerra for assignment 5 @ 5/22/16
 *
 */
 #include "dominion.h"
@@ -771,7 +772,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	    
       j = state->hand[currentPlayer][choice1];  //store card we will trash
 
-      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )  //error found, should be <
+      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) < getCost(choice2) )  //error found, should be < bug 5
 	{
 	  return -1;
 	}
@@ -1274,8 +1275,10 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 int callAdventureCard(int hand[], struct gameState* state, int z, int cardDrawn, int drawntreasure, int currentPlayer)
 {
-	 while(drawntreasure<4){
-	
+	 while(drawntreasure<2){  //bug 1 fixed here 4 ->2
+	if (state->deckCount[currentPlayer] <1){//bug fixed for shuffle if the deck is empty we need to shuffle discard and add to deck
+	  shuffle(currentPlayer, state);
+	}
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
@@ -1296,7 +1299,7 @@ int callAdventureCard(int hand[], struct gameState* state, int z, int cardDrawn,
 int callSmithyCard(int currentPlayer, struct gameState* state, int handPos){
 	//+3 Cards
 	int i =0;
-      for (i = 1; i < 3; i++)
+      for (i = 0; i < 3; i++) //fixed bug 3 1->0 
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1314,7 +1317,7 @@ int callVillageCard(int currentPlayer, struct gameState* state, int handPos){
 			
      
       state->numActions = state->numActions + 2;
-	  drawCard(currentPlayer, state);
+	  //extra drawcard removed bug fixed
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1334,7 +1337,7 @@ int callCouncilRoom(int currentPlayer, struct gameState* state, int handPos){
       state->numBuys++;
 			
       //Each other player draws a card
-      for (i = 0; i > state->numPlayers; i++)
+      for (i = 0; i < state->numPlayers; i++)  //for loop bug 2 fixed
 	{
 	  if ( i != currentPlayer )
 	    {
@@ -1351,7 +1354,9 @@ int callCouncilRoom(int currentPlayer, struct gameState* state, int handPos){
 int callGreatHall(int currentPlayer, struct gameState* state, int handPos){
 	//+1 Card
       drawCard(currentPlayer, state);
-			
+		
+    //fix bug 4, added action when card is played.  
+      state->numActions++;		
 			
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
