@@ -12,9 +12,10 @@ int testSmithy(struct gameState *state, int handPos){
 	struct gameState *testState = newGame();
 	memcpy(testState, state, sizeof(struct gameState));
 
-	playSmithy(state, handPos);
-	//assert(testState->handCount[testState->whoseTurn]+2 == state->handCount[state->whoseTurn]);
-	assert(testState->discardCount[testState->whoseTurn]+1 == state->discardCount[state->whoseTurn]);
+	smithyCard(state, state->whoseTurn, handPos);
+	
+	assert(testState->handCount[testState->whoseTurn]+2 == state->handCount[state->whoseTurn]);
+	//assert(testState->discardCount[testState->whoseTurn]+1 == state->discardCount[state->whoseTurn]);
 
 	return 0;
 }
