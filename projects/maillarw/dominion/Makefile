@@ -1,6 +1,11 @@
 CFLAGS = -Wall -fpic -coverage -lm
 MYFLAGS = -fpic -coverage -lm -w
 
+
+me: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4 
+	gcc -std=c99 dominion.o randomtestadventurer.c rngs.c -o randomtestadventurer $(MYFLAGS)
+	gcc -std=c99 dominion.o randomtestcard.c rngs.c -o randomtestcard $(MYFLAGS)
+	
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -37,7 +42,7 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest[1-4] cardtest[1-4] randomtestcard randomtestadventurer
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so unittest[1-4] cardtest[1-4] randomtestcard randomtestadventurer badTestDrawCard testDrawCard
 
 unit1:
 	gcc -std=c99 dominion.o unittest1.c rngs.c -o unittest1 $(MYFLAGS)
@@ -95,6 +100,6 @@ runUnitThenRandom: dominion.o unit1 unit2 unit3 unit4 card1 card2 card3 card4
 	./cardtest4
 	./randomtestadventurer
 	./randomtestcard
-	printf "\n************************    Begin Coverage Information   **********************\n\n" >> combinedRandomUnit.out
-	gcov -b -f dominion.c >> combinedRandomUnit.out
-	cat dominion.c.gcov >> combinedRandomUnit.out
+	printf "\n************************    Begin Coverage Information   **********************\n\n"
+	gcov -b -f dominion.c
+	cat dominion.c.gcov 

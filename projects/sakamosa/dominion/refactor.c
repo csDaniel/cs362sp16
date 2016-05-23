@@ -8,7 +8,7 @@ function playAdventurer:
     No treasure cards will be added to the players hand.
 
 function playSmithy:
-    Trash flag is set to true fo smithy card will be trashed instead of discarded
+    Trash flag is set to true so smithy card will be trashed instead of discarded
     This will occur anytime the card is played. The number of cards in the discard pile will be less than 
     expected.
 

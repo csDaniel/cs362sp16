@@ -4,87 +4,237 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
-
-#define TESTCARD "great_hall"
-int compareTest(int, int);
 
 
 int main() {
-  	int testResult=0;
-	int numPlayers=3; 
-	int p,r; 
-	int seed = 1000;
-	struct gameState G, testG; 
-	int bonus =0;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, great_hall};
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+	int player1 = 0;
+	int player2 = 1;
+	int handPos = 0;
+	int gameOver;
+	int tempCard;
+	int bonus;
+	int c1, c2, c3 = 0;
+	int blah;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G, RESET;
 	
-	int choice1=0, choice2=0, choice3 =0;
-  
-	printf("-------------------CARDTEST4: great_hall--------------------\n");
+	initializeGame(numPlayer, k, seed, &RESET);
+	RESET.hand[player1][handPos] = smithy;
+	memcpy(&G, &RESET, sizeof(struct gameState));	
 	
-	r = initializeGame(numPlayers, k, seed, &G); // initialize a new game
- 
-	memcpy(&testG, &G, sizeof(struct gameState));
-	
-	//evaluate +1 card +1 action
-	for(p=0; p<numPlayers; p++){
-		//copy gamestate to copy
-		memcpy(&testG, &G, sizeof(struct gameState));
-		printf("\nPlayer %d\n", p);		
-		
-		r= cardEffect(great_hall, choice1, choice2, choice3, &testG, 0, &bonus);		
-		printf("New Deck Count: %d,  Expected Deck Count: %d\n", testG.deckCount[p], G.deckCount[p]-1);	
-		//assert (testG.deckCount[p] == G.deckCount[p]-1 ); //deck count 
-		testResult += compareTest( testG.deckCount[p], G.deckCount[p]-1);
-		
-		printf("new HandCount: %d,  Expected HandCount: %d\n", testG.handCount[p], G.handCount[p]); 		
-		//assert ( testG.handCount[p] == G.handCount[p]); //hand count 
-		testResult += compareTest( testG.handCount[p], G.handCount[p]);
-		
-		printf("New Played Card Count:  %d,  Expected Played Card Count: %d\n", testG.playedCardCount, G.playedCardCount+1);	
-		//assert (testG.playedCardCount == G.playedCardCount+1);  //played card 
-		testResult += compareTest(testG.playedCardCount, G.playedCardCount+1);
-		
-		printf("Number of Actions: %d, Expected Actions:%d\n", testG.numActions, G.numActions+1);		
-		//assert (  testG.numActions == G.numActions+1);
-		testResult += compareTest(testG.numActions, G.numActions+1);
-		
-		printf("Number of Buys: %d, Expected number of Buys:%d\n", G.numBuys, testG.numBuys);
-		//assert ( G.numBuys == testG.numBuys);
-		testResult += compareTest(G.numBuys, testG.numBuys);		
-			
-		printf("Expected Return Value from card effect: %d, Actual Value: %d\n", 0, r);	
-		testResult += compareTest( r,0);	
-		
-		G.whoseTurn++;
-	}
-	
-	
-	//evaluate plus 2 actions 
-		//print out results
-	if(testResult ==0){
-		printf("\nCardtest 4 Test Passed!\n");		
+	//Test stewardCard function
+	printf("~~~Testing stewardCard Function~~~\n");
+
+	printf("--------------------------------------------\n");
+	cardEffect(steward, 1, c2, c3, &G, handPos, &bonus);
+	printf("Test if player 1 hand count increase by 1 (+2 cards -1 played card) (choice1 = 1)\n");
+//	printf("Before G.handCount = %d\n",G.handCount[player1]);
+//	cardEffect(steward, 1, c2, c3, &G, handPos, &bonus);
+	printf("After G.handCount = %d, expected = 6\n", G.handCount[player1]);
+	if (G.handCount[player1] == 6){
+		printf("PASSED.\n");
 	}
 	else{
-		printf("\nCardtest 4 Test Failed\n");
-	}	
-	printf("--------------------------------------------------\n");	 
- 
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 deck count decrease by 2 (choice1 = 1)\n");
+	printf("After G.deckCount = %d, expected = 3\n", G.deckCount[player1]);
+	if (G.deckCount[player1] == 3){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 coins stay the same (choice1 = 1)\n");
+	printf("After G.coins = %d, expected = 4\n", G.coins);
+	if (G.coins == 4){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if played pile increase by 1 (choice1 = 1)\n");
+	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+	if (G.playedCardCount == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 discard pile stayed the same (choice1 = 1)\n");
+	printf("After G.discardCount[player1] = %d, expected = 0\n", G.discardCount[player1]);
+	if (G.discardCount[player1]	== 0){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 numActions stayed the same (choice1 = 1)\n");
+	printf("After G.numActions = %d, expected = 1\n", G.numActions);
+	if (G.numActions == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 numBuys stayed the same (choice1 = 1)\n");
+	printf("After G.numBuys = %d, expected = 1\n", G.numBuys);
+	if (G.numBuys == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+
+	cardEffect(steward, 2, c2, c3, &G, handPos, &bonus);
+	printf("Test if player 1 hand count stayed the same (choice1 = 2)\n");
+	printf("After G.handCount = %d, expected = 5\n", G.handCount[player1]);
+	if (G.handCount[player1] == 5){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 deck count stayed the same (choice1 = 2)\n");
+	printf("After G.deckCount = %d, expected = 5\n", G.deckCount[player1]);
+	if (G.deckCount[player1] == 5){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 coins increase by 2 (choice1 = 2)\n");
+	printf("After G.coins = %d, expected = 6\n", G.coins);
+	if (G.coins == 6){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if played pile increase by 1 (choice1 = 2)\n");
+	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+	if (G.playedCardCount == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 discard pile stayed the same (choice1 = 2)\n");
+	printf("After G.discardCount[player1] = %d, expected = 0\n", G.discardCount[player1]);
+	if (G.discardCount[player1]	== 0){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 numActions stayed the same (choice1 = 2)\n");
+	printf("After G.numActions = %d, expected = 1\n", G.numActions);
+	if (G.numActions == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 numBuys stayed the same (choice1 = 2)\n");
+	printf("After G.numBuys = %d, expected = 1\n", G.numBuys);
+	if (G.numBuys == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+	
+	cardEffect(steward, 3, 0, 1, &G, handPos, &bonus);
+	printf("Test if player 1 hand count decrease by 3 (-2 cards -1 played card) (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.handCount = %d, expected = 2\n", G.handCount[player1]);
+	if (G.handCount[player1] == 2){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 deck count stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.deckCount = %d, expected = 5\n", G.deckCount[player1]);
+	if (G.deckCount[player1] == 5){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 coins stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.coins = %d, expected = 4\n", G.coins);
+	if (G.coins == 4){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if played pile increase by 1 (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+	if (G.playedCardCount == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 discard pile stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.discardCount[player1] = %d, expected = 0\n", G.discardCount[player1]);
+	if (G.discardCount[player1]	== 0){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 numActions stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.numActions = %d, expected = 1\n", G.numActions);
+	if (G.numActions == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("\nTest if player 1 numBuys stayed the same (choice1 = 3 choice2 = 0 choice = 1)\n");
+	printf("After G.numBuys = %d, expected = 1\n", G.numBuys);
+	if (G.numBuys == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+
 	return 0;
- 
 }
-
-		
-int compareTest(int a, int b){
-	if(a == b){
-		printf("PASSED!\n");
-		return 0; 	
-	}
-	else{
-		printf("FAILED!\n");
-		return 1;		
-	}	
-}
-

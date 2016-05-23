@@ -12,12 +12,12 @@ Five Cards converted to functions from switch cases:
   cases for all of the above cards have been replaced with corresponding function returns, e.g. `return playAdventurerCard(state)`
 
   --- Bugs Introduced ---
-  (1) Adventurer - `int drawntreasure` on line 650 is not initialized to zero. So it is presumably referencing a memory value when it is incremented.
+  (1) Adventurer (FIXED) - `int drawntreasure` on line 650 is not initialized to zero. So it is presumably referencing a memory value when it is incremented.
       This changes the behavior of the game in a big way but it's not easy to spot.
       *** ASSIGNMENT 3 UPDATE: cardtest1.c has confirmed that this card basically has no effect anymore because the while loop for drawntreasure never
           gets entered into. The player is no longer able to draw cards, making adventurer useless.
 
-  (2) Smithy - Changed the for loop on line 682 so i is set to 0 but the condition is if i > 3. This makes drawCard() never executed because the false
+  (2) Smithy (FIXED) - Changed the for loop on line 682 so i is set to 0 but the condition is if i > 3. This makes drawCard() never executed because the false
       condition skips the loop body. Also, the discardCard() trashFlag has been set to 1 on line 687 so the card will be trashed each time instead of put
       in the played pile.
       *** ASSIGNMENT 3 UPDATE: cardtest2.c has confirmed that smithy is also broken; it has null effect because cards are not drawn. The trashFlag bug,
@@ -27,7 +27,7 @@ Five Cards converted to functions from switch cases:
       the conditionals check. It is difficult to say what this does exactly, but my theory is that it lets you get your first choice card even if it is
       supposed to be unavailable / unaffordable.
 
-  (4) Village - on line 751 - changed number of actions to be a for loop instead of + 2. This would work perfectly, but instead I set the conditional
+  (4) Village (FIXED) - on line 751 - changed number of actions to be a for loop instead of + 2. This would work perfectly, but instead I set the conditional
       to be less than 3 instead of less than 2. This might slip past someone who forgets to count from 0.
       *** ASSIGNMENT 3 UPDATE: cardtest3.c confirms that this bug is working as expected. The player gets +3 actions instead of 2.
 

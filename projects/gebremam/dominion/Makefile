@@ -71,13 +71,13 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 	cat dominion.c.gcov >> unittestresults.out
 
 randomtestadventurer.out: randomtestadventurer
-	./randomtestadventurer >> randomtestadventurer.out
+	./randomtestadventurer &> randomtestadventurer.out
 	gcov dominion.c >> randomtestadventurer.out
 	cat dominion.c.gcov >> randomtestadventurer.out
 
 
 randomtestcard.out: randomtestcard
-	./randomtestcard >> randomtestcard.out
+	./randomtestcard &> randomtestcard.out
 	gcov dominion.c >> randomtestcard.out
 	cat dominion.c.gcov >> randomtestcard.out
 

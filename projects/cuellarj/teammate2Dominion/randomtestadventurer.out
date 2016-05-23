@@ -1,0 +1,6900 @@
+TEST Adventurer Card.
+
+ TEST 1 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 2 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 3 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 4 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 5 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 6 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 7 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 8 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 9 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 10 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 11 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 12 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 13 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 14 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 15 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 16 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 17 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 18 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 19 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 20 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 21 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 22 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 23 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 24 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 25 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 26 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 27 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 28 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 29 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 30 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 31 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 32 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 33 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 34 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 35 
+
+FAIL: Game states are NOT the same.
+
+ TEST 36 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 37 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 38 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 39 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 40 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 41 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 42 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 43 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 44 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 45 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 46 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 47 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 48 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 49 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 50 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 51 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 52 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 53 
+
+FAIL: Game states are NOT the same.
+
+ TEST 54 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 55 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 56 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 57 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 58 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 59 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 60 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 61 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 62 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 63 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 64 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 65 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 66 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 67 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 68 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 69 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 70 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 71 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 72 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 73 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 74 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 75 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 76 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 77 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 78 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 79 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 80 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 81 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 82 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 83 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 84 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 85 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 86 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 87 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 88 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 89 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 90 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 91 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 92 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 93 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 94 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 95 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 96 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 97 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 98 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 99 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 100 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 101 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 102 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 103 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 104 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 105 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 106 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 107 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 108 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 109 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 110 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 111 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 112 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 113 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 114 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 115 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 116 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 117 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 118 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 119 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 120 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 121 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 122 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 123 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 124 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 125 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 126 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 127 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 128 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 129 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 130 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 131 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 132 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 133 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 134 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 135 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 136 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 137 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 138 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 139 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 140 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 141 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 142 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 143 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 144 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 145 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 146 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 147 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 148 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 149 
+
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 150 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 151 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 152 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 153 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 154 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 155 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 156 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 157 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 158 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 159 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 160 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 161 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 162 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 163 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 164 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 165 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 166 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 167 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 168 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 169 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 170 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 171 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 172 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 173 
+
+FAIL: Game states are NOT the same.
+
+ TEST 174 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 175 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 176 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 177 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 178 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 179 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 180 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 181 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 182 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 183 
+
+FAIL: Game states are NOT the same.
+
+ TEST 184 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 185 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 186 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 187 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 188 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 189 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 190 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 191 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 192 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 193 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 194 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 195 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 196 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 197 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 198 
+
+FAIL: Game states are NOT the same.
+
+ TEST 199 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 200 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 201 
+
+FAIL: Game states are NOT the same.
+
+ TEST 202 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 203 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 204 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 205 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 206 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 207 
+
+FAIL: Game states are NOT the same.
+
+ TEST 208 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 209 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 210 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 211 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 212 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 213 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 214 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 215 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 216 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 217 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 218 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 219 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 220 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 221 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 222 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 223 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 224 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 225 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 226 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 227 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 228 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 229 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 230 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 231 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 232 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 233 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 234 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 235 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 236 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 237 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 238 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 239 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 240 
+
+FAIL: Game states are NOT the same.
+
+ TEST 241 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 242 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 243 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 244 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 245 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 246 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 247 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 248 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 249 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 250 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 251 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 252 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 253 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 254 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 255 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 256 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 257 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 258 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 259 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 260 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 261 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 262 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 263 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 264 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 265 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 266 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 267 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 268 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 269 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 270 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 271 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 272 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 273 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 274 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 275 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 276 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 277 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 278 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 279 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 280 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 281 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 282 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 283 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 284 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 285 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 286 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 287 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 288 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 289 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 290 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 291 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 292 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 293 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 294 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 295 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 296 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 297 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 298 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 299 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 300 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 301 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 302 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 303 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 304 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 305 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 306 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 307 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 308 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 309 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 310 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 311 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 312 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 313 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 314 
+
+FAIL: Game states are NOT the same.
+
+ TEST 315 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 316 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 317 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 318 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 319 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 320 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 321 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 322 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 323 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 324 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 325 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 326 
+
+FAIL: Game states are NOT the same.
+
+ TEST 327 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 328 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 329 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 330 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 331 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 332 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 333 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 334 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 335 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 336 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 337 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 338 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 339 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 340 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 341 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 342 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 343 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 344 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 345 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 346 
+
+FAIL: Game states are NOT the same.
+
+ TEST 347 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 348 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 349 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 350 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 351 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 352 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 353 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 354 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 355 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 356 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 357 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 358 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 359 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 360 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 361 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 362 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 363 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 364 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 365 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 366 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 367 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 368 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 369 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 370 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 371 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 372 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 373 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 374 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 375 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 376 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 377 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 378 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 379 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 380 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 381 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 382 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 383 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 384 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 385 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 386 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 387 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 388 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 389 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 390 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 391 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 392 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 393 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 394 
+
+FAIL: Game states are NOT the same.
+
+ TEST 395 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 396 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 397 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 398 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 399 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 400 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 401 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 402 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 403 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 404 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 405 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 406 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 407 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 408 
+
+FAIL: Game states are NOT the same.
+
+ TEST 409 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 410 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 411 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 412 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 413 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 414 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 415 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 416 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 417 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 418 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 419 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 420 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 421 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 422 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 423 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 424 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 425 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 426 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 427 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 428 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 429 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 430 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 431 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 432 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 433 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 434 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 435 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 436 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 437 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 438 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 439 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 440 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 441 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 442 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 443 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 444 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 445 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 446 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 447 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 448 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 449 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 450 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 451 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 452 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 453 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 454 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 455 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 456 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 457 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 458 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 459 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 460 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 461 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 462 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 463 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 464 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 465 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 466 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 467 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 468 
+
+FAIL: Game states are NOT the same.
+
+ TEST 469 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 470 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 471 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 472 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 473 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 474 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 475 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 476 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 477 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 478 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 479 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 480 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 481 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 482 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 483 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 484 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 485 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 486 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 487 
+
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 488 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 489 
+
+FAIL: Game states are NOT the same.
+
+ TEST 490 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 491 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 492 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 493 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 494 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 495 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 496 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 497 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 498 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 499 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 500 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 501 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 502 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 503 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 504 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 505 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 506 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 507 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 508 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 509 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 510 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 511 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 512 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 513 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 514 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 515 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 516 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 517 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 518 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 519 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 520 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 521 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 522 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 523 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 524 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 525 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 526 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 527 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 528 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 529 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 530 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 531 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 532 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 533 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 534 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 535 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 536 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 537 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 538 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 539 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 540 
+
+FAIL: Game states are NOT the same.
+
+ TEST 541 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 542 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 543 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 544 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 545 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 546 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 547 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 548 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 549 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 550 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 551 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 552 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 553 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 554 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 555 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 556 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 557 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 558 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 559 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 560 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 561 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 562 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 563 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 564 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 565 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 566 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 567 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 568 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 569 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 570 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 571 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 572 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 573 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 574 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 575 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 576 
+
+FAIL: Game states are NOT the same.
+
+ TEST 577 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 578 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 579 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 580 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 581 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 582 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 583 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 584 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 585 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 586 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 587 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 588 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 589 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 590 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 591 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 592 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 593 
+
+FAIL: Game states are NOT the same.
+
+ TEST 594 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 595 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 596 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 597 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 598 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 599 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 600 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 601 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 602 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 603 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 604 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 605 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 606 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 607 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 608 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 609 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 610 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 611 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 612 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 613 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 614 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 615 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 616 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 617 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 618 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 619 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 620 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 621 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 622 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 623 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 624 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 625 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 626 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 627 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 628 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 629 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 630 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 631 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 632 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 633 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 634 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 635 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 636 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 637 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 638 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 639 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 640 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 641 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 642 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 643 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 644 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 645 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 646 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 647 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 648 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 649 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 650 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 651 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 652 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 653 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 654 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 655 
+
+FAIL: Game states are NOT the same.
+
+ TEST 656 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 657 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 658 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 659 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 660 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 661 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 662 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 663 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 664 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 665 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 666 
+
+FAIL: Game states are NOT the same.
+
+ TEST 667 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 668 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 669 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 670 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 671 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 672 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 673 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 674 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 675 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 676 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 677 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 678 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 679 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 680 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 681 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 682 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 683 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 684 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 685 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 686 
+
+FAIL: Game states are NOT the same.
+
+ TEST 687 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 688 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 689 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 690 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 691 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 692 
+
+FAIL: Game states are NOT the same.
+
+ TEST 693 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 694 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 695 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 696 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 697 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 698 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 699 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 700 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 701 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 702 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 703 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 704 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 705 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 706 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 707 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 708 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 709 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 710 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 711 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 712 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 713 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 714 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 715 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 716 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 717 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 718 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 719 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 720 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 721 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 722 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 723 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 724 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 725 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 726 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 727 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 728 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 729 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 730 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 731 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 732 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 733 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 734 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 735 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 736 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 737 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 738 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 739 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 740 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 741 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 742 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 743 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 744 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 745 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 746 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 747 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 748 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 749 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 750 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 751 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 752 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 753 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 754 
+
+FAIL: Game states are NOT the same.
+
+ TEST 755 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 756 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 757 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 758 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 759 
+
+FAIL: Game states are NOT the same.
+
+ TEST 760 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 761 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 762 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 763 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 764 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 765 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 766 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 767 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 768 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 769 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 770 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 771 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 772 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 773 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 774 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 775 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 776 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 777 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 778 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 779 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 780 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 781 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 782 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 783 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 784 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 785 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 786 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 787 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 788 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 789 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 790 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 791 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 792 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 793 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 794 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 795 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 796 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 797 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 798 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 799 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 800 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 801 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 802 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 803 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 804 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 805 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 806 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 807 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 808 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 809 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 810 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 811 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 812 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 813 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 814 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 815 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 816 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 817 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 818 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 819 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 820 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 821 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 822 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 823 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 824 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 825 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 826 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 827 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 828 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 829 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 830 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 831 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 832 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 833 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 834 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 835 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 836 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 837 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 838 
+
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 839 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 840 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 841 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 842 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 843 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 844 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 845 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 846 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 847 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 848 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 849 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 850 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 851 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 852 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 853 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 854 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 855 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 856 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 857 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 858 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 859 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 860 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 861 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 862 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 863 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 864 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 865 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 866 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 867 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 868 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 869 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 870 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 871 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 872 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 873 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 874 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 875 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 876 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 877 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 878 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 879 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 880 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 881 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 882 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 883 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 884 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 885 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 886 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 887 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 888 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 889 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 890 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 891 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 892 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 893 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 894 
+
+FAIL: Game states are NOT the same.
+
+ TEST 895 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 896 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 897 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 898 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 899 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 900 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 901 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 902 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 903 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 904 
+
+FAIL: Game states are NOT the same.
+
+ TEST 905 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 906 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 907 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 908 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 909 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 910 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 911 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 912 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 913 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 914 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 915 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 916 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 917 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 918 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 919 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 920 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 921 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 922 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 923 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 924 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 925 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 926 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 927 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 928 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 929 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 930 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 931 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 932 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 933 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 934 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 935 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 936 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 937 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 938 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 939 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 940 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 941 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 942 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 943 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 944 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 945 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 946 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 947 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 948 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 949 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 950 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 951 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 952 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 953 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 954 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 955 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 956 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 957 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 958 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 959 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 960 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 961 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 962 
+
+FAIL: Treasure count bad.
+FAIL: Game states are NOT the same.
+
+ TEST 963 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 964 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 965 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 966 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 967 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 968 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 969 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 970 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 971 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 972 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 973 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 974 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 975 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 976 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 977 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 978 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 979 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 980 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 981 
+
+FAIL: Game states are NOT the same.
+
+ TEST 982 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 983 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 984 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 985 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 986 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 987 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 988 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 989 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 990 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 991 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 992 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 993 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 994 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 995 
+
+FAIL: Treasure count bad.
+SUCCESS: Game states are the same.
+
+ TEST 996 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 997 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 998 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 999 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ TEST 1000 
+
+FAIL: Discard not incremented.
+FAIL: Game states are NOT the same.
+
+ DONE 
+
+File 'dominion.c'
+Lines executed:25.04% of 559
+Branches executed:20.62% of 417
+Taken at least once:19.18% of 417
+Calls executed:12.77% of 94
+Creating 'dominion.c.gcov'
+
+        -:    0:Source:dominion.c
+        -:    0:Graph:dominion.gcno
+        -:    0:Data:dominion.gcda
+        -:    0:Runs:7
+        -:    0:Programs:7
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include "rngs.h"
+        -:    4:#include <stdio.h>
+        -:    5:#include <math.h>
+        -:    6:#include <stdlib.h>
+        -:    7:
+function compare called 31147673 returned 100% blocks executed 100%
+ 31147673:    8:int compare(const void* a, const void* b) {
+ 31147673:    9:  if (*(int*)a > *(int*)b)
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+ 15620274:   10:    return 1;
+ 15527399:   11:  if (*(int*)a < *(int*)b)
+branch  0 taken 45% (fallthrough)
+branch  1 taken 55%
+  7007786:   12:    return -1;
+  8519613:   13:  return 0;
+        -:   14:}
+        -:   15:
+function newGame called 0 returned 0% blocks executed 0%
+    #####:   16:struct gameState* newGame() {
+    #####:   17:  struct gameState* g = malloc(sizeof(struct gameState));
+    #####:   18:  return g;
+        -:   19:}
+        -:   20:
+function kingdomCards called 0 returned 0% blocks executed 0%
+    #####:   21:int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
+        -:   22:		  int k8, int k9, int k10) {
+    #####:   23:  int* k = malloc(10 * sizeof(int));
+    #####:   24:  k[0] = k1;
+    #####:   25:  k[1] = k2;
+    #####:   26:  k[2] = k3;
+    #####:   27:  k[3] = k4;
+    #####:   28:  k[4] = k5;
+    #####:   29:  k[5] = k6;
+    #####:   30:  k[6] = k7;
+    #####:   31:  k[7] = k8;
+    #####:   32:  k[8] = k9;
+    #####:   33:  k[9] = k10;
+    #####:   34:  return k;
+        -:   35:}
+        -:   36:
+function initializeGame called 0 returned 0% blocks executed 0%
+    #####:   37:int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
+        -:   38:		   struct gameState *state) {
+        -:   39:
+        -:   40:  int i;
+        -:   41:  int j;
+        -:   42:  int it;
+        -:   43:  //set up random number generator
+    #####:   44:  SelectStream(1);
+call    0 never executed
+    #####:   45:  PutSeed((long)randomSeed);
+call    0 never executed
+        -:   46:
+        -:   47:  //check number of players
+    #####:   48:  if (numPlayers > MAX_PLAYERS || numPlayers < 2)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   49:    {
+    #####:   50:      return -1;
+        -:   51:    }
+        -:   52:
+        -:   53:  //set number of players
+    #####:   54:  state->numPlayers = numPlayers;
+        -:   55:
+        -:   56:  //check selected kingdom cards are different
+    #####:   57:  for (i = 0; i < 10; i++)
+branch  0 never executed
+branch  1 never executed
+        -:   58:    {
+    #####:   59:      for (j = 0; j < 10; j++)
+branch  0 never executed
+branch  1 never executed
+        -:   60:        {
+    #####:   61:	  if (j != i && kingdomCards[j] == kingdomCards[i])
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:   62:	    {
+    #####:   63:	      return -1;
+        -:   64:	    }
+        -:   65:        }
+        -:   66:    }
+        -:   67:
+        -:   68:
+        -:   69:  //initialize supply
+        -:   70:  ///////////////////////////////
+        -:   71:
+        -:   72:  //set number of Curse cards
+    #####:   73:  if (numPlayers == 2)
+branch  0 never executed
+branch  1 never executed
+        -:   74:    {
+    #####:   75:      state->supplyCount[curse] = 10;
+        -:   76:    }
+    #####:   77:  else if (numPlayers == 3)
+branch  0 never executed
+branch  1 never executed
+        -:   78:    {
+    #####:   79:      state->supplyCount[curse] = 20;
+        -:   80:    }
+        -:   81:  else
+        -:   82:    {
+    #####:   83:      state->supplyCount[curse] = 30;
+        -:   84:    }
+        -:   85:
+        -:   86:  //set number of Victory cards
+    #####:   87:  if (numPlayers == 2)
+branch  0 never executed
+branch  1 never executed
+        -:   88:    {
+    #####:   89:      state->supplyCount[estate] = 8;
+    #####:   90:      state->supplyCount[duchy] = 8;
+    #####:   91:      state->supplyCount[province] = 8;
+        -:   92:    }
+        -:   93:  else
+        -:   94:    {
+    #####:   95:      state->supplyCount[estate] = 12;
+    #####:   96:      state->supplyCount[duchy] = 12;
+    #####:   97:      state->supplyCount[province] = 12;
+        -:   98:    }
+        -:   99:
+        -:  100:  //set number of Treasure cards
+    #####:  101:  state->supplyCount[copper] = 60 - (7 * numPlayers);
+    #####:  102:  state->supplyCount[silver] = 40;
+    #####:  103:  state->supplyCount[gold] = 30;
+        -:  104:
+        -:  105:  //set number of Kingdom cards
+    #####:  106:  for (i = adventurer; i <= treasure_map; i++)       	//loop all cards
+branch  0 never executed
+branch  1 never executed
+        -:  107:    {
+    #####:  108:      for (j = 0; j < 10; j++)           		//loop chosen cards
+branch  0 never executed
+branch  1 never executed
+        -:  109:	{
+    #####:  110:	  if (kingdomCards[j] == i)
+branch  0 never executed
+branch  1 never executed
+        -:  111:	    {
+        -:  112:	      //check if card is a 'Victory' Kingdom card
+    #####:  113:	      if (kingdomCards[j] == great_hall || kingdomCards[j] == gardens)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  114:		{
+    #####:  115:		  if (numPlayers == 2){
+branch  0 never executed
+branch  1 never executed
+    #####:  116:		    state->supplyCount[i] = 8;
+        -:  117:		  }
+    #####:  118:		  else{ state->supplyCount[i] = 12; }
+        -:  119:		}
+        -:  120:	      else
+        -:  121:		{
+    #####:  122:		  state->supplyCount[i] = 10;
+        -:  123:		}
+    #####:  124:	      break;
+        -:  125:	    }
+        -:  126:	  else    //card is not in the set choosen for the game
+        -:  127:	    {
+    #####:  128:	      state->supplyCount[i] = -1;
+        -:  129:	    }
+        -:  130:	}
+        -:  131:
+        -:  132:    }
+        -:  133:
+        -:  134:  ////////////////////////
+        -:  135:  //supply intilization complete
+        -:  136:
+        -:  137:  //set player decks
+    #####:  138:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  139:    {
+    #####:  140:      state->deckCount[i] = 0;
+    #####:  141:      for (j = 0; j < 3; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  142:	{
+    #####:  143:	  state->deck[i][j] = estate;
+    #####:  144:	  state->deckCount[i]++;
+        -:  145:	}
+    #####:  146:      for (j = 3; j < 10; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  147:	{
+    #####:  148:	  state->deck[i][j] = copper;
+    #####:  149:	  state->deckCount[i]++;
+        -:  150:	}
+        -:  151:    }
+        -:  152:
+        -:  153:  //shuffle player decks
+    #####:  154:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  155:    {
+    #####:  156:      if ( shuffle(i, state) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  157:	{
+    #####:  158:	  return -1;
+        -:  159:	}
+        -:  160:    }
+        -:  161:
+        -:  162:  //draw player hands
+    #####:  163:  for (i = 0; i < numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  164:    {
+        -:  165:      //initialize hand size to zero
+    #####:  166:      state->handCount[i] = 0;
+    #####:  167:      state->discardCount[i] = 0;
+        -:  168:      //draw 5 cards
+        -:  169:      // for (j = 0; j < 5; j++)
+        -:  170:      //	{
+        -:  171:      //	  drawCard(i, state);
+        -:  172:      //	}
+        -:  173:    }
+        -:  174:
+        -:  175:  //set embargo tokens to 0 for all supply piles
+    #####:  176:  for (i = 0; i <= treasure_map; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  177:    {
+    #####:  178:      state->embargoTokens[i] = 0;
+        -:  179:    }
+        -:  180:
+        -:  181:  //initialize first player's turn
+    #####:  182:  state->outpostPlayed = 0;
+    #####:  183:  state->phase = 0;
+    #####:  184:  state->numActions = 1;
+    #####:  185:  state->numBuys = 1;
+    #####:  186:  state->playedCardCount = 0;
+    #####:  187:  state->whoseTurn = 0;
+    #####:  188:  state->handCount[state->whoseTurn] = 0;
+        -:  189:  //int it; move to top
+        -:  190:
+        -:  191:  //Moved draw cards to here, only drawing at the start of a turn
+    #####:  192:  for (it = 0; it < 5; it++){
+branch  0 never executed
+branch  1 never executed
+    #####:  193:    drawCard(state->whoseTurn, state);
+call    0 never executed
+        -:  194:  }
+        -:  195:
+    #####:  196:  updateCoins(state->whoseTurn, state, 0);
+call    0 never executed
+        -:  197:
+    #####:  198:  return 0;
+        -:  199:}
+        -:  200:
+function shuffle called 18665 returned 100% blocks executed 100%
+    18665:  201:int shuffle(int player, struct gameState *state) {
+        -:  202:
+        -:  203:
+        -:  204:  int newDeck[MAX_DECK];
+    18665:  205:  int newDeckPos = 0;
+        -:  206:  int card;
+        -:  207:  int i;
+        -:  208:
+    18665:  209:  if (state->deckCount[player] < 1)
+branch  0 taken 4% (fallthrough)
+branch  1 taken 96%
+      774:  210:    return -1;
+    17891:  211:  qsort ((void*)(state->deck[player]), state->deckCount[player], sizeof(int), compare);
+call    0 returned 100%
+        -:  212:  /* SORT CARDS IN DECK TO ENSURE DETERMINISM! */
+        -:  213:
+  4505075:  214:  while (state->deckCount[player] > 0) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+  4469293:  215:    card = floor(Random() * state->deckCount[player]);
+call    0 returned 100%
+  4469293:  216:    newDeck[newDeckPos] = state->deck[player][card];
+  4469293:  217:    newDeckPos++;
+375380308:  218:    for (i = card; i < state->deckCount[player]-1; i++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+370911015:  219:      state->deck[player][i] = state->deck[player][i+1];
+        -:  220:    }
+  4469293:  221:    state->deckCount[player]--;
+        -:  222:  }
+  4487184:  223:  for (i = 0; i < newDeckPos; i++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+  4469293:  224:    state->deck[player][i] = newDeck[i];
+  4469293:  225:    state->deckCount[player]++;
+        -:  226:  }
+        -:  227:
+    17891:  228:  return 0;
+        -:  229:}
+        -:  230:
+function playCard called 0 returned 0% blocks executed 0%
+    #####:  231:int playCard(int handPos, int choice1, int choice2, int choice3, struct gameState *state)
+        -:  232:{
+        -:  233:  int card;
+    #####:  234:  int coin_bonus = 0; 		//tracks coins gain from actions
+        -:  235:
+        -:  236:  //check if it is the right phase
+    #####:  237:  if (state->phase != 0)
+branch  0 never executed
+branch  1 never executed
+        -:  238:    {
+    #####:  239:      return -1;
+        -:  240:    }
+        -:  241:
+        -:  242:  //check if player has enough actions
+    #####:  243:  if ( state->numActions < 1 )
+branch  0 never executed
+branch  1 never executed
+        -:  244:    {
+    #####:  245:      return -1;
+        -:  246:    }
+        -:  247:
+        -:  248:  //get card played
+    #####:  249:  card = handCard(handPos, state);
+call    0 never executed
+        -:  250:
+        -:  251:  //check if selected card is an action
+    #####:  252:  if ( card < adventurer || card > treasure_map )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  253:    {
+    #####:  254:      return -1;
+        -:  255:    }
+        -:  256:
+        -:  257:  //play card
+    #####:  258:  if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  259:    {
+    #####:  260:      return -1;
+        -:  261:    }
+        -:  262:
+        -:  263:  //reduce number of actions
+    #####:  264:  state->numActions--;
+        -:  265:
+        -:  266:  //update coins (Treasure cards may be added with card draws)
+    #####:  267:  updateCoins(state->whoseTurn, state, coin_bonus);
+call    0 never executed
+        -:  268:
+    #####:  269:  return 0;
+        -:  270:}
+        -:  271:
+function buyCard called 202 returned 100% blocks executed 100%
+      202:  272:int buyCard(int supplyPos, struct gameState *state) {
+        -:  273:  int who;
+        -:  274:  if (DEBUG){
+        -:  275:    printf("Entering buyCard...\n");
+        -:  276:  }
+        -:  277:
+        -:  278:  // I don't know what to do about the phase thing.
+        -:  279:
+      202:  280:  who = state->whoseTurn;
+        -:  281:
+      202:  282:  if (state->numBuys < 1){
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  283:    if (DEBUG)
+        -:  284:      printf("You do not have any buys left\n");
+        1:  285:    return -1;
+      201:  286:  } else if (supplyCount(supplyPos, state) <1){
+call    0 returned 100%
+branch  1 taken 50% (fallthrough)
+branch  2 taken 50%
+        -:  287:    if (DEBUG)
+        -:  288:      printf("There are not any of that type of card left\n");
+      100:  289:    return -1;
+      101:  290:  } else if (state->coins < getCost(supplyPos)){
+call    0 returned 100%
+branch  1 taken 1% (fallthrough)
+branch  2 taken 99%
+        -:  291:    if (DEBUG)
+        -:  292:      printf("You do not have enough money to buy that. You have %d coins.\n", state->coins);
+        1:  293:    return -1;
+        -:  294:  } else {
+      100:  295:    state->phase=1;
+        -:  296:    //state->supplyCount[supplyPos]--;
+      100:  297:    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+call    0 returned 100%
+        -:  298:
+      100:  299:    state->coins = (state->coins) - (getCost(supplyPos));
+call    0 returned 100%
+      100:  300:    state->numBuys--;
+        -:  301:    if (DEBUG)
+        -:  302:      printf("You bought card number %d for %d coins. You now have %d buys and %d coins.\n", supplyPos, getCost(supplyPos), state->numBuys, state->coins);
+        -:  303:  }
+        -:  304:
+        -:  305:  //state->discard[who][state->discardCount[who]] = supplyPos;
+        -:  306:  //state->discardCount[who]++;
+        -:  307:
+      100:  308:  return 0;
+        -:  309:}
+        -:  310:
+function numHandCards called 0 returned 0% blocks executed 0%
+    #####:  311:int numHandCards(struct gameState *state) {
+    #####:  312:  return state->handCount[ whoseTurn(state) ];
+call    0 never executed
+        -:  313:}
+        -:  314:
+function handCard called 0 returned 0% blocks executed 0%
+    #####:  315:int handCard(int handPos, struct gameState *state) {
+    #####:  316:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  317:  return state->hand[currentPlayer][handPos];
+        -:  318:}
+        -:  319:
+function supplyCount called 301 returned 100% blocks executed 100%
+      301:  320:int supplyCount(int card, struct gameState *state) {
+      301:  321:  return state->supplyCount[card];
+        -:  322:}
+        -:  323:
+function fullDeckCount called 0 returned 0% blocks executed 0%
+    #####:  324:int fullDeckCount(int player, int card, struct gameState *state) {
+        -:  325:  int i;
+    #####:  326:  int count = 0;
+        -:  327:
+    #####:  328:  for (i = 0; i < state->deckCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  329:    {
+    #####:  330:      if (state->deck[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  331:    }
+        -:  332:
+    #####:  333:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  334:    {
+    #####:  335:      if (state->hand[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  336:    }
+        -:  337:
+    #####:  338:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  339:    {
+    #####:  340:      if (state->discard[player][i] == card) count++;
+branch  0 never executed
+branch  1 never executed
+        -:  341:    }
+        -:  342:
+    #####:  343:  return count;
+        -:  344:}
+        -:  345:
+function whoseTurn called 0 returned 0% blocks executed 0%
+    #####:  346:int whoseTurn(struct gameState *state) {
+    #####:  347:  return state->whoseTurn;
+        -:  348:}
+        -:  349:
+function endTurn called 0 returned 0% blocks executed 0%
+    #####:  350:int endTurn(struct gameState *state) {
+        -:  351:  int k;
+        -:  352:  int i;
+    #####:  353:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+        -:  354:
+        -:  355:  //Discard hand
+    #####:  356:  for (i = 0; i < state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  357:    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
+    #####:  358:    state->hand[currentPlayer][i] = -1;//Set card to -1
+        -:  359:  }
+    #####:  360:  state->handCount[currentPlayer] = 0;//Reset hand count
+        -:  361:
+        -:  362:  //Code for determining the player
+    #####:  363:  if (currentPlayer < (state->numPlayers - 1)){
+branch  0 never executed
+branch  1 never executed
+    #####:  364:    state->whoseTurn = currentPlayer + 1;//Still safe to increment
+        -:  365:  }
+        -:  366:  else{
+    #####:  367:    state->whoseTurn = 0;//Max player has been reached, loop back around to player 1
+        -:  368:  }
+        -:  369:
+    #####:  370:  state->outpostPlayed = 0;
+    #####:  371:  state->phase = 0;
+    #####:  372:  state->numActions = 1;
+    #####:  373:  state->coins = 0;
+    #####:  374:  state->numBuys = 1;
+    #####:  375:  state->playedCardCount = 0;
+    #####:  376:  state->handCount[state->whoseTurn] = 0;
+        -:  377:
+        -:  378:  //int k; move to top
+        -:  379:  //Next player draws hand
+    #####:  380:  for (k = 0; k < 5; k++){
+branch  0 never executed
+branch  1 never executed
+    #####:  381:    drawCard(state->whoseTurn, state);//Draw a card
+call    0 never executed
+        -:  382:  }
+        -:  383:
+        -:  384:  //Update money
+    #####:  385:  updateCoins(state->whoseTurn, state , 0);
+call    0 never executed
+        -:  386:
+    #####:  387:  return 0;
+        -:  388:}
+        -:  389:
+function isGameOver called 5 returned 100% blocks executed 100%
+        5:  390:int isGameOver(struct gameState *state) {
+        -:  391:  int i;
+        -:  392:  int j;
+        -:  393:
+        -:  394:  //if stack of Province cards is empty, the game ends
+        5:  395:  if (state->supplyCount[province] == 0)
+branch  0 taken 20% (fallthrough)
+branch  1 taken 80%
+        -:  396:    {
+        1:  397:      return 1;
+        -:  398:    }
+        -:  399:
+        -:  400:  //if three supply pile are at 0, the game ends
+        4:  401:  j = 0;
+      104:  402:  for (i = 0; i < 25; i++)
+branch  0 taken 96%
+branch  1 taken 4% (fallthrough)
+        -:  403:    {
+      100:  404:      if (state->supplyCount[i] == 0)
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+        -:  405:	{
+        5:  406:	  j++;
+        -:  407:	}
+        -:  408:    }
+        4:  409:  if ( j >= 3)
+branch  0 taken 25% (fallthrough)
+branch  1 taken 75%
+        -:  410:    {
+        1:  411:      return 1;
+        -:  412:    }
+        -:  413:
+        3:  414:  return 0;
+        -:  415:}
+        -:  416:
+function scoreFor called 0 returned 0% blocks executed 0%
+    #####:  417:int scoreFor (int player, struct gameState *state) {
+        -:  418:
+        -:  419:  int i;
+    #####:  420:  int score = 0;
+        -:  421:  //score from hand
+    #####:  422:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  423:    {
+    #####:  424:      if (state->hand[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  425:      if (state->hand[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  426:      if (state->hand[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  427:      if (state->hand[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  428:      if (state->hand[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  429:      if (state->hand[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  430:    }
+        -:  431:
+        -:  432:  //score from discard
+    #####:  433:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  434:    {
+    #####:  435:      if (state->discard[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  436:      if (state->discard[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  437:      if (state->discard[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  438:      if (state->discard[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  439:      if (state->discard[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  440:      if (state->discard[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  441:    }
+        -:  442:
+        -:  443:  //score from deck
+    #####:  444:  for (i = 0; i < state->discardCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  445:    {
+    #####:  446:      if (state->deck[player][i] == curse) { score = score - 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  447:      if (state->deck[player][i] == estate) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  448:      if (state->deck[player][i] == duchy) { score = score + 3; };
+branch  0 never executed
+branch  1 never executed
+    #####:  449:      if (state->deck[player][i] == province) { score = score + 6; };
+branch  0 never executed
+branch  1 never executed
+    #####:  450:      if (state->deck[player][i] == great_hall) { score = score + 1; };
+branch  0 never executed
+branch  1 never executed
+    #####:  451:      if (state->deck[player][i] == gardens) { score = score + ( fullDeckCount(player, 0, state) / 10 ); };
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+        -:  452:    }
+        -:  453:
+    #####:  454:  return score;
+        -:  455:}
+        -:  456:
+function getWinners called 0 returned 0% blocks executed 0%
+    #####:  457:int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
+        -:  458:  int i;
+        -:  459:  int j;
+        -:  460:  int highScore;
+        -:  461:  int currentPlayer;
+        -:  462:
+        -:  463:  //get score for each player
+    #####:  464:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  465:    {
+        -:  466:      //set unused player scores to -9999
+    #####:  467:      if (i >= state->numPlayers)
+branch  0 never executed
+branch  1 never executed
+        -:  468:	{
+    #####:  469:	  players[i] = -9999;
+        -:  470:	}
+        -:  471:      else
+        -:  472:	{
+    #####:  473:	  players[i] = scoreFor (i, state);
+call    0 never executed
+        -:  474:	}
+        -:  475:    }
+        -:  476:
+        -:  477:  //find highest score
+    #####:  478:  j = 0;
+    #####:  479:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  480:    {
+    #####:  481:      if (players[i] > players[j])
+branch  0 never executed
+branch  1 never executed
+        -:  482:	{
+    #####:  483:	  j = i;
+        -:  484:	}
+        -:  485:    }
+    #####:  486:  highScore = players[j];
+        -:  487:
+        -:  488:  //add 1 to players who had less turns
+    #####:  489:  currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  490:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  491:    {
+    #####:  492:      if ( players[i] == highScore && i > currentPlayer )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  493:	{
+    #####:  494:	  players[i]++;
+        -:  495:	}
+        -:  496:    }
+        -:  497:
+        -:  498:  //find new highest score
+    #####:  499:  j = 0;
+    #####:  500:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  501:    {
+    #####:  502:      if ( players[i] > players[j] )
+branch  0 never executed
+branch  1 never executed
+        -:  503:	{
+    #####:  504:	  j = i;
+        -:  505:	}
+        -:  506:    }
+    #####:  507:  highScore = players[j];
+        -:  508:
+        -:  509:  //set winners in array to 1 and rest to 0
+    #####:  510:  for (i = 0; i < MAX_PLAYERS; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  511:    {
+    #####:  512:      if ( players[i] == highScore )
+branch  0 never executed
+branch  1 never executed
+        -:  513:	{
+    #####:  514:	  players[i] = 1;
+        -:  515:	}
+        -:  516:      else
+        -:  517:	{
+    #####:  518:	  players[i] = 0;
+        -:  519:	}
+        -:  520:    }
+        -:  521:
+    #####:  522:  return 0;
+        -:  523:}
+        -:  524:
+function drawCard called 36833 returned 100% blocks executed 100%
+    36833:  525:int drawCard(int player, struct gameState *state)
+        -:  526:{	int count;
+        -:  527:  int deckCounter;
+    36833:  528:  if (state->deckCount[player] <= 0){//Deck is empty
+branch  0 taken 1% (fallthrough)
+branch  1 taken 99%
+        -:  529:
+        -:  530:    //Step 1 Shuffle the discard pile back into a deck
+        -:  531:    int i;
+        -:  532:    //Move discard to deck
+      914:  533:    for (i = 0; i < state->discardCount[player];i++){
+branch  0 taken 43%
+branch  1 taken 57% (fallthrough)
+      397:  534:      state->deck[player][i] = state->discard[player][i];
+      397:  535:      state->discard[player][i] = -1;
+        -:  536:    }
+        -:  537:
+      517:  538:    state->deckCount[player] = state->discardCount[player];
+      517:  539:    state->discardCount[player] = 0;//Reset discard
+        -:  540:
+        -:  541:    //Shufffle the deck
+      517:  542:    shuffle(player, state);//Shuffle the deck up and make it so that we can draw
+call    0 returned 100%
+        -:  543:
+        -:  544:    if (DEBUG){//Debug statements
+        -:  545:      printf("Deck count now: %d\n", state->deckCount[player]);
+        -:  546:    }
+        -:  547:
+      517:  548:    state->discardCount[player] = 0;
+        -:  549:
+        -:  550:    //Step 2 Draw Card
+      517:  551:    count = state->handCount[player];//Get current player's hand count
+        -:  552:
+        -:  553:    if (DEBUG){//Debug statements
+        -:  554:      printf("Current hand count: %d\n", count);
+        -:  555:    }
+        -:  556:
+      517:  557:    deckCounter = state->deckCount[player];//Create a holder for the deck count
+        -:  558:
+      517:  559:    if (deckCounter == 0)
+branch  0 taken 99% (fallthrough)
+branch  1 taken 1%
+      516:  560:      return -1;
+        -:  561:
+        1:  562:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to hand
+        1:  563:    state->deckCount[player]--;
+        1:  564:    state->handCount[player]++;//Increment hand count
+        -:  565:  }
+        -:  566:
+        -:  567:  else{
+    36316:  568:    int count = state->handCount[player];//Get current hand count for player
+        -:  569:    int deckCounter;
+        -:  570:    if (DEBUG){//Debug statements
+        -:  571:      printf("Current hand count: %d\n", count);
+        -:  572:    }
+        -:  573:
+    36316:  574:    deckCounter = state->deckCount[player];//Create holder for the deck count
+    36316:  575:    state->hand[player][count] = state->deck[player][deckCounter - 1];//Add card to the hand
+    36316:  576:    state->deckCount[player]--;
+    36316:  577:    state->handCount[player]++;//Increment hand count
+        -:  578:  }
+        -:  579:
+    36317:  580:  return 0;
+        -:  581:}
+        -:  582:
+function getCost called 403 returned 100% blocks executed 93%
+      403:  583:int getCost(int cardNumber)
+        -:  584:{
+      403:  585:  switch( cardNumber )
+branch  0 taken 0%
+branch  1 taken 2%
+branch  2 taken 3%
+branch  3 taken 6%
+branch  4 taken 4%
+branch  5 taken 4%
+branch  6 taken 6%
+branch  7 taken 4%
+branch  8 taken 7%
+branch  9 taken 2%
+branch 10 taken 6%
+branch 11 taken 4%
+branch 12 taken 4%
+branch 13 taken 5%
+branch 14 taken 1%
+branch 15 taken 5%
+branch 16 taken 2%
+branch 17 taken 3%
+branch 18 taken 5%
+branch 19 taken 4%
+branch 20 taken 3%
+branch 21 taken 4%
+branch 22 taken 3%
+branch 23 taken 4%
+branch 24 taken 3%
+branch 25 taken 4%
+branch 26 taken 1%
+branch 27 taken 0%
+        -:  586:    {
+        -:  587:    case curse:
+    #####:  588:      return 0;
+        -:  589:    case estate:
+        9:  590:      return 2;
+        -:  591:    case duchy:
+       14:  592:      return 5;
+        -:  593:    case province:
+       24:  594:      return 8;
+        -:  595:    case copper:
+       18:  596:      return 0;
+        -:  597:    case silver:
+       17:  598:      return 3;
+        -:  599:    case gold:
+       25:  600:      return 6;
+        -:  601:    case adventurer:
+       17:  602:      return 6;
+        -:  603:    case council_room:
+       29:  604:      return 5;
+        -:  605:    case feast:
+        9:  606:      return 4;
+        -:  607:    case gardens:
+       24:  608:      return 4;
+        -:  609:    case mine:
+       15:  610:      return 5;
+        -:  611:    case remodel:
+       15:  612:      return 4;
+        -:  613:    case smithy:
+       19:  614:      return 4;
+        -:  615:    case village:
+        6:  616:      return 3;
+        -:  617:    case baron:
+       20:  618:      return 4;
+        -:  619:    case great_hall:
+        7:  620:      return 3;
+        -:  621:    case minion:
+       14:  622:      return 5;
+        -:  623:    case steward:
+       20:  624:      return 3;
+        -:  625:    case tribute:
+       18:  626:      return 5;
+        -:  627:    case ambassador:
+       11:  628:      return 3;
+        -:  629:    case cutpurse:
+       15:  630:      return 4;
+        -:  631:    case embargo:
+       13:  632:      return 2;
+        -:  633:    case outpost:
+       15:  634:      return 5;
+        -:  635:    case salvager:
+       11:  636:      return 4;
+        -:  637:    case sea_hag:
+       15:  638:      return 4;
+        -:  639:    case treasure_map:
+        3:  640:      return 4;
+        -:  641:    }
+        -:  642:
+    #####:  643:  return -1;
+        -:  644:}
+        -:  645:
+        -:  646:
+        -:  647:
+function adventurer_ref called 1000 returned 100% blocks executed 100%
+     1000:  648:int adventurer_ref(struct gameState* state, int currentPlayer)
+        -:  649:{
+     1000:  650:    int drawntreasure =0;
+        -:  651:    int cardDrawn;
+        -:  652:    int temphand[MAX_HAND];
+     1000:  653:    int z = 0;
+        -:  654:
+    19766:  655:    while(drawntreasure<2){
+branch  0 taken 95%
+branch  1 taken 5% (fallthrough)
+    17766:  656:	if (state->deckCount[currentPlayer] >1){//if the deck is empty we need to shuffle discard and add to deck
+branch  0 taken 98% (fallthrough)
+branch  1 taken 2%
+    17476:  657:	  shuffle(currentPlayer, state);
+call    0 returned 100%
+        -:  658:	}
+    17766:  659:	drawCard(currentPlayer, state);
+call    0 returned 100%
+    17766:  660:	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+    17766:  661:	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+branch  0 taken 96% (fallthrough)
+branch  1 taken 4%
+branch  2 taken 96% (fallthrough)
+branch  3 taken 4%
+branch  4 taken 4% (fallthrough)
+branch  5 taken 96%
+     2000:  662:	  drawntreasure++;
+        -:  663:	else{
+    15766:  664:	  temphand[z]=cardDrawn;
+    15766:  665:	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+    15766:  666:	  z++;
+        -:  667:	}
+        -:  668:      }
+    17766:  669:      while(z-1>=0){
+branch  0 taken 94%
+branch  1 taken 6% (fallthrough)
+    15766:  670:	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+    15766:  671:	z=z-1;
+        -:  672:      }
+     1000:  673:      return 0;
+        -:  674:}
+function council_room_ref called 0 returned 0% blocks executed 0%
+    #####:  675:int council_room_ref(struct gameState* state, int currentPlayer)
+        -:  676:{
+    #####:  677:      int i = 0;
+        -:  678:
+        -:  679:      //+4 Cards
+    #####:  680:      for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  681:	{
+    #####:  682:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -:  683:	}
+        -:  684:
+        -:  685:      //+1 Buy
+    #####:  686:      state->numBuys++;
+        -:  687:
+        -:  688:      //Each other player draws a card
+    #####:  689:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  690:	{
+    #####:  691:	  if ( i != currentPlayer )
+branch  0 never executed
+branch  1 never executed
+        -:  692:	    {
+    #####:  693:	      drawCard(i, state);
+call    0 never executed
+        -:  694:	    }
+        -:  695:	}
+        -:  696:
+    #####:  697:    return 0;
+        -:  698:}
+function gardens_ref called 0 returned 0% blocks executed 0%
+    #####:  699:int gardens_ref()
+        -:  700:{
+        -:  701:
+    #####:  702:    return 0;
+        -:  703:}
+function smithy_ref called 500 returned 100% blocks executed 100%
+      500:  704:int smithy_ref(struct gameState* state, int currentPlayer, int handPos)
+        -:  705:{
+      500:  706:      int i=0;
+        -:  707:
+        -:  708:      //+3 Cards
+     1500:  709:      for (i = 1; i < 3; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:  710:	{
+     1000:  711:	  drawCard(currentPlayer, state);
+call    0 returned 100%
+        -:  712:	}
+        -:  713:
+        -:  714:      //discard card from hand
+      500:  715:      discardCard(handPos, currentPlayer, state, 0);
+call    0 returned 100%
+      500:  716:      return 0;
+        -:  717:}
+        -:  718:
+function great_hall_ref called 0 returned 0% blocks executed 0%
+    #####:  719:int great_hall_ref(struct gameState* state, int currentPlayer, int handPos)
+        -:  720:{
+        -:  721:    //+1 Card
+    #####:  722:      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  723:
+        -:  724:      //+1 Actions
+    #####:  725:      state->numActions++;
+        -:  726:
+        -:  727:      //discard card from hand
+    #####:  728:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  729:      return 0;
+        -:  730:}
+        -:  731:
+        -:  732:
+        -:  733:
+        -:  734:
+        -:  735:
+        -:  736:
+        -:  737:
+function cardEffect called 0 returned 0% blocks executed 0%
+    #####:  738:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+        -:  739:{
+        -:  740:  int i;
+        -:  741:  int j;
+        -:  742:  int k;
+        -:  743:  int x;
+        -:  744:  int index;
+    #####:  745:  int currentPlayer = whoseTurn(state);
+call    0 never executed
+    #####:  746:  int nextPlayer = currentPlayer + 1;
+        -:  747:
+    #####:  748:  int tributeRevealedCards[2] = {-1, -1};
+        -:  749:  int temphand[MAX_HAND];// moved above the if statement
+        -:  750://  int drawntreasure=0;//adventure card
+        -:  751://  int cardDrawn;//adventure card
+        -:  752://  int z = 0;// this is the counter for the temp hand
+    #####:  753:  if (nextPlayer > (state->numPlayers - 1)){
+branch  0 never executed
+branch  1 never executed
+    #####:  754:    nextPlayer = 0;
+        -:  755:  }
+        -:  756:
+        -:  757:
+        -:  758:  //uses switch to select card and perform actions
+    #####:  759:  switch( card )
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+branch 18 never executed
+branch 19 never executed
+branch 20 never executed
+        -:  760:    {
+        -:  761:    case adventurer:
+    #####:  762:        return adventurer_ref(state, currentPlayer);
+call    0 never executed
+        -:  763:
+        -:  764:    case council_room:
+    #####:  765:        return council_room_ref(state, currentPlayer);
+call    0 never executed
+        -:  766:
+        -:  767:      //put played card in played card pile
+        -:  768:      discardCard(handPos, currentPlayer, state, 0);
+        -:  769:
+        -:  770:      return 0;
+        -:  771:
+        -:  772:    case feast:
+        -:  773:      //gain card with cost up to 5
+        -:  774:      //Backup hand
+    #####:  775:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  776:	temphand[i] = state->hand[currentPlayer][i];//Backup card
+    #####:  777:	state->hand[currentPlayer][i] = -1;//Set to nothing
+        -:  778:      }
+        -:  779:      //Backup hand
+        -:  780:
+        -:  781:      //Update Coins for Buy
+    #####:  782:      updateCoins(currentPlayer, state, 5);
+call    0 never executed
+    #####:  783:      x = 1;//Condition to loop on
+    #####:  784:      while( x == 1) {//Buy one card
+branch  0 never executed
+branch  1 never executed
+    #####:  785:	if (supplyCount(choice1, state) <= 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  786:	  if (DEBUG)
+        -:  787:	    printf("None of that card left, sorry!\n");
+        -:  788:
+        -:  789:	  if (DEBUG){
+        -:  790:	    printf("Cards Left: %d\n", supplyCount(choice1, state));
+        -:  791:	  }
+        -:  792:	}
+    #####:  793:	else if (state->coins < getCost(choice1)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  794:	  printf("That card is too expensive!\n");
+call    0 never executed
+        -:  795:
+        -:  796:	  if (DEBUG){
+        -:  797:	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
+        -:  798:	  }
+        -:  799:	}
+        -:  800:	else{
+        -:  801:
+        -:  802:	  if (DEBUG){
+        -:  803:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  804:	  }
+        -:  805:
+    #####:  806:	  gainCard(choice1, state, 0, currentPlayer);//Gain the card
+call    0 never executed
+    #####:  807:	  x = 0;//No more buying cards
+        -:  808:
+        -:  809:	  if (DEBUG){
+        -:  810:	    printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
+        -:  811:	  }
+        -:  812:
+        -:  813:	}
+        -:  814:      }
+        -:  815:
+        -:  816:      //Reset Hand
+    #####:  817:      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:  818:	state->hand[currentPlayer][i] = temphand[i];
+    #####:  819:	temphand[i] = -1;
+        -:  820:      }
+        -:  821:      //Reset Hand
+        -:  822:
+    #####:  823:      return 0;
+        -:  824:
+        -:  825:    case gardens:
+    #####:  826:      return gardens_ref();
+call    0 never executed
+        -:  827:
+        -:  828:    case mine:
+    #####:  829:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  830:
+    #####:  831:      if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  832:	{
+    #####:  833:	  return -1;
+        -:  834:	}
+        -:  835:
+    #####:  836:      if (choice2 > treasure_map || choice2 < curse)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  837:	{
+    #####:  838:	  return -1;
+        -:  839:	}
+        -:  840:
+    #####:  841:      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  842:	{
+    #####:  843:	  return -1;
+        -:  844:	}
+        -:  845:
+    #####:  846:      gainCard(choice2, state, 2, currentPlayer);
+call    0 never executed
+        -:  847:
+        -:  848:      //discard card from hand
+    #####:  849:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  850:
+        -:  851:      //discard trashed card
+    #####:  852:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  853:	{
+    #####:  854:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  855:	    {
+    #####:  856:	      discardCard(i, currentPlayer, state, 0);
+call    0 never executed
+    #####:  857:	      break;
+        -:  858:	    }
+        -:  859:	}
+        -:  860:
+    #####:  861:      return 0;
+        -:  862:
+        -:  863:    case remodel:
+    #####:  864:      j = state->hand[currentPlayer][choice1];  //store card we will trash
+        -:  865:
+    #####:  866:      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  867:	{
+    #####:  868:	  return -1;
+        -:  869:	}
+        -:  870:
+    #####:  871:      gainCard(choice2, state, 0, currentPlayer);
+call    0 never executed
+        -:  872:
+        -:  873:      //discard card from hand
+    #####:  874:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  875:
+        -:  876:      //discard trashed card
+    #####:  877:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  878:	{
+    #####:  879:	  if (state->hand[currentPlayer][i] == j)
+branch  0 never executed
+branch  1 never executed
+        -:  880:	    {
+    #####:  881:	      discardCard(i, currentPlayer, state, 0);
+call    0 never executed
+    #####:  882:	      break;
+        -:  883:	    }
+        -:  884:	}
+        -:  885:
+        -:  886:
+    #####:  887:      return 0;
+        -:  888:
+        -:  889:    case smithy:
+    #####:  890:        return smithy_ref(state, currentPlayer, handPos);
+call    0 never executed
+        -:  891:    case village:
+        -:  892:      //+1 Card
+    #####:  893:      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  894:
+        -:  895:      //+2 Actions
+    #####:  896:      state->numActions = state->numActions + 2;
+        -:  897:
+        -:  898:      //discard played card from hand
+    #####:  899:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####:  900:      return 0;
+        -:  901:
+        -:  902:    case baron:
+    #####:  903:      state->numBuys++;//Increase buys by 1!
+    #####:  904:      if (choice1 > 0){//Boolean true or going to discard an estate
+branch  0 never executed
+branch  1 never executed
+    #####:  905:	int p = 0;//Iterator for hand!
+    #####:  906:	int card_not_discarded = 1;//Flag for discard set!
+    #####:  907:	while(card_not_discarded){
+branch  0 never executed
+branch  1 never executed
+    #####:  908:	  if (state->hand[currentPlayer][p] == estate){//Found an estate card!
+branch  0 never executed
+branch  1 never executed
+    #####:  909:	    state->coins += 4;//Add 4 coins to the amount of coins
+    #####:  910:	    state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
+    #####:  911:	    state->discardCount[currentPlayer]++;
+    #####:  912:	    for (;p < state->handCount[currentPlayer]; p++){
+branch  0 never executed
+branch  1 never executed
+    #####:  913:	      state->hand[currentPlayer][p] = state->hand[currentPlayer][p+1];
+        -:  914:	    }
+    #####:  915:	    state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
+    #####:  916:	    state->handCount[currentPlayer]--;
+    #####:  917:	    card_not_discarded = 0;//Exit the loop
+        -:  918:	  }
+    #####:  919:	  else if (p > state->handCount[currentPlayer]){
+branch  0 never executed
+branch  1 never executed
+        -:  920:	    if(DEBUG) {
+        -:  921:	      printf("No estate cards in your hand, invalid choice\n");
+        -:  922:	      printf("Must gain an estate if there are any\n");
+        -:  923:	    }
+    #####:  924:	    if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  925:	      gainCard(estate, state, 0, currentPlayer);
+call    0 never executed
+    #####:  926:	      state->supplyCount[estate]--;//Decrement estates
+    #####:  927:	      if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  928:		isGameOver(state);
+call    0 never executed
+        -:  929:	      }
+        -:  930:	    }
+    #####:  931:	    card_not_discarded = 0;//Exit the loop
+        -:  932:	  }
+        -:  933:
+        -:  934:	  else{
+    #####:  935:	    p++;//Next card
+        -:  936:	  }
+        -:  937:	}
+        -:  938:      }
+        -:  939:
+        -:  940:      else{
+    #####:  941:	if (supplyCount(estate, state) > 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  942:	  gainCard(estate, state, 0, currentPlayer);//Gain an estate
+call    0 never executed
+    #####:  943:	  state->supplyCount[estate]--;//Decrement Estates
+    #####:  944:	  if (supplyCount(estate, state) == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  945:	    isGameOver(state);
+call    0 never executed
+        -:  946:	  }
+        -:  947:	}
+        -:  948:      }
+        -:  949:
+        -:  950:
+    #####:  951:      return 0;
+        -:  952:
+        -:  953:    case great_hall:
+    #####:  954:      return great_hall_ref(state,currentPlayer, handPos );
+call    0 never executed
+        -:  955:
+        -:  956:    case minion:
+        -:  957:      //+1 action
+    #####:  958:      state->numActions++;
+        -:  959:
+        -:  960:      //discard card from hand
+    #####:  961:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  962:
+    #####:  963:      if (choice1)		//+2 coins
+branch  0 never executed
+branch  1 never executed
+        -:  964:	{
+    #####:  965:	  state->coins = state->coins + 2;
+        -:  966:	}
+        -:  967:
+    #####:  968:      else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
+branch  0 never executed
+branch  1 never executed
+        -:  969:	{
+        -:  970:	  //discard hand
+    #####:  971:	  while(numHandCards(state) > 0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  972:	    {
+    #####:  973:	      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -:  974:	    }
+        -:  975:
+        -:  976:	  //draw 4
+    #####:  977:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  978:	    {
+    #####:  979:	      drawCard(currentPlayer, state);
+call    0 never executed
+        -:  980:	    }
+        -:  981:
+        -:  982:	  //other players discard hand and redraw if hand size > 4
+    #####:  983:	  for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -:  984:	    {
+    #####:  985:	      if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -:  986:		{
+    #####:  987:		  if ( state->handCount[i] > 4 )
+branch  0 never executed
+branch  1 never executed
+        -:  988:		    {
+        -:  989:		      //discard hand
+    #####:  990:		      while( state->handCount[i] > 0 )
+branch  0 never executed
+branch  1 never executed
+        -:  991:			{
+    #####:  992:			  discardCard(handPos, i, state, 0);
+call    0 never executed
+        -:  993:			}
+        -:  994:
+        -:  995:		      //draw 4
+    #####:  996:		      for (j = 0; j < 4; j++)
+branch  0 never executed
+branch  1 never executed
+        -:  997:			{
+    #####:  998:			  drawCard(i, state);
+call    0 never executed
+        -:  999:			}
+        -: 1000:		    }
+        -: 1001:		}
+        -: 1002:	    }
+        -: 1003:
+        -: 1004:	}
+    #####: 1005:      return 0;
+        -: 1006:
+        -: 1007:    case steward:
+    #####: 1008:      if (choice1 == 1)
+branch  0 never executed
+branch  1 never executed
+        -: 1009:	{
+        -: 1010:	  //+2 cards
+    #####: 1011:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1012:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1013:	}
+    #####: 1014:      else if (choice1 == 2)
+branch  0 never executed
+branch  1 never executed
+        -: 1015:	{
+        -: 1016:	  //+2 coins
+    #####: 1017:	  state->coins = state->coins + 2;
+        -: 1018:	}
+        -: 1019:      else
+        -: 1020:	{
+        -: 1021:	  //trash 2 cards in hand
+    #####: 1022:	  discardCard(choice2, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1023:	  discardCard(choice3, currentPlayer, state, 1);
+call    0 never executed
+        -: 1024:	}
+        -: 1025:
+        -: 1026:      //discard card from hand
+    #####: 1027:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1028:      return 0;
+        -: 1029:
+        -: 1030:    case tribute:
+    #####: 1031:      if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
+branch  0 never executed
+branch  1 never executed
+    #####: 1032:	if (state->deckCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1033:	  tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1034:	  state->deckCount[nextPlayer]--;
+        -: 1035:	}
+    #####: 1036:	else if (state->discardCount[nextPlayer] > 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1037:	  tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];
+    #####: 1038:	  state->discardCount[nextPlayer]--;
+        -: 1039:	}
+        -: 1040:	else{
+        -: 1041:	  //No Card to Reveal
+        -: 1042:	  if (DEBUG){
+        -: 1043:	    printf("No cards to reveal\n");
+        -: 1044:	  }
+        -: 1045:	}
+        -: 1046:      }
+        -: 1047:
+        -: 1048:      else{
+    #####: 1049:	if (state->deckCount[nextPlayer] == 0){
+branch  0 never executed
+branch  1 never executed
+    #####: 1050:	  for (i = 0; i < state->discardCount[nextPlayer]; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1051:	    state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
+    #####: 1052:	    state->deckCount[nextPlayer]++;
+    #####: 1053:	    state->discard[nextPlayer][i] = -1;
+    #####: 1054:	    state->discardCount[nextPlayer]--;
+        -: 1055:	  }
+        -: 1056:
+    #####: 1057:	  shuffle(nextPlayer,state);//Shuffle the deck
+call    0 never executed
+        -: 1058:	}
+    #####: 1059:	tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1060:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1061:	state->deckCount[nextPlayer]--;
+    #####: 1062:	tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+    #####: 1063:	state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
+    #####: 1064:	state->deckCount[nextPlayer]--;
+        -: 1065:      }
+        -: 1066:
+    #####: 1067:      if (tributeRevealedCards[0] == tributeRevealedCards[1]){//If we have a duplicate card, just drop one
+branch  0 never executed
+branch  1 never executed
+    #####: 1068:	state->playedCards[state->playedCardCount] = tributeRevealedCards[1];
+    #####: 1069:	state->playedCardCount++;
+    #####: 1070:	tributeRevealedCards[1] = -1;
+        -: 1071:      }
+        -: 1072:
+    #####: 1073:      for (i = 0; i <= 2; i ++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1074:	if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold){//Treasure cards
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####: 1075:	  state->coins += 2;
+        -: 1076:	}
+        -: 1077:
+    #####: 1078:	else if (tributeRevealedCards[i] == estate || tributeRevealedCards[i] == duchy || tributeRevealedCards[i] == province || tributeRevealedCards[i] == gardens || tributeRevealedCards[i] == great_hall){//Victory Card Found
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####: 1079:	  drawCard(currentPlayer, state);
+call    0 never executed
+    #####: 1080:	  drawCard(currentPlayer, state);
+call    0 never executed
+        -: 1081:	}
+        -: 1082:	else{//Action Card
+    #####: 1083:	  state->numActions = state->numActions + 2;
+        -: 1084:	}
+        -: 1085:      }
+        -: 1086:
+    #####: 1087:      return 0;
+        -: 1088:
+        -: 1089:    case ambassador:
+    #####: 1090:      j = 0;		//used to check if player has enough cards to discard
+        -: 1091:
+    #####: 1092:      if (choice2 > 2 || choice2 < 0)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1093:	{
+    #####: 1094:	  return -1;
+        -: 1095:	}
+        -: 1096:
+    #####: 1097:      if (choice1 == handPos)
+branch  0 never executed
+branch  1 never executed
+        -: 1098:	{
+    #####: 1099:	  return -1;
+        -: 1100:	}
+        -: 1101:
+    #####: 1102:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1103:	{
+    #####: 1104:	  if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -: 1105:	    {
+    #####: 1106:	      j++;
+        -: 1107:	    }
+        -: 1108:	}
+    #####: 1109:      if (j < choice2)
+branch  0 never executed
+branch  1 never executed
+        -: 1110:	{
+    #####: 1111:	  return -1;
+        -: 1112:	}
+        -: 1113:
+        -: 1114:      if (DEBUG)
+        -: 1115:	printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
+        -: 1116:
+        -: 1117:      //increase supply count for choosen card by amount being discarded
+    #####: 1118:      state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
+        -: 1119:
+        -: 1120:      //each other player gains a copy of revealed card
+    #####: 1121:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1122:	{
+    #####: 1123:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1124:	    {
+    #####: 1125:	      gainCard(state->hand[currentPlayer][choice1], state, 0, i);
+call    0 never executed
+        -: 1126:	    }
+        -: 1127:	}
+        -: 1128:
+        -: 1129:      //discard played card from hand
+    #####: 1130:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -: 1131:
+        -: 1132:      //trash copies of cards returned to supply
+    #####: 1133:      for (j = 0; j < choice2; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1134:	{
+    #####: 1135:	  for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1136:	    {
+    #####: 1137:	      if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
+branch  0 never executed
+branch  1 never executed
+        -: 1138:		{
+    #####: 1139:		  discardCard(i, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1140:		  break;
+        -: 1141:		}
+        -: 1142:	    }
+        -: 1143:	}
+        -: 1144:
+    #####: 1145:      return 0;
+        -: 1146:
+        -: 1147:    case cutpurse:
+        -: 1148:
+    #####: 1149:      updateCoins(currentPlayer, state, 2);
+call    0 never executed
+    #####: 1150:      for (i = 0; i < state->numPlayers; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1151:	{
+    #####: 1152:	  if (i != currentPlayer)
+branch  0 never executed
+branch  1 never executed
+        -: 1153:	    {
+    #####: 1154:	      for (j = 0; j < state->handCount[i]; j++)
+branch  0 never executed
+branch  1 never executed
+        -: 1155:		{
+    #####: 1156:		  if (state->hand[i][j] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1157:		    {
+    #####: 1158:		      discardCard(j, i, state, 0);
+call    0 never executed
+    #####: 1159:		      break;
+        -: 1160:		    }
+    #####: 1161:		  if (j == state->handCount[i])
+branch  0 never executed
+branch  1 never executed
+        -: 1162:		    {
+    #####: 1163:		      for (k = 0; k < state->handCount[i]; k++)
+branch  0 never executed
+branch  1 never executed
+        -: 1164:			{
+        -: 1165:			  if (DEBUG)
+        -: 1166:			    printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+        -: 1167:			}
+    #####: 1168:		      break;
+        -: 1169:		    }
+        -: 1170:		}
+        -: 1171:
+        -: 1172:	    }
+        -: 1173:
+        -: 1174:	}
+        -: 1175:
+        -: 1176:      //discard played card from hand
+    #####: 1177:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+        -: 1178:
+    #####: 1179:      return 0;
+        -: 1180:
+        -: 1181:
+        -: 1182:    case embargo:
+        -: 1183:      //+2 Coins
+    #####: 1184:      state->coins = state->coins + 2;
+        -: 1185:
+        -: 1186:      //see if selected pile is in play
+    #####: 1187:      if ( state->supplyCount[choice1] == -1 )
+branch  0 never executed
+branch  1 never executed
+        -: 1188:	{
+    #####: 1189:	  return -1;
+        -: 1190:	}
+        -: 1191:
+        -: 1192:      //add embargo token to selected supply pile
+    #####: 1193:      state->embargoTokens[choice1]++;
+        -: 1194:
+        -: 1195:      //trash card
+    #####: 1196:      discardCard(handPos, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1197:      return 0;
+        -: 1198:
+        -: 1199:    case outpost:
+        -: 1200:      //set outpost flag
+    #####: 1201:      state->outpostPlayed++;
+        -: 1202:
+        -: 1203:      //discard card
+    #####: 1204:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1205:      return 0;
+        -: 1206:
+        -: 1207:    case salvager:
+        -: 1208:      //+1 buy
+    #####: 1209:      state->numBuys++;
+        -: 1210:
+    #####: 1211:      if (choice1)
+branch  0 never executed
+branch  1 never executed
+        -: 1212:	{
+        -: 1213:	  //gain coins equal to trashed card
+    #####: 1214:	  state->coins = state->coins + getCost( handCard(choice1, state) );
+call    0 never executed
+call    1 never executed
+        -: 1215:	  //trash card
+    #####: 1216:	  discardCard(choice1, currentPlayer, state, 1);
+call    0 never executed
+        -: 1217:	}
+        -: 1218:
+        -: 1219:      //discard card
+    #####: 1220:      discardCard(handPos, currentPlayer, state, 0);
+call    0 never executed
+    #####: 1221:      return 0;
+        -: 1222:
+        -: 1223:    case sea_hag:
+    #####: 1224:      for (i = 0; i < state->numPlayers; i++){
+branch  0 never executed
+branch  1 never executed
+    #####: 1225:	if (i != currentPlayer){
+branch  0 never executed
+branch  1 never executed
+    #####: 1226:	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
+    #####: 1227:	  state->discardCount[i]++;
+    #####: 1228:	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+        -: 1229:	}
+        -: 1230:      }
+    #####: 1231:      return 0;
+        -: 1232:
+        -: 1233:    case treasure_map:
+        -: 1234:      //search hand for another treasure_map
+    #####: 1235:      index = -1;
+    #####: 1236:      for (i = 0; i < state->handCount[currentPlayer]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1237:	{
+    #####: 1238:	  if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1239:	    {
+    #####: 1240:	      index = i;
+    #####: 1241:	      break;
+        -: 1242:	    }
+        -: 1243:	}
+    #####: 1244:      if (index > -1)
+branch  0 never executed
+branch  1 never executed
+        -: 1245:	{
+        -: 1246:	  //trash both treasure cards
+    #####: 1247:	  discardCard(handPos, currentPlayer, state, 1);
+call    0 never executed
+    #####: 1248:	  discardCard(index, currentPlayer, state, 1);
+call    0 never executed
+        -: 1249:
+        -: 1250:	  //gain 4 Gold cards
+    #####: 1251:	  for (i = 0; i < 4; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1252:	    {
+    #####: 1253:	      gainCard(gold, state, 1, currentPlayer);
+call    0 never executed
+        -: 1254:	    }
+        -: 1255:
+        -: 1256:	  //return success
+    #####: 1257:	  return 1;
+        -: 1258:	}
+        -: 1259:
+        -: 1260:      //no second treasure_map found in hand
+    #####: 1261:      return -1;
+        -: 1262:    }
+        -: 1263:
+    #####: 1264:  return -1;
+        -: 1265:}
+        -: 1266:
+function discardCard called 590 returned 100% blocks executed 89%
+      590: 1267:int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
+        -: 1268:{
+        -: 1269:
+        -: 1270:  //if card is not trashed, added to Played pile
+      590: 1271:  if (trashFlag < 1)
+branch  0 taken 93% (fallthrough)
+branch  1 taken 7%
+        -: 1272:    {
+        -: 1273:      //add card to played pile
+      548: 1274:      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos];
+      548: 1275:      state->playedCardCount++;
+        -: 1276:    }
+        -: 1277:
+        -: 1278:  //set played card to -1
+      590: 1279:  state->hand[currentPlayer][handPos] = -1;
+        -: 1280:
+        -: 1281:  //remove card from player's hand
+      590: 1282:  if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
+branch  0 taken 2% (fallthrough)
+branch  1 taken 98%
+        -: 1283:    {
+        -: 1284:      //reduce number of cards in hand
+        9: 1285:      state->handCount[currentPlayer]--;
+        -: 1286:    }
+      581: 1287:  else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1288:    {
+        -: 1289:      //reduce number of cards in hand
+    #####: 1290:      state->handCount[currentPlayer]--;
+        -: 1291:    }
+        -: 1292:  else
+        -: 1293:    {
+        -: 1294:      //replace discarded card with last card in hand
+      581: 1295:      state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
+        -: 1296:      //set last card to -1
+      581: 1297:      state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
+        -: 1298:      //reduce number of cards in hand
+      581: 1299:      state->handCount[currentPlayer]--;
+        -: 1300:    }
+        -: 1301:
+      590: 1302:  return 0;
+        -: 1303:}
+        -: 1304:
+function gainCard called 100 returned 100% blocks executed 70%
+      100: 1305:int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
+        -: 1306:{
+        -: 1307:  //Note: supplyPos is enum of choosen card
+        -: 1308:
+        -: 1309:  //check if supply pile is empty (0) or card is not used in game (-1)
+      100: 1310:  if ( supplyCount(supplyPos, state) < 1 )
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+        -: 1311:    {
+    #####: 1312:      return -1;
+        -: 1313:    }
+        -: 1314:
+        -: 1315:  //added card for [whoseTurn] current player:
+        -: 1316:  // toFlag = 0 : add to discard
+        -: 1317:  // toFlag = 1 : add to deck
+        -: 1318:  // toFlag = 2 : add to hand
+        -: 1319:
+      100: 1320:  if (toFlag == 1)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1321:    {
+    #####: 1322:      state->deck[ player ][ state->deckCount[player] ] = supplyPos;
+    #####: 1323:      state->deckCount[player]++;
+        -: 1324:    }
+      100: 1325:  else if (toFlag == 2)
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+        -: 1326:    {
+    #####: 1327:      state->hand[ player ][ state->handCount[player] ] = supplyPos;
+    #####: 1328:      state->handCount[player]++;
+        -: 1329:    }
+        -: 1330:  else
+        -: 1331:    {
+      100: 1332:      state->discard[player][ state->discardCount[player] ] = supplyPos;
+      100: 1333:      state->discardCount[player]++;
+        -: 1334:    }
+        -: 1335:
+        -: 1336:  //decrease number in supply pile
+      100: 1337:  state->supplyCount[supplyPos]--;
+        -: 1338:
+      100: 1339:  return 0;
+        -: 1340:}
+        -: 1341:
+function updateCoins called 0 returned 0% blocks executed 0%
+    #####: 1342:int updateCoins(int player, struct gameState *state, int bonus)
+        -: 1343:{
+        -: 1344:  int i;
+        -: 1345:
+        -: 1346:  //reset coin count
+    #####: 1347:  state->coins = 0;
+        -: 1348:
+        -: 1349:  //add coins for each Treasure card in player's hand
+    #####: 1350:  for (i = 0; i < state->handCount[player]; i++)
+branch  0 never executed
+branch  1 never executed
+        -: 1351:    {
+    #####: 1352:      if (state->hand[player][i] == copper)
+branch  0 never executed
+branch  1 never executed
+        -: 1353:	{
+    #####: 1354:	  state->coins += 1;
+        -: 1355:	}
+    #####: 1356:      else if (state->hand[player][i] == silver)
+branch  0 never executed
+branch  1 never executed
+        -: 1357:	{
+    #####: 1358:	  state->coins += 2;
+        -: 1359:	}
+    #####: 1360:      else if (state->hand[player][i] == gold)
+branch  0 never executed
+branch  1 never executed
+        -: 1361:	{
+    #####: 1362:	  state->coins += 3;
+        -: 1363:	}
+        -: 1364:    }
+        -: 1365:
+        -: 1366:  //add bonus
+    #####: 1367:  state->coins += bonus;
+        -: 1368:
+    #####: 1369:  return 0;
+        -: 1370:}
+        -: 1371:
+        -: 1372://end of dominion.c
+        -: 1373:

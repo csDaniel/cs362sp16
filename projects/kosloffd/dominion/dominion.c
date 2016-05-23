@@ -1207,7 +1207,7 @@ int playAdventurer(int currentPlayer, struct gameState* state)
 {
     int cardDrawn, z = 0;
     int temphand[MAX_HAND];
-    int drawntreasure = -1;
+    int drawntreasure = 0;
     while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
@@ -1238,7 +1238,7 @@ playSmithy(int currentPlayer, struct gameState* state, int handPos){
 	}
 
       //discard card from hand
-      discardCard(handPos, 0, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 
@@ -1254,13 +1254,13 @@ int playMinion(int currentPlayer, struct gameState* state, int choice1, int choi
 
       if (choice1)		//+2 coins
 	{
-	  state->coins = state->coins - 2;
+	  state->coins = state->coins + 2;
 	}
 
       else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
 	{
 	  //discard hand
-	  while(numHandCards(state) > 1)
+	  while(numHandCards(state) > 0)
 	    {
 	      discardCard(handPos, currentPlayer, state, 0);
 	    }
@@ -1274,7 +1274,7 @@ int playMinion(int currentPlayer, struct gameState* state, int choice1, int choi
 	  //other players discard hand and redraw if hand size > 4
 	  for (i = 0; i < state->numPlayers; i++)
 	    {
-		  if ( state->handCount[i] > 4 )
+		  if ( i != currentPlayer && state->handCount[i] > 4 )
 		    {
                   //discard hand
                   while( state->handCount[i] > 0 )
@@ -1332,8 +1332,9 @@ int playCutpurse(int currentPlayer, struct gameState* state, int handPos)
 		  if (state->hand[i][j] == copper)
 		    {
 		      discardCard(j, i, state, 0);
+		      break;
 		    }
-		  if (j <= state->handCount[i])
+		  if (j == state->handCount[i])
 		    {
 		      for (k = 0; k < state->handCount[i]; k++)
 			{

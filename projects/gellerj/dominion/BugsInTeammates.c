@@ -1,4 +1,19 @@
 /*
+
+Notes: No refactoring was required to run my unit tests and card tests on my
+ teammates' code. I was able to run my random tester on Daniel's code, but
+ the random tests threw segmentation faults when run against Alex's code,
+ likely due to the bugs that he introduced.
+
+ I realized that the error messages for some of my tests were inaccurate - for
+ example, the tests that checked whether each treasure card is gained by the
+ Adventurer card may actually  report a failure for bugs unrelated to that
+ particular test case. In summary, my tests seem maintainable/flexible,
+ however I need to pay closer to attention to ensure that my tests only
+ fail in the cases I intend them to, and do not report false negatives
+ and inaccurate error messages due to unanticipated affecting the purity of
+ the test.
+
 Daniel O'farrel
  
     Smithy failed tests:

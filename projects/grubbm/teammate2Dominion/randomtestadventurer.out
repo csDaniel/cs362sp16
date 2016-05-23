@@ -1,0 +1,322 @@
+Random Testing for Adventurer Card
+
+------------ Test 1 ------------
+All tests for run 1 pass
+------------ Test 2 ------------
+All tests for run 2 pass
+------------ Test 3 ------------
+All tests for run 3 pass
+------------ Test 4 ------------
+All tests for run 4 pass
+------------ Test 5 ------------
+All tests for run 5 pass
+------------ Test 6 ------------
+All tests for run 6 pass
+------------ Test 7 ------------
+All tests for run 7 pass
+------------ Test 8 ------------
+All tests for run 8 pass
+------------ Test 9 ------------
+All tests for run 9 pass
+------------ Test 10 ------------
+All tests for run 10 pass
+------------ Test 11 ------------
+All tests for run 11 pass
+------------ Test 12 ------------
+All tests for run 12 pass
+------------ Test 13 ------------
+All tests for run 13 pass
+------------ Test 14 ------------
+Deck Count Test: FAIL
+Expected Result: less than or equal to 20 
+Actual: 176
+------------ Test 15 ------------
+All tests for run 15 pass
+------------ Test 16 ------------
+All tests for run 16 pass
+------------ Test 17 ------------
+All tests for run 17 pass
+------------ Test 18 ------------
+All tests for run 18 pass
+------------ Test 19 ------------
+All tests for run 19 pass
+------------ Test 20 ------------
+All tests for run 20 pass
+------------ Test 21 ------------
+All tests for run 21 pass
+------------ Test 22 ------------
+All tests for run 22 pass
+------------ Test 23 ------------
+All tests for run 23 pass
+------------ Test 24 ------------
+All tests for run 24 pass
+------------ Test 25 ------------
+All tests for run 25 pass
+------------ Test 26 ------------
+All tests for run 26 pass
+------------ Test 27 ------------
+All tests for run 27 pass
+------------ Test 28 ------------
+All tests for run 28 pass
+------------ Test 29 ------------
+All tests for run 29 pass
+------------ Test 30 ------------
+All tests for run 30 pass
+------------ Test 31 ------------
+All tests for run 31 pass
+------------ Test 32 ------------
+All tests for run 32 pass
+------------ Test 33 ------------
+All tests for run 33 pass
+------------ Test 34 ------------
+All tests for run 34 pass
+------------ Test 35 ------------
+All tests for run 35 pass
+------------ Test 36 ------------
+Deck Count Test: FAIL
+Expected Result: less than or equal to 331 
+Actual: 132
+------------ Test 37 ------------
+All tests for run 37 pass
+------------ Test 38 ------------
+All tests for run 38 pass
+------------ Test 39 ------------
+All tests for run 39 pass
+------------ Test 40 ------------
+All tests for run 40 pass
+------------ Test 41 ------------
+All tests for run 41 pass
+------------ Test 42 ------------
+All tests for run 42 pass
+------------ Test 43 ------------
+All tests for run 43 pass
+------------ Test 44 ------------
+All tests for run 44 pass
+------------ Test 45 ------------
+All tests for run 45 pass
+------------ Test 46 ------------
+All tests for run 46 pass
+------------ Test 47 ------------
+All tests for run 47 pass
+------------ Test 48 ------------
+All tests for run 48 pass
+------------ Test 49 ------------
+Deck Count Test: FAIL
+Expected Result: less than or equal to 293 
+Actual: 39
+------------ Test 50 ------------
+All tests for run 50 pass
+------------ Test 51 ------------
+All tests for run 51 pass
+------------ Test 52 ------------
+All tests for run 52 pass
+------------ Test 53 ------------
+All tests for run 53 pass
+------------ Test 54 ------------
+All tests for run 54 pass
+------------ Test 55 ------------
+All tests for run 55 pass
+------------ Test 56 ------------
+All tests for run 56 pass
+------------ Test 57 ------------
+All tests for run 57 pass
+------------ Test 58 ------------
+All tests for run 58 pass
+------------ Test 59 ------------
+All tests for run 59 pass
+------------ Test 60 ------------
+All tests for run 60 pass
+------------ Test 61 ------------
+All tests for run 61 pass
+------------ Test 62 ------------
+All tests for run 62 pass
+------------ Test 63 ------------
+All tests for run 63 pass
+------------ Test 64 ------------
+All tests for run 64 pass
+------------ Test 65 ------------
+All tests for run 65 pass
+------------ Test 66 ------------
+All tests for run 66 pass
+------------ Test 67 ------------
+All tests for run 67 pass
+------------ Test 68 ------------
+All tests for run 68 pass
+------------ Test 69 ------------
+All tests for run 69 pass
+------------ Test 70 ------------
+All tests for run 70 pass
+------------ Test 71 ------------
+All tests for run 71 pass
+------------ Test 72 ------------
+All tests for run 72 pass
+------------ Test 73 ------------
+All tests for run 73 pass
+------------ Test 74 ------------
+All tests for run 74 pass
+------------ Test 75 ------------
+All tests for run 75 pass
+3 Tests Failed. Check Output Files For Results
+Function 'updateCoins'
+Lines executed:63.64% of 11
+Branches executed:50.00% of 8
+Taken at least once:37.50% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 1
+
+Function 'discardCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'playSmithy'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+
+Function 'playSalvager'
+Lines executed:0.00% of 7
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 4
+
+Function 'playMinion'
+Lines executed:0.00% of 18
+Branches executed:0.00% of 18
+Taken at least once:0.00% of 18
+Calls executed:0.00% of 6
+
+Function 'playCouncilRoom'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'playAdventurer'
+Lines executed:100.00% of 15
+Branches executed:100.00% of 10
+Taken at least once:100.00% of 10
+Calls executed:100.00% of 1
+
+Function 'cardEffect'
+Lines executed:5.21% of 192
+Branches executed:14.47% of 159
+Taken at least once:1.89% of 159
+Calls executed:3.85% of 52
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:95.45% of 22
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+Calls executed:100.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:0.00% of 10
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:95.16% of 62
+Branches executed:100.00% of 46
+Taken at least once:91.30% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:100.00% of 6
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+No calls
+
+File 'dominion.c'
+Lines executed:24.19% of 558
+Branches executed:24.34% of 415
+Taken at least once:17.83% of 415
+Calls executed:11.70% of 94
+Creating 'dominion.c.gcov'
+
