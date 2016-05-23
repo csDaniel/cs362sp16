@@ -1,0 +1,167 @@
+        -:    0:Source:cardtest3.c
+        -:    0:Graph:cardtest3.gcno
+        -:    0:Data:cardtest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * cardtest1.c
+        -:    3: *
+        -:    4: 
+        -:    5: */
+        -:    6:
+        -:    7:/*
+        -:    8: * Using cardtest4.c template.
+        -:    9: * -------------------------------------------
+        -:   10: * TESTCARD #3: Village.
+        -:   11: *--------------------------------------------
+        -:   12: * cardtest3: cardtest3.c dominion.o rngs.o
+        -:   13: *      gcc -o cardtest3 -g  cardtest3.c dominion.o rngs.o $(CFLAGS)
+        -:   14: */
+        -:   15:
+        -:   16:
+        -:   17:#include "dominion.h"
+        -:   18:#include "dominion_helpers.h"
+        -:   19:#include <string.h>
+        -:   20:#include <stdio.h>
+        -:   21:#include <assert.h>
+        -:   22:#include "rngs.h"
+        -:   23:#include <stdlib.h>
+        -:   24:
+        -:   25:#define TESTCARD "village"
+        -:   26:
+        1:   27:int main() {
+        1:   28:    int newCards = 0;
+        1:   29:    int newActions = 0;
+        1:   30:    int discarded = 1;
+        1:   31:    int cardTemp = 0;
+        -:   32:    int i;
+        -:   33:    int equal;
+        1:   34:    int successFlag = 0;
+        1:   35:    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        1:   36:    int seed = 1000;
+        1:   37:    int numPlayers = 2;
+        1:   38:    int thisPlayer = 0;
+        1:   39:    int thatPlayer = 1;
+        -:   40:	struct gameState originalG, testingG;
+        1:   41:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   42:			sea_hag, tribute, smithy, council_room};
+        -:   43:
+        -:   44:/*
+        -:   45:What I'm going to test:
+        -:   46:
+        -:   47:1. Current player should receive exactly 1 cards --> Check hand card
+        -:   48:
+        -:   49:2. Current player should receive exactly 2 actions --> Check action
+        -:   50:
+        -:   51:3. Other player should NOT receive 1 card --> Check other hand
+        -:   52:
+        -:   53:4. No state change should occur to the victory card piles and kingdom card piles. --> Check victory & kingdom.
+        -:   54:*/
+        -:   55:
+        -:   56:	// initialize a game state and player cards
+        1:   57:	initializeGame(numPlayers, k, seed, &originalG);
+        -:   58:
+        1:   59:	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+        -:   60:
+        -:   61:	// -----------------------------------------------------------------------
+        1:   62:	printf("\nTEST 1: Check current player's hand card.\n");
+        -:   63:
+        1:   64:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:   65:	cardEffect(village, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:   66:	
+        1:   67:	newCards = 1;
+        1:   68:	printf("Hand count = %d, expected = %d\n", testingG.handCount[thisPlayer], originalG.handCount[thisPlayer] + newCards - discarded);
+        1:   69:	if (testingG.handCount[thisPlayer] == originalG.handCount[thisPlayer] + newCards - discarded) {
+        1:   70:		printf ("Test 1 Passed: + 1 card.\n");
+        1:   71:      	successFlag += 1;
+        -:   72:    }
+        -:   73:    else {
+    #####:   74:      printf ("Test 1 Failed: More / Less than 1 card.\n");
+        -:   75:    }
+        -:   76:
+        -:   77:	// -----------------------------------------------------------------------
+        1:   78:	printf("\nTEST 2: Check current player's action.\n");
+        -:   79:
+        1:   80:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:   81:	cardEffect(village, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:   82:	
+        1:   83:	newActions = 2;
+        1:   84:	printf("Player's action = %d, expected = %d\n", testingG.numActions, originalG.numActions + newActions);
+        1:   85:	if (testingG.numActions == originalG.numActions + 2) {
+    #####:   86:		printf ("Test 2 Passed: + 2 actions.\n");
+    #####:   87:      	successFlag += 1;
+        -:   88:    }
+        -:   89:    else {
+        1:   90:      printf ("Test 2 Failed: More / Less than 2 actions.\n");
+        -:   91:    }
+        -:   92:
+        -:   93:	// -----------------------------------------------------------------------
+        1:   94:	printf("\nTEST 3: Check OTHER player's hand card. \n");
+        -:   95:
+        1:   96:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:   97:	cardEffect(village, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:   98:
+        -:   99:	// "thatPlayer" still has 0 card in hand since it is not endTurn yet.
+        -:  100:	// Thus, need to add +5 cards manually to "thatPlayer" hand & (-5) cards from deck.
+        -:  101:	// so can be tested at that round whether "village" works or not.
+        1:  102:	newCards = 5;
+        1:  103:	printf("Other Hand count = %d, expected = %d\n", testingG.handCount[thatPlayer] + newCards, originalG.handCount[thisPlayer]);
+        1:  104:	if (testingG.handCount[thatPlayer] + newCards == originalG.handCount[thisPlayer]) {
+        1:  105:		printf ("Test 3 Passed: Other player's state doesn't change.\n");
+        1:  106:      	successFlag += 1;
+        -:  107:    }
+        -:  108:    else {
+    #####:  109:      printf ("Test 3 Failed: Other player's state changes.\n");
+        -:  110:    }
+        -:  111:
+        -:  112:	// -----------------------------------------------------------------------
+        1:  113:	printf("\nTEST 4: Check Victory piles.\n");
+        -:  114:	
+        1:  115:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:  116:	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:  117:	
+        1:  118:	if (testingG.supplyCount[copper] == originalG.supplyCount[copper]) {
+        1:  119:		equal++;
+        -:  120:	}
+        1:  121:	if (testingG.supplyCount[silver] == originalG.supplyCount[silver]) {
+        1:  122:		equal++;
+        -:  123:	}
+        1:  124:	if (testingG.supplyCount[gold] == originalG.supplyCount[gold]) {
+        1:  125:		equal++;
+        -:  126:	}
+        -:  127:
+        1:  128:	if (equal == 3) {
+    #####:  129:		printf ("Test 4 Passed: Victory piles NO CHANGE.\n");
+    #####:  130:      	successFlag += 1;
+        -:  131:    }
+        -:  132:    else {
+        1:  133:      printf ("Test 4 Failed: Victory piles CHANGE.\n");
+        -:  134:    }
+        -:  135:
+        -:  136:    // -----------------------------------------------------------------------
+        1:  137:	printf("\nTEST 5: Check Kingdom piles.\n");
+        -:  138:	
+        1:  139:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:  140:	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:  141:	
+        1:  142:	equal = 0;
+       11:  143:    for (i = 0; i < 10; i++) {
+       10:  144:    	cardTemp = k[i];
+       10:  145:        if (testingG.supplyCount[cardTemp] == originalG.supplyCount[cardTemp]) {
+       10:  146:            equal++;
+        -:  147:        }
+        -:  148:    }
+        -:  149:
+        1:  150:	if (equal == 10) {
+        1:  151:		printf ("Test 5 Passed: Kingdom piles NO CHANGE.\n");
+        1:  152:      	successFlag += 1;
+        -:  153:    }
+        -:  154:    else {
+    #####:  155:      printf ("Test 5 Failed: Kingdom piles CHANGE.\n");
+        -:  156:    }
+        -:  157:
+        1:  158:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+        -:  159:
+        1:  160:	return 0;
+        -:  161:}
+        -:  162:

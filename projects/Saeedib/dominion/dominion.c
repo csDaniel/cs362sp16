@@ -8,7 +8,7 @@
 int Smithy(int currentPlayer, int handPos, struct gameState * state)
 {
 	// + 3 cards
-	for(int i = 0; i < 2; i++)
+	for(int i = 0; i < 3; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
@@ -40,7 +40,7 @@ int Adventurer(int currentPlayer, int handPos, struct gameState * state,int * te
 			z++;
 		}
 	}
-	while(z>=0)
+	while(z>=1)
 	{
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];
 		z=z-1;
@@ -53,7 +53,7 @@ int Feast(int currentPlayer, int handPos, struct gameState * state, int * tempha
 {
 	int x;
 	//Backup hand
-	for (int i = 1; i <= state->handCount[currentPlayer]; i++)
+	for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		temphand[i] = state->hand[currentPlayer][i];//Backup card
 		state->hand[currentPlayer][i] = -1;//Set to nothing

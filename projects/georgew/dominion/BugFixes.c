@@ -119,7 +119,13 @@ Adventurer:
 	are in the deck. This could have also caused the error in Jen's tests with the segmentation fault and infinite loop as two drawn cards may not
 	be selected.
 
-	Jens and Emily both mention an issue with the discard card function as some of the cards are not discarded properly in some tests.
+Discard Card:
+	Jens and Emily both mention an issue with the discard card function as some of the cards are not discarded properly in some tests. In looking at the tests and the 
+	results I cannot find the bug/bugs that are causing this issue. I feel a new test suite with more coverage would need to be created to find why discardCard is not working
+	properly. To update my tests I ran the function against several of the functions in the interface.h domain to see more clearly what was causing the issue. When I did this
+	I noticed the printDiscard function does not return anything, but the rest of the functions worked correctly and the correct card was played from the players hand. AS I'm 
+	sure you can surmise, this brings me no closer to figuring out the bug.
 
+Smithy:
 	Jens also found an issue with smithy not having the correct number of cards. The bug I introduced originally drew 1 card fewer than it was supposed to.
-	I adjusted the function so that it now draws the cards correclty.
+	I adjusted the function so that it now draws the cards correctly.

@@ -103,38 +103,54 @@
         -:   98:	//set handPos
         1:   99:	handPos = (testG.handCount[thisPlayer] - 1); 
         -:  100:	//run function and output result
-        1:  101:	runDiscard(handPos, thisPlayer, &testG, trashFlag);
-        1:  102:	printf("--------------------TEST 5: CHECK BEHAVIOR IF ONLY ONE CARD LEFT-----------------\n");
-        -:  103:	//revert to saved game state
-        1:  104:	memcpy(&G, &testG, sizeof(struct gameState));
-        1:  105:	handPos = 0;
-        1:  106:	trashFlag = 1;
-        -:  107:	//run until last card left
-        2:  108:	while(testG.handCount[thisPlayer] > 1)
-        -:  109:	{
-    #####:  110:		discardCard(handPos, thisPlayer, &testG, trashFlag);
-        -:  111:	}
-        -:  112:	//run final function and output result
-        1:  113:	runDiscard(handPos, thisPlayer, &testG, trashFlag);
-        1:  114:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", FUNCTION);
-        1:  115:	return 0;
-        -:  116:}
-        -:  117:
-        2:  118:void runDiscard(int handPos, int thisPlayer, struct gameState *testG, int trashFlag){
-        2:  119:	int currHandCount = testG->handCount[thisPlayer];
-        2:  120:	int lastCard = testG->hand[thisPlayer][(testG->handCount[thisPlayer] - 1)];
-        2:  121:	int currCard = testG->hand[thisPlayer][handPos];
-        2:  122:	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
-        2:  123:	printf("Running Function\n");
-        -:  124:	//run function
-        2:  125:	discardCard(handPos, thisPlayer, testG, trashFlag);
-        -:  126:	//output results
-        2:  127:	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
-        -:  128:	//check if hand count is correct
-        2:  129:	if (testG->handCount[thisPlayer] == (currHandCount - 1))
-        2:  130:		printf("Hand Count Decreased: SUCCESS\n");
-    #####:  131:	else if (testG->handCount[thisPlayer] == currHandCount)
-    #####:  132:		printf("Hand Count Not Decreased: FAILURE\n");
-        -:  133:	else 
-    #####:  134:		printf("Hand Count Changed but not correct: FAILURE\n");
-        2:  135:}
+        1:  101:	printDeck(thisPlayer, &testG);
+        1:  102:	printDiscard(thisPlayer, &testG);
+        1:  103:	printHand(thisPlayer, &testG);
+        1:  104:	printPlayed(thisPlayer, &testG);
+        -:  105:	
+        1:  106:	runDiscard(handPos, thisPlayer, &testG, trashFlag);
+        -:  107:	
+        1:  108:	printDeck(thisPlayer, &testG);
+        1:  109:	printDiscard(thisPlayer, &testG);
+        1:  110:	printHand(thisPlayer, &testG);
+        1:  111:	printPlayed(thisPlayer, &testG);
+        -:  112:	
+        -:  113:	
+        1:  114:	printf("--------------------TEST 5: CHECK BEHAVIOR IF ONLY ONE CARD LEFT-----------------\n");
+        -:  115:	//revert to saved game state
+        1:  116:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:  117:	handPos = 0;
+        1:  118:	trashFlag = 1;
+        -:  119:	//run until last card left
+        2:  120:	while(testG.handCount[thisPlayer] > 1)
+        -:  121:	{
+    #####:  122:		discardCard(handPos, thisPlayer, &testG, trashFlag);
+        -:  123:	}
+        -:  124:	//run final function and output result
+        1:  125:	runDiscard(handPos, thisPlayer, &testG, trashFlag);
+        1:  126:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", FUNCTION);
+        1:  127:	return 0;
+        -:  128:}
+        -:  129:
+        2:  130:void runDiscard(int handPos, int thisPlayer, struct gameState *testG, int trashFlag){
+        2:  131:	int currHandCount = testG->handCount[thisPlayer];
+        2:  132:	int lastCard = testG->hand[thisPlayer][(testG->handCount[thisPlayer] - 1)];
+        2:  133:	int currCard = testG->hand[thisPlayer][handPos];
+        2:  134:	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
+        2:  135:	printf("Running Function\n");
+        -:  136:	//run function
+        2:  137:	discardCard(handPos, thisPlayer, testG, trashFlag);
+        -:  138:	//printDeck(thisPlayer, &testG);
+        -:  139:	//printDiscard(thisPlayer, &testG);
+        -:  140:	//printHand(thisPlayer, &testG);
+        -:  141:	//printPlayed(thisPlayer, &testG);
+        -:  142:	//output results
+        2:  143:	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
+        -:  144:	//check if hand count is correct
+        2:  145:	if (testG->handCount[thisPlayer] == (currHandCount - 1))
+        2:  146:		printf("Hand Count Decreased: SUCCESS\n");
+    #####:  147:	else if (testG->handCount[thisPlayer] == currHandCount)
+    #####:  148:		printf("Hand Count Not Decreased: FAILURE\n");
+        -:  149:	else 
+    #####:  150:		printf("Hand Count Changed but not correct: FAILURE\n");
+        2:  151:}

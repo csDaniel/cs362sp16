@@ -36,25 +36,28 @@ int main(int argc, char ** argv)
 
 		memcpy(&testG, &G, sizeof(struct gameState));
 		count = G.handCount[thisPlayer];
-		printf("Hand count for G is: %d",count);
 		count = testG.handCount[thisPlayer];
-		printf("Hand count for testG is: %d",count);
+		printf("Hand count for testG is: %d.\n",count);
 
 		for(int i = 0; i < count; i++)
 			testG.hand[thisPlayer][i] = estate;
 		for(int i = 0; i < 25; i++)
 			testG.supplyCount[i] = 10;
 
+		G.hand[thisPlayer][0] = gold;
+		G.hand[thisPlayer][1] = silver;
+		G.hand[thisPlayer][2] = copper;
+		G.discardCount[thisPlayer] = 0;
 		testG.hand[thisPlayer][0] = gold;
 		testG.hand[thisPlayer][1] = silver;
 		testG.hand[thisPlayer][2] = copper;
 		testG.discardCount[thisPlayer] = 0;
 
-		smithyCard(thisPlayer, rand() % 4, &testG);
-		out = 0;
+		smithyCard(&testG, rand() % 4);
+		out = getCost(smithy);
 		printf("smithy function should return cost of smithy card : %d.\n",out);
-		
-		printf("New Hand count is: %d.\n",testG.handCount[thisPlayer]);
+		assert(out==4);
+		printf("New Hand count is: %d. it should be %d\n",testG.handCount[thisPlayer],G.handCount[thisPlayer] + 2);
 		printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
 	}
 	return 0;
