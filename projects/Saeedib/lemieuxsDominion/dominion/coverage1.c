@@ -1,21 +1,21 @@
 Coverage test: 
 File 'unittest1.c'
-Lines executed:100.00% of 32
+Lines executed:98.70% of 77
 Creating 'unittest1.c.gcov'
 
 _________________________________________________________
 File 'unittest2.c'
-Lines executed:100.00% of 37
+Lines executed:97.06% of 68
 Creating 'unittest2.c.gcov'
 
 _________________________________________________________
 File 'unittest3.c'
-Lines executed:100.00% of 197
+Lines executed:100.00% of 11
 Creating 'unittest3.c.gcov'
 
 _________________________________________________________
 File 'unittest4.c'
-Lines executed:100.00% of 119
+Lines executed:97.22% of 36
 Creating 'unittest4.c.gcov'
 
 _________________________________________________________
