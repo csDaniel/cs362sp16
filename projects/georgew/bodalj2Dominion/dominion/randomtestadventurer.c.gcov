@@ -1,0 +1,115 @@
+        -:    0:Source:randomtestadventurer.c
+        -:    0:Graph:randomtestadventurer.gcno
+        -:    0:Data:randomtestadventurer.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://refactored for bodaljens
+        -:    2:#include "dominion.h"
+        -:    3:#include "dominion_helpers.h"
+        -:    4:#include <string.h>
+        -:    5:#include <stdio.h>
+        -:    6:#include <assert.h>
+        -:    7:#include <time.h>
+        -:    8:#include <unistd.h>
+        -:    9:#include "rngs.h"
+        -:   10:#include <stdlib.h>
+        -:   11:#include "interface.h"
+        -:   12:
+        -:   13:#define TESTCARD "adventurer"
+        -:   14:
+        -:   15:int callFunction(struct gameState *G, int numPlayers);
+        -:   16:
+        1:   17:int main() {
+        1:   18:  	int seed = 1000;
+        1:   19:	int testCounter = 0;
+        1:   20:	int failedTests = 0;
+        -:   21:	struct gameState G, testG;
+        -:   22:	//start and end variables
+        1:   23:	time_t start = time(NULL);
+        -:   24:	time_t end;
+        -:   25:	//5 minutes
+        1:   26:	time_t seconds = 300; 
+        -:   27:	//1 minute
+        -:   28:	//time_t seconds = 60; 
+        1:   29:	end = start + seconds;
+        -:   30:	int numPlayers;
+        1:   31:	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
+        -:   32:			sea_hag, tribute, smithy, council_room};
+        1:   33:	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
+        -:   34:	//get random number of players
+ 23992066:   35:	while(start < end){
+ 23992064:   36:		testCounter++;
+        -:   37:		//wait 1 second
+        -:   38:		//sleep(1);
+        -:   39:		//set numPlayers
+        -:   40:		//printf("\nSetting Random Variables for CardEffect\n");
+        -:   41:		//set num players between 1 and 4
+ 23992064:   42:		numPlayers = rand()%MAX_PLAYERS + 1;
+        -:   43:		//printf("NumPlayers: %d ", numPlayers);
+ 23992064:   44:		assert(numPlayers != 0 && numPlayers < 5); 
+        -:   45:		//initialize a game state and player cards
+ 23992064:   46:		initializeGame(numPlayers, k, seed, &G);
+        -:   47:		//save current state	
+ 23992064:   48:		memcpy(&testG, &G, sizeof(struct gameState));
+        -:   49:		//set up CardEffect function
+ 23992064:   50:		failedTests += callFunction(&G, numPlayers);
+        -:   51:		//reset state
+ 23992064:   52:		memcpy(&G, &testG, sizeof(struct gameState));
+        -:   53:		//reset start	
+ 23992064:   54:		start = time(NULL);
+        -:   55:	}
+        1:   56:	printf("\n TOTAL TESTS RUN: %d\n", testCounter);
+        1:   57:	printf("\n FAILED TESTS: %d\n", failedTests);
+        1:   58:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
+        1:   59:return 0;
+        -:   60:}
+        -:   61:
+ 23992064:   62:int callFunction(struct gameState *G, int numPlayers){
+        -:   63:	int thisPlayer, choice1, choice2, choice3, handPos;
+        -:   64:	int deckCount;
+        -:   65:	int shuffle;
+ 23992064:   66:	int bonus = 0;
+        -:   67:	int coinsStart, coins;
+        -:   68:	//set current player
+ 23992064:   69:	thisPlayer = rand() % MAX_PLAYERS;
+        -:   70:	//get valid player
+ 73997118:   71:	while(thisPlayer >= numPlayers){
+ 26012990:   72:		thisPlayer = rand() % MAX_PLAYERS;
+        -:   73:	}
+        -:   74:	//set current player to whose turn
+ 23992064:   75:	G->whoseTurn = thisPlayer;
+        -:   76:	//set choices
+ 23992064:   77:	choice1 = rand() % 2 - 1;
+ 23992064:   78:	choice2 = rand() % 2 - 1;
+ 23992064:   79:	choice3 = rand() % 2 - 1;
+        -:   80:	//printf("choice 1: %d choice 2:  %d choice 3: %d ", choice1, choice2, choice3);
+ 23992064:   81:	assert(choice1 > -2 && choice2 > -2 && choice3 > -2);
+ 23992064:   82:	assert(choice1 < 2 && choice2 < 2 && choice3 < 2);
+        -:   83:	//set deckCount to random value
+ 23992064:   84:	deckCount = rand() % MAX_DECK;
+ 23992064:   85:	if(deckCount < 1){
+    47746:   86:		shuffle = 1;
+        -:   87:	}
+ 23992064:   88:	G->deckCount[thisPlayer] = deckCount;
+        -:   89:	//set hand pos
+ 23992064:   90:	handPos = rand() % MAX_HAND;
+        -:   91:	//printf("HandPos: %d ", handPos);
+ 23992064:   92:	coinsStart = countHandCoins(thisPlayer, G);
+        -:   93:	//printf("\nCoins Before: %d", coinsStart);
+        -:   94:	//call cardEffect function
+        -:   95:	//printf("\nCall Card Effect\n");
+        -:   96:	//cardEffect(adventurer, choice1, choice2, choice3, G, handPos, &bonus);
+ 23992064:   97:	playAdventurer(thisPlayer, G);
+ 23992064:   98:	coins = countHandCoins(thisPlayer, G);
+        -:   99:	//printf("Coins After: %d\n", coins);
+ 23992064:  100:	if (coins - coinsStart != 2){
+        -:  101:		//printf("ERROR ERROR!! TEST DID NOT PERFORM AS EXPECTED!!!\n");
+        -:  102:		//printf("NumPlayers: %d, Current Player: %d, choice1: %d, choice2: %d, choice3: %d HandPos: %d\n", numPlayers, thisPlayer, choice1, choice2, choice3, handPos);
+        -:  103:		//if(shuffle)
+        -:  104:			//printf("Shuffle Run\n");
+ 23992064:  105:		return 1;
+        -:  106:	}
+    #####:  107:	return 0;
+        -:  108:}
+        -:  109:
+        -:  110:

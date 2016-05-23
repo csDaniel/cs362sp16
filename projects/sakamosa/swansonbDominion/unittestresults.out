@@ -1,0 +1,59 @@
+*********************BEGIN UNIT TESTS OF GETCOST()*********************
+
+
+Passed 27 of 27 card tests
+Passed invalid card test
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF INITIALIZEGAME()*********************
+
+Player 1 deck count: 5 Player 2 deck count: 10
+FAIL incorrect number of cards in deck
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF BUYCARD()*********************
+
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF FULLDECKCOUNT()*********************
+
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF SMITHY*********************
+
+FAIL incorrect number of cards in player deck
+Deck count is: 1, previous count was: 5
+FAIL incorrect number of cards in player hand
+Hand count is: 8, previous count was: 5
+FAIL incorrect number of cards in player discard pile
+FAIL total player cards is incorrect
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF ADVENTURER*********************
+
+FAIL incorrect number of cards in player hand
+Hand count = 9, was 5
+FAIL two treasure cards were not added to hand
+FAIL incorrect number of cards in player discard pile
+FAIL total player cards is incorrect
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF GREAT HALL*********************
+
+FAIL incorrect number of cards in player discard pile
+FAIL total player cards is incorrect
+**********************TESTS COMPLETE*************************
+
+*********************BEGIN UNIT TESTS OF OUTPOST*********************
+
+FAIL incorrect number of cards in player discard pile
+FAIL total player cards is incorrect
+**********************TESTS COMPLETE*************************
+
+File 'dominion.c'
+Lines executed:38.71% of 558
+Branches executed:39.09% of 417
+Taken at least once:30.94% of 417
+Calls executed:25.26% of 95
+Creating 'dominion.c.gcov'
+

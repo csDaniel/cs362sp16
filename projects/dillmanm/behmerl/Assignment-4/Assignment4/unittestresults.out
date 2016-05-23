@@ -1,0 +1,64 @@
+Result for running tests:
+unittest1.c:
+Testing the  Whose Turn	functionThis passed: there is still a legal number of players in game.
+Oh no, too many people!
+This passed: there is still a legal number of players in game.
+File 'dominion.c'
+Lines executed:16.20% of 568
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+This is testing the full deck functionThis passed the test. They have less than MAX_DECK.
+This passed the test. They have less than MAX_HAND.
+This passed the test. It is increasing
+File 'dominion.c'
+Lines executed:16.90% of 568
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+This is testing the get cost function
+This test passed.
+This test passed.
+This test passed.
+This test passed.
+File 'dominion.c'
+Lines executed:16.73% of 568
+Creating 'dominion.c.gcov'
+
+unittest4.c:
+This is testing the is game over function
+This test passed.
+This test failed.
+File 'dominion.c'
+Lines executed:16.90% of 568
+Creating 'dominion.c.gcov'
+
+cardtest1.c:
+This is testing the smithy card.
+This test failed. Three cards have not been added.
+File 'dominion.c'
+Lines executed:19.01% of 568
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+This is testing the adventurer card.
+This test failed. Wrong amount of cards have been added.
+File 'dominion.c'
+Lines executed:20.95% of 568
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+This is testing the village card.
+This test passed.
+File 'dominion.c'
+Lines executed:19.01% of 568
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+This is testing the great hall card.
+This test failed. Wrong amount of cards.
+This test failed. Wrong amount of actions.
+File 'dominion.c'
+Lines executed:19.01% of 568
+Creating 'dominion.c.gcov'
+

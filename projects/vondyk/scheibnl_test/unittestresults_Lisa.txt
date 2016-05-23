@@ -1,0 +1,417 @@
+----------------- RUNNING TEST BUNDLE : Printout --------------
+All
+make[1]: Entering directory '/cygdrive/c/Users/Kayla/Documents/GitHub/CS362'
+./cardtest1
+*******  TESTING CARD: Smithy  *******
+
+
+Test 1: Play Smithy and gain 3 cards:
+FAILED. Hand Size Start: 7   		Hand Size Finish: 8
+
+Test 2a: Player 2's deck size unchanged when smithy is drawn:
+Passed. Deck Size Start: 10   		Deck Size Finish: 10
+
+Test 2b: Player 2's hand size unchanged when smithy is drawn:
+Passed. Hand Size Start: 0   		Hand Size Finish: 0
+
+Test 3: Player 1 is drawing properly from own pile:
+FAILED. Expected Deck Size: 2   	Deck Size Finish: 1
+
+Test 4: Smithy card added to played pile after use:
+Passed. Expected increase in played pile: 1   Actual increase to played pile: 1
+
+Test 5: : Test supply counts for misplaced points and curses: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 6: Test supply counts for misplaced treasure: 
+Passed. Supply counts for treasure cards are correct
+
+./cardtest2
+*******  TESTING CARD: Adventurer  *******
+
+
+Test 1: Play Adventurer and draw until two coins are drawn:
+Passed. Coin card amount expected: 2   	Coin count finish: 2
+Coin cards Found: silver, copper, 
+
+Test 2: Check that coin amount unchanged until use:
+Passed. Coin amount the same
+
+Test 3: Check test one again, but force gold to be drawn:
+Passed. Coin card amount expected: 2   	Hand Size: 2
+Coin cards Found: gold, copper, 
+
+Test 4: Make sure all cards that were not coins were discarded properly:
+FAILED. Expected discard amount: 1			Discarded amount: 2
+
+Test 5: Player 2's deck size unchanged when adventurer is played:
+Passed. Deck size start: 10   		Deck size finish: 10
+
+Test 6: Player 2's hand size unchanged when adventurer is played:
+Passed. Hand size start: 0   		Hand size finish: 0
+
+Test 7: Player is drawing and keeping only two cards from own pile:
+Passed. Expected Deck size: 2   	Deck size finish: 2
+
+Test 8: Adventurer card added to played pile after use:
+FAILED. Expected increase in played pile: 1   	 	Actual increase to played pile: 0
+
+Test 9: : Test supply counts for misplaced points and curses: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 10: Test supply counts for misplaced treasure: 
+Passed. Supply counts for treasure cards are correct
+
+./cardtest3
+*******  TESTING CARD: Village  *******
+
+
+Test 1: Play Village and gain 1 card:
+Passed. Expected hand count: 5   		Hand count finish: 5
+
+Test 2: Play Village and gain 2 numActions:
+Passed. Expected Action count: 2   	Action finish: 2
+
+Test 3: Player 2's deck size unchanged when village is played:
+Passed. Deck size start: 10   			Deck size finish: 10
+
+Test 3b: Player 2's hand size unchanged when village is played:
+Passed. Hand size start: 0   			Hand size finish: 0
+
+Test 4: Player 1 is drawing from own pile:
+Passed. Expected: 4   			Deck size finish: 4
+
+Test 5: Village card added to played pile after use:
+Passed. Expected increase in played pile: 1    Actual increase to played pile: 1
+
+Test 6: : Test supply counts for misplaced points and curses: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 7: Test supply counts for misplaced treasure: 
+Passed. Supply counts for treasure cards are correct
+
+./cardtest4
+*******  TESTING CARD: Council Room  *******
+
+
+Test 1a: Play Council Room and draw 4 cards:
+Passed. Deck size start: 5   		Deck size finish: 1
+
+Test 1b: Player 1 gains a buy:
+Passed. Number of Buys start: 1	Number of Buys finish: 2
+
+Test 2: Player 2's deck size decreased by 1 when Council Room is played:
+Passed. Deck size start: 10   		Deck size finish: 9
+
+Test 3: Player 2's hand size increased by 1 when Council Room is played:
+Passed. Hand size start: 0   		Hand size finish: 1
+
+Test 4: Player is drawing from own pile:
+Passed. Expected: 1   				Deck size finish: 1
+
+Test 5: Council Room card added to played pile after use:
+Passed. Expected increase in played pile: 1    	Actual increase to played pile: 1
+
+Test 6: : Test supply counts for misplaced points and curses: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 7: Test supply counts for misplaced treasure: 
+Passed. Supply counts for treasure cards are correct
+
+./unittest1
+*******  TESTING FUNCTION: isGameOver  *******
+
+Test 1: Province is empty, should be game over: 
+Passed. Expected 1    Returned 1
+
+Test 2: Three empty supply decks end the game: 
+Passed. Expected 1    Returned 1
+
+Test 3: Two empty supply decks should not end the game: 
+Passed. Expected 0    Returned 0
+
+Test 4: Cards remaining in the decks should not end the game: 
+Passed. Expected 0    Returned 0
+
+Test 5: Test supply counts for treasure that should have been distributed: 
+Passed. Supply counts for treasure cards are correct
+
+./unittest2
+*******   TESTING FUNCTION: gainCard   *******
+
+Test 1: Cannot gain a card which is out of stock: 
+Passed. Expected -1    Returned -1
+
+Test 2: Cannot gain a card which is not in game: 
+Passed. Expected -1    Returned -1
+
+Test 3: Flag One, Card is added to player 1's deck: 
+Passed. Expected 6    Returned 6
+
+Test 4: Flag Two, Card is added to player 1's hand: 
+Passed. Expected 6    Returned 6
+
+Test 5: Flag zero, Card is discarded: 
+Passed. Expected 1    Returned 1
+
+Test 6: Supply count is decreased: 
+Passed. Expected 9    Returned 9
+
+Test 7: : Test supply counts for points and curses that should not have been distributed: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 8: Test supply counts for treasure that should have been distributed: 
+Passed. Supply counts for treasure cards are correct
+
+./unittest3
+*******   TESTING FUNCTION: updateCoins   *******
+
+Test 1: Copper increases coins by 1: 
+Passed. Expected 1    Returned 1
+
+Test 2: Other player gained nothing to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+Test 3: Silver increases coins by 2: 
+Passed. Expected 2    Returned 2
+
+Test 4: Other player gained nothing to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+Test 5: Gold increases coins by 3: 
+Passed. Expected 3    Returned 3
+
+Test 6: Other player gained nothing to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+Test 7: Bonus produces incease equivalent to input (coins + 1): 
+Passed. Expected 4    Returned 4
+
+Test 8: Other player gained nothing to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+Test 9: Bonus produces increase equivalent to input (coins + 3): 
+Passed. Expected 6    Returned 6
+
+Test 10: Other player gained nothing to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 11: : Test supply counts for points and curses that should not have been distributed: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 12: Test supply counts for treasure that should have been distributed: 
+Passed. Supply counts for treasure cards are correct
+
+./unittest4
+*******  TESTING FUNCTION: discardCard  *******
+
+
+Test 1: Card added to played pile if w/trash flag 0: 
+Passed. Expected 1    Returned 1
+Test 2: Other player didn't gain to hand: 
+Passed. Expected other user's hand to remain 0   It's now: 0
+Test 3: Other player didn't gain to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 4: Card not added to played pile if trash flag set: 
+Passed. Expected 0    Returned 0
+Test 5: Other player didn't gain to hand: 
+Passed. Expected other user's hand to remain 0   It's now: 0
+Test 6: Other player didn't gain to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 7: Card is removed from hand when discarded: 
+Passed. Card not found in hand.
+Test 8: Other player didn't gain to hand: 
+Passed. Expected other user's hand to remain 0   It's now: 0
+Test 9: Other player didn't gain to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 10: Card is removed from hand when trashed: 
+Passed. Expected 4    Returned 4
+Test 11: Other player didn't gain to hand: 
+Passed. Expected other user's hand to remain 0   It's now: 0
+Test 12: Other player didn't gain to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 13: One card in hand, will reduce to 0: 
+Passed. Expected 0    Returned 0
+Test 14: Other player didn't gain to hand: 
+Passed. Expected other user's hand to remain 0   It's now: 0
+Test 15: Other player didn't gain to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 16: Makes sure if more cards available, last card set: 
+Passed. Expected -1    Returned -1
+Test 17: Other player didn't gain to hand: 
+Passed. Expected other user's hand to remain 0   It's now: 0
+Test 18: Other player didn't gain to deck: 
+Passed. Expected other user's deck to remain 10   It's now: 10
+
+Test 19: : Test supply counts for points and curses that should not have been distributed: 
+Passed. Supply counts for curses and victory cards are correct
+
+Test 20: Test supply counts for treasure that should have been distributed: 
+Passed. Supply counts for treasure cards are correct
+
+make[1]: Leaving directory '/cygdrive/c/Users/Kayla/Documents/GitHub/CS362'
+ --------------- COVERAGE: Individual functions and TOTAL DOMINION.C COVERAGE -------------------
+Function 'updateCoins'
+Lines executed:100.00% of 11
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'gainCard'
+Lines executed:100.00% of 13
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+Calls executed:100.00% of 1
+
+Function 'discardCard'
+Lines executed:92.31% of 13
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+No calls
+
+Function 'cardEffect'
+Lines executed:12.72% of 173
+Branches executed:20.86% of 139
+Taken at least once:7.91% of 139
+Calls executed:13.56% of 59
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+Branches executed:33.33% of 6
+Taken at least once:16.67% of 6
+Calls executed:0.00% of 1
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+Calls executed:0.00% of 2
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+Calls executed:0.00% of 3
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 20
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 3
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 9
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'supplyCount'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:0.00% of 3
+No branches
+Calls executed:0.00% of 1
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+No branches
+Calls executed:0.00% of 1
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+Calls executed:0.00% of 4
+
+Function 'playCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 10
+Taken at least once:0.00% of 10
+Calls executed:0.00% of 3
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+Branches executed:100.00% of 8
+Taken at least once:87.50% of 8
+Calls executed:100.00% of 2
+
+Function 'initializeGame'
+Lines executed:83.87% of 62
+Branches executed:95.65% of 46
+Taken at least once:80.43% of 46
+Calls executed:100.00% of 5
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'compare'
+Lines executed:83.33% of 6
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+Function 'tributeAction'
+Lines executed:0.00% of 33
+Branches executed:0.00% of 30
+Taken at least once:0.00% of 30
+Calls executed:0.00% of 3
+
+Function 'sea_hagAction'
+Lines executed:0.00% of 8
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+No calls
+
+Function 'cutpurseAction'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+Calls executed:0.00% of 3
+
+Function 'smithyAction'
+Lines executed:100.00% of 5
+Branches executed:100.00% of 2
+Taken at least once:100.00% of 2
+Calls executed:100.00% of 2
+
+Function 'adventurerAction'
+Lines executed:93.33% of 15
+Branches executed:100.00% of 12
+Taken at least once:91.67% of 12
+Calls executed:50.00% of 2
+
+File 'dominion.c'
+Lines executed:30.59% of 559
+Branches executed:30.94% of 417
+Taken at least once:23.74% of 417
+Calls executed:20.00% of 95
+Creating 'dominion.c.gcov'
+

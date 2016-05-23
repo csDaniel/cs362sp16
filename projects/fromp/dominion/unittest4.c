@@ -236,6 +236,8 @@ void fullDeckCountTest(){
 	}
 
 
+	printResults(&game, &compareGame);
+
 	printf("\n\nProblems found: %i\n\n", problems);	
 	printf("<--- fullDeckCount Testing Completed successfully --->\n\n");
 }

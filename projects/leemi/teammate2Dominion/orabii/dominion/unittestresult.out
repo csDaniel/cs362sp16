@@ -1,0 +1,101 @@
+=========Testing updateCoins=========
+File 'dominion.c'
+Lines executed:22.46% of 570
+Creating 'dominion.c.gcov'
+
+==================Testing playCard==================
+
+---Discarding One card from hand, 'smithy' from custom hand {smithy, salvager, silver, copper, village}---
+
+---Assert that handCount went down---
+expected: 4 actual: 4
+---Assert that smithy is gone---
+---Done---
+---Assert that last card in hand is 'village' has been set to -1
+---Done---
+---Assert cards except first and last are in same place
+---Done---
+---Assert that playedCardCount is increased---
+expected: 1 actual: 1
+---Assert that smithy is in played card pile---
+---Done---
+
+---Discarding Salvager now to test for trashFlag---
+
+---last card in hand is played---
+---Done---
+---Assert that Played Cards have not changed at all---
+---Done---
+---Assert that Last card decreses handCount---
+---Done---
+---Discarding cards that don't exist---
+HandCount is now: -1
+===BUG: shouldn't be able to discard card that doesn't exist===
+
+=======================Sucess=====================
+
+File 'dominion.c'
+Lines executed:22.46% of 570
+Creating 'dominion.c.gcov'
+
+==================Testing GainCard==================
+
+---Reset Game---
+---Testing all card types with gainCard for flag=0 (discard)---
+---success---
+---Testing all card types with gainCard for flag=1 (deck)---
+---success---
+---Testing all card types with gainCard for flag=2 (hand)---
+---success---
+---Testing gainCard for single supply until hits zero---
+---Making sure supply doesn't go below 0---
+---success---
+
+
+=======================Sucess=====================
+
+File 'dominion.c'
+Lines executed:22.46% of 570
+Creating 'dominion.c.gcov'
+
+==================Testing isGameOver==================
+
+---initializing game---
+---Game is not over---
+
+---Setting supplyCount: province to 0---
+---Game is over---
+
+---Reset Game---
+---Setting supplyCount: estate, adventurer to 0---
+---2 SUPPLY COUNTS AT 0 EXPECT NO GAME OVER---
+---Game is not over---
+
+---Reset Game---
+---Setting supplyCount: estate, copper, adventurer to 0---
+---3 SUPPLY COUNTS AT 0 EXPECT GAME OVER---
+---Game is over---
+
+---Reset Game---
+---Setting supplyCount: estate, copper, silver, adventurer to 0---
+---4 SUPPLY COUNTS AT 0 EXPECT GAME OVER---
+---Game is over---
+
+---Reset Game---
+---Setting supplyCount: estate, copper, silver to negative---
+---3 SUPPLY COUNTS AT -1 EXPECT GAME OVER---
+---Consider changing if supplycount <= 0 in any case supply goes lower than 0---
+---Game is not over---
+
+=======================Sucess=====================
+
+File 'dominion.c'
+Lines executed:22.46% of 570
+Creating 'dominion.c.gcov'
+
+
+
+--- ---
+==================Testing cardSmithy==================
+
+---testing you gain 3 cards and discard card Smithy---

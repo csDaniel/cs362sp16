@@ -20,12 +20,14 @@ int main(int argc, char *argv[]) {
   // -------------------------------------------------------------------------------------
   // REQT: POPULATE ALL CARD LOCATIONS (HAND, DECK, DISCARD) W/ UNIQUE QUANTITIES OF EACH CARD
   //                                   NUMCARDS CURSE ESTATE DUCHY PROVINCE GARDENS GREATHALL TOTAL
-  //       1 OF EACH CARD IN HAND      27          -1    1      3     6        1    --           10
-  //       2 OF EACH CARD IN DECK      54          -2    2      6     12       2    --           20
-  //       3 OF EACH CARD IN DISCARD   81          -3    3      9     18       3    --           30
-  //       TOTAL                       162         -6    6      18    36       6    162/10=16    76
+  //       1 OF EACH CARD IN HAND      27          -1    1      3     6       16      1           26
+  //       2 OF EACH CARD IN DECK      54          -2    2      6     12      32      2           52
+  //       3 OF EACH CARD IN DISCARD   81          -3    3      9     18      48      3           78
+  //       TOTAL                       162         -6    6      18    36      96      6          156
   //
-  //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 76
+  //       GARDEN PER CARD SCORE = 162/10 = 16
+  //
+  //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 156
   // -------------------------------------------------------------------------------------
   int i;
   int pNum = 1;
@@ -47,19 +49,21 @@ int main(int argc, char *argv[]) {
   }
 
   int r = scoreFor(pNum, state);
-  if (r == 76) {
+  if (r == 156) {
     printf("PASS");
   }
   else {
     printf("FAIL");
   }
   printf("ED: RETURN VALUE = %d\n", r);
-  printf("        EXPECTATION IS r = 76\n");
+  printf("        EXPECTATION IS r = 156\n");
 
   // -------------------------------------------------------------------------------------
   // REQT: POPULATE ALL CARD LOCATIONS (HAND ONLY)
   //                                   NUMCARDS CURSE ESTATE DUCHY PROVINCE GARDENS GREATHALL TOTAL
-  //       1 OF EACH CARD IN HAND      27          -1    1      3     6        1    27/10=2      12
+  //       1 OF EACH CARD IN HAND      27          -1    1      3     6        2       1        12
+  //
+  //       GARDEN PER CARD SCORE = 27/10 = 2
   //
   //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 12
   // -------------------------------------------------------------------------------------
@@ -84,9 +88,11 @@ int main(int argc, char *argv[]) {
   // -------------------------------------------------------------------------------------
   // REQT: POPULATE ALL CARD LOCATIONS (DECK ONLY)
   //                                   NUMCARDS CURSE ESTATE DUCHY PROVINCE GARDENS GREATHALL TOTAL
-  //       2 OF EACH CARD IN DECK      54          -2    2      6     12       2    54/10=5      25
+  //       2 OF EACH CARD IN DECK      54          -2    2      6     12       10     2        30
   //
-  //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 25
+  //       GARDEN PER CARD SCORE = 54/10 = 5
+  //
+  //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 30
   // -------------------------------------------------------------------------------------
   state->handCount[pNum] = 0;
   state->deckCount[pNum] = 0;
@@ -98,21 +104,23 @@ int main(int argc, char *argv[]) {
   }
 
   r = scoreFor(pNum, state);
-  if (r == 25) {
+  if (r == 30) {
     printf("PASS");
   }
   else {
     printf("FAIL");
   }
   printf("ED: RETURN VALUE = %d\n", r);
-  printf("        EXPECTATION IS r = 25\n");
+  printf("        EXPECTATION IS r = 30\n");
 
   // -------------------------------------------------------------------------------------
   // REQT: POPULATE ALL CARD LOCATIONS (DISCARD ONLY)
   //                                   NUMCARDS CURSE ESTATE DUCHY PROVINCE GARDENS GREATHALL TOTAL
-  //       3 OF EACH CARD IN DISCARD   81          -3    3      9     18       3    81/10=8      38
+  //       3 OF EACH CARD IN DISCARD   81          -3    3      9     18       24     3         54
   //
-  //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 38
+  //       GARDEN PER CARD SCORE = 81/10 = 8
+  //
+  //       scoreFor() SHOULD RETURN A TOTAL SCORE OF 54
   // -------------------------------------------------------------------------------------
   state->handCount[pNum] = 0;
   state->deckCount[pNum] = 0;
@@ -125,14 +133,14 @@ int main(int argc, char *argv[]) {
   }
 
   r = scoreFor(pNum, state);
-  if (r == 38) {
+  if (r == 54) {
     printf("PASS");
   }
   else {
     printf("FAIL");
   }
   printf("ED: RETURN VALUE = %d\n", r);
-  printf("        EXPECTATION IS r = 38\n");
+  printf("        EXPECTATION IS r = 54\n");
 
   // -------------------------------------------------------------------------------------
   // REQT: CHECK INVIDUAL SCORES FOR EACH CARD TYPE BY FEEDING IN ONE CARD AT A TIME

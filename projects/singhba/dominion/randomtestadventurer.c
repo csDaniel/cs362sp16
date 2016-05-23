@@ -67,7 +67,10 @@ int main() {
 	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
     for (counter = 0; counter < NUMTESTS; counter++)
     {
-        seed = rand() % 6000; //Giving random seeds for each play
+        seed = 10;
+        while(seed < 1000){
+            seed = rand() % 6000; //Giving random seeds for each play
+        }
         memset(&G, 23, sizeof(struct gameState));   // clear the game state
         memset(&testG, 23, sizeof(struct gameState));   // clear the game state
         numPlayers = rand() % (MAX_PLAYERS - MIN_PLAYERS + 1) + MIN_PLAYERS; //Randomly choose number of players
@@ -87,7 +90,7 @@ int main() {
         
         assert(tresureBefore + 2 == tresureAfter);
         assert(testG.handCount[whichPlayer] == G.handCount[whichPlayer] + 2);
-        if(testG.playedCardCount != G.playedCardCount+1)
+        if(testG.playedCardCount != G.playedCardCount + 1)
         {
             printf("\nFAILED: Played Card Count.\n");
             printf("EXPECTED: %d , ACTUAL %d\n", G.playedCardCount + 1, testG.playedCardCount);

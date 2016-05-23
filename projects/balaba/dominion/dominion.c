@@ -663,7 +663,7 @@ void playAdventurerCard(int drawntreasure, struct gameState *state, int currentP
     }
   }
   while(z-1>=0){
-    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z]; // discard all cards in play that have been drawn
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
 }
@@ -671,7 +671,7 @@ void playAdventurerCard(int drawntreasure, struct gameState *state, int currentP
 void playCouncilCard(struct gameState *state, int currentPlayer, int cardDrawn, int z, int handPos) {
   //+4 Cards
   int i;
-  for (i = 0; i <= 4; i++) {
+  for (i = 0; i < 4; i++) {
     drawCard(currentPlayer, state);
   }  
   
@@ -697,7 +697,7 @@ void playSmithyCard(int currentPlayer, struct gameState *state, int handPos) {
   }
       
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 1);
+  discardCard(handPos, currentPlayer, state, 0);
 }
 
 void playVillageCard(int currentPlayer, struct gameState *state, int handPos) {
@@ -717,7 +717,7 @@ void playSalvagerCard(struct gameState *state, int choice1, int currentPlayer, i
       
   if (choice1) {
     //gain coins equal to trashed card
-    state->coins = state->coins - getCost( handCard(choice1, state) );
+    state->coins = state->coins + getCost( handCard(choice1, state) );
     //trash card
     discardCard(choice1, currentPlayer, state, 1);  
   }

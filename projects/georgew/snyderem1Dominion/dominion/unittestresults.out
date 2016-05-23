@@ -1,0 +1,352 @@
+Result for running unit tests:
+unittest1.c:
+
+
+
+
+----------------- Testing Function: gainCard ----------------
+
+-------------Saving Starting Game State----------------
+#   Card          Cost   Copies
+0   Curse         0      10   
+1   Estate        2      8    
+2   Duchy         5      8    
+3   Province      8      8    
+4   Copper        0      46   
+5   Silver        3      40   
+6   Gold          6      30   
+7   Adventurer    6      10   
+8   Council Room  5      10   
+12  Remodel       4      10   
+13  Smithy        4      10   
+14  Village       3      10   
+18  Steward       3      10   
+19  Tribute       5      10   
+
+
+------------TEST 1: Testing if Card isn't in game-------------
+
+-------------TEST 2: Testing when toFlag == 1...................
+Current deck count: 5
+Current hand count: 5
+Current discard count: 1
+Current Supply Count: 8
+Final deck count: 6
+Final hand count: 5
+Final discard count: 1
+Final Supply Count: 7
+DECK
+Card Added to Deck: SUCCESS
+HAND
+No Cards Added to Hand: SUCCESS
+DISCARD
+Too Many or Too Few Cards Added: FAILURE
+SUPPLY
+Card Taken From Supply: SUCCESS
+
+-------------Testing when toFlag == 2...................
+Current deck count: 6
+Current hand count: 5
+Current discard count: 1
+Current Supply Count: 7
+Final deck count: 6
+Final hand count: 6
+Final discard count: 1
+Final Supply Count: 6
+DECK
+Card Not Added to Deck: SUCCESS
+HAND
+Card Added to Hand: SUCCESS
+DISCARD
+Card Not Added to Discard: SUCCESS
+SUPPLY
+Card Taken From Supply: SUCCESS
+
+-------------Testing when toFlag == 0...................
+Current deck count: 6
+Current hand count: 6
+Current discard count: 1
+Current Supply Count: 6
+Final deck count: 6
+Final hand count: 6
+Final discard count: 2
+Final Supply Count: 5
+DECK
+Card Not Added to Deck: SUCCESS
+HAND
+No Cards Added to Hand: SUCCESS
+DISCARD
+Card Added to Discard: SUCCESS
+SUPPLY
+Card Taken From Supply: SUCCESS
+
+ >>>>> SUCCESS: Testing complete gainCard <<<<<
+
+
+
+File 'unittest1.c'
+Lines executed:80.62% of 129
+Creating 'unittest1.c.gcov'
+
+unittest2.c:
+----------------- Testing Function: shuffle ----------------
+-------------Saving Current Game State----------------
+--------------------Checking valid deckCount
+------------No Cards to Count: SUCCESS
+----------------------------Checking Each Player----------------------
+
+Player Number: 0
+Player 0: Current Discard Count: 0
+Player 0: Starting Deck Count: 5
+Player 0: Ending Deck Count: 5
+Deck Count Start: 5 Deck Count Finish: 5
+
+Before Shuffle Function Card at Position 0: 1
+After Shuffle Function Card at Position 0: 1
+Before Shuffle Function Card at Position 1: 1
+After Shuffle Function Card at Position 1: 1
+Before Shuffle Function Card at Position 2: 4
+After Shuffle Function Card at Position 2: 4
+Before Shuffle Function Card at Position 3: 4
+After Shuffle Function Card at Position 3: 4
+Before Shuffle Function Card at Position 4: 4
+After Shuffle Function Card at Position 4: 4
+Cards were not suffled: FAIL
+Player 0: Current Discard Count: 0
+
+Player Number: 1
+Player 1: Current Discard Count: 0
+Player 1: Starting Deck Count: 10
+Player 1: Ending Deck Count: 10
+Deck Count Start: 10 Deck Count Finish: 10
+
+Before Shuffle Function Card at Position 0: 4
+After Shuffle Function Card at Position 0: 4
+Before Shuffle Function Card at Position 1: 4
+After Shuffle Function Card at Position 1: 4
+Before Shuffle Function Card at Position 2: 1
+After Shuffle Function Card at Position 2: 4
+Before Shuffle Function Card at Position 3: 4
+After Shuffle Function Card at Position 3: 4
+Before Shuffle Function Card at Position 4: 4
+After Shuffle Function Card at Position 4: 1
+Before Shuffle Function Card at Position 5: 4
+After Shuffle Function Card at Position 5: 1
+Before Shuffle Function Card at Position 6: 4
+After Shuffle Function Card at Position 6: 4
+Before Shuffle Function Card at Position 7: 1
+After Shuffle Function Card at Position 7: 4
+Before Shuffle Function Card at Position 8: 1
+After Shuffle Function Card at Position 8: 4
+Before Shuffle Function Card at Position 9: 4
+After Shuffle Function Card at Position 9: 1
+Cards Shuffled: SUCCESS
+Player 1: Current Discard Count: 0
+
+ >>>>> SUCCESS: Testing complete shuffle <<<<<
+
+File 'unittest2.c'
+Lines executed:94.23% of 52
+Creating 'unittest2.c.gcov'
+
+unittest3.c:
+
+---------------------Zero Bonus TEST---------------------
+
+---------------------Counting Coins---------------------
+Player 4
+ Coins: -2003420656Copper: 0 Silver: 0 Gold: 0 Bonus Added : 0
+
+-----------------Counting Coins After Update---------------------
+Player 4
+ Coins: -2003420656Copper: 0 Silver: 0 Gold: 0 
+-------------------Positive Bonus TEST-------------------
+
+---------------------Counting Coins---------------------
+Player 4
+ Coins: -2003420656Copper: 0 Silver: 0 Gold: 0 Bonus Added : 10
+
+-----------------Counting Coins After Update---------------------
+Player 14
+ Coins: -2003420656Copper: 0 Silver: 0 Gold: 0 
+---------------------Negative Bonus TEST---------------------
+
+---------------------Counting Coins---------------------
+Player 14
+ Coins: -2003420656Copper: 0 Silver: 0 Gold: 0 Bonus Added : -10
+
+-----------------Counting Coins After Update---------------------
+Player -6
+ Coins: -2003420656Copper: 0 Silver: 0 Gold: 0 
+
+
+
+----------------- Testing Function: updateCoins ----------------
+
+ >>>>> SUCCESS: Testing complete updateCoins <<<<<
+
+
+
+File 'unittest3.c'
+Lines executed:81.05% of 95
+Creating 'unittest3.c.gcov'
+
+unittest4.c:
+
+
+
+
+----------------- Testing Function: discardCard ----------------
+
+--------------------TEST 1: TRASH FLAG TEST------------------------
+TrashFlag not set, Card Added to played pile: SUCCESS
+
+--------------------TEST 2: TEST HAND COUNT------------------------
+Current Hand Count: 4
+NEW Current Hand Count: 3
+Hand Count Decreased: SUCCESS
+
+------------TEST 3: Checking Behavor if Not Last Card-----------
+Current Hand Count: 3
+Running Function
+NEW Current Hand Count: 2
+Hand Count Decreased: SUCCESS
+Current Card Replaced with Last Card: SUCCESS
+-------------------TEST 4: CHECK BEHAVIOR IF LAST CARD IN HAND-----------------
+Current Hand Count: 2
+Running Function
+Current Hand Count: 1
+Hand Count Decreased: SUCCESS
+--------------------TEST 5: CHECK BEHAVIOR IF ONLY ONE CARD LEFT-----------------
+Current Hand Count: 1
+Running Function
+Current Hand Count: 0
+Hand Count Decreased: SUCCESS
+
+ >>>>> SUCCESS: Testing complete discardCard <<<<<
+
+File 'unittest4.c'
+Lines executed:83.13% of 83
+Creating 'unittest4.c.gcov'
+
+cardtest1.c:
+Testing for: 1. 3 Cards Taken From Deck2. 3 Cards Added To Hand3. 1 Card Discarded From Hand4. 1 Cards Added To Discarded Pile
+
+
+
+----------------- Testing Card: smithy ----------------
+---------------TEST 1: CHECKING DRAW CARD FUNCTION
+-----------Deck Count Before: 5
+Current Hand Before: 5
+Discard Count Before: 0
+Deck Count After: 3
+DECK COUNT CHANGED INCORRECTLY: FAILURE
+Current Hand After: 6
+HAND COUNT CHANGE INCORRECT: FAILURE
+Discard Count After: 0
+DISCARD COUNT INCORRECT: FAILURE
+
+ >>>>> SUCCESS: Testing complete smithy <<<<<
+
+
+
+File 'cardtest1.c'
+Lines executed:88.89% of 45
+Creating 'cardtest1.c.gcov'
+
+cardtest2.c:
+Testing for: 1. 2 Cards Added To Hand2. 2 Cards Added Are Treasure Cards3. All Cards that are either added to Hand or Taken from deck are Accounted For4. If At End of Pile Add Discarded Back and Shuffle
+
+
+
+----------------- Testing Card: adventurer ----------------
+-------TEST 1: CHECKING IF TWO CARDS WERE ADDED TO HAND--------
+Current Hand Before: 5
+Current Hand After: 7
+HAND COUNT INCREASED BY 1: SUCCESS
+--------TEST 2: CHECK IF ADDED CARDS ARE TREASURE CARDS---------
+Treasure Before Function: 0
+Treasure After Function: 7
+ADDED INCORRECT TREASURE CARDS: FAILURE
+--------TEST 3: CHECK IF ALL CARDS ACCOUNTED FOR---------
+Deck Count Before: 1
+Current Hand Before: 9
+Discard Count Before: 0
+Deck Count After: 0
+Current Hand After: 9
+Discard Count After: 1
+All Cards Accounted For: SUCCESS
+--------------TEST 4: CHECK IF SHUFFLE OCCURS-----------------
+Deck Count: 0
+Deck Count: 0
+
+ >>>>> SUCCESS: Testing complete adventurer <<<<<
+
+
+
+File 'cardtest2.c'
+Lines executed:88.31% of 77
+Creating 'cardtest2.c.gcov'
+
+cardtest3.c:
+
+
+
+
+----------------- Testing Card: village ----------------
+---------------TEST 1: CHECKING DRAW CARD FUNCTION
+-----------Deck Count Before: 5
+Current Hand Before: 5
+Discard Count Before: 0
+Deck Count After: 4
+DECK COUNT DECREASED BY 1: SUCCESS
+Current Hand After: 5
+HAND COUNT DIDN'T CHANGE: FAILURE
+Discard Count After: 0
+DISCARD COUNT INCORRECT: FAILURE
+---------------TEST 2: CHECKING ACTIONS FUNCTION
+-----------Current Actions Before: 3
+Current Actions After: 5
+ACTION COUNT INCREASED BY 2: SUCCESS
+
+ >>>>> SUCCESS: Testing complete village <<<<<
+
+
+
+File 'cardtest3.c'
+Lines executed:82.35% of 51
+Creating 'cardtest3.c.gcov'
+
+cardtest4.c:
+
+
+
+
+----------------- Testing Card: great_hall ----------------
+---------------TEST 1: CHECKING DRAW CARD FUNCTION
+-----------Deck Count Before: 5
+Current Hand Before: 5
+Discard Count Before: 0
+Deck Count After: 4
+DECK COUNT DECREASED BY 1: SUCCESS
+Current Hand After: 5
+HAND COUNT DIDN'T CHANGE: FAILURE
+Discard Count After: 0
+DISCARD COUNT INCORRECT: FAILURE
+---------------TEST 2: CHECKING ACTIONS TOTAL
+-----------Current Actions Before: 2
+Current Actions After: 3
+ACTION COUNT INCREASED BY 1: SUCCESS
+
+ >>>>> SUCCESS: Testing complete great_hall <<<<<
+
+
+
+File 'cardtest4.c'
+Lines executed:82.35% of 51
+Creating 'cardtest4.c.gcov'
+
+File 'dominion.c'
+Lines executed:35.85% of 569
+Creating 'dominion.c.gcov'
+

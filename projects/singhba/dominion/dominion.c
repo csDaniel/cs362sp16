@@ -653,7 +653,7 @@ int smithyEffect(struct gameState *state, int handPos){
     drawCard(currentPlayer, state);
   }  
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, i);
+  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 
@@ -665,7 +665,7 @@ int adventurerEffect(struct gameState *state, int handPos){
   int cardDrawn;
   int currentPlayer = whoseTurn(state);
   while(drawntreasure<2){
-    if (state->deckCount[currentPlayer] <= 1){//if the deck is empty we need to shuffle discard and add to deck
+    if (state->deckCount[currentPlayer] < 1){//if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
     }
     drawCard(currentPlayer, state);
@@ -678,10 +678,11 @@ int adventurerEffect(struct gameState *state, int handPos){
       z++;
     }
   }
-  while(z>=0){
+  while(z - 1>=0){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
+  state->playedCardCount++;
   return 0;
 }
 //Method for effect of council_room
@@ -1232,6 +1233,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 int discardCard(int handPos, int currentPlayer, struct gameState *state, int trashFlag)
 {
+  if ( state->handCount[currentPlayer] == 0 || handPos < 0) //No Card in player hand
+    {
+      //return 
+      return 0;
+    }
 	
   //if card is not trashed, added to Played pile 
   if (trashFlag < 1)
@@ -1249,6 +1255,10 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
     {
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
+       /*if (trashFlag < 1)
+      {
+        state->discardCount[currentPlayer]++;
+      }*/
     }
   else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
     {

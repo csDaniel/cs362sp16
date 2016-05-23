@@ -30,7 +30,7 @@ printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
 // ----------- TEST 1:1 = +2 cards --------------printf("TEST 1: +3 cards\n");
 // copy the game state to a test case 
 memcpy(&testG, &G, sizeof(struct gameState));  
-playSmithy(&testG, thisPlayer,handpos,i);
+playSmithy(handpos,thisPlayer,&testG);
 newCards = 3; 
 discarded = 1;
 xtraCoins = 0; 

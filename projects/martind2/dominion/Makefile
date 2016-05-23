@@ -97,8 +97,8 @@ randomtests: randomtestadventurer.c randomtestcard.c dominion.o rngs.o
 	./randomtestcard >> randomtestcard.out
 	echo '' > randomtestadventurer.out
 	./randomtestadventurer >> randomtestadventurer.out
-	
 
+# Utility
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 clean:

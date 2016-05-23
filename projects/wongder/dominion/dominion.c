@@ -679,7 +679,7 @@ void smithyCard(struct gameState* state, int currentPlayer, int handPos){
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 2);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 
@@ -699,7 +699,10 @@ void council_roomCard(struct gameState* state, int currentPlayer, int handPos){
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
 	{
+	   if ( i != currentPlayer )
+	    {
 	      drawCard(i, state);
+	    }
 	}
 			
       //put played card in played card pile
@@ -713,7 +716,7 @@ void villageCard(struct gameState* state, int currentPlayer, int handPos){
       drawCard(currentPlayer, state);
 			
       //+2 Actions
-      state->numActions = state->numBuys + 2;
+      state->numActions = state->numActions + 2;
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);

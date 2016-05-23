@@ -1,0 +1,35 @@
+Result for running Random Test Card tests:
+randomtestcard.c:
+
+
+ TESTING SMITHY 
+
+
+ Number of players = 1 
+Deck Count Pre = 463 
+Discard Count Pre = 280 
+Hand Count Pre = 206 
+Deck Count Post = 459 
+Discard Count Post = 280 
+Hand Count Post = 209 
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+FAIL -- Hand was not properly increased 
+
+ Number of players = 1 
+Deck Count Pre = 212 
+Discard Count Pre = 400 
+Hand Count Pre = 368 
+Deck Count Post = 208 
+Discard Count Post = 400 
+Hand Count Post = 371 
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+FAIL -- Hand was not properly increased 
+Deck Count failed 0.000000 percent of the time 
+Discard Count failed 100.000000 percent of the time 
+Hand Count failed 100.000000 percent of the time 
+File 'dominion.c'
+Lines executed:5.63% of 568
+Creating 'dominion.c.gcov'
+
