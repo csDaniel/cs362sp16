@@ -10,13 +10,13 @@ TESTING with empty adventurer and council_room stacks:(only 2 empty stacks)			Re
 
 TESTING with an empty adventurer, council_room, and feast stack:(first 3 'action cards')	Return value: 1	Expected Value: 1
 
-TESTING with an empty salvager, sea_hag, and treasure_map stack:(last 3 'action cards')		Return value: 0	Expected Value: 1
+TESTING with an empty salvager, sea_hag, and treasure_map stack:(last 3 'action cards')		Return value: 1	Expected Value: 1
 
 File 'dominion.c'
-Lines executed:17.68% of 560
+Lines executed:17.65% of 561
 Branches executed:17.75% of 417
 Taken at least once:14.63% of 417
-Calls executed:7.37% of 95
+Calls executed:7.53% of 93
 Creating 'dominion.c.gcov'
 
 unittest2.c: 
@@ -54,19 +54,19 @@ TESTING where all players have all province cards
 
 TESTING where players have 29 smithy cards and 1 gardens card
 
-	Player 1 - Return value: 0	Expected Value: 3
+	Player 1 - Return value: 3	Expected Value: 3
 
-	Player 2 - Return value: 0	Expected Value: 3
+	Player 2 - Return value: 3	Expected Value: 3
 
-	Player 3 - Return value: 0	Expected Value: 3
+	Player 3 - Return value: 3	Expected Value: 3
 
-	Player 4 - Return value: 0	Expected Value: 3
+	Player 4 - Return value: 3	Expected Value: 3
 
 File 'dominion.c'
-Lines executed:24.64% of 560
-Branches executed:31.18% of 417
-Taken at least once:25.18% of 417
-Calls executed:8.42% of 95
+Lines executed:22.99% of 561
+Branches executed:28.30% of 417
+Taken at least once:23.02% of 417
+Calls executed:7.53% of 93
 Creating 'dominion.c.gcov'
 
 unittest3.c: 
@@ -241,10 +241,10 @@ Player 2 - Count for Card 24:	Returned 1	Expected 1
 Player 2 - Count for Card 25:	Returned 1	Expected 1
 Player 2 - Count for Card 26:	Returned 1	Expected 1
 File 'dominion.c'
-Lines executed:24.64% of 560
-Branches executed:31.18% of 417
-Taken at least once:25.66% of 417
-Calls executed:8.42% of 95
+Lines executed:24.42% of 561
+Branches executed:30.70% of 417
+Taken at least once:25.18% of 417
+Calls executed:7.53% of 93
 Creating 'dominion.c.gcov'
 
 unittest4.c: 
@@ -272,19 +272,19 @@ Return value: 25	Expected: 25
 Return value: 26	Expected: 26
 
 File 'dominion.c'
-Lines executed:25.54% of 560
-Branches executed:31.18% of 417
-Taken at least once:25.66% of 417
-Calls executed:9.47% of 95
+Lines executed:25.31% of 561
+Branches executed:30.70% of 417
+Taken at least once:25.18% of 417
+Calls executed:8.60% of 93
 Creating 'dominion.c.gcov'
 
 cardtest1.c: 
 ******************************* TESTING adventurer Card *******************************
 
 TESTING that hand count for current player is 1 more than it started at (Gain 2 treasures, but lose adventurer card)
-	Hand Count: 5	Expected: 6
+	Hand Count: 6	Expected: 6
 TESTING that deck card count for current player stayed went down
-	Deck Count: 0	Expected: < 5
+	Deck Count: 3	Expected: < 5
 TESTING that hand count for other player stayed the same
 	Hand Count: 0	Expected: 0
 TESTING that total card count for other player stayed the same
@@ -294,19 +294,19 @@ TESTING that the victory cards stayed the same
 TESTING that the kingdom cards stayed the same
 	Kingdom Card Count: 91	Expected: 91
 File 'dominion.c'
-Lines executed:30.89% of 560
+Lines executed:31.02% of 561
 Branches executed:39.57% of 417
-Taken at least once:28.30% of 417
-Calls executed:13.68% of 95
+Taken at least once:27.58% of 417
+Calls executed:12.90% of 93
 Creating 'dominion.c.gcov'
 
 cardtest2.c: 
 ******************************* TESTING smithy Card *******************************
 
 TESTING that hand count for current player is 2 more than it started at (Gain 3 cards, but lose smithy card)
-	Hand Count: 4	Expected: 7
+	Hand Count: 7	Expected: 7
 TESTING that deck card count for current player went down by 3
-	Deck Count: 5	Expected: 2
+	Deck Count: 2	Expected: 2
 TESTING that hand count for other player stayed the same
 	Hand Count: 0	Expected: 0
 TESTING that total card count for other player stayed the same
@@ -316,10 +316,10 @@ TESTING that the victory cards stayed the same
 TESTING that the kingdom cards stayed the same
 	Kingdom Card Count: 91	Expected: 91
 File 'dominion.c'
-Lines executed:33.75% of 560
-Branches executed:41.49% of 417
-Taken at least once:29.50% of 417
-Calls executed:15.79% of 95
+Lines executed:32.09% of 561
+Branches executed:40.05% of 417
+Taken at least once:28.30% of 417
+Calls executed:16.13% of 93
 Creating 'dominion.c.gcov'
 
 cardtest3.c: 
@@ -340,10 +340,10 @@ TESTING that the victory cards stayed the same
 TESTING that the kingdom cards stayed the same
 	Kingdom Card Count: 91	Expected: 91
 File 'dominion.c'
-Lines executed:34.82% of 560
-Branches executed:41.49% of 417
-Taken at least once:29.74% of 417
-Calls executed:18.95% of 95
+Lines executed:33.16% of 561
+Branches executed:40.05% of 417
+Taken at least once:28.54% of 417
+Calls executed:19.35% of 93
 Creating 'dominion.c.gcov'
 
 cardtest4.c: 
@@ -352,7 +352,7 @@ cardtest4.c:
 TESTING that current player gains two coins
 	Coin Count: 6	Expected: 6
 TESTING that hand count for current player has decreased by 1
-	Hand Count: 3	Expected: 4
+	Hand Count: 4	Expected: 4
 TESTING that hand count for other player has decreased by 1
 	Hand Count: 5	Expected: 4
 TESTING that the victory cards stayed the same
@@ -360,9 +360,9 @@ TESTING that the victory cards stayed the same
 TESTING that the kingdom cards stayed the same
 	Kingdom Card Count: 91	Expected: 91
 File 'dominion.c'
-Lines executed:36.79% of 560
-Branches executed:43.41% of 417
-Taken at least once:31.41% of 417
-Calls executed:23.16% of 95
+Lines executed:34.94% of 561
+Branches executed:42.45% of 417
+Taken at least once:30.70% of 417
+Calls executed:22.58% of 93
 Creating 'dominion.c.gcov'
 
