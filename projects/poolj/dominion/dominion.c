@@ -50,7 +50,7 @@ int cardAdventurer(int currentPlayer, struct gameState *state, int handPos) {
 			shuffle(currentPlayer, state);
 		}
 		drawCard(currentPlayer, state);  /* Draw card */
-		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]];//top card of hand is most recently drawn card.
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];//top card of hand is most recently drawn card.
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 			drawnTreasure++;
 		else{
@@ -64,7 +64,10 @@ int cardAdventurer(int currentPlayer, struct gameState *state, int handPos) {
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 		z=z-1;
 	}
-	  
+	
+	//discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+
 	return 0;
 }
 
@@ -146,7 +149,7 @@ int cardRemodal(int currentPlayer, struct gameState *state, int handPos, int cho
 int cardSmithy(int currentPlayer, struct gameState *state, int handPos) {
     int i;  /* Counter for number of cards to draw */
     
-	for (i = 0; i <= 3; i++)	{  /* Draw 3 cards */
+	for (i = 0; i < 3; i++)	{  /* Draw 3 cards */
 		drawCard(currentPlayer, state);
 	}
     discardCard(handPos, currentPlayer, state, 0);  /* Discard Smithy */
