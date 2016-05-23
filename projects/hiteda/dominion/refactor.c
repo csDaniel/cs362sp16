@@ -17,8 +17,7 @@ and I introduced a bug by replacing state->numActions = state->numActions + 2 wi
 To the prototype of playFeast() in dominion.h, I also added const int currentPlayer. I moved the
 contents of the feast section of the switch statement in cardEffect() into the playFeast() function,
 and I introduced a bug by replacing -1 with 0 in the for loop that backs up the hand. I also started the
-reset hand for loop with i = 1 instead of i = 0. I also reversed the last two arguments in the function
-call.
+reset hand for loop with i = 1 instead of i = 0.
 
 To the prototype of playCouncil_Room() in dominion.h, I also added const int currentPlayer. I created
 playCouncil_Room() in dominion.c and moved the contents of the council_room section of the switch

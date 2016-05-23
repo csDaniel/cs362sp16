@@ -24,6 +24,12 @@ the card should function as expected.  Upon testing my teammate's Village card, 
 however, I could not fully determine why.  I believe there is an issue with this particular card test, as I could not
 find any bug in a simple code review.  The same applies to my Salvager test.
 
+File 'dominion.c'
+Lines executed:37.98% of 574
+Branches executed:34.84% of 419
+Taken at least once:30.79% of 419
+Calls executed:21.57% of 102
+
 
 Teammate 2:
 
@@ -43,3 +49,9 @@ so much my card test.  I did not find any other errors in my teammate's code.
 I found that my Adventurer card test for gold and copper cards.  I also found that my teammate's Adventurer card code
 only flags copper and gold as treasure.  I believe this is why all my tests are passing.  My teammate removed the
 silver logic, and I never had the silver logic to begin with in my test.
+
+File 'dominion.c'
+Lines executed:36.30% of 562
+Branches executed:33.73% of 415
+Taken at least once:29.64% of 415
+Calls executed:18.75% of 96

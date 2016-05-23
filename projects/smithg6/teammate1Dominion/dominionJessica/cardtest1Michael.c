@@ -36,9 +36,14 @@ int main() {
   failures += testAssert(adventurer, G.hand[0][5], "Player 1 has adventurer card (7) in 6th slot");
 
   int adventurerStatus;
+  int temphand[MAX_HAND];
+  int drawnTreasure = 0;
   int hasTreasure;
   int discardedFlag = 0;
-  adventurerStatus = playAdventurerCard(&G);
+  int currentPlayer = whoseTurn(&G);
+  int cardDrawn;
+  int z = 0;
+  adventurerStatus = adventurerFunction(currentPlayer, &G, cardDrawn, drawnTreasure, temphand, z);
   failures += testAssert(0, adventurerStatus, "Adventurer card executes and returns 0");
   failures += testAssert(8, G.handCount[0], "Player 1 should now have 8 cards");
   /**** test first drawn card for treasure *****/
@@ -77,7 +82,7 @@ int main() {
     G.deck[0][x] = village; // load the deck with villages
   }
   /**** check to make sure player 1 discards all his deck *****/
-  playAdventurerCard(&G);
+  adventurerFunction(currentPlayer, &G, cardDrawn, drawnTreasure, temphand, z);
   if (G.discardCount[0] > 0){
     discardedFlag = 1;
   }
@@ -96,7 +101,7 @@ int main() {
     G.discard[0][x] = gold; // load discard with gold
   }
   /**** Clear game state for additonal round of tests *****/
-  playAdventurerCard(&G);
+  adventurerFunction(currentPlayer, &G, cardDrawn, drawnTreasure, temphand, z);
   if (G.hand[0][7] == copper || G.hand[0][7] == silver || G.hand[0][7] == gold ){
     hasTreasure = 1;
   }

@@ -1381,7 +1381,7 @@ int cardVillage(int currentPlayer, struct gameState *state, int handPos)
 	drawCard(currentPlayer, state);
 
 	//Gain two actions
-	state->numActions = state->numPlayers + 2;
+	state->numActions = state->numActions + 2;
 
 	//discard the played card from that hand
 	discardCard(handPos, currentPlayer, state, 0);
@@ -1392,7 +1392,6 @@ int cardVillage(int currentPlayer, struct gameState *state, int handPos)
 int cardCouncil_room(int currentPlayer, struct gameState *state, int handPos)
 {
 	int i;
-	int p;
 	
 	//Draw 4 cards
 	for(i = 0; i < 4; i++)
@@ -1406,7 +1405,7 @@ int cardCouncil_room(int currentPlayer, struct gameState *state, int handPos)
 	//Each other player draws a card
 	for (i = 0; i < state->numPlayers; i++)
 	{
-		if(p != currentPlayer)
+		if(i != currentPlayer)
 		{
 			drawCard(i, state);
 		}
@@ -1421,12 +1420,8 @@ int cardCouncil_room(int currentPlayer, struct gameState *state, int handPos)
 int cardOutpost(int currentPlayer, struct gameState *state, int handPos)
 {
 
-  int i = 0;
-   
-  if(i)
-  	{
-      state->outpostPlayed++;		
-    }
+
+  state->outpostPlayed++;		
 	//discard card
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
