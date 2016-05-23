@@ -1,15 +1,10 @@
 
 CFLAGS = -Wall -fpic -coverage -lm
 
-markcardtest: markcardtest.c dominion.o rngs.o
-	gcc -o markcardtest -g  markcardtest.c dominion.o rngs.o $(CFLAGS)
 
-saiadven: saiadven.c dominion.o rngs.o
-	gcc -o saiadven -g  saiadven.c dominion.o rngs.o $(CFLAGS)
-	
-saieeSmithy: saieeSmithy.c dominion.o rngs.o
-	gcc -o saieeSmithy -g  saieeSmithy.c dominion.o rngs.o $(CFLAGS)	
-	
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
 unittest1: unittest1.c dominion.o rngs.o
 	gcc -o unittest1 -g  unittest1.c dominion.o rngs.o $(CFLAGS)
  
@@ -33,12 +28,6 @@ cardtest3: cardtest3.c dominion.o rngs.o
 
 cardtest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
-
-cardtest5: cardtest5.c dominion.o rngs.o
-	gcc -o cardtest5 -g  cardtest5.c dominion.o rngs.o $(CFLAGS)
-
-randomtestadventurer: randomtestadventurer.c dominion.o
-	gcc -o randomtestadventurer randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
 
 
 rngs.o: rngs.h rngs.c
@@ -69,23 +58,11 @@ runtests: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 
 	./unittest1 &./unittest2 &./unittest3 &./unittest4 &./cardtest1 &./cardtest2 &./cardtest3 &./cardtest4
 	gcov dominion.c -b -f> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
-	
-testAdventure: randomtestadventurer
-	./randomtestadventurer
-	gcov dominion.c -b -f > randomtestadventurer.out
-	cat dominion.c.gcov >> randomtestadventurer.out	
-	
-testRandom: randomtestcard
-	./randomtestcard
-	gcov dominion.c -b -f > randomtestcard.out
-	cat dominion.c.gcov >> randomtestcard.out	
-	
 		
-	
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: markcardtest saieeSmithy saiadven playdom player testDrawCard testBuyCard badTestDrawCard cardtest5 cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4
+all: randomtestadventurer playdom player testDrawCard testBuyCard badTestDrawCard cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4
 
 clean:
-	rm -f *.o markcardtest saieeSmithy saiadven unittestresult.out randomtestcard unittestresult.out~ randomtestadventurer unittest2 playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 cardtest5 badTestDrawCard cardtest2 unittest3 cardtest3 cardtest4 unittest4 unittest1 testDrawCard
+	rm -f *.o playdom.exe playdom test.exe test player player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so cardtest1 badTestDrawCard cardtest2 unittest3 cardtest3 cardtest4 unittest4 unittest1 testDrawCard
