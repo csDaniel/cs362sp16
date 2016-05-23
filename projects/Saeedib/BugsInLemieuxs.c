@@ -23,3 +23,5 @@ Bug Line: 1261
 Bug Fix: The part that was accepting smithy card "|| Smithy" was commented out
 _________________________
 
+Comments:
+Bugs were as reported This is the report of all bugs found and other tests ran fine.
