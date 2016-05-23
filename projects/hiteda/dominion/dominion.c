@@ -1303,7 +1303,7 @@ int playFeast(struct gameState *state, int choice1, const int currentPlayer)
       //Backup hand
       for (i = 0; i <= state->handCount[currentPlayer]; i++){
 	temphand[i] = state->hand[currentPlayer][i];//Backup card
-	state->hand[currentPlayer][i] = 0;//Set to nothing
+	state->hand[currentPlayer][i] = -1;//Set to nothing
       }
       //Backup hand
 
@@ -1343,7 +1343,7 @@ int playFeast(struct gameState *state, int choice1, const int currentPlayer)
       }     
 
       //Reset Hand
-      for (i = 1; i <= state->handCount[currentPlayer]; i++){
+      for (i = 0; i <= state->handCount[currentPlayer]; i++){
 	state->hand[currentPlayer][i] = temphand[i];
 	temphand[i] = -1;
       }

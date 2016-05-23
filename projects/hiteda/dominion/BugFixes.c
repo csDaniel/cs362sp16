@@ -65,3 +65,22 @@ Changed == in if statement checking which players to draw cards (line 1370) back
 Current player drew 1 extra card when Council Room was played.
 
 Fixed with previous bug fix.
+
+=== FIXED - Bug1 found by Ben ===
+Discard count was not incremented, card was not in discard deck.
+
+Fixed with previous bug fix.
+
+=== FIXED - Bug2 found by Ben ===
+Hand count incorrect after Adventurer card played.
+
+Fixed with previous bug fix.
+
+=== FIXED - Bug2(b) found by Ben ===
+numActions count not correct after playing Village card.
+
+Fixed with previous bug fix.
+
+=== FIXED - Other bugs from refactor.c ===
+Teammates did not test playFeast(), which had a few bugs.
+I switched the assignments that I had changed in playFeast() back to how they were.
