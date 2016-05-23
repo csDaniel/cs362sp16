@@ -1,0 +1,42 @@
+cardtest1.c:
+****TESTING: smithy Card****
+smithy: PASS draws exactly three cards into the current player's hand
+smithy: PASS plays exactly 1 card from the player's hand
+smithy: PASS discards itself from the player's hand
+All tests passed!
+File 'dominion.c'
+Lines executed:20.21% of 564
+Creating 'dominion.c.gcov'
+
+cardtest2.c:
+****TESTING: adventurer Card****
+adventurer: PASS properly grabs two treasure cards and discards extras
+adventurer: PASS only counts treasure cards
+adventurer: PASS shuffles when deck count is 0
+adventurer: PASS does not discard itself from the player's hand
+All tests passed!
+File 'dominion.c'
+Lines executed:23.23% of 564
+Creating 'dominion.c.gcov'
+
+cardtest3.c:
+****TESTING: mine Card****
+mine: PASS only accepts copper and silver from player's hand
+mine: PASS accepts only enumerated dominion cards
+mine: PASS discards itself from the player's hand
+All tests passed!
+File 'dominion.c'
+Lines executed:24.47% of 564
+Creating 'dominion.c.gcov'
+
+cardtest4.c:
+****TESTING: council_room Card****
+council_room: PASS draws exactly four cards into the current player's hand
+council_room: PASS plays exactly 1 card from the player's hand
+council_room: PASS each other player draws exactly 1 card
+council_room: PASS discards itself from the player's hand
+All tests passed!
+File 'dominion.c'
+Lines executed:21.81% of 564
+Creating 'dominion.c.gcov'
+
