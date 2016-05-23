@@ -20,7 +20,11 @@ Score was not suppose to change
 
 Nick Martin
 --------------------------------------
-
+Adventurer Card
 ////////////////////////////////
+Warning - possible error in hand size
+Dependent on if there are enough cards (treasure to be drawn) to be in hand.
+Either there are too few cards or there are not enough treasure cards to account for the card played.
+
 
 ////////////////////////////////
