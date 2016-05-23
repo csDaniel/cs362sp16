@@ -1,0 +1,324 @@
+Test Number 0
+Reshuffel required
+Test Passed
+
+Test Number 1
+Test Failed! Expected discard count: 21, Actual discard count: 23
+
+Test Number 2
+Test Failed! Expected discard count: 15, Actual discard count: 11
+
+Test Number 3
+Test Failed! Expected discard count: 32, Actual discard count: 27
+
+Test Number 4
+Test Failed! Expected discard count: 8, Actual discard count: 11
+
+Test Number 5
+Test Failed! Expected discard count: 6, Actual discard count: 3
+
+Test Number 6
+Test Passed!!!
+
+Test Number 7
+Test Failed! Expected discard count: 23, Actual discard count: 24
+
+Test Number 8
+Reshuffel required
+Test Passed
+
+Test Number 9
+Test Failed! Expected discard count: 14, Actual discard count: 18
+
+Test Number 10
+Test Passed!!!
+
+Test Number 11
+Test Failed! Expected discard count: 11, Actual discard count: 12
+
+Test Number 12
+Reshuffel required
+Test Passed
+
+Test Number 13
+Test Failed! Expected discard count: 17, Actual discard count: 19
+
+Test Number 14
+Test Failed! Expected discard count: 18, Actual discard count: 17
+
+Test Number 15
+Test Passed!!!
+
+Test Number 16
+Test Failed! Expected discard count: 18, Actual discard count: 21
+
+Test Number 17
+Reshuffel required
+Test Passed
+
+Test Number 18
+Reshuffel required
+Test Passed
+
+Test Number 19
+Test Failed! Expected discard count: 17, Actual discard count: 18
+
+Test Number 20
+Reshuffel required
+Test Passed
+
+Test Number 21
+Reshuffel required
+Test Passed
+
+Test Number 22
+Reshuffel required
+Test Passed
+
+Test Number 23
+Test Failed! Expected discard count: 7, Actual discard count: 6
+
+Test Number 24
+Test Failed! Expected discard count: 22, Actual discard count: 20
+
+Test Number 25
+Test Failed! Expected discard count: 18, Actual discard count: 21
+
+Test Number 26
+Test Failed! Expected discard count: 24, Actual discard count: 23
+
+Test Number 27
+Test Failed! Expected discard count: 5, Actual discard count: 4
+
+Test Number 28
+Test Failed! Expected discard count: 17, Actual discard count: 21
+
+Test Number 29
+Test Failed! Expected discard count: 14, Actual discard count: 16
+
+Test Number 30
+Test Failed! Expected discard count: 5, Actual discard count: 6
+
+Test Number 31
+Test Failed! Expected discard count: 8, Actual discard count: 10
+
+Test Number 32
+Test Failed! Expected discard count: 14, Actual discard count: 12
+
+Test Number 33
+Test Passed!!!
+
+Test Number 34
+Reshuffel required
+Test Passed
+
+Test Number 35
+Reshuffel required
+Test Passed
+
+Test Number 36
+Test Failed! Expected discard count: 25, Actual discard count: 23
+
+Test Number 37
+Test Passed!!!
+
+Test Number 38
+Test Failed! Expected discard count: 1, Actual discard count: 0
+
+Test Number 39
+Test Failed! Expected discard count: 0, Actual discard count: 3
+
+Test Number 40
+Test Failed! Stuck in infinite loop!
+
+Test Number 41
+Test Failed! Stuck in infinite loop!
+
+Test Number 42
+Test Failed! Expected discard count: 4, Actual discard count: 10
+
+Test Number 43
+Test Failed! Expected discard count: 0, Actual discard count: 1
+
+Test Number 44
+Test Passed!!!
+
+Test Number 45
+Reshuffel required
+Test Passed
+
+Test Number 46
+Reshuffel required
+Test Passed
+
+Test Number 47
+Test Failed! Expected discard count: 23, Actual discard count: 30
+
+Test Number 48
+Test Failed! Expected discard count: 14, Actual discard count: 9
+
+Test Number 49
+Test Failed! Expected discard count: 19, Actual discard count: 17
+
+Test Number 50
+Test Failed! Expected discard count: 26, Actual discard count: 24
+
+Test Number 51
+Test Failed! Expected discard count: 16, Actual discard count: 17
+
+Test Number 52
+Test Failed! Expected discard count: 5, Actual discard count: 3
+
+Test Number 53
+Test Failed! Expected discard count: 27, Actual discard count: 21
+
+Test Number 54
+Test Failed! Expected discard count: 16, Actual discard count: 20
+
+Test Number 55
+Reshuffel required
+Test Passed
+
+Test Number 56
+Test Failed! Expected discard count: 22, Actual discard count: 25
+
+Test Number 57
+Test Failed! Expected discard count: 12, Actual discard count: 11
+
+Test Number 58
+Test Failed! Expected discard count: 2, Actual discard count: 5
+
+Test Number 59
+Test Passed!!!
+
+Test Number 60
+Test Failed! Expected discard count: 21, Actual discard count: 20
+
+Test Number 61
+Reshuffel required
+Test Passed
+
+Test Number 62
+Test Failed! Expected discard count: 4, Actual discard count: 3
+
+Test Number 63
+Test Failed! Expected discard count: 7, Actual discard count: 6
+
+Test Number 64
+Test Failed! Expected discard count: 29, Actual discard count: 26
+
+Test Number 65
+Test Passed!!!
+
+Test Number 66
+Test Failed! Expected discard count: 23, Actual discard count: 24
+
+Test Number 67
+Reshuffel required
+Test Passed
+
+Test Number 68
+Test Passed!!!
+
+Test Number 69
+Test Failed! Expected discard count: 15, Actual discard count: 14
+
+Test Number 70
+Test Failed! Expected discard count: 32, Actual discard count: 27
+
+Test Number 71
+Test Failed! Expected discard count: 2, Actual discard count: 0
+
+Test Number 72
+Test Failed! Expected discard count: 8, Actual discard count: 7
+
+Test Number 73
+Test Failed! Expected discard count: 21, Actual discard count: 16
+
+Test Number 74
+Test Failed! Expected discard count: 2, Actual discard count: 10
+
+Test Number 75
+Test Failed! Expected discard count: 32, Actual discard count: 29
+
+Test Number 76
+Test Failed! Expected discard count: 12, Actual discard count: 17
+
+Test Number 77
+Test Failed! Expected discard count: 27, Actual discard count: 22
+
+Test Number 78
+Test Failed! Expected discard count: 14, Actual discard count: 15
+
+Test Number 79
+Test Failed! Expected discard count: 16, Actual discard count: 21
+
+Test Number 80
+Reshuffel required
+Test Passed
+
+Test Number 81
+Test Failed! Expected discard count: 16, Actual discard count: 14
+
+Test Number 82
+Test Failed! Expected discard count: 17, Actual discard count: 10
+
+Test Number 83
+Test Failed! Expected discard count: 15, Actual discard count: 13
+
+Test Number 84
+Test Passed!!!
+
+Test Number 85
+Reshuffel required
+Test Passed
+
+Test Number 86
+Test Failed! Stuck in infinite loop!
+
+Test Number 87
+Reshuffel required
+Test Passed
+
+Test Number 88
+Test Failed! Expected discard count: 13, Actual discard count: 18
+
+Test Number 89
+Test Failed! Expected discard count: 20, Actual discard count: 15
+
+Test Number 90
+Test Failed! Expected discard count: 12, Actual discard count: 14
+
+Test Number 91
+Test Passed!!!
+
+Test Number 92
+Test Failed! Expected discard count: 13, Actual discard count: 15
+
+Test Number 93
+Test Failed! Stuck in infinite loop!
+
+Test Number 94
+Test Passed!!!
+
+Test Number 95
+Test Failed! Expected discard count: 24, Actual discard count: 27
+
+Test Number 96
+Test Failed! Expected discard count: 17, Actual discard count: 20
+
+Test Number 97
+Test Failed! Expected discard count: 15, Actual discard count: 16
+
+Test Number 98
+Test Failed! Expected discard count: 10, Actual discard count: 18
+
+Test Number 99
+Reshuffel required
+Test Passed
+
+
+File 'dominion.c'
+Lines executed:25.31% of 561
+Creating 'dominion.c.gcov'
+

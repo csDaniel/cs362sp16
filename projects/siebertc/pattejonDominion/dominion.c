@@ -674,7 +674,7 @@ int playAdventurer(struct gameState *state){
     return 0;
 }
 
-int playSmithy(struct gameState *state) {
+int playSmithy(struct gameState *state, int handPos) {
   int currentPlayer = whoseTurn(state);
   int i;
 	//+3 Cards
@@ -898,7 +898,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      playSmithy(state);
+      playSmithy(state, handPos);
 		  //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;

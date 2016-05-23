@@ -13,10 +13,8 @@
  ***********************/
 
 void smithyTest(){
-	struct gameState game, compareGame, startState, compareStartState;
+	struct gameState game, compareGame;
 	int k[10] = {gold, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
-
-	//int k[10] = {copper, silver, gold, copper, silver, gold, copper, silver, gold, gold};
 
 	printf("Testing smithy.\n\n");
 
@@ -28,8 +26,6 @@ void smithyTest(){
 
 	initializeGame(numberOfPlayers, k, randomSeed, &game);
 	memcpy(&compareGame, &game, sizeof(struct gameState));
-	memcpy(&startState, &game, sizeof(struct gameState));
-	memcpy(&compareStartState, &compareGame, sizeof(struct gameState));
 
 	game.handCount[1] = 5;
 	game.hand[1][0] = smithy;
@@ -59,19 +55,6 @@ void smithyTest(){
 		printResults(&game, &compareGame);
 		problems++;
 	}
-	compres = compareGameStates(&game, &startState, 0);
-	if(printCompareResults(compres)) printf("Game and start state unchanged (for player 1) as expected.\n");
-	else{
-		printResults(&game, &startState);
-		problems++;
-	}
-	compres = compareGameStates(&compareGame, &compareStartState, 0);
-	if(printCompareResults(compres)) printf("Compare and start state unchanged (for player 1) as expected.\n");
-	else{
-		printResults(&compareGame, &compareStartState);
-		problems++;
-	}
-
 	
 	printf("\n\nCalling using smithy from position 1 in hand.\n");
 	smithyCard(1, 0, &game);
@@ -79,36 +62,9 @@ void smithyTest(){
 		drawCard(1, &compareGame);
 	}
 	discardCard(0, 1, &compareGame, 0);	
-	for(int i = 0; i < compareGame.playedCardCount; i++){
-		compareGame.discard[1][compareGame.discardCount[1]] = compareGame.playedCards[i];
-		compareGame.discardCount[1]++;
-	}
-	compareGame.playedCardCount = 0;
+
 	printf("Testing game vs compare state for player 2.\n");
-	compres = compareGameStates(&game, &compareGame, 1);
-	if(printCompareResults(compres)) printf("Player 2: Added cards to game state okay.\n");
-	else{
-		printResults(&game, &compareGame);
-		problems++;
-	}
-	compres = compareGameStates(&game, &compareGame, 0);
-	if(printCompareResults(compres)) printf("Player 1: No changes (as expected).\n");
-	else{ 
-		printResults(&game, &compareGame);
-		problems++;
-	}
-	compres = compareGameStates(&game, &startState, 0);
-	if(printCompareResults(compres)) printf("Game and start state unchanged (for player 1) as expected.\n");
-	else{
-		printResults(&game, &startState);
-		problems++;
-	}
-	compres = compareGameStates(&compareGame, &compareStartState, 0);
-	if(printCompareResults(compres)) printf("Compare and start state unchanged (for player 1) as expected.\n");
-	else{
-		printResults(&compareGame, &compareStartState);
-		problems++;
-	}	
+		
 
 	printf("\n\nCalling using smithy from position 1 in hand, with empty deck.\n");
 
@@ -129,11 +85,7 @@ void smithyTest(){
 		drawCard(1, &compareGame);
 	}
 	discardCard(0, 1, &compareGame, 0);	
-	for(int i = 0; i < compareGame.playedCardCount; i++){
-		compareGame.discard[1][compareGame.discardCount[1]] = compareGame.playedCards[i];
-		compareGame.discardCount[1]++;
-	}
-	compareGame.playedCardCount = 0;
+
 	printf("Testing game vs compare state for player 2.\n");
 
 	compres = compareGameStates(&game, &compareGame, 1);
@@ -146,18 +98,6 @@ void smithyTest(){
 	if(printCompareResults(compres)) printf("Player 1: No changes (as expected).\n");
 	else{ 
 		printResults(&game, &compareGame);
-		problems++;
-	}
-	compres = compareGameStates(&game, &startState, 0);
-	if(printCompareResults(compres)) printf("Game and start state unchanged (for player 1) as expected.\n");
-	else{ 
-		printResults(&game, &startState);
-		problems++;
-	}
-	compres = compareGameStates(&compareGame, &compareStartState, 0);
-	if(printCompareResults(compres)) printf("Compare and start state unchanged (for player 1) as expected.\n");
-	else{ 
-		printResults(&compareGame, &compareStartState);
 		problems++;
 	}
 

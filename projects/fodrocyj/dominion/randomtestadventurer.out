@@ -6382,3 +6382,33 @@ Taken at least once:22.78% of 417
 Calls executed:20.00% of 90
 Creating 'dominion.c.gcov'
 
+TESTING Adventurer CARD:
+
+------------------------------
+Adventurer Random Tests Finished
+--Total Tests:  5000
+--Passed Tests: 5000
+--Failed Tests: 0
+------------------------------
+File 'dominion.c'
+Lines executed:30.84% of 548
+Branches executed:30.94% of 417
+Taken at least once:22.78% of 417
+Calls executed:20.00% of 90
+Creating 'dominion.c.gcov'
+
+TESTING Adventurer CARD:
+
+------------------------------
+Adventurer Random Tests Finished
+--Total Tests:  5000
+--Passed Tests: 5000
+--Failed Tests: 0
+------------------------------
+File 'dominion.c'
+Lines executed:30.84% of 548
+Branches executed:30.94% of 417
+Taken at least once:22.78% of 417
+Calls executed:20.00% of 90
+Creating 'dominion.c.gcov'
+

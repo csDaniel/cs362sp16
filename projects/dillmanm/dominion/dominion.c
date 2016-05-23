@@ -1244,11 +1244,12 @@ int playAdventurer(struct gameState *state,int handPos){
       }
     }
     if (shuffleCount <2){
-      for (i=0;i<state->handCount[currentPlayer];i++){
+      //INTENTIONAL BUG
+      /*for (i=0;i<state->handCount[currentPlayer];i++){
         if (state->hand[currentPlayer][i] == copper || 
             state->hand[currentPlayer][i] == silver ||
             state->hand[currentPlayer][i] == gold) drawntreasure++;
-      }
+      }*/
       if (drawntreasure<2){
         drawCard(currentPlayer, state);
         cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
@@ -1274,7 +1275,8 @@ int playSmithy(struct gameState *state,int handPos){
       //currentPlayer
       int currentPlayer = whoseTurn(state);
       int i;
-      if (state->deckCount[currentPlayer]<3) return true;
+      //INTENTIONAL BUG
+      //if (state->deckCount[currentPlayer]<3) return 0;
       //+3 Cards
       for (i = 0; i < 3; i++)
       {
@@ -1295,9 +1297,10 @@ int playGreatHall(struct gameState *state, int handPos){
       
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
-      if (handPos < state->handCount[currentPlayer]){
+      //intentional bug
+      /*if (handPos < state->handCount[currentPlayer]){
         state->hand[currentPlayer][handPos] = handPos;
-      }
+      }*/
 }
 
 int playAmbassador(struct gameState *state, int handPos, int choice1, int choice2){
@@ -1317,7 +1320,8 @@ int playAmbassador(struct gameState *state, int handPos, int choice1, int choice
 
       for (i = 0; i < state->handCount[currentPlayer]; i++)
   {
-    if (i != handPos && i == state->hand[currentPlayer][choice2] && i != choice1)
+    //bug corrected! switched from choice2 to choice1 on hand index
+    if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
       {
         j++;
       }
@@ -1377,8 +1381,8 @@ int playSteward(struct gameState *state,int handPos,int choice1,int choice2,int 
       else
   {
     //trash 2 cards in hand
-    discardCard(choice2, currentPlayer, state, 0);
-    discardCard(choice3, currentPlayer, state, 0);
+    discardCard(choice2, currentPlayer, state, 1);
+    discardCard(choice3, currentPlayer, state, 1);
   }
       
       //discard card from hand
