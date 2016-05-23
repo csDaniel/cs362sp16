@@ -1,245 +1,107 @@
-Testing whoseTurn()
-Setting game->whoseTurn to 0, checking that whoseTurn returns 0
-Setting game->whoseTurn to 1, checking that whoseTurn returns 1
 
-Testing other players' state:
 
-Checking Player Number 0:
-Checking handCount
-hand count = 5, expected = 5
-Checking deckCount
-deck count = 5, expected = 5
-Checking discardCount
-discard count = 0, expected = 0
+Testing Unit updateCoins
 
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
+Test 1: Checking validity of value (in range).
+getting initial handCount
+coinUpdate returned: 0
+bonus is: 0
+Number of playing player is: 0
+coinUpdate set the coin value to: 6 (expected value is: 6)
+handCount is: 5 (5 is expected)
+Test 1 Passed
 
-Testing victory and kingdom cards:
+Test 2: Checking addition of coins (all the possible ways to add coin, bonus and cards).
+bonus is: 1
+coinUpdate set the coin value to: 6 (expected value is: 6)
+coinUpdate set the coin value to: 7 (expected value is: 7)
+Test 2 Passed
+
+Test 3: Checking looking for copper, silver and gold coins.
+bonus is: 0
+coinUpdate set the coin value to: 6 (expected value is: 6)
+adding an aditional gold card...
+coinUpdate set the coin value to: 6 (expected value is: 9)
+cards are:
+gold, silver, copper, gold and Empty
+Test 3 Passed
+
+Test 4: Checking unexpected input
+coinUpdate set the coin value to: -1304428536 (expected value is: -1304428536)
+Test 4 failed: Failed to return a positive value.
 _________________________________________________________
 _________________________________________________________
-Testing supplyCount()
 
 
-Checking that supplyCount returns game->supplyCount[i]
+Testing Unit isGameOver
 
-supply for card 0: 10, expected = 10
-supply for card 1: 8, expected = 8
-supply for card 2: 8, expected = 8
-supply for card 3: 8, expected = 8
-supply for card 4: 46, expected = 46
-supply for card 5: 40, expected = 40
-supply for card 6: 30, expected = 30
-supply for card 7: 10, expected = 10
-supply for card 8: -1, expected = -1
-supply for card 9: -1, expected = -1
-supply for card 10: 8, expected = 8
-supply for card 11: 10, expected = 10
-supply for card 12: -1, expected = -1
-supply for card 13: 10, expected = 10
-supply for card 14: 10, expected = 10
-supply for card 15: -1, expected = -1
-supply for card 16: -1, expected = -1
-supply for card 17: 10, expected = 10
-supply for card 18: -1, expected = -1
-supply for card 19: 10, expected = 10
-supply for card 20: -1, expected = -1
-supply for card 21: 10, expected = 10
-supply for card 22: 10, expected = 10
-supply for card 23: -1, expected = -1
-supply for card 24: -1, expected = -1
-supply for card 25: 10, expected = 10
-supply for card 26: -1, expected = -1
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
 
-Subtracting 3 cards from each of the kingdom piles
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
 
-supply for card 7: 7, expected = 7
-supply for card 10: 5, expected = 5
-supply for card 22: 7, expected = 7
-supply for card 14: 7, expected = 7
-supply for card 17: 7, expected = 7
-supply for card 11: 7, expected = 7
-supply for card 21: 7, expected = 7
-supply for card 25: 7, expected = 7
-supply for card 19: 7, expected = 7
-supply for card 13: 7, expected = 7
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
 
-Subtracting 3 cards from each of the victory, curse, and treasure piles
-
-supply for card 0: 7, expected = 7
-supply for card 1: 5, expected = 5
-supply for card 2: 5, expected = 5
-supply for card 3: 5, expected = 5
-supply for card 4: 43, expected = 43
-supply for card 5: 37, expected = 37
-supply for card 6: 27, expected = 27
-
-Testing other players' state:
-
-Checking Player Number 0:
-Checking handCount
-hand count = 5, expected = 5
-Checking deckCount
-deck count = 5, expected = 5
-Checking discardCount
-discard count = 0, expected = 0
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
+Test 4: Checking unexpected input/Output
+Supplies 1, 14 and 15 are set to 0
+Supplies 16, 6 and 18 are set to 0
+Supplies 15, 18 and 17 are set to 0
+Supplies 7, 6 and 15 are set to 0
+Supplies 21, 17 and 21 are set to 0
+Supplies 15, 4 and 20 are set to 0
+Supplies 1, 20 and 19 are set to 0
+Supplies 7, 9 and 8 are set to 0
+Supplies 24, 2 and 11 are set to 0
+Supplies 15, 21 and 21 are set to 0
+Test 4 Passed
 _________________________________________________________
 _________________________________________________________
-Testing buyCard
 
-Test 1: buying embargo
-hand count = 5, expected = 5
-deck count = 5, expected = 5
-discard count = 1, expected = 1
 
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-Supply count for embargo = 9, expected = 9
+Testing Unit kingdomCards
 
-Test 2: buying mine
-hand count = 5, expected = 5
-deck count = 5, expected = 5
-discard count = 2, expected = 2
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-Supply count for mine = 9, expected = 9
-
-Test 3: attempting to buy adventurer
-hand count = 5, expected = 5
-deck count = 5, expected = 5
-discard count = 2, expected = 2
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-
-Test 4: attempting to buy embargo while numBuys = 0
-hand count = 5, expected = 5
-deck count = 5, expected = 5
-discard count = 2, expected = 2
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-
-Test 5: attempting to buy a card that is out of supply
-hand count = 5, expected = 5
-deck count = 5, expected = 5
-discard count = 2, expected = 2
-
-Testing other players' state:
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-
-Testing victory and kingdom cards:
+Test 1: cecking for match between two copies.
+Member 0 holds value of 7.
+Member 1 holds value of 22.
+Member 2 holds value of 14.
+Member 3 holds value of 17.
+Member 4 holds value of 11.
+Member 5 holds value of 21.
+Member 6 holds value of 25.
+Member 7 holds value of 19.
+Member 8 holds value of 13.
+Member 9 holds value of 8.
+Test 1 Passed
 _________________________________________________________
 _________________________________________________________
-Testing gainCard
 
-Test 1: gain adventurer to discard
-Checking player's state
-hand count = 5, expected = 5
-deck count = 5, expected = 5
-discard count = 1, expected = 1
 
-Testing other players' state:
+Testing Unit scoreFor
 
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
+Test 1: Checking the function.
+ScoreFor returned: 12(expected 12).
+new ScoreFor returned: 17 (expected 17).
+Test 1 Passed
 
-Testing victory and kingdom cards:
-
-Test 2: gain adventurer to deck
-Checking player's state
-hand count = 5, expected = 5
-deck count = 6, expected = 6
-discard count = 1, expected = 1
-
-Testing other players' state:
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-
-Testing victory and kingdom cards:
-
-Test 3: gain adventurer to hand
-Checking player's state
-hand count = 6, expected = 6
-deck count = 6, expected = 6
-discard count = 1, expected = 1
-
-Testing other players' state:
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
-
-Testing victory and kingdom cards:
-
-Test 4: try to gain card not in supply
-hand count = 6, expected = 6
-deck count = 6, expected = 6
-discard count = 1, expected = 1
-
-Checking Player Number 1:
-Checking handCount
-hand count = 0, expected = 0
-Checking deckCount
-deck count = 10, expected = 10
-Checking discardCount
-discard count = 0, expected = 0
+Test 2: discarding a card.
+new ScoreFor returned: 10 (expected 10).
+Test 2 Passed
 _________________________________________________________
 _________________________________________________________
 

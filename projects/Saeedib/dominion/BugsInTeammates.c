@@ -39,6 +39,7 @@ _________________________
 
 Comments:
 Bugs were as reported This is the report of all bugs found and other tests ran fine.
+Card test 3,4,5 and unittest 1,2,3,4 and 5 ran with no error
 
 Raw report from card test on :
 
@@ -93,6 +94,7 @@ _________________________
 
 Comments:
 Bugs were as reported This is the report of all bugs found and other tests ran fine.
+Card test 3,4,5 and unittest 1,2,3,4 and 5 ran with no error
 
 Results on cardtests:
 

@@ -1,14 +1,34 @@
-TESTING scoreFor():
-TEST 1: Test score for all zero.
-Score value: 0. Expected value: 0. 
-Test 1 Passed.
-TEST 2: Test score combining positive & negative.
-Score value: 10. Expected value: 10. 
-Test 2 Passed.
-TEST 3: Test score combining positive only.
-Score value: 40. Expected value: 40. 
-Test 3 Passed.
-All tests passed!
+
+
+Testing Unit updateCoins
+
+Test 1: Checking validity of value (in range).
+getting initial handCount
+coinUpdate returned: 0
+bonus is: 0
+Number of playing player is: 0
+coinUpdate set the coin value to: 6 (expected value is: 6)
+handCount is: 5 (5 is expected)
+Test 1 Passed
+
+Test 2: Checking addition of coins (all the possible ways to add coin, bonus and cards).
+bonus is: 1
+coinUpdate set the coin value to: 6 (expected value is: 6)
+coinUpdate set the coin value to: 7 (expected value is: 7)
+Test 2 Passed
+
+Test 3: Checking looking for copper, silver and gold coins.
+bonus is: 0
+coinUpdate set the coin value to: 6 (expected value is: 6)
+adding an aditional gold card...
+coinUpdate set the coin value to: 6 (expected value is: 9)
+cards are:
+gold, silver, copper, gold and Empty
+Test 3 Passed
+
+Test 4: Checking unexpected input
+coinUpdate set the coin value to: -1304428536 (expected value is: -1304428536)
+Test 4 failed: Failed to return a positive value.
 _________________________________________________________
 _________________________________________________________
 TESTING scoreFor():
