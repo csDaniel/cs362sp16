@@ -12,14 +12,27 @@ Bug Fix: change the <5 to <3
 _________________________
 Bug Number: 2
 --
-Bug name: 
+Bug name: Adventurer drawn treasure bug
 --
-Bug Description:
+Bug Description: it draws 3 instead of 2
 --
 Bug File: Dominion.c
 --
-Bug Line:
+Bug Line: 591
 --
-Bug Fix:
+Bug Fix: the number got modified back to 2
+_________________________
+
+Bug Number: 3
+--
+Bug name: Adventurer copper count bug
+--
+Bug Description: Copper does not trigger the count
+--
+Bug File:Dominion.c
+--
+Bug Line: 597
+--
+Bug Fix: Copper got added to the if statement
 _________________________
 
