@@ -31,59 +31,77 @@ coinUpdate set the coin value to: -1304428536 (expected value is: -1304428536)
 Test 4 failed: Failed to return a positive value.
 _________________________________________________________
 _________________________________________________________
-TESTING scoreFor():
-TEST 1: Test if no coins.
-Coin value: 0. Expected value: 0. 
-Test 1 Passed.
-TEST 2: Test all coopers.
-Coin value: 5. Expected value: 5. 
-Test 2 Passed.
-TEST 3: Test mix between coopers,silvers,and golds.
-Coin value: 10. Expected value: 10. 
-Test 3 Passed.
-TEST 4: Test with bonus.
-Coin value: 10. Expected value: 10. 
-Test 4 Passed.
-All tests passed!
+
+
+Testing Unit isGameOver
+
+Test 1: Checking the function.
+Game is not over(expected)
+Setting the province cards to 0
+Game is over(expected)
+Test 1 Passed
+
+Test 2: testing decrease in province cards.
+value of 0: 0
+value of 1: 0
+value of 2: 0
+value of 3: 0
+value of 4: 1
+Test 2 Passed
+
+Test 3: Testing 3 piles are at 0.
+supply count of 0 was 10.
+supply count of 0 now is 0.
+supply count of 1 was 10.
+supply count of 1 now is 0.
+supply count of 2 was 10.
+supply count of 2 now is 0.
+Test 3 Passed
+
+Test 4: Checking unexpected input/Output
+Supplies 20, 13 and 9 are set to 0
+Supplies 15, 5 and 3 are set to 0
+Supplies 24, 9 and 13 are set to 0
+Supplies 18, 21 and 18 are set to 0
+Supplies 11, 18 and 16 are set to 0
+Supplies 19, 19 and 23 are set to 0
+Supplies 24, 2 and 14 are set to 0
+Supplies 15, 10 and 7 are set to 0
+Supplies 6, 16 and 5 are set to 0
+Supplies 23, 5 and 3 are set to 0
+Test 4 Passed
 _________________________________________________________
 _________________________________________________________
-TESTING isGameOver():
-TEST 1: Test if province is negative.
-# of province card in supply: -8. Dominion need condition state->supplyCount[province] =< 0!
-Result value: 0. Expected value: 0 (Game Not Over). 
-Test 1 Failed.
-TEST 2: Test if dutchy empty.
-Result value: 0. Expected value: 0 (Game Not Over). 
-Test 2 Passed.
-TEST 3: Test if estate empty.
-Result value: 0. Expected value: 0 (Game Not Over). 
-Test 3 Passed.
-TEST 4: Test when 4 supplies zero
-Testing with duchy, estate, curse and gold
-Result value: 1. Expected value: 1 (Game Is Over). 
-Test 4 Passed.
-TEST 5: Test when 2 supplies zero but 1 with province.
-Testing with provice and gold
-Result value: 1. Expected value: 1 (Game Is Over). 
-Test 5 Passed.
-All tests passed, except test # 1 since it is intentional.
+
+
+Testing Unit kingdomCards
+
+Test 1: cecking for match between two copies.
+Member 0 holds value of 7.
+Member 1 holds value of 22.
+Member 2 holds value of 14.
+Member 3 holds value of 17.
+Member 4 holds value of 11.
+Member 5 holds value of 21.
+Member 6 holds value of 25.
+Member 7 holds value of 19.
+Member 8 holds value of 13.
+Member 9 holds value of 8.
+Test 1 Passed
 _________________________________________________________
 _________________________________________________________
-TESTING fullDeckCount():
-Specific card for this test: 'ADVENTURER'. Assume using Player 1 Point of View.
-TEST 1: No Adventurer at deck, discard and hand
-Result value: 0. Expected value: 0. 
-Test 1 Passed.
-TEST 2: No Adventurer at deck, discard. 1 Adventurer at hand
-Result value: 1. Expected value: 1. 
-Test 2 Passed.
-TEST 3: No Adventurer at deck and discard. 1 Adventurer at player 1 and player 2 hand.
-Result value: 1. Expected value: 1. 
-Test 3 Passed.
-TEST 4: 1 Adventurer at Player 1 deck, discard and hand.
-Result value: 3. Expected value: 3. 
-Test 4 Passed.
-All tests passed.
+
+
+Testing Unit scoreFor
+
+Test 1: Checking the function.
+ScoreFor returned: 12(expected 12).
+new ScoreFor returned: 17 (expected 17).
+Test 1 Passed
+
+Test 2: discarding a card.
+new ScoreFor returned: 10 (expected 10).
+Test 2 Passed
 _________________________________________________________
 _________________________________________________________
 
