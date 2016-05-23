@@ -70,7 +70,7 @@ int main() {
 
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-			playCutpurse(p, &G, handCount - 1);			// call playCutpurse with current player
+			playCutpurse(&G, handCount - 1);			// call playCutpurse with current player
 
 			// 1 - Current player gets +2 coins.
 			if (G.coins != controlG.coins + 2) {
@@ -88,11 +88,6 @@ int main() {
 
 			// No change to the victory card piles and kingdom card piles.
 			checkSupply(G, controlG);
-
-			// Current players hand doesnt change besides discarding the cutpurse.
-			if((G.hand[p][handCount - 1] == cutpurse) && (G.discardCount[p] == controlG.discardCount[p])) {
-				printf("\tCutpurse was not discarded.\n");
-			}
 
 
 			// TEST 2 ******************************************************************************
@@ -114,7 +109,7 @@ int main() {
 
 			memcpy(&controlG, &G, sizeof(struct gameState));			// copy game state to test case
 
-			playCutpurse(p, &G, handCount - 1);			// call playCutpurse with current player
+			playCutpurse(&G, handCount - 1);			// call playCutpurse with current player
 
 			// Check other players have lost a copper
 			for (i = 0; i < numPlayers; i++) {

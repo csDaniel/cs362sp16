@@ -92,7 +92,7 @@ int main() {
 			newCards = before_deckCount;
 		
 		//test smithy
-		cardEffect(smithy, choice1, choice2, choice3, &testG2, handpos, &bonus);
+		playSmithy(&testG2, handpos);
 		
 		after_handCount = testG2.handCount[thisPlayer];
 		after_discardCount = testG2.discardCount[thisPlayer]; 

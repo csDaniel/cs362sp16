@@ -5,7 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-int adventurerAction(int* drawntreasure, struct gameState* state, int* currentPlayer, int* cardDrawn, int temphand[], int* z) {
+int adventurerAction(int* drawntreasure, struct gameState* state, int* currentPlayer, int* cardDrawn, int temphand[], int* z, int* handPos) {
 	while (*drawntreasure<2) {
 		if (state->deckCount[*currentPlayer] <1) {//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(*currentPlayer, state);
@@ -20,10 +20,14 @@ int adventurerAction(int* drawntreasure, struct gameState* state, int* currentPl
 			(*z)++;
 		}
 	}
-	while ((*z) >= 0) {
+	while ((*z) - 1 >= 0) {
 		state->discard[*currentPlayer][state->discardCount[*currentPlayer]++] = temphand[*z - 1]; // discard all cards in play that have been drawn
 		*z = (*z) - 1;
 	}
+
+	//discard card from hand
+	discardCard(*handPos, *currentPlayer, state, 0);
+
 	return 0;
 }
 
@@ -31,7 +35,7 @@ int smithyAction(int* currentPlayer, struct gameState* state, int* handPos) {
 	//+3 Cards
 	int i;
 
-	for (i = 0; i <= 3; i++)
+	for (i = 0; i < 3; i++)
 	{
 		drawCard(*currentPlayer, state);
 	}
@@ -80,16 +84,20 @@ int cutpurseAction(int* currentPlayer, struct gameState* state, int* handPos) {
 	return 0;
 }
 
-int sea_hagAction(struct gameState* state, int* currentPlayer) {
+int sea_hagAction(struct gameState* state, int* currentPlayer, int* handPos) {
 	int i;
 	for (i = 0; i < state->numPlayers; i++) {
-		if (i != currentPlayer) {
-			state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];
+		if (i != (*currentPlayer)) {
+			state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i] - 1];
 			state->deckCount[i]--;
 			state->discardCount[i]++;
-			state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+			state->deck[i][state->deckCount[i] - 1] = curse;//Top card now a curse
+			state->supplyCount[0]--;
 		}
 	}
+
+	discardCard(*handPos, *currentPlayer, state, 0);
+
 	return 0;
 }
 
@@ -816,7 +824,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return adventurerAction(&drawntreasure, state, &currentPlayer, &cardDrawn, temphand, &z);
+		return adventurerAction(&drawntreasure, state, &currentPlayer, &cardDrawn, temphand, &z, &handPos);
 			
     case council_room:
       //+4 Cards
@@ -1218,7 +1226,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case sea_hag:
-		return sea_hagAction(state, &currentPlayer);
+		return sea_hagAction(state, &currentPlayer, &handPos);
 		
     case treasure_map:
       //search hand for another treasure_map

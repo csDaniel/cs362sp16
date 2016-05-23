@@ -50,15 +50,16 @@ unittestresults.out: unitTest1.c unitTest2.c unitTest3.c unitTest4.c dominion.o
 	gcov unitTest4.c -b >> unittestresults.out
 	cat unitTest4.c.gcov >> unittestresults.out
 
-randomtestcard.out: $(CFLAGS) randomtestcard
-	randomtestcard >> randomtestcard.out
+randomtestcard: randomtestcard randomtestcard.c dominion.o rngs.o
+	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
+	./randomtestcard >> randomtestcard.out
 	gcov -b dominion.c >> randomtestcard.out
 	cat dominion.c.gcov >> randomtestcard.out
 
-randomtestadventurer: $(CFLAGS) randomtestadventurer.c dominion.o rngs.o
-	gcc -o ./randomtestadventurer -g $(CFLAGS)
+randomtestadventurer: randomtestadventurer randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
 	./randomtestadventurer >> randomtestadventurer.out
-	gcov ($CFLAGS) dominion.c >> randomtestadventurer.out
+	gcov -b dominion.c >> randomtestadventurer.out
 	cat dominion.c.gcov >> randomtestadventurer.out
 
 testAll: dominion.o testSuite.c

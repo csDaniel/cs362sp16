@@ -1,0 +1,139 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:/******************************************************************************
+        -:    2:* ASSIGNMENT 5 - unittest3.c
+        -:    3:* AUTHOR: Nickolas A. Williams
+        -:    4:* CLASS: CS362
+        -:    5:* DATE: 05/22/2016
+        -:    6:* NOTES: unit testing of the scoreFor() function
+        -:    7:* REQUIREMENTS for scoreFor():
+        -:    8:*  1. Count scoring cards in deck
+        -:    9:*  2. Count scoring cards in hand
+        -:   10:*  3. Count scoring cards in discard
+        -:   11:*  4. Return total score for each area
+        -:   12:* TESTING tasks for scoreFor():
+        -:   13:*  1. Test that scoring cards in each area are counted
+        -:   14:*  2. Test that total score is caluclated correctly
+        -:   15:*  3. Test that each player's score is calculated
+        -:   16:******************************************************************************/
+        -:   17:
+        -:   18:#include "dominion.h"
+        -:   19:#include "dominion_helpers.h"
+        -:   20:#include <string.h>
+        -:   21:#include <stdio.h>
+        -:   22:#include <assert.h>
+        -:   23:#include "rngs.h"
+        -:   24:
+        -:   25:// set NOISY_TEST to 0 to remove printfs from output
+        -:   26:#define NOISY_TEST 0
+        -:   27:
+        2:   28:int main() 
+        -:   29:{
+        2:   30:    int seed = 1000;
+        2:   31:    int numPlayer = 2;
+        -:   32:    int player, r, deckCount, handCount, discardCount, result, failflag;
+        2:   33:	int maxCardCount = 10;
+        2:   34:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   35:               , remodel, smithy, village, baron, great_hall};
+        -:   36:    struct gameState G;
+        2:   37:	int scoringCards[] = {curse, estate, duchy, province, great_hall, gardens};
+        2:   38:	int cardValues[] = {-1, 1, 3, 6, 1, 0};
+        -:   39:	int totalCount, gardenCount, totalScore;
+        -:   40:
+        2:   41:    printf ("TESTING scoreFor():\n");
+        6:   42:    for (player = 0; player < numPlayer; player++)
+        -:   43:    {
+        -:   44:		int cardType, cardPosition;
+       28:   45:		for (cardType = 0; cardType <= 5; cardType++)
+        -:   46:		{
+      288:   47:			for (deckCount = 0; deckCount <= maxCardCount; deckCount++)
+        -:   48:			{
+     3168:   49:				for (handCount = 0; handCount <= maxCardCount; handCount++)
+        -:   50:				{
+    34848:   51:					for (discardCount = 0; discardCount <= maxCardCount; discardCount++)
+        -:   52:					{
+    31944:   53:						gardenCount = 0;
+    31944:   54:						totalCount = 0;
+    31944:   55:						totalScore = 0;
+        -:   56:						//create test decks for this *Count (deck,hand,discard)
+    31944:   57:						int testDeck[deckCount];
+   191664:   58:						for (cardPosition = 0; cardPosition < deckCount; cardPosition++)
+        -:   59:						{
+   159720:   60:							testDeck[cardPosition] = scoringCards[cardType];
+   159720:   61:							totalScore = totalScore + cardValues[cardType];
+   159720:   62:							if (cardType == 5)
+        -:   63:							{
+    26620:   64:								gardenCount++;
+        -:   65:							}
+        -:   66:						}
+        -:   67:						
+    31944:   68:						int testHand[handCount];
+   191664:   69:						for (cardPosition = 0; cardPosition < deckCount; cardPosition++)
+        -:   70:						{
+   159720:   71:							testHand[cardPosition] = scoringCards[cardType];
+   159720:   72:							totalScore = totalScore + cardValues[cardType];
+   159720:   73:							if (cardType == 5)
+        -:   74:							{
+    26620:   75:								gardenCount++;
+        -:   76:							}
+        -:   77:						}
+        -:   78:						
+    31944:   79:						int testDiscard[discardCount];
+   191664:   80:						for (cardPosition = 0; cardPosition < deckCount; cardPosition++)
+        -:   81:						{
+   159720:   82:							testDiscard[cardPosition] = scoringCards[cardType];
+   159720:   83:							totalScore = totalScore + cardValues[cardType];
+   159720:   84:							if (cardType == 5)
+        -:   85:							{
+    26620:   86:								gardenCount++;
+        -:   87:							}
+        -:   88:						}
+        -:   89:						
+        -:   90:#if (NOISY_TEST == 1)
+        -:   91:						printf("Total count = %d\n", totalCount);
+        -:   92:#endif
+    31944:   93:						if (gardenCount != 0)
+        -:   94:						{
+     4840:   95:							totalCount = deckCount + handCount + discardCount;
+        -:   96:#if (NOISY_TEST == 1)
+        -:   97:							printf("Garden count = %d\n", gardenCount);
+        -:   98:#endif
+     4840:   99:							totalScore = totalScore + ((totalCount / 10) * gardenCount);
+        -:  100:						}
+        -:  101:
+    31944:  102:						memset(&G, 23, sizeof(struct gameState));   // clear the game state
+    31944:  103:						r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+    31944:  104:						G.deckCount[player] = deckCount;            // set the number of cards on deck
+    31944:  105:						G.handCount[player] = handCount;            // set the number of cards on hand
+    31944:  106:						G.discardCount[player] = discardCount;      // set the number of cards on discard
+        -:  107:											
+    31944:  108:						memcpy(G.deck[player], testDeck, sizeof(int) * deckCount); // set to testDeck
+    31944:  109:						memcpy(G.hand[player], testHand, sizeof(int) * handCount); // set to testHand
+    31944:  110:						memcpy(G.discard[player], testDiscard, sizeof(int) * discardCount); // set to testDiscard
+        -:  111:						
+    31944:  112:						result = scoreFor(player, &G);
+    31944:  113:						if (result != totalScore)
+        -:  114:						{
+    30126:  115:							failflag = 1;
+        -:  116:						}
+        -:  117:#if (NOISY_TEST == 1)
+        -:  118:						printf("scoreFor = %d, expected %d\n", result, totalScore);
+        -:  119:#endif
+        -:  120:					}
+        -:  121:				}
+        -:  122:			}
+        -:  123:		}
+        -:  124:	}
+        2:  125:	if (failflag != 1)
+        -:  126:	{
+    #####:  127:		printf("All tests passed!\n");
+        -:  128:	}
+        -:  129:	else
+        -:  130:	{
+        2:  131:		printf("There were errors.\n");
+        -:  132:	}
+        2:  133:	return 0;
+        -:  134:}

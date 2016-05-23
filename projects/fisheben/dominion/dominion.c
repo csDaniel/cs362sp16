@@ -1203,16 +1203,20 @@ int myAdventurer(struct gameState *state, int currentPlayer ){
   int temphand[MAX_HAND];// moved above the if statement
   int drawntreasure=0;
   int cardDrawn = 0;
+  int reshuffle = 0;
 
-	while(drawntreasure < 2){
+  //FIXED BUG SO WHILE LOOP EXITS IN DECK WITH NO TREASURE CARDS
+	while(drawntreasure < 2 && reshuffle < 2){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 		  shuffle(currentPlayer, state);
+          reshuffle++;
 		}
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 		
 		//ADDED A LOGIC BUG HERE WHERE CARD DRAWN IS ASSIGNED TO GOLD
-		if (cardDrawn == copper || cardDrawn == silver || (cardDrawn = gold))
+        //FIXED LOGIC ERROR
+		if (cardDrawn == copper || cardDrawn == silver || (cardDrawn == gold))
 		  drawntreasure++;
 		else{
 		  temphand[z]=cardDrawn;
@@ -1242,7 +1246,8 @@ int myFeast(struct gameState *state, int currentPlayer, int choice1){
 	//Backup hand
 	//Update Coins for Buy
 	//ADDED BUG WHERE CURRENT PLAYER + 1 HAS THEIR COINS INCREMENTED
-	updateCoins(++currentPlayer, state, 5);
+    //FIXED BUG
+	updateCoins(currentPlayer, state, 5);
 	
 	x = 1;//Condition to loop on
 	while( x == 1) {//Buy one card
@@ -1304,7 +1309,8 @@ int myRemodel(struct gameState *state, int currentPlayer, int choice1, int choic
 	for (i = 0; i < state->handCount[currentPlayer]; i++)
 	{
 		//ADDED LOGIC BUG WHERE CARD DOESN'T GET DISCARDED PROPERLY
-		if (state->hand[currentPlayer][i] == --j)
+        //FIXED LOGIC BUG
+		if (state->hand[currentPlayer][i] == j)
 		{
 			discardCard(i, currentPlayer, state, 0);			
 			break;
@@ -1324,7 +1330,8 @@ int mySmithy(struct gameState *state, int currentPlayer, int handPos){
 		
 	//discard card from hand
 	//ADDED LOGIC ERROR SET TRASH FLAG TO 1
-	discardCard(handPos, currentPlayer, state, 1);
+    //FIXED lOGIC BUG
+	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
@@ -1333,7 +1340,12 @@ int myTribute(struct gameState *state, int currentPlayer ){
 	int i;	
 	
 	//ADDED A LOGIC BUG WHERE NEXT PLAYER IS SET TO CURRENT PLAYER
-	int nextPlayer = currentPlayer;
+    //FIXED LOGIC BUG
+	int nextPlayer = currentPlayer + 1;
+
+    if(nextPlayer > (state->numPlayers-1)){
+        nextPlayer = 0;
+    }
 
 	int tributeRevealedCards[2] = {-1, -1};
 	

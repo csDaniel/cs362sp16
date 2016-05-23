@@ -47,9 +47,9 @@ void testCardCouncil(){
 		for(i=0;i<4;i++){
 			if(i == p){//current player
 				
-				assert(game.handCount[p] == handCount[p] + 4);
-				assert(game.deckCount[p] == deckCount[p] - 4);
-				//assert(game.handCount[p] == handCount[p] + 3);
+				//assert(game.handCount[p] == handCount[p] + 4);
+				//assert(game.deckCount[p] == deckCount[p] - 4);
+				assert(game.handCount[p] == handCount[p] + 3);
 			}
 			else{//other players
 				assert(game.handCount[i] == handCount[i] + 1);
