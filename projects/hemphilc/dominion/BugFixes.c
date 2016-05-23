@@ -7,6 +7,28 @@
  */
 
 
+/*********************** Discussion of Coverage ************************/
+/*
+ The unit tests that I have created have pretty good path and statement
+ coverage overall (between 20 - 30% for dominion.c). For the cards that 
+ I tested, I am fairly confident that I caught the bugs that I was 
+ looking to catch. I made very few adjustments to my tests overall and 
+ was able to determine bug causality fairly quickly. Finding the 
+ causality quickly and accurately allowed me to clearly communicate bugs 
+ and their respective conditions to my team mates. In addition, I was 
+ able to target bugs within my own code very easily as well. Yes, there 
+ are changes and additions I would like to make to my tests that I have. 
+ But I think at this point, my tests are very effective. In a game like 
+ dominion, path coverage is very important and my tests were written with 
+ the intent of getting as much path coverage as possible. There are 
+ surely bugs that I missed with some of the helper function calls. But 
+ when it comes to the actual functionality of the game cards, I was able 
+ to weed out most of the bugs for the cards I targeted thanks to solid
+ path coverage strategy.
+*/
+/***********************************************************************/
+
+
 /*********************** Fixed Bugs (dominion.c) ***********************/
 
 /*
