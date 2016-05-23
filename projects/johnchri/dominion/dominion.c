@@ -643,15 +643,17 @@ int getCost(int cardNumber)
   return -1;
 }
 
-void effectAdventurer(struct gameState* state){
+void effectAdventurer(struct gameState* state, int handPos){
     int currentPlayer = whoseTurn(state);
     int drawntreasure = 0;
     int cardDrawn;
     int temphand[MAX_HAND];// moved above the if statement
     int z = 0;// this is the counter for the temp hand
+	
+	gameState->numActions--;
 
-    while(drawntreasure<=2){
-    	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+    while(drawntreasure < 2){
+    	if (state->deckCount[currentPlayer] < 1 ){//if the deck is empty we need to shuffle discard and add to deck
     	    shuffle(currentPlayer, state);
     	}
     	drawCard(currentPlayer, state);
@@ -668,6 +670,8 @@ void effectAdventurer(struct gameState* state){
         state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
         z=z-1;
     }
+	
+	discardCard(handPos, currentPlayer, gameState, 1);
 }
 
 void effectCouncilRoom(struct gameState* state, int handPos){
@@ -751,8 +755,11 @@ void effectFeast(struct gameState* state, int choice1){
 void effectSmithy(struct gameState* state, int handPos){
     int i;
     int currentPlayer = whoseTurn(state);
+	
+	gameState->numActions--;
+	
     //+3 Cards
-    for (i = 0; i < 2; i++){
+    for (i = 0; i < 3; i++){
         drawCard(currentPlayer, state);
     }
 
@@ -765,8 +772,8 @@ void effectVillage(struct gameState* state, int handPos){
 
     //+1 Card
     drawCard(currentPlayer, state);
-    //+2 Actions
-    state->numActions = state->numActions + 2;
+    //+1 Actions
+    state->numActions = state->numActions + 1;
     //discard played card from hand
     discardCard(handPos, currentPlayer, state, 0);
 }
@@ -789,7 +796,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) {
 
     case adventurer:
-        effectAdventurer(state);
+        effectAdventurer(state, handPos);
         return 0;
 			
     case council_room:
