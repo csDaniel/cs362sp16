@@ -1,185 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
 #include <time.h>
 
-/*******************************************************
-** Random test for the Council Room card
-** Council Room:
-**   Add four cards to the person who played the card
-**   Add one buy to the person who played the card
-**   Add one card to every other player
-*******************************************************/
+void testSmithy();
+void randomGameState(struct gameState *state);
 
-
-// set NOISY_TEST to 0 to remove printfs from output
-#define NOISY_TEST 0
-
-
-int main() {
-	int numTests = 10000;
-	int totalNumTests = numTests;
-	int failedTests = 0;
-	
-	
-	int i, j;
-	int seed = 1000;
-	int p, r;
-	int k[10] = {
-		adventurer,
-		remodel,
-		feast,
-		mine,
-		gardens,
-		smithy,
-		village,
-		baron,
-		great_hall,
-		council_room
-	};
-	struct gameState G;
-		
-	printf ("TESTING Council Room CARD:\n");
-	//Random number seed
+int main(int argc, char *argv[])
+{
 	srand(time(NULL));
-		
-	while(numTests > 0){
-		
-		int testFailed = 0;
-		
-		//***********************************
-		//Set up the scenario
-		//***********************************
-		
-		// set up the deck
-		// cards should be between 7 and 26
-		// council_room is 8
-		for(i = 0; i < 10; i++){
-			int validCard = 0;
-			while(validCard != 1){
-				validCard = 1;
-				k[i] = (rand() % 19) + 7;
-				// make sure the new card isn't the council room
-				while(k[i] == 8)
-					k[i] = (rand() % 19) + 7;
-				// make sure the new card isn't a repeat
-				for(j = 0; j < i; j++){
-					if(k[i] == k[j])
-						validCard = 0;
-				}
-			}
-		}
-		// add the council room card to the deck randomly
-		int councilRoomIndex = rand() % 10;
-		k[councilRoomIndex] = 8;
-		
-		
-		// set the number of players
-		int numPlayers = (rand() % (MAX_PLAYERS - 1)) + 2;
-		// clear the game state
-		memset(&G, 23, sizeof(struct gameState));
-		// initialize a new game
-		r = initializeGame(numPlayers, k, seed, &G);
-		
-		
-		
-		for(i = 0; i < numPlayers; i++){
-			G.handCount[i] = (rand() % (MAX_HAND - 4)) + 0;
-		}
-		
-		
-		
-#if (NOISY_TEST == 1)
-		printf("\n-----NEW GAME-----\n");
-		printf("numPlayers: %i\n", G.numPlayers);
-		for(i = 0; i < 10; i++)
-			printf("[%i]", k[i]);
-		printf("\n");
-		printf("handCount\n");
-		for(i = 0; i < G.numPlayers; i++){
-			printf("--Player %i handCount: %i\n", i, G.handCount[i]);
-		}
-#endif
-		
-		G.whoseTurn = rand() % G.numPlayers;
-		
-		//Give player one a Council Room card
-		G.hand[G.whoseTurn][0] = council_room;
-		
-		// Get the information from before the play
-		int prePlayHandCount[G.numPlayers];
-		for(i = 0; i < G.numPlayers; i++)
-			prePlayHandCount[i] = G.handCount[i];
-		int prePlayBuyCount = G.numBuys;
-		
-		// Play the card
-		playCard(0, 0, 0, 0, &G);
-		
-		// Get the information from after the play
-		int postPlayHandCount[G.numPlayers];
-		for(i = 0; i < G.numPlayers; i++)
-			postPlayHandCount[i] = G.handCount[i];
-		int postPlayBuyCount = G.numBuys;
-		
-		for(i = 0; i < G.numPlayers; i++){
-			testFailed = 0;
-			//Test for the player who just played the Council Room Card
-			if(i == G.whoseTurn){
-				// Test the hand count
-				if(postPlayHandCount[i] != prePlayHandCount[i] + 3){
-					printf("\nERROR - Dealing Player Hand Count\n");
-					printf("--Expected: %i\n", prePlayHandCount[i] + 3);
-					printf("--Got:      %i\n", postPlayHandCount[i]);
-					printf("--Pre:      %i\n", prePlayHandCount[i]);
-					testFailed = 1;
-				}
-			} else {
-				if(postPlayHandCount[i] != prePlayHandCount[i] + 1){
-					printf("\nERROR - Non Dealing Player Hand Count\n");
-					printf("--Expected: %i\n", prePlayHandCount[i] + 1);
-					printf("--Got:      %i\n", postPlayHandCount[i]);
-					printf("--Pre:      %i\n", prePlayHandCount[i]);
-					testFailed = 1;
-				}
-			}
-			//Test the buy count
-			if(postPlayBuyCount != prePlayBuyCount + 1){
-				printf("\nERROR - Buy Count\n");
-				printf("--Expected: %i\n", prePlayBuyCount + 1);
-				printf("--Got:      %i\n", postPlayBuyCount);
-				testFailed = 1;
-			}
-			//If one of the test failed, record it
-			if(testFailed != 0){
-				failedTests++;
-				printf("-----FAILURE REPORT-----\n");
-				printf("numPlayers: %i\n", G.numPlayers);
-				printf("whoseTurn:  %i\n", G.whoseTurn);
-				printf("deck\n");
-				for(i = 0; i < 10; i++)
-					printf("[%i]", k[i]);
-				printf("\n");
-				printf("handCount\n");
-				for(i = 0; i < G.numPlayers; i++){
-					printf("--Player %i handCount: %i\n", i, G.handCount[i]);
-				}
-				printf("-----END FAILURE REPORT-----\n");
-			}
-		}		
-		
-		numTests--;
-	}
-
-	printf("\n------------------------------\n");
-	printf("Council Room Random Tests Finished\n");
-	printf("--Total Tests:  %i\n", totalNumTests);
-	printf("--Passed Tests: %i\n", totalNumTests - failedTests);
-	printf("--Failed Tests: %i\n", failedTests);
-	printf("------------------------------\n");
-	
-	return 0;
+	testSmithy();
+    return 0;
+    
 }
+
+void testSmithy() {
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int bonus;
+	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
+           sea_hag, tribute, smithy};
+    struct gameState G;
+	int drawntreasure = 0;
+	int cardDrawn = 0;
+	int temphand[MAX_HAND];
+	int z = 0;
+	int originalDeckCount;
+	int originalHandCount;
+	int currentPlayer = 0;
+	int count = 0;
+	int handPosition = 0;
+
+	while(1) {
+		count++;
+		initializeGame(numPlayer, k, seed, &G);
+		randomGameState(&G);
+
+		//Randomize Current Player
+		currentPlayer = rand() % 2;
+
+		//Randomize Hand Position
+		handPosition = rand() % 5;
+
+		smithyFunct(handPosition, currentPlayer, &G);
+		printf("Iteration %i\n", count);
+	}
+}
+
+void randomGameState(struct gameState *state) {
+	int i;
+	int j;
+	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
+           sea_hag, tribute, smithy};
+	int l;
+	int m;
+	int n;
+	
+	//Supply Counts
+	state->supplyCount[estate] = rand() % 8 + 1;
+	state->supplyCount[duchy] = rand() % 8 + 1;
+	state->supplyCount[province] = rand() % 8 + 1;
+	state->supplyCount[copper] = rand() % (60 - (7 * 2) + 1);
+	state->supplyCount[silver] = rand() % 41;
+	state->supplyCount[gold] = rand() % 31;
+
+	for (i = 0; i < 2; i++) {
+		//Player Deck Count
+		state->deckCount[i] = rand() % (MAX_DECK + 1);
+		for (j = 0; j < state->deckCount[i]; j++) {
+			l = rand() % 10;
+			state->deck[i][j] = k[l];
+		}
+		n = rand() % (state->deckCount[i] + 1) + 3;
+		for (j = 0; j < n; j++) {
+			l = rand() % 4;
+			if (l == 0) {
+				state->deck[i][j] = copper;
+			} else if (l == 1) {
+				state->deck[i][j] = silver;
+			} else {
+				state->deck[i][j] = gold;
+			}
+		}
+		
+		//Draw 5 cards
+		for (m = 0; m < 5; m++) {
+			drawCard(i, state);
+		}
+	}
+}
+
