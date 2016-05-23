@@ -357,23 +357,25 @@ int main() {
 	// ----------- TEST 7: 2 Treasure Cards are Drawn,  reshuffling needed, no discarding of drawn cards needed ---------- 
 	failFlag = 0;
 	printf("\n\n******TEST 7: 2 Treasure Cards are drawn. Case 3: Reshuffling needed, no discarding of drawn cards needed.**** \n");
-	for( i=0; i<10; i++ ){
-		G.deck[thisPlayer][i] = -1;
+	for( i=0; i<G.discardCount[thisPlayer]; i++ ){
 		G.discard[thisPlayer][i] = copper;
 	}
 	G.deckCount[thisPlayer] = 0;
 
+	printf("1\n");
 	tE = 2;
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
 	cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
 
+	printf("2\n");
 	for (i=0; i<G.handCount[thisPlayer]; i++) {
 		if ( G.hand[thisPlayer][i] == copper || G.hand[thisPlayer][i] == silver || G.hand[thisPlayer][i] == gold ){
 			tE++;
 		}
 	} 
 
+	printf("3\n");
 	for (i=0; i<testG.handCount[thisPlayer]; i++) {
 		if ( G.hand[thisPlayer][i] == copper || G.hand[thisPlayer][i] == silver || G.hand[thisPlayer][i] == gold ){
 			tA++;

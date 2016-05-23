@@ -1,7 +1,7 @@
 File 'dominion.c'
-Lines executed:21.69% of 567
-Branches executed:18.80% of 415
-Taken at least once:16.63% of 415
-Calls executed:10.20% of 98
+Lines executed:13.14% of 548
+Branches executed:13.67% of 417
+Taken at least once:7.19% of 417
+Calls executed:8.89% of 90
 Creating 'dominion.c.gcov'
 

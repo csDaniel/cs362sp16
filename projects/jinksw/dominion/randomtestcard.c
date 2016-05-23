@@ -7,19 +7,36 @@ Smithy Card: Draw 3 cards
 #include "dominion_helpers.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <assert.h>
+#include <math.h>
 #include "rngs.h"
 #include "interface.h"
 
 #define DEBUG 0
 #define NOISY_TEST 1
 
+int checkCardDiff( struct gameState *G, struct gameState *GT, int Gcount, int GTcount, int option, int p );
+
 int checkSmithy(struct gameState *post) {
   struct gameState pre;
   memcpy (&pre, post, sizeof(struct gameState));
   int r, i;
 	    
-  r = playSmithy(post);
+	int choice1 = 0, choice2 = 0, choice3=0, bonus=0, handpos=1;	    
+/*
+	printf( "b4 discard\n");
+	discardCard( 0, 1, post, 0 );
+	printf( "after discard\n");
+
+	int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
+*/
+	printf( "b4 card\n");
+	r = cardEffect(smithy, choice1, choice2, choice3, post, handpos, &bonus );
+	printf( "after card\n");
+
+	int treasCount = 0;
 
 	int currPlayer = whoseTurn( &pre );
 
@@ -33,19 +50,19 @@ int checkSmithy(struct gameState *post) {
 	} else {
 		printf( "-----------    Failed ----------- \n" );
 		printf( "   #####  Discard Count Test: %d, Function: %d \n", pre.discardCount[currPlayer],  post->discardCount[currPlayer] );
-		checkCardDiff( &post, &pre, post->discardCount[currPlayer], pre.discardCount[currPlayer], 3, currPlayer );
+		checkCardDiff( post, &pre, post->discardCount[currPlayer], pre.discardCount[currPlayer], 3, currPlayer );
 	//	printf( "   #####  Cards in Discard Test: " );
 //		printDiscard( currPlayer, &pre );
 //		printf( "   #####  Cards in Discard Function: " );
 //		printDiscard( currPlayer, post );
 		printf( "\n    ######  Hand Count Test: %d, Function: %d \n", pre.handCount[currPlayer],  post->handCount[currPlayer] );
-		checkCardDiff( &post, &pre, post->handCount[currPlayer], pre.handCount[currPlayer], 1, currPlayer );
+		checkCardDiff( post, &pre, post->handCount[currPlayer], pre.handCount[currPlayer], 1, currPlayer );
 //		printf( "   ######   Cards in Hand Test: " );
 //		printHand( currPlayer, &pre );
 //		printf( "   #####   Cards in Hand Function: " );
 //		printHand( currPlayer, post );
 		printf( "\n   ####   Deck Count Test: %d, Function: %d \n", pre.deckCount[currPlayer],  post->deckCount[currPlayer] );
-		checkCardDiff( &post, &pre, post->deckCount[currPlayer], pre.deckCount[currPlayer], 2, currPlayer );
+		checkCardDiff( post, &pre, post->deckCount[currPlayer], pre.deckCount[currPlayer], 2, currPlayer );
 //		printf( "   #####   Cards in Deck Test: " );
 //		printDeck( currPlayer, &pre );
 //		printf( "   #####   Cards in Deck Function: " );
@@ -156,15 +173,15 @@ int initCards( struct gameState *G, int p ){
 	}
 
 	for( i=0; i<G->deckCount[p]; i++ ){
-		G->deck[p][i]=floor( Random() * 27 );
+		G->deck[p][i] = floor( Random() * 27 );
 	}
 
 	for( i=0; i<G->handCount[p]; i++ ){
-		G->hand[p][i]=floor( Random() * 27 );
+		G->hand[p][i] = floor( Random() * 27 );
 	}
 	
 	for( i=0; i<G->discardCount[p]; i++ ){
-		G->discard[p][i]=floor( Random() * 27 );
+		G->discard[p][i] = floor( Random() * 27 );
 	}
 
 	return 0;
@@ -191,6 +208,7 @@ int main () {
     G.deckCount[p] = floor(Random() * MAX_DECK);
     G.discardCount[p] = floor(Random() * MAX_DECK);
     G.handCount[p] = floor(Random() * MAX_HAND);
+	printf( "Handcount: %d ", G.handCount[p] );
 	initCards( &G, p );
 	printf( "\n**************************   Test %d   ****************************** \n", n );
     checkSmithy(&G);

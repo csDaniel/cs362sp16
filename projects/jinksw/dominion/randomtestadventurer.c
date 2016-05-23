@@ -22,8 +22,9 @@ int checkAdventurer(struct gameState *post) {
   struct gameState pre;
   memcpy (&pre, post, sizeof(struct gameState));
   int r, i;
-	    
-  r = playAdventurer(post);
+	int choice1 = 0, choice2 = 0, choice3=0, bonus=0, handpos=0;	    
+
+  r = cardEffect(adventurer, choice1, choice2, choice3, &post, handpos, &bonus );
 
 	int treasCount = 0;
 	int currPlayer = whoseTurn( &pre );
