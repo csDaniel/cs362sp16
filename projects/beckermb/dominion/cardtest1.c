@@ -38,7 +38,8 @@ int main() {
   //Test if smithy added to played cards
   game.deckCount[player] = 4;
   game.playedCardCount = 1;
-  game.playedCards[game.playedCardCount] = gardens;
+  game.playedCards[game.playedCardCount - 1] = gardens;
+  game.hand[player][0] = smithy;
   smithyCardEffect(player, 0, &game);
 
   if (game.playedCardCount == 2) {

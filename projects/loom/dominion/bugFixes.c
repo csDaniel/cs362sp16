@@ -119,10 +119,9 @@ old code:
 	    }
 	}
 
-
       return 0;
 
-Through testing, I did not find any errors with this card.
-
+Through testing, I did not find any errors with this card.  According to the test report, this function fails when
+ trying to add the adventurer card.  However, I did not introduce any bugs into this code and do not see any errors.
 
  */

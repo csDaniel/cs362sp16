@@ -20,7 +20,7 @@ The problem will only be evident to someone looking at the
 discardCard parameters, and comparing those
 with the variables within the cardSmithy function.
 
-ADVENTURER Refactor (fixed for assignment 5):
+ADVENTURER Refactor (fixed for assignment 5 from teammate):
 For adventurer, I removed one of the logical
 or statements regarding recognition of a treasure card.
 This will result in a subtle change to the gameplay,
