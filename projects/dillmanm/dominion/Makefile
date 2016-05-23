@@ -35,7 +35,7 @@ player: player.c interface.o
 
 randomtestadventurer.out: randomtestadventurer.c dominion.o rngs.o dominion.h rngs.h dominion_helpers.h interface.h interface.o
 	gcc -c randomtestadventurer.c -g $(CFLAGS)
-	gcc -o randomtestadventurer -g dominion.o randomtestadventurer.o rngs.o interface.o $(CFLAGS)
+	gcc -o randomtestadventurer -g randomtestadventurer.o dominion.o rngs.o interface.o $(CFLAGS)
 	./randomtestadventurer &> randomtestadventurer.out
 	gcov -b dominion.c >> randomtestadventurer.out
 	cat dominion.c.gcov >> randomtestadventurer.out
