@@ -36,3 +36,6 @@ Bug Line: 597
 Bug Fix: Copper got added to the if statement
 _________________________
 
+Comments:
+Bugs were as reported This is the report of all bugs found and other tests ran fine.
+
