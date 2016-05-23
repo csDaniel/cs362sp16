@@ -394,7 +394,7 @@ int isGameOver(struct gameState *state) {
   int j;
 	
   //if stack of Province cards is empty, the game ends
-  if (state->supplyCount[province] == 0)
+  if (state->supplyCount[province] <= 0)
     {
       return 1;
     }
@@ -645,8 +645,8 @@ int getCost(int cardNumber)
   return -1;
 }
 
-void cardAdventurer(struct gameState *state, int drawntreasure, int currentPlayer, int temphand[], int z, int cardDrawn){
-      while(drawntreasure<3){
+void cardAdventurer(struct gameState *state, int drawntreasure, int currentPlayer, int temphand[], int z, int cardDrawn, int handPos){
+      while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -664,12 +664,13 @@ void cardAdventurer(struct gameState *state, int drawntreasure, int currentPlaye
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
+      discardCard(handPos, currentPlayer, state, 0);
 }
 
 void cardSmithy(struct gameState *state, int currentPlayer, int handPos){
       //draw three cards
       int i;
-      for (i = 0; i < 4; i++)
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -697,7 +698,8 @@ void cardCouncil(struct gameState *state, int currentPlayer, int handPos){
 	      drawCard(i, state);
 	    }
 	}
-			
+
+      discardCard(handPos, currentPlayer, state, 0);
 }
 
 void cardVillage(struct gameState *state, int currentPlayer, int handPos){
@@ -746,7 +748,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-	cardAdventurer(state, drawntreasure, currentPlayer, temphand, z, cardDrawn);
+	cardAdventurer(state, drawntreasure, currentPlayer, temphand, z, cardDrawn, handPos);
 	return 0;	
 
     case council_room:
