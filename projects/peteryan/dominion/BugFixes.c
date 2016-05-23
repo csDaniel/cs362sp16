@@ -112,4 +112,7 @@ Line 1374 - I changed the call to discardCard(handPos, currentPlayer, state, 0),
 Line 1375 - I added break;, fixing the bug I introduced.
 
 I used gdb to check that the bugs where properly fixed.
+
+Having other people test my code found the bugs I accidently introduced in the cardEffect function.  I would
+have missed those bugs if my teammates did not find them.
 */
