@@ -4,11 +4,11 @@ Testing adventurerCard.
 RANDOM TESTS.
 ALL TESTS OK
 Number of Iterations: 2500
-Number of Unexpected Results: 2458
+Number of Unexpected Results: 87
 File 'dominion.c'
-Lines executed:13.75% of 560
-Branches executed:8.63% of 417
-Taken at least once:7.91% of 417
-Calls executed:7.37% of 95
+Lines executed:39.22% of 561
+Branches executed:44.84% of 417
+Taken at least once:34.77% of 417
+Calls executed:25.00% of 96
 Creating 'dominion.c.gcov'
 
