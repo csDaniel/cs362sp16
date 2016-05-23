@@ -1,0 +1,88 @@
+Testing handCard()
+Done
+
+File 'dominion.c'
+Lines executed:29.96% of 564
+Creating 'dominion.c.gcov'
+
+Testing discardCard()
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+pre.hand[currentPlayer][pre.handcount[currentPlayer] - 1] == post->hand[currentPlayer][handPos]
+Done
+
+File 'dominion.c'
+Lines executed:29.96% of 564
+Creating 'dominion.c.gcov'
+
+Testing gainCard()
+Done
+
+File 'dominion.c'
+Lines executed:30.32% of 564
+Creating 'dominion.c.gcov'
+
+Testing updateCoins()
+Done
+
+File 'dominion.c'
+Lines executed:30.32% of 564
+Creating 'dominion.c.gcov'
+
+Testing playAdventurer()
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 1 != post->handCount[currentPlayer]
+pre.playedCardCount + 1 != post->playedCardCount
+post->playedCards[post->playedCardCount - 1] != adventurer
+Done
+
+File 'dominion.c'
+Lines executed:30.32% of 564
+Creating 'dominion.c.gcov'
+
+Testing playSmithy()
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+Done
+
+File 'dominion.c'
+Lines executed:30.32% of 564
+Creating 'dominion.c.gcov'
+
+Testing playVillage()
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+Done
+
+File 'dominion.c'
+Lines executed:31.21% of 564
+Creating 'dominion.c.gcov'
+
+Testing playCouncil_Room()
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+pre.numActions - 1 != post->numActions
+Done
+
+File 'dominion.c'
+Lines executed:32.98% of 564
+Creating 'dominion.c.gcov'
+
