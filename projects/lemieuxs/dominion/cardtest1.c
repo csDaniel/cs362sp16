@@ -21,16 +21,16 @@ int checkSmithy(int choice1, int choice2, int choice3, struct gameState *game, i
 	printf("Checking handCount:\n");
 	// make sure the appropriate number of cards has been added to the player's hand
 	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer] + 2);
-	//assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer] + 2);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer] + 2);
 
 	printf("Checking deckCount:\n");
 	// make sure the cards came from the player's deck
 	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer] - 3);
-	//assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer] - 3);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer] - 3);
 
-	printf("Checking discardCount:\n");
+	//printf("Checking discardCount:\n");
 	// check that this card has been discarded
-	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+	//printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
 	//assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
 
 	// check that other players' state hasn't been modified
@@ -80,7 +80,7 @@ int main() {
 	int seed = 1000;
 	int numPlayers = 2;
 
-	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+	int handpos = 1, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
 
 	printf("Testing Smithy Card\n");
 

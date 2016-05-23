@@ -1249,7 +1249,7 @@ int playAdventurer(struct gameState *state)
   int cardDrawn;
   int z = 0;// this is the counter for the temp hand
   int countCards = 0;
-
+	int card1 = -1, card2 = -1;
   while(drawntreasure<2)
   {
   if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -1262,7 +1262,9 @@ int playAdventurer(struct gameState *state)
   drawCard(currentPlayer, state);
   cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
   if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold || cardDrawn == smithy)
+  {
     drawntreasure++;
+  }
   else{
     temphand[z]=cardDrawn;
     state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
@@ -1306,7 +1308,7 @@ int playVillage(struct gameState *state, int handPos)
       drawCard(currentPlayer, state);
       
       //+2 Actions
-      state->numActions = state->numActions + 3;
+      state->numActions = state->numActions + 2;
       
       //discard played card from hand
 

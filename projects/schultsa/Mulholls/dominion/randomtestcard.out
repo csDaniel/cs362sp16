@@ -1,0 +1,2092 @@
+TESTING SMITHY	TEST #: 0
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 1
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 2
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 3
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 4
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 5
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 6
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 7
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 8
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 9
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 10
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 11
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 12
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 13
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 14
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 15
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 16
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 17
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 18
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 19
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 20
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 21
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 22
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 23
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 24
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 25
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 26
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 27
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 28
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 29
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 30
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 31
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 32
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 33
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 34
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 35
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 36
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 37
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 38
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 39
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 40
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 41
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 42
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 43
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 44
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 45
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 46
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 47
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 48
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 49
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 50
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 51
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 52
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 53
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 54
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 55
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 56
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 57
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 58
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 59
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 60
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 61
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 62
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 63
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 64
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 65
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 66
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 67
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 68
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 69
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 70
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 71
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 72
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 73
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 74
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 75
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 76
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 77
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 78
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 79
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 80
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 81
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 82
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 83
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 84
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 85
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 86
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 87
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 88
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 89
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 90
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 91
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 92
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 93
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 94
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 95
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 96
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 97
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 98
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+TESTING SMITHY	TEST #: 99
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+State->playedCards[0] != Smithy.
+Test Failed!
+State->numActions != cpyState->numActions-1.
+Test Failed!
+Actual hand size = 5, Expected hand size = 7  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]
+Test Failed!
+Actual hand size = 0, Expected hand size = 2  
+Test Failed!
+state->discardCount[j] <= cpyState->discardCount[j]

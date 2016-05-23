@@ -1,116 +1,95 @@
-/*********************************************************************************************
- * Developer: Nick Martin (martinn6)
- * Date: 20160506
- * Project: Assignement 4
- * Description: Random testing - smithy
- * *******************************************************************************************/
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
 #include "dominion.h"
 #include "dominion_helpers.h"
-#include <string.h>
-#include <stdio.h>
-#include <assert.h>
-#include "rngs.h"
-#include <stdlib.h>
+#include <time.h>
 
-#define TESTCARD "smithy"
+void testSmithy();
+void randomGameState(struct gameState *state);
 
-int main() {
-    int newCards = 0;
-	int discarded = 0;
-    int xtraCoins = 0;
-    int shuffledCards = 0;
-
-    int i, j, m;
-    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
-    int remove1, remove2;
-    int seed = 1000;
-    int numPlayers = 4;
-    int thisPlayer = 0;
-	struct gameState G2, testG2;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, council_room};
-			
+int main(int argc, char *argv[])
+{
 	srand(time(NULL));
-
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G2);
-
-	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
-	//smithy = line 831
-	printf("TEST: +3 cards\n"); 
-	discarded = 1;
-
-		
-	int before_handCount;
-	int before_discardCount;
-	int before_deckCount;
-	int after_handCount;
-	int after_discardCount;
-	int after_deckCount;
-	// copy the game state to a test case
-	memcpy(&testG2, &G2, sizeof(struct gameState));
-	//Add smithy to hand
-	printf("Add smity Cards to user decks; ");
-	for(int x = 0; x < 4; x++)
-	{
-		printf("handcount = %d", testG2.handCount[x]);
-		testG2.hand[x][testG2.handCount[x]] = smithy;
-		testG2.handCount[x]++;
-	}
-	
-	//run for 25 tests
-	for (int x = 0; x < 25; x++)
-	{
-		//random tests
-		thisPlayer = rand() % 4; //random player
-		choice1 = rand() % 4; //random choice1 - no effect
-		choice2 = rand() % 4; //random choice2 - no effect
-		choice3 = rand() % 4; //random choice3 - no effect
-		bonus = rand() % 4; //random bonus - no effect
-		testG2.whoseTurn = thisPlayer;
-		handpos = testG2.handCount[thisPlayer]+1; 
-		
-		printf("\nStart: Player Turn: %d; ", thisPlayer);
-		printf("handcount: %d; ", testG2.handCount[thisPlayer]);
-		printf("handpos: %d; ", handpos);
-		printf("\nBefore:");
-
-		for(int x = 0; x<testG2.handCount[thisPlayer]; x++ )
-		{
-			printf("card=%d; ", testG2.hand[thisPlayer][x]);
-
-		}
-		
-		before_handCount = testG2.handCount[thisPlayer];
-		before_discardCount = testG2.discardCount[thisPlayer];
-		before_deckCount = testG2.deckCount[thisPlayer];
-		
-		if (before_deckCount > 3)
-			newCards = 3;
-		else
-			newCards = before_deckCount;
-		
-		//test smithy
-		playSmithy(&testG2, handpos);
-		
-		after_handCount = testG2.handCount[thisPlayer];
-		after_discardCount = testG2.discardCount[thisPlayer]; 
-		after_deckCount = testG2.deckCount[thisPlayer];
-		printf("\nAfter:");
-
-		for(int x = 0; x<testG2.handCount[thisPlayer]; x++ )
-		{
-			printf("card=%d; ", testG2.hand[thisPlayer][x]);
-		}
-		printf("\nnewCards=%d", newCards);
-		printf("\nhand count before=%d; hand count after=%d; expected=%d ", before_handCount, after_handCount, before_handCount + newCards - discarded);
-		if(after_handCount == (before_handCount + newCards - discarded))
-			printf("PASSED\n");
-		else
-			printf("FAILED\n");
-
-	}
-
-	return 0;
+	testSmithy();
+    return 0;
+    
 }
+
+void testSmithy() {
+    int i;
+    int seed = 1000;
+    int numPlayer = 2;
+    int bonus;
+	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
+           sea_hag, tribute, smithy};
+    struct gameState G;
+	int drawntreasure = 0;
+	int cardDrawn = 0;
+	int temphand[MAX_HAND];
+	int z = 0;
+	int originalDeckCount;
+	int originalHandCount;
+	int currentPlayer = 0;
+	int count = 0;
+	int handPosition = 0;
+
+	while(1) {
+		count++;
+		initializeGame(numPlayer, k, seed, &G);
+		randomGameState(&G);
+
+		//Randomize Current Player
+		currentPlayer = rand() % 2;
+
+		//Randomize Hand Position
+		handPosition = rand() % 5;
+
+		smithyFunct(handPosition, currentPlayer, &G);
+		printf("Iteration %i\n", count);
+	}
+}
+
+void randomGameState(struct gameState *state) {
+	int i;
+	int j;
+	int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, 
+           sea_hag, tribute, smithy};
+	int l;
+	int m;
+	int n;
+	
+	//Supply Counts
+	state->supplyCount[estate] = rand() % 8 + 1;
+	state->supplyCount[duchy] = rand() % 8 + 1;
+	state->supplyCount[province] = rand() % 8 + 1;
+	state->supplyCount[copper] = rand() % (60 - (7 * 2) + 1);
+	state->supplyCount[silver] = rand() % 41;
+	state->supplyCount[gold] = rand() % 31;
+
+	for (i = 0; i < 2; i++) {
+		//Player Deck Count
+		state->deckCount[i] = rand() % (MAX_DECK + 1);
+		for (j = 0; j < state->deckCount[i]; j++) {
+			l = rand() % 10;
+			state->deck[i][j] = k[l];
+		}
+		n = rand() % (state->deckCount[i] + 1) + 3;
+		for (j = 0; j < n; j++) {
+			l = rand() % 4;
+			if (l == 0) {
+				state->deck[i][j] = copper;
+			} else if (l == 1) {
+				state->deck[i][j] = silver;
+			} else {
+				state->deck[i][j] = gold;
+			}
+		}
+		
+		//Draw 5 cards
+		for (m = 0; m < 5; m++) {
+			drawCard(i, state);
+		}
+	}
+}
+

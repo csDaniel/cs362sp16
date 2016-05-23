@@ -652,7 +652,7 @@ int playAdventurer(struct gameState *state, int handPos) {
 	int z = 0;
 	int i;
 
-	while(drawntreasure>2){
+	while(drawntreasure<2){
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
@@ -679,7 +679,7 @@ int playSmithy(struct gameState *state, int handPos) {
 	  int i = 0;
 
 	 //+3 Cards
-     for (i = 0; i <= 3; i++){
+     for (i = 0; i < 3; i++){
 	   drawCard(currentPlayer, state);
 	 }
 			
@@ -691,7 +691,9 @@ int playSmithy(struct gameState *state, int handPos) {
 
 int playVillage(struct gameState *state, int handPos) {
 	int currentPlayer = whoseTurn(state);
-			
+	
+	drawCard(currentPlayer, state);
+
     //+2 Actions
     state->numActions = state->numActions + 2;
 			
@@ -709,6 +711,9 @@ int playGreatHall(struct gameState *state, int handPos){
 			
       //+1 Actions
       state->numActions++;
+
+	  //discard played card from hand
+	  discardCard(handPos, currentPlayer, state, 0);
 
 	  return 0;
 }
@@ -889,7 +894,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     case remodel:
       j = state->hand[currentPlayer][choice1];  //store card we will trash
 
-      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) < getCost(choice2) )
 	{
 	  return -1;
 	}
@@ -904,7 +909,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	{
 	  if (state->hand[currentPlayer][i] == j)
 	    {
-	      discardCard(i, currentPlayer, state, 0);			
+	      discardCard(i, currentPlayer, state, 1);			
 	      break;
 	    }
 	}
