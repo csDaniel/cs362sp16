@@ -649,7 +649,7 @@ int getCost(int cardNumber)
 void adventurerDrawn (struct gameState *state, int drawntreasure, int currentPlayer,int cardDrawn, int z) {
     int temphand[MAX_HAND];
     
-    while(drawntreasure<=2) {
+    while(drawntreasure<2) {
         if (state->deckCount[currentPlayer] <1) {
             shuffle(currentPlayer, state);
         }
@@ -664,7 +664,7 @@ void adventurerDrawn (struct gameState *state, int drawntreasure, int currentPla
             z++;
         }
     }
-    while(z-1>0) {
+    while(z-1>=0) {
         state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];
         z=z-1;
     }
@@ -676,7 +676,7 @@ void adventurerDrawn (struct gameState *state, int drawntreasure, int currentPla
 
 void smithyDrawn(int handPos, int currentPlayer, struct gameState *state) {
     int i;
-    for (i=0;i<=3;i++) {
+    for (i=0;i<3;i++) {
         drawCard(currentPlayer,state);
     }
     discardCard(handPos,currentPlayer,state,0);
@@ -691,13 +691,13 @@ void stewardDrawn(int choice1, int choice2, int choice3, int currentPlayer, stru
         drawCard(currentPlayer, state);
         drawCard(currentPlayer, state);
     } else if (choice1 == 2) {
-        state->coins = state->coins + 3;
+        state->coins = state->coins + 2;
     } else {
-        discardCard(choice2, currentPlayer, state, 0);
-        discardCard(choice3, currentPlayer, state, 0);
+        discardCard(choice2, currentPlayer, state, 1);
+        discardCard(choice3, currentPlayer, state, 1);
     }
     
-    discardCard(handPos, currentPlayer, state, 1);
+    discardCard(handPos, currentPlayer, state, 0);
 }
 
 /*
@@ -707,15 +707,15 @@ int remodelDrawn(struct gameState *state, int currentPlayer, int choice1, int ch
     int i;
     int j = state->hand[currentPlayer][choice1];
     
-    if ((getCost(state->hand[currentPlayer][choice1])+2) > getCost(choice1)) {
+    if ((getCost(state->hand[currentPlayer][choice1])+2) > getCost(choice2)) {
         return -1;
     }
     gainCard(choice2, state, 0, currentPlayer);
     discardCard(handPos,currentPlayer,state,0);
     
-    for (i=0; i<state->handCount[currentPlayer];i+=2) {
+    for (i=0; i<state->handCount[currentPlayer];i++) {
         if (state->hand[currentPlayer][i] == j) {
-            discardCard(i, currentPlayer, state, 1);
+            discardCard(i, currentPlayer, state, 0);
             break;
         }
     }

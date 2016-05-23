@@ -1299,7 +1299,7 @@ int playSmithy(int currentPlayer, int handPos, struct gameState *state) {
     }
                     
     //discard card from hand
-    discardCard(handPos-1, currentPlayer, state, 0);
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }
 

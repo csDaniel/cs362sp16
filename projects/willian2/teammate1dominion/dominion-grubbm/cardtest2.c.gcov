@@ -1,0 +1,152 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:/******************************************************************************
+        -:    2:* ASSIGNMENT 5 - cardtest2.c
+        -:    3:* AUTHOR: Nickolas A. Williams
+        -:    4:* CLASS: CS362
+        -:    5:* DATE: 05/22/2016
+        -:    6:* NOTES: unit testing of Max Grubb's refactored adventurer card
+        -:    7:* REQUIREMENTS for adventurer:
+        -:    8:*  1. Draw cards from deck and discard pile until two treasure cards are drawn
+        -:    9:*  2. Discard cards drawn that are not treasure cards
+        -:   10:*  3. All cards must be drawn from the player's deck
+        -:   11:*  4. Adventurer card is discarded
+        -:   12:* TESTING tasks for adventurer:
+        -:   13:*  1. Test that two treasure cards are drawn from the deck if available
+        -:   14:*  2. Test that cards from the discard pile are also drawn if none are in
+        -:   15:*     the player's deck
+        -:   16:*  4. Test that all non-treasure cards are discarded
+        -:   17:*  5. Test that adventurer card is discarded
+        -:   18:*  6. Test that no other players are affected
+        -:   19:******************************************************************************/
+        -:   20:
+        -:   21:#include "dominion.h"
+        -:   22:#include "dominion_helpers.h"
+        -:   23:#include <string.h>
+        -:   24:#include <stdio.h>
+        -:   25:#include <assert.h>
+        -:   26:#include "rngs.h"
+        -:   27:
+        -:   28:// set NOISY_TEST to 0 to remove printfs from output
+        -:   29:#define NOISY_TEST 1
+        -:   30:
+        4:   31:int main() 
+        -:   32:{
+        -:   33:    int i, j;
+        4:   34:    int seed = 1000;
+        4:   35:    int numPlayer = 2;
+        -:   36:    int r, handCount;
+        4:   37:	int maxHandCount = 10;
+        -:   38:    int trashflag;
+        4:   39:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   40:               , remodel, smithy, village, baron, great_hall};
+        -:   41:    struct gameState NormalState;
+        -:   42:	struct gameState TestState;
+        -:   43:	int errorflag;
+        -:   44:
+        4:   45:	printf("TESTING playAdventurer():\n");
+        -:   46:	
+       12:   47:	for (i = 0; i < numPlayer; i++)
+        -:   48:	{
+        8:   49:		memset(&NormalState, 23, sizeof(struct gameState));
+        8:   50:		initializeGame(numPlayer, k, seed, &NormalState);
+        -:   51:
+        8:   52:		int startingHand[2]	= {adventurer, copper};
+        8:   53:		int startingDeck[3] = {copper, estate, estate};
+        8:   54:		int startingDiscard[1] = {copper};
+        -:   55:		
+       24:   56:		for (j = 0; j < numPlayer; j++)
+        -:   57:		{
+       16:   58:			NormalState.handCount[j] = 2;
+       16:   59:			NormalState.deckCount[j] = 3;
+       16:   60:			NormalState.discardCount[j] = 1;
+        -:   61:			
+       16:   62:			memcpy(NormalState.hand[j], startingHand, sizeof(int) * 2);
+       16:   63:			memcpy(NormalState.deck[j], startingDeck, sizeof(int) * 3);
+       16:   64:			memcpy(NormalState.discard[j], startingDiscard, sizeof(int) * 1);
+        -:   65:		}
+        -:   66:		
+        8:   67:		memcpy(&TestState, &NormalState, sizeof(struct gameState));
+        -:   68:		int p;
+        -:   69:		//p = playAdventurer(&TestState, i, 0); -- old test call
+        8:   70:		p = cardEffect(adventurer, 0, 0, 0, &TestState, 0, 0); //new call
+        -:   71:		
+       24:   72:		for (j = 0; j < numPlayer; j++)
+        -:   73:		{
+        -:   74:#if (NOISY_TEST == 1)
+       16:   75:				printf("Testing Player %d\n", j);
+        -:   76:#endif	
+        -:   77:			//test the current player
+       16:   78:			if (i == j)
+        -:   79:			{
+        -:   80:				//test handcount
+        8:   81:				if (TestState.handCount[i] != (NormalState.handCount[i] + 1))
+        -:   82:				{
+        8:   83:					errorflag = 1;
+        -:   84:				}
+        -:   85:#if (NOISY_TEST == 1)
+        8:   86:					printf("TestState.handCount[%d] = %d, expected = %d\n", i, TestState.handCount[i], NormalState.handCount[i] + 1);
+        -:   87:#endif
+        -:   88:				
+        -:   89:				//test deckcount
+        8:   90:				if (TestState.deckCount[i] != (NormalState.deckCount[i] - 3))
+        -:   91:				{
+        4:   92:					errorflag = 1;
+        -:   93:				}
+        -:   94:#if (NOISY_TEST == 1)
+        8:   95:					printf("TestState.deckCount[%d] = %d, expected = %d\n", i, TestState.deckCount[i], NormalState.deckCount[i] - 3);
+        -:   96:#endif	
+        -:   97:				
+        -:   98:				//test discardcount
+        8:   99:				if (TestState.discardCount[i] != (NormalState.discardCount[i] + 2))
+        -:  100:				{
+        8:  101:					errorflag = 1;
+        -:  102:				}
+        -:  103:#if (NOISY_TEST == 1)
+        8:  104:				printf("TestState.discardCount[%d] = %d, expected = %d\n", i, TestState.discardCount[i], NormalState.discardCount[i] + 2);
+        -:  105:#endif	
+        -:  106:			}
+        -:  107:			
+        -:  108:			//test the rest of the players
+        -:  109:			else
+        -:  110:			{
+        -:  111:				//test handcount
+        8:  112:				if (TestState.handCount[j] != (NormalState.handCount[j]))
+        -:  113:				{
+        4:  114:					errorflag = 1;
+        -:  115:				}
+        -:  116:#if (NOISY_TEST == 1)
+        8:  117:				printf("TestState.handCount[%d] = %d, expected = %d\n", j, TestState.handCount[j], NormalState.handCount[j]);
+        -:  118:#endif
+        -:  119:
+        -:  120:				//test deckcount
+        8:  121:				if (TestState.deckCount[j] != (NormalState.deckCount[j]))
+        -:  122:				{
+        4:  123:					errorflag = 1;
+        -:  124:				}
+        -:  125:#if (NOISY_TEST == 1)
+        8:  126:				printf("TestState.deckCount[%d] = %d, expected = %d\n", j, TestState.deckCount[j], NormalState.deckCount[j]);
+        -:  127:#endif	
+        -:  128:				
+        -:  129:				//test discardcount
+        8:  130:				if (TestState.discardCount[j] != (NormalState.discardCount[j]))
+        -:  131:				{
+        4:  132:					errorflag = 1;
+        -:  133:				}
+        -:  134:#if (NOISY_TEST == 1)
+        8:  135:				printf("TestState.discardCount[%d] = %d, expected = %d\n", j, TestState.discardCount[j], NormalState.discardCount[j]);
+        -:  136:#endif	
+        -:  137:			}
+        -:  138:		}
+        -:  139:	}
+        -:  140:	
+        -:  141:	//give error even if not in NOISY_TEST mode
+        4:  142:	if (errorflag)
+        -:  143:	{
+        4:  144:		printf("ERROR: Not all tests were successful.\n");
+        -:  145:	}
+        4:  146:	return 0;
+        -:  147:}

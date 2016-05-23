@@ -394,7 +394,7 @@ int isGameOver(struct gameState *state) {
 
   //if three supply pile are at 0, the game ends
   j = 0;
-  for (i = 0; i < 25; i++)
+  for (i = 0; i < 27; i++)
     {
       if (state->supplyCount[i] == 0)
 	{
@@ -653,7 +653,8 @@ int adventurerRefactored(int drawntreasure, struct gameState *state, int current
     else{
         temphand[z]=cardDrawn;
         state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-	//z++;      
+	z++;
+    
     }
     } 
 
@@ -681,7 +682,7 @@ int councilRoomRefactored(int currentPlayer, struct gameState *state, int handPo
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
   {
-    if ( i == currentPlayer )
+    if ( i != currentPlayer )
       {
         drawCard(i, state);
       }
@@ -697,7 +698,7 @@ int councilRoomRefactored(int currentPlayer, struct gameState *state, int handPo
 int smithyRefactored(int handPos, int currentPlayer, struct gameState *state){
       //+3 Cards
       int i;
-      for (i = 0; i <= 3; i++)
+      for (i = 0; i < 3; i++)
   {
     drawCard(currentPlayer, state);
   }

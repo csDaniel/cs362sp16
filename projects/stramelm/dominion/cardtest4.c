@@ -69,14 +69,14 @@ int main(int argc, char *argv[]) {
   // -------------------------------------------------------------------------------------
   before = copy->discardCount[pNum] + copy->deckCount[pNum];
   after = state->discardCount[pNum] + state->deckCount[pNum];
-  if (before - after == 0) {
+  if (before - after == 1) {
     printf("PASS");
   }
   else {
     printf("FAIL");
   }
   printf("ED: CURRENT PLAYER CARDS IN DECK/DISCARD WENT FROM %d TO %d\n", before, after);
-  printf("        EXPECTATION IS NET ZERO CARDS\n");
+  printf("        EXPECTATION IS -1 CARDS\n");
 
   // -------------------------------------------------------------------------------------
   // REQT: NO STATE CHANGE FOR OTHER PLAYER (player 1, index 0)

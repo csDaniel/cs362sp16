@@ -2,131 +2,107 @@ randomtestcard.c: testing smity:
 ----------------- Testing Card: smithy ----------------
 TEST: +3 cards
 Add smity Cards to user decks; handcount = 5handcount = 0handcount = 0handcount = 0
-Start: Player Turn: 1; handcount: 1; handpos: 2; 
-Before:card=13; 
-After:card=13; card=4; card=1; 
-newCards=3
-hand count before=1; hand count after=3; expected=3 PASSED
-
-Start: Player Turn: 1; handcount: 3; handpos: 4; 
-Before:card=13; card=4; card=1; 
-After:card=13; card=4; card=1; card=4; card=4; 
-newCards=3
-hand count before=3; hand count after=5; expected=5 PASSED
-
 Start: Player Turn: 2; handcount: 1; handpos: 2; 
 Before:card=13; 
-After:card=13; card=1; card=4; 
+After:card=13; card=1; card=4; card=4; 
 newCards=3
-hand count before=1; hand count after=3; expected=3 PASSED
-
-Start: Player Turn: 1; handcount: 5; handpos: 6; 
-Before:card=13; card=4; card=1; card=4; card=4; 
-After:card=13; card=4; card=1; card=4; card=4; card=4; card=4; 
-newCards=3
-hand count before=5; hand count after=7; expected=7 PASSED
-
-Start: Player Turn: 3; handcount: 1; handpos: 2; 
-Before:card=13; 
-After:card=13; card=4; card=1; 
-newCards=3
-hand count before=1; hand count after=3; expected=3 PASSED
-
-Start: Player Turn: 2; handcount: 3; handpos: 4; 
-Before:card=13; card=1; card=4; 
-After:card=13; card=1; card=4; card=4; card=4; 
-newCards=3
-hand count before=3; hand count after=5; expected=5 PASSED
-
-Start: Player Turn: 1; handcount: 7; handpos: 8; 
-Before:card=13; card=4; card=1; card=4; card=4; card=4; card=4; 
-After:card=13; card=4; card=1; card=4; card=4; card=4; card=4; 
-newCards=1
-hand count before=7; hand count after=7; expected=7 PASSED
-
-Start: Player Turn: 1; handcount: 7; handpos: 8; 
-Before:card=13; card=4; card=1; card=4; card=4; card=4; card=4; 
-After:card=13; card=4; card=1; card=4; card=4; card=4; 
-newCards=0
-hand count before=7; hand count after=6; expected=6 PASSED
-
-Start: Player Turn: 3; handcount: 3; handpos: 4; 
-Before:card=13; card=4; card=1; 
-After:card=13; card=4; card=1; card=1; card=4; 
-newCards=3
-hand count before=3; hand count after=5; expected=5 PASSED
+hand count before=1; hand count after=4; expected=3 FAILED
 
 Start: Player Turn: 0; handcount: 6; handpos: 7; 
 Before:card=4; card=4; card=1; card=4; card=4; card=13; 
-After:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=4; 
+After:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=1; card=4; 
 newCards=3
-hand count before=6; hand count after=8; expected=8 PASSED
+hand count before=6; hand count after=9; expected=8 FAILED
 
-Start: Player Turn: 1; handcount: 6; handpos: 7; 
-Before:card=13; card=4; card=1; card=4; card=4; card=4; 
-After:card=13; card=4; card=1; card=4; card=4; 
-newCards=0
-hand count before=6; hand count after=5; expected=5 PASSED
-
-Start: Player Turn: 1; handcount: 5; handpos: 6; 
-Before:card=13; card=4; card=1; card=4; card=4; 
-After:card=13; card=4; card=1; card=4; 
-newCards=0
-hand count before=5; hand count after=4; expected=4 PASSED
-
-Start: Player Turn: 2; handcount: 5; handpos: 6; 
-Before:card=13; card=1; card=4; card=4; card=4; 
-After:card=13; card=1; card=4; card=4; card=4; card=4; card=1; 
+Start: Player Turn: 3; handcount: 1; handpos: 2; 
+Before:card=13; 
+After:card=13; card=4; card=1; card=1; 
 newCards=3
-hand count before=5; hand count after=7; expected=7 PASSED
+hand count before=1; hand count after=4; expected=3 FAILED
 
-Start: Player Turn: 2; handcount: 7; handpos: 8; 
-Before:card=13; card=1; card=4; card=4; card=4; card=4; card=1; 
-After:card=13; card=1; card=4; card=4; card=4; card=4; card=1; 
+Start: Player Turn: 1; handcount: 1; handpos: 2; 
+Before:card=13; 
+After:card=13; card=4; card=4; card=1; 
+newCards=3
+hand count before=1; hand count after=4; expected=3 FAILED
+
+Start: Player Turn: 0; handcount: 9; handpos: 10; 
+Before:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=1; card=4; 
+After:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=1; card=4; 
 newCards=1
-hand count before=7; hand count after=7; expected=7 PASSED
+hand count before=9; hand count after=9; expected=9 PASSED
+
+Start: Player Turn: 1; handcount: 4; handpos: 5; 
+Before:card=13; card=4; card=4; card=1; 
+After:card=13; card=4; card=4; card=1; card=4; card=1; card=4; 
+newCards=3
+hand count before=4; hand count after=7; expected=6 FAILED
+
+Start: Player Turn: 1; handcount: 7; handpos: 8; 
+Before:card=13; card=4; card=4; card=1; card=4; card=1; card=4; 
+After:card=13; card=4; card=4; card=1; card=4; card=1; card=4; card=4; 
+newCards=2
+hand count before=7; hand count after=8; expected=8 PASSED
+
+Start: Player Turn: 3; handcount: 4; handpos: 5; 
+Before:card=13; card=4; card=1; card=1; 
+After:card=13; card=4; card=1; card=1; card=4; card=4; card=4; 
+newCards=3
+hand count before=4; hand count after=7; expected=6 FAILED
+
+Start: Player Turn: 2; handcount: 4; handpos: 5; 
+Before:card=13; card=1; card=4; card=4; 
+After:card=13; card=1; card=4; card=4; card=4; card=4; card=4; 
+newCards=3
+hand count before=4; hand count after=7; expected=6 FAILED
 
 Start: Player Turn: 2; handcount: 7; handpos: 8; 
-Before:card=13; card=1; card=4; card=4; card=4; card=4; card=1; 
+Before:card=13; card=1; card=4; card=4; card=4; card=4; card=4; 
+After:card=13; card=1; card=4; card=4; card=4; card=4; card=4; card=1; 
+newCards=2
+hand count before=7; hand count after=8; expected=8 PASSED
+
+Start: Player Turn: 3; handcount: 7; handpos: 8; 
+Before:card=13; card=4; card=1; card=1; card=4; card=4; card=4; 
+After:card=13; card=4; card=1; card=1; card=4; card=4; card=4; card=4; 
+newCards=2
+hand count before=7; hand count after=8; expected=8 PASSED
+
+Start: Player Turn: 2; handcount: 8; handpos: 9; 
+Before:card=13; card=1; card=4; card=4; card=4; card=4; card=4; card=1; 
+After:card=13; card=1; card=4; card=4; card=4; card=4; card=4; 
+newCards=0
+hand count before=8; hand count after=7; expected=7 PASSED
+
+Start: Player Turn: 1; handcount: 8; handpos: 9; 
+Before:card=13; card=4; card=4; card=1; card=4; card=1; card=4; card=4; 
+After:card=13; card=4; card=4; card=1; card=4; card=1; card=4; 
+newCards=0
+hand count before=8; hand count after=7; expected=7 PASSED
+
+Start: Player Turn: 2; handcount: 7; handpos: 8; 
+Before:card=13; card=1; card=4; card=4; card=4; card=4; card=4; 
 After:card=13; card=1; card=4; card=4; card=4; card=4; 
 newCards=0
 hand count before=7; hand count after=6; expected=6 PASSED
 
-Start: Player Turn: 3; handcount: 5; handpos: 6; 
-Before:card=13; card=4; card=1; card=1; card=4; 
+Start: Player Turn: 3; handcount: 8; handpos: 9; 
+Before:card=13; card=4; card=1; card=1; card=4; card=4; card=4; card=4; 
 After:card=13; card=4; card=1; card=1; card=4; card=4; card=4; 
-newCards=3
-hand count before=5; hand count after=7; expected=7 PASSED
-
-Start: Player Turn: 3; handcount: 7; handpos: 8; 
-Before:card=13; card=4; card=1; card=1; card=4; card=4; card=4; 
-After:card=13; card=4; card=1; card=1; card=4; card=4; card=4; 
-newCards=1
-hand count before=7; hand count after=7; expected=7 PASSED
-
-Start: Player Turn: 0; handcount: 8; handpos: 9; 
-Before:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=4; 
-After:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=4; card=1; 
-newCards=2
-hand count before=8; hand count after=9; expected=9 PASSED
-
-Start: Player Turn: 1; handcount: 4; handpos: 5; 
-Before:card=13; card=4; card=1; card=4; 
-After:card=13; card=4; card=1; 
 newCards=0
-hand count before=4; hand count after=3; expected=3 PASSED
+hand count before=8; hand count after=7; expected=7 PASSED
+
+Start: Player Turn: 1; handcount: 7; handpos: 8; 
+Before:card=13; card=4; card=4; card=1; card=4; card=1; card=4; 
+After:card=13; card=4; card=4; card=1; card=4; card=1; 
+newCards=0
+hand count before=7; hand count after=6; expected=6 PASSED
 
 Start: Player Turn: 2; handcount: 6; handpos: 7; 
 Before:card=13; card=1; card=4; card=4; card=4; card=4; 
 After:card=13; card=1; card=4; card=4; card=4; 
 newCards=0
 hand count before=6; hand count after=5; expected=5 PASSED
-
-Start: Player Turn: 1; handcount: 3; handpos: 4; 
-Before:card=13; card=4; card=1; 
-After:card=13; card=4; 
-newCards=0
-hand count before=3; hand count after=2; expected=2 PASSED
 
 Start: Player Turn: 3; handcount: 7; handpos: 8; 
 Before:card=13; card=4; card=1; card=1; card=4; card=4; card=4; 
@@ -140,17 +116,41 @@ After:card=13; card=4; card=1; card=1; card=4;
 newCards=0
 hand count before=6; hand count after=5; expected=5 PASSED
 
+Start: Player Turn: 0; handcount: 9; handpos: 10; 
+Before:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=1; card=4; 
+After:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=1; 
+newCards=0
+hand count before=9; hand count after=8; expected=8 PASSED
+
+Start: Player Turn: 0; handcount: 8; handpos: 9; 
+Before:card=4; card=4; card=1; card=4; card=4; card=13; card=4; card=1; 
+After:card=4; card=4; card=1; card=4; card=4; card=13; card=4; 
+newCards=0
+hand count before=8; hand count after=7; expected=7 PASSED
+
+Start: Player Turn: 0; handcount: 7; handpos: 8; 
+Before:card=4; card=4; card=1; card=4; card=4; card=13; card=4; 
+After:card=4; card=4; card=1; card=4; card=4; card=13; 
+newCards=0
+hand count before=7; hand count after=6; expected=6 PASSED
+
 Start: Player Turn: 3; handcount: 5; handpos: 6; 
 Before:card=13; card=4; card=1; card=1; card=4; 
 After:card=13; card=4; card=1; card=1; 
 newCards=0
 hand count before=5; hand count after=4; expected=4 PASSED
 
-Start: Player Turn: 1; handcount: 2; handpos: 3; 
-Before:card=13; card=4; 
-After:card=13; 
+Start: Player Turn: 1; handcount: 6; handpos: 7; 
+Before:card=13; card=4; card=4; card=1; card=4; card=1; 
+After:card=13; card=4; card=4; card=1; card=4; 
 newCards=0
-hand count before=2; hand count after=1; expected=1 PASSED
+hand count before=6; hand count after=5; expected=5 PASSED
+
+Start: Player Turn: 1; handcount: 5; handpos: 6; 
+Before:card=13; card=4; card=4; card=1; card=4; 
+After:card=13; card=4; card=4; card=1; 
+newCards=0
+hand count before=5; hand count after=4; expected=4 PASSED
 Function 'updateCoins'
 Lines executed:81.82% of 11
 
@@ -161,7 +161,7 @@ Function 'discardCard'
 Lines executed:100.00% of 13
 
 Function 'cardEffect'
-Lines executed:11.44% of 236
+Lines executed:5.51% of 236
 
 Function 'getCost'
 Lines executed:0.00% of 30
@@ -215,9 +215,21 @@ Function 'newGame'
 Lines executed:0.00% of 3
 
 Function 'compare'
+Lines executed:83.33% of 6
+
+Function 'playFeast'
+Lines executed:0.00% of 17
+
+Function 'playVillage'
+Lines executed:100.00% of 5
+
+Function 'playSmithy'
 Lines executed:100.00% of 6
 
+Function 'playAdventurer'
+Lines executed:100.00% of 18
+
 File 'dominion.c'
-Lines executed:27.37% of 548
+Lines executed:27.61% of 594
 Creating 'dominion.c.gcov'
 

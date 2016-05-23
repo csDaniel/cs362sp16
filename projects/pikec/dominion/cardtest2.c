@@ -39,6 +39,12 @@ int main (){
 	pre.hand[currentPlayer][2] = village; 
 	pre.hand[currentPlayer][3] = feast; 
 	pre.hand[currentPlayer][4] = adventurer; 
+	
+	pre.deck[currentPlayer][0] = village;
+	pre.deck[currentPlayer][1] = minion;
+	pre.deck[currentPlayer][2] = gold;
+	pre.deck[currentPlayer][3] = copper;	
+	pre.deck[currentPlayer][4] = feast;
 
 	pre.hand[otherPlayer][0] = silver; 
 	pre.hand[otherPlayer][1] = gold; 
@@ -67,7 +73,7 @@ int main (){
 	}
 	
 	printf("Confirm that new cards in hand are coin cards.\n");
-	for (i=5; i < post.handCount[currentPlayer]; i++){
+	for (i=pre.handCount[currentPlayer]; i < post.handCount[currentPlayer]; i++){
 		printf("hand position %d with card %d \n", i, post.hand[currentPlayer][i]);
 		if(post.hand[currentPlayer][i]==gold || post.hand[currentPlayer][i]==silver || post.hand[currentPlayer][i] == copper)
 			printf("PASSED\n");
@@ -89,9 +95,9 @@ int main (){
 		
 	//assert that no coin cards were disarded
 	printf("Confrim no coin cards were discarded during adventurer card play\n");
-	for(i= pre.playedCardCount; i < post.playedCardCount; i++){
-		printf("Played card #%d is %d\n", i, post.playedCards[i]);
-		if(post.playedCards[i] != gold || post.playedCards[i] != silver || post.playedCards[i] != copper)
+	for(i= pre.discardCount[currentPlayer]; i < post.discardCount[currentPlayer]; i++){
+		printf("Played card #%d is %d\n", i, post.discard[currentPlayer][i]);
+		if(post.discard[currentPlayer][i] != gold || post.discard[currentPlayer][i] != silver || post.discard[currentPlayer][i] != copper)
 			printf("PASSED\n");
 		else{
 			bugFlag++;
