@@ -95,7 +95,7 @@ int main()
 		G.discardCount[m] = 5;
 		G.deckCount[m] = 5;
 	}
-	//Set all cards for all players as adventurer cards (no affect on score)
+	//Set all cards for all players as province cards
 	for(m = 0; m < numPlayers; m++)
 	{
 		for(n = 0; n < G.handCount[m]; n++)
@@ -122,7 +122,7 @@ int main()
 	
 	printf("TESTING where players have 29 smithy cards and 1 gardens card\n\n");
 	initializeGame(numPlayers, k, seed, &G);
-	//Set handCount, discardCount, and deckCount to 5 for all players
+	//Set handCount, discardCount, and deckCount to 10 for all players
 	for(m = 0; m < numPlayers; m++)
 	{
 		G.handCount[m] = 10;

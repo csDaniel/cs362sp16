@@ -10,7 +10,7 @@
 
 int main()
 {
-	printf("Testing the discardCard function");
+	printf("Testing the isGameOver function\n");
 	int seed = 10;
 	int numPlayer = 2;
 
@@ -20,7 +20,7 @@ int main()
 		 remodel, smithy, village, baron, great_hall};
 	struct gameState game;
 
-	int i, j, p, r, handCount;
+	int i, l, j, p, r, handCount;
 
 	memset(&game, 23, sizeof(struct gameState));
 
@@ -41,29 +41,31 @@ int main()
 
 	//set stack of province card value == 0
 	game.supplyCount[province] = 0;
-	i = isGameOver(game);
+	i = isGameOver(&game);
 
-	if(i == 0)
+	if(i == 1)
 	{
-		printf("Game is over, test was successful.");
+		printf("Game is over, test was successful.\n");
 	}
 
 	//set stack of province cards to be negative, expect an error
 	game.supplyCount[province] = -5;
-	j = isGameOver(game);
+	j = isGameOver(&game);
 
-	if(j == 0)
+	if(j == 1)
 	{
-		printf("Test failed, game did not recognize corrupted game state.");
+		printf("Test passed, game recognized corrupted state and ended game.\n");
 	}
+	
 
 	//Test that acceptable province value does not end game
 	game.supplyCount[province] = 4;
-	j = isGameOver(game);
+	l = isGameOver(&game);
 
-	if(j == 0)
+	if(l == 0)
 	{
-		printf("Test passed, game is not over.");
+		printf("Test passed on acceptable value, game is not over.\n");
 	}
 
+	return 0;
 }

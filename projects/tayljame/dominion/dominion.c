@@ -644,7 +644,11 @@ int getCost(int cardNumber)
 }
 
 
+/**************************************
 
+Refactored Card declarations
+
+***************************************/
 int adventurer_ref(struct gameState* state, int currentPlayer)
 {
     int drawntreasure =0;
@@ -653,7 +657,7 @@ int adventurer_ref(struct gameState* state, int currentPlayer)
     int z = 0;
 
     while(drawntreasure<2){
-	if (state->deckCount[currentPlayer] >1){//if the deck is empty we need to shuffle discard and add to deck
+	if (state->deckCount[currentPlayer] < 1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
 	drawCard(currentPlayer, state);
@@ -672,7 +676,7 @@ int adventurer_ref(struct gameState* state, int currentPlayer)
       }
       return 0;
 }
-int council_room_ref(struct gameState* state, int currentPlayer)
+int council_room_ref(struct gameState* state, int currentPlayer, int handPos)
 {
       int i = 0;
 
@@ -693,7 +697,7 @@ int council_room_ref(struct gameState* state, int currentPlayer)
 	      drawCard(i, state);
 	    }
 	}
-
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }
 int gardens_ref()
@@ -706,7 +710,7 @@ int smithy_ref(struct gameState* state, int currentPlayer, int handPos)
       int i=0;
 
       //+3 Cards
-      for (i = 1; i < 3; i++)
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -762,7 +766,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         return adventurer_ref(state, currentPlayer);
 
     case council_room:
-        return council_room_ref(state, currentPlayer);
+        return council_room_ref(state, currentPlayer, handPos);
 
       //put played card in played card pile
       discardCard(handPos, currentPlayer, state, 0);

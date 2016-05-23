@@ -88,7 +88,7 @@ int main() {
 		returnVal = isGameOver( &gTest );		
 
 		printf( "GameOver Returns = %d, expected = 0\n", returnVal  );
-		if( returnVal != 1 ){
+		if( returnVal != 0 ){
 			printf( "TEST 3 Failed: isGameOver doesn't return 0\n" );
 			failFlag = 1;
 		} 
@@ -107,7 +107,7 @@ int main() {
 		returnVal = isGameOver( &gTest );		
 
 		printf( "GameOver Returns = %d, expected = 0\n", returnVal  );
-		if( returnVal != 1 ){
+		if( returnVal != 0 ){
 			printf( "TEST 4 Failed: isGameOver doesn't return 0\n" );
 			failFlag = 1;
 		} 
@@ -127,7 +127,7 @@ int main() {
 		returnVal = isGameOver( &gTest );		
 
 		printf( "GameOver Returns = %d, expected = 0\n", returnVal  );
-		if( returnVal != 1 ){
+		if( returnVal != 0 ){
 			printf( "TEST 5 Failed: isGameOver doesn't return 0\n" );
 			failFlag = 1;
 		} 

@@ -4,108 +4,148 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
-#include <stdlib.h>
 
-#define TESTCARD "adventurer"
-
-void printMetrics(struct gameState * G, struct gameState * testG,int, int *);
-int compareTest(int, int);
 
 int main() {
-	
-	//adventurer
-
-
-	int p=0; 
-    int choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+    int i;
     int seed = 1000;
-	int testResult=0;
-    int numPlayers = 2;
-  	struct gameState G, testG;
-	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
-			sea_hag, tribute, smithy, council_room};
-
-	// initialize a game state and player cards
-	initializeGame(numPlayers, k, seed, &G);
-
+    int numPlayer = 2;
+	int player1 = 0;
+	int player2 = 1;
+	int handPos = 0;
+	int gameOver;
+	int tempCard;
+	int bonus;
+	int c1, c2, c3 = 0;
+	int blah;
+    int k[10] = {adventurer, council_room, feast, gardens, mine
+               , remodel, smithy, village, baron, great_hall};
+    struct gameState G, RESET;
 	
-	printf("-------------------CARDTEST1: %s--------------------\n", TESTCARD);
+	initializeGame(numPlayer, k, seed, &RESET);
+	RESET.hand[player1][handPos] = smithy;
+	memcpy(&G, &RESET, sizeof(struct gameState));	
 	
+	//Test smithyCard function
+	printf("~~~Testing smithyCard Function~~~\n");
 	
-	printf("Test 0: Basic Test\n");
-		memcpy(&testG, &G, sizeof(struct gameState)); 		
-		cardEffect(adventurer, choice1, choice2, choice3, &testG, 0, &bonus);
-		updateCoins(p, &testG, bonus);
-		printMetrics(&G, &testG,p, &testResult);
-		
-		
-	printf("Test 1: Every card is in discard, Need to shuffle cards back in Empty Deck\n");
-	//test empty deck
-		memcpy(&testG, &G, sizeof(struct gameState)); 
-
-		memcpy(testG.discard[p], testG.deck[p], sizeof(int) * testG.deckCount[p]);
-		testG.deckCount[p] =0;
-		cardEffect(adventurer, choice1, choice2, choice3, &testG, 0, &bonus);			
-		printMetrics(&G, &testG,p, &testResult);	
-	
-	printf("Test 2: 2 coins on top of deck \n");
-	//set deck to action cards, move 2 coins to discard 
-		memcpy(&testG, &G, sizeof(struct gameState)); 
-		testG.deck[p][testG.deckCount[p]] = copper;
-		testG.deck[p][testG.deckCount[p]+1] = copper;
-		testG.deckCount[p]++;
-	
-		printMetrics(&G, &testG,p, &testResult);	
-		
-	printf("Discard Count %d, expected discardCount: %d", testG.discardCount[p], G.discardCount[p]+1);
-		
-		
-	
-	
-	
-	
-	//print out results
-	if(testResult ==0){
-		printf("\nCardtest 1 Test Passed!\n");		
+	printf("--------------------------------------------\n");
+	printf("Test if player 1 deck count decrease by 3\n\n");
+	printf("Before G.deckCount = %d\n",G.deckCount[player1]);
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("After G.deckCount = %d, expected = 2\n", G.deckCount[player1]);
+	if (G.deckCount[player1] == 2){
+		printf("PASSED.\n");
 	}
 	else{
-		printf("\nCardtest1 Test Failed\n");
+		printf("FAILED.\n");
+	}
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+	
+	printf("Test if player 1 hand count increase by 2 (+3 card -1 card (smithy))\n\n");
+	printf("Before G.handCount = %d\n",G.handCount[player1]);
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("After G.handCount = %d, expected = 7\n", G.handCount[player1]);
+	if (G.handCount[player1] == 7){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+	
+	printf("Test if player 1 discard pile stayed the same\n\n");
+	printf("Before G.discardCount = %d\n",G.discardCount[player1]);
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("After G.discardCount = %d, expected = 0\n", G.discardCount[player1]);
+	if (G.discardCount[player1] == 0){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+	
+	printf("Test if player 1 played pile increase by 1\n\n");
+	printf("Before G.playedCardCount = %d\n",G.playedCardCount);
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("After G.playedCardCount = %d, expected = 1\n", G.playedCardCount);
+	if (G.playedCardCount == 1){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+	
+	printf("Test if player 2 hand count stayed the same\n\n");
+	printf("Before G.handCount = %d\n",G.handCount[player2]);
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("After G.handCount = %d, expected = 0\n", G.handCount[player2]);
+	if (G.handCount[player2] == 0){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	printf("--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+
+	printf("Test if player 2 deck count stayed the same\n\n");
+	printf("Before G.deckCount = %d\n",G.deckCount[player2]);
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("After G.deckCount = %d, expected = 10\n", G.deckCount[player2]);
+	if (G.deckCount[player2] == 10){
+		printf("PASSED.\n");
+	}
+	else{
+		printf("FAILED.\n");
+	}
+	printf("--------------------------------------------\n");
+	
+	for (i = 0; i < sizeof(G.supplyCount)/sizeof(int); i++){
+		memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+		
+		printf("Test if supplyPile[%d] stayed the same\n\n", i);
+		printf("Before G.supplyCount[%d] = %d\n", i, G.supplyCount[0]);
+		cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+		printf("After G.supplyCount = %d, expected = 10\n", G.supplyCount[0]);
+		if (G.supplyCount[0] == 10){
+			printf("PASSED.\n");
+		}
+		else{
+			printf("FAILED.\n");
+		}
+		printf("--------------------------------------------\n");
 	}
 	
-	printf("--------------------------------------------------\n");	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+		
+	printf("Test if player 1 top 3 card is equal to newly drawn card\n\n");
+	printf("Top 3 Cards of Deck Before Smithy Card:\n");
+	for (i = G.deckCount[player1] - 1; i > G.deckCount[player1] - 4; i--){
+		printf("%d, ", G.deck[player1][i]);
+	}
+	cardEffect(smithy, c1, c2, c3, &G, handPos, &bonus);
+	printf("\n3 Newly drawn Cards\n");
+	i = 0;
+	for (i = G.handCount[player1] - 1; i > G.handCount[player1] - 4; i--){
+		printf("%d, ", G.hand[player1][i]);
+	}
+	
+	printf("\n--------------------------------------------\n");
+	
+	memcpy(&G, &RESET, sizeof(struct gameState)); // reset game state
+
+	
 	return 0;
-}
-
-
-
-void printMetrics(struct gameState * G, struct gameState *testG, int p, int * testResult){
-	//printf("testing123");
-	
-	printf("New Coin Count: %d,  Expected Coint Count: %d\n", testG->coins, G->coins+2);
-	*testResult+= compareTest(testG->coins,G->coins+2 );
-	//assert(testG->coins == G->coins+2);
-	printf("New Hand Count: %d, Expected Hand Count: %d\n", testG->handCount[p], G->handCount[p]+2);
-	*testResult+= compareTest(testG->handCount[p], G->handCount[p]+2 );
-	//assert(testG->handCount[p] == G->handCount[p]+2);
-	
-	printf("Discard Count greater than original %d > %d\n", testG->discardCount[p], G->discardCount[p]);
-	if(testG->discardCount[p] <= G->discardCount[p])
-		*testResult+= compareTest(testG->discardCount[p], G->discardCount[p]);
-	
-	printf("Player %d's turn,  Expected Players turn: %d\n", testG->whoseTurn, G->whoseTurn);
-	*testResult += compareTest(testG->whoseTurn, G->whoseTurn);
-	return;
-	
-}
-
-
-int compareTest(int a, int b){
-	if(a == b){
-		printf("PASSED!\n");
-		return 0; 	
-	}
-	else{
-		printf("FAILED!\n");
-		return 1;		
-	}	
 }

@@ -123,7 +123,7 @@ int main()
 		memcpy(&backGameState, &state, sizeof(struct gameState));
 
 		//call adventurer card function
-		cardAdventurer(currentPlayer, &state);
+		adventurerFunction(currentPlayer, &state);
 
 		postDeckCount = state.deckCount[currentPlayer];
 

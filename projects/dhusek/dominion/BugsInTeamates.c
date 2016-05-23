@@ -1,4 +1,11 @@
-Notes:
+Observations about using my tests on Ben’s and David’s code:
+My tests ran on both Ben and David’s code with almost no changes, which means that they are pretty maintainable.  The changes that I had to make were because I had added a trash and trashCount variable to my dominion.c code and I was using these variables in some of my tests.  I had done this because I noticed that discardCard wasn’t trashing cards even if they were marked to be trashed.  I fixed this behavior when I refactored the Feast card for an earlier assignment.  The other fixes that I made were just to fix warnings because of missing prototype functions and extra, unused variables in Ben’s dominion.c code.
+
+When running my tests on their code, I realized that I never tested to see if cards were being trashed instead of discarded (by having the trashFlag set when discardCard() was called).  I only tested to see if cards were being added to the discard pile.  By testing to make sure that cards were being added to the discard pile, I was testing what was supposed to happen when these cards were played and not what could mistakenly happen if the wrong parameter value was used.  This gave me good coverage of the lines of code, but still didn’t test all of the possible game state changes.  Therefore, it could miss bugs in my code and in Ben’s and David’s code.  This is why it is important to keep improving your tests.  They are never perfect and there is always room for improvement.  I did manage to catch a lot of bugs in Ben’s and David’s code (or at least a lot of my tests failed).  I suspect that many of these bugs (failing tests) will be related and I tried to make note of bugs that I thought were related to help Ben and David.
+
+
+
+Notes on testing Ben’s code:
 -------------------------------------------------------------------------------------
 To get Ben’s code working with my tests without errors or warnings, I had to do the following things.
 - add prototype functions for Ben’s refactored card functions: myAdventurer, myFeast, myRemodel, mySmithy, myTribute in dominion.h
@@ -330,7 +337,7 @@ May be related to Bug6.
 *************************************************************************************
 *************************************************************************************
 
-Notes:
+Notes on testing David’s code:
 -------------------------------------------------------------------------------------
 To get David’s code working with my tests without errors or warnings, I had to do the following things.
 - add trashCount and trash variables to struct gameState in dominion.h

@@ -59,6 +59,9 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
+testremodel: remodelCard.c dominion.o rngs.o
+	gcc -o testremodel -g remodelCard.c dominion.o rngs.o $(CFLAGS)
+
 chiouttests: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	./unittest1 &> unittestresult.out
 	gcov dominion.c >> unittestresult.out

@@ -49,7 +49,7 @@ int main()
 
 		memcpy(&testG, &G, sizeof(struct gameState));
 
-		village_effect(thisPlayer, &testG, handPos);
+		cardEffect(village,0,0,0, &testG, handPos,0);
 
 		//compare. note: village goes to discard right after being played
 		printf("Hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer]); 

@@ -1,0 +1,314 @@
+************  TESTS  ************
+./cardtest1
+Testing adventurer card 
+Test: Coin value in hand unchanged if no treasure in deck
+PASSED.  Returned 4   Expected 4
+Test: Handcount unchanged if no treasure in deck
+FAILED. Returned 6   Expected 5
+Test: Coin value in hand changed when treasure added
+FAILED.  Returned 4   Expected 9
+Test: Handcount changed when treasure added
+FAILED. Returned 5   Expected 7
+Test if victory card piles changed
+PASSED. Victory card count unchanged.
+Test if coin card piles changed
+PASSED. Coin card count unchanged.
+Test if kingdom card piles changed
+PASSED. Kingdom card count unchanged.
+./cardtest2
+Testing smithy card 
+Test: Three cards added to hand
+FAILED. Returned 5   Expected 7
+Test: cards drawn from current player's deck
+PASSED. Returned 4   Expected 2
+Test if p2 hand count changed
+PASSED. Returned 0   Expected 0
+Test if victory card piles changed
+PASSED. Victory card count unchanged.
+Test if coin card piles changed
+PASSED. Coin card count unchanged.
+Test if kingdom card piles changed
+PASSED. Kingdom card count unchanged.
+./cardtest3
+Testing great hall card 
+Test: One card added to hand
+PASSED. Returned 5   Expected 5
+Test: cards drawn from current player's deck
+PASSED. Returned 4   Expected 4
+Test if p2 hand count changed
+PASSED. Returned 0   Expected 0
+Test: One action added
+FAILED. Returned 0   Expected 2
+Test if victory card piles changed
+PASSED. Victory card count unchanged.
+Test if coin card piles changed
+PASSED. Coin card count unchanged.
+Test if kingdom card piles changed
+PASSED. Kingdom card count unchanged.
+./cardtest4
+Testing village card 
+Test: One card added to hand
+FAILED. Returned 6   Expected 5
+Test: cards drawn from current player's deck
+PASSED. Returned 3   Expected 4
+Test if p2 hand count changed
+PASSED. Returned 0   Expected 0
+Test: One action added
+FAILED. Returned 2   Expected 3
+Test if victory card piles changed
+PASSED. Victory card count unchanged.
+Test if coin card piles changed
+PASSED. Coin card count unchanged.
+Test if kingdom card piles changed
+PASSED. Kingdom card count unchanged.
+./unittest1
+Testing gainCard 
+Test: Attempt to gain card from empty pile 
+PASSED.  Returned -1    Expected -1
+Test: Card added to player 1 deck 
+PASSED.  Returned 6    Expected 6
+Test: Card added to player 1 hand 
+PASSED.  Returned 6    Expected 6
+Test: Card discarded 
+PASSED.  Returned 1    Expected 1
+Test: Supply count decreased 
+PASSED.  Returned 9    Expected 9
+./unittest2
+Testing updateCoins 
+Test: Correct coin value for cards in hand
+PASSED.  Returned 7    Expected 7
+./unittest3
+Testing discardCard 
+Test: Card added to played pile
+PASSED.  Returned 1    Expected 1
+Test: Card removed from player's hand
+PASSED.  Returned 4    Expected 4
+./unittest4
+Testing playCard 
+PASSED.  Returned -1    Expected -1
+FAILED.  Returned 1    Expected 0
+************ COVERAGE ************
+gcov cardtest1.c -b
+File 'cardtest1.c'
+Lines executed:70.00% of 80
+Branches executed:100.00% of 28
+Taken at least once:53.57% of 28
+No calls
+cardtest1.c:creating 'cardtest1.c.gcov'
+
+gcov cardtest2.c -b
+File 'cardtest2.c'
+Lines executed:65.57% of 61
+Branches executed:100.00% of 26
+Taken at least once:53.85% of 26
+No calls
+cardtest2.c:creating 'cardtest2.c.gcov'
+
+gcov cardtest3.c -b
+File 'cardtest3.c'
+Lines executed:66.67% of 66
+Branches executed:100.00% of 28
+Taken at least once:53.57% of 28
+No calls
+cardtest3.c:creating 'cardtest3.c.gcov'
+
+gcov cardtest4.c -b
+File 'cardtest4.c'
+Lines executed:65.15% of 66
+Branches executed:100.00% of 28
+Taken at least once:53.57% of 28
+No calls
+cardtest4.c:creating 'cardtest4.c.gcov'
+
+gcov unittest1.c -b
+File 'unittest1.c'
+Lines executed:88.10% of 42
+Branches executed:100.00% of 10
+Taken at least once:50.00% of 10
+No calls
+unittest1.c:creating 'unittest1.c.gcov'
+
+gcov unittest2.c -b
+File 'unittest2.c'
+Lines executed:95.24% of 21
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+No calls
+unittest2.c:creating 'unittest2.c.gcov'
+
+gcov unittest3.c -b
+File 'unittest3.c'
+Lines executed:90.00% of 20
+Branches executed:100.00% of 4
+Taken at least once:50.00% of 4
+No calls
+unittest3.c:creating 'unittest3.c.gcov'
+
+gcov unittest4.c -b
+File 'unittest4.c'
+Lines executed:85.71% of 21
+Branches executed:100.00% of 4
+Taken at least once:50.00% of 4
+No calls
+unittest4.c:creating 'unittest4.c.gcov'
+
+Function 'compare'
+Lines executed:83.33% of 6
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 2
+No branches
+No calls
+
+Function 'kingdomCards'
+Lines executed:0.00% of 12
+No branches
+No calls
+
+Function 'initializeGame'
+Lines executed:85.90% of 78
+Branches executed:95.65% of 46
+Taken at least once:80.43% of 46
+No calls
+
+Function 'shuffle'
+Lines executed:100.00% of 18
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'playCard'
+Lines executed:57.14% of 14
+Branches executed:60.00% of 10
+Taken at least once:40.00% of 10
+No calls
+
+Function 'buyCard'
+Lines executed:0.00% of 13
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'numHandCards'
+Lines executed:0.00% of 1
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'supplyCount'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 11
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'whoseTurn'
+Lines executed:100.00% of 1
+No branches
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 22
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'isGameOver'
+Lines executed:0.00% of 12
+Branches executed:0.00% of 8
+Taken at least once:0.00% of 8
+No calls
+
+Function 'scoreFor'
+Lines executed:0.00% of 26
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+No calls
+
+Function 'getWinners'
+Lines executed:0.00% of 33
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+No calls
+
+Function 'drawCard'
+Lines executed:70.83% of 24
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+No calls
+
+Function 'getCost'
+Lines executed:0.00% of 30
+Branches executed:0.00% of 28
+Taken at least once:0.00% of 28
+No calls
+
+Function 'cardEffect'
+Lines executed:4.71% of 255
+Branches executed:12.85% of 179
+Taken at least once:2.79% of 179
+No calls
+
+Function 'discardCard'
+Lines executed:73.33% of 15
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'gainCard'
+Lines executed:100.00% of 15
+Branches executed:100.00% of 6
+Taken at least once:100.00% of 6
+No calls
+
+Function 'updateCoins'
+Lines executed:100.00% of 14
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'playAdventurer'
+Lines executed:100.00% of 17
+Branches executed:100.00% of 10
+Taken at least once:90.00% of 10
+No calls
+
+Function 'playSmithy'
+Lines executed:100.00% of 3
+No branches
+No calls
+
+Function 'playVillage'
+Lines executed:100.00% of 5
+No branches
+No calls
+
+Function 'playGreatHall'
+Lines executed:100.00% of 4
+No branches
+No calls
+
+Function 'playCouncilRoom'
+Lines executed:0.00% of 12
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+File 'dominion.c'
+Lines executed:30.96% of 646
+Branches executed:29.30% of 413
+Taken at least once:21.07% of 413
+No calls
+dominion.c:creating 'dominion.c.gcov'
+

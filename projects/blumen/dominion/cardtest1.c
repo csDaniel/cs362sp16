@@ -6,6 +6,8 @@ Basic requirements for the card:
 2. 3 cards should come from his own pile.
 3. No state change should occur for other players.
 4. No state change should occur to the victory card piles and kingdom card piles.
+5. Village Card ends up in discard pile
+6. Hand count for the player is decremented by 1
 
 Some possible errors:
 (1) Four cards are added instead of three. This is caused by the use of "<=" instead of "<"
@@ -15,12 +17,7 @@ Some possible errors:
 (2) The card is not discarded after it is played.
     //discardCard(handPos, currentPlayer, state, 0);
 
-Include the following lines in your makefile:
-cardtest1: cardtest1.c dominion.o rngs.o
-    gcc -o cardtest1 -g  cardtest1.c dominion.o rngs.o -lm
-
-    was:
-    gcc -o cardtest1 -g  cardtest1.c dominion.o rngs.o $(CFLAGS)
+(3) Passed arguments to 'discardCard' in wrong order
 
 **/
 
@@ -116,6 +113,32 @@ void cardtest1() {
         }
     }
     printf("Also checked: no illegal kingdom cards were brought into play.\n");
+
+    // ----------- TEST 5: Village Card ends up in discard pile --------------
+    printf("TEST 5: Village Card ends up in discard pile\n");
+    m = testG.discardCount[thisPlayer] - G.discardCount[thisPlayer]; // number of cards discarded during play
+    j = 0;
+    printf(" One of the discarded cards is expected to be %d. Here are the discarded cards: ", village);
+    for (i=1; i<=m; i++) {
+        printf(" %d, ", testG.discard[thisPlayer][ testG.discardCount[thisPlayer] -i ]);
+        if (testG.discard[thisPlayer][ testG.discardCount[thisPlayer] -i ] == village){
+            j = 1;
+        }
+    }
+    if (j == 1) {
+        printf(" test passed.\n");
+    } else {
+        printf(" TEST FAILED.\n");
+    }
+
+    // ----------- TEST 6: Hand count for the player is decremented by 1 --------------
+    printf("TEST 6: Hand count for the player is decremented by 1\n");
+    printf(" hand count = %d, expected = %d, ", testG.handCount[thisPlayer], G.handCount[thisPlayer] -1);
+    if (testG.handCount[thisPlayer] == (G.handCount[thisPlayer] -1)){
+        printf(" test passed.\n");
+    } else {
+        printf(" TEST FAILED.\n");
+    }
 
 	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
 

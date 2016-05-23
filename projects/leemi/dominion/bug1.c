@@ -25,7 +25,7 @@ no bugs found in updateCoins
 
 //in discardCard
 
-can discard cards that doesnt exist resulting in handCount becoming negative
+possible bug: can discard cards that doesnt exist resulting in handCount becoming negative
 
 //in gainCard
 
