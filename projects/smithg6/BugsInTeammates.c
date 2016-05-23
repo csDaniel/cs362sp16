@@ -81,6 +81,23 @@ There was a similar solution for the remaining refactored cards, along with the
 cardtests that I needed to modify to get the tests to trigger correctly.
 
 
+The first bug found in Jessica's code was that the adventurer function was not correctly
+drawing cards. This was found through the use of random testing.
 
-Bugs for Jessica's code:
-----------------------------
+      Cards in starting hand:
+      12, 14, 23, 4, 16, 12, 17, 9,
+      Random Seed: 10099
+      Failed Item(s):
+      Invalid draw from deck.
+
+      Total Tests: 100
+      Total Passed: 0
+      Total Failed: 100
+
+I was able to fix this by updating the while loop in the adventurer function to
+run a total of two times, rather than 3.
+
+The next bug was discovered by the unit tests, and was the same bug present in Michael's
+code: the getCost function not being able to detect a corrupted gamestate.
+
+The remainder of the tests passed without discovering further errors.
