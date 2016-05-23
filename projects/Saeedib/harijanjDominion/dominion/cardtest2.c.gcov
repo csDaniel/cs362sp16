@@ -1,0 +1,191 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * cardtest1.c
+        -:    3: *
+        -:    4: 
+        -:    5: */
+        -:    6:
+        -:    7:/*
+        -:    8: * Using cardtest4.c template.
+        -:    9: * -------------------------------------------
+        -:   10: * TESTCARD #1: Adventurer.
+        -:   11: *--------------------------------------------
+        -:   12: * cardtest2: cardtest2.c dominion.o rngs.o
+        -:   13: *      gcc -o cardtest2 -g  cardtest2.c dominion.o rngs.o $(CFLAGS)
+        -:   14: */
+        -:   15:
+        -:   16:
+        -:   17:#include "dominion.h"
+        -:   18:#include "dominion_helpers.h"
+        -:   19:#include <string.h>
+        -:   20:#include <stdio.h>
+        -:   21:#include <assert.h>
+        -:   22:#include "rngs.h"
+        -:   23:#include <stdlib.h>
+        -:   24:
+        -:   25:#define TESTCARD "adventurer"
+        -:   26:
+        1:   27:int main() {
+        1:   28:    int newCards = 0;
+        1:   29:    int discarded = 1;
+        1:   30:    int cardTemp = 0;
+        -:   31:    int i;
+        -:   32:    int equal;
+        1:   33:    int successFlag = 0;
+        1:   34:    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        1:   35:    int seed = 1000;
+        1:   36:    int numPlayers = 2;
+        1:   37:    int thisPlayer = 0;
+        1:   38:    int thatPlayer = 1;
+        -:   39:	struct gameState originalG, testingG;
+        1:   40:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   41:			sea_hag, tribute, smithy, council_room};
+        -:   42:
+        -:   43:/*
+        -:   44:What I'm going to test:
+        -:   45:
+        -:   46:1. Current player 2 treasure cards at top of deck --> Check hand card
+        -:   47:
+        -:   48:2. Current player 2 treasure cards below 1 card from top of the deck --> Check hand card 
+        -:   49:
+        -:   50:3. No state change should occur for other players. --> Check other card & hand
+        -:   51:
+        -:   52:4. No state change should occur to the victory card piles and kingdom card piles. --> Check victory & kingdom.
+        -:   53:*/
+        -:   54:
+        -:   55:	// initialize a game state and player cards
+        1:   56:	initializeGame(numPlayers, k, seed, &originalG);
+        -:   57:
+        1:   58:	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+        -:   59:
+        -:   60:	// -----------------------------------------------------------------------
+        1:   61:	printf("TEST 1: Check current player's hand card (2 treasure cards at top).\n");
+        -:   62:
+        1:   63:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:   64:	printf("\t--> BEFORE 'adventurer': \n");
+        1:   65:	printf("Player's hand card = %d, Expected = %d\n", testingG.handCount[thisPlayer], originalG.handCount[thisPlayer]);
+        -:   66:
+        -:   67:	// Manually set the first two cards at deck are Treasure card
+        1:   68:	testingG.deck[thisPlayer][0] = copper; // 1
+        1:   69:	testingG.deck[thisPlayer][1] = copper; // 1
+        -:   70:
+        1:   71:	cardEffect(adventurer, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:   72:
+        1:   73:	newCards = 2;
+        1:   74:	printf("\t--> AFTER 'adventurer': \n");
+        1:   75:	printf("Player's hand card = %d, Expected = %d\n", testingG.handCount[thisPlayer], originalG.handCount[thisPlayer] + newCards - discarded);
+        1:   76:	printf("Player's deck = %d, Expected = %d\n", testingG.deckCount[thisPlayer], originalG.handCount[thisPlayer] - newCards);
+        1:   77:	printf("Player's discard = %d, Expected = %d\n", testingG.discardCount[thisPlayer], originalG.discardCount[thisPlayer]);
+        -:   78:
+        1:   79:	if (testingG.handCount[thisPlayer] == originalG.handCount[thisPlayer] + newCards) {
+    #####:   80:		printf ("Test 1 Passed: DRAW total of 2 cards -- 2 Treasure cards go to HAND and 0 card go to DISCARD.\n");
+    #####:   81:      	successFlag += 1;
+        -:   82:    }
+        -:   83:    else {
+        1:   84:		printf ("Test 1 Passed: DRAW total of MORE/LESS than 2 cards -- 2 Treasure cards not to HAND and 0 card not to DISCARD.\n");
+        -:   85:    }
+        -:   86:
+        -:   87:	// -----------------------------------------------------------------------
+        1:   88:	printf("\nTEST 2: Check current player's hand card (2 treasure cards not at top, expect a card in discard pile).\n");
+        -:   89:
+        1:   90:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:   91:	printf("\t-->BEFORE 'adventurer': \n");
+        1:   92:	printf("Player's hand card = %d, Expected = %d\n", testingG.handCount[thisPlayer], originalG.handCount[thisPlayer]);
+        -:   93:
+        -:   94:	// Manually set the Treasure cards NOT at the top of the deck
+        1:   95:	testingG.deck[thisPlayer][1] = copper; // 1
+        1:   96:	testingG.deck[thisPlayer][2] = copper; // 1
+        -:   97:
+        1:   98:	cardEffect(adventurer, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:   99:
+        1:  100:	newCards = 2;
+        1:  101:	printf("\t-->AFTER 'adventurer': \n");
+        1:  102:	printf("Player's hand card = %d, Expected = %d\n", testingG.handCount[thisPlayer], originalG.handCount[thisPlayer] + newCards - discarded);
+        1:  103:	printf("Player's deck = %d, Expected = %d\n", testingG.deckCount[thisPlayer], originalG.handCount[thisPlayer] - newCards - 1);
+        1:  104:	printf("Player's discard = %d, Expected = %d\n", testingG.discardCount[thisPlayer], originalG.discardCount[thisPlayer] + 1);
+        -:  105:
+        1:  106:	if (testingG.discardCount[thisPlayer] == originalG.discardCount[thisPlayer] + 1) {
+    #####:  107:		printf ("Test 2 Passed: DRAW total of 3 cards -- 2 Treasure cards go to HAND and 1 card go to DISCARD.\n");
+    #####:  108:      	successFlag += 1;
+        -:  109:    }
+        -:  110:    else {
+        1:  111:      printf ("Test 2 Failed: DRAW total of MORE/LESS than 3 cards -- 2 Treasure cards not to HAND and 1 card not to DISCARD.\n");
+        -:  112:    }
+        -:  113: 
+        -:  114:
+        -:  115:	// -----------------------------------------------------------------------
+        1:  116:	printf("\nTEST 3: Check other player's (opponent) hand card & deck size.\n");
+        -:  117:	
+        1:  118:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:  119:	cardEffect(smithy, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:  120:
+        -:  121:	// "thatPlayer" still has 0 card in hand since it is not endTurn yet.
+        -:  122:	// Thus, need to add +5 cards manually to "thatPlayer" hand & (-5) cards from deck.
+        -:  123:	// so can be tested at that round whether "smithy" works or not.
+        1:  124:	newCards = 5;
+        1:  125:	printf("Other Hand count = %d, expected = %d\n", testingG.handCount[thatPlayer] + newCards, originalG.handCount[thisPlayer]);
+        1:  126:	printf("Other Deck count = %d, expected = %d\n", testingG.deckCount[thatPlayer] - newCards, originalG.deckCount[thisPlayer]);
+        1:  127:	if ((testingG.handCount[thatPlayer] + newCards == originalG.handCount[thisPlayer]) && (testingG.deckCount[thatPlayer] - newCards == originalG.deckCount[thisPlayer])) {
+        1:  128:		printf ("Test 3 Passed: Other player's state doesn't change. \n");
+        1:  129:      	successFlag += 1;
+        -:  130:    }
+        -:  131:    else {
+    #####:  132:      printf ("Test 3 Failed: Other player's state changes.\n");
+        -:  133:    }
+        -:  134:	
+        -:  135:
+        -:  136:	// -----------------------------------------------------------------------
+        1:  137:	printf("\nTEST 4: Check Victory piles.\n");
+        -:  138:	
+        1:  139:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:  140:	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:  141:	
+        1:  142:	if (testingG.supplyCount[copper] == originalG.supplyCount[copper]) {
+        1:  143:		equal++;
+        -:  144:	}
+        1:  145:	if (testingG.supplyCount[silver] == originalG.supplyCount[silver]) {
+        1:  146:		equal++;
+        -:  147:	}
+        1:  148:	if (testingG.supplyCount[gold] == originalG.supplyCount[gold]) {
+        1:  149:		equal++;
+        -:  150:	}
+        -:  151:
+        1:  152:	if (equal == 3) {
+    #####:  153:		printf ("Test 4 Passed: Victory piles NO CHANGE.\n");
+    #####:  154:      	successFlag += 1;
+        -:  155:    }
+        -:  156:    else {
+        1:  157:      printf ("Test 4 Failed: Victory piles CHANGE.\n");
+        -:  158:    }
+        -:  159:
+        -:  160:    // -----------------------------------------------------------------------
+        1:  161:	printf("\nTEST 5: Check Kingdom piles.\n");
+        -:  162:	
+        1:  163:	memcpy(&testingG, &originalG, sizeof(struct gameState));
+        1:  164:	cardEffect(council_room, choice1, choice2, choice3, &testingG, handpos, &bonus);
+        -:  165:	
+        1:  166:	equal = 0;
+       11:  167:    for (i = 0; i < 10; i++) {
+       10:  168:    	cardTemp = k[i];
+       10:  169:        if (testingG.supplyCount[cardTemp] == originalG.supplyCount[cardTemp]) {
+       10:  170:            equal++;
+        -:  171:        }
+        -:  172:    }
+        -:  173:
+        1:  174:	if (equal == 10) {
+        1:  175:		printf ("Test 5 Passed: Kingdom piles NO CHANGE.\n");
+        1:  176:      	successFlag += 1;
+        -:  177:    }
+        -:  178:    else {
+    #####:  179:      printf ("Test 5 Failed: Kingdom piles CHANGE.\n");
+        -:  180:    }
+        -:  181:
+        1:  182:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", TESTCARD);
+        -:  183:
+        1:  184:	return 0;
+        -:  185:}
+        -:  186:

@@ -1,0 +1,163 @@
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:/* Using testUpdateCoins.c template
+        -:    9:
+        -:   10:According to documentation: fullDeckCount()
+        -:   11:Description: Returns the count of a specific card in a specific player’s discard deck and hand.
+        -:   12:Input: struct gameState state – holds a pointer to a gameState variable, int card, int player
+        -:   13:Return: count
+        -:   14:---------------------------------------------------------------------------
+        -:   15:unittest4: unittest4.c dominion.o rngs.o
+        -:   16:    gcc -o unittest4 -g  unittest4.c dominion.o rngs.o $(CFLAGS)
+        -:   17:
+        -:   18:*/
+        -:   19:
+        1:   20:int main() {
+        -:   21:    int i;
+        1:   22:    int seed = 1000;
+        1:   23:    int numPlayer = 2;
+        1:   24:    int successFlag = 0;
+        1:   25:    int maxHandCount = 5;
+        1:   26:    int player = 0;
+        -:   27:    int result;
+        -:   28:    struct gameState originalG, testingG;
+        1:   29:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   30:               , remodel, smithy, village, baron, great_hall};
+        -:   31:
+        -:   32:
+        1:   33:    printf ("TESTING fullDeckCount():\n");
+        1:   34:    printf ("Specific card for this test: 'ADVENTURER'. Assume using Player 1 Point of View.\n");
+        -:   35:
+        1:   36:    initializeGame(numPlayer, k, seed, &originalG);
+        -:   37:    // -------------------------------------------------------
+        -:   38:
+        1:   39:    printf ("TEST 1: No Adventurer at deck, discard and hand\n");
+        1:   40:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:   41:
+        6:   42:    for (i=0;i<maxHandCount;i++) {
+        5:   43:      testingG.hand[player][i] = gold;
+        -:   44:    }
+        6:   45:    for (i=0;i<maxHandCount;i++) {
+        5:   46:      testingG.discard[player][i] = gold;
+        -:   47:    }
+        6:   48:    for (i=0;i<maxHandCount;i++) {
+        5:   49:      testingG.deck[player][i] = gold;
+        -:   50:    }
+        -:   51:
+        1:   52:    result = fullDeckCount(player, adventurer, &testingG);
+        1:   53:    printf ("Result value: %d. Expected value: 0. \n", result);
+        1:   54:    if (result == 0) {
+        1:   55:      printf ("Test 1 Passed.\n");
+        1:   56:      successFlag += 1;
+        -:   57:    }
+        -:   58:    else {
+    #####:   59:      printf ("Test 1 Failed.\n");
+        -:   60:    }
+        -:   61:
+        -:   62:    // -------------------------------------------------------
+        -:   63:
+        1:   64:    printf ("TEST 2: No Adventurer at deck, discard. 1 Adventurer at hand\n");
+        1:   65:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:   66:
+        1:   67:    testingG.hand[player][0] = adventurer;
+        5:   68:    for (i=1;i<maxHandCount;i++) {
+        4:   69:      testingG.hand[player][i] = gold;
+        -:   70:    }
+        6:   71:    for (i=0;i<maxHandCount;i++) {
+        5:   72:      testingG.discard[player][i] = gold;
+        -:   73:    }
+        6:   74:    for (i=0;i<maxHandCount;i++) {
+        5:   75:      testingG.deck[player][i] = gold;
+        -:   76:    }
+        -:   77:
+        1:   78:    result = fullDeckCount(player, adventurer, &testingG);
+        1:   79:    printf ("Result value: %d. Expected value: 1. \n", result);
+        1:   80:    if (result == 1) {
+        1:   81:      printf ("Test 2 Passed.\n");
+        1:   82:      successFlag += 1;
+        -:   83:    }
+        -:   84:    else {
+    #####:   85:      printf ("Test 2 Failed.\n");
+        -:   86:    }
+        -:   87:
+        -:   88:    // -------------------------------------------------------
+        -:   89:
+        1:   90:    printf ("TEST 3: No Adventurer at deck and discard. 1 Adventurer at player 1 and player 2 hand.\n");
+        1:   91:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:   92:
+        1:   93:    testingG.hand[player][0] = adventurer;
+        1:   94:    testingG.hand[player+1][i] = adventurer;
+        5:   95:    for (i=1;i<maxHandCount;i++) {
+        4:   96:      testingG.hand[player][i] = gold;
+        4:   97:      testingG.hand[player+1][i] = gold;
+        -:   98:    }
+        6:   99:    for (i=0;i<maxHandCount;i++) {
+        5:  100:      testingG.discard[player][i] = gold;
+        5:  101:      testingG.hand[player+1][i] = gold;
+        -:  102:    }
+        6:  103:    for (i=0;i<maxHandCount;i++) {
+        5:  104:      testingG.deck[player][i] = gold;
+        5:  105:      testingG.hand[player+1][i] = gold;
+        -:  106:    }
+        -:  107:
+        1:  108:    result = fullDeckCount(player, adventurer, &testingG);
+        1:  109:    printf ("Result value: %d. Expected value: 1. \n", result);
+        1:  110:    if (result == 1) {
+        1:  111:      printf ("Test 3 Passed.\n");
+        1:  112:      successFlag += 1;
+        -:  113:    }
+        -:  114:    else {
+    #####:  115:      printf ("Test 3 Failed.\n");
+        -:  116:    }
+        -:  117:
+        -:  118:    // -------------------------------------------------------
+        -:  119:
+        1:  120:    printf ("TEST 4: 1 Adventurer at Player 1 deck, discard and hand.\n");
+        1:  121:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:  122:
+        1:  123:    testingG.hand[player][0] = adventurer;
+        1:  124:    testingG.deck[player][0] = adventurer;
+        1:  125:    testingG.discardCount[player] = 1;
+        1:  126:    testingG.discard[player][0] = adventurer;
+        5:  127:    for (i=1;i<maxHandCount;i++) {
+        4:  128:      testingG.hand[player][i] = gold;
+        4:  129:      testingG.hand[player+1][i] = gold;
+        -:  130:    }
+        5:  131:    for (i=1;i<maxHandCount;i++) {
+        4:  132:      testingG.deck[player][i] = gold;
+        4:  133:      testingG.deck[player+1][i] = gold;
+        -:  134:    }
+        5:  135:    for (i=1;i<maxHandCount;i++) {
+        4:  136:      testingG.discard[player][i] = gold;
+        4:  137:      testingG.discard[player+1][i] = gold;
+        -:  138:    }
+        -:  139:
+        1:  140:    result = fullDeckCount(player, adventurer, &testingG);
+        1:  141:    printf ("Result value: %d. Expected value: 3. \n", result);
+        1:  142:    if (result == 3) {
+        1:  143:      printf ("Test 4 Passed.\n");
+        1:  144:      successFlag += 1;
+        -:  145:    }
+        -:  146:    else {
+    #####:  147:      printf ("Test 4 Failed.\n");
+        -:  148:    }
+        -:  149:
+        -:  150:    // -------------------------------------------------------
+        -:  151:
+        1:  152:    if (successFlag == 4) {
+        1:  153:      printf ("All tests passed.\n");
+        -:  154:    }
+        -:  155:  
+        1:  156:  return 0;
+        -:  157:
+        -:  158:}

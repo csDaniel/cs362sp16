@@ -1344,7 +1344,7 @@ int playAdventurer(struct gameState *state)
   int cardDrawn;
   int z = 0;// this is the counter for the temp hand
  
-  while(state->handCount[currentPlayer] > 0){
+while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
     }
@@ -1352,12 +1352,12 @@ int playAdventurer(struct gameState *state)
     cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
     if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
       drawntreasure++;
-
+    else{
     temphand[z]=cardDrawn;
     state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
     z++;
 
-    }
+    }}
   while(z-1>=0){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
@@ -1384,7 +1384,7 @@ int playCouncil_Room(struct gameState *state, int handPos)
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
       {
-        if ( i == currentPlayer )
+        if ( i != currentPlayer )
         {
             drawCard(i, state);
         }
@@ -1414,8 +1414,8 @@ int playFeast(struct gameState *state, int choice1)
 
       //Update Coins for Buy
       updateCoins(currentPlayer, state, 5);
-      x = 5;//Condition to loop on
-      while( x >= 2) {//As long as there are two coins, you can buy a card
+      x = 1;//Condition to loop on
+      while( x == 1) {//As long as there are two coins, you can buy a card
   if (supplyCount(choice1, state) <= 0){
     if (DEBUG)
       printf("None of that card left, sorry!\n");
@@ -1438,7 +1438,7 @@ int playFeast(struct gameState *state, int choice1)
     }
 
     gainCard(choice1, state, 0, currentPlayer);//Gain the card
-    x = x - getCost(choice1);//Update coins
+    x = 0;//Update coins
 
     if (DEBUG){
       printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
@@ -1463,12 +1463,12 @@ int playSmithy(struct gameState *state, int handPos)
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
 
- if (nextPlayer > (state->numPlayers - 1)){
+
       for (i = 0; i < 3; i++)
       {
         drawCard(currentPlayer, state);
       }
-   }   
+     
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
       return 0;

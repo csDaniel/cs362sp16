@@ -1,0 +1,545 @@
+Result for running unit tests:
+unittest1.c:
+
+
+
+
+----------------- Testing Function: gainCard ----------------
+
+-------------Saving Starting Game State----------------
+#   Card          Cost   Copies
+0   Curse         0      10   
+1   Estate        2      8    
+2   Duchy         5      8    
+3   Province      8      8    
+4   Copper        0      46   
+5   Silver        3      40   
+6   Gold          6      30   
+7   Adventurer    6      10   
+8   Council Room  5      10   
+12  Remodel       4      10   
+13  Smithy        4      10   
+14  Village       3      10   
+18  Steward       3      10   
+19  Tribute       5      10   
+
+
+------------TEST 1: Testing if Card isn't in game-------------
+
+-------------TEST 2: Testing when toFlag == 1...................
+Current deck count: 5
+Current hand count: 5
+Current discard count: 1
+Current Supply Count: 8
+Final deck count: 6
+Final hand count: 5
+Final discard count: 1
+Final Supply Count: 7
+DECK
+Card Added to Deck: SUCCESS
+HAND
+No Cards Added to Hand: SUCCESS
+DISCARD
+Too Many or Too Few Cards Added: FAILURE
+SUPPLY
+Card Taken From Supply: SUCCESS
+
+-------------Testing when toFlag == 2...................
+Current deck count: 6
+Current hand count: 5
+Current discard count: 1
+Current Supply Count: 7
+Final deck count: 6
+Final hand count: 6
+Final discard count: 1
+Final Supply Count: 6
+DECK
+Card Not Added to Deck: SUCCESS
+HAND
+Card Added to Hand: SUCCESS
+DISCARD
+Card Not Added to Discard: SUCCESS
+SUPPLY
+Card Taken From Supply: SUCCESS
+
+-------------Testing when toFlag == 0...................
+Current deck count: 6
+Current hand count: 6
+Current discard count: 1
+Current Supply Count: 6
+Final deck count: 6
+Final hand count: 6
+Final discard count: 2
+Final Supply Count: 5
+DECK
+Card Not Added to Deck: SUCCESS
+HAND
+No Cards Added to Hand: SUCCESS
+DISCARD
+Card Added to Discard: SUCCESS
+SUPPLY
+Card Taken From Supply: SUCCESS
+
+ >>>>> SUCCESS: Testing complete gainCard <<<<<
+
+
+
+File 'unittest1.c'
+Lines executed:80.62% of 129
+Creating 'unittest1.c.gcov'
+
+unittest2.c:
+----------------- Testing Function: shuffle ----------------
+-------------Saving Current Game State----------------
+--------------------Checking valid deckCount
+------------No Cards to Count: SUCCESS
+----------------------------Checking Each Player----------------------
+
+Player Number: 0
+Player 0: Current Discard Count: 0
+Player 0: Starting Deck Count: 5
+Player 0: Ending Deck Count: 5
+Deck Count Start: 5 Deck Count Finish: 5
+
+Before Shuffle Function Card at Position 0: 1
+After Shuffle Function Card at Position 0: 1
+Before Shuffle Function Card at Position 1: 1
+After Shuffle Function Card at Position 1: 1
+Before Shuffle Function Card at Position 2: 4
+After Shuffle Function Card at Position 2: 4
+Before Shuffle Function Card at Position 3: 4
+After Shuffle Function Card at Position 3: 4
+Before Shuffle Function Card at Position 4: 4
+After Shuffle Function Card at Position 4: 4
+Cards were not suffled: FAIL
+Player 0: Current Discard Count: 0
+
+Player Number: 1
+Player 1: Current Discard Count: 0
+Player 1: Starting Deck Count: 10
+Player 1: Ending Deck Count: 10
+Deck Count Start: 10 Deck Count Finish: 10
+
+Before Shuffle Function Card at Position 0: 4
+After Shuffle Function Card at Position 0: 4
+Before Shuffle Function Card at Position 1: 4
+After Shuffle Function Card at Position 1: 4
+Before Shuffle Function Card at Position 2: 1
+After Shuffle Function Card at Position 2: 4
+Before Shuffle Function Card at Position 3: 4
+After Shuffle Function Card at Position 3: 4
+Before Shuffle Function Card at Position 4: 4
+After Shuffle Function Card at Position 4: 1
+Before Shuffle Function Card at Position 5: 4
+After Shuffle Function Card at Position 5: 1
+Before Shuffle Function Card at Position 6: 4
+After Shuffle Function Card at Position 6: 4
+Before Shuffle Function Card at Position 7: 1
+After Shuffle Function Card at Position 7: 4
+Before Shuffle Function Card at Position 8: 1
+After Shuffle Function Card at Position 8: 4
+Before Shuffle Function Card at Position 9: 4
+After Shuffle Function Card at Position 9: 1
+Cards Shuffled: SUCCESS
+Player 1: Current Discard Count: 0
+
+ >>>>> SUCCESS: Testing complete shuffle <<<<<
+
+File 'unittest2.c'
+Lines executed:94.23% of 52
+Creating 'unittest2.c.gcov'
+
+unittest3.c:
+
+---------------------Zero Bonus TEST---------------------
+
+---------------------Counting Coins---------------------
+Player 4
+ Coins: -134854128Copper: 0 Silver: 0 Gold: 0 Bonus Added : 0
+
+-----------------Counting Coins After Update---------------------
+Player 4
+ Coins: -134854128Copper: 0 Silver: 0 Gold: 0 
+-------------------Positive Bonus TEST-------------------
+
+---------------------Counting Coins---------------------
+Player 4
+ Coins: -134854128Copper: 0 Silver: 0 Gold: 0 Bonus Added : 10
+
+-----------------Counting Coins After Update---------------------
+Player 14
+ Coins: -134854128Copper: 0 Silver: 0 Gold: 0 
+---------------------Negative Bonus TEST---------------------
+
+---------------------Counting Coins---------------------
+Player 14
+ Coins: -134854128Copper: 0 Silver: 0 Gold: 0 Bonus Added : -10
+
+-----------------Counting Coins After Update---------------------
+Player -6
+ Coins: -134854128Copper: 0 Silver: 0 Gold: 0 
+
+
+
+----------------- Testing Function: updateCoins ----------------
+
+ >>>>> SUCCESS: Testing complete updateCoins <<<<<
+
+
+
+File 'unittest3.c'
+Lines executed:81.05% of 95
+Creating 'unittest3.c.gcov'
+
+unittest4.c:
+
+
+
+
+----------------- Testing Function: discardCard ----------------
+
+--------------------TEST 1: TRASH FLAG TEST------------------------
+TrashFlag not set, Card Added to played pile: SUCCESS
+
+--------------------TEST 2: TEST HAND COUNT------------------------
+Current Hand Count: 4
+NEW Current Hand Count: 3
+Hand Count Decreased: SUCCESS
+
+------------TEST 3: Checking Behavor if Not Last Card-----------
+Current Hand Count: 3
+Running Function
+NEW Current Hand Count: 2
+Hand Count Decreased: SUCCESS
+Current Card Replaced with Last Card: SUCCESS
+-------------------TEST 4: CHECK BEHAVIOR IF LAST CARD IN HAND-----------------
+Player 0's deck: 
+#  Card
+0  Estate       
+1  Estate       
+2  Copper       
+3  Copper       
+4  Copper       
+
+Player 0's discard: 
+
+Player 0's hand:
+#  Card
+0  Estate       
+1  Copper       
+
+Player 0's played cards: 
+#  Card
+0  Copper        
+
+Current Hand Count: 2
+Running Function
+Current Hand Count: 1
+Hand Count Decreased: SUCCESS
+Player 0's deck: 
+#  Card
+0  Estate       
+1  Estate       
+2  Copper       
+3  Copper       
+4  Copper       
+
+Player 0's discard: 
+
+Player 0's hand:
+#  Card
+0  Estate       
+
+Player 0's played cards: 
+#  Card
+0  Copper        
+
+--------------------TEST 5: CHECK BEHAVIOR IF ONLY ONE CARD LEFT-----------------
+Current Hand Count: 1
+Running Function
+Current Hand Count: 0
+Hand Count Decreased: SUCCESS
+
+ >>>>> SUCCESS: Testing complete discardCard <<<<<
+
+File 'unittest4.c'
+Lines executed:84.62% of 91
+Creating 'unittest4.c.gcov'
+
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://discardCard function
+        -:    2://unittest4.c
+        -:    3:#include "dominion.h"
+        -:    4:#include "dominion_helpers.h"
+        -:    5:#include <string.h>
+        -:    6:#include <stdio.h>
+        -:    7:#include <assert.h>
+        -:    8:#include "rngs.h"
+        -:    9:#include <stdlib.h>
+        -:   10:
+        -:   11:#define FUNCTION "discardCard"
+        -:   12:
+        -:   13:void runDiscard(int handPos, int thisPlayer, struct gameState *state, int trashFlag);
+        -:   14:
+        1:   15:int main() {
+        1:   16:	int trashFlag = 0;
+        1:   17:	int handPos = 0;
+        -:   18:	int currCard, lastCard;
+        -:   19:	int currHandCount;
+        -:   20:	int numPlayedBefore, numPlayedAfter;
+        1:   21:	int seed = 1000;
+        1:   22:	int numPlayers = 2;
+        1:   23:	int thisPlayer = 0;
+        1:   24:	int k[10] = {curse, estate, village, remodel, 
+        -:   25:		council_room, adventurer, province, smithy, steward, tribute};
+        -:   26:	struct gameState G, testG;
+        -:   27:	//printf("--------------------Start Game----------------------------\n");
+        1:   28:	initializeGame(numPlayers, k, seed, &G);
+        1:   29:	printf("\n\n\n\n----------------- Testing Function: %s ----------------\n", FUNCTION);
+        1:   30:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   31:	printf("\n--------------------TEST 1: TRASH FLAG TEST------------------------\n");
+        -:   32:	//check if card is in played cards?
+        -:   33:	//revert to saved game state
+        1:   34:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:   35:	currCard = testG.hand[thisPlayer][handPos];
+        1:   36:	numPlayedBefore = testG.playedCardCount;
+        1:   37:	trashFlag = 0;
+        1:   38:	handPos = 0;
+        -:   39:	//run function
+        1:   40:	discardCard(handPos, thisPlayer, &testG, trashFlag);
+        -:   41:	//check if played card count has increased by 1
+        1:   42:	if (testG.playedCardCount == (numPlayedBefore + 1))
+        1:   43:		printf("TrashFlag not set, Card Added to played pile: SUCCESS\n");
+        -:   44:	else
+    #####:   45:		printf("Card not added to played pile: FAILURE\n");
+        1:   46:	printf("\n--------------------TEST 2: TEST HAND COUNT------------------------\n");
+        -:   47:	//revert to saved game state
+        1:   48:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:   49:	trashFlag = 1;
+        1:   50:	handPos = 0;
+        1:   51:	currHandCount = testG.handCount[thisPlayer];
+        1:   52:	printf("Current Hand Count: %d\n", testG.handCount[thisPlayer]);
+        1:   53:	currCard = testG.hand[thisPlayer][handPos];
+        -:   54:	//run function
+        1:   55:	discardCard(handPos, thisPlayer, &testG, trashFlag);
+        -:   56:	//get new hand count
+        1:   57:	printf("NEW Current Hand Count: %d\n", testG.handCount[thisPlayer]);
+        1:   58:	if (testG.handCount[thisPlayer] == (currHandCount - 1))
+        1:   59:		printf("Hand Count Decreased: SUCCESS\n");
+    #####:   60:	else if (testG.handCount[thisPlayer] == currHandCount)
+    #####:   61:		printf("Hand Count Not Decreased: FAILURE\n");
+        -:   62:	else 
+    #####:   63:		printf("Hand Count Changed but not correct: FAILURE\n");
+        1:   64:	printf("\n------------TEST 3: Checking Behavor if Not Last Card-----------\n");
+        -:   65:	//revert to saved game state
+        1:   66:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   67:	//set trashflag
+        1:   68:	trashFlag = 1;
+        1:   69:	handPos = 0;
+        -:   70:	//save current hand count
+        1:   71:	currHandCount = testG.handCount[thisPlayer];
+        1:   72:	lastCard = testG.hand[thisPlayer][(testG.handCount[thisPlayer] - 1)];
+        1:   73:	currCard = testG.hand[thisPlayer][handPos];
+        1:   74:	printf("Current Hand Count: %d\n", testG.handCount[thisPlayer]);
+        1:   75:	printf("Running Function\n");
+        -:   76:	//run function
+        1:   77:	discardCard(handPos, thisPlayer, &testG, trashFlag);
+        1:   78:	printf("NEW Current Hand Count: %d\n", testG.handCount[thisPlayer]);
+        -:   79:	//check if hand count is correct
+        1:   80:	if (testG.handCount[thisPlayer] == (currHandCount - 1))
+        1:   81:		printf("Hand Count Decreased: SUCCESS\n");
+    #####:   82:	else if (testG.handCount[thisPlayer] == currHandCount)
+    #####:   83:		printf("Hand Count Not Decreased: FAILURE\n");
+        -:   84:	else 
+    #####:   85:		printf("Hand Count Changed but not correct: FAILURE\n");
+        -:   86:	//check if card swap occured
+        1:   87:	if (testG.hand[thisPlayer][handPos] == lastCard)
+        1:   88:		printf("Current Card Replaced with Last Card: SUCCESS\n");
+    #####:   89:	else if (testG.hand[thisPlayer][handPos] == currCard)
+    #####:   90:		printf("Current Card not Replaced: FAILURE\n");
+        -:   91:	else
+    #####:   92:		printf("Current Card Replaced with wrong card: FAILURE");
+        1:   93:	printf("-------------------TEST 4: CHECK BEHAVIOR IF LAST CARD IN HAND-----------------\n");
+        -:   94:	//revert to saved game state
+        1:   95:	memcpy(&G, &testG, sizeof(struct gameState));
+        -:   96:	//set trashflag
+        1:   97:	trashFlag = 1;
+        -:   98:	//set handPos
+        1:   99:	handPos = (testG.handCount[thisPlayer] - 1); 
+        -:  100:	//run function and output result
+        1:  101:	printDeck(thisPlayer, &testG);
+        1:  102:	printDiscard(thisPlayer, &testG);
+        1:  103:	printHand(thisPlayer, &testG);
+        1:  104:	printPlayed(thisPlayer, &testG);
+        -:  105:	
+        1:  106:	runDiscard(handPos, thisPlayer, &testG, trashFlag);
+        -:  107:	
+        1:  108:	printDeck(thisPlayer, &testG);
+        1:  109:	printDiscard(thisPlayer, &testG);
+        1:  110:	printHand(thisPlayer, &testG);
+        1:  111:	printPlayed(thisPlayer, &testG);
+        -:  112:	
+        -:  113:	
+        1:  114:	printf("--------------------TEST 5: CHECK BEHAVIOR IF ONLY ONE CARD LEFT-----------------\n");
+        -:  115:	//revert to saved game state
+        1:  116:	memcpy(&G, &testG, sizeof(struct gameState));
+        1:  117:	handPos = 0;
+        1:  118:	trashFlag = 1;
+        -:  119:	//run until last card left
+        2:  120:	while(testG.handCount[thisPlayer] > 1)
+        -:  121:	{
+    #####:  122:		discardCard(handPos, thisPlayer, &testG, trashFlag);
+        -:  123:	}
+        -:  124:	//run final function and output result
+        1:  125:	runDiscard(handPos, thisPlayer, &testG, trashFlag);
+        1:  126:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n", FUNCTION);
+        1:  127:	return 0;
+        -:  128:}
+        -:  129:
+        2:  130:void runDiscard(int handPos, int thisPlayer, struct gameState *testG, int trashFlag){
+        2:  131:	int currHandCount = testG->handCount[thisPlayer];
+        2:  132:	int lastCard = testG->hand[thisPlayer][(testG->handCount[thisPlayer] - 1)];
+        2:  133:	int currCard = testG->hand[thisPlayer][handPos];
+        2:  134:	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
+        2:  135:	printf("Running Function\n");
+        -:  136:	//run function
+        2:  137:	discardCard(handPos, thisPlayer, testG, trashFlag);
+        -:  138:	//printDeck(thisPlayer, &testG);
+        -:  139:	//printDiscard(thisPlayer, &testG);
+        -:  140:	//printHand(thisPlayer, &testG);
+        -:  141:	//printPlayed(thisPlayer, &testG);
+        -:  142:	//output results
+        2:  143:	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
+        -:  144:	//check if hand count is correct
+        2:  145:	if (testG->handCount[thisPlayer] == (currHandCount - 1))
+        2:  146:		printf("Hand Count Decreased: SUCCESS\n");
+    #####:  147:	else if (testG->handCount[thisPlayer] == currHandCount)
+    #####:  148:		printf("Hand Count Not Decreased: FAILURE\n");
+        -:  149:	else 
+    #####:  150:		printf("Hand Count Changed but not correct: FAILURE\n");
+        2:  151:}
+cardtest1.c:
+Testing for: 1. 3 Cards Taken From Deck2. 3 Cards Added To Hand3. 1 Card Discarded From Hand4. 1 Cards Added To Discarded Pile
+
+
+
+----------------- Testing Card: smithy ----------------
+---------------TEST 1: CHECKING DRAW CARD FUNCTION
+-----------Deck Count Before: 5
+Current Hand Before: 5
+Discard Count Before: 0
+Deck Count After: 2
+DECK COUNT DECREASED BY 3: SUCCESS
+Current Hand After: 7
+HAND COUNT INCREASED BY 3: SUCCESS
+Discard Count After: 0
+DISCARD COUNT INCORRECT: FAILURE
+
+ >>>>> SUCCESS: Testing complete smithy <<<<<
+
+
+
+File 'cardtest1.c'
+Lines executed:82.93% of 41
+Creating 'cardtest1.c.gcov'
+
+cardtest2.c:
+Testing for: 1. 2 Cards Added To Hand2. 2 Cards Added Are Treasure Cards3. All Cards that are either added to Hand or Taken from deck are Accounted For4. If At End of Pile Add Discarded Back and Shuffle
+
+
+
+----------------- Testing Card: adventurer ----------------
+-------TEST 1: CHECKING IF TWO CARDS WERE ADDED TO HAND--------
+Current Hand Before: 5
+Current Hand After: 7
+HAND COUNT INCREASED BY 1: SUCCESS
+--------TEST 2: CHECK IF ADDED CARDS ARE TREASURE CARDS---------
+Treasure Before Function: 0
+Treasure After Function: 0
+ADDED INCORRECT TREASURE CARDS: FAILURE
+--------TEST 3: CHECK IF ALL CARDS ACCOUNTED FOR---------
+Deck Count Before: 0
+Current Hand Before: 8
+Discard Count Before: 2
+Deck Count After: 0
+Current Hand After: 8
+Discard Count After: 2
+All Cards Accounted For: SUCCESS
+--------------TEST 4: CHECK IF SHUFFLE OCCURS-----------------
+Deck Count: 0
+Deck Count: 0
+
+ >>>>> SUCCESS: Testing complete adventurer <<<<<
+
+
+
+File 'cardtest2.c'
+Lines executed:80.82% of 73
+Creating 'cardtest2.c.gcov'
+
+cardtest3.c:
+
+
+
+
+----------------- Testing Card: village ----------------
+---------------TEST 1: CHECKING DRAW CARD FUNCTION
+-----------Deck Count Before: 5
+Current Hand Before: 5
+Discard Count Before: 0
+Deck Count After: 4
+DECK COUNT DECREASED BY 1: SUCCESS
+Current Hand After: 5
+HAND COUNT DIDN'T CHANGE: FAILURE
+Discard Count After: 0
+DISCARD COUNT INCORRECT: FAILURE
+---------------TEST 2: CHECKING ACTIONS FUNCTION
+-----------Current Actions Before: 3
+Current Actions After: 5
+ACTION COUNT INCREASED BY 2: SUCCESS
+
+ >>>>> SUCCESS: Testing complete village <<<<<
+
+
+
+File 'cardtest3.c'
+Lines executed:82.35% of 51
+Creating 'cardtest3.c.gcov'
+
+cardtest4.c:
+
+
+
+
+----------------- Testing Card: great_hall ----------------
+---------------TEST 1: CHECKING DRAW CARD FUNCTION
+-----------Deck Count Before: 5
+Current Hand Before: 5
+Discard Count Before: 0
+Deck Count After: 4
+DECK COUNT DECREASED BY 1: SUCCESS
+Current Hand After: 5
+HAND COUNT DIDN'T CHANGE: FAILURE
+Discard Count After: 0
+DISCARD COUNT INCORRECT: FAILURE
+---------------TEST 2: CHECKING ACTIONS TOTAL
+-----------Current Actions Before: 2
+Current Actions After: 3
+ACTION COUNT INCREASED BY 1: SUCCESS
+
+ >>>>> SUCCESS: Testing complete great_hall <<<<<
+
+
+
+File 'cardtest4.c'
+Lines executed:80.85% of 47
+Creating 'cardtest4.c.gcov'
+
+File 'dominion.c'
+Lines executed:30.47% of 558
+Creating 'dominion.c.gcov'
+

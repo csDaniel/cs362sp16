@@ -66,7 +66,7 @@ Teammate 2 results: weldonmi
 
 
 Tests were runnable with only one change to each called function name. Otherwise all tests are usable as is, indicating fairly reasonable maintainability. While
-the found bugs were straight forward the tests did reveal all introduced bugs.
+the found bugs were straight forward the tests did reveal all introduced bugs and 1 additional undocumented bug.
 
 
 

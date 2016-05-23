@@ -301,7 +301,9 @@ int main()
 			}
 		}
 	}
+#if (NOISY_TEST == 1)
     printf("Final tally for Random Test ( Village ):\nFail: %d\r\n", finalfail );
+#endif
     return 0;
 }
 

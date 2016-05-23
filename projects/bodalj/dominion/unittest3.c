@@ -25,7 +25,8 @@ int main() {
     int cards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
     int seed = 187;
     int cardDeckCount, cardHandCount, cardDiscardCount, cardPlayedCount, deckCount, handCount, discardCount, playedCardCount;
-    int *counts[] = {&cardDeckCount, &cardHandCount, &cardDiscardCount, &cardPlayedCount, &deckCount, &handCount, &discardCount, &playedCardCount};
+    int *counts[] = {&cardDeckCount, &cardHandCount, &cardDiscardCount, &cardPlayedCount, 
+        &deckCount, &handCount, &discardCount, &playedCardCount};
     int trash = 1;
     int targetPlayer = 0;
     struct gameState game;
@@ -36,6 +37,7 @@ int main() {
     // draw 5 adventurers
     printf("-- CONTROL TEST INTERNAL COUNT FUNCTION --\n");
     initializeGame(players, cards, seed, state);
+    // now have 10 cards, bottom is smithy
     fillDeckWithCards(state, targetPlayer);
     drawCard(targetPlayer, state);
     drawCard(targetPlayer, state);
@@ -77,7 +79,7 @@ int main() {
         printf("ERROR: Draw 5 [playedCardCount]\n");
     }
     if (BUG_FOUND == 0) {
-        printf("SUCCESS: Draw 5 cards\n");
+        printf("[CONTROL] SUCCESS: Draw 5 cards\n");
     }
     
     // draw 2 adventurers, discard top card to discard pile, will be an adventurer
@@ -97,9 +99,9 @@ int main() {
         BUG_FOUND = 1;
         printf("ERROR: Discard [not trash] [cardHandCount is (%d) should be (%d)]\n", cardHandCount, 1);
     }
-    if (cardDiscardCount != 1) {
+    if (cardDiscardCount != 0) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard [not trash] [cardDiscardCount is (%d) should be (%d)]\n", cardDiscardCount, 1);
+        printf("ERROR: Discard [not trash] [cardDiscardCount is (%d) should be (%d)]\n", cardDiscardCount, 0);
     }
     if (cardPlayedCount != 1) {
         BUG_FOUND = 1;
@@ -113,9 +115,9 @@ int main() {
         BUG_FOUND = 1;
         printf("ERROR: Discard [not trash] [handCount is (%d) should be (%d)]\n", handCount, 6);
     }
-    if (discardCount != 1) {
+    if (discardCount != 0) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard [not trash] [discardCount is (%d) should be (%d)]\n", discardCount, 1);
+        printf("ERROR: Discard [not trash] [discardCount is (%d) should be (%d)]\n", discardCount, 0);
     }
     if (playedCardCount != 1) {
         BUG_FOUND = 1;
@@ -147,9 +149,9 @@ int main() {
         BUG_FOUND = 1;
         printf("ERROR: Discard [is trash] [cardDiscardCount is (%d) should be (%d)]\n", cardDiscardCount, 0);
     }
-    if (cardPlayedCount != 1) {
+    if (cardPlayedCount != 0) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard [is trash] [cardPlayedCount is (%d) should be (%d)]\n", cardPlayedCount, 1);
+        printf("ERROR: Discard [is trash] [cardPlayedCount is (%d) should be (%d)]\n", cardPlayedCount, 0);
     }
     if (deckCount != 7) {
         BUG_FOUND = 1;
@@ -163,9 +165,9 @@ int main() {
         BUG_FOUND = 1;
         printf("ERROR: Discard [is trash] [discardCount is (%d) should be (%d)]\n", discardCount, 0);
     }
-    if (playedCardCount != 1) {
+    if (playedCardCount != 0) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard [is trash] [playedCardCount is (%d) should be (%d)]\n", playedCardCount, 1);
+        printf("ERROR: Discard [is trash] [playedCardCount is (%d) should be (%d)]\n", playedCardCount, 0);
     }
     if (BUG_FOUND == 0) {
         printf("SUCCESS: Discard [is trash] cards\n");
@@ -194,13 +196,13 @@ int main() {
         BUG_FOUND = 1;
         printf("ERROR: Discard hand [not trash] [cardHandCount is (%d) should be (%d)]\n", cardHandCount, 0);
     }
-    if (cardDiscardCount != 8) {
+    if (cardDiscardCount != 0) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard hand [not trash] [cardDiscardCount is (%d) should be (%d)]\n", cardDiscardCount, 8);
+        printf("ERROR: Discard hand [not trash] [cardDiscardCount is (%d) should be (%d)]\n", cardDiscardCount, 0);
     }
-    if (cardPlayedCount != 13) {
+    if (cardPlayedCount != 8) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard hand [not trash] [cardPlayedCount is (%d) should be (%d)]\n", cardPlayedCount, 13);
+        printf("ERROR: Discard hand [not trash] [cardPlayedCount is (%d) should be (%d)]\n", cardPlayedCount, 8);
     }
     if (deckCount != 2) {
         BUG_FOUND = 1;
@@ -210,9 +212,9 @@ int main() {
         BUG_FOUND = 1;
         printf("ERROR: Discard hand [not trash] [handCount is (%d) should be (%d)]\n", handCount, 0);
     }
-    if (discardCount != 13) {
+    if (discardCount != 0) {
         BUG_FOUND = 1;
-        printf("ERROR: Discard hand [not trash] [discardCount is (%d) should be (%d)]\n", discardCount, 13);
+        printf("ERROR: Discard hand [not trash] [discardCount is (%d) should be (%d)]\n", discardCount, 0);
     }
     if (playedCardCount != 13) {
         BUG_FOUND = 1;
@@ -286,9 +288,7 @@ void setCounts(struct gameState *state, int targetPlayer, int **counts) {
 }
 
 void discardHand(struct gameState *state, int player, int trashFlag) {
-    int i;
-    int numCards = state->handCount[player];
-    for (i = 0; i < numCards; i++) {
-        discardCard(i, player, state, trashFlag);
+    while (state->handCount[player] >= 1) {
+        discardCard(state->handCount[player]-1, player, state, trashFlag);
     }
 }

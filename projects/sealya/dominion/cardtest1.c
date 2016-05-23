@@ -54,7 +54,7 @@ int main() {
 			cardEffect(smithy, 0, 0, 0, &G, handPos, 0);
 
             // Variables for expected values of handc count, played cards, and deck count
-            int t1 = (T.handCount[i] + 3);
+            int t1 = (T.handCount[i] + 2);
             int t2 = (T.playedCardCount + 1);
             int t3 = (T.deckCount[i] - 3);
 

@@ -45,14 +45,14 @@ void testCardSmithy(){
 
 	//testing
 	printf("---testing you gain 3 cards and discard card Smithy---\n");
-//	assert(game.handCount[p] == handCount + 2);//cards added correctly
-	assert(game.handCount[p] == handCount + 3);//cards added incorrectly
-	printf("===BUG smithy grabs 4 cards===");
+	assert(game.handCount[p] == handCount + 2);//cards added correctly
+//	assert(game.handCount[p] == handCount + 3);//cards added incorrectly
+//	printf("===BUG smithy grabs 4 cards===");
 
 	printf("---testing cards removed from deck---\n");
-//	assert(game.deckCount[p] == deckCount - 3);
-	assert(game.deckCount[p] == deckCount - 4);
-	printf("===BUG smithy grabs 4 cards===");
+	assert(game.deckCount[p] == deckCount - 3);
+//	assert(game.deckCount[p] == deckCount - 4);
+//	printf("===BUG smithy grabs 4 cards===");
 	
 		
 	printf("---testing smithy removed from hand---\n");

@@ -98,7 +98,19 @@ int main() {
 	//set handPos
 	handPos = (testG.handCount[thisPlayer] - 1); 
 	//run function and output result
+	printDeck(thisPlayer, &testG);
+	printDiscard(thisPlayer, &testG);
+	printHand(thisPlayer, &testG);
+	printPlayed(thisPlayer, &testG);
+	
 	runDiscard(handPos, thisPlayer, &testG, trashFlag);
+	
+	printDeck(thisPlayer, &testG);
+	printDiscard(thisPlayer, &testG);
+	printHand(thisPlayer, &testG);
+	printPlayed(thisPlayer, &testG);
+	
+	
 	printf("--------------------TEST 5: CHECK BEHAVIOR IF ONLY ONE CARD LEFT-----------------\n");
 	//revert to saved game state
 	memcpy(&G, &testG, sizeof(struct gameState));
@@ -123,6 +135,10 @@ void runDiscard(int handPos, int thisPlayer, struct gameState *testG, int trashF
 	printf("Running Function\n");
 	//run function
 	discardCard(handPos, thisPlayer, testG, trashFlag);
+	//printDeck(thisPlayer, &testG);
+	//printDiscard(thisPlayer, &testG);
+	//printHand(thisPlayer, &testG);
+	//printPlayed(thisPlayer, &testG);
 	//output results
 	printf("Current Hand Count: %d\n", testG->handCount[thisPlayer]);
 	//check if hand count is correct

@@ -648,14 +648,13 @@ int useSmithy(struct gameState *state, int handPos, int currentPlayer){
 	int i;
 
 	//+3 Cards
-	for (i = 0; i < 4; i++){
+	for (i = 0; i < 3; i++){
 		
 		drawCard(currentPlayer, state);
 	}
 
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
-	discardCard(handPos+1, currentPlayer, state, 0);
 	
 	return 0;
 	
@@ -687,7 +686,7 @@ int useAdventurer(struct gameState *state, int handPos, int currentPlayer){
 		z=z-1;
 	}
 	
-	discardCard(handPos, currentPlayer, state, 1);
+	//discardCard(handPos, currentPlayer, state, 0);
 	
 	return 0;
 

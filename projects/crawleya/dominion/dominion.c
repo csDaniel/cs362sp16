@@ -166,10 +166,10 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
       state->handCount[i] = 0;
       state->discardCount[i] = 0;
       //draw 5 cards
-      // for (j = 0; j < 5; j++)
-      //	{
-      //	  drawCard(i, state);
-      //	}
+//       for (j = 0; j < 5; j++)
+//      	{
+//      	  drawCard(i, state);
+//      	}
     }
   
   //set embargo tokens to 0 for all supply piles
@@ -441,7 +441,7 @@ int scoreFor (int player, struct gameState *state) {
     }
 
   //score from deck
-  for (i = 0; i < state->discardCount[player]; i++)
+  for (i = 0; i < state->deckCount[player]; i++)
     {
       if (state->deck[player][i] == curse) { score = score - 1; };
       if (state->deck[player][i] == estate) { score = score + 1; };
@@ -653,7 +653,7 @@ int doAdventurer(struct gameState *state, int handPos, int currentPlayer)
   int drawntreasure = 0;
   int temphand[MAX_HAND];
  
-  while(drawntreasure<=2){
+  while(drawntreasure < 2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
     }
@@ -671,6 +671,10 @@ int doAdventurer(struct gameState *state, int handPos, int currentPlayer)
     state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
     z=z-1;
   }
+
+  //discard played card from hand
+  discardCard(handPos, currentPlayer, state, 0);
+ 
   return 0;
 }	
 
@@ -690,7 +694,7 @@ int doCouncilRoom(struct gameState *state, int handPos, int currentPlayer)
   //Each other player draws a card
   for (i = 0; i < state->numPlayers; i++)
   {
-    if ( i == currentPlayer )
+    if ( i != currentPlayer )
     {
       drawCard(i, state);
     }
@@ -712,7 +716,7 @@ int doGreatHall(struct gameState *state, int handPos, int currentPlayer)
     state->numActions++;
 			
   //discard card from hand
-    discardCard(handPos, currentPlayer, state, 1);
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;	
 }
 
@@ -722,7 +726,7 @@ int doSmithy(struct gameState *state, int handPos, int currentPlayer)
   int i;
 
   //+3 Cards
-  for (i = 0; i<= 3; i++) {
+  for (i = 0; i < 3; i++) {
     drawCard(currentPlayer, state);
   }
 			
@@ -738,7 +742,7 @@ int doVillage(struct gameState *state, int handPos, int currentPlayer)
   drawCard(currentPlayer, state);
 			
   //+2 Actions
-  state->numActions++;
+  state->numActions = state->numActions + 2;
 			
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
@@ -771,7 +775,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      doAdventurer(state, handPos, currentPlayer);
+      return doAdventurer(state, handPos, currentPlayer);
 		
     case council_room:
       return doCouncilRoom(state, handPos, currentPlayer);
@@ -830,6 +834,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 			
     case gardens:
+      discardCard(handPos, currentPlayer, state, 0);
       return -1;
 			
     case mine:
