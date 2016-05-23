@@ -1,23 +1,16 @@
 #include "dominion.h"
+#include "dominion_helpers.h"
 #include <stdio.h>
 #include "rngs.h"
 #include <stdlib.h>
 
 int main (int argc, char** argv) {
   struct gameState G;
-  int k[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
-           sea_hag, tribute, smithy};
 
   printf ("Starting game.\n");
 
   initializeGame(2, k, atoi(argv[1]), &G);
-  printf("hand count of player 0 is %d\n",G.handCount[0]);
-  printf("deck count of player 0is %d\n",G.deckCount[0]);
-  printf("discard of plaayer 0 is %d\n",G.discardCount[0]);
-  printf("hand count of player 1 is %d\n",G.handCount[1]);
-  printf("deck count of player 1 is %d\n",G.deckCount[1]);
-  printf("discard of plaayer 1 is %d\n",G.discardCount[1]);
-  
+
   int money = 0;
   int smithyPos = -1;
   int adventurerPos = -1;
@@ -27,16 +20,6 @@ int main (int argc, char** argv) {
   int numAdventurers = 0;
 
   while (!isGameOver(&G)) {
-   printf("hand count of player 0 is %d\n",G.handCount[0]);
-  printf("deck count of player 0is %d\n",G.deckCount[0]);
-  printf("discard of plaayer 0 is %d\n",G.discardCount[0]);
-  printf("hand count of player 1 is %d\n",G.handCount[1]);
-  printf("deck count of player 1 is %d\n",G.deckCount[1]);
-  printf("discard of plaayer 1 is %d\n",G.discardCount[1]);
-    
-//    printf("Player %d is playing\nHand is ",whoseTurn(&G));
-//    for (i = 0; i < G.handCount[whoseTurn(&G)]; i++)
-//        printf("%d",G.hand[whoseTurn(&G)][i]);
     money = 0;
     smithyPos = -1;
     adventurerPos = -1;

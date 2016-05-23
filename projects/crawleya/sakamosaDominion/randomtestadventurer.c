@@ -1,16 +1,15 @@
 /* -----------------------------------------------------------------------
  * Alisha Crawley-Davis
- * CS 362 Assn 4
+ * CS 362 Assn 3
  * 5/8/2016
- * randomtestcard.c
- * Random test of Smithy card in cardEffect() in  dominion.c
+ * randomtestadventurer.c
+ * Test of Adventurer card in cardEffect() in  dominion.c
  * Based on template provided in class
  *
  * Include the following lines in makefile:
  *
- * randomtestcard: randomtestcard.c dominion.o rngs.o
- *     gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS)
- *
+ * randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+ *     gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
  * -----------------------------------------------------------------------
  */
 
@@ -23,10 +22,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 /*****************************************************************************
- * Description: This function updates the testsCompleted and testsPassed variables
- *              as appropriate
+ * Description: This function updates the testsCompleted and testsPassed 
+ *              variables as appropriate
  * Input:       int i; Boolean 1 = pass, 0 = fail
  *              *tp testsPassed increments when test passes
  *              *tc testsCompleted increments each time the function
@@ -41,9 +39,9 @@ void theResult(int i, int *tp, int *tc)
 //        printf("PASS: ");
     }
 /*    else if (i == 0) //test failed
-          printf("FAIL: ");
-      else            //bad input to function
-          printf("BAD TEST");
+        printf("FAIL: ");
+    else            //bad input to function
+        printf("BAD TEST");
 */
 }
 
@@ -52,12 +50,12 @@ int main() {
     //Index variables
     int r, i, j, m, n;
 
-   //Set up random number generator
+    //Set up random number generator
     srand(time(NULL));
     int seed = rand();
 
     //Set up the game
- 
+    //
     //Choose 10 arbitrary kingdom cards
     int k[10] = {smithy, adventurer, salvager, embargo, ambassador, steward,
                   village, remodel, mine, feast};
@@ -70,19 +68,19 @@ int main() {
     int overallTestsCompleted = 0;
 
     //Go through n iterations of random tests
-    //Note that I ran this with many more iterations
-    //but got the same information I could get with
-    //only 20 iterations. So I am turning it in with
-    //only 20 iterations in the interest of saving space
-    //in the out file
+    //Note I ran this with many more iterations
+    //but got the same information I got
+    //with only 20 iterations. I am turning
+    //this in with 20 in the interest
+    //of saving space in the .out file
     for (n = 0; n < 20; n++)
     {
-        printf("Random Iteration #%d:\n", n + 1); 
-    
+        printf("Random Iteration #%d:\n", n + 1);
+
         //Randomly choose number of players from 2 to 4
         int numPlayer;
         numPlayer = (rand() % 3) + 2;
-
+    
         struct gameState G;
         struct gameState origG;
         memset(&G, 23, sizeof(struct gameState));   // clear the game state
@@ -94,29 +92,30 @@ int main() {
         int choice2 = 0;
         int choice3 = 0;
         int bonus = 0;
-        int smithyInHand = 0;
+        int numOriginalTreasuresInHand = 0;
+        int numTreasuresInDeck = 0;
+        int numTreasuresInDiscard = 0;
+        int numNewTreasures = 0;
+        int adventurerInHand = 0;
         int correctNumCardsInHand = 1;
-        int correctSmithysInHand = 1;
+        int correctNumAdventurersInHand = 1;
+        int correctNumTreasuresInHand = 1;
         int correctNumCardsInDeck = 1;
         int correctNumCardsInDiscard = 1;
         int otherPlayersCardsSame = 1;
         int kingdomCardsSame = 1;
         int treasureCardsSame = 1;
-        int victoryCardsSame = 1; 
+        int victoryCardsSame = 1;
 
         //Randomly choose how many cards are in each player's hand, deck, and discard (between 3 and 10)
-        int numCards;
         for (i = 0; i < numPlayer; i++)
         {
-            numCards = (rand() % 8) + 3;
-            G.handCount[i] = numCards;
-            numCards = (rand() % 8) + 3;
-            G.deckCount[i] = numCards;
-            numCards = (rand() % 8) + 3;
-            G.discardCount[i] = numCards; 
+            G.handCount[i] = (rand() % 8) + 3;
+            G.deckCount[i] = (rand() % 8) + 3;
+            G.discardCount[i] = (rand() % 8) + 3;
         }
-    
-        //Randomly fill each player's hand, discard, deck
+
+        //Randomly fill each player's hand, discard
         for (i = 0; i < numPlayer; i++)
         {
             for (j = 0; j < G.handCount[i]; j++)
@@ -161,71 +160,101 @@ int main() {
         G.whoseTurn = rand() % numPlayer;
         currentPlayer = G.whoseTurn;
     
-        //Put a Smithy card in current player's hand
-        G.hand[G.whoseTurn][0] = smithy;
+	//Put an Adventurer card in current player's hand
+        G.hand[currentPlayer][0] = adventurer;
     //    printf("Current player is %d\n",G.whoseTurn);
     
-        //Count number of Smithy's in current player's hand
-        int numSmithy = 0;
-        for (i = 0; i < G.handCount[G.whoseTurn]; i++)
-            if (G.hand[G.whoseTurn][i] == smithy)
-                numSmithy++;
-    
-    //    printf("# smitys is %d\n",numSmithy);
-    
-    //    int numCardsinHand;
-    //    numCardsinHand = G.handCount[currentPlayer];
-    //    printf("# cards in hand of current player is %d\n",numCardsinHand);
-    //    printf("# cards in deck of curent player is %d\n",G.deckCount[currentPlayer]);
-    //    printf("# cards in discard of current player is %d\n",G.discardCount[currentPlayer]);
-    
-        //Test Smithy Card
-        int testsPassed = 0;
-        int testsCompleted = 0;
-    
-        //Make copy of current game state to compare to game state after card is played
-        memcpy(&origG, &G, sizeof(struct gameState));
-    
-        //Play Smithy Card
-        cardEffect(smithy, choice1, choice2, choice3, &G, handpos, &bonus);
-    
-        printf("----------TESTING smithy CARD----------\n");
-    
-    
-        //Check to make sure correct number of cards in hand
-        if (G.handCount[currentPlayer] == origG.handCount[currentPlayer] + 2)
-            theResult(1, &testsPassed, &testsCompleted);
-        else
-        {
-            theResult(0, &testsPassed, &testsCompleted);
-            correctNumCardsInHand = 0;
-        }
-       printf("Number of cards in hand:\tExpected %d, got %d\n", origG.handCount[currentPlayer] + 2, G.handCount[currentPlayer]);
-    
-        //Check to make sure there is one less Smithy in current player's hand
+        //Count number of Adventurers in current player's hand
+        int numAdventurer = 0;
         for (i = 0; i < G.handCount[currentPlayer]; i++)
-            if (G.hand[currentPlayer][i] == smithy)
-                smithyInHand++;
-        if (smithyInHand == numSmithy - 1)
-            theResult(1, &testsPassed, &testsCompleted);
-        else
+            if (G.hand[currentPlayer][i] == adventurer)
+                numAdventurer++;
+        printf("----------TESTING adventurer CARD----------:\n");
+
+
+        printf("Player's original hand(4, 5, 6 are treasure 7 is adventurer): ");
+        for (i = 0; i < G.handCount[currentPlayer]; i++)
+            printf("%d ",G.hand[currentPlayer][i]);
+        printf("\n");
+
+        //Count number of Treasure Cards in current player's hand, deck, and discard
+        for (i = 0; i < G.handCount[currentPlayer]; i++)
+            for (j = 0; j < 3; j++)
+            {
+                if (G.hand[currentPlayer][i] == treasure[j])
+                    numOriginalTreasuresInHand++;
+                if (G.deck[currentPlayer][i] == treasure[j])
+                    numTreasuresInDeck++;
+                if (G.discard[currentPlayer][i] == treasure[j])
+                    numTreasuresInDiscard++;
+            }
+//        printf("Number of original treasures in hand is %d\n",numOriginalTreasuresInHand);
+//        printf("# treasures in deck is %d\n",numTreasuresInDeck);
+//        printf("# treasures in discard is %d\n",numTreasuresInDiscard);
+
+        //Test Adventurer Card
+    
+        int testsPassed = 0;
+        int testsCompleted = 0; 
+   
+        //Make copy of current game state to compare to game state after card is played 
+        memcpy(&origG, &G, sizeof(struct gameState));
+
+        //Play Adventurer Card
+        cardEffect(adventurer, choice1, choice2, choice3, &G, handpos, &bonus);
+ 
+        printf("Player's hand after card effect(4, 5, 6 are treasure, 7 is adventurer): ");
+        for (i = 0; i < G.handCount[currentPlayer]; i++)
+            printf("%d ",G.hand[currentPlayer][i]);
+        printf("\n");
+
+        //Check to make sure correct number of cards in player's hand - should be 1 more
+        //because two treasure cards are added and one Adventurer card is removed
+        //Note that this only works if player has enough treasure cards in their deck/discard
+        if (numTreasuresInDeck + numTreasuresInDiscard >= 2)
         {
-            theResult(0, &testsPassed, &testsCompleted);
-            correctSmithysInHand = 0;
+            if (G.handCount[currentPlayer] == origG.handCount[currentPlayer] + 1)
+                theResult(1, &testsPassed, &testsCompleted);
+            else
+            {
+                theResult(0, &testsPassed, &testsCompleted);
+                correctNumCardsInHand = 0;
+            }
         }
-        printf("Smithy in hand:\tExpected %d, got %d\n", numSmithy - 1, smithyInHand);
         
+        //Check to make sure there are two more treasure cards in player's hand
+        //Note that this only works if the player has enough treasure cards in their deck/discard
+        if (numTreasuresInDeck + numTreasuresInDiscard >= 2)
+        {
+            for (i = 0; i < G.handCount[currentPlayer]; i++)
+                for (j = 0; j < 3; j++)
+                    if (G.hand[currentPlayer][i] == treasure[j])
+                        numNewTreasures++;
+            if (numNewTreasures == numOriginalTreasuresInHand + 2)
+                theResult(1, &testsPassed, &testsCompleted);
+            else
+            {
+                theResult(0, &testsPassed, &testsCompleted);
+                correctNumTreasuresInHand = 0;
+            }
+//            printf("Number of treasure cards in hand:\tExpected %d, got %d\n", numOriginalTreasuresInHand + 2, numNewTreasures);
+        }
+        else
+            printf("Not testing number of treasure cards in hand\n");
     
-        //Check to make sure 3 less cards in current player's deck
-        if (G.deckCount[currentPlayer] == origG.deckCount[currentPlayer] - 3)
+        //Check to make sure there is one less Adventurer in the hand
+        for (i = 0; i < G.handCount[currentPlayer]; i++)
+            if (G.hand[currentPlayer][i] == adventurer)
+                adventurerInHand++;
+        if (adventurerInHand == numAdventurer - 1)
             theResult(1, &testsPassed, &testsCompleted);
         else
         {
             theResult(0, &testsPassed, &testsCompleted);
-            correctNumCardsInDeck = 0;
+            correctNumAdventurersInHand = 0;
         }
-        printf("Number of cards in deck:\tExpected %d, got %d\n",origG.deckCount[currentPlayer] - 3, G.deckCount[currentPlayer]);
-    
+//        printf("Adventurer in hand:\tExpected %d, got %d\n", numAdventurer - 1, adventurerInHand);
+        
         //Check to make sure other players have the same number of cards in their hands, decks, and discard piles
         for (i = 0; i < numPlayer; i++)
         {
@@ -238,7 +267,7 @@ int main() {
                     theResult(0, &testsPassed, &testsCompleted);
                     otherPlayersCardsSame = 0;
                 }
-                printf("Player %d, expected %d cards in hand, got %d\n",i, origG.handCount[i], G.handCount[i]);
+//                printf("Player %d, expected %d cards in hand, got %d\n",i, origG.handCount[i], G.handCount[i]);
             }
         }
     
@@ -396,9 +425,12 @@ int main() {
         {
             printf("%d passed out of %d tests.\n", testsPassed, testsCompleted);
             if (correctNumCardsInHand == 0)
-                printf("Incorrect number of cards in current player's hand, expected %d got %d\n",origG.handCount[currentPlayer] + 2, G.handCount[currentPlayer]);
-            if (correctSmithysInHand == 0)
-                printf("Incorrect number of Smithys in current player's hand, expected %d, got %d\n", numSmithy - 1, smithyInHand);
+                printf("Incorrect number of cards in current player's hand, expected %d got %d\n",origG.handCount[currentPlayer] + 1, G.handCount[currentPlayer]);
+            if (correctNumAdventurersInHand == 0)
+                printf("Incorrect number of Adventurers in current player's hand, expected %d, got %d\n", numAdventurer - 1, adventurerInHand);
+            if (correctNumTreasuresInHand == 0)
+                printf("Incorrect number of Treasures in current player's hand:\tExpected %d, got %d\n", numOriginalTreasuresInHand + 2, numNewTreasures);
+ 
             if (correctNumCardsInDeck == 0)
                 printf("Incorrect number of cards in current player's deck, expected %d, got %d\n",origG.deckCount[currentPlayer] - 3, G.deckCount[currentPlayer]);
             if (correctNumCardsInDiscard == 0)
@@ -412,11 +444,12 @@ int main() {
             if (victoryCardsSame == 0)
                 printf("Victory Card Supply piles incorrect\n");
         }
-        printf("----------FINISHED TESTING smithy CARD----------\n\n");
+        printf("----------FINISHED TESTING adventurer CARD----------\n\n");
         overallTestsPassed += testsPassed;
         overallTestsCompleted+= testsCompleted;
     }    
     printf("Overall tests Passed: %d\n", overallTestsPassed);
     printf("Overall tests Completed: %d\n", overallTestsCompleted);
+ 
     return 0;
 }
