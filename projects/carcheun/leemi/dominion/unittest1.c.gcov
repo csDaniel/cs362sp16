@@ -1,0 +1,258 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * Carolyn Cheung
+        -:    3: * Testing: updateCoins
+        -:    4: *      update current players coins
+        -:    5: */
+        -:    6: #include<stdio.h>
+        -:    7:#include<stdlib.h>
+        -:    8:#include <assert.h>
+        -:    9:#include <string.h>
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include "rngs.h"
+        -:   13:
+        -:   14:#define TESTCARD "updateCoins()"
+        -:   15:
+function testUpdateCoins called 1 returned 100% blocks executed 77%
+        1:   16:void testUpdateCoins() {
+        -:   17:    struct gameState gState, gStateTest;
+        1:   18:    int seed = 7;
+        1:   19:    int numPlayers = 2;
+        1:   20:    int p = 0;
+        1:   21:    int choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0, handPos = 0;
+        1:   22:    int cardCount = 0, cardCountTest = 0;
+        -:   23:    int i, j;
+        -:   24:
+        1:   25:    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   26:			sea_hag, tribute, smithy, council_room};
+        -:   27:
+        1:   28:    initializeGame(numPlayers, k, seed, &gStateTest);
+call    0 returned 100%
+        1:   29:    initializeGame(numPlayers, k, seed, &gState);
+call    0 returned 100%
+        6:   30:    for (i = 0; i < gStateTest.handCount[p]; i++) {
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:   31:            gStateTest.hand[p][i] = gold;
+        5:   32:            gState.hand[p][i] = baron;
+        -:   33:    }
+        1:   34:    updateCoins(p, &gStateTest, 0);
+call    0 returned 100%
+        1:   35:    updateCoins(p, &gState, 0);
+call    0 returned 100%
+        -:   36:
+        1:   37:    printf("==== TESTING: %s ====\n", TESTCARD);
+call    0 returned 100%
+        1:   38:    printf("\nCASE 1: Full baron hand vs Full gold hand coin calculations\n");
+call    0 returned 100%
+        1:   39:    printf("        Expected vs Real\n");
+call    0 returned 100%
+        1:   40:    printf(" p0 hand count = %d, p0 hand count = %d\n", gState.handCount[p], gStateTest.handCount[p]);
+call    0 returned 100%
+        1:   41:    printf(" p0 deck count = %d, p0 deck count = %d\n", gState.deckCount[p], gStateTest.deckCount[p]);
+call    0 returned 100%
+        1:   42:    printf(" p1 hand count = %d, p1 hand count = %d\n", gState.handCount[1], gStateTest.handCount[1]);
+call    0 returned 100%
+        1:   43:    printf(" p1 deck count = %d, p1 deck count = %d\n", gState.deckCount[1], gStateTest.deckCount[1]);
+call    0 returned 100%
+        1:   44:    printf(" estate count = %d, estate count = %d\n", gState.supplyCount[estate], gStateTest.supplyCount[estate]);
+call    0 returned 100%
+        1:   45:    printf(" duchy count = %d, duchy count = %d\n", gState.supplyCount[duchy], gStateTest.supplyCount[duchy]);
+call    0 returned 100%
+        1:   46:    printf(" province count = %d, province count = %d\n", gState.supplyCount[province], gStateTest.supplyCount[province]);
+call    0 returned 100%
+        1:   47:    printf(" Full Baron hand vs Full gold hand coin value = %d vs %d\n", gState.coins, gStateTest.coins);
+call    0 returned 100%
+        -:   48:
+        1:   49:    assert(gState.handCount[p] == gStateTest.handCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   50:    assert(gState.deckCount[p] == gStateTest.deckCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   51:    assert(gState.handCount[1] == gStateTest.handCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   52:    assert(gState.deckCount[1] == gStateTest.deckCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   53:    assert(gState.supplyCount[duchy] == gStateTest.supplyCount[duchy]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   54:    assert(gState.supplyCount[estate] == gStateTest.supplyCount[estate]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   55:    assert(gState.supplyCount[province] == gStateTest.supplyCount[province]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   56:    assert(gState.coins != gStateTest.coins);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   57:    printf("    CASE 1 PASS\n");
+call    0 returned 100%
+        -:   58:
+        1:   59:    initializeGame(numPlayers, k, seed, &gStateTest);
+call    0 returned 100%
+        1:   60:    initializeGame(numPlayers, k, seed, &gState);
+call    0 returned 100%
+        6:   61:    for (i = 0; i < gStateTest.handCount[p]; i++) {
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:   62:            gStateTest.hand[p][i] = copper;
+        5:   63:            gState.hand[p][i] = baron;
+        -:   64:    }
+        1:   65:    bonus = 3;
+        1:   66:    updateCoins(p, &gStateTest, bonus);
+call    0 returned 100%
+        1:   67:    updateCoins(p, &gState, 0);
+call    0 returned 100%
+        1:   68:    printf("\nCASE 2: Full baron hand vs Full copper hand + bonus %d coin calculations\n", bonus);
+call    0 returned 100%
+        1:   69:    printf("        Expected vs Real\n");
+call    0 returned 100%
+        1:   70:    printf(" p0 hand count = %d, p0 hand count = %d\n", gState.handCount[p], gStateTest.handCount[p]);
+call    0 returned 100%
+        1:   71:    printf(" p0 deck count = %d, p0 deck count = %d\n", gState.deckCount[p], gStateTest.deckCount[p]);
+call    0 returned 100%
+        1:   72:    printf(" p1 hand count = %d, p1 hand count = %d\n", gState.handCount[1], gStateTest.handCount[1]);
+call    0 returned 100%
+        1:   73:    printf(" p1 deck count = %d, p1 deck count = %d\n", gState.deckCount[1], gStateTest.deckCount[1]);
+call    0 returned 100%
+        1:   74:    printf(" estate count = %d, estate count = %d\n", gState.supplyCount[estate], gStateTest.supplyCount[estate]);
+call    0 returned 100%
+        1:   75:    printf(" duchy count = %d, duchy count = %d\n", gState.supplyCount[duchy], gStateTest.supplyCount[duchy]);
+call    0 returned 100%
+        1:   76:    printf(" province count = %d, province count = %d\n", gState.supplyCount[province], gStateTest.supplyCount[province]);
+call    0 returned 100%
+        1:   77:    printf(" Full Baron hand vs Full copper + bonus: %d hand coin value = %d vs %d\n", bonus, gState.coins, gStateTest.coins);
+call    0 returned 100%
+        -:   78:
+        1:   79:    assert(gState.handCount[p] == gStateTest.handCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   80:    assert(gState.deckCount[p] == gStateTest.deckCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   81:    assert(gState.handCount[1] == gStateTest.handCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   82:    assert(gState.deckCount[1] == gStateTest.deckCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   83:    assert(gState.supplyCount[duchy] == gStateTest.supplyCount[duchy]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   84:    assert(gState.supplyCount[estate] == gStateTest.supplyCount[estate]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   85:    assert(gState.supplyCount[province] == gStateTest.supplyCount[province]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   86:    assert(gState.coins != gStateTest.coins);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   87:    printf("    CASE 2 PASS\n");
+call    0 returned 100%
+        -:   88:
+        1:   89:    initializeGame(numPlayers, k, seed, &gStateTest);
+call    0 returned 100%
+        1:   90:    initializeGame(numPlayers, k, seed, &gState);
+call    0 returned 100%
+        6:   91:    for (i = 0; i < gStateTest.handCount[p]; i++) {
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:   92:            gStateTest.hand[p][i] = silver;
+        -:   93:    }
+        1:   94:    bonus = 3;
+        1:   95:    updateCoins(p, &gStateTest, 0);
+call    0 returned 100%
+        1:   96:    updateCoins(p, &gState, 0);
+call    0 returned 100%
+        1:   97:    printf("\nCASE 3: Check silver calculations\n", bonus);
+call    0 returned 100%
+        1:   98:    printf("        Expected vs Real\n");
+call    0 returned 100%
+        1:   99:    printf(" p0 hand count = %d, p0 hand count = %d\n", gState.handCount[p], gStateTest.handCount[p]);
+call    0 returned 100%
+        1:  100:    printf(" p0 deck count = %d, p0 deck count = %d\n", gState.deckCount[p], gStateTest.deckCount[p]);
+call    0 returned 100%
+        1:  101:    printf(" p1 hand count = %d, p1 hand count = %d\n", gState.handCount[1], gStateTest.handCount[1]);
+call    0 returned 100%
+        1:  102:    printf(" p1 deck count = %d, p1 deck count = %d\n", gState.deckCount[1], gStateTest.deckCount[1]);
+call    0 returned 100%
+        1:  103:    printf(" estate count = %d, estate count = %d\n", gState.supplyCount[estate], gStateTest.supplyCount[estate]);
+call    0 returned 100%
+        1:  104:    printf(" duchy count = %d, duchy count = %d\n", gState.supplyCount[duchy], gStateTest.supplyCount[duchy]);
+call    0 returned 100%
+        1:  105:    printf(" province count = %d, province count = %d\n", gState.supplyCount[province], gStateTest.supplyCount[province]);
+call    0 returned 100%
+        1:  106:    printf(" SEED initialized vs full silver hand = %d vs %d\n", gState.coins, gStateTest.coins);
+call    0 returned 100%
+        -:  107:
+        1:  108:    assert(gState.handCount[p] == gStateTest.handCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  109:    assert(gState.deckCount[p] == gStateTest.deckCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  110:    assert(gState.handCount[1] == gStateTest.handCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  111:    assert(gState.deckCount[1] == gStateTest.deckCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  112:    assert(gState.supplyCount[duchy] == gStateTest.supplyCount[duchy]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  113:    assert(gState.supplyCount[estate] == gStateTest.supplyCount[estate]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  114:    assert(gState.supplyCount[province] == gStateTest.supplyCount[province]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  115:    assert(gState.coins != gStateTest.coins);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:  116:    printf("    CASE 3 PASS\n");
+call    0 returned 100%
+        -:  117:
+        1:  118:    printf("\n      testUpdateCoins(): PASS\n");
+call    0 returned 100%
+        1:  119:}
+        -:  120:
+function main called 1 returned 100% blocks executed 100%
+        1:  121:int main(int argc, char *argv[])
+        -:  122:{
+        1:  123:    testUpdateCoins();
+call    0 returned 100%
+        1:  124:    return 0;
+        -:  125:}
