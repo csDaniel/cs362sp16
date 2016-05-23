@@ -1,0 +1,56 @@
+Testing updateCoins()
+Done
+
+File 'dominion.c'
+Lines executed:22.54% of 568
+Creating 'dominion.c.gcov'
+
+Testing playAdventurer()
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 1 != post->handCount[currentPlayer]
+pre.playedCardCount + 1 != post->playedCardCount
+post->playedCards[post->playedCardCount - 1] != adventurer
+Done
+
+File 'dominion.c'
+Lines executed:24.65% of 568
+Creating 'dominion.c.gcov'
+
+Testing playSmithy()
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 2 != post->handCount[currentPlayer]
+pre.deckCount[currentPlayer] - 3 != post->deckCount[currentPlayer]
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 2 != post->handCount[currentPlayer]
+pre.deckCount[currentPlayer] - 3 != post->deckCount[currentPlayer]
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 2 != post->handCount[currentPlayer]
+pre.deckCount[currentPlayer] - 3 != post->deckCount[currentPlayer]
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 2 != post->handCount[currentPlayer]
+pre.deckCount[currentPlayer] - 3 != post->deckCount[currentPlayer]
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 2 != post->handCount[currentPlayer]
+pre.deckCount[currentPlayer] - 3 != post->deckCount[currentPlayer]
+pre.numActions - 1 != post->numActions
+pre.handCount[currentPlayer] + 2 != post->handCount[currentPlayer]
+pre.deckCount[currentPlayer] + pre.discardCount[currentPlayer] - 3 != post->deckCount[currentPlayer]
+Done
+
+File 'dominion.c'
+Lines executed:27.99% of 568
+Creating 'dominion.c.gcov'
+
+Testing playVillage()
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+pre.numActions + 1 != post->numActions
+Done
+
+File 'dominion.c'
+Lines executed:29.05% of 568
+Creating 'dominion.c.gcov'
+

@@ -69,9 +69,21 @@
 * much more granular, so that I can reference the failures and see the more
 * interesting bugs. Specifically, the manipulation of other players' cards
 * became apparent after I broke everything into individual failure cases.
+*
+* Also significant is that some of the boundary cases really did not appear
+* until I switch the test mode to silent and increased the number of tests
+* to about 10,000. At 10,000 tests, situations for playAdventurer() where
+* there were fewer than 2 treasure cards arose and coverage increased; also
+* for playSmithy, situations where there were fewer than 3 cards in the deck
+* began to arise.
 * 
 * One thing that I would do to make this more practical (and is definitely
 * a lot of work) is implementing a system to store all the failed
 * game TestStates, so another more detailed analysis of what particular
-* interactions between all the cards caused the more esoteric failures.
+* interactions between all the cards caused the more esoteric failures would
+* be possible. It is certainly possible with the suite I have created.
+* One path that I decided not to take was concatenating a string containing a
+* list of all the failures for a partiular test, so it would be possible to
+* go back and look at all the factors surrounding a failure, but it ended up
+* not being practical for thousands of tests.
 ******************************************************************************/

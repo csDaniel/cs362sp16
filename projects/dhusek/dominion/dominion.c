@@ -1128,6 +1128,12 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos, int 
     int drawntreasure=0;
     int cardDrawn;
     int z = 0;// this is the counter for the temp hand
+    
+    // make sure that card passed in to function is adventurer
+    if(state->hand[currentPlayer][handPos] != adventurer) {
+        return -1;
+    }
+    
     while(drawntreasure<2){
         if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
             shuffle(currentPlayer, state);
@@ -1143,12 +1149,15 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos, int 
         }
     }
     while(z-1>=0){
-        state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z]; // discard all cards in play that have been drawn
+        state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
         z=z-1;
     }
     
     //discard played card from hand
     discardCard(handPos, currentPlayer, state, 0);
+    
+    //update the current player's coin count to reflect the treasure cards that they drew
+    updateCoins(currentPlayer, state, 0);
     
     return 0;
 }
@@ -1156,7 +1165,7 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos, int 
 int playSmithy(struct gameState *state, int handPos, int currentPlayer) {
     int i;
     //+3 Cards
-    for (i = 0; i <= 3; i++)
+    for (i = 0; i < 3; i++)
     {
         drawCard(currentPlayer, state);
     }
@@ -1175,7 +1184,7 @@ int playVillage(struct gameState *state, int handPos, int currentPlayer) {
     state->numActions = state->numActions + 2;
     
     //discard played card from hand
-    discardCard(handPos, currentPlayer, state, 1);
+    discardCard(handPos, currentPlayer, state, 0);
     
     return 0;
 }
@@ -1256,7 +1265,7 @@ int playCouncil_Room(struct gameState *state, int handPos, int currentPlayer) {
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++)
     {
-        if ( i == currentPlayer )
+        if ( i != currentPlayer )
         {
             drawCard(i, state);
         }
@@ -1274,9 +1283,9 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
   //if card is not trashed, added to Played pile 
   if (trashFlag < 1)
     {
-      //add card to played pile
-      state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
-      state->playedCardCount++;
+      //add card to discard pile
+      state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][handPos];
+      state->discardCount[currentPlayer]++;
     }
   else //card is trashed
     {

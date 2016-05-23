@@ -43,40 +43,38 @@ int main()
 
 	who = game.whoseTurn;
 	cardTotalBefore = game.handCount[who];
-	i = discardCard(p, who, game, 1);
+	i = discardCard(p, who, &game, 1);
 	cardTotalAfter = game.handCount[who];
 
 
 	//Test number of cards in designated player's hand after gainCard called to hand
 	if(cardTotalBefore == cardTotalAfter)
 	{
-		printf("Failure! Card was not discarded from player hand.");
+		printf("Failure! Card was not discarded from player hand.\n");
 	}
 
 	if(cardTotalBefore > cardTotalAfter)
 	{
-		printf("Success! Card total decreased!");
+		printf("Success! Card total decreased!\n");
 	}
 
 
 	//Tests when card discarded should be trashed as well.
-	cardTotalBefore = game.deckCount[who];
-	j = discardCard(p, who, game, 0);
-	cardTotalAfter = game.deckCount[who];
+	cardTotalBefore = game.playedCardCount;
+	j = discardCard(p, who, &game, 0);
+	cardTotalAfter = game.playedCardCount;
 
 
 	//Test number of cards in designated player's hand after discardCard called
 	if(cardTotalBefore == cardTotalAfter)
 	{
-		printf("Failure! Discard did not function when trashFlag set.");
+		printf("Failure! Discard did not function when trashFlag set.\n");
 	}
 
 	if(cardTotalBefore < cardTotalAfter)
 	{
-		printf("Success! Card discarded successfully.");
+		printf("Success! Card discarded successfully.\n");
 	}
 
-
-
-
+	return 0;
 }

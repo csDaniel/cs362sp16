@@ -26,14 +26,17 @@ int main(){
 	int currPlayer = whoseTurn(&gS);
 	beforeCards = gS.handCount[currPlayer];
 	beforeActions = gS.numActions;
-	result = cardEffect(village, 0, 0, 0, &gS, handPos, 0);
+
+	printf("Before actions: %d\n",beforeActions);
+	result = playVillageCard(&gS, handPos);
+	printf("After actions: %d\n",gS.numActions);
 
 	if(beforeCards == gS.handCount[currPlayer])
 		printf("Village card test passed.\n");
 	else
 		printf("Village card test failed.\n");
 
-	if((beforeActions + 1) == gS.numActions)
+	if((beforeActions + 2) == gS.numActions)
 		printf("Village action test passed.\n");
         else
                 printf("Village action test failed.\n");

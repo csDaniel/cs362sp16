@@ -28,7 +28,7 @@ int main() {
     initialDeck = Game.deckCount[player];
     initialHand = Game.handCount[player];
 
-    playAdventurer(&Game);
+    cardEffect(adventurer, 0,0,0, &Game, 0, 0);
 
     finalDeck = Game.deckCount[player];
     finalHand = Game.handCount[player];

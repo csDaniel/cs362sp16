@@ -1,0 +1,152 @@
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:5
+        -:    0:Programs:1
+        -:    1:/******************************************************************************
+        -:    2:* ASSIGNMENT 5 - unittest4.c
+        -:    3:* AUTHOR: Nickolas A. Williams
+        -:    4:* CLASS: CS362
+        -:    5:* DATE: 05/22/2016
+        -:    6:* NOTES: unit testing of the updateCoins() function
+        -:    7:* REQUIREMENTS for updateCoins():
+        -:    8:*  1. Add coins for each treasure card in hand
+        -:    9:*  2. Add bonus to coin count if passed in
+        -:   10:* TESTING tasks for updateCoins():
+        -:   11:*  1. Test that correct values are given for treasure cards
+        -:   12:*  2. Test that correct bonus value is added for bonus value
+        -:   13:*  3. Test that coins are provided to the correct player from their hand
+        -:   14:*  4. Test edge cases: negative bonuses, varied treasure types, no treasures
+        -:   15:* CREDITS: Provided by the instructor as an example and template, I added
+        -:   16:*     additional tests at the end for more examples
+        -:   17:******************************************************************************/
+        -:   18:
+        -:   19:
+        -:   20:#include "dominion.h"
+        -:   21:#include "dominion_helpers.h"
+        -:   22:#include <string.h>
+        -:   23:#include <stdio.h>
+        -:   24:#include <assert.h>
+        -:   25:#include "rngs.h"
+        -:   26:
+        -:   27:// set NOISY_TEST to 0 to remove printfs from output
+        -:   28:#define NOISY_TEST 0
+        -:   29:
+        5:   30:int main() {
+        -:   31:    int i;
+        5:   32:    int seed = 1000;
+        5:   33:    int numPlayer = 2;
+        5:   34:    int maxBonus = 10;
+        -:   35:    int p, r, handCount;
+        -:   36:    int bonus;
+        5:   37:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   38:               , remodel, smithy, village, baron, great_hall};
+        -:   39:    struct gameState G;
+        5:   40:    int maxHandCount = 5;
+        -:   41:    // arrays of all coppers, silvers, and golds
+        -:   42:    int coppers[MAX_HAND];
+        -:   43:    int silvers[MAX_HAND];
+        -:   44:    int golds[MAX_HAND];
+     2505:   45:    for (i = 0; i < MAX_HAND; i++)
+        -:   46:    {
+     2500:   47:        coppers[i] = copper;
+     2500:   48:        silvers[i] = silver;
+     2500:   49:        golds[i] = gold;
+        -:   50:    }
+        -:   51:	
+        -:   52:	//no treasure hand
+        -:   53:	int noTreasures[MAX_HAND];
+     2505:   54:	for (i = 0; i < MAX_HAND; i++)
+        -:   55:	{
+     2500:   56:		noTreasures[i] = adventurer;
+        -:   57:	}
+        -:   58:	
+        -:   59:	int oneOfEach[MAX_HAND];
+     2505:   60:	for (i = 0; i < MAX_HAND; i++)
+        -:   61:	{
+     2500:   62:		if (i % 3 == 0)
+        -:   63:		{
+      835:   64:			oneOfEach[i] = copper;
+        -:   65:		}
+     2500:   66:		if (i % 3 == 1)
+        -:   67:		{
+      835:   68:			oneOfEach[i] = silver;
+        -:   69:		}
+     2500:   70:		if (i % 3 == 2)
+        -:   71:		{
+      830:   72:			oneOfEach[i] = gold;
+        -:   73:		}
+        -:   74:	}
+        -:   75:
+        5:   76:    printf ("TESTING updateCoins():\n");
+       15:   77:    for (p = 0; p < numPlayer; p++)
+        -:   78:    {
+       60:   79:        for (handCount = 1; handCount <= maxHandCount; handCount++)
+        -:   80:        {
+     1100:   81:            for (bonus = -10; bonus <= maxBonus; bonus++)
+        -:   82:            {
+        -:   83:#if (NOISY_TEST == 1)
+        -:   84:                printf("Test player %d with %d treasure card(s) and %d bonus.\n", p, handCount, bonus);
+        -:   85:#endif
+     1050:   86:                memset(&G, 23, sizeof(struct gameState));   // clear the game state
+     1050:   87:                r = initializeGame(numPlayer, k, seed, &G); // initialize a new game
+     1050:   88:                G.handCount[p] = handCount;                 // set the number of cards on hand
+     1050:   89:                memcpy(G.hand[p], coppers, sizeof(int) * handCount); // set all the cards to copper
+     1050:   90:                updateCoins(p, &G, bonus);
+        -:   91:#if (NOISY_TEST == 1)
+        -:   92:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 1 + bonus);
+        -:   93:#endif
+     1050:   94:                assert(G.coins == handCount * 1 + bonus); // check if the number of coins is correct
+        -:   95:
+     1050:   96:                memcpy(G.hand[p], silvers, sizeof(int) * handCount); // set all the cards to silver
+     1050:   97:                updateCoins(p, &G, bonus);
+        -:   98:#if (NOISY_TEST == 1)
+        -:   99:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 2 + bonus);
+        -:  100:#endif
+     1050:  101:                assert(G.coins == handCount * 2 + bonus); // check if the number of coins is correct
+        -:  102:
+     1050:  103:                memcpy(G.hand[p], golds, sizeof(int) * handCount); // set all the cards to gold
+     1050:  104:                updateCoins(p, &G, bonus);
+        -:  105:#if (NOISY_TEST == 1)
+        -:  106:                printf("G.coins = %d, expected = %d\n", G.coins, handCount * 3 + bonus);
+        -:  107:#endif
+     1050:  108:                assert(G.coins == handCount * 3 + bonus); // check if the number of coins is correct
+        -:  109:
+        -:  110:
+     1050:  111:				memcpy(G.hand[p], noTreasures, sizeof(int) * handCount); // set all the cards adventurer
+     1050:  112:				updateCoins(p, &G, bonus);
+        -:  113:#if (NOISY_TEST == 1)
+        -:  114:                printf("No treasures, G.coins = %d, expected = %d\n", G.coins, bonus);
+        -:  115:#endif				
+        -:  116:				
+     1050:  117:				int expectedTotal = 0;
+        -:  118:				int q;
+     4200:  119:				for (q = 0; q < handCount; q++)
+        -:  120:				{
+     3150:  121:					if (q % 3 == 0)
+        -:  122:					{
+     1470:  123:						expectedTotal = expectedTotal + 1;
+        -:  124:					}
+     3150:  125:					if (q % 3 == 1)
+        -:  126:					{
+     1050:  127:						expectedTotal = expectedTotal + 2;
+        -:  128:					}
+     3150:  129:					if (q % 3 == 2)
+        -:  130:					{
+      630:  131:						expectedTotal = expectedTotal + 3;
+        -:  132:					}
+        -:  133:				}
+     1050:  134:				expectedTotal = expectedTotal + bonus;
+     1050:  135:				memcpy(G.hand[p], oneOfEach, sizeof(int) * handCount); // set to one of each treasure type
+     1050:  136:				updateCoins(p, &G, bonus);
+        -:  137:#if (NOISY_TEST == 1)
+        -:  138:                printf("G.coins = %d, expected = %d\n", G.coins, expectedTotal);
+        -:  139:#endif
+        -:  140:            }
+        -:  141:        }
+        -:  142:    }
+        -:  143:
+        5:  144:    printf("All tests passed!\n");
+        -:  145:
+        5:  146:    return 0;
+        -:  147:}

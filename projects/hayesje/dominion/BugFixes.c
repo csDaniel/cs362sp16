@@ -8,8 +8,9 @@ BUG 1: Teammate 1 - Smithy Card
        Description: Test results show that only 2 cards are drawn from the deck
 
        Bug Identification: Looking at teammate1 smithyCard code, the bug is easily
-            spotted in the for loop controlling the number of cards.
-
+            spotted in the for loop controlling the number of cards. Bug is located
+            on line 1043 in teammate1Dominion/domonion.c
+            
             Bad code:  loop only iterates 2 times.
                  for (i = 0; i < 2; i++) {
                     drawCard(currentPlayer, state);
@@ -38,7 +39,8 @@ BUG 2: Teammate 1 - Adventurer Card
                been revealed
 
        Bug Identification: Looking at teammate1 adventurerCard code, the bug is easily
-               spotted in the while loop controlling the number of treasure cards to be drawn
+               spotted in the while loop controlling the number of treasure cards to be drawn.
+               The bug is located on line 1053 in teammate1Dominion/domonion.c
 
                Bad code:  loop attempts to find 4 treasure cards.
                     while(drawntreasure<4){
@@ -69,7 +71,7 @@ BUG 3: Teammate 1 - Adventurer Card
 
        Bug Identification: Looking at teammate1 adventurerCard code, the bug is easily 
            spotted in the condition statement that determines if a drawn card is a treasure
-           card.
+           card.  The bug is located on line 1059 in teammate1Dominion/domonion.c
 
            Bad code: The code only recognizes copper and silver as treasure cards.
                   if (cardDrawn == copper || cardDrawn == silver)
@@ -91,7 +93,24 @@ BUG 3: Teammate 1 - Adventurer Card
        Random Test Summary after Second Fix
              randomtestadventurer => Passed:1000  Failed:0
 
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Teammate 1 (Samuel Jones) Summary: (Previewed after all testing was completed)
+
+The following is taken from Samuel's week2 refactor.c submission. 
+  "smithy:
+      - implemented through the smithyCard() method 
+        BUG: When the player plays the smithy card, the player draws 2 cards from their deck rather than 3.
+
+   adventurer:
+        implemented through the adventurerCard() method
+        BUG: Player keeps drawing cards until 4 treasure cards are drawn rather than 2.
+        BUG: If player draws a gold card, it will not count as one of the 4 treasure cards that need to be drawn."
+
+This agrees with the 3 bugs found during test, confirming correct bug identification and fixes.
+
+#####################################################################################
 
 BUG 4: Teammate 2 - Smithy Card
 
@@ -99,6 +118,8 @@ BUG 4: Teammate 2 - Smithy Card
 
        Bug Identification: Looking at teammate2 smithyCard code, the bug is easily 
               spotted in the for loop controlling the number of cards.
+              The bug is located on line 1283 in teammate2Dominion/domonion.c
+
 
               Bad code:  loop never iterates.
                    for (i = 0; i > 3; i++)
@@ -129,7 +150,7 @@ BUG 5: Teammate 2 - Adventurer Card
        Description: Segmentation fault occurred when running both unit test and random test
 
        Bug Identification: Looking at teammate2 adventurerCard code, a bug is easily spotted in 
-              a Boolean statement 
+              a Boolean statement.  The bug is located on line 1259 in teammate2Dominion/domonion.c 
 
               Bad code: Assignment used rather than comparison in Boolean expression.
                    if (state->deckCount[currentPlayer] = 0) { 
@@ -152,6 +173,31 @@ BUG 5: Teammate 2 - Adventurer Card
      Random Test Summary after Fix
           randomtestadventurer => Passed:1000  Failed:0
 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Teammate 2 (Justin Pareno) Summary (Previewed after all testing was completed):
+
+The following is taken from Justin's week2 refactor.c submission. 
+
+ "Smithy Refactor:
+    I introduced a bug by switching the conditional in the for loop from "< 3" to "> 3". This may
+    be hard to catch, but this will make it so no cards are actually drawn with the smithy card.
+
+  Adventurer Refactor:
+    I introduced a bug in the first if statement that is supposed to check to see if the deck is empty.
+    This bug is twofold. I changed the conditional to " = 0". This will always assign
+    the deckCount to 0 because it is not "==". Also, it was originally written as "< 1". If the 
+    deckCount ever drops below zero (-1, -2, etc) the conditional, even if it is fixed to "=="
+    would not always catch an empty deck."
+
+This agrees with the 2 bugs found during test, confirming correct bug identification and fixes. In
+fairness, changing the "==" to "=" was actually caught as a warning by the compiler, therefore no
+testing would even be required to detect it if one was to fix all compiler warnings. If fact, this
+would be more efficient in this case since testing produced a segmentation fault that was hard to 
+find even using gdb as described below.
+
+#####################################################################################
 
 Summary:  All bugs were found by the non-random unit tests cardtest1 and cardtest2, with
           the exception of bug 5 which is found by code inspection.  An attempt was made

@@ -647,7 +647,7 @@ void runSmithy(int handPos, struct gameState *state){
     int i;
     int currentPlayer = whoseTurn(state);
     //+3 Cards
-    for (i = 0; i < 2; i++)
+    for (i = 0; i < 3; i++)
     {
         drawCard(currentPlayer, state);
     }
@@ -706,7 +706,7 @@ void runCouncil_room(int handPos, struct gameState *state){
     int i;
     int currentPlayer = whoseTurn(state);
     //+4 Cards
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < 4; i++)
     {
         drawCard(currentPlayer, state);
     }
@@ -715,7 +715,7 @@ void runCouncil_room(int handPos, struct gameState *state){
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++)
     {
-        if ( i == currentPlayer )
+        if ( i != currentPlayer )
         {
             drawCard(i, state);
         }

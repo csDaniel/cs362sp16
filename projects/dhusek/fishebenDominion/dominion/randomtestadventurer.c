@@ -55,6 +55,9 @@ void randomTestAdventurer() {
     
     // set card in position 0 to adventurer
     G.hand[thisPlayer][handpos] = adventurer;
+    // update coins in case adventurer replaced a treasure card in hand.
+    updateCoins(thisPlayer, &G, bonus);
+    
     //printHand(thisPlayer, &G);
     // count treasure cards in G hand
     for(i = 0; i < G.handCount[thisPlayer]; i++) {
