@@ -89,7 +89,7 @@ int Village(int currentPlayer, int handPos, struct gameState * state)
 	//+1 Card
 	drawCard(currentPlayer, state);
 	//+2 Actions
-	state->numActions = state->numActions + 1;
+	state->numActions = state->numActions + 2;
 	//discard played card from hand
 	discardCard(handPos, currentPlayer, state, 0);
 	return 3;
@@ -103,7 +103,7 @@ int Minion(int currentPlayer, int handPos, struct gameState * state, int choice1
 	discardCard(handPos, currentPlayer, state, 0);
 	if (choice1)		//+2 coins
 	{
-		state->coins = state->coins;
+		state->coins = state->coins+2;
 	}
 	else
 	if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
