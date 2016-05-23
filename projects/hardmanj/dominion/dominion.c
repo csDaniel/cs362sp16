@@ -690,7 +690,7 @@ int UseCouncilRoom(struct gameState *state, int handPos)
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
 	{
-	  if ( i == currentPlayer )
+	  if ( i != currentPlayer )
 	    {
 	      drawCard(i, state);
 	    }
@@ -704,7 +704,7 @@ int UseSmithy(struct gameState *state, int handPos)
 {
 	int i;
 	int currentPlayer = whoseTurn(state);
-	for (i = 0; i <= 3; i++)
+	for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -731,7 +731,7 @@ int UseRemodel(struct gameState *state, int handPos,int choice1, int choice2)
 	int j;
 	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
-    if ( (getCost(state->hand[currentPlayer][choice1]) + 2) < getCost(choice2) )
+    if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
 	{
 		return -1;
 	}
@@ -777,7 +777,9 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
+	discardCard(handPos, currentPlayer, state, 0);
 	UseAdventurer(state);
+	return 0;
 	
     case council_room:
       //+4 Cards
