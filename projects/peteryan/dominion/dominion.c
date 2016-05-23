@@ -294,8 +294,12 @@ int buyCard(int supplyPos, struct gameState *state) {
   } else {
     state->phase=1;
     //state->supplyCount[supplyPos]--;
-    gainCard(supplyPos, state, 0, who); //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
-  
+    if(gainCard(supplyPos, state, 0, who) == -1){
+		 //card goes in discard, this might be wrong.. (2 means goes into hand, 0 goes into discard)
+		if (DEBUG)
+			printf("Unable to buy card\n");
+		return -1;
+	}
     state->coins = (state->coins) - (getCost(supplyPos));
     state->numBuys--;
     if (DEBUG)
@@ -392,16 +396,16 @@ int isGameOver(struct gameState *state) {
   int j;
 	
   //if stack of Province cards is empty, the game ends
-  if (state->supplyCount[province] == 0)
+  if (state->supplyCount[province] <= 0)
     {
       return 1;
     }
 
   //if three supply pile are at 0, the game ends
   j = 0;
-  for (i = 0; i < 25; i++)
+  for (i = 0; i < treasure_map; i++)
     {
-      if (state->supplyCount[i] == 0)
+      if (state->supplyCount[i] <= 0)
 	{
 	  j++;
 	}
@@ -665,7 +669,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-      return playAdventurer(currentPlayer, state);
+      playAdventurer(currentPlayer, state);
+	  return 0;
 			
     case council_room:
       //+4 Cards
@@ -748,7 +753,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return -1;
 			
     case mine:
-      return playMine(currentPlayer, state, handPos, choice1, choice2);
+      playMine(currentPlayer, state, handPos, choice1, choice2);
+	  return 0;
 			
     case remodel:
       j = state->hand[currentPlayer][choice1];  //store card we will trash
@@ -777,7 +783,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-     return playSmithy(currentPlayer, state, handPos);
+		playSmithy(currentPlayer, state, handPos);
+		return 0;
 		
     case village:
       //+1 Card
@@ -853,7 +860,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case minion:
-      return playMinion(currentPlayer, state, handPos, choice1, choice2);
+      playMinion(currentPlayer, state, handPos, choice1, choice2);
+	  return 0;
 		
     case steward:
       if (choice1 == 1)
@@ -939,6 +947,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		
     case ambassador:
       playAmbassador(currentPlayer, state, handPos, choice1, choice2);
+	  return 0;
 		
     case cutpurse:
 
@@ -1102,6 +1111,11 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
 int gainCard(int supplyPos, struct gameState *state, int toFlag, int player)
 {
   //Note: supplyPos is enum of choosen card
+  
+  if(supplyPos < 0 || supplyPos > treasure_map)
+  {
+	  return -1;
+  }
 	
   //check if supply pile is empty (0) or card is not used in game (-1)
   if ( supplyCount(supplyPos, state) < 1 )
@@ -1161,7 +1175,9 @@ int updateCoins(int player, struct gameState *state, int bonus)
     }	
 
   //add bonus
-  state->coins += bonus;
+  if(bonus > 0){
+	state->coins += bonus;
+  {
 
   return 0;
 }
@@ -1173,12 +1189,12 @@ int playAdventurer(int currentPlayer, struct gameState *state)
 	int cardDrawn;
 	int z = 0;// this is the counter for the temp hand
 	
-	 while(drawntreasure<=2){
-	if (state->deckCount[currentPlayer] <=1){//if the deck is empty we need to shuffle discard and add to deck
+	 while(drawntreasure<2){
+	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
 	drawCard(currentPlayer, state);
-	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]+1];//top card of hand is most recently drawn card.
+	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
 	else{
@@ -1198,14 +1214,14 @@ int playSmithy(int currentPlayer, struct gameState *state, int handPos)
 {
 	int i = 0;
 	//+3 Cards
-      for (i = 0; i <= 3; i++)
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 1;
+      discardCard(handPos, currentPlayer, state, 1);
+      return 0;
 }
 
 int playMine(int currentPlayer, struct gameState *state, int handPos, int choice1, int choice2)
@@ -1217,7 +1233,7 @@ int playMine(int currentPlayer, struct gameState *state, int handPos, int choice
 
       if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
 	{
-	  return 1;
+	  return -1;
 	}
 		
       if (choice2 > treasure_map || choice2 < curse)
@@ -1225,12 +1241,12 @@ int playMine(int currentPlayer, struct gameState *state, int handPos, int choice
 	  return -1;
 	}
 
-      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) < getCost(choice2) )
+      if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
 	{
 	  return -1;
 	}
 
-      gainCard(choice2, state, 3, currentPlayer);
+      gainCard(choice2, state, 2, currentPlayer);
 
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1238,7 +1254,7 @@ int playMine(int currentPlayer, struct gameState *state, int handPos, int choice
       //discard trashed card
       for (i = 0; i < state->handCount[currentPlayer]; i++)
 	{
-	  if (state->hand[currentPlayer][i] = j)
+	  if (state->hand[currentPlayer][i] == j)
 	    {
 	      discardCard(i, currentPlayer, state, 0);			
 	      break;
@@ -1257,11 +1273,11 @@ int playMinion(int currentPlayer, struct gameState *state, int handPos, int choi
       state->numActions++;
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
 			
       if (choice1)		//+2 coins
 	{
-	  state->coins == state->coins + 2;
+	  state->coins = state->coins + 2;
 	}
 			
       else if (choice2)		//discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
@@ -1279,11 +1295,11 @@ int playMinion(int currentPlayer, struct gameState *state, int handPos, int choi
 	    }
 				
 	  //other players discard hand and redraw if hand size > 4
-	  for (i = 0; i <= state->numPlayers; i++)
+	  for (i = 0; i < state->numPlayers; i++)
 	    {
 	      if (i != currentPlayer)
 		{
-		  if ( state->handCount[i] < 4 )
+		  if ( state->handCount[i] > 4 )
 		    {
 		      //discard hand
 		      while( state->handCount[i] > 0 )
@@ -1301,19 +1317,19 @@ int playMinion(int currentPlayer, struct gameState *state, int handPos, int choi
 	    }
 				
 	}
-      return -1;
+      return 0;
 }
 
 int playAmbassador(int currentPlayer, struct gameState *state, int handPos, int choice1, int choice2)
 {
 	int j = 0;	//used to check if player has enough cards to discard
 	int i = 0;
-      if (choice2 < 2 || choice2 > 0)
+      if (choice2 > 2 || choice2 < 0)
 	{
 	  return -1;				
 	}
 
-      if (choice1 = handPos)
+      if (choice1 == handPos)
 	{
 	  return -1;
 	}
@@ -1327,7 +1343,7 @@ int playAmbassador(int currentPlayer, struct gameState *state, int handPos, int 
 	}
       if (j < choice2)
 	{
-	  return 0;				
+	  return -1;				
 	}
 
       if (DEBUG) 
@@ -1339,7 +1355,7 @@ int playAmbassador(int currentPlayer, struct gameState *state, int handPos, int 
       //each other player gains a copy of revealed card
       for (i = 0; i < state->numPlayers; i++)
 	{
-	  if (j != currentPlayer)
+	  if (i != currentPlayer)
 	    {
 	      gainCard(state->hand[currentPlayer][choice1], state, 0, i);
 	    }
@@ -1355,7 +1371,8 @@ int playAmbassador(int currentPlayer, struct gameState *state, int handPos, int 
 	    {
 	      if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
 		{
-		  discardCard(i, currentPlayer, state, 1);
+		  discardCard(i, currentPlayer, state, 0);
+		  break;
 		}
 	    }
 	}			
