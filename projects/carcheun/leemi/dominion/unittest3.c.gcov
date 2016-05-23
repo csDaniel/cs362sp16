@@ -1,0 +1,128 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * Carolyn Cheung
+        -:    3: * Testing: drawCard
+        -:    4: *      Draw a card
+        -:    5: */
+        -:    6: #include<stdio.h>
+        -:    7:#include<stdlib.h>
+        -:    8:#include <assert.h>
+        -:    9:#include <string.h>
+        -:   10:#include "dominion.h"
+        -:   11:#include "dominion_helpers.h"
+        -:   12:#include "rngs.h"
+        -:   13:
+        -:   14:#define TESTCARD "DrawCard()"
+        -:   15:
+function testDrawCard called 1 returned 100% blocks executed 79%
+        1:   16:void testDrawCard() {
+        -:   17:    struct gameState gState, gStateTest;
+        1:   18:    int newCards = 1;
+        1:   19:    int seed = 7;
+        1:   20:    int numPlayers = 2;
+        1:   21:    int p = 0;
+        1:   22:    int choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0, handPos = 0;
+        1:   23:    int cardCount = 0, cardCountTest = 0;
+        -:   24:    int i, j;
+        -:   25:
+        1:   26:    int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
+        -:   27:			sea_hag, tribute, smithy, council_room};
+        -:   28:
+        1:   29:    initializeGame(numPlayers, k, seed, &gStateTest);
+call    0 returned 100%
+        1:   30:    initializeGame(numPlayers, k, seed, &gState);
+call    0 returned 100%
+        -:   31:
+        6:   32:    for (i = 0; i < gStateTest.deckCount[p]; i++) {
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        5:   33:            gStateTest.deck[p][i] = baron;
+        5:   34:            gState.deck[p][i] = baron;
+        -:   35:    }
+        -:   36:
+        1:   37:    drawCard(p, &gStateTest);
+call    0 returned 100%
+        -:   38:
+        -:   39:
+        1:   40:    printf("==== TESTING: %s ====\n", TESTCARD);
+call    0 returned 100%
+        1:   41:    printf("        Expected vs Real\n");
+call    0 returned 100%
+        1:   42:    printf(" p0 hand count = %d, p0 hand count = %d\n", gState.handCount[p] + newCards, gStateTest.handCount[p]);
+call    0 returned 100%
+        1:   43:    printf(" p0 deck count = %d, p0 deck count = %d\n", gState.deckCount[p] - newCards, gStateTest.deckCount[p]);
+call    0 returned 100%
+        1:   44:    printf(" p1 hand count = %d, p1 hand count = %d\n", gState.handCount[1], gStateTest.handCount[1]);
+call    0 returned 100%
+        1:   45:    printf(" p1 deck count = %d, p1 deck count = %d\n", gState.deckCount[1], gStateTest.deckCount[1]);
+call    0 returned 100%
+        1:   46:    printf(" estate count = %d, estate count = %d\n", gState.supplyCount[estate], gStateTest.supplyCount[estate]);
+call    0 returned 100%
+        1:   47:    printf(" duchy count = %d, duchy count = %d\n", gState.supplyCount[duchy], gStateTest.supplyCount[duchy]);
+call    0 returned 100%
+        1:   48:    printf(" province count = %d, province count = %d\n", gState.supplyCount[province], gStateTest.supplyCount[province]);
+call    0 returned 100%
+        1:   49:    printf(" Baron drawn from deck: %d vs %d\n", baron, gStateTest.hand[p][gStateTest.handCount[p]]);
+call    0 returned 100%
+       11:   50:    for (i = 0; i < 10; i++) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+       10:   51:        cardCount += supplyCount(k[i], &gState);
+call    0 returned 100%
+       10:   52:        cardCountTest += supplyCount(k[i], &gStateTest);
+call    0 returned 100%
+        -:   53:    }
+        1:   54:    printf(" kingdom card count = %d, kingdom card count = %d\n", cardCount, cardCountTest);
+call    0 returned 100%
+        -:   55:
+        1:   56:    assert(gState.handCount[p] + newCards == gStateTest.handCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   57:    assert(gState.deckCount[p] - newCards == gStateTest.deckCount[p]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   58:    assert(gState.handCount[1] == gStateTest.handCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   59:    assert(gState.deckCount[1] == gStateTest.deckCount[1]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   60:    assert(gState.supplyCount[duchy] == gStateTest.supplyCount[duchy]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   61:    assert(gState.supplyCount[estate] == gStateTest.supplyCount[estate]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   62:    assert(gState.supplyCount[province] == gStateTest.supplyCount[province]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   63:    assert(cardCount == cardCountTest);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        1:   64:    assert(baron == gStateTest.hand[p][5]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   65:
+        1:   66:    printf("\n      testDrawCard(): PASS\n");
+call    0 returned 100%
+        1:   67:}
+        -:   68:
+function main called 1 returned 100% blocks executed 100%
+        1:   69:int main() {
+        1:   70:    testDrawCard();
+call    0 returned 100%
+        1:   71:    return 0;
+        -:   72:}

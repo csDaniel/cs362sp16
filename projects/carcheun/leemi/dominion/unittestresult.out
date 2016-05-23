@@ -1,0 +1,166 @@
+==== TESTING: updateCoins() ====
+
+CASE 1: Full baron hand vs Full gold hand coin calculations
+        Expected vs Real
+ p0 hand count = 5, p0 hand count = 5
+ p0 deck count = 5, p0 deck count = 5
+ p1 hand count = 0, p1 hand count = 0
+ p1 deck count = 10, p1 deck count = 10
+ estate count = 8, estate count = 8
+ duchy count = 8, duchy count = 8
+ province count = 8, province count = 8
+ Full Baron hand vs Full gold hand coin value = 0 vs 15
+    CASE 1 PASS
+
+CASE 2: Full baron hand vs Full copper hand + bonus 3 coin calculations
+        Expected vs Real
+ p0 hand count = 5, p0 hand count = 5
+ p0 deck count = 5, p0 deck count = 5
+ p1 hand count = 0, p1 hand count = 0
+ p1 deck count = 10, p1 deck count = 10
+ estate count = 8, estate count = 8
+ duchy count = 8, duchy count = 8
+ province count = 8, province count = 8
+ Full Baron hand vs Full copper + bonus: 3 hand coin value = 0 vs 8
+    CASE 2 PASS
+
+CASE 3: Check silver calculations
+        Expected vs Real
+ p0 hand count = 5, p0 hand count = 5
+ p0 deck count = 5, p0 deck count = 5
+ p1 hand count = 0, p1 hand count = 0
+ p1 deck count = 10, p1 deck count = 10
+ estate count = 8, estate count = 8
+ duchy count = 8, duchy count = 8
+ province count = 8, province count = 8
+ SEED initialized vs full silver hand = 4 vs 10
+    CASE 3 PASS
+
+      testUpdateCoins(): PASS
+File 'unittest1.c'
+Lines executed:100.00% of 92
+Branches executed:100.00% of 54
+Taken at least once:55.56% of 54
+Calls executed:66.67% of 72
+Creating 'unittest1.c.gcov'
+
+File 'dominion.c'
+Lines executed:15.84% of 562
+Branches executed:15.35% of 417
+Taken at least once:12.71% of 417
+Calls executed:7.45% of 94
+Creating 'dominion.c.gcov'
+
+==== TESTING: discardCard() ====
+
+CASE 1: Card is played, not trashed
+        Expected vs Real
+ p0 hand count = 4, p0 hand count = 4
+ p0 deck count = 5, p0 deck count = 5
+ p0 discardCount = 0 vs 0
+ Played card count = 1 vs 1
+ p1 hand count = 0, p1 hand count = 0
+ p1 deck count = 10, p1 deck count = 10
+ estate count = 8, estate count = 8
+ duchy count = 8, duchy count = 8
+ province count = 8, province count = 8
+ kingdom card count = 100, kingdom card count = 100
+    CASE 1 PASS
+
+CASE 2: Card is trashed, not played
+        Expected vs Real
+ p0 hand count = 4, p0 hand count = 4
+ p0 deck count = 5, p0 deck count = 5
+ p0 discardCount = 0 vs 0
+ Played card count = 0 vs 0
+ p1 hand count = 0, p1 hand count = 0
+ p1 deck count = 10, p1 deck count = 10
+ estate count = 8, estate count = 8
+ duchy count = 8, duchy count = 8
+ province count = 8, province count = 8
+ kingdom card count = 100, kingdom card count = 100
+    CASE 2 PASS
+
+      testDiscardCard(): PASS
+File 'unittest2.c'
+Lines executed:100.00% of 72
+Branches executed:100.00% of 40
+Taken at least once:55.00% of 40
+Calls executed:68.42% of 57
+Creating 'unittest2.c.gcov'
+
+File 'dominion.c'
+Lines executed:18.15% of 562
+Branches executed:16.79% of 417
+Taken at least once:13.67% of 417
+Calls executed:7.45% of 94
+Creating 'dominion.c.gcov'
+
+==== TESTING: DrawCard() ====
+        Expected vs Real
+ p0 hand count = 6, p0 hand count = 6
+ p0 deck count = 4, p0 deck count = 4
+ p1 hand count = 0, p1 hand count = 0
+ p1 deck count = 10, p1 deck count = 10
+ estate count = 8, estate count = 8
+ duchy count = 8, duchy count = 8
+ province count = 8, province count = 8
+ Baron drawn from deck: 15 vs 0
+ kingdom card count = 100, kingdom card count = 100
+
+      testDrawCard(): PASS
+File 'unittest3.c'
+Lines executed:100.00% of 42
+Branches executed:100.00% of 22
+Taken at least once:59.09% of 22
+Calls executed:66.67% of 27
+Creating 'unittest3.c.gcov'
+
+File 'dominion.c'
+Lines executed:18.15% of 562
+Branches executed:16.79% of 417
+Taken at least once:13.67% of 417
+Calls executed:7.45% of 94
+Creating 'dominion.c.gcov'
+
+==== TESTING: DrawCard() ====
+
+CASE 1: Full hand of provinces
+        Expected vs Real
+ full hand province = 30 vs 30
+
+CASE 2: Full hand of great_hall
+        Expected vs Real
+ full hand province = 5 vs 5
+
+CASE 3: 1 of every score card in hand, discard, deck
+        Expected vs Real
+ full hand province = 33 vs 30
+
+CASE 4: hand = estate, deck = duchy, discard = province
+ full hand province = 29 vs 32
+
+      testScoreFor(): PASS
+File 'unittest4.c'
+Lines executed:100.00% of 75
+Branches executed:100.00% of 24
+Taken at least once:91.67% of 24
+Calls executed:92.31% of 26
+Creating 'unittest4.c.gcov'
+
+File 'dominion.c'
+Lines executed:24.02% of 562
+Branches executed:29.74% of 417
+Taken at least once:26.62% of 417
+Calls executed:10.64% of 94
+Creating 'dominion.c.gcov'
+
+==== TESTING: smithy ====
+Expected p0 hand count = 7, p0 hand count = 8
+Expected p0 deck count = 2, p0 deck count = 1
+Expected p1 hand count = 0, p1 hand count = 0
+Expected p1 deck count = 10, p1 deck count = 10
+Expected estate count = 8, estate count = 8
+Expected duchy count = 8, duchy count = 8
+Expected province count = 8, province count = 8
+Expected kingdom card count = 100, kingdom card count = 100
