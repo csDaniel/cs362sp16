@@ -25,3 +25,11 @@ Bugs:
 		Resolution:
 			This occured due to 'choice2' being passed to the function responsible for trashing rather
 				than 'choice1', which was expected.
+
+
+Conclusion:
+	In this case, only the issues I introduced and knew of were brought to light. This proved rather 
+		easy to resolve. Coverage served little purpose in our situation as we knew exactly where to look for 
+		each issue that came to light. Despite this, coverage would have served someone attempting to fix our
+		code rather than ourselves as it would help narrow down where the bugs were.
+	
