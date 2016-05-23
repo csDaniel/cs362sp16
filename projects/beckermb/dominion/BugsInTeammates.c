@@ -46,4 +46,5 @@ Smithy Function:
   - Expected hand size to increase by 2 after smithy was played. Instead it increased by 3.
   - Expected deck size to decrease by 3. Instead, decreased by 4.
 
+For both teammates by test suite had to be altered to account for the different method names, and different arguments. In the case of Susan's code, I also had to make some alterations to the test suite, since she did not provide the player to her methods. Instead, I had to set the current player variable of the test suite.
 */
