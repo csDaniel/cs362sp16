@@ -399,7 +399,7 @@ int isGameOver(struct gameState *state) {
 
   //if three supply pile are at 0, the game ends
   j = 0;
-  for (i = 0; i < 25; i++)
+  for (i = 0; i < 27; i++)
     {
       if (state->supplyCount[i] == 0)
 	{
@@ -441,7 +441,7 @@ int scoreFor (int player, struct gameState *state) {
     }
 
   //score from deck
-  for (i = 0; i < state->discardCount[player]; i++)
+  for (i = 0; i < state->deckCount[player]; i++)
     {
       if (state->deck[player][i] == curse) { score = score - 1; };
       if (state->deck[player][i] == estate) { score = score + 1; };
@@ -668,7 +668,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     {
     case adventurer:
     	//Previous content replaced with call to refactored function
-	return playAdventurer(state, currentPlayer);
+	return playAdventurer(state, currentPlayer, handPos);
 			
     case council_room:
 	//Previous content replaced with call to refactored function 
@@ -1129,6 +1129,8 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
       //add card to played pile
       state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
       state->playedCardCount++;
+	  state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][handPos];
+	  state->discardCount[currentPlayer]++;
     }
 	
   //set played card to -1
@@ -1226,14 +1228,14 @@ int updateCoins(int player, struct gameState *state, int bonus)
 }
 
 //Below is the refactored portion
-int playAdventurer(struct gameState *state, int currentPlayer){
+int playAdventurer(struct gameState *state, int currentPlayer, int handPos){
 	//Get the integer of player whose turn it is now	
 	//int currentPlayer = whoseTurn(state);
 	//Create variables for temp hand, last drawn card, and drawn treasure
 	int z = 0;
 	int cardDrawn;	
 	int temphand[MAX_HAND];
-	int drawntreasure = 1;
+	int drawntreasure = 0;
 	//Move the body of adventurer from Card Effects under variable declaration and initialization
 	while(drawntreasure < 2){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -1250,9 +1252,12 @@ int playAdventurer(struct gameState *state, int currentPlayer){
 		}
     }
     while(z-1>=0){
-		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+		//state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];  discard all cards in play that have been drawn
+		state->discard[currentPlayer][state->discardCount[currentPlayer]]=temphand[z-1];
 		z=z-1;
+		state->discardCount[currentPlayer]++;
      }
+	 discardCard(handPos, currentPlayer, state, 0);
      return 0;
 }
 
@@ -1260,13 +1265,12 @@ int playSmithy(int currentPlayer, struct gameState *state, int handPos){
   //Get the integer of player whose turn it is now
   //int currentPlayer = whoseTurn(state);
   int i;
+   //discard card from hand
+  discardCard(handPos, currentPlayer, state, 0);
   //Move the body of smithy from Card Effects under variable declaration and initialization
-  for (i = 0; i <= 4; i++){
+  for (i = 0; i < 3; i++){
       drawCard(currentPlayer, state);
   }
-  
-  //discard card from hand
-  discardCard(handPos, currentPlayer, state, 0);
   return 0;
 }
 
@@ -1278,7 +1282,7 @@ int playVillage(int currentPlayer, struct gameState *state, int handPos){
 	 //+1 Card
      drawCard(currentPlayer, state);
 	 //+2 Actions
-     state->numActions = state->numActions + 3;
+     state->numActions = state->numActions + 2;
 	 //discard played card from hand
      discardCard(handPos, currentPlayer, state, 0);
      return 0;
@@ -1344,7 +1348,7 @@ int playCouncil_Room(int currentPlayer, struct gameState *state, int handPos){
     //Each other player draws a card
     for (i = 0; i < state->numPlayers; i++)
 	{
-	  if ( i == currentPlayer )
+	  if ( i != currentPlayer )
 	    {
 	      drawCard(i, state);
 	    }
