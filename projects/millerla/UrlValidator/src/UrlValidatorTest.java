@@ -15,12 +15,8 @@
  * limitations under the License.
  */
 
-
+import org.junit.Assert;
 import junit.framework.TestCase;
-
-
-
-
 
 /**
  * Performs Validation Test for url validations.
@@ -29,21 +25,32 @@ import junit.framework.TestCase;
  */
 public class UrlValidatorTest extends TestCase {
 
-   private boolean printStatus = false;
-   private boolean printIndex = false;//print index that indicates current scheme,host,port,path, query test were using.
+   private boolean printStatus = true;
+   private boolean printIndex = true;//print index that indicates current scheme,host,port,path, query test were using.
 
    public UrlValidatorTest(String testName) {
       super(testName);
    }
 
-   
+   private void printTestResults(String theUrl, boolean theResult) {
+	   if(printIndex){
+		   System.out.println(theUrl);
+	   }
+	   if(printStatus) {
+		   System.out.println(theResult);
+	   }   
+   }
    
    public void testManualTest()
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   System.out.println(urlVal.isValid("http://www.amazon.com"));
 	   
+	   String testedUrl = "http://www.amazon.com";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
 	   
+	   Assert.assertEquals(true, validatorResult);
    }
    
    
