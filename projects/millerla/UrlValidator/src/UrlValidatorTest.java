@@ -161,6 +161,65 @@ public class UrlValidatorTest extends TestCase {
 	   Assert.assertEquals(true, validatorResult);
    }
    
+   public void testManualTest10b()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?a=a";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest10c()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?1=1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest10d()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?a";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest10e()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest10f()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?}}}=}}}";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
    
    public void testYourFirstPartition()
    {

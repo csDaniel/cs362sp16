@@ -444,6 +444,7 @@ public class UrlValidator implements Serializable {
         }
         
         return !QUERY_PATTERN.matcher(query).matches();
+        
     }
 
     /**
