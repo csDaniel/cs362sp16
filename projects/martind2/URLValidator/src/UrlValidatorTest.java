@@ -16,6 +16,8 @@
  */
 
 
+import org.junit.Assert;
+
 import junit.framework.TestCase;
 
 
@@ -38,17 +40,366 @@ public class UrlValidatorTest extends TestCase {
 
    
    
-   public void testManualTest()
-   {
-	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   System.out.println(urlVal.isValid("http://www.amazon.com"));
-	   
-	   
+   private void printTestResults(String theUrl, boolean theResult) {
+	   if(printIndex){
+		   System.out.println(theUrl);
+	   }
+	   if(printStatus) {
+		   System.out.println(theResult);
+	   }   
    }
    
+   public void testManualTest1()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
    
+   public void testManualTest2()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "}}}://www.amazon.com";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest3()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://}}}.com";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest4()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.}}}";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest5()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com/amazon";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest6()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com/}}}";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest7()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://255.255.255.255";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest8()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:8080";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest9()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:}}}";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest10()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?site=amazon";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest11()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "https://www.amazon.com?site=amazon";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest12()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh://192.168.0.1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest13()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh://ubuntu@192.168.0.1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest14()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh://ubuntu@192.168.0.1/home";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest15()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh:/ubuntu@192.168.0.1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest16()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh://@192.168.0.1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest17()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh://ubuntu@";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest18()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ssh://";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest19()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ftp://ubuntu@192.168.0.1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest20()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ftp://@192.168.0.1";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest21()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "ftp://ubuntu@";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   public void testManualTest22()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com?site=test1&site2=test2";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest23()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:8080";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest24()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:fail";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(false, validatorResult);
+   }
+   
+   // Input partition: protocols, i.e.: ftp, ssh, http
    public void testYourFirstPartition()
    {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com";
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   testedUrl = "https://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   testedUrl = "ftp://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   testedUrl = "blahblahblah://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   testedUrl = "abc123://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // TODO: Check if spec allows numbers first
+	   testedUrl = "123abc://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   testedUrl = "123://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   String[] schemes = {"http","https"};
+	   urlVal = new UrlValidator(schemes);
+	   
+	   testedUrl = "https://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   testedUrl = "http://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   testedUrl = "ftp://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   testedUrl = "ssh://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
 	   
    }
    
