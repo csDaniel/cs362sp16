@@ -137,6 +137,42 @@ public class UrlValidatorTest extends TestCase {
 	   Assert.assertEquals(true, validatorResult);
    }
    
+   public void testManualTest8b()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:18080";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest8c()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:808";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
+   public void testManualTest8d()
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   String testedUrl = "http://www.amazon.com:8";
+	  
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   
+	   Assert.assertEquals(true, validatorResult);
+   }
+   
    public void testManualTest9()
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
