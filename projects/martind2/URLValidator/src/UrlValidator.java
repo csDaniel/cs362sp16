@@ -133,6 +133,7 @@ public class UrlValidator implements Serializable {
 
     private static final String AUTHORITY_REGEX =
             "^([" + AUTHORITY_CHARS_REGEX + "]*)(:\\d*)?(.*)?";
+    		
     //                                                                            1                          2  3       4
     private static final Pattern AUTHORITY_PATTERN = Pattern.compile(AUTHORITY_REGEX);
 
