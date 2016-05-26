@@ -135,6 +135,7 @@ int main() {
     if (pre_money_count_deck == 0) {
       if (start_hand_size - 1 != game.handCount[player]) {
         printf("Failed: No money in deck or discard, so handsize should decrease by 1.\n");
+        printf("Expected %d, got %d\n", start_hand_size - 1, game.handCount[player]);
         failed++;
         fail_iteration = i;
       }

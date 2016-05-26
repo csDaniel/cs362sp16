@@ -7,7 +7,8 @@ Spring 2016
 
 TEAMMATE1(BEHMERL):
 
-All unit tests passed.
+The four unit test cards passed.
+
 I had to change my card tests to suit the modified code.
 
 Bug #:          1
@@ -57,7 +58,8 @@ Priority:       High
 
 TEAMMATE2(DILLMANM):
 
-All unit tests passed.
+The four unit test cards passed.
+
 I had to change my card tests to suit the modified code.
 
 Every thing except for the adventurer card passed because, according to his refactor.c, Mark fixed the bugs that he introduced
@@ -75,6 +77,8 @@ How to Cause it:  Running cardtest1.c will find the fault.
 Reproduceable:  Yes
 Severity:       High
 Priority:       High
+
+Note:  The return statement causing Bug #1 was commented out in order to run other tests
 
 Bug #:          2
 Title:          Hand searched for coins instead of deck

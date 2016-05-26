@@ -1,0 +1,1913 @@
+Result for running Random Test Card tests:
+randomtestadventurer.c:
+
+
+ TESTING ADVENTURER 
+
+
+ Number of players = 3 
+Deck Count Pre = 259 
+Discard Count Pre = 53 
+Hand Count Pre = 235 
+Number of Treasure Pre = 49 
+Deck Count Post = 242 
+Discard Count Post = 68 
+Hand Count Post = 237 
+Number of Treasure Post = 51 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 223 
+Discard Count Pre = 309 
+Hand Count Pre = 438 
+Number of Treasure Pre = 92 
+Deck Count Post = 213 
+Discard Count Post = 317 
+Hand Count Post = 440 
+Number of Treasure Post = 93 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 402 
+Discard Count Pre = 340 
+Hand Count Pre = 255 
+Number of Treasure Pre = 69 
+Deck Count Post = 384 
+Discard Count Post = 356 
+Hand Count Post = 257 
+Number of Treasure Post = 71 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 25 
+Discard Count Pre = 467 
+Hand Count Pre = 77 
+Number of Treasure Pre = 22 
+Deck Count Post = 22 
+Discard Count Post = 468 
+Hand Count Post = 79 
+Number of Treasure Post = 24 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 55 
+Discard Count Pre = 227 
+Hand Count Pre = 335 
+Number of Treasure Pre = 70 
+Deck Count Post = 46 
+Discard Count Post = 234 
+Hand Count Post = 337 
+Number of Treasure Post = 72 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 143 
+Discard Count Pre = 180 
+Hand Count Pre = 248 
+Number of Treasure Pre = 58 
+Deck Count Post = 134 
+Discard Count Post = 187 
+Hand Count Post = 250 
+Number of Treasure Post = 60 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 154 
+Discard Count Pre = 176 
+Hand Count Pre = 352 
+Number of Treasure Pre = 69 
+Deck Count Post = 149 
+Discard Count Post = 179 
+Hand Count Post = 354 
+Number of Treasure Post = 71 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 417 
+Discard Count Pre = 498 
+Hand Count Pre = 202 
+Number of Treasure Pre = 42 
+Deck Count Post = 408 
+Discard Count Post = 505 
+Hand Count Post = 204 
+Number of Treasure Post = 44 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 466 
+Discard Count Pre = 144 
+Hand Count Pre = 482 
+Number of Treasure Pre = 144 
+Deck Count Post = 458 
+Discard Count Post = 150 
+Hand Count Post = 484 
+Number of Treasure Post = 145 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 444 
+Discard Count Pre = 328 
+Hand Count Pre = 344 
+Number of Treasure Pre = 76 
+Deck Count Post = 439 
+Discard Count Post = 331 
+Hand Count Post = 346 
+Number of Treasure Post = 78 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 411 
+Discard Count Pre = 176 
+Hand Count Pre = 250 
+Number of Treasure Pre = 57 
+Deck Count Post = 396 
+Discard Count Post = 189 
+Hand Count Post = 252 
+Number of Treasure Post = 59 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 220 
+Discard Count Pre = 367 
+Hand Count Pre = 209 
+Number of Treasure Pre = 41 
+Deck Count Post = 213 
+Discard Count Post = 372 
+Hand Count Post = 211 
+Number of Treasure Post = 42 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 2 
+Deck Count Pre = 361 
+Discard Count Pre = 272 
+Hand Count Pre = 214 
+Number of Treasure Pre = 53 
+Deck Count Post = 352 
+Discard Count Post = 279 
+Hand Count Post = 216 
+Number of Treasure Post = 55 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 44 
+Discard Count Pre = 234 
+Hand Count Pre = 256 
+Number of Treasure Pre = 46 
+Deck Count Post = 28 
+Discard Count Post = 248 
+Hand Count Post = 258 
+Number of Treasure Post = 48 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 3 
+Deck Count Pre = 57 
+Discard Count Pre = 490 
+Hand Count Pre = 79 
+Number of Treasure Pre = 13 
+Deck Count Post = 55 
+Discard Count Post = 490 
+Hand Count Post = 81 
+Number of Treasure Post = 15 
+
+
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 209 
+Discard Count Pre = 187 
+Hand Count Pre = 123 
+Number of Treasure Pre = 31 
+Deck Count Post = 206 
+Discard Count Post = 188 
+Hand Count Post = 125 
+Number of Treasure Post = 33 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 178 
+Discard Count Pre = 131 
+Hand Count Pre = 388 
+Number of Treasure Pre = 83 
+Deck Count Post = 173 
+Discard Count Post = 134 
+Hand Count Post = 390 
+Number of Treasure Post = 84 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 1 
+Deck Count Pre = 40 
+Discard Count Pre = 19 
+Hand Count Pre = 444 
+Number of Treasure Pre = 117 
+Deck Count Post = 34 
+Discard Count Post = 23 
+Hand Count Post = 446 
+Number of Treasure Post = 118 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 3 
+Deck Count Pre = 30 
+Discard Count Pre = 327 
+Hand Count Pre = 363 
+Number of Treasure Pre = 93 
+Deck Count Post = 22 
+Discard Count Post = 333 
+Hand Count Post = 365 
+Number of Treasure Post = 95 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 332 
+Discard Count Pre = 464 
+Hand Count Pre = 262 
+Number of Treasure Pre = 67 
+Deck Count Post = 327 
+Discard Count Post = 467 
+Hand Count Post = 264 
+Number of Treasure Post = 68 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 344 
+Discard Count Pre = 480 
+Hand Count Pre = 136 
+Number of Treasure Pre = 31 
+Deck Count Post = 335 
+Discard Count Post = 487 
+Hand Count Post = 138 
+Number of Treasure Post = 32 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 4 
+Deck Count Pre = 69 
+Discard Count Pre = 62 
+Hand Count Pre = 239 
+Number of Treasure Pre = 68 
+Deck Count Post = 60 
+Discard Count Post = 69 
+Hand Count Post = 241 
+Number of Treasure Post = 70 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 266 
+Discard Count Pre = 432 
+Hand Count Pre = 192 
+Number of Treasure Pre = 36 
+Deck Count Post = 236 
+Discard Count Post = 460 
+Hand Count Post = 194 
+Number of Treasure Post = 38 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 310 
+Discard Count Pre = 105 
+Hand Count Pre = 231 
+Number of Treasure Pre = 45 
+Deck Count Post = 301 
+Discard Count Post = 112 
+Hand Count Post = 233 
+Number of Treasure Post = 47 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 125 
+Discard Count Pre = 63 
+Hand Count Pre = 246 
+Number of Treasure Pre = 63 
+Deck Count Post = 115 
+Discard Count Post = 71 
+Hand Count Post = 248 
+Number of Treasure Post = 65 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 335 
+Discard Count Pre = 334 
+Hand Count Pre = 212 
+Number of Treasure Pre = 50 
+Deck Count Post = 324 
+Discard Count Post = 343 
+Hand Count Post = 214 
+Number of Treasure Post = 52 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 352 
+Discard Count Pre = 259 
+Hand Count Pre = 418 
+Number of Treasure Pre = 113 
+Deck Count Post = 341 
+Discard Count Post = 268 
+Hand Count Post = 420 
+Number of Treasure Post = 114 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 331 
+Discard Count Pre = 435 
+Hand Count Pre = 12 
+Number of Treasure Pre = 1 
+Deck Count Post = 323 
+Discard Count Post = 441 
+Hand Count Post = 14 
+Number of Treasure Post = 3 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 397 
+Discard Count Pre = 119 
+Hand Count Pre = 191 
+Number of Treasure Pre = 44 
+Deck Count Post = 390 
+Discard Count Post = 124 
+Hand Count Post = 193 
+Number of Treasure Post = 46 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 469 
+Discard Count Pre = 439 
+Hand Count Pre = 291 
+Number of Treasure Pre = 70 
+Deck Count Post = 458 
+Discard Count Post = 448 
+Hand Count Post = 293 
+Number of Treasure Post = 72 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 324 
+Discard Count Pre = 479 
+Hand Count Pre = 162 
+Number of Treasure Pre = 44 
+Deck Count Post = 319 
+Discard Count Post = 482 
+Hand Count Post = 164 
+Number of Treasure Post = 46 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 167 
+Discard Count Pre = 33 
+Hand Count Pre = 277 
+Number of Treasure Pre = 68 
+Deck Count Post = 159 
+Discard Count Post = 39 
+Hand Count Post = 279 
+Number of Treasure Post = 70 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 337 
+Discard Count Pre = 473 
+Hand Count Pre = 39 
+Number of Treasure Pre = 5 
+Deck Count Post = 334 
+Discard Count Post = 474 
+Hand Count Post = 41 
+Number of Treasure Post = 7 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 95 
+Discard Count Pre = 272 
+Hand Count Pre = 140 
+Number of Treasure Pre = 36 
+Deck Count Post = 92 
+Discard Count Post = 273 
+Hand Count Post = 142 
+Number of Treasure Post = 38 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 183 
+Discard Count Pre = 321 
+Hand Count Pre = 227 
+Number of Treasure Pre = 48 
+Deck Count Post = 178 
+Discard Count Post = 324 
+Hand Count Post = 229 
+Number of Treasure Post = 49 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 284 
+Discard Count Pre = 108 
+Hand Count Pre = 491 
+Number of Treasure Pre = 110 
+Deck Count Post = 281 
+Discard Count Post = 109 
+Hand Count Post = 493 
+Number of Treasure Post = 112 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 149 
+Discard Count Pre = 412 
+Hand Count Pre = 453 
+Number of Treasure Pre = 111 
+Deck Count Post = 135 
+Discard Count Post = 424 
+Hand Count Post = 455 
+Number of Treasure Post = 113 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 461 
+Discard Count Pre = 355 
+Hand Count Pre = 283 
+Number of Treasure Pre = 64 
+Deck Count Post = 440 
+Discard Count Post = 374 
+Hand Count Post = 285 
+Number of Treasure Post = 65 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 469 
+Discard Count Pre = 306 
+Hand Count Pre = 439 
+Number of Treasure Pre = 115 
+Deck Count Post = 462 
+Discard Count Post = 311 
+Hand Count Post = 441 
+Number of Treasure Post = 117 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 306 
+Discard Count Pre = 50 
+Hand Count Pre = 263 
+Number of Treasure Pre = 68 
+Deck Count Post = 297 
+Discard Count Post = 57 
+Hand Count Post = 265 
+Number of Treasure Post = 69 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 444 
+Discard Count Pre = 286 
+Hand Count Pre = 249 
+Number of Treasure Pre = 59 
+Deck Count Post = 439 
+Discard Count Post = 289 
+Hand Count Post = 251 
+Number of Treasure Post = 61 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 427 
+Discard Count Pre = 418 
+Hand Count Pre = 111 
+Number of Treasure Pre = 32 
+Deck Count Post = 423 
+Discard Count Post = 420 
+Hand Count Post = 113 
+Number of Treasure Post = 34 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 27 
+Discard Count Pre = 317 
+Hand Count Pre = 32 
+Number of Treasure Pre = 6 
+Deck Count Post = 24 
+Discard Count Post = 318 
+Hand Count Post = 34 
+Number of Treasure Post = 7 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 4 
+Deck Count Pre = 188 
+Discard Count Pre = 373 
+Hand Count Pre = 439 
+Number of Treasure Pre = 99 
+Deck Count Post = 178 
+Discard Count Post = 381 
+Hand Count Post = 441 
+Number of Treasure Post = 100 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 154 
+Discard Count Pre = 354 
+Hand Count Pre = 365 
+Number of Treasure Pre = 85 
+Deck Count Post = 144 
+Discard Count Post = 362 
+Hand Count Post = 367 
+Number of Treasure Post = 87 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 438 
+Discard Count Pre = 20 
+Hand Count Pre = 400 
+Number of Treasure Pre = 98 
+Deck Count Post = 432 
+Discard Count Post = 24 
+Hand Count Post = 402 
+Number of Treasure Post = 99 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 136 
+Discard Count Pre = 189 
+Hand Count Pre = 201 
+Number of Treasure Pre = 50 
+Deck Count Post = 128 
+Discard Count Post = 195 
+Hand Count Post = 203 
+Number of Treasure Post = 52 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 454 
+Discard Count Pre = 121 
+Hand Count Pre = 151 
+Number of Treasure Pre = 29 
+Deck Count Post = 443 
+Discard Count Post = 130 
+Hand Count Post = 153 
+Number of Treasure Post = 31 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 442 
+Discard Count Pre = 452 
+Hand Count Pre = 379 
+Number of Treasure Pre = 75 
+Deck Count Post = 436 
+Discard Count Post = 456 
+Hand Count Post = 381 
+Number of Treasure Post = 77 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 409 
+Discard Count Pre = 361 
+Hand Count Pre = 124 
+Number of Treasure Pre = 30 
+Deck Count Post = 404 
+Discard Count Post = 364 
+Hand Count Post = 126 
+Number of Treasure Post = 32 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 470 
+Discard Count Pre = 82 
+Hand Count Pre = 381 
+Number of Treasure Pre = 91 
+Deck Count Post = 466 
+Discard Count Post = 84 
+Hand Count Post = 383 
+Number of Treasure Post = 93 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 409 
+Discard Count Pre = 417 
+Hand Count Pre = 394 
+Number of Treasure Pre = 99 
+Deck Count Post = 404 
+Discard Count Post = 420 
+Hand Count Post = 396 
+Number of Treasure Post = 101 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 269 
+Discard Count Pre = 425 
+Hand Count Pre = 56 
+Number of Treasure Pre = 12 
+Deck Count Post = 267 
+Discard Count Post = 425 
+Hand Count Post = 58 
+Number of Treasure Post = 14 
+
+
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 238 
+Discard Count Pre = 21 
+Hand Count Pre = 465 
+Number of Treasure Pre = 109 
+Deck Count Post = 224 
+Discard Count Post = 33 
+Hand Count Post = 467 
+Number of Treasure Post = 110 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 381 
+Discard Count Pre = 5 
+Hand Count Pre = 93 
+Number of Treasure Pre = 28 
+Deck Count Post = 375 
+Discard Count Post = 9 
+Hand Count Post = 95 
+Number of Treasure Post = 30 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 3 
+Deck Count Pre = 34 
+Discard Count Pre = 388 
+Hand Count Pre = 372 
+Number of Treasure Pre = 92 
+Deck Count Post = 28 
+Discard Count Post = 392 
+Hand Count Post = 374 
+Number of Treasure Post = 93 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 249 
+Discard Count Pre = 448 
+Hand Count Pre = 75 
+Number of Treasure Pre = 25 
+Deck Count Post = 241 
+Discard Count Post = 454 
+Hand Count Post = 77 
+Number of Treasure Post = 27 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 88 
+Discard Count Pre = 472 
+Hand Count Pre = 6 
+Number of Treasure Pre = 1 
+Deck Count Post = 78 
+Discard Count Post = 480 
+Hand Count Post = 8 
+Number of Treasure Post = 3 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 444 
+Discard Count Pre = 141 
+Hand Count Pre = 161 
+Number of Treasure Pre = 34 
+Deck Count Post = 442 
+Discard Count Post = 141 
+Hand Count Post = 163 
+Number of Treasure Post = 36 
+
+
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 494 
+Discard Count Pre = 354 
+Hand Count Pre = 360 
+Number of Treasure Pre = 64 
+Deck Count Post = 490 
+Discard Count Post = 356 
+Hand Count Post = 362 
+Number of Treasure Post = 66 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 146 
+Discard Count Pre = 417 
+Hand Count Pre = 185 
+Number of Treasure Pre = 40 
+Deck Count Post = 134 
+Discard Count Post = 427 
+Hand Count Post = 187 
+Number of Treasure Post = 42 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 288 
+Discard Count Pre = 345 
+Hand Count Pre = 158 
+Number of Treasure Pre = 41 
+Deck Count Post = 281 
+Discard Count Post = 350 
+Hand Count Post = 160 
+Number of Treasure Post = 42 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 4 
+Deck Count Pre = 424 
+Discard Count Pre = 306 
+Hand Count Pre = 348 
+Number of Treasure Pre = 83 
+Deck Count Post = 414 
+Discard Count Post = 314 
+Hand Count Post = 350 
+Number of Treasure Post = 85 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 399 
+Discard Count Pre = 468 
+Hand Count Pre = 319 
+Number of Treasure Pre = 73 
+Deck Count Post = 384 
+Discard Count Post = 481 
+Hand Count Post = 321 
+Number of Treasure Post = 75 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 404 
+Discard Count Pre = 18 
+Hand Count Pre = 40 
+Number of Treasure Pre = 8 
+Deck Count Post = 393 
+Discard Count Post = 27 
+Hand Count Post = 42 
+Number of Treasure Post = 10 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 73 
+Discard Count Pre = 206 
+Hand Count Pre = 374 
+Number of Treasure Pre = 87 
+Deck Count Post = 54 
+Discard Count Post = 223 
+Hand Count Post = 376 
+Number of Treasure Post = 89 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 440 
+Discard Count Pre = 374 
+Hand Count Pre = 410 
+Number of Treasure Pre = 95 
+Deck Count Post = 424 
+Discard Count Post = 388 
+Hand Count Post = 412 
+Number of Treasure Post = 97 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 63 
+Discard Count Pre = 12 
+Hand Count Pre = 83 
+Number of Treasure Pre = 19 
+Deck Count Post = 59 
+Discard Count Post = 14 
+Hand Count Post = 85 
+Number of Treasure Post = 20 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 2 
+Deck Count Pre = 152 
+Discard Count Pre = 177 
+Hand Count Pre = 219 
+Number of Treasure Pre = 52 
+Deck Count Post = 148 
+Discard Count Post = 179 
+Hand Count Post = 221 
+Number of Treasure Post = 53 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 234 
+Discard Count Pre = 269 
+Hand Count Pre = 223 
+Number of Treasure Pre = 49 
+Deck Count Post = 214 
+Discard Count Post = 287 
+Hand Count Post = 225 
+Number of Treasure Post = 51 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 183 
+Discard Count Pre = 434 
+Hand Count Pre = 227 
+Number of Treasure Pre = 59 
+Deck Count Post = 162 
+Discard Count Post = 453 
+Hand Count Post = 229 
+Number of Treasure Post = 61 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 446 
+Discard Count Pre = 302 
+Hand Count Pre = 95 
+Number of Treasure Pre = 25 
+Deck Count Post = 439 
+Discard Count Post = 307 
+Hand Count Post = 97 
+Number of Treasure Post = 27 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 270 
+Discard Count Pre = 271 
+Hand Count Pre = 60 
+Number of Treasure Pre = 15 
+Deck Count Post = 266 
+Discard Count Post = 273 
+Hand Count Post = 62 
+Number of Treasure Post = 17 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 433 
+Discard Count Pre = 314 
+Hand Count Pre = 242 
+Number of Treasure Pre = 48 
+Deck Count Post = 428 
+Discard Count Post = 317 
+Hand Count Post = 244 
+Number of Treasure Post = 49 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 1 
+Deck Count Pre = 111 
+Discard Count Pre = 443 
+Hand Count Pre = 470 
+Number of Treasure Pre = 117 
+Deck Count Post = 81 
+Discard Count Post = 471 
+Hand Count Post = 472 
+Number of Treasure Post = 119 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 449 
+Discard Count Pre = 270 
+Hand Count Pre = 25 
+Number of Treasure Pre = 7 
+Deck Count Post = 442 
+Discard Count Post = 275 
+Hand Count Post = 27 
+Number of Treasure Post = 9 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 94 
+Discard Count Pre = 252 
+Hand Count Pre = 262 
+Number of Treasure Pre = 68 
+Deck Count Post = 87 
+Discard Count Post = 257 
+Hand Count Post = 264 
+Number of Treasure Post = 70 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 191 
+Discard Count Pre = 198 
+Hand Count Pre = 140 
+Number of Treasure Pre = 26 
+Deck Count Post = 185 
+Discard Count Post = 202 
+Hand Count Post = 142 
+Number of Treasure Post = 28 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 350 
+Discard Count Pre = 82 
+Hand Count Pre = 85 
+Number of Treasure Pre = 20 
+Deck Count Post = 342 
+Discard Count Post = 88 
+Hand Count Post = 87 
+Number of Treasure Post = 22 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 206 
+Discard Count Pre = 448 
+Hand Count Pre = 141 
+Number of Treasure Pre = 34 
+Deck Count Post = 204 
+Discard Count Post = 448 
+Hand Count Post = 143 
+Number of Treasure Post = 36 
+
+
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 261 
+Discard Count Pre = 383 
+Hand Count Pre = 31 
+Number of Treasure Pre = 4 
+Deck Count Post = 259 
+Discard Count Post = 383 
+Hand Count Post = 33 
+Number of Treasure Post = 5 
+
+
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 386 
+Discard Count Pre = 135 
+Hand Count Pre = 363 
+Number of Treasure Pre = 81 
+Deck Count Post = 375 
+Discard Count Post = 144 
+Hand Count Post = 365 
+Number of Treasure Post = 83 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 479 
+Discard Count Pre = 69 
+Hand Count Pre = 138 
+Number of Treasure Pre = 29 
+Deck Count Post = 468 
+Discard Count Post = 78 
+Hand Count Post = 140 
+Number of Treasure Post = 31 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 3 
+Deck Count Pre = 249 
+Discard Count Pre = 397 
+Hand Count Pre = 234 
+Number of Treasure Pre = 61 
+Deck Count Post = 244 
+Discard Count Post = 400 
+Hand Count Post = 236 
+Number of Treasure Post = 63 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 34 
+Discard Count Pre = 24 
+Hand Count Pre = 160 
+Number of Treasure Pre = 32 
+Deck Count Post = 26 
+Discard Count Post = 30 
+Hand Count Post = 162 
+Number of Treasure Post = 34 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 431 
+Discard Count Pre = 153 
+Hand Count Pre = 121 
+Number of Treasure Pre = 22 
+Deck Count Post = 408 
+Discard Count Post = 174 
+Hand Count Post = 123 
+Number of Treasure Post = 24 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 3 
+Deck Count Pre = 361 
+Discard Count Pre = 240 
+Hand Count Pre = 295 
+Number of Treasure Pre = 69 
+Deck Count Post = 358 
+Discard Count Post = 241 
+Hand Count Post = 297 
+Number of Treasure Post = 71 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 168 
+Discard Count Pre = 24 
+Hand Count Pre = 253 
+Number of Treasure Pre = 65 
+Deck Count Post = 156 
+Discard Count Post = 34 
+Hand Count Post = 255 
+Number of Treasure Post = 67 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 330 
+Discard Count Pre = 262 
+Hand Count Pre = 109 
+Number of Treasure Pre = 19 
+Deck Count Post = 320 
+Discard Count Post = 270 
+Hand Count Post = 111 
+Number of Treasure Post = 21 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 226 
+Discard Count Pre = 249 
+Hand Count Pre = 458 
+Number of Treasure Pre = 99 
+Deck Count Post = 221 
+Discard Count Post = 252 
+Hand Count Post = 460 
+Number of Treasure Post = 101 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 213 
+Discard Count Pre = 435 
+Hand Count Pre = 342 
+Number of Treasure Pre = 65 
+Deck Count Post = 203 
+Discard Count Post = 443 
+Hand Count Post = 344 
+Number of Treasure Post = 67 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 356 
+Discard Count Pre = 310 
+Hand Count Pre = 45 
+Number of Treasure Pre = 14 
+Deck Count Post = 349 
+Discard Count Post = 315 
+Hand Count Post = 47 
+Number of Treasure Post = 15 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 174 
+Discard Count Pre = 418 
+Hand Count Pre = 426 
+Number of Treasure Pre = 94 
+Deck Count Post = 167 
+Discard Count Post = 423 
+Hand Count Post = 428 
+Number of Treasure Post = 96 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 17 
+Discard Count Pre = 45 
+Hand Count Pre = 157 
+Number of Treasure Pre = 40 
+Deck Count Post = 0 
+Discard Count Post = 61 
+Hand Count Post = 158 
+Number of Treasure Post = 40 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+FAIL -- Hand was not properly increased 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 1 
+Deck Count Pre = 59 
+Discard Count Pre = 38 
+Hand Count Pre = 119 
+Number of Treasure Pre = 23 
+Deck Count Post = 52 
+Discard Count Post = 43 
+Hand Count Post = 121 
+Number of Treasure Post = 25 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 40 
+Discard Count Pre = 416 
+Hand Count Pre = 49 
+Number of Treasure Pre = 21 
+Deck Count Post = 34 
+Discard Count Post = 420 
+Hand Count Post = 51 
+Number of Treasure Post = 23 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 134 
+Discard Count Pre = 168 
+Hand Count Pre = 281 
+Number of Treasure Pre = 52 
+Deck Count Post = 131 
+Discard Count Post = 169 
+Hand Count Post = 283 
+Number of Treasure Post = 54 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 21 
+Discard Count Pre = 125 
+Hand Count Pre = 450 
+Number of Treasure Pre = 114 
+Deck Count Post = 19 
+Discard Count Post = 125 
+Hand Count Post = 452 
+Number of Treasure Post = 116 
+
+
+PASS -- Deck count was properly decreased 
+FAIL -- Discard count was not properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 264 
+Discard Count Pre = 209 
+Hand Count Pre = 402 
+Number of Treasure Pre = 114 
+Deck Count Post = 261 
+Discard Count Post = 210 
+Hand Count Post = 404 
+Number of Treasure Post = 115 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 484 
+Discard Count Pre = 497 
+Hand Count Pre = 70 
+Number of Treasure Pre = 16 
+Deck Count Post = 474 
+Discard Count Post = 505 
+Hand Count Post = 72 
+Number of Treasure Post = 18 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 265 
+Discard Count Pre = 353 
+Hand Count Pre = 395 
+Number of Treasure Pre = 84 
+Deck Count Post = 253 
+Discard Count Post = 363 
+Hand Count Post = 397 
+Number of Treasure Post = 86 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 337 
+Discard Count Pre = 296 
+Hand Count Pre = 426 
+Number of Treasure Pre = 87 
+Deck Count Post = 331 
+Discard Count Post = 300 
+Hand Count Post = 428 
+Number of Treasure Post = 89 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 3 
+Deck Count Pre = 341 
+Discard Count Pre = 101 
+Hand Count Pre = 48 
+Number of Treasure Pre = 10 
+Deck Count Post = 322 
+Discard Count Post = 118 
+Hand Count Post = 50 
+Number of Treasure Post = 12 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 107 
+Discard Count Pre = 70 
+Hand Count Pre = 294 
+Number of Treasure Pre = 64 
+Deck Count Post = 100 
+Discard Count Post = 75 
+Hand Count Post = 296 
+Number of Treasure Post = 66 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 285 
+Discard Count Pre = 129 
+Hand Count Pre = 47 
+Number of Treasure Pre = 13 
+Deck Count Post = 276 
+Discard Count Post = 136 
+Hand Count Post = 49 
+Number of Treasure Post = 14 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+
+ Number of players = 3 
+Deck Count Pre = 169 
+Discard Count Pre = 421 
+Hand Count Pre = 338 
+Number of Treasure Pre = 86 
+Deck Count Post = 166 
+Discard Count Post = 422 
+Hand Count Post = 340 
+Number of Treasure Post = 88 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 326 
+Discard Count Pre = 203 
+Hand Count Pre = 173 
+Number of Treasure Pre = 36 
+Deck Count Post = 302 
+Discard Count Post = 225 
+Hand Count Post = 175 
+Number of Treasure Post = 38 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 55 
+Discard Count Pre = 160 
+Hand Count Pre = 277 
+Number of Treasure Pre = 61 
+Deck Count Post = 51 
+Discard Count Post = 162 
+Hand Count Post = 279 
+Number of Treasure Post = 63 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 3 
+Deck Count Pre = 233 
+Discard Count Pre = 345 
+Hand Count Pre = 63 
+Number of Treasure Pre = 10 
+Deck Count Post = 224 
+Discard Count Post = 352 
+Hand Count Post = 65 
+Number of Treasure Post = 12 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 133 
+Discard Count Pre = 172 
+Hand Count Pre = 453 
+Number of Treasure Pre = 77 
+Deck Count Post = 127 
+Discard Count Post = 176 
+Hand Count Post = 455 
+Number of Treasure Post = 78 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 206 
+Discard Count Pre = 240 
+Hand Count Pre = 272 
+Number of Treasure Pre = 63 
+Deck Count Post = 188 
+Discard Count Post = 256 
+Hand Count Post = 274 
+Number of Treasure Post = 65 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 70 
+Discard Count Pre = 9 
+Hand Count Pre = 355 
+Number of Treasure Pre = 92 
+Deck Count Post = 63 
+Discard Count Post = 14 
+Hand Count Post = 357 
+Number of Treasure Post = 94 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 88 
+Discard Count Pre = 87 
+Hand Count Pre = 397 
+Number of Treasure Pre = 97 
+Deck Count Post = 81 
+Discard Count Post = 92 
+Hand Count Post = 399 
+Number of Treasure Post = 98 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 250 
+Discard Count Pre = 449 
+Hand Count Pre = 22 
+Number of Treasure Pre = 4 
+Deck Count Post = 243 
+Discard Count Post = 454 
+Hand Count Post = 24 
+Number of Treasure Post = 6 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 255 
+Discard Count Pre = 245 
+Hand Count Pre = 68 
+Number of Treasure Pre = 16 
+Deck Count Post = 252 
+Discard Count Post = 246 
+Hand Count Post = 70 
+Number of Treasure Post = 18 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 2 
+Deck Count Pre = 1 
+Discard Count Pre = 179 
+Hand Count Pre = 367 
+Number of Treasure Pre = 87 
+Deck Count Post = 0 
+Discard Count Post = 180 
+Hand Count Post = 367 
+Number of Treasure Post = 87 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+FAIL -- Hand was not properly increased 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 474 
+Discard Count Pre = 284 
+Hand Count Pre = 497 
+Number of Treasure Pre = 130 
+Deck Count Post = 471 
+Discard Count Post = 285 
+Hand Count Post = 499 
+Number of Treasure Post = 132 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 334 
+Discard Count Pre = 464 
+Hand Count Pre = 97 
+Number of Treasure Pre = 22 
+Deck Count Post = 320 
+Discard Count Post = 476 
+Hand Count Post = 99 
+Number of Treasure Post = 23 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 329 
+Discard Count Pre = 497 
+Hand Count Pre = 138 
+Number of Treasure Pre = 34 
+Deck Count Post = 325 
+Discard Count Post = 499 
+Hand Count Post = 140 
+Number of Treasure Post = 35 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 142 
+Discard Count Pre = 229 
+Hand Count Pre = 76 
+Number of Treasure Pre = 24 
+Deck Count Post = 124 
+Discard Count Post = 245 
+Hand Count Post = 78 
+Number of Treasure Post = 26 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 71 
+Discard Count Pre = 456 
+Hand Count Pre = 345 
+Number of Treasure Pre = 84 
+Deck Count Post = 66 
+Discard Count Post = 459 
+Hand Count Post = 347 
+Number of Treasure Post = 86 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 4 
+Deck Count Pre = 454 
+Discard Count Pre = 425 
+Hand Count Pre = 182 
+Number of Treasure Pre = 43 
+Deck Count Post = 444 
+Discard Count Post = 433 
+Hand Count Post = 184 
+Number of Treasure Post = 44 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 10 
+Discard Count Pre = 49 
+Hand Count Pre = 84 
+Number of Treasure Pre = 23 
+Deck Count Post = 0 
+Discard Count Post = 61 
+Hand Count Post = 82 
+Number of Treasure Post = 23 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+FAIL -- Hand was not properly increased 
+FAIL -- Treasure was not properly increased 
+
+Deck Count Pre = 362 
+Discard Count Pre = 106 
+Hand Count Pre = 429 
+Number of Treasure Pre = 98 
+Deck Count Post = 359 
+Discard Count Post = 107 
+Hand Count Post = 431 
+Number of Treasure Post = 100 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+Deck Count Pre = 202 
+Discard Count Pre = 205 
+Hand Count Pre = 261 
+Number of Treasure Pre = 58 
+Deck Count Post = 195 
+Discard Count Post = 210 
+Hand Count Post = 263 
+Number of Treasure Post = 60 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+ Number of players = 1 
+Deck Count Pre = 209 
+Discard Count Pre = 124 
+Hand Count Pre = 328 
+Number of Treasure Pre = 68 
+Deck Count Post = 201 
+Discard Count Post = 130 
+Hand Count Post = 330 
+Number of Treasure Post = 70 
+
+
+PASS -- Deck count was properly decreased 
+PASS -- Discard count was properly increased 
+PASS -- Hand was increased properly by 2 
+PASS -- Treasure was properly increased by 2 
+
+Deck Count failed 0.000000 percent of the time 
+Discard Count failed 4.761905 percent of the time 
+Hand Count failed 2.380952 percent of the time 
+Treasure Count failed 25.396825 percent of the time 
+
+
+File 'dominion.c'
+Lines executed:23.42% of 568
+Creating 'dominion.c.gcov'
+

@@ -1,9 +1,9 @@
 /* Eric Walters -- Assignment 5 */
 
-/* I only have one teammate. Brian Brown has talked with the professor about this
-and he said to make sure we mention it in our assignments to avoid getting
-penalized. Therefore, I only have tests for the teammate1Dominion directory. */
+/* I only had one teammate, Brian Brown. I spoke with the professor about this
+and he said to test two random peoples' code*/
 
+/* Teammate 1 -- Brian Brown -- browbria */
 /* Bug 1 
 
 After running randomtestcard on Brian's code, I was able to identify a bug in his
@@ -26,3 +26,26 @@ accurate.
 
 
 */
+
+
+/* Teammate 2 -- Tatsiana Clifton -- cliftota */
+
+/* Bug 1 
+
+After running randomtestcard on Tatsiana's code, I was able to identify a bug in her
+Smithy function. The discard and hand count both fail because the for loop is incrementing
+one too many times. If the for loop is changed to < instead of <=, the problem will be 
+corrected. (randomtestcard.out in teammate2Dominion/dominion)
+
+*/
+
+/* Bug 2 
+
+After running randomtestadventurer on Tatsiana's code, I found an bug in the adventurer
+function. The discard and hand counts are off. The logic for shuffling the cards isn't 
+correct because it is shuffling any time the deck has more than one card instead of less 
+than one. If this is changed to be less than one the problem will be fixed. 
+(randomtestadventurer.out in teammate2Dominion/dominion)
+
+*/
+

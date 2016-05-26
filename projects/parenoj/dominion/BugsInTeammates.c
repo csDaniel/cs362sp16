@@ -2,7 +2,7 @@
 
 Bugs Found in Jerry's Code
 
-	1. Bug found in isGameOver function.
+	1. Bug found in isGameOver function. High Severity, can cause game to continue longer than it should.
 	 Code from test:
 	  TESTING with an empty salvager, sea_hag, and treasure_map stack:(last 3 'action cards')         Return value: 0 Expected Value: 1
 	  
@@ -11,7 +11,7 @@ Bugs Found in Jerry's Code
 	 
 	This bug was found with unittest1.c
 	
-	2. Bug found in scoreFore function
+	2. Bug found in scoreFore function. Medium Severity, only affects players that use garden card.
 	 Code from test:
 	  TESTING where players have 29 smithy cards and 1 gardens card
 
@@ -27,7 +27,7 @@ Bugs Found in Jerry's Code
 	 This means that it will only return a count of how many curse cards are in each deck, not the total card count which is what is needed based on the 
 	 purpose of the gardens card. I believe this is a misinterpretation of the fullDeckCount function based on its name.
 	 
-	3. Bug found in Adventurer Card
+	3. Bug found in Adventurer Card. Low severity. High priority due to easy fix.
 	 Code from test:
 	  TESTING that hand count for current player is 1 more than it started at (Gain 2 treasures, but lose adventurer card)
          Hand Count: 7   Expected: 6
@@ -39,7 +39,7 @@ Bugs Found in Jerry's Code
 	 
 Bugs Found in Samuel's Code
 
-	1. Bug found in isGameOver function.
+	1. Bug found in isGameOver function. High Severity, can cause game to continue longer than it should.
 	 Code from test:
 	  TESTING with an empty salvager, sea_hag, and treasure_map stack:(last 3 'action cards')         Return value: 0 Expected Value: 1
 	  
@@ -48,7 +48,7 @@ Bugs Found in Samuel's Code
 	 
 	This bug was found with unittest1.c
 	
-	2. Bug found in scoreFore function
+	2. Bug found in scoreFore function. Medium Severity, only affects players that use garden card.
 	 Code from test:
 	  TESTING where players have 29 smithy cards and 1 gardens card
 
@@ -64,7 +64,7 @@ Bugs Found in Samuel's Code
 	 This means that it will only return a count of how many curse cards are in each deck, not the total card count which is what is needed based on the 
 	 purpose of the gardens card. I believe this is a misinterpretation of the fullDeckCount function based on its name.
 	 
-	3. Bug found in Adventurer Card
+	3. Bug found in Adventurer Card. Low Severity. High priority due to easy fix.
 	 Code from test:
 	  TESTING that hand count for current player is 1 more than it started at (Gain 2 treasures, but lose adventurer card)
          Hand Count: 9   Expected: 6
@@ -74,14 +74,14 @@ Bugs Found in Samuel's Code
 	 adventure card function is supposed to provide two treasures, but as it is written, it gives 4 treasure cards and doesn't count a gold card as a treasure.
 	 
 	 
-	4. Bug found in Smithy Card
+	4. Bug found in Smithy Card. Low Severity. High priority due to easy fix.
 	 Code from test:
 	  TESTING that hand count for current player is 2 more than it started at (Gain 3 cards, but lose smithy card)
          Hand Count: 6   Expected: 7
 	
 	 This bug stems from the fact that the smithy card, as it is written, only has the player draw two cards when they are supposed to draw 3. 
 	
-	5. Bug found in Great Hall Card
+	5. Bug found in Great Hall Card. Low Severity. High priority due to easy fix.
 	 Code from test:
 	  TESTING that current player has received another Action point
          Action Count: 2 Expected: 1

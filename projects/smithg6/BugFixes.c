@@ -2,6 +2,8 @@ Grant Smith
 CS362 Software Engineering II
 Assignment 5
 
+(For reminder of the bugs introduced in earlier assgnments, please reference refactor.c)
+
 My first step was to take my unit tests and random testers and drop them into the copied
 folders from my teammates. My next step (Cleared with Instructor Aburas) was to move
 teammate A's cardtests into teammate B's folder and vice versa, as writing cardtests
@@ -54,15 +56,16 @@ proceed with the unit tests. The results are as follows:
 		Calls executed:8.00% of 100
 
 
-Bugs found:
+Bugs found (in addition to "BugsInTeammates.c" file):
 I actually found a bug in the way one of my unit tests was running when testing the values
 cards. I had modified at some point to test wrong index value for the card array of names,
 and corrected this before contiuing to test. Additionally, I modified a unit test that
 was testing the wrong value, and therefore passing when it shouldn't. The discardCard
 function is working correctly upon testing the trashFlag now.
 
-The main teammate bug found in Micahel's code with the unit tests is that the "isGameOver" 
-function is unable to recognize a corrupted game state. I was able to fix this code by
+The main teammate bugs found in Micahel's (Teammate2) code with the unit tests were that the "isGameOver" 
+function is unable to recognize a corrupted game state, and the Village card didn't have the
+desired effect on action totals. I was able to fix the isGameOver code by
 implementing a check and correction that would allow the game to end if a 
 corrupted value occurred. By setting any negative values to zero, it ensured that
 the test passed when a value became corrupted.
@@ -105,9 +108,39 @@ loop necessary to pickup any treasure. Random test results and coverage posted b
 		Taken at least once:14.32% of 419
 		Calls executed:8.00% of 100
 
+For Jessica's (Teammate1) code was not cooperating initially in the compilation stage.
+I had to change around a couple lines in the makefile, but was able to get things going.
+The first bug I found was that the adventurer card was not performing a valie draw.
+I also had to modify the card tests to run with the new refactored functions.
 
+I had to create custom makefile lines as well, as there was an issue with the
+-Wall flag not allowing my unittests to get created.
 
+Here are the results running test coverage of unittests for Jessica's code:
 
+		Lines executed:16.55% of 562
+		Branches executed:22.54% of 417
+		Taken at least once:13.43% of 417
+		Calls executed:7.37% of 95
+
+No further bugs were reported by these tests that I didn't already know about. The main
+bug found is the getCost function lacking the logic to check for a corrupted gamestate,
+"getCost returned a default value -1 for a card that doesn't exist". Other unit test
+results below.
+
+		Testing the getCost functionThis test passed: Return values are appropriate
+		This test passed. 
+		getCost returned a default value -1 for a card that doesn't exist
+
+		Testing the gainCard functionSuccess! Card total increased!
+		Success! Deck total increased!
+
+		Testing the discardCard functionSuccess! Card total decreased!
+		Success! Card discarded successfully.
+
+		Testing the isGameOver function
+		Game is over, test was successful.
+		Test passed on acceptable value, game is not over.
 
 
 The coverage amount helped me continue to target further bugs, but has not informed

@@ -392,7 +392,7 @@ int isGameOver(struct gameState *state) {
   int j;
 	
   //if stack of Province cards is empty, the game ends
-  if (state->supplyCount[province] == 0)
+  if (state->supplyCount[province] <= 0)
     {
       return 1;
     }
@@ -667,7 +667,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card ) 
     {
     case adventurer:
-		return play_adventurer(currentPlayer, state, drawntreasure, cardDrawn, temphand, z);
+		return play_adventurer(currentPlayer, state, drawntreasure, cardDrawn, temphand, z, handPos);
 			
     case council_room:
       //+4 Cards
@@ -707,12 +707,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       x = 1;//Condition to loop on
       while( x == 1) {//Buy one card
 	if (supplyCount(choice1, state) <= 0){
-	  if (DEBUG)
-	    printf("None of that card left, sorry!\n");
-
+		if (DEBUG) {
+			printf("None of that card left, sorry!\n");
+		}
 	  if (DEBUG){
 	    printf("Cards Left: %d\n", supplyCount(choice1, state));
 	  }
+	  return -1;
 	}
 	else if (state->coins < getCost(choice1)){
 	  printf("That card is too expensive!\n");
@@ -720,6 +721,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	  if (DEBUG){
 	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
 	  }
+	  return -1;
 	}
 	else{
 
@@ -1243,22 +1245,20 @@ int play_smithy(int currentPlayer, struct gameState * state, int handPos) {
 		drawCard(currentPlayer, state);
 	}
 
-	drawCard(currentPlayer, state);
-
 	//discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
 
-int play_adventurer(int currentPlayer, struct gameState * state, int drawntreasure, int cardDrawn, int temphand[], int z) {
-	while (drawntreasure<2){
+int play_adventurer(int currentPlayer, struct gameState * state, int drawntreasure, int cardDrawn, int temphand[], int z, int handPos) {
+	while (drawntreasure<2 && (state->deckCount[currentPlayer] + state->discardCount[currentPlayer]) > 0){
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
 		}
 		drawCard(currentPlayer, state);
 		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];//top card of hand is most recently drawn card.
-		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold || cardDrawn == smithy)
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 			drawntreasure++;
 		else{
 			temphand[z] = cardDrawn;
@@ -1270,6 +1270,8 @@ int play_adventurer(int currentPlayer, struct gameState * state, int drawntreasu
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z - 1]; // discard all cards in play that have been drawn
 		z = z - 1;
 	}
+	discardCard(handPos, currentPlayer, state, 0);
+
 	return 0;
 }
 
@@ -1318,7 +1320,6 @@ int play_minion(int currentPlayer, struct gameState * state, int handPos, int ch
 					for (j = 0; j < 4; j++)
 					{
 						drawCard(i, state);
-						i++;
 					}
 				}
 			}
@@ -1337,7 +1338,6 @@ int play_embargo(int currentPlayer, struct gameState * state, int handPos, int c
 	//see if selected pile is in play
 	if (state->supplyCount[choice1] == -1)
 	{
-		state->numPlayers = state->numPlayers + 1;
 		return -1;
 	}
 

@@ -30,7 +30,6 @@ int playSmithyCard(struct gameState* state, int handPos) {
 #include <assert.h>
 #include "rngs.h"
 #include <stdlib.h>
-#include "interface.h"
 
 #define TESTCARD "smithy"
 
@@ -50,7 +49,6 @@ int main() {
 		int failFlag = 0;
 		int passCount = 0;
 		int tests = 4;
-		char *cardName;
 	
 		struct gameState G, testG;
 		int k[10] = {smithy, embargo, village, minion, mine, cutpurse,
@@ -61,10 +59,10 @@ int main() {
 	// initialize a game state and player cards
 	initializeGame(numPlayers, kTest, seed, &G);
 
-	printf("----------------- Testing Card: %s ----------------\n", TESTCARD);
+	printf("\n----------------- Testing Card: %s ----------------\n", TESTCARD);
 
 	// ----------- TEST 1: Current Player Recieves 3 Cards, Discards 1( --------------
-	printf("TEST 1: Current Player Recieves 3 Cards\n");
+	printf("\n\n*****TEST 1: Current Player Recieves 3 Cards*****\n");
 
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
@@ -76,17 +74,17 @@ int main() {
 	//Is the deck count what we expect?	
 	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - newCards + shuffledCards);
 	//Is the discard count what we expect?
-	printf("discard count = %d, expected = %d\n", testG.discardCount[thisPlayer],  discarded);	
+	printf("discard count = %d, expected = %d\n", testG.playedCardCount,  discarded);	
 	if( !(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded) ){
-		printf( "Test 1 Failed: Player handcount different than expected\n" );
+		printf( "\n---Test 1 Failed: Player handcount different than expected\n" );
 		failFlag = 1;
 	}
 	if( !(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards) ){
-		printf( "Test 1 Failed: Player deckcount different than expected\n" );
+		printf( "\n---Test 1 Failed: Player deckcount different than expected\n" );
 		failFlag = 1;
 	}
-	if( !(testG.discardCount[thisPlayer] == discarded) ){
-		printf( "Test 1 Failed: Player discard count different than expected\n" );
+	if( !(testG.playedCardCount == discarded) ){
+		printf( "\n---Test 1 Failed: Player discard count different than expected\n" );
 		failFlag = 1;
 	}
 	if( failFlag == 0 ){
@@ -97,7 +95,7 @@ int main() {
 	
 
 	// ----------- TEST 2: Testing that the other player's state doesn't change --------------
-	printf("TEST 2: Player 2 state doesn't change when Player 1 plays Smithy\n");
+	printf("\n\n*****TEST 2: Player 2 state doesn't change when Player 1 plays Smithy*****\n");
 	failFlag = 0;
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
@@ -106,16 +104,16 @@ int main() {
 	newCards = 0;
 	discarded = 0;
 	//Is the handcount what we expect?
-	printf("hand count = %d, expected = %d\n", testG.handCount[otherPlayer], G.handCount[otherPlayer] + newCards - discarded);
+	printf("hand count = %d, expected = %d\n", testG.handCount[otherPlayer], G.handCount[otherPlayer]);
 	//Is the deck count what we expect?	
-	printf("deck count = %d, expected = %d\n", testG.deckCount[otherPlayer], G.deckCount[otherPlayer] - newCards + shuffledCards);
+	printf("deck count = %d, expected = %d\n", testG.deckCount[otherPlayer], G.deckCount[otherPlayer]);
 	//We don't need to run the coin, action, or buys for this because those are reset each turn for players.
-	if( !(testG.handCount[thisPlayer] == G.handCount[thisPlayer] + newCards - discarded) ){
-		printf( "Test 2 Failed: Player handcount different than expected\n" );
+	if( testG.handCount[otherPlayer] != G.handCount[otherPlayer] ){
+		printf( "\n--Test 2 Failed: Player handcount different than expected\n" );
 		failFlag = 1;
 	}
-	if( !(testG.deckCount[thisPlayer] == G.deckCount[thisPlayer] - newCards + shuffledCards) ){
-		printf( "Test 2 Failed: Player deckcount different than expected\n" );
+	if( testG.deckCount[otherPlayer] != G.deckCount[otherPlayer] ){
+		printf( "\n--Test 2 Failed: Player deckcount different than expected\n" );
 		failFlag = 1;
 	}
 	if( failFlag == 0 ){
@@ -126,7 +124,7 @@ int main() {
 
 	// ----------- TEST 3: Smithy is discarded from hand--------------
 	failFlag = 0;
-	printf("TEST 3: Smithy is successfully discarded, Other Cards are kept\n");
+	printf("\n\nTEST 3: Smithy is successfully discarded, Other Cards are kept\n\n");
 
 	int offset;
 	// Cycle through each  possible Smithy hand position
@@ -199,14 +197,14 @@ int main() {
 			for (m=0; m<G.handCount[thisPlayer]; m++) {
 				if( m==i ){
 					if( G.hand[thisPlayer][m] == testG.hand[thisPlayer][m] ){
-						printf( "Test 3 Failed: Smithy remained in same position in hand for iteration # %d, where Smith was in starting position: %d.\n", i+1, i );
+						printf( "\n--Test 3 Failed: Smithy remained in same position in hand for iteration # %d, where Smith was in starting position: %d.\n", i+1, i );
 						failFlag = 1;
 					} else if ( testG.hand[thisPlayer][m] == smithy ){
-						printf( "Test 3 Failed: Smithy remained in hand for iteration # %d, but moved to position %d, where Smith was in starting position: %d.\n", i+1, m, i );
+						printf( "\n--Test 3 Failed: Smithy remained in hand for iteration # %d, but moved to position %d, where Smith was in starting position: %d.\n", i+1, m, i );
 						failFlag = 1;
 					} else {
 						passCount++;
-						printf( "Test 3 Passed" );
+						printf( "\nTest 3 Passed" );
 					}
 				}
 			}
@@ -216,11 +214,12 @@ int main() {
 	// ----------- TEST 4: Coin, Action, Buy, Kingdom, Victory states don't change ---------
 	failFlag = 0;
 	handpos = 0;
-	printf("\nTEST 4: Coin, Action, Buy, Kingdom, Victory states don't change\n");
-	
+	printf("\n\n*****TEST 4: Coin, Action, Buy, Kingdom, Victory states don't change****\n\n");
+	G.hand[thisPlayer][0] = 13;
 	// copy the game state to a test case
 	memcpy(&testG, &G, sizeof(struct gameState));
-	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+	//cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+	playCard(0, choice1, choice2, choice3, &testG);
 
 	printf("coins = %d, expected = %d\n", testG.coins, G.coins + xtraCoins);
 	printf("actions = %d, expected = %d\n", testG.numActions, G.numActions - actions);
@@ -229,56 +228,48 @@ int main() {
 	printf("Duchy cards = %d, expected = %d\n", testG.supplyCount[duchy], G.supplyCount[duchy]);
 	printf("Province cards = %d, expected = %d\n", testG.supplyCount[province], G.supplyCount[province]);
 	printf("Player turn = %d, expected = %d\n", testG.whoseTurn, G.whoseTurn );
-	printf("Kingdom cards = ");
+	printf("Kingdom cards = \n");
 	for( i=0; i< 10; i++ ){ 
-		cardNumToName( kTest[i], cardName );
-	printf( "Post\n" );
-		printf( "(%s = %d)", cardName, testG.supplyCount[i] );
-	}
-	printf(", expected = ");
-	for( i=0; i< 10; i++ ){
-		cardNumToName( k[i], cardName );
-		printf( "(%s = %d)", cardName, G.supplyCount[i] );
+		printf( "Card in test:%d, Count= %d\n", kTest[i], testG.supplyCount[i] );
+		printf( "Expected card: %d, count to equal: %d\n", k[i], G.supplyCount[i] );
 	}
 	
 	//Tests
 	if( !(testG.coins == G.coins + xtraCoins) ){
-		printf( "Test 4 Failed: Player coins different than expected\n" );
+		printf( "\n--Test 4 Failed: Player coins different than expected\n" );
 		failFlag = 1;
 	}
 	if( !(testG.numActions == G.numActions - actions) ){
-		printf( "Test 4 Failed: Player action count different than expected\n" );
+		printf( "\n--Test 4 Failed: Player action count different than expected\n" );
 		failFlag = 1;
 	}
 	if( !(testG.numBuys == G.numBuys - buys) ){
-		printf( "Test 4 Failed: Player buy count different than expected\n" );
+		printf( "\n--Test 4 Failed: Player buy count different than expected\n" );
 		failFlag = 1;
 	}
 	if( !(testG.supplyCount[estate] == G.supplyCount[estate] ) ){
-		printf( "Test 4 Failed: Estate Count Changed\n" );
+		printf( "\n--Test 4 Failed: Estate Count Changed\n" );
 		failFlag = 1;
 	}
 	if( !(testG.supplyCount[duchy] == G.supplyCount[duchy] ) ){
-		printf( "Test 4 Failed: Duchy Count Changed\n" );
+		printf( "\n--Test 4 Failed: Duchy Count Changed\n" );
 		failFlag = 1;
 	}
 	if( !(testG.supplyCount[province] == G.supplyCount[province] ) ){
-		printf( "Test 4 Failed: Province Count Changed\n" );
+		printf( "\n--Test 4 Failed: Province Count Changed\n" );
 		failFlag = 1;
 	}
 	if( !(testG.whoseTurn == G.whoseTurn ) ){
-		printf( "Test 4 Failed: Whose Turn Changed\n" );
+		printf( "\n--Test 4 Failed: Whose Turn Changed\n" );
 		failFlag = 1;
 	}
 	for( i=0; i< 10; i++ ){
 		if( !( kTest[i] == k[i] ) ){
-			cardNumToName( k[i], cardName );
-			printf( "Test 4 Failed:Kingdom card %s changed to enum %d \n", cardName, kTest[i] );
+			printf( "\n--Test 4 Failed:Kingdom card %d changed to enum %d \n", k[i], kTest[i] );
 			failFlag = 1;
 		}
 		if( !( testG.supplyCount[i] == G.supplyCount[i] ) ){
-			cardNumToName( k[i], cardName );
-			printf( "Test 4 Failed:Supply count %d for %s changed to %d \n", G.supplyCount[i], cardName, testG.supplyCount[i] );
+			printf( "\n--Test 4 Failed:Supply count %d for card %d changed to %d \n", G.supplyCount[i], k[i], testG.supplyCount[i] );
 			failFlag = 1;
 		}
 
@@ -289,7 +280,7 @@ int main() {
 		printf( "Test 4 Passed" );
 	}
 
-	printf("\n >>>>> SUCCESS: Testing complete %s, %d tests failed, %d tests passed. <<<<<\n\n", TESTCARD, tests-passCount, passCount);
+	printf("\n >>>>> SUCCESS: Testing complete %s, %d tests passed. <<<<<\n\n", TESTCARD ,passCount);
 
 
 	return 0;

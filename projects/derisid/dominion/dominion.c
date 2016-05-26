@@ -1249,7 +1249,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 void adventurerCard(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int z, int temphand[])
 {
   while(drawntreasure<2){
-  if (state->deckCount[currentPlayer] >1){//if the deck is empty we need to shuffle discard and add to deck
+  if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
     shuffle(currentPlayer, state);
   }
   drawCard(currentPlayer, state);
@@ -1295,7 +1295,7 @@ void council_roomCard(struct gameState *state, int handPos, int currentPlayer, i
 void smithyCard(int currentPlayer, struct gameState *state, int handPos, int i)
 {
       //+3 Cards
-      for (i = 0; i < 4; i++)
+      for (i = 0; i < 3; i++)
   {
     drawCard(currentPlayer, state);
   }

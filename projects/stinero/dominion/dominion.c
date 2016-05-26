@@ -1099,14 +1099,14 @@ int seahagPlay(int currentPlayer, struct gameState *state, int handpos) {
 	for (i = 0; i < state->numPlayers; i++) {
 		if (i != currentPlayer) {
 			discardCard(state->deck[i][state->deckCount[i]--], i, state, 0);
-			state->deck[i][state->deckCount[i]] = curse;//Top card now a curse
+			state->deck[i][state->deckCount[0]] = curse;//Top card now a curse
 			state->deckCount[i]++;
 		}
 	}
 
 	discardCard(handpos, currentPlayer, state, 0);
 	state->discard[currentPlayer][state->discardCount[currentPlayer]] = sea_hag;
-	state->discardCount[currentPlayer]++;
+//	state->discardCount[currentPlayer]++;
 
 	return 0;
 }
@@ -1133,9 +1133,6 @@ int baronPlay(int currentPlayer, int choice1, int handPos,
 		if (supplyCount(estate, state) > 0) {
 			gainCard(estate, state, 0, currentPlayer); //Gain an estate
 			state->supplyCount[estate]--; //Decrement Estates
-			if (supplyCount(estate, state) == 0) {
-				isGameOver(state);
-			}
 		}
 	return 0;
 }
@@ -1176,27 +1173,52 @@ int adventurerPlay(int currentPlayer, int handPos, struct gameState *state) {
 	drawntreasure = 0;
 	int shuffleCount;
 	shuffleCount = 0;
+	int toggle  = 0;
+
 
 	while (drawntreasure < 2) {
 		if (state->deckCount[currentPlayer] < 1) { //if the deck is empty we need to shuffle discard and add to deck
+			if(state->discard[currentPlayer] == 0)
+			{
+				printf("Done screwed up");
+				return 0;
+			}
+			toggle++;
+			printf("Toggle++");
 			shuffle(currentPlayer, state);
 		}
+
 		drawCard(currentPlayer, state);
-		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]
-				- 1]; //top card of hand is most recently drawn card.
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1]; //top card of hand is most recently drawn card.
+//		printf("Card Drawn is: %d", cardDrawn);
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-			drawntreasure++;
+			{drawntreasure++;
+			if(cardDrawn == gold)
+			{
+				printf("found gold");
+			}
+			}
 		else {
+
 			temphand[z] = cardDrawn;
-			state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+//			state->deckCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
 			z++;
+			state->handCount[currentPlayer]--;
 		}
+
+		if(toggle == 2)
+		{
+			break;
+		}
+
+
 	}
 	while (z - 1 >= 0) {
-		state->discard[currentPlayer][state->discardCount[currentPlayer]++] =
+		state->discard[currentPlayer][state->discardCount[currentPlayer]] =
 				temphand[z - 1]; // discard all cards in play that have been drawn
 		z = z - 1;
 	}
+
 	discardCard(handPos, state->whoseTurn, state, 0);
 	shuffle(currentPlayer, state);
 
@@ -1206,34 +1228,9 @@ int adventurerPlay(int currentPlayer, int handPos, struct gameState *state) {
 int smithPlay(int currentPlayer, int handPos, struct gameState *state) {
 
 	int i;
-	int bool; //to trigger if the deck has less than 3 cards and has been shuffled.
-	bool = 0;
-//if the deck has less than 3 cards re-shuffle the
-//deck so the smithy card can be played.
-	while (*(state->handCount) <= 3)
-
+	for(i = 0; i < 3; i++)
 	{
-		for (i = 0; i < state->discardCount[currentPlayer]; i++) {
-			state->deck[currentPlayer][i] = state->discard[currentPlayer][i];
-			state->discard[currentPlayer][i] = -1;
-		}
-
-		state->deckCount[currentPlayer] = state->discardCount[currentPlayer];
-		state->discardCount[currentPlayer] = 0;
-
-		shuffle(currentPlayer, state);
-		bool = +1;
-		if (bool == 2) {
-			break;
-		}
-	}
-
-//If there are not enough cards in the deck to play the hand then return without drawing cards.
-	if (*(state->handCount) <= 3 || bool == 2) {
-		return 0;
-	}
-	for (i = 0; i < 3; i++) {
-		drawCard(currentPlayer, state);
+		drawCard(currentPlayer,state);
 	}
 //discard card from hand
 	discardCard(handPos, currentPlayer, state, 0);
@@ -1248,6 +1245,9 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state,
 	//if card is not trashed, added to Played pile
 	if (trashFlag < 1) {
 		//add card to played pile
+		state->discardCount[currentPlayer]++;
+		state->discard[currentPlayer][state->hand[currentPlayer][handPos]];
+
 		state->playedCards[state->playedCardCount] =
 				state->hand[currentPlayer][handPos];
 		state->playedCardCount++;

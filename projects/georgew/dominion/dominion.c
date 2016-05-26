@@ -1238,35 +1238,35 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
 	
   //if card is not trashed, added to Played pile 
   if (trashFlag < 1)
-    {
+  {
       //add card to played pile
       state->playedCards[state->playedCardCount] = state->hand[currentPlayer][handPos]; 
       state->playedCardCount++;
-    }
+  }
 	
   //set played card to -1
   state->hand[currentPlayer][handPos] = -1;
 	
   //remove card from player's hand
   if ( handPos == (state->handCount[currentPlayer] - 1) ) 	//last card in hand array is played
-    {
+  {
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
-    }
+  }
   else if ( state->handCount[currentPlayer] == 1 ) //only one card in hand
-    {
+  {
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
-    }
+  }
   else 	
-    {
+  {
       //replace discarded card with last card in hand
       state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
       //set last card to -1
       state->hand[currentPlayer][state->handCount[currentPlayer] - 1] = -1;
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
-    }
+  }
 	
   return 0;
 }
@@ -1344,7 +1344,7 @@ int smithyCard(int handPos, int currentPlayer, struct gameState *state){
     
     int i;   
     //+3 Cards
-    for (i = 1; i < 3; i++){
+    for (i = 0; i < 3; i++){
         drawCard(currentPlayer, state);
     }
 			
@@ -1364,7 +1364,7 @@ int adventurerCard(int currentPlayer, struct gameState *state, int temphand[MAX_
 	}
         drawCard(currentPlayer, state);
         cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-        if (cardDrawn == copper || cardDrawn == silver && cardDrawn == gold)
+        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
             drawntreasure++;
         else{
             temphand[z]=cardDrawn;
@@ -1402,7 +1402,7 @@ int stewardCard(int handPos, int choice1, int choice2, int choice3, int currentP
         drawCard(currentPlayer, state);
 	drawCard(handPos, state);
     }
-    else if (choice1 == 1)
+    else if (choice1 == 2)
     {
         //+2 coins
 	state->coins = state->coins + 2;
@@ -1431,7 +1431,7 @@ int councilRoomCard(int handPos, int currentPlayer, struct gameState *state){
     state->numBuys++;
 			
     //Each other player draws a card
-    for (i = 1; i < state->numPlayers; i++)
+    for (i = 0; i < state->numPlayers; i++)
     {
         if ( i != currentPlayer )
 	{
