@@ -63,6 +63,7 @@ public class UrlValidatorTest extends TestCase {
 	      String currentScheme = testSchemes[i];
 	      System.out.print("\nTesting " + currentScheme);
 	      boolean valid = schemeVal.isValidScheme(currentScheme);
+	      System.out.print(valid);
 	      if (valid == false && i == 0 || valid == true && i == 1 || valid == false && i == 2 || valid == true && i == 3 || valid == true && i == 4 || valid == false && i == 5) 
 	      {
 	    	  System.out.println("\t\t\tResult: FAILED, invalid scheme");
