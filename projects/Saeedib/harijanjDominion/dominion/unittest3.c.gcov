@@ -1,0 +1,175 @@
+        -:    0:Source:unittest3.c
+        -:    0:Graph:unittest3.gcno
+        -:    0:Data:unittest3.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "dominion.h"
+        -:    2:#include "dominion_helpers.h"
+        -:    3:#include <string.h>
+        -:    4:#include <stdio.h>
+        -:    5:#include <assert.h>
+        -:    6:#include "rngs.h"
+        -:    7:
+        -:    8:/* Using testUpdateCoins.c template
+        -:    9:
+        -:   10:According to documentation: isGameOver()
+        -:   11:Description: Checks the number of provinces or if three supply piles are empty to determine if
+        -:   12:the game is over.
+        -:   13:Input: struct gameState state – holds a pointer to a gameState variable
+        -:   14:Return: Returns 1 if the game is over Returns 0 on if the game i
+        -:   15:---------------------------------------------------------------------------
+        -:   16:unittest3: unittest3.c dominion.o rngs.o
+        -:   17:    gcc -o unittest3 -g  unittest2.c dominion.o rngs.o $(CFLAGS)
+        -:   18:
+        -:   19:*/
+        -:   20:
+        1:   21:int main() {
+        -:   22:    int i;
+        1:   23:    int seed = 1000;
+        1:   24:    int numPlayer = 2;
+        1:   25:    int victorySupply = 8; //Supplies for 2 players
+        1:   26:    int goldSupply = 30;
+        1:   27:    int curseSupply = 10;
+        1:   28:    int successFlag = 0;
+        -:   29:    //int maxHandCount = 5;
+        -:   30:    int result;
+        -:   31:    struct gameState originalG, testingG;
+        1:   32:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   33:               , remodel, smithy, village, baron, great_hall};
+        -:   34:
+        -:   35:
+        1:   36:    printf ("TESTING isGameOver():\n");
+        -:   37:
+        1:   38:    initializeGame(numPlayer, k, seed, &originalG);
+        -:   39:    // -------------------------------------------------------
+        -:   40:
+        1:   41:    printf ("TEST 1: Test if province is negative.\n");
+        1:   42:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:   43:
+        9:   44:    for (i = 0; i < victorySupply; i++) {
+        -:   45:        // province (3)
+        8:   46:        testingG.supplyCount[3] -= 2;
+        -:   47:    }
+        -:   48:
+        1:   49:    result = isGameOver(&testingG);
+        1:   50:    printf ("# of province card in supply: %d. Dominion need condition state->supplyCount[province] =< 0!\n", testingG.supplyCount[3]);
+        1:   51:    printf ("Result value: %d. Expected value: 0 (Game Not Over). \n", result);
+        1:   52:    if (testingG.coins == 0) {
+    #####:   53:      printf ("Test 1 Passed.\n");
+    #####:   54:      successFlag += 1;
+        -:   55:    }
+        -:   56:    else {
+        1:   57:      printf ("Test 1 Failed.\n");
+        -:   58:    }
+        -:   59:
+        -:   60:    // -------------------------------------------------------
+        -:   61:
+        1:   62:    printf ("TEST 2: Test if dutchy empty.\n");
+        1:   63:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:   64:
+        9:   65:    for (i = 0; i < victorySupply; i++) {
+        -:   66:        // duchy (2)
+        8:   67:        testingG.supplyCount[2] -= 1;
+        -:   68:    }
+        -:   69:
+        1:   70:    result = isGameOver(&testingG);
+        -:   71:
+        1:   72:    printf ("Result value: %d. Expected value: 0 (Game Not Over). \n", result);
+        1:   73:    if (result == 0) {
+        1:   74:      printf ("Test 2 Passed.\n");
+        1:   75:      successFlag += 1;
+        -:   76:    }
+        -:   77:    else {
+    #####:   78:      printf ("Test 2 Failed.\n");
+        -:   79:    }
+        -:   80:
+        -:   81:    // -------------------------------------------------------
+        -:   82:
+        1:   83:    printf ("TEST 3: Test if estate empty.\n");
+        1:   84:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:   85:
+        9:   86:    for (i = 0; i < victorySupply; i++) {
+        -:   87:        // estate (1)
+        8:   88:        testingG.supplyCount[1] -= 1;
+        -:   89:    }
+        -:   90:
+        1:   91:    result = isGameOver(&testingG);
+        -:   92:
+        1:   93:    printf ("Result value: %d. Expected value: 0 (Game Not Over). \n", result);
+        1:   94:    if (result == 0) {
+        1:   95:      printf ("Test 3 Passed.\n");
+        1:   96:      successFlag += 1;
+        -:   97:    }
+        -:   98:    else {
+    #####:   99:      printf ("Test 3 Failed.\n");
+        -:  100:    }
+        -:  101:
+        -:  102:    // -------------------------------------------------------
+        -:  103:
+        1:  104:    printf ("TEST 4: Test when 4 supplies zero\n");
+        1:  105:    printf ("Testing with duchy, estate, curse and gold\n");
+        1:  106:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:  107:
+        9:  108:    for (i = 0; i < victorySupply; i++) {
+        -:  109:        // estate (1)
+        8:  110:        testingG.supplyCount[1] -= 1;
+        -:  111:    }
+        9:  112:    for (i = 0; i < victorySupply; i++) {
+        -:  113:        // duchy (2)
+        8:  114:        testingG.supplyCount[2] -= 1;
+        -:  115:    }
+       11:  116:    for (i = 0; i < curseSupply; i++) {
+        -:  117:        // curse (0)
+       10:  118:        testingG.supplyCount[0] -= 1;
+        -:  119:    }
+       31:  120:    for (i = 0; i < goldSupply; i++) {
+        -:  121:        // gold (6)
+       30:  122:        testingG.supplyCount[6] -= 1;
+        -:  123:    }
+        -:  124:
+        1:  125:    result = isGameOver(&testingG);
+        -:  126:
+        1:  127:    printf ("Result value: %d. Expected value: 1 (Game Is Over). \n", result);
+        1:  128:    if (result == 1) {
+        1:  129:      printf ("Test 4 Passed.\n");
+        1:  130:      successFlag += 1;
+        -:  131:    }
+        -:  132:    else {
+    #####:  133:      printf ("Test 4 Failed.\n");
+        -:  134:    }
+        -:  135:
+        -:  136:    // -------------------------------------------------------
+        -:  137:
+        1:  138:    printf ("TEST 5: Test when 2 supplies zero but 1 with province.\n");
+        1:  139:    printf ("Testing with provice and gold\n");
+        1:  140:    memcpy(&testingG, &originalG, sizeof(struct gameState));
+        -:  141:
+        9:  142:    for (i = 0; i < victorySupply; i++) {
+        -:  143:        // province (3)
+        8:  144:        testingG.supplyCount[3] -= 1;
+        -:  145:    }
+       31:  146:    for (i = 0; i < goldSupply; i++) {
+        -:  147:        // gold (6)
+       30:  148:        testingG.supplyCount[6] -= 1;
+        -:  149:    }
+        -:  150:
+        1:  151:    result = isGameOver(&testingG);
+        -:  152:
+        1:  153:    printf ("Result value: %d. Expected value: 1 (Game Is Over). \n", result);
+        1:  154:    if (result == 1) {
+        1:  155:      printf ("Test 5 Passed.\n");
+        1:  156:      successFlag += 1;
+        -:  157:    }
+        -:  158:    else {
+    #####:  159:      printf ("Test 5 Failed.\n");
+        -:  160:    }
+        -:  161:
+        -:  162:    // -------------------------------------------------------
+        -:  163:
+        1:  164:    if (successFlag == 4) {
+        1:  165:      printf ("All tests passed, except test # 1 since it is intentional.\n");
+        -:  166:    }
+        -:  167:  
+        1:  168:  return 0;
+        -:  169:
+        -:  170:}

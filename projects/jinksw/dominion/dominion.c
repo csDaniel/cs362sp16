@@ -257,7 +257,7 @@ int playCard(int handPos, int choice1, int choice2, int choice3, struct gameStat
   //play card
   if ( cardEffect(card, choice1, choice2, choice3, state, handPos, &coin_bonus) < 0 )
     {
-      return -1;
+      //return -1; //prevents numactions from updating
     }
 	
   //reduce number of actions
@@ -356,6 +356,11 @@ int endTurn(struct gameState *state) {
   for (i = 0; i < state->handCount[currentPlayer]; i++){
     state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->hand[currentPlayer][i];//Discard
     state->hand[currentPlayer][i] = -1;//Set card to -1
+  }
+  state->handCount[currentPlayer] = 0;//Reset hand count
+  for (i = 0; i < state->playedCardCount; i++){
+    state->discard[currentPlayer][state->discardCount[currentPlayer]++] = state->playedCards[i];//Discard
+    state->playedCards[i] = -1;//Set card to -1
   }
   state->handCount[currentPlayer] = 0;//Reset hand count
     
@@ -644,7 +649,7 @@ int getCost(int cardNumber)
 }
 
 //Start of new card functions:
-int playAdventurer( struct gameState* state ){
+int playAdventurerCard( struct gameState* state ){
 	int drawntreasure = 0;
 	int currentPlayer = whoseTurn(state);
 	int cardDrawn;
@@ -653,10 +658,9 @@ int playAdventurer( struct gameState* state ){
 
 	while(drawntreasure<2){
 		drawCard(currentPlayer, state);
-		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]];//top card of hand is most recently drawn card.
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold){
 		  drawntreasure++;
-		} else {
 		  temphand[z]=cardDrawn;
 		  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
 		  z++;
@@ -671,19 +675,21 @@ int playAdventurer( struct gameState* state ){
 	return 0;
 }
 
-int playSmithy(struct gameState* state) {
+int playSmithyCard(struct gameState* state, int handPos) {
 	
   int currentPlayer = whoseTurn(state);
 	//+3 Cards
-  for ( int i = 0; i <= 3; i++)
+  for ( int i = 0; i < 3; i++)
 	{
-		gainCard( i, state, 0, currentPlayer );
+		drawCard( currentPlayer, state );
 	}
 			
+	//discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
 	return 0;
 }
 
-int playVillage( struct gameState* state, int handPos ){
+int playVillageCard( struct gameState* state, int handPos ){
     
 		int currentPlayer = whoseTurn(state);
     //+1 Card
@@ -693,14 +699,14 @@ int playVillage( struct gameState* state, int handPos ){
     state->numActions = state->numActions + 2;
 			
     //discard played card from hand
-    discardCard(handPos, currentPlayer, state, 1);
+    discardCard(handPos, currentPlayer, state, 0);
     return 0;
 }
 
-int playCouncil_room(struct gameState* state, int handPos){
+int playCouncil_roomCard(struct gameState* state, int handPos){
   int currentPlayer = whoseTurn(state);
   //+4 Cards
-  for (int i = 0; i <= 4; i++)
+  for (int i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -709,7 +715,7 @@ int playCouncil_room(struct gameState* state, int handPos){
   state->numBuys++;
 			
   //Each other player draws a card
-  for (int i = 0; i <= state->numPlayers; i++)
+  for (int i = 0; i < state->numPlayers; i++)
 	{
 	  if ( i != currentPlayer )
 	    {
@@ -724,7 +730,7 @@ int playCouncil_room(struct gameState* state, int handPos){
 }
 
 
-int playFeast(  struct gameState* state, int choice1) {
+int playFeastCard( int choice1, struct gameState* state, int handPos ) {
 	int temphand[MAX_HAND];
   int currentPlayer = whoseTurn(state);
   //gain card with cost up to 5
@@ -739,7 +745,7 @@ int playFeast(  struct gameState* state, int choice1) {
   updateCoins(currentPlayer, state, 5);
   int x = 1;//Condition to loop on
   while( x == 1) {//Buy one card
-		if (supplyCount(choice1, state) < 0){
+		if (supplyCount(choice1, state) <= 0){
 			if (DEBUG)
 				printf("None of that card left, sorry!\n");
 
@@ -801,13 +807,16 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   //uses switch to select card and perform actions
   switch( card ) {
     case adventurer:
-			playAdventurer(state);		
+			playAdventurerCard(state);
+			break;		
 	
     case council_room:
-			playCouncil_room(state, handPos);      
-			
+			playCouncil_roomCard(state, handPos);      
+			break;
+
     case feast:
-			playFeast(  state, choice1);
+			playFeastCard( choice1, state, handPos);
+			break;
 	
     case gardens:
       return -1;
@@ -874,11 +883,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-			playSmithy(state);	
+			playSmithyCard(state, handPos);	
+			break;
 	
     case village:
-			playVillage(state, handPos);	
-	
+			playVillageCard(state, handPos);	
+			break;	
+
     case baron:
       state->numBuys++;//Increase buys by 1!
       if (choice1 > 0){//Boolean true or going to discard an estate

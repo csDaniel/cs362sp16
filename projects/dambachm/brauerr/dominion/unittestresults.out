@@ -1,0 +1,108 @@
+unittest1:
+Test for scoreFor
+Testing with 1 curse, 2 estate, 1 duchy, 1 province and 1 steward card in hand.
+Test passed!
+Testing with 1 curse, 2 estate, 1 duchy, 1 province and 2 other cards in discard.
+Test failed!
+Testing with 1 curse, 2 estate, 1 duchy, 1 province and 3 other cards in deck.
+Test passed!
+
+
+
+
+File 'dominion.c'
+Lines executed:5.07% of 572
+Creating 'dominion.c.gcov'
+
+unittest2:
+Test for isGameOver
+1 province and all other supplies are greater than 0
+Test passed!!!
+Test with province equal to zero
+Test passed!!!
+Test with a province card but three other cards are empty
+Test passed!!!
+
+
+
+
+File 'dominion.c'
+Lines executed:6.64% of 572
+Creating 'dominion.c.gcov'
+
+unittest3:
+Test for updateCoins
+Test passed!!!
+
+
+
+
+File 'dominion.c'
+Lines executed:8.57% of 572
+Creating 'dominion.c.gcov'
+
+unittest4:
+Test for numHandCards
+Test passed!!!
+
+
+
+
+File 'dominion.c'
+Lines executed:9.27% of 572
+Creating 'dominion.c.gcov'
+
+cardtest1:
+Test for smithy
+Test One
+Test Failed! Hand count should be 7 but is 5
+Test Failed! Deck count should be 0 but is 3
+Test two
+Test Failed! Hand count should be 7 but is 5
+Test Failed! Discard count should be 0 but is 5
+Test Failed! Deck count should be 3 but is 1
+Test Three
+Test Failed! Hand count should be 6 but is 5
+Test Failed! Discard count should be 0 but is 1
+Test Failed! Deck count should be 0 but is 1
+
+
+File 'dominion.c'
+Lines executed:15.56% of 572
+Creating 'dominion.c.gcov'
+
+cardtest2:
+Test for Adventurer
+Test One
+Test Failed! Hand count should be 6 but is -7336
+Test Failed! Discard count should be 6 but is 0
+Test two
+Test Failed! Hand count should be 6 but is -7336
+Test Three
+Test Failed! Hand count should be 4 but is -7194
+
+
+File 'dominion.c'
+Lines executed:22.20% of 572
+Creating 'dominion.c.gcov'
+
+cardtest3:
+Test for Village
+Test One
+Test Passed!!
+
+
+File 'dominion.c'
+Lines executed:25.17% of 572
+Creating 'dominion.c.gcov'
+
+cardtest4:
+Test for Great Hall
+Test One
+Test Passed!!
+
+
+File 'dominion.c'
+Lines executed:25.87% of 572
+Creating 'dominion.c.gcov'
+

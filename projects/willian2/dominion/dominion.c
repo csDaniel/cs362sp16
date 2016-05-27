@@ -1132,7 +1132,11 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos)
    
    while (drawntreasure < 2) 
    {
-
+	  if (state->deckCount[currentPlayer] < 1)
+	  {
+		//if the deck is empty we need to shuffle discard and add to deck
+		shuffle(currentPlayer, state);
+	  }
       drawCard(currentPlayer, state);
       //top card of hand is most recently drawn card...
       cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer] - 1];
@@ -1154,6 +1158,7 @@ int playAdventurer(struct gameState *state, int currentPlayer, int handPos)
 	   //discard all cards in play that have been drawn
 	   z = z-1;
    }
+   discardCard(handPos, currentPlayer, state, 0);
    return 0;
 }
 
@@ -1260,7 +1265,7 @@ int playSmithy(struct gameState *state, int currentPlayer, int handPos)
 {
    //+3 cards
    int i;
-   for (i = 0; i <= 3; i++)
+   for (i = 0; i < 3; i++)
    {
       drawCard(currentPlayer, state);
    }

@@ -4,167 +4,373 @@
 #include <stdio.h>
 #include <assert.h>
 #include "rngs.h"
+#include <stdlib.h>
 
-/* Using testUpdateCoins.c template
+int checkBuyCard(int numPlayers, int supply [], int seed, struct gameState * game) {
+	int r, i;
+	struct gameState testGame;
+	int thisPlayer = whoseTurn(game);
 
-According to documentation: isGameOver()
-Description: Checks the number of provinces or if three supply piles are empty to determine if
-the game is over.
-Input: struct gameState state – holds a pointer to a gameState variable
-Return: Returns 1 if the game is over Returns 0 on if the game i
----------------------------------------------------------------------------
-unittest3: unittest3.c dominion.o rngs.o
-    gcc -o unittest3 -g  unittest2.c dominion.o rngs.o $(CFLAGS)
+	game->numBuys = 1;
 
-*/
+
+	game->deck[thisPlayer][0] = village;
+	game->deck[thisPlayer][1] = copper;
+	game->deck[thisPlayer][2] = minion;
+	game->deck[thisPlayer][3] = silver;
+	game->deck[thisPlayer][4] = village;
+
+	game->hand[thisPlayer][0] = silver;
+	game->hand[thisPlayer][1] = copper;
+	game->hand[thisPlayer][2] = copper;
+	game->hand[thisPlayer][3] = gold;
+	game->hand[thisPlayer][4] = village;
+
+	updateCoins(thisPlayer, game, 0);
+
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	printf("\nTest 1: buying embargo\n");
+
+	r = buyCard(embargo, game);
+	assert(r == 0);
+
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
+	
+	// make sure card has been added to the player's discard pile
+	assert(game->discard[thisPlayer][0] == embargo);
+
+	
+
+	// check that other players' state hasn't been modified
+
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		if (i == embargo) {
+			printf("Supply count for embargo = %d, expected = %d\n", game->supplyCount[i], testGame.supplyCount[i] - 1);
+			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+		}
+		else
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+	// test on mine
+
+	printf("\nTest 2: buying mine\n");
+
+
+	game->numBuys = 1;
+
+	game->deck[thisPlayer][0] = village;
+	game->deck[thisPlayer][1] = copper;
+	game->deck[thisPlayer][2] = minion;
+	game->deck[thisPlayer][3] = silver;
+	game->deck[thisPlayer][4] = village;
+
+	game->hand[thisPlayer][0] = silver;
+	game->hand[thisPlayer][1] = village;
+	game->hand[thisPlayer][2] = adventurer;
+	game->hand[thisPlayer][3] = gold;
+	game->hand[thisPlayer][4] = village;
+
+	updateCoins(thisPlayer, game, 0);
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = buyCard(mine, game);
+	assert(r == 0);
+
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 1);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 1);
+
+	// make sure card has been added to the player's discard pile
+	assert(game->discard[thisPlayer][1] == mine);
+
+
+
+	// check that other players' state hasn't been modified
+
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		if (i == mine) {
+			printf("Supply count for mine = %d, expected = %d\n", game->supplyCount[i], testGame.supplyCount[i] - 1);
+			assert(game->supplyCount[i] == testGame.supplyCount[i] - 1);
+		}
+		else
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+	printf("\nTest 3: attempting to buy adventurer\n");
+
+	// test on adventurer (too expensive)
+
+	game->numBuys = 1;
+
+	game->deck[thisPlayer][0] = village;
+	game->deck[thisPlayer][1] = copper;
+	game->deck[thisPlayer][2] = minion;
+	game->deck[thisPlayer][3] = silver;
+	game->deck[thisPlayer][4] = village;
+
+	game->hand[thisPlayer][0] = village;
+	game->hand[thisPlayer][1] = village;
+	game->hand[thisPlayer][2] = adventurer;
+	game->hand[thisPlayer][3] = village;
+	game->hand[thisPlayer][4] = village;
+
+	updateCoins(thisPlayer, game, 0);
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = buyCard(adventurer, game);
+	assert(r != 0);
+
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+
+	// make sure card has been added to the player's discard pile
+	//assert(game->discard[thisPlayer][0] == mine);
+
+
+
+	// check that other players' state hasn't been modified
+
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+
+	// test with numBuys = 0
+
+	printf("\nTest 4: attempting to buy embargo while numBuys = 0\n");
+
+
+	game->numBuys = 0;
+
+
+	game->deck[thisPlayer][0] = village;
+	game->deck[thisPlayer][1] = copper;
+	game->deck[thisPlayer][2] = minion;
+	game->deck[thisPlayer][3] = silver;
+	game->deck[thisPlayer][4] = village;
+
+	game->hand[thisPlayer][0] = silver;
+	game->hand[thisPlayer][1] = copper;
+	game->hand[thisPlayer][2] = copper;
+	game->hand[thisPlayer][3] = gold;
+	game->hand[thisPlayer][4] = village;
+
+	updateCoins(thisPlayer, game, 0);
+
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = buyCard(embargo, game);
+	assert(r != 0);
+
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+
+
+
+
+	// check that other players' state hasn't been modified
+
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+			assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+	// test with a card that his out of supply
+
+	printf("\nTest 5: attempting to buy a card that is out of supply\n");
+
+
+	game->numBuys = 1;
+
+
+	game->deck[thisPlayer][0] = village;
+	game->deck[thisPlayer][1] = copper;
+	game->deck[thisPlayer][2] = minion;
+	game->deck[thisPlayer][3] = silver;
+	game->deck[thisPlayer][4] = village;
+
+	game->hand[thisPlayer][0] = silver;
+	game->hand[thisPlayer][1] = copper;
+	game->hand[thisPlayer][2] = copper;
+	game->hand[thisPlayer][3] = gold;
+	game->hand[thisPlayer][4] = village;
+
+	game->supplyCount[embargo] = 0;
+
+	updateCoins(thisPlayer, game, 0);
+
+
+	memcpy(&testGame, game, sizeof(struct gameState));
+
+	r = buyCard(embargo, game);
+	assert(r != 0);
+
+	printf("hand count = %d, expected = %d\n", game->handCount[thisPlayer], testGame.handCount[thisPlayer]);
+	assert(game->handCount[thisPlayer] == testGame.handCount[thisPlayer]);
+
+	printf("deck count = %d, expected = %d\n", game->deckCount[thisPlayer], testGame.deckCount[thisPlayer]);
+	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
+
+	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
+
+
+
+
+	// check that other players' state hasn't been modified
+	printf("\nTesting other players' state:\n");
+	// start at 1 since the current player is 0.
+	for (i = 1; i < game->numPlayers; ++i) {
+		printf("\nChecking Player Number %d:\n", i);
+
+		printf("Checking handCount\n");
+		printf("hand count = %d, expected = %d\n", game->handCount[i], testGame.handCount[i]);
+		assert(game->handCount[i] == testGame.handCount[i]);
+
+		printf("Checking deckCount\n");
+		printf("deck count = %d, expected = %d\n", game->deckCount[i], testGame.deckCount[i]);
+		assert(game->deckCount[i] == testGame.deckCount[i]);
+
+		printf("Checking discardCount\n");
+		printf("discard count = %d, expected = %d\n", game->discardCount[i], testGame.discardCount[i]);
+		assert(game->discardCount[i] == testGame.discardCount[i]);
+	}
+
+	printf("\nTesting victory and kingdom cards:\n");
+	// check that the victory and kingdom card piles are ok
+	for (i = 0; i <= treasure_map; ++i){
+		assert(game->supplyCount[i] == testGame.supplyCount[i]);
+	}
+
+	return 0;
+}
+
+
 
 int main() {
-    int i;
-    int seed = 1000;
-    int numPlayer = 2;
-    int victorySupply = 8; //Supplies for 2 players
-    int goldSupply = 30;
-    int curseSupply = 10;
-    int successFlag = 0;
-    //int maxHandCount = 5;
-    int result;
-    struct gameState originalG, testingG;
-    int k[10] = {adventurer, council_room, feast, gardens, mine
-               , remodel, smithy, village, baron, great_hall};
+	
+	int k[10] = { adventurer, gardens, embargo, village, minion, mine, cutpurse,
+		sea_hag, tribute, smithy };
 
 
-    printf ("TESTING isGameOver():\n");
+	struct gameState G;
 
-    initializeGame(numPlayer, k, seed, &originalG);
-    // -------------------------------------------------------
+	int seed = 1000;
+	int numPlayers = 2;
 
-    printf ("TEST 1: Test if province is negative.\n");
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
 
-    for (i = 0; i < victorySupply; i++) {
-        // province (3)
-        testingG.supplyCount[3] -= 2;
-    }
+	printf("Testing buyCard\n");
 
-    result = isGameOver(&testingG);
-    printf ("# of province card in supply: %d. Dominion need condition state->supplyCount[province] =< 0!\n", testingG.supplyCount[3]);
-    printf ("Result value: %d. Expected value: 0 (Game Not Over). \n", result);
-    if (testingG.coins == 0) {
-      printf ("Test 1 Passed.\n");
-      successFlag += 1;
-    }
-    else {
-      printf ("Test 1 Failed.\n");
-    }
 
-    // -------------------------------------------------------
+	initializeGame(numPlayers, k, seed, &G);
 
-    printf ("TEST 2: Test if dutchy empty.\n");
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
 
-    for (i = 0; i < victorySupply; i++) {
-        // duchy (2)
-        testingG.supplyCount[2] -= 1;
-    }
+	checkBuyCard(numPlayers, k, seed, &G);
 
-    result = isGameOver(&testingG);
 
-    printf ("Result value: %d. Expected value: 0 (Game Not Over). \n", result);
-    if (result == 0) {
-      printf ("Test 2 Passed.\n");
-      successFlag += 1;
-    }
-    else {
-      printf ("Test 2 Failed.\n");
-    }
 
-    // -------------------------------------------------------
-
-    printf ("TEST 3: Test if estate empty.\n");
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
-
-    for (i = 0; i < victorySupply; i++) {
-        // estate (1)
-        testingG.supplyCount[1] -= 1;
-    }
-
-    result = isGameOver(&testingG);
-
-    printf ("Result value: %d. Expected value: 0 (Game Not Over). \n", result);
-    if (result == 0) {
-      printf ("Test 3 Passed.\n");
-      successFlag += 1;
-    }
-    else {
-      printf ("Test 3 Failed.\n");
-    }
-
-    // -------------------------------------------------------
-
-    printf ("TEST 4: Test when 4 supplies zero\n");
-    printf ("Testing with duchy, estate, curse and gold\n");
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
-
-    for (i = 0; i < victorySupply; i++) {
-        // estate (1)
-        testingG.supplyCount[1] -= 1;
-    }
-    for (i = 0; i < victorySupply; i++) {
-        // duchy (2)
-        testingG.supplyCount[2] -= 1;
-    }
-    for (i = 0; i < curseSupply; i++) {
-        // curse (0)
-        testingG.supplyCount[0] -= 1;
-    }
-    for (i = 0; i < goldSupply; i++) {
-        // gold (6)
-        testingG.supplyCount[6] -= 1;
-    }
-
-    result = isGameOver(&testingG);
-
-    printf ("Result value: %d. Expected value: 1 (Game Is Over). \n", result);
-    if (result == 1) {
-      printf ("Test 4 Passed.\n");
-      successFlag += 1;
-    }
-    else {
-      printf ("Test 4 Failed.\n");
-    }
-
-    // -------------------------------------------------------
-
-    printf ("TEST 5: Test when 2 supplies zero but 1 with province.\n");
-    printf ("Testing with provice and gold\n");
-    memcpy(&testingG, &originalG, sizeof(struct gameState));
-
-    for (i = 0; i < victorySupply; i++) {
-        // province (3)
-        testingG.supplyCount[3] -= 1;
-    }
-    for (i = 0; i < goldSupply; i++) {
-        // gold (6)
-        testingG.supplyCount[6] -= 1;
-    }
-
-    result = isGameOver(&testingG);
-
-    printf ("Result value: %d. Expected value: 1 (Game Is Over). \n", result);
-    if (result == 1) {
-      printf ("Test 5 Passed.\n");
-      successFlag += 1;
-    }
-    else {
-      printf ("Test 5 Failed.\n");
-    }
-
-    // -------------------------------------------------------
-
-    if (successFlag == 4) {
-      printf ("All tests passed, except test # 1 since it is intentional.\n");
-    }
-  
-  return 0;
-
+	return 0;
 }

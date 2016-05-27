@@ -36,23 +36,6 @@ Bug #2 -
  Actual Results - Failures as described in description
  Severity - High
  Priority - High
- 
- Bug #3 -
- Title - Less than 2 treasure cards in deck+discard piles scenario not accounted for in adventurer card
- Date - 5/19/16
- Reported by - Tiffany Chiou
- Email - chiout@oregonstate.edu
- Product - dominion.c
- Platform - OSU flip server
- Unit test(s) that identified error: randomtestadventurer.c
- Description - 1 out of 5000 testcases in randomtestadventurer.c found this failure, which was that the deck+ discard piles were not missing 2 cards, and at the end of the turn the deck count was 0. This is a boundary case issue that I identified and recorded previously in randomhistory.c; if the deck+discard pile has less than 2 treasure cards, then only 0 or 1 treasure cards are drawn. The adventurer card does not explicitly handle this boundary case scenario. This may or may not be a bug, depending on if it is correct behavior to allow the user to attempt to carry out the directions of the adventurer card even though it cannot be correctly completed. If so, it would be helpful to notify the user of the situation at least.
- Bug is in line - adventurerCard function; can also be found in not refactored dominion.c
- Reproduceable - Yes
- Steps to produce/reproduce - Run "make randomTestAdventurer", then call randomTestAdventurer executable. View test results.
- Expected Results - All 5000 testcases pass
- Actual Results - Failures as described in description
- Severity - Low (may not actually happen in a real game, and potentially may not be a bug)
- Priority - Low (may not be an issue in a real game or may not be an actual bug so not a high priority to fix)
 
 ------------------------------------------------------------------------
 
@@ -112,6 +95,9 @@ Bug #3 -
  Priority - High
 
 
+ ------------------------------------------------------------------------
+ 
+ I did not have to make modifications to any of my unittests, cardtests, or random tests to run them against my teammates' code. They both set up their code the way I did - by calling the cardEffect function which will then call the appropriate card function.
 
 
 

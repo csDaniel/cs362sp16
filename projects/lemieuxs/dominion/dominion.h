@@ -81,7 +81,7 @@ struct gameState {
 struct gameState* newGame();
 
 int play_smithy(int currentPlayer, struct gameState * state, int handPos);
-int play_adventurer(int currentPlayer, struct gameState * state, int drawntreasure, int cardDrawn, int temphand [], int z);
+int play_adventurer(int currentPlayer, struct gameState * state, int drawntreasure, int cardDrawn, int temphand [], int z, int handPos);
 int play_minion(int currentPlayer, struct gameState * state, int handPos, int choice1, int choice2);
 int play_embargo(int currentPlayer, struct gameState * state, int handPos, int choice1);
 int play_outpost(int currentPlayer, struct gameState * state, int handPos);

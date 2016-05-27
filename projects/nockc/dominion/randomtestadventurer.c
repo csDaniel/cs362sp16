@@ -92,18 +92,18 @@ int main()
 		int tmp3 = previous.discardCount[turn];
 		int tmp4 = previous.handCount[turn];
         memcpy( &post, &previous, sizeof(struct gameState)); 
-        playAdventurer( &post, turn );
+        playAdventurer( &post, turn, 0 );
 #if (NOISY_TEST == 1)			
 		printf("\nTesting if hand count was increased by 2\n");
 #endif
 		/* When Adventurer is played, it adds two cards to the players hand. */               
 		r = post.handCount[turn]; 
 		/* If hand count of post state is 2 more than previous state, this test is passed */
-        if ( r != previous.handCount[turn] + 2 ){
+	if( post.handCount[turn]>=(previous.handCount[turn]+2)){
             finalfail++;
         }
 #if (NOISY_TEST == 1)
-        printf("Test Result: actual handCount: %d, expected handCount: %d\r\n", r, previous.handCount[turn] + 2);
+        printf("Test Result: actual handCount: %d, expected handCount: %d\r\n", post.handCount[turn], previous.handCount[turn]+2);
 		printf("\nTesting if adventurer remains in hand after playing\n");
 #endif           
 		/* When adventurer is played, it should leave hand  */ 
@@ -144,14 +144,14 @@ int main()
 #endif   
 		/* If post state deck count didn't decreasse by 2 its fail */
 		r = post.deckCount[turn];
-        if ( (tmp2 - 2) < r  ){
+        if ( r > (previous.deckCount[turn] - 2)){
             finalfail++;
 			
         }
 #if (NOISY_TEST == 1)
-        if( (tmp2 - 2) < r  ){
+        if( r > (previous.deckCount[turn] - 2) ){
 			printf("Test Result: Fail. Deck count not decreased by at least 2\r\n");
-			printf("Test Result: actual deckCount: %d, expected deckCount: %d\r\n", r, (tmp2 - 2));
+			printf("Test Result: actual deckCount: %d, expected deckCount: %d\r\n", r, (previous.deckCount[turn] - 2));
 		}
 		printf("\nTesting if total number of cards is same\n");			
 #endif   
@@ -274,7 +274,9 @@ int main()
 				}
 			}	
         }
-    printf("Final tally for Card Test 2 ( Adventurer ):\nFail: %d\r\n", finalfail );
+#if (NOISY_TEST == 1)    
+printf("Final tally for Card Test 2 ( Adventurer ):\nFail: %d\r\n", finalfail );
+#endif
     return 0;
 }
 

@@ -60,6 +60,24 @@ and corrected this before contiuing to test. Additionally, I modified a unit tes
 was testing the wrong value, and therefore passing when it shouldn't. The discardCard
 function is working correctly upon testing the trashFlag now.
 
+The main bug found with the unit tests is that the "isGameOver" function is unable to
+recognize a corrupted game state. I was able to fix this code by implementing a 
+check and correction that would allow the game to end if a corrupted value occurred.
+By setting any negative values to zero, it ensured that the test passed when a value 
+became corrupted.
+
+Here are the results after fixing the bug:
+
+	Testing the isGameOver function
+	Game is over, test was successful.
+	Test passed, game recognized corrupted state and ended game.
+	Test passed on acceptable value, game is not over.
+	File 'dominion.c'
+	Lines executed:22.59% of 571
+	Branches executed:27.90% of 423
+	Taken at least once:17.97% of 423
+	Calls executed:8.00% of 100
+
 
 The random tests ran just fine after modifying my tests to call Michael's functions with
 the right parameters set. As expected, and confirmed by reading Michael's refactor.c

@@ -42,7 +42,7 @@ int main() {
 
         cardEffect(council_room, 0, 0, 0, &G, 4, 0);
         printf("Expected number of buys: %d - Result %d\n", origBuys+1, G.numBuys);
-        if (G.handCount[player] == origCount){
+        if (origBuys+1 == G.numBuys){
             printf("Passed test\n\n");
             passedTest++;
         }

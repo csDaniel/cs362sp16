@@ -13,11 +13,11 @@ players in this simulation.
 Unit Test 3
 	
 The scoreFor() function returns a score of 10 when the player has one of every 
-card in his/her hand.  This score should be 11.
+card in his/her hand.  This score should be 12.
 The scoreFor() function returns a score of -7 when the player has one of every 
-card in his/her discard pile.
+card in his/her discard pile. This score should be 12.
 The scoreFor() function returns 0 when the player’s deck has one of every card 
-in it, should return 11.
+in it, should return 12.
 	
 Card Test 1
 

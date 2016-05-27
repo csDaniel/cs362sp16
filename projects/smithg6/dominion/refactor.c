@@ -10,7 +10,7 @@ over and over, and cannot replicate it consistently. Running the
 make file twice helps, but does not entirely eliminate it. This
 may be due to running the program on flip.
 
-SMITHY Refactor:
+SMITHY Refactor (fixed for assignment 5):
 The bug I've introduced with the Smithy is
 that the discardCard function will call
 the index i (used in the previous for loop).
@@ -20,7 +20,7 @@ The problem will only be evident to someone looking at the
 discardCard parameters, and comparing those
 with the variables within the cardSmithy function.
 
-ADVENTURER Refactor:
+ADVENTURER Refactor (fixed for assignment 5 from teammate):
 For adventurer, I removed one of the logical
 or statements regarding recognition of a treasure card.
 This will result in a subtle change to the gameplay,

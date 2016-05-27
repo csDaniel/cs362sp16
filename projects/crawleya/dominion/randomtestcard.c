@@ -200,7 +200,7 @@ int main() {
             theResult(0, &testsPassed, &testsCompleted);
             correctNumCardsInHand = 0;
         }
-    //    printf("Number of cards in hand:\tExpected %d, got %d\n", origG.handCount[currentPlayer] + 2, G.handCount[currentPlayer]);
+       printf("Number of cards in hand:\tExpected %d, got %d\n", origG.handCount[currentPlayer] + 2, G.handCount[currentPlayer]);
     
         //Check to make sure there is one less Smithy in current player's hand
         for (i = 0; i < G.handCount[currentPlayer]; i++)
@@ -213,7 +213,7 @@ int main() {
             theResult(0, &testsPassed, &testsCompleted);
             correctSmithysInHand = 0;
         }
-    //    printf("Smithy in hand:\tExpected %d, got %d\n", numSmithy - 1, smithyInHand);
+        printf("Smithy in hand:\tExpected %d, got %d\n", numSmithy - 1, smithyInHand);
         
     
         //Check to make sure 3 less cards in current player's deck
@@ -224,18 +224,8 @@ int main() {
             theResult(0, &testsPassed, &testsCompleted);
             correctNumCardsInDeck = 0;
         }
-    //    printf("Number of cards in deck:\tExpected %d, got %d\n",origG.deckCount[currentPlayer] - 3, G.deckCount[currentPlayer]);
+        printf("Number of cards in deck:\tExpected %d, got %d\n",origG.deckCount[currentPlayer] - 3, G.deckCount[currentPlayer]);
     
-    
-        //Check to make sure there is one more card in discard pile
-        if (G.discardCount[currentPlayer] == origG.discardCount[currentPlayer] + 1)
-            theResult(1, &testsPassed, &testsCompleted);
-        else
-        {
-            theResult(0, &testsPassed, &testsCompleted);
-            correctNumCardsInDiscard = 0;
-        }
-    //    printf("Number of cards in discard pile:\tExpected %d, got %d\n", origG.discardCount[currentPlayer] + 1, G.discardCount[currentPlayer]);
         //Check to make sure other players have the same number of cards in their hands, decks, and discard piles
         for (i = 0; i < numPlayer; i++)
         {
@@ -248,7 +238,7 @@ int main() {
                     theResult(0, &testsPassed, &testsCompleted);
                     otherPlayersCardsSame = 0;
                 }
-    //            printf("Player %d, expected %d cards in hand, got %d\n",i, origG.handCount[i], G.handCount[i]);
+                printf("Player %d, expected %d cards in hand, got %d\n",i, origG.handCount[i], G.handCount[i]);
             }
         }
     

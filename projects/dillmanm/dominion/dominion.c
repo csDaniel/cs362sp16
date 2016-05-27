@@ -1244,14 +1244,22 @@ int playAdventurer(struct gameState *state,int handPos){
       }
     }
     if (shuffleCount <2){
-      drawCard(currentPlayer, state);
-      cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-      if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-        drawntreasure++;
-      else{
-        temphand[z]=cardDrawn;
-        state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-        z++;
+      //INTENTIONAL BUG
+      /*for (i=0;i<state->handCount[currentPlayer];i++){
+        if (state->hand[currentPlayer][i] == copper || 
+            state->hand[currentPlayer][i] == silver ||
+            state->hand[currentPlayer][i] == gold) drawntreasure++;
+      }*/
+      if (drawntreasure<2){
+        drawCard(currentPlayer, state);
+        cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+        if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+          drawntreasure++;
+        else{
+          temphand[z]=cardDrawn;
+          state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+          z++;
+        }
       }
     }
   }
@@ -1267,6 +1275,8 @@ int playSmithy(struct gameState *state,int handPos){
       //currentPlayer
       int currentPlayer = whoseTurn(state);
       int i;
+      //INTENTIONAL BUG
+      //if (state->deckCount[currentPlayer]<3) return 0;
       //+3 Cards
       for (i = 0; i < 3; i++)
       {
@@ -1287,6 +1297,10 @@ int playGreatHall(struct gameState *state, int handPos){
       
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
+      //intentional bug
+      /*if (handPos < state->handCount[currentPlayer]){
+        state->hand[currentPlayer][handPos] = handPos;
+      }*/
 }
 
 int playAmbassador(struct gameState *state, int handPos, int choice1, int choice2){
@@ -1306,6 +1320,7 @@ int playAmbassador(struct gameState *state, int handPos, int choice1, int choice
 
       for (i = 0; i < state->handCount[currentPlayer]; i++)
   {
+    //bug corrected! switched from choice2 to choice1 on hand index
     if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
       {
         j++;
@@ -1341,7 +1356,7 @@ int playAmbassador(struct gameState *state, int handPos, int choice1, int choice
       {
         if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
     {
-      discardCard(i, currentPlayer, state, 1);
+      discardCard(i, currentPlayer, state, 0);
       break;
     }
       }
@@ -1366,12 +1381,12 @@ int playSteward(struct gameState *state,int handPos,int choice1,int choice2,int 
       else
   {
     //trash 2 cards in hand
-    discardCard(choice2, currentPlayer, state, 0);
-    discardCard(choice3, currentPlayer, state, 0);
+    discardCard(choice2, currentPlayer, state, 1);
+    discardCard(choice3, currentPlayer, state, 1);
   }
       
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 

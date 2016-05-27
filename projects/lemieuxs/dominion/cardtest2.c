@@ -18,6 +18,8 @@ int checkAdventurer(int choice1, int choice2, int choice3, struct gameState *gam
 	game->deck[thisPlayer][3] = silver;
 	game->deck[thisPlayer][4] = smithy;
 
+	game->hand[thisPlayer][handPos] = adventurer;
+
 	memcpy(&testGame, game, sizeof(struct gameState));
 
 	// keep track of how many treasure cards are in hand before
@@ -43,12 +45,12 @@ int checkAdventurer(int choice1, int choice2, int choice3, struct gameState *gam
 	}
 
 	printf("Treasures in hand after: %d\n", treasureAfter);
-	//assert(treasureBefore + 2 == treasureAfter);
+	assert(treasureBefore + 2 == treasureAfter);
 
 
 	printf("Checking discardCount:\n");
 	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer] + 2);
-	//assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 2);
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer] + 2);
 
 	printf("Checking that a smithy and village are in the discard pile:\n");
 	// check that the discard pile contains a smithy and a village
@@ -56,12 +58,12 @@ int checkAdventurer(int choice1, int choice2, int choice3, struct gameState *gam
 		printf("Discarded card: %d\n", game->discard[thisPlayer][i]);
 		if (game->discard[thisPlayer][i] == minion)
 			minionFound = 1;
-		else if (game->discard[thisPlayer][i] == village)
+		else if (game->discard[thisPlayer][i] == smithy)
 			smithyFound = 1;
 	}
 
-	//assert(minionFound == 1);
-	//assert(smithyFound == 1);
+	assert(minionFound == 1);
+	assert(smithyFound == 1);
 
 	// check that the adventurer card has been discarded
 	printf("Checking that Adventurer has been discarded:\n");
@@ -102,7 +104,7 @@ int checkAdventurer(int choice1, int choice2, int choice3, struct gameState *gam
 	}
 
 	// check that the card has been added to the played pile
-	//assert(game->playedCardCount == testGame.playedCardCount + 1);
+	assert(game->playedCardCount == testGame.playedCardCount + 1);
 
 	return 0;
 }

@@ -11,79 +11,86 @@
         -:    6:#include <assert.h>
         -:    7:#include "rngs.h"
         -:    8:#include <stdlib.h>
-        -:    9:
-        -:   10:#define TESTCARD "smithy"
-        -:   11:
-        1:   12:int main() {	// copy the game state to a test case 
-        1:   13:  	int seed = 1000;
-        1:   14:	int numPlayers = 2;
-        1:   15:	int thisPlayer = 0;
-        1:   16:	int handPos = 0;
-        -:   17:	int currDeckCount, currHandCount, currDiscardCount;
-        -:   18:	//int choice1 = 0;
-        -:   19:	//int choice2 = 0;
-        -:   20:	//int choice3 = 0;
-        -:   21:	struct gameState G, testG;
-        -:   22:	int currCard;
-        1:   23:	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
-        -:   24:			sea_hag, tribute, smithy, council_room};
-        -:   25:
-        -:   26:	// initialize a game state and player cards
-        1:   27:	initializeGame(numPlayers, k, seed, &G);
-        -:   28:	//set initial game state
-        1:   29:	printf("Testing for: ");
-        1:   30:	printf("1. 3 Cards Taken From Deck");
-        1:   31:	printf("2. 3 Cards Added To Hand");
-        1:   32:	printf("3. 1 Card Discarded From Hand");
-        1:   33:	printf("4. 1 Cards Added To Discarded Pile");
-        -:   34:
-        1:   35:	memcpy(&testG, &G, sizeof(struct gameState));
-        1:   36:	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
-        1:   37:	printf("---------------TEST 1: CHECKING DRAW CARD FUNCTION\n-----------");
-        -:   38:	//get starting game state
-        1:   39:	memcpy(&testG, &G, sizeof(struct gameState));
-        1:   40:	currDeckCount = testG.deckCount[thisPlayer];
-        1:   41:	currHandCount = testG.handCount[thisPlayer];
-        1:   42:	currDiscardCount = testG.discardCount[thisPlayer];
-        -:   43:	//currCard = testG.deck[player][currDeckCount - 1];
-        1:   44:	printf("Deck Count Before: %d\n", testG.deckCount[thisPlayer]);
-        1:   45:	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
-        1:   46:	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
-        -:   47:	//run function
-        1:   48:	playSmithy(handPos, thisPlayer, &testG);
-        -:   49:	//check deck count
-        1:   50:	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
-        1:   51:	if ((currDeckCount - 3) == testG.deckCount[thisPlayer]){
-        1:   52:		printf("DECK COUNT DECREASED BY 3: SUCCESS\n");
-        -:   53:	}
-    #####:   54:	else if (currDeckCount == testG.deckCount[thisPlayer])
-        -:   55:	{
-    #####:   56:		printf("DECK COUNT STAYED THE SAME: FAILURE\n");
-        -:   57:	}
-        -:   58:	else
-    #####:   59:		printf("DECK COUNT CHANGED INCORRECTLY: FAILURE\n");
-        -:   60:	//check hand count
-        1:   61:	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
-        1:   62:	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
-        1:   63:		printf("HAND COUNT INCREASED BY 3: SUCCESS\n");
+        -:    9:#include "interface.h"
+        -:   10:
+        -:   11:#define TESTCARD "smithy"
+        -:   12:
+        1:   13:int main() {	// copy the game state to a test case 
+        1:   14:  	int seed = 1000;
+        1:   15:	int numPlayers = 2;
+        1:   16:	int thisPlayer = 0;
+        1:   17:	int handPos = 0;
+        -:   18:	int currDeckCount, currHandCount, currDiscardCount;
+        -:   19:	//int choice1 = 0;
+        -:   20:	//int choice2 = 0;
+        -:   21:	//int choice3 = 0;
+        -:   22:	struct gameState G, testG;
+        -:   23:	int currCard;
+        1:   24:	int k[10] = {adventurer, great_hall, village, minion, mine, cutpurse,
+        -:   25:			sea_hag, tribute, smithy, council_room};
+        -:   26:
+        -:   27:	// initialize a game state and player cards
+        1:   28:	initializeGame(numPlayers, k, seed, &G);
+        -:   29:	//set initial game state
+        1:   30:	printf("Testing for: ");
+        1:   31:	printf("1. 3 Cards Taken From Deck");
+        1:   32:	printf("2. 3 Cards Added To Hand");
+        1:   33:	printf("3. 1 Card Discarded From Hand");
+        1:   34:	printf("4. 1 Cards Added To Discarded Pile");
+        -:   35:
+        1:   36:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   37:	printf("\n\n\n\n----------------- Testing Card: %s ----------------\n", TESTCARD);
+        1:   38:	printf("---------------TEST 1: CHECKING DRAW CARD FUNCTION\n-----------");
+        -:   39:	//get starting game state
+        1:   40:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   41:	currDeckCount = testG.deckCount[thisPlayer];
+        1:   42:	currHandCount = testG.handCount[thisPlayer];
+        1:   43:	currDiscardCount = testG.discardCount[thisPlayer];
+        -:   44:	//currCard = testG.deck[player][currDeckCount - 1];
+        1:   45:	printf("Deck Count Before: %d\n", testG.deckCount[thisPlayer]);
+        1:   46:	printf("Current Hand Before: %d\n", testG.handCount[thisPlayer]);
+        1:   47:	printf("Discard Count Before: %d\n", testG.discardCount[thisPlayer]);
+        -:   48:	//run function
+        1:   49:	printHand(thisPlayer ,&testG);
+        1:   50:	printDiscard(thisPlayer, &testG);
+        1:   51:	printPlayed(thisPlayer, &testG);
+        1:   52:	playSmithy(handPos, thisPlayer, &testG);
+        1:   53:	printHand(thisPlayer, &testG);
+        1:   54:	printPlayed(thisPlayer, &testG);
+        1:   55:	printDiscard(thisPlayer, &testG);
+        -:   56:	//check deck count
+        1:   57:	printf("Deck Count After: %d\n", testG.deckCount[thisPlayer]);
+        1:   58:	if ((currDeckCount - 3) == testG.deckCount[thisPlayer]){
+        1:   59:		printf("DECK COUNT DECREASED BY 3: SUCCESS\n");
+        -:   60:	}
+    #####:   61:	else if (currDeckCount == testG.deckCount[thisPlayer])
+        -:   62:	{
+    #####:   63:		printf("DECK COUNT STAYED THE SAME: FAILURE\n");
         -:   64:	}
-    #####:   65:	else if (currHandCount == testG.handCount[thisPlayer])
-        -:   66:	{
-    #####:   67:		printf("HAND COUNT DIDN'T CHANGE: FAILURE\n");
-        -:   68:	}
-        -:   69:	else
-    #####:   70:		printf("HAND COUNT CHANGE INCORRECT: FAILURE\n");
-        -:   71:	//check discard count
-        1:   72:	printf("Discard Count After: %d\n", testG.discardCount[thisPlayer]);
-        1:   73:	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer]){
-    #####:   74:		printf("DISCARD COUNT INCREASED BY 1: SUCCESS\n");	
+        -:   65:	else
+    #####:   66:		printf("DECK COUNT CHANGED INCORRECTLY: FAILURE\n");
+        -:   67:	//check hand count
+        1:   68:	printf("Current Hand After: %d\n", testG.handCount[thisPlayer]);
+        1:   69:	if ((currHandCount + 2) == testG.handCount[thisPlayer]){
+        1:   70:		printf("HAND COUNT INCREASED BY 3: SUCCESS\n");
+        -:   71:	}
+    #####:   72:	else if (currHandCount == testG.handCount[thisPlayer])
+        -:   73:	{
+    #####:   74:		printf("HAND COUNT DIDN'T CHANGE: FAILURE\n");
         -:   75:	}
         -:   76:	else
-        1:   77:		printf("DISCARD COUNT INCORRECT: FAILURE\n");
-        -:   78:	// if (state->hand[thisPlayer][currHandCount] == currCard)
-        -:   79:	// 	printf("CARD ADDED TO HAND: SUCCESS\n");
-        -:   80:	// else
-        -:   81:	// 	printf("CARD NOT ADDED TO HAND: FAILURE\n");
-        1:   82:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
-        1:   83:return 0;
-        -:   84:}
+    #####:   77:		printf("HAND COUNT CHANGE INCORRECT: FAILURE\n");
+        -:   78:	//check discard count
+        1:   79:	printf("Discard Count After: %d\n", testG.discardCount[thisPlayer]);
+        1:   80:	if ((currDiscardCount + 1) == testG.discardCount[thisPlayer]){
+    #####:   81:		printf("DISCARD COUNT INCREASED BY 1: SUCCESS\n");	
+        -:   82:	}
+        -:   83:	else
+        1:   84:		printf("DISCARD COUNT INCORRECT: FAILURE\n");
+        -:   85:	// if (state->hand[thisPlayer][currHandCount] == currCard)
+        -:   86:	// 	printf("CARD ADDED TO HAND: SUCCESS\n");
+        -:   87:	// else
+        -:   88:	// 	printf("CARD NOT ADDED TO HAND: FAILURE\n");
+        1:   89:	printf("\n >>>>> SUCCESS: Testing complete %s <<<<<\n\n\n\n", TESTCARD);
+        1:   90:return 0;
+        -:   91:}

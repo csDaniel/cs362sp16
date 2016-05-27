@@ -1,0 +1,69 @@
+        -:    0:Source:randomtestcard.c
+        -:    0:Graph:randomtestcard.gcno
+        -:    0:Data:randomtestcard.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2:Behnam Saeedi
+        -:    3:Saeedib
+        -:    4:93227697
+        -:    5:Unit test
+        -:    6:*/
+        -:    7:
+        -:    8:#include <stdlib.h>
+        -:    9:#include <stdio.h>
+        -:   10:#include <assert.h>
+        -:   11:#include <string.h>
+        -:   12:#include <time.h>
+        -:   13:
+        -:   14:#include "dominion.h"
+        -:   15:#include "dominion_helpers.h"
+        -:   16:#include "rngs.h"
+        -:   17:
+        -:   18:#define UNITTEST "Smithy"
+        -:   19:
+        2:   20:int main(int argc, char ** argv)
+        -:   21:{
+        2:   22:	srand(time(NULL));
+        -:   23:	int out;
+        2:   24:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,sea_hag, tribute, smithy, council_room};
+        -:   25:	int count;
+        -:   26:	struct gameState G, testG;
+        -:   27:
+        -:   28:	//Generating player:
+     2002:   29:	for(int counter = 0; counter < 1000; counter++)
+        -:   30:	{
+     2000:   31:		int numPlayers = rand() % 4 + 1;
+     2000:   32:		int thisPlayer = rand() % 4;
+     2000:   33:		int seed = rand() % 500 + 500;
+        -:   34:
+     2000:   35:		initializeGame(numPlayers, k, seed, &G);
+        -:   36:
+     2000:   37:		memcpy(&testG, &G, sizeof(struct gameState));
+     2000:   38:		count = G.handCount[thisPlayer];
+     2000:   39:		count = testG.handCount[thisPlayer];
+     2000:   40:		printf("Hand count for testG is: %d.\n",count);
+        -:   41:
+     4480:   42:		for(int i = 0; i < count; i++)
+     2480:   43:			testG.hand[thisPlayer][i] = estate;
+    52000:   44:		for(int i = 0; i < 25; i++)
+    50000:   45:			testG.supplyCount[i] = 10;
+        -:   46:
+     2000:   47:		G.hand[thisPlayer][0] = gold;
+     2000:   48:		G.hand[thisPlayer][1] = silver;
+     2000:   49:		G.hand[thisPlayer][2] = copper;
+     2000:   50:		G.discardCount[thisPlayer] = 0;
+     2000:   51:		testG.hand[thisPlayer][0] = gold;
+     2000:   52:		testG.hand[thisPlayer][1] = silver;
+     2000:   53:		testG.hand[thisPlayer][2] = copper;
+     2000:   54:		testG.discardCount[thisPlayer] = 0;
+        -:   55:
+     2000:   56:		smithyCard(&testG, rand() % 4);
+     2000:   57:		out = getCost(smithy);
+     2000:   58:		printf("smithy function should return cost of smithy card : %d.\n",out);
+     2000:   59:		assert(out==4);
+     2000:   60:		printf("New Hand count is: %d. it should be %d\n",testG.handCount[thisPlayer],G.handCount[thisPlayer] + 3);
+     2000:   61:		printf("Discard count is: %d.\n",testG.discardCount[thisPlayer]);
+        -:   62:	}
+        2:   63:	return 0;
+        -:   64:}

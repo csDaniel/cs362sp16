@@ -652,7 +652,7 @@ int drawGardens() {
 int drawSmithy (struct gameState *state, int handPos, int currentPlayer) {
     int i;
     //+3 Cards
-      for (i = 0; i < 4; i++)
+      for (i = 0; i < 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -666,13 +666,13 @@ int drawSmithy (struct gameState *state, int handPos, int currentPlayer) {
 int drawCouncilRoom(struct gameState *state, int handPos, int currentPlayer) {
 	int i;
       //+4 Cards
-      for (i = 0; i < 3; i++)
+      for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
 
       //+1 Buy
-      state->numBuys+=2;
+      state->numBuys+=1;
 
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
@@ -700,7 +700,7 @@ int drawAdventurer(struct gameState *state, int handPos, int drawntreasure, int 
 	drawCard(currentPlayer, state);
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	  drawntreasure+=2;
+	  drawntreasure++;
 	else{
 	  temphand[z]=cardDrawn;
 	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
@@ -751,23 +751,23 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   //   - smithy, adventurer, council_room, gardens, and great_hall
 
   if (card == gardens) {
-    drawGardens();
+    return drawGardens();
   }
 
   if (card == smithy) {
-    drawSmithy(state, handPos, currentPlayer);
+    return drawSmithy(state, handPos, currentPlayer);
   }
 
   if (card == adventurer) {
-    drawAdventurer(state, handPos, drawntreasure, currentPlayer, temphand, z);
+    return drawAdventurer(state, handPos, drawntreasure, currentPlayer, temphand, z);
   }
 
   if (card == council_room) {
-    drawCouncilRoom(state, handPos, currentPlayer);
+    return drawCouncilRoom(state, handPos, currentPlayer);
   }
 
   if (card == great_hall) {
-    drawGreatHall(state, handPos, currentPlayer);
+    return drawGreatHall(state, handPos, currentPlayer);
   }
   //uses switch to select card and perform actions
   switch( card )

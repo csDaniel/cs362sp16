@@ -26,12 +26,14 @@ int main(){
 	int currPlayer = whoseTurn(&gS);
 	before = gS.handCount[currPlayer];
 
-	result = cardEffect(smithy, 0, 0, 0, &gS, handPos, 0);
+	printf("Before Smithy handCount: %d\n", before);
+
+	result = playSmithyCard(&gS, handPos);
 
 	if(before + 2 == gS.handCount[currPlayer])
-		printf("Smithy test passed.\n");
+		printf("Smithy test passed.\nHand Total is %d\n", gS.handCount[currPlayer]);
 	else
-		printf("Smithy test failed.\n");
+		printf("Smithy test failed.\n Hand Total is %d, but should be: %d", gS.handCount[currPlayer], before + 2);
 
 	return 0; 
 }

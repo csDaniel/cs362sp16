@@ -1,4 +1,4 @@
-CFLAGS = -Wall -fpic -coverage -lm 
+CFLAGS = -Wall -fpic -coverage -lm -std=c99
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -24,7 +24,7 @@ testAll: dominion.o testSuite.c
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-runtests:  randomtestcard.c randomtestadventurer.c
+runtests:  randomtestcard.c randomtestadventurer.c randomtestvillage.c randomtestfeast.c
 	echo "randomtestadventurer.c: testing adventure:" &> randomtestadventurer.out
 	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS) -std=c99
 	randomtestadventurer >> randomtestadventurer.out
@@ -34,6 +34,16 @@ runtests:  randomtestcard.c randomtestadventurer.c
 	gcc -o randomtestcard -g randomtestcard.c dominion.o rngs.o $(CFLAGS) -std=c99
 	randomtestcard >> randomtestcard.out
 	gcov -f dominion.c >> randomtestcard.out
+	
+	echo "randomtestvillage.c: testing village:" &> randomtestvillage.out
+	gcc -o randomtestvillage -g randomtestvillage.c dominion.o rngs.o $(CFLAGS) -std=c99
+	randomtestvillage >> randomtestvillage.out
+	gcov -f dominion.c >> randomtestvillage.out
+	
+	echo "randomtestfeast.c: testing feast:" &> randomtestfeast.out
+	gcc -o randomtestfeast -g randomtestfeast.c dominion.o rngs.o $(CFLAGS) -std=c99
+	randomtestfeast >> randomtestfeast.out
+	gcov -f dominion.c >> randomtestfeast.out
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

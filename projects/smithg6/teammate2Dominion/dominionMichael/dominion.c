@@ -391,6 +391,12 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
       int i;
       int j;
 
+      for(i = 0; i < 25; i++)
+      {
+          if(state->supplyCount[i] < 0)
+            state->supplyCount[i] = 0;
+      }
+    
       //if stack of Province cards is empty, the game ends
       if (state->supplyCount[province] == 0)
       {
@@ -647,7 +653,7 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
 
     int playAdventurerCard(struct gameState *state){
       int currentPlayer = whoseTurn(state);
-      int drawntreasure;
+      int drawntreasure = 0;
       int cardDrawn;
       int temphand[MAX_HAND];
       int z = 0;
@@ -679,12 +685,12 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
       int currentPlayer = whoseTurn(state);
       int i = 0;
       //+3 Cards
-      for (i = 0; i > 3; i++){
+      for (i = 0; i < 3; i++){
         drawCard(currentPlayer, state);
       }
 
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
     }
 
@@ -748,7 +754,7 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
       drawCard(currentPlayer, state);
 
       //+2 Actions
-      for (i = 0; i < 3; i++){
+      for (i = 0; i < 2; i++){
         state->numActions++;
       }
 

@@ -20,7 +20,7 @@ void compareHandCount(int player, int expected, struct gameState *state){
 }
 
 void comparePostAdventurer(int player, int preHandCount, struct gameState *state){
-	if(preHandCount == state->handCount[player] - 1){
+	if(preHandCount == state->handCount[player] - 2){
 		printf(" - CARD COUNT PASSED\n");
 	} else {
 		printf(" - CARD COUNT FAILED\n");
@@ -96,9 +96,9 @@ int main() {
 		
 		//Give player one a adventurer card
 		gainCard(adventurer, &G, 2, 0);
+		preHandCount = G.handCount[0];
 		
     cardEffect(adventurer, 0, 0, 0, &G, G.hand[0][0], 0);
-		preHandCount = G.handCount[0];
 		
 		//Check if the hand contains two exta cards
 		comparePostAdventurer(0, preHandCount, &G);
@@ -144,8 +144,8 @@ int main() {
 		//Give player one a adventurer card
 		gainCard(adventurer, &G, 2, 0);
 		
-    cardEffect(adventurer, 0, 0, 0, &G, G.hand[0][0], 0);
 		preHandCount = G.handCount[0];
+    cardEffect(adventurer, 0, 0, 0, &G, G.hand[0][0], 0);
 		
 		//Check if the hand contains two exta cards
 		comparePostAdventurer(0, preHandCount, &G);

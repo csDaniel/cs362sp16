@@ -20,7 +20,7 @@ int main()
 		 remodel, smithy, village, baron, great_hall};
 	struct gameState game;
 
-	int i, j, p, r, handCount;
+	int i, l, j, p, r, handCount;
 
 	memset(&game, 23, sizeof(struct gameState));
 
@@ -43,7 +43,7 @@ int main()
 	game.supplyCount[province] = 0;
 	i = isGameOver(&game);
 
-	if(i == 0)
+	if(i == 1)
 	{
 		printf("Game is over, test was successful.\n");
 	}
@@ -52,18 +52,19 @@ int main()
 	game.supplyCount[province] = -5;
 	j = isGameOver(&game);
 
-	if(j == 0)
+	if(j == 1)
 	{
-		printf("Test failed, game did not recognize corrupted game state.\n");
+		printf("Test passed, game recognized corrupted state and ended game.\n");
 	}
+	
 
 	//Test that acceptable province value does not end game
 	game.supplyCount[province] = 4;
-	j = isGameOver(&game);
+	l = isGameOver(&game);
 
-	if(j == 0)
+	if(l == 0)
 	{
-		printf("Test passed, game is not over.\n");
+		printf("Test passed on acceptable value, game is not over.\n");
 	}
 
 	return 0;

@@ -117,7 +117,7 @@ int checkFeast(int choice1, int choice2, int choice3, struct gameState *game, in
 
 	printf("(this test causes an infinite loop, so I have commented it out)\n");
 
-	/*memcpy(&testGame, game, sizeof(struct gameState));
+	memcpy(&testGame, game, sizeof(struct gameState));
 
 
 	choice1 = adventurer;
@@ -133,7 +133,7 @@ int checkFeast(int choice1, int choice2, int choice3, struct gameState *game, in
 	assert(game->deckCount[thisPlayer] == testGame.deckCount[thisPlayer]);
 
 	printf("discard count = %d, expected = %d\n", game->discardCount[thisPlayer], testGame.discardCount[thisPlayer]);
-	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);*/
+	assert(game->discardCount[thisPlayer] == testGame.discardCount[thisPlayer]);
 
 
 	return 0;
