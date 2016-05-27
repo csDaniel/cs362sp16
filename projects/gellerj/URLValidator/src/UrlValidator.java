@@ -342,7 +342,6 @@ public class UrlValidator implements Serializable {
         }
 
         if (isOff(ALLOW_ALL_SCHEMES)) {
-
             if (!this.allowedSchemes.contains(scheme)) {
                 return false;
             }
@@ -443,7 +442,7 @@ public class UrlValidator implements Serializable {
             return true;
         }
         
-        return !QUERY_PATTERN.matcher(query).matches();
+        return QUERY_PATTERN.matcher(query).matches();
     }
 
     /**
