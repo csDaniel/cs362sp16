@@ -20,6 +20,10 @@ import java.util.Random;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 
 
 
@@ -47,111 +51,172 @@ public class UrlValidatorTest extends TestCase {
    
    
    public void testYourFirstPartition()
-   {
+   {   
 	   //schemes
-
+	   UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   System.out.println("Test Schemes:");
 
+	   //Allow all schemes on
 	   //true schemes
 	   //http
-	   System.out.println(urlValidator.isValid("http://amazon.com"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://amazon.com"));
 	   assertTrue(urlValidator.isValid("http://amazon.com"));
 
-	   /https
-	   System.out.println(urlValidator.isValid("https://amazon.com"));
+	   //https
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("https://amazon.com"));
 	   assertTrue(urlValidator.isValid("https://amazon.com"));
 
 	   //ftp
-	   System.out.println(urlValidator.isValid("ftp://amazon.com"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("ftp://amazon.com"));
 	   assertTrue(urlValidator.isValid("ftp://amazon.com"));
 
 	   //false schemes
 	   // ://
-	   System.out.println(urlValidator.isValid("://amazon.com"));
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("://amazon.com"));
 	   assertFalse(urlValidator.isValid("://amazon.com"));
 
 	   //3ht
-	   System.out.println(urlValidator.isValid("3ht://amazon.com"));
-	   assertFalse(urlValidator.isValid("ftp://amazon.com"));
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("3ht://amazon.com"));
+	   assertFalse(urlValidator.isValid("3ht://amazon.com"));
 
 	   //no scheme
-	   System.out.println(urlValidator.isValid("//amazon.com"));
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("//amazon.com"));
 	   assertFalse(urlValidator.isValid("//amazon.com"));
+
+	   //Allow all schemes off
+	   String[] schemes = {"http", "https"};
+	   urlValidator = new UrlValidator(schemes);
+	   //true scheme
+	   //in scheme
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("https://amazon.com"));
+	   assertTrue(urlValidator.isValid("https://amazon.com"));
+
+	   //false scheme
+	   //not in scheme
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("ftp://amazon.com"));
+	   assertFalse(urlValidator.isValid("ftp://amazon.com"));
    }
    
    public void testYourSecondPartition(){
-	   //authority
+	   //authorities
+	   System.out.println("Test Authority:");
+
 	   UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 
 	   //true authorities
-	   System.out.println(urlValidator.isValid("http://www.google.com"));
+	   //hostnames
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com"));
 	   assertTrue(urlValidator.isValid("http://www.google.com"));
 
-	   System.out.println(urlValidator.isValid("http://go.com"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://go.com"));
 	   assertTrue(urlValidator.isValid("http://go.com"));
 
-	   System.out.println(urlValidator.isValid("http://0.0.0.0"));
+	   //IP address
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://0.0.0.0"));
 	   assertTrue(urlValidator.isValid("http://0.0.0.0"));
 
+
 	   //false authorities
-	   System.out.println(urlValidator.isValid("http://go.a"));
+	   //hostnames
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://go.a"));
 	   assertFalse(urlValidator.isValid("http://go.a"));
 
-	   System.out.println(urlValidator.isValid("http://go.1aa"));
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://go.1aa"));
 	   assertFalse(urlValidator.isValid("http://go.1aa"));
 
-	   System.out.println(urlValidator.isValid("http://1.2.3.4.5"));
+	   //IP address
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://1.2.3.4.5"));
 	   assertFalse(urlValidator.isValid("http://1.2.3.4.5"));
+
+	   //empty authority
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://test1"));
+	   assertFalse(urlValidator.isValid("http://test1"));
+
+	   //port
+	   //true ports
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com:80"));
+	   assertTrue(urlValidator.isValid("http://www.google.com:80"));
+
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com:0"));
+	   assertTrue(urlValidator.isValid("http://www.google.com:0"));
+
+	   //false ports
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://www.google.com:-1"));
+	   assertFalse(urlValidator.isValid("http://www.google.com:-1"));
+
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://www.google.com:80aa"));
+	   assertFalse(urlValidator.isValid("http://www.google.com:80aa"));
    }
 
    public void testYourThirdPartition(){
 	   //path
+	   System.out.println("Test Path:");
+
+	   UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
 	   //true paths
-	   System.out.println(urlValidator.isValid("http://www.google.com/test1"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com/test1"));
 	   assertTrue(urlValidator.isValid("http://www.google.com/test1"));
 
-	   System.out.println(urlValidator.isValid("http://google.com/t123"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://google.com/t123"));
 	   assertTrue(urlValidator.isValid("http://google.com/t123"));
 
-	   System.out.println(urlValidator.isValid("http://google.com/test/file"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://google.com/test/file"));
 	   assertTrue(urlValidator.isValid("http://google.com/test/file"));
 
-	   //false authorities
-	   System.out.println(urlValidator.isValid("http://google.com/../"));
+	   //false paths
+	   //..
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://google.com/../"));
 	   assertFalse(urlValidator.isValid("http://google.com/../"));
 
-	   System.out.println(urlValidator.isValid("http://google.com/test1//file"));
+	   //two slashes
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://google.com/test1//file"));
 	   assertFalse(urlValidator.isValid("http://google.com/test1//file"));
+
+	   //Allow two slashes on
+	   urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_2_SLASHES);
+
+	   //true
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://google.com/test1//file"));
+	   assertTrue(urlValidator.isValid("http://google.com/test1//file"));
    }
 
    public void testYourFourthPartition(){
 	   //query
+	   System.out.println("Test Query:");
+
+	   UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+
 	   //true queries
-	   System.out.println(urlValidator.isValid("http://www.google.com?action=view"));
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com?action=view"));
 	   assertTrue(urlValidator.isValid("http://www.google.com?action=view"));
 
-	   System.out.println(urlValidator.isValid("http://www.google.com?action=view+one"));
+	   //Two words w/ + sign
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com?action=view+one"));
 	   assertTrue(urlValidator.isValid("http://www.google.com?action=view+one"));
 
 	   //false queries
-	   System.out.println(urlValidator.isValid("http://www.google.com?action=view one"));
+	   //Two words w/ space
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://www.google.com?action=view one"));
 	   assertFalse(urlValidator.isValid("http://www.google.com?action=view one"));
 
    }
 
    public void testYourFifthPartition(){
 	   //fragment
+	   System.out.println("Test Fragment:");
+
 	   UrlValidator urlValidator = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   
-	   //true fragments
-	   System.out.println(urlValidator.isValid("http://www.google.com#print"));
+	   //true fragment
+	   System.out.println("Expcted: true   Actual: " + urlValidator.isValid("http://www.google.com#print"));
 	   assertTrue(urlValidator.isValid("http://www.google.com#print"));
 
 
-	   UrlValidator urlVal = new UrlValidator(null, null, UrlVal.NO_FRAGMENTS);
+	   urlValidator = new UrlValidator(null, null, UrlValidator.NO_FRAGMENTS);
 	   //fragments not enabled
-	   System.out.println(urlVal.isValid("http://www.google.com#print"));
-	   assertFalse(urlVal.isValid("http://www.google.com#print"));
+	   System.out.println("Expcted: false   Actual: " + urlValidator.isValid("http://www.google.com#print"));
+	   assertFalse(urlValidator.isValid("http://www.google.com#print"));
    }
    
    
