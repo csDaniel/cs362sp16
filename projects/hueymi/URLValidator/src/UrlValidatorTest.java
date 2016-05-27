@@ -46,7 +46,79 @@ public class UrlValidatorTest extends TestCase {
    
    public void testManualTest()
    {
-
+UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   String thisString = "";
+	   System.out.println(String.format("%-60s", thisString = " ") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.amazon.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.AMAZON.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.amAzon.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http:///www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "https://www.amazon.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.amazon.com:80") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "htps://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "htp://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "hp://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "h://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "htp://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "htttttttp://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "****://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "h***://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "h**p://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "ht*p://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "hxxp://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "hzzzp://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "zzzz://www.amazon.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "https://") + "Expected: false  \tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "htps://") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "https://www.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http:") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://:80") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s",  thisString = "http://en.wikipedia.org") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s",  thisString = "http://en.wikipedia.org/") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s",  thisString = "http://en.wikipedia.org:80") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s",  thisString = "http://en.wikipedia.org/wiki/URI_scheme") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:80") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/test.txt") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:80/test.txt") + "Expected: true\tActual: " + urlVal.isValid(thisString));	
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/test.html") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:test.html") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www,abc.com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www,abc,com") + "Expected: false\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/start/new") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.gov") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.mil") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.au") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.net") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.org") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/path") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/path.json") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/path?query-wanted") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/bugs?_requestid=1374449") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "https://www.google.com/#q=testing") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "https://www.google.com/?gws_rd=ssl#q=bing") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/path#print") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/#!print") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/key1=value1&key2=value2") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "ftp://www.abc.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:21") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:110") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:1190") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com:65535") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "mailto://m.mouse@gmail.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "mailto://pikec@oregonstate.edu") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "ftp://username:password@ftp.xyz.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://twitter.com/@example") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://username:password@somewhere.foo") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc-123.com") + "Expected: true\tActual: " + urlVal.isValid(thisString));
+	   System.out.println(String.format("%-60s", thisString = "http://www.abc.com/path-123") + "Expected: true\tActual: " + urlVal.isValid(thisString));
    }
    
    
