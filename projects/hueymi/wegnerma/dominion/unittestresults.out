@@ -1,0 +1,1072 @@
+
+
+----------------- Testing of Function: updateCoins() ----------------
+
+TEST 1: No treasure cards in hand and no bonus
+coinCount = 0, expected = 0
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+TEST 2: No treasure cards in hand and +2 bonus
+coinCount = 2, expected = 2
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+TEST 3: One treasure card in hand and +2 bonus
+first card = (4)
+coinCount = 3, expected = 3
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+first card = (5)
+coinCount = 4, expected = 4
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+first card = (6)
+coinCount = 5, expected = 5
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+TEST 4: Two treasure cards in hand and +2 bonus
+first card = (4)
+coin value = 1
+second card = (5)
+second coin value = 2
+totalCoinVal = 3
+realG.coins = 0
+coinCount = 5, expected = 5
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+first card = (5)
+coin value = 2
+second card = (6)
+second coin value = 3
+totalCoinVal = 5
+realG.coins = 0
+coinCount = 7, expected = 7
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+first card = (6)
+coin value = 3
+second card = (4)
+second coin value = 1
+totalCoinVal = 4
+realG.coins = 0
+coinCount = 6, expected = 6
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+
+TEST 5: Three treasure cards in hand and +2 bonus
+first card = (4)
+second card = (5)
+third card = (6)
+totalCoinVal = 6
+realG.coins = 0
+coinCount = 8, expected = 8
+handCount = 5, expected = 5
+deckCount = 5, expected = 5
+discardCount = 0, expected = 0
+
+
+ >>>>> SUCCESS: Testing complete of updateCoins() <<<<<
+
+
+
+
+----------------- Testing of Function: fullDeckCount() ----------------
+
+TEST 1: Immediately after initialization 
+coppers = 7, expected = 7
+estates = 3, expected = 3
+smithys = 0, expected = 0
+
+TEST 2: Switch the hand with the deck (should have no change) 
+coppers = 7, expected = 7
+estates = 3, expected = 3
+smithys = 0, expected = 0
+
+TEST 3: Replacing all coppers with smithys 
+coppers = 0, expected = 0
+estates = 3, expected = 3
+smithys = 7, expected = 7
+
+TEST 4: Add 2 smithys to the hand 
+coppers = 7, expected = 7
+estates = 3, expected = 3
+smithys = 2, expected = 2
+
+TEST 5: Add 2 smithys to the discard pile 
+coppers = 7, expected = 7
+estates = 3, expected = 3
+smithys = 2, expected = 2
+
+TEST 6: Remove 2 estates from the hand
+coppers = 7, expected = 7
+estates = 1, expected = 1
+smithys = 0, expected = 0
+
+TEST 7: Add 2 smithys to another player's hand
+coppers = 7, expected = 7
+estates = 3, expected = 3
+smithys = 0, expected = 0
+
+ >>>>> SUCCESS: Testing complete of fullDeckCount() <<<<<
+
+
+
+
+----------------- Testing of Function: endTurn() ----------------
+
+TEST 1: First player has 5 cards in hand when turn ends 
+prevHandCount of previous player = 5
+prevDiscard of previous player = 0
+whoseTurn = 1, expected = 1
+handCount of previous player = 0, expected = 0
+discardCount of previous player= 5, expected = 5
+handCount of current player = 5, expected = 5
+
+TEST 2: Second player has 3 cards in hand when turn ends 
+prevHandCount of previous player = 3
+prevDiscard of previous player = 0
+whoseTurn = 2, expected = 2
+handCount of previous player = 0, expected = 0
+discardCount of previous player= 3, expected = 3
+handCount of current player = 5, expected = 5
+
+TEST 3: Third player has no cards in hand when turn ends 
+prevHandCount of previous player = 0
+prevDiscard of previous player = 0
+whoseTurn = 0, expected = 0
+handCount of previous player = 0, expected = 0
+discardCount of previous player= 0, expected = 0
+handCount of current player = 5, expected = 5
+
+ >>>>> SUCCESS: Testing complete of endTurn() <<<<<
+
+
+
+
+----------------- Testing of Function: isGameOver() ----------------
+
+TEST 1: All the supply piles and the Province card pile is full 
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 2: One kingdom supply pile is empty and the rest are full 
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 0
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 3: One kingdom supply pile is empty and the rest are full 
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 0
+kingdom card (12) = 0
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 4: Three kingdom supply piles are empty and the rest are full 
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 0
+kingdom card (12) = 0
+kingdom card (14) = 0
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 1, expected = 1
+
+TEST 5: Estate and Duchy piles are empty and the rest are full 
+province cards = 12
+estate cards = 0
+duchy cards = 0
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 6: Estate and Duchy piles are empty and the rest are full 
+province cards = 0
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 1, expected = 1
+
+ >>>>> SUCCESS: Testing complete of isGameOver() <<<<<
+
+
+
+
+----------------- Testing of Card: Smithy ----------------
+
+TEST 1: Current player draws all coppers from deck 
+current hand: (13) (1) (12) (1) (14)
+current deck: (4) (4) (4) (4) (4)
+current discard:
+current player = 0, expected = 0
+played hand: (4) (1) (12) (1) (14) (4) (4) (4)
+played deck: (4)
+played discard:
+current player's handCount = 8, expected = 7
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+current player's deckCount = 1, expected = 2
+********** ERROR: current player's deck pile mismatch**********
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 4, expected = 4
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+
+TEST 2: Second player draws all coppers from deck 
+current hand: (13) (1) (1) (4) (4)
+current deck: (4) (4) (4) (4) (4)
+current discard:
+played hand: (4) (1) (1) (4) (4) (4) (4) (4)
+played deck: (4)
+played discard:
+current player = 1, expected = 1
+current player's handCount = 8, expected = 7
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+current player's deckCount = 1, expected = 2
+********** ERROR: current player's deck pile mismatch**********
+player 0's handCount = 0, expected = 0
+player 0's discardCount = 5, expected = 5
+player 0's deckCount = 5, expected = 5
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 4, expected = 4
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+
+TEST 3: First player's only card left is smithy 
+current hand: (13)
+current deck: (4) (4) (1) (4) (4) (4) (4) (1) (1) (4)
+current discard:
+played hand: (13)
+played deck: (4) (4) (1) (4) (4) (4) (4) (1) (1) (4)
+played discard:
+current player = 1, expected = 1
+current player's handCount = 1, expected = 3
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+current player's deckCount = 10, expected = 7
+********** ERROR: current player's deck pile mismatch**********
+player 0's handCount = 8, expected = 5
+********** ERROR: player 0's handCount mismatch**********
+player 0's discardCount = 0, expected = 0
+player 0's deckCount = 1, expected = 5
+********** ERROR: player 0's deckCount mismatch********
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 13, expected = 4
+********** ERROR: mismatch********
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+
+TEST 4: First player has all smithys in hand 
+current hand: (13) (13) (13) (13) (13)
+current deck: (4) (4) (4) (4) (4)
+current discard:
+played hand: (4) (13) (13) (13) (13) (4) (4) (4)
+played deck: (4)
+played discard:
+current player = 0, expected = 0
+current player's handCount = 8, expected = 7
+********** ERROR: current player's hand mismatch********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+current player's deckCount = 1, expected = 2
+********** ERROR: current player's deck pile mismatch**********
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 4, expected = 13
+********** ERROR: mismatch********
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+
+TEST 5: First player draws all smithys from deck 
+current hand: (13) (1) (12) (1) (14)
+current deck: (13) (13) (13) (13) (13)
+current discard:
+played hand: (13) (1) (12) (1) (14) (13) (13) (13)
+played deck: (13)
+played discard:
+current player = 0, expected = 0
+current player's handCount = 8, expected = 7
+********** ERROR: current player's hand mismatch********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+current player's deckCount = 1, expected = 2
+********** ERROR: current player's deck pile mismatch**********
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 13, expected = 13
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+ >>>>> SUCCESS: Testing complete of Smithy <<<<<
+
+
+
+
+----------------- Testing of Card: Embargo ----------------
+
+TEST 1: First player places embargo on estate, and next player tries to buy it 
+hand before playing  =  (22) (1) (13) (4) (14)
+successful play = 0, expected = 0
+coins = 6, expected = 6
+hand after playing  =  (14) (1) (13) (4)
+current player = 0, expected = 0
+current player's handCount = 4, expected = 4
+current player's discardCount = 0, expected = 0
+played cards = 0, expected = 0
+current player's deckCount = 5, expected = 5
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected = 14
+province cards = 12, expected = 12
+estate cards = 12, expected = 12
+duchy cards = 12, expected = 12
+kingdom card (7) = 10
+kingdom card (22) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39, expected = 39
+silver cards = 40, expected = 40
+gold cards = 30, expected = 30
+game over = 0, expected = 0
+NEXT PLAYER TURN:
+coins = 3
+successful buy = 0, expected = 0
+coins = 1, expected = 1
+curse cards = 0, expected = 1
+********** ERROR: curse cards mismatch **********
+
+TEST 2: First player places 2 embargos on estate, and next player tries to buy it 
+ (22)
+hand before playing  =  (22) (22) (13) (4) (14)
+successful play = 0, expected = 0
+coins = 5, expected = 5
+hand after playing  =  (14) (4) (13)
+current player = 0, expected = 0
+current player's handCount = 3, expected = 3
+current player's discardCount = 0, expected = 0
+played cards = 0, expected = 0
+current player's deckCount = 5, expected = 5
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected = 14
+province cards = 12, expected = 12
+estate cards = 12, expected = 12
+duchy cards = 12, expected = 12
+kingdom card (7) = 10
+kingdom card (22) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39, expected = 39
+silver cards = 40, expected = 40
+gold cards = 30, expected = 30
+game over = 0, expected = 0
+NEXT PLAYER TURN:
+coins = 3
+current player = 1
+successful buy = 0, expected = 0
+coins = 1, expected = 1
+curse cards = 0, expected = 2
+********** ERROR: curse cards mismatch **********
+
+TEST 3: First player places embargo on outpost (card not in play) 
+hand before playing  =  (22) (1) (13) (4) (14)
+successful play = -1, expected = -1
+
+ >>>>> SUCCESS: Testing complete of Embargo <<<<<
+
+
+
+
+----------------- Testing of Card: Remodel ----------------
+
+TEST 1: First player trades an estate (+2) for a silver (+3), a +1 increase 
+hand before playing  =  (12) (1) (13) (4) (14)
+successful play = -1, expected = 0
+********** ERROR: unsuccessful play **********
+hand after playing  =  (12) (1) (13) (4) (14)
+current player = 0, expected = 0
+current player's handCount = 5, expected = 5
+current player's discardCount = 0, expected = 0
+played cards = 0, expected = 1
+********** ERROR: played card pile mismatch**********
+current player's deckCount = 5, expected = 5
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 12, expected = 5
+********** ERROR: first card mismatch**********
+province cards = 12, expected = 12
+estate cards = 12, expected = 12
+duchy cards = 12, expected = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39, expected = 39
+silver cards = 40, expected = 39
+********** ERROR: silver card mismatch**********
+gold cards = 30, expected = 30
+game over = 0, expected = 0
+
+TEST 2: First player trades an copper (+0) for a silver (+3), a +3 increase 
+hand before playing  =  (12) (1) (13) (4) (14)
+successful play = 0, expected = 0
+hand after playing  =  (14) (1) (13)
+current player = 0, expected = 0
+current player's handCount = 3, expected = 5
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 1, expected = 0
+********** ERROR: current player's discard pile mismatch**********
+played cards = 2, expected = 1
+********** ERROR: played card pile mismatch**********
+current player's deckCount = 5, expected = 5
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected = 5
+********** ERROR: first card mismatch**********
+province cards = 12, expected = 12
+estate cards = 12, expected = 12
+duchy cards = 12, expected = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39, expected = 39
+silver cards = 39, expected = 40
+********** ERROR: silver card mismatch**********
+gold cards = 30, expected = 30
+game over = 0, expected = 0
+
+TEST 3: First player trades an copper (+0) for a province (+8), a +8 increase 
+hand before playing  =  (12) (1) (13) (4) (14)
+successful play = 0, expected = 0
+hand after playing  =  (14) (1) (13)
+current player = 0, expected = 0
+current player's handCount = 3, expected = 5
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 1, expected = 0
+********** ERROR: current player's discard pile mismatch**********
+played cards = 2, expected = 1
+********** ERROR: played card pile mismatch**********
+current player's deckCount = 5, expected = 5
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected = 5
+********** ERROR: first card mismatch**********
+province cards = 11, expected = 12
+********** ERROR: province card mismatch**********
+estate cards = 12, expected = 12
+duchy cards = 12, expected = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39, expected = 39
+silver cards = 40, expected = 40
+gold cards = 30, expected = 30
+game over = 0, expected = 0
+
+TEST 4: First player trades an village (+3) for a copper (+0), a -3 decrease 
+hand before playing  =  (12) (1) (13) (4) (14)
+successful play = -1, expected = 0
+********** ERROR: unsuccessful play **********
+hand after playing  =  (12) (1) (13) (4) (14)
+current player = 0, expected = 0
+current player's handCount = 5, expected = 5
+current player's discardCount = 0, expected = 0
+played cards = 0, expected = 1
+********** ERROR: played card pile mismatch**********
+current player's deckCount = 5, expected = 5
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 12, expected = 5
+********** ERROR: first card mismatch**********
+province cards = 12, expected = 12
+estate cards = 12, expected = 12
+duchy cards = 12, expected = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39, expected = 38
+********** ERROR: copper card mismatch**********
+silver cards = 40, expected = 40
+gold cards = 30, expected = 30
+game over = 0, expected = 0
+
+ >>>>> SUCCESS: Testing complete of Remodel <<<<<
+
+
+
+
+----------------- Testing of Card: Adventurer ----------------
+
+TEST 1: All the cards in the deck are copper cards 
+The value of adventurer is 7
+current hand: (7) (1) (12) (1) (14)
+current deck: (4) (4) (4) (4) (4)
+current discard:
+played hand: (14) (1) (12) (1)
+played deck: (4) (4) (4) (4) (4)
+played discard:
+current player = 0, expected = 0
+current player's handCount = 4, expected = 6
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected != 7
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 2: All the cards in the deck are silver cards 
+current hand: (7) (1) (12) (1) (14)
+current deck: (5) (5) (5) (5) (5)
+current discard:
+played hand: (14) (1) (12) (1)
+played deck: (5) (5) (5) (5) (5)
+played discard:
+current player = 0, expected = 0
+current player's handCount = 4, expected = 6
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 0, expected = 0
+played cards = 1, expected = 1
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected != 7
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 3: The first 2 cards in the deck are treasure cards 
+current hand: (7) (1) (12) (1) (14)
+current deck: (14) (14) (5) (5) (5)
+current discard:
+played hand: (14) (1) (12) (1)
+played deck: (14) (14) (5) (5) (5)
+played discard:
+current player = 0, expected = 0
+current player's handCount = 4, expected = 6
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 0, expected = 3
+********** ERROR: current player's discard pile mismatch**********
+played cards = 1, expected = 1
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected != 7
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 4: Player 1's deck has no treasure cards - the discard pile has 2 
+current hand: (7) (1) (12) (1) (14)
+current deck: (14) (14) (14) (14) (14)
+current discard: (4) (4)
+played hand: (14) (1) (12) (1)
+played deck: (14) (14) (14) (14) (14)
+played discard: (4) (4)
+current player = 0, expected = 0
+current player's handCount = 4, expected = 6
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 2, expected = 5
+********** ERROR: current player's discard pile mismatch**********
+played cards = 1, expected = 1
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected != 7
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 5: Player 1's deck has no treasure cards - the discard pile has 2 
+current hand: (4) (1) (1) (4) (4)
+current deck: (14) (14) (14) (14) (14)
+current discard: (4) (4)
+played hand: (4) (1) (1) (4)
+played deck: (14) (14) (14) (14) (14)
+played discard: (4) (4)
+current player = 1, expected = 1
+current player's handCount = 4, expected = 6
+********** ERROR: current player's hand mismatch**********
+current player's discardCount = 2, expected = 5
+********** ERROR: current player's discard pile mismatch**********
+played cards = 1, expected = 1
+player 0's handCount = 0, expected = 0
+player 0's discardCount = 5, expected = 5
+player 0's deckCount = 5, expected = 5
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 4, expected != 7
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+TEST 6: Neither the deck nor the discard pile has any treasure cards 
+current hand: (7) (1) (12) (1) (14)
+current deck: (14) (14) (14) (14) (14)
+current discard:
+played hand: (14) (1) (12) (1)
+played deck: (14) (14) (14) (14) (14)
+played discard:
+current player = 0, expected = 0
+current player's handCount = 4, expected = 4
+current player's discardCount = 0, expected = 5
+********** ERROR: current player's discard pile mismatch**********
+played cards = 1, expected = 1
+player 1's handCount = 0, expected = 0
+player 1's discardCount = 0, expected = 0
+player 1's deckCount = 10, expected = 10
+player 2's handCount = 0, expected = 0
+player 2's discardCount = 0, expected = 0
+player 2's deckCount = 10, expected = 10
+first card = 14, expected != 7
+province cards = 12
+estate cards = 12
+duchy cards = 12
+kingdom card (7) = 10
+kingdom card (12) = 10
+kingdom card (14) = 10
+kingdom card (20) = 10
+kingdom card (11) = 10
+kingdom card (21) = 10
+kingdom card (25) = 10
+kingdom card (19) = 10
+kingdom card (13) = 10
+kingdom card (8) = 10
+copper cards = 39
+silver cards = 40
+gold cards = 30
+game over = 0, expected = 0
+
+ >>>>> SUCCESS: Testing complete of Adventurer <<<<<
+
+
+File 'dominion.c'
+Lines executed:38.15% of 561
+Creating 'dominion.c.gcov'
+
+Function 'updateCoins'
+Lines executed:100.00% of 11
+
+Function 'gainCard'
+Lines executed:61.54% of 13
+
+Function 'discardCard'
+Lines executed:92.31% of 13
+
+Function 'cardEffect'
+Lines executed:11.94% of 201
+
+Function 'playCutpurse'
+Lines executed:0.00% of 14
+
+Function 'playGreatHall'
+Lines executed:0.00% of 5
+
+Function 'playVillage'
+Lines executed:0.00% of 5
+
+Function 'playSmithy'
+Lines executed:100.00% of 7
+
+Function 'playAdventurer'
+Lines executed:47.06% of 17
+
+Function 'getCost'
+Lines executed:26.67% of 30
+
+Function 'drawCard'
+Lines executed:36.36% of 22
+
+Function 'getWinners'
+Lines executed:0.00% of 24
+
+Function 'scoreFor'
+Lines executed:0.00% of 24
+
+Function 'isGameOver'
+Lines executed:100.00% of 10
+
+Function 'endTurn'
+Lines executed:100.00% of 20
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+
+Function 'fullDeckCount'
+Lines executed:100.00% of 9
+
+Function 'supplyCount'
+Lines executed:100.00% of 2
+
+Function 'handCard'
+Lines executed:0.00% of 3
+
+Function 'numHandCards'
+Lines executed:0.00% of 2
+
+Function 'buyCard'
+Lines executed:76.92% of 13
+
+Function 'playCard'
+Lines executed:0.00% of 14
+
+Function 'shuffle'
+Lines executed:93.75% of 16
+
+Function 'initializeGame'
+Lines executed:88.71% of 62
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+
+Function 'newGame'
+Lines executed:0.00% of 3
+
+Function 'compare'
+Lines executed:83.33% of 6
+
+File 'dominion.c'
+Lines executed:38.15% of 561
+Creating 'dominion.c.gcov'
+
+File 'dominion.c'
+Lines executed:38.15% of 561
+Branches executed:42.17% of 415
+Taken at least once:27.71% of 415
+Calls executed:29.59% of 98
+Creating 'dominion.c.gcov'
+
