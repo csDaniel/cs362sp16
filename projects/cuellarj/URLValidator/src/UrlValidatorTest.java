@@ -37,13 +37,44 @@ public class UrlValidatorTest extends TestCase {
    }
 
    
-   
+   /*********************MANUAL TEST***************************/  
    public void testManualTest()
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   System.out.println("Valid URLs: All results should be TRUE");
 	   System.out.println(urlVal.isValid("http://www.amazon.com"));
-	   
-	   
+	   System.out.println(urlVal.isValid("HTTP://WWW.AMAZON.COM"));
+	   System.out.println(urlVal.isValid("http://www.example.com/main.html"));
+	   System.out.println(urlVal.isValid("http://www.example.com/file%5b%2f%5d.html"));
+	   System.out.println(urlVal.isValid("http://204.10.138.35/crystals2.html"));
+	   System.out.println(urlVal.isValid("http://api.google.com/q?exp=a|b"));
+	   System.out.println(urlVal.isValid("ftp://www.example.com/@dave"));
+	   System.out.println(urlVal.isValid("ftp://sunsite.unc.edu/pub/Linux/ls-lR.gz"));
+	   System.out.println(urlVal.isValid("ftp://dave:icantletyoudothat@sunsite.unc.edu/pub/Linux/ls-lR.gz"));
+	   System.out.println(urlVal.isValid("http://en.wikipedia.org/wiki/%22@%22_%28album%29"));
+	   System.out.println(urlVal.isValid("http://www.example.com/a/b/c/d/e/f/g/h/i.html"));
+	   System.out.println(urlVal.isValid("http://www.test.org/do.html#A+5-2"));
+	   System.out.println(urlVal.isValid("http://www.example.com:8800"));
+	   System.out.println(urlVal.isValid("gopher://garnet.berkeley.edu:1250/11/.gov/.UN"));
+	   System.out.println(urlVal.isValid("news:ba-ciwah-1998Jun4-013702@mud.stack.nl"));
+	   System.out.println(urlVal.isValid("news:comp.infosystems.www.authoring.html"));
+	   System.out.println(urlVal.isValid("file://localhost/temp/install_log.txt"));
+	   System.out.println(urlVal.isValid("mailto:stephano@webreference.com"));
+	   System.out.println(urlVal.isValid("telnet://stephanos:secret@somehost.internet.com:35/"));
+	   System.out.println(urlVal.isValid("news:*"));
+
+	   System.out.println("");
+
+	   System.out.println("Invalid URLs: All results should be FALSE");	   
+	   System.out.println(urlVal.isValid("http://www.amazon.com/##newitems"));
+	   System.out.println(urlVal.isValid("http://www.example.com/space here.html"));
+	   System.out.println(urlVal.isValid("http:\\www.example.com"));
+	   System.out.println(urlVal.isValid("http//:www.example.com"));
+	   System.out.println(urlVal.isValid("http:example.com/main.html"));
+	   System.out.println(urlVal.isValid("www.example.com/main.html"));
+	   System.out.println(urlVal.isValid("/main.html"));
+	   System.out.println(urlVal.isValid("wibble://www.bbc.co.uk"));
+
    }
    
    /*********************PARTITION TESTS***************************/ 
