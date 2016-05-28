@@ -1,0 +1,57 @@
+CS362 Final Project Part B
+Authors: Elliot Bates (batese), Jon Patterson (pattejon), Charles Siebert (siebertc)
+
+Intorduction:
+
+Manual Testing:
+
+Input Partitioned Testing:
+
+Programatic Testing:
+
+Use of Agan's Principle:
+
+
+Bug Reports:
+Bug report #1:
+Title:					URL query testing returns wrong value
+Class:					Serious bug
+Product:				Eclipse Java EE IDE for Web Developers
+Version:				Mars.2 Release (4.5.2)
+Platform:				Windows 10 Professional 64-bit		
+Is it reproducable:		Yes
+Location of bug:		URLValidator.java, line 446.
+Description of failure:	Passing valid URLs containing valid queries to the isValid function gives an invalid result.
+How failure was found:	This bug was discoverd using manual testing with the test url "https://inbox.gmail.com?foo=bar". This URL should evaluate to true (i.e. is a valid URL), however during testing it evaluated to false.
+						After discovering this, we proceeded to place breakpoints in the URLValidator.java file to isolate the cause of the discrepancy. It was eventually isolated to the isValid function, and then with further
+						breakpoints to the isValidQuery function.
+Cause of failure:		On line 446 of URLValidator.java in the isValidQuery function, the code reads "return !QUERY_PATTERN.matcher(query).matches();". The failure is caused by the '!' character preceeding QUERY_PATTERN, which 
+						should not be there. This is causing the function to return the inverse of the value returned by QUERY_PATTERN.matcher(query).matches(), where as is should be returning the result of this directly without 
+						modifying it.
+
+Bug report #2:
+Title:					Some correct port numbers are incorrectly designated as invalid
+Class:					Serious bug
+Product:				Eclipse Java EE IDE for Web Developers
+Version:				Mars.2 Release (4.5.2)
+Platform:				Windows 10 Professional 64-bit		
+Is it reproducable:		Yes
+Location of bug:		URLValidator.java, line 158.
+Description of failure:	Valid port numbers containing more than 3 digits cause the isVlid function to give an invalid result.
+How failure was found:	The programatic phase of our testing revealed that all tests using port 65535 all failed, wher they should be passing. With this information in hand, and knowing that tests using port 80 were validly passing,
+						we wrote a unit test to see which port values were passing and which were failing. This revealed that there was a large range of valid port numbers that were failing incorrectly. URLValidator was debugged using 
+						breakpoints to attempt the isolate the cause of this error. It was initially localised to the line 394 in the isValidAuthority function, where the port number is checked against PORT_PATTERN, which is defined on 
+						line 159. PORT_PATTERN is built using PORT_REGEX on line 158.
+Cause of failure:		The regular exporession on line 158 reads "^:(\\d{1,3})$", which means that only up to 3 digit numbers are accepted, meaning and any port number greater than 999 will cause a failure. This should read "^:(\\d{1,5})$",
+						which will allow up to 5 digit numbers to be accepted. This should be accompanied by additional code to check that the port number is not greater than 66535.
+						
+Bug report #3:
+Title:					
+Class:					
+Product:				
+Version:				
+Platform:						
+Is it reproducable:		
+Description of failure:	
+How failure was found:	
+Cause of failure:		
