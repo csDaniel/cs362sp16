@@ -16,6 +16,8 @@
  */
 
 
+import java.util.Random;
+
 import junit.framework.TestCase;
 
 
@@ -42,8 +44,32 @@ public class UrlValidatorTest extends TestCase {
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   System.out.println(urlVal.isValid("http://www.amazon.com"));
-	   
-	   
+	   System.out.println(urlVal.isValid("https://www.google.com"));
+	   System.out.println(urlVal.isValid("https://www.google.com:800"));
+	   System.out.println(urlVal.isValid("https://www.google.com:5000"));
+	   System.out.println(urlVal.isValid("https://www.google.com:pr"));
+	   System.out.println(urlVal.isValid("https://www.google.com/test"));
+	   System.out.println(urlVal.isValid("https://www.google.com/test2"));
+	   System.out.println(urlVal.isValid("https://www.google.com/test/test"));
+	   System.out.println(urlVal.isValid("https://www.google.com/test_1"));
+	   System.out.println(urlVal.isValid("https://www.google.com/afea43f4"));
+	   System.out.println(urlVal.isValid("https://www.google.com//fwqrf"));
+	   System.out.println(urlVal.isValid("https://www.google.com/test.fefd"));
+	   System.out.println(urlVal.isValid("https://www.google.com/test/"));
+	   System.out.println(urlVal.isValid("https://www.google.com/../"));
+	   System.out.println(urlVal.isValid("http://www.google.com"));
+	   System.out.println(urlVal.isValid("ftp://www.google.com"));
+	   System.out.println(urlVal.isValid("https://google.com"));
+	   System.out.println(urlVal.isValid("https://www.google.edu"));
+	   System.out.println(urlVal.isValid("https://www.google"));
+	   System.out.println(urlVal.isValid(""));
+	   System.out.println(urlVal.isValid("www.google.com"));
+	   System.out.println(urlVal.isValid("http//www.google.com"));
+	   System.out.println(urlVal.isValid("https:/www.google.com"));
+	   System.out.println(urlVal.isValid("https:www.google.com"));
+	   System.out.println(urlVal.isValid("htp://www.google.com"));
+	   System.out.println(urlVal.isValid("https://www.google.co.uk"));
+	   System.out.println(urlVal.isValid("https://www.google.uk"));
    }
    
    
@@ -59,10 +85,41 @@ public class UrlValidatorTest extends TestCase {
    
    public void testIsValid()
    {
+	   int pass = 0;
+	   int fail = 0;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   String[] urlScheme = {"https://", "http://", "ftp://", "h3t://", "http:/", "http//", "http:", "efe://", ""};
+	   String[] urlAuthority = {"www.google.com", "google.com", "www.google.co", "www.google.co.uk", "www.google.uk", 
+			   "225.225.225.225", "0.0.0.0", "225.225.225.226", "1.1.1.1", ".google.com", "google", "google.c", ""};
+	   String[] urlPort = {":80", "5000", ":", ":-12", ":80.1", "80", ":80b", ""};
+	   String[] urlPath = {"/test", "//test", "/test_2", "test", "/test//", "/../", "/", "/./", ""};
+	   String[] urlQuery = {"?test=test", "test=test", "?", "?test", ""};
+	   
 	   for(int i = 0;i<10000;i++)
 	   {
+		   StringBuffer urlBuffer = new StringBuffer();
+		   Random rand = new Random();
+		   urlBuffer.append(urlScheme[rand.nextInt(urlScheme.length)]);
+		   urlBuffer.append(urlAuthority[rand.nextInt(urlAuthority.length)]);
+		   urlBuffer.append(urlPort[rand.nextInt(urlPort.length)]);
+		   urlBuffer.append(urlPath[rand.nextInt(urlPath.length)]);
+		   urlBuffer.append(urlQuery[rand.nextInt(urlQuery.length)]);
 		   
+		   String url = urlBuffer.toString();
+		   boolean result = urlVal.isValid(url);
+		   
+		   if(result)
+		   {
+			   pass++;
+		   }
+		   else
+		   {
+			   fail++;
+		   }
+		   System.out.printf("(%d) %b: %s\n", i, result, url);
 	   }
+	   
+	   System.out.printf("Pass: %d\tFail: %d\n", pass, fail);
    }
    
    public void testAnyOtherUnitTest()
