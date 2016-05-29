@@ -48,7 +48,7 @@ public class UrlValidatorTest extends TestCase {
 			   "PARTITION TEST: isValid(NULL) = %b,  passed:%b\n",
 			   result, result == expectedResult );
 	   }
-	   
+
 	   if (result != expectedResult ) fail();
    }
    
@@ -63,38 +63,98 @@ public class UrlValidatorTest extends TestCase {
 			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
 			   testString, result, result == expectedResult );
 	   }
-	   
+
 	   if (result != expectedResult ) fail();
    }
    
    //Testing isValid branch on line 291
    public void testURL_PATTERN_Partition(){
+	   String testString = "";
+	   boolean expectedResult = false;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   boolean result = urlVal.isValid(testString);
+	   if (printStatus) {
+		   System.out.printf(
+			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
+			   testString, result, result == expectedResult );
+	   }
 
+	   if (result != expectedResult ) fail();
    }
    
    //Testing isValid branch on line 295
    public void testURL_SCHEME_Partition(){
-	  
+	   String testString = "";
+	   boolean expectedResult = false;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   boolean result = urlVal.isValid(testString);
+	   if (printStatus) {
+		   System.out.printf(
+			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
+			   testString, result, result == expectedResult );
+	   }
+
+	   if (result != expectedResult ) fail();
    }
 
    //Testing isValid branch on line 300
    public void testURL_AUTHORITY_Partition(){
+	   String testString = "";
+	   boolean expectedResult = false;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   boolean result = urlVal.isValid(testString);
+	   if (printStatus) {
+		   System.out.printf(
+			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
+			   testString, result, result == expectedResult );
+	   }
 
+	   if (result != expectedResult ) fail();
    }
 
    //Testing isValid branch on line 310
    public void testURL_PATH_Partition(){
+	   String testString = "";
+	   boolean expectedResult = false;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   boolean result = urlVal.isValid(testString);
+	   if (printStatus) {
+		   System.out.printf(
+			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
+			   testString, result, result == expectedResult );
+	   }
 
+	   if (result != expectedResult ) fail();
    }
 
    //Testing isValid branch on line 314
    public void testURL_QUERY_Partition(){
+	   String testString = "";
+	   boolean expectedResult = false;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   boolean result = urlVal.isValid(testString);
+	   if (printStatus) {
+		   System.out.printf(
+			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
+			   testString, result, result == expectedResult );
+	   }
 
+	   if (result != expectedResult ) fail();
    }
 
    //Testing isValid branch on line 318
    public void testURL_FRAGMENT_Partition(){
+	   String testString = "";
+	   boolean expectedResult = false;
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   boolean result = urlVal.isValid(testString);
+	   if (printStatus) {
+		   System.out.printf(
+			   "PARTITION TEST: isValid(\"%s\") = %b,  passed:%b\n",
+			   testString, result, result == expectedResult );
+	   }
 
+	   if (result != expectedResult ) fail();
    }
 
    //Testing isValid branch on line 324 (return true)
@@ -109,7 +169,7 @@ public class UrlValidatorTest extends TestCase {
 			   testString, result, result == expectedResult );
 		   System.out.flush();
 	   }
-	   
+
 	   if (result != expectedResult ) fail();
    }
       
