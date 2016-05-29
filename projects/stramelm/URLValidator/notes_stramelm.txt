@@ -17,6 +17,11 @@ https://www.ietf.org/rfc/rfc1918.txt
 https://www.ietf.org/rfc/rfc2396.txt
 https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 http://www.gilliganondata.com/index.php/2012/05/22/the-anatomy-of-a-url-protocol-hostname-path-and-parameters/
+http://www.skorks.com/2010/05/what-every-developer-should-know-about-urls/
+http://stackoverflow.com/questions/2742852/unicode-characters-in-urls
+
+really helpful:
+http://www.freeformatter.com/url-parser-query-string-splitter.html
 
 regex help:
 https://regex101.com/
@@ -105,3 +110,71 @@ manualTest073: 89.8% (NO COVERAGE ADDED BY THIS TEST)
 manualTest074: 89.9%
 manualTest075: 89.9% (NO COVERAGE ADDED BY THIS TEST)
 manualTest076: 90.0%
+
+unit tests were focused on uncovering the sources of failed assertions in the manual tests
+so manual tests first, then unit tests second
+
+unitTest006:
+  - bug detected by inclusion of query in URL string
+  
+unitTest007:
+  - bug detected by inclusion of query in URL string
+  
+unitTest008:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  - separate bug detected by trying to reach ".ws" TLD in URL string
+  
+unitTest009:
+  - bug detected when passing port number >= 4 digits
+  - separate bug detected when including user/pass in URL string
+  
+unitTest010:
+  - see unitTest009
+  
+unitTest011:
+  - bug detected when including user in URL string
+  - see unitTest009
+  
+unitTest012
+  - see unitTest011
+  
+unitTest018
+  - bug detected when passing port number >= 4 digits
+  - probably same bug as unitTest009
+  
+unitTest019:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  - separate bug detected by trying to reach ".ws" TLD in URL string
+  - probably same bug(s) as unitTest008
+  
+unitTest020:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  - separate bug detected by trying to reach ".ws" TLD in URL string
+  - probably same bug(s) as unitTest008
+  
+unitTest024:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  
+unitTest025:
+  - bug detected by inclusion of query in URL string
+  - probably same bug as unitTest007
+
+unitTest026:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  
+unitTest028:
+  - bug detected by trying to reach ".mp" TLD in URL string
+  - same bug as unitTest008 (except it was trying to reach ".ws")?
+  
+unitTest029:
+  - bug detected by trying to reach ".bar" TLD in URL string

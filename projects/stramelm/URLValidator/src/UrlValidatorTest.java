@@ -35,10 +35,8 @@ public class UrlValidatorTest extends TestCase {
    public UrlValidatorTest(String testName) {
       super(testName);
    }
-
    
-   
-   public void testManualTest()
+   public void testManual()
    {
 	   // manual tests are aimed at achieving 100% code coverage (or close to it)
 	   // using EclEmma 2.3.3 in Eclipse
@@ -129,35 +127,45 @@ public class UrlValidatorTest extends TestCase {
 	   ManualTests.manualTest001();
    }
    
-   
-   public void testYourFirstPartition()
+   public void testUnit()
    {
-	   
-   }
-   
-   public void testYourSecondPartition(){
-	   
-   }
-   
-   
-   public void testIsValid()
-   {
-	   for(int i = 0;i<10000;i++)
-	   {
-		   
-	   }
-   }
-   
-   public void testAnyOtherUnitTest()
-   {
-	   
-   }
-   /**
-    * Create set of tests by taking the testUrlXXX arrays and
-    * running through all possible permutations of their combinations.
-    *
-    * @param testObjects Used to create a url.
-    */
-   
+	   // unit tests are aimed at achieving determining why certain manual tests failed
 
+	   //UnitTests.unitTest068();
+	   //UnitTests.unitTest067();
+	   //UnitTests.unitTest066();
+	   //UnitTests.unitTest065();
+
+	   //UnitTests.unitTest062();
+
+	   //UnitTests.unitTest034();
+	   //UnitTests.unitTest033();
+	   //UnitTests.unitTest032();
+	   //UnitTests.unitTest031();
+	   //UnitTests.unitTest030();
+	   UnitTests.unitTest029();
+	   UnitTests.unitTest028();
+
+	   UnitTests.unitTest026();
+	   UnitTests.unitTest025();
+	   UnitTests.unitTest024();
+
+	   //UnitTests.unitTest021();
+	   UnitTests.unitTest020();
+	   UnitTests.unitTest019();
+	   UnitTests.unitTest018();
+
+	   //UnitTests.unitTest016();
+	   //UnitTests.unitTest015();
+	   //UnitTests.unitTest014();
+	   //UnitTests.unitTest013();
+	   UnitTests.unitTest012();
+	   UnitTests.unitTest011();
+	   UnitTests.unitTest010();
+	   UnitTests.unitTest009();
+	   UnitTests.unitTest008();
+	   UnitTests.unitTest007();
+	   UnitTests.unitTest006();
+   }
+   
 }
