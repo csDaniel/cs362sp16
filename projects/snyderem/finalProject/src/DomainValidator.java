@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
