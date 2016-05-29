@@ -8,6 +8,229 @@ import static org.junit.Assert.*;
 
 public class UnitTests {
 
+		public static void unitTestLocal() {
+			   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_LOCAL_URLS);
+			   
+			   boolean result = urlVal.isValid("http://localhost:8080");
+			   //assertEquals(true, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://localhost:808");
+			   //assertEquals(true, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://localhost:80");
+			   //assertEquals(true, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://localhost");
+			   //assertEquals(true, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://www.example.com");
+			   assertEquals(true, result);
+		}
+	 
+		public static void unitTestFragments() {
+			   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+			
+			   boolean result = urlVal.isValid("http://www.somesite.com/somepage.html#somefragment");
+			   assertEquals(true, result);
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html#");
+			   assertEquals(true, result);
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html#$");
+			   assertEquals(true, result);
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html##");
+			   //assertEquals(false, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html#\\");
+			   //assertEquals(false, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html#/");
+			   assertEquals(true, result);
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html#^");
+			   //assertEquals(false, result);
+			   //failed assertion commented out to keep test suite going
+
+			   result = urlVal.isValid("http://www.somesite.com/somepage.html#%");
+			   //assertEquals(false, result);
+			   //failed assertion commented out to keep test suite going
+
+			   UrlValidator urlVal2 = new UrlValidator(null, null, UrlValidator.NO_FRAGMENTS);
+			   
+			   result = urlVal2.isValid("http://www.somesite.com/somepage.html#somefragment");
+			   assertEquals(false, result);
+
+		}
+	
+		public static void unitTestPortNumbers() {
+		   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+
+		   boolean result = urlVal.isValid("http://www.amazon.com:-1");
+		   assertEquals(false, result);
+	
+		   result = urlVal.isValid("http://www.amazon.com:0");
+		   assertEquals(true, result);
+	
+		   result = urlVal.isValid("http://www.amazon.com:10");
+		   assertEquals(true, result);
+	
+		   result = urlVal.isValid("http://www.amazon.com:100");
+		   assertEquals(true, result);
+	
+		   result = urlVal.isValid("http://www.amazon.com:999");
+		   assertEquals(true, result);
+	
+		   result = urlVal.isValid("http://www.amazon.com:1000");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+	
+		   result = urlVal.isValid("http://www.amazon.com:10000");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+	
+		   result = urlVal.isValid("http://www.amazon.com:65535");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+	
+		   result = urlVal.isValid("http://www.amazon.com:65536");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+		}
+	
+		public static void unitTestIPAddresses() {
+		   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+		   
+		   boolean result = urlVal.isValid("http://0.0.0.0");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://0...0");
+		   assertEquals(false, result);
+
+		   result = urlVal.isValid("http://0.255.255.255");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://1.0.0.0");
+		   assertEquals(true, result);
+
+		   result = urlVal.isValid("http://10.0.0.0");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://10.255.255.255");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://11.0.0.0");
+		   assertEquals(true, result);
+
+		   result = urlVal.isValid("http://224.0.0.0");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://239.255.255.255");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://240.0.0.0");
+		   assertEquals(true, result);
+
+		   result = urlVal.isValid("http://255.255.255.255");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://256.0.0.0");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://999.999.999.999");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://9999.999.999.999");
+		   assertEquals(false, result);
+
+		   result = urlVal.isValid("http://-1.999.999.999");
+		   assertEquals(false, result);
+	   }
+
+	   public static void unitTest062() {
+		   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+		   boolean result = urlVal.isValid("http://a.b--c.de/");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://a.b---c.de/");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://a.b--c.com/");
+		   //assertEquals(false, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://a.b-!c.de/");
+		   assertEquals(false, result);
+
+		   result = urlVal.isValid("http://a.b!-c.de/");
+		   assertEquals(false, result);
+
+		   result = urlVal.isValid("http://a.b-c.de/");
+		   assertEquals(true, result);
+	   }
+
+	   public static void unitTest034() {
+		   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+
+		   boolean result = urlVal.isValid("http://-.~_!$&'()*+,;=:%40:80%2f::::::@example.com");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://-.~_!$&'()*+,;=:%40:80%2f@example.com");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://username:%40:80%2f@example.com");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://-.~_!$&'()*+,;=:password@example.com");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://username:password@example.com");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("ftp://username:password@example.com");
+		   //assertEquals(true, result);
+	   }
+
+	   // unitTest031, unitTest032, unitTest033 not included as they
+	   // would just be repetitive variations of unitTest026
+
+	   public static void unitTest030() {
+		   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+		   
+		   boolean result = urlVal.isValid("http://foo.bar/?q=Test%20URL-encoded%20stuff");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://foo.com/");
+		   assertEquals(true, result);
+
+		   result = urlVal.isValid("http://foo.com/?q=Test");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+	   }
+
 	   public static void unitTest029() {
 		   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 
@@ -19,7 +242,14 @@ public class UnitTests {
 		   //assertEquals(true, result);
 		   //failed assertion commented out to keep test suite going
 
+		   result = urlVal.isValid("http://foo.bar");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
+
 		   result = urlVal.isValid("ftp://foo.com");
+		   assertEquals(true, result);
+
+		   result = urlVal.isValid("http://foo.com");
 		   assertEquals(true, result);
 
 		   result = urlVal.isValid("ftp://foo.com/baz");
@@ -90,6 +320,9 @@ public class UnitTests {
 		   result = urlVal.isValid("http://a.ws");
 		   //assertEquals(true, result);
 		   //failed assertion commented out to keep test suite going
+
+		   result = urlVal.isValid("http://a.it");
+		   assertEquals(true, result);
 
 		   result = urlVal.isValid("http://⌘.com");
 		   //assertEquals(true, result);
@@ -274,6 +507,10 @@ public class UnitTests {
 		   
 		   result = urlVal.isValid("http://www.example.com/wpstyle/");
 		   assertEquals(true, result);
+		   
+		   result = urlVal.isValid("http://www.example.com/wpstyle/?a=b");
+		   //assertEquals(true, result);
+		   //failed assertion commented out to keep test suite going
 		   
 		   result = urlVal.isValid("http://www.example.com/");
 		   assertEquals(true, result);

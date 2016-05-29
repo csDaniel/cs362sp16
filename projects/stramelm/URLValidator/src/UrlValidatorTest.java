@@ -131,18 +131,26 @@ public class UrlValidatorTest extends TestCase {
    {
 	   // unit tests are aimed at achieving determining why certain manual tests failed
 
+	   UnitTests.unitTestLocal();
+	   UnitTests.unitTestFragments();
+	   UnitTests.unitTestPortNumbers();
+	   UnitTests.unitTestIPAddresses();
+	   
+	   //UnitTests.unitTest076();
+	   //UnitTests.unitTest075();
+
 	   //UnitTests.unitTest068();
 	   //UnitTests.unitTest067();
 	   //UnitTests.unitTest066();
 	   //UnitTests.unitTest065();
 
-	   //UnitTests.unitTest062();
+	   UnitTests.unitTest062();
 
-	   //UnitTests.unitTest034();
+	   UnitTests.unitTest034();
 	   //UnitTests.unitTest033();
 	   //UnitTests.unitTest032();
 	   //UnitTests.unitTest031();
-	   //UnitTests.unitTest030();
+	   UnitTests.unitTest030();
 	   UnitTests.unitTest029();
 	   UnitTests.unitTest028();
 

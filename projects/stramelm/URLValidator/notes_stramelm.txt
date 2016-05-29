@@ -12,16 +12,19 @@ other useful pages:
 https://en.wikipedia.org/wiki/Manual_testing
 https://en.wikipedia.org/wiki/Equivalence_partitioning
 https://en.wikipedia.org/wiki/Uniform_Resource_Locator
+https://www.ietf.org/rfc/rfc952.txt
 https://www.ietf.org/rfc/rfc1738.txt
 https://www.ietf.org/rfc/rfc1918.txt
 https://www.ietf.org/rfc/rfc2396.txt
+https://www.ietf.org/rfc/rfc3986.txt
 https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 http://www.gilliganondata.com/index.php/2012/05/22/the-anatomy-of-a-url-protocol-hostname-path-and-parameters/
 http://www.skorks.com/2010/05/what-every-developer-should-know-about-urls/
 http://stackoverflow.com/questions/2742852/unicode-characters-in-urls
+https://data.iana.org/TLD/tlds-alpha-by-domain.txt
 
 really helpful:
-http://www.freeformatter.com/url-parser-query-string-splitter.html
+http://www.freeformatter.com/url-parser-query-string-splitter.html (this site is awesome)
 
 regex help:
 https://regex101.com/
@@ -108,11 +111,13 @@ manualTest071: 89.7%
 manualTest072: 89.8%
 manualTest073: 89.8% (NO COVERAGE ADDED BY THIS TEST)
 manualTest074: 89.9%
-manualTest075: 89.9% (NO COVERAGE ADDED BY THIS TEST)
-manualTest076: 90.0%
+manualTest075: 89.9% (FAILED ASSERTION) (NO COVERAGE ADDED BY THIS TEST)
+manualTest076: 90.0% (FAILED ASSERTION)
 
 unit tests were focused on uncovering the sources of failed assertions in the manual tests
 so manual tests first, then unit tests second
+
+after the unit tests I'm @ 93.8% code coverage
 
 unitTest006:
   - bug detected by inclusion of query in URL string
@@ -178,3 +183,41 @@ unitTest028:
   
 unitTest029:
   - bug detected by trying to reach ".bar" TLD in URL string
+  
+unitTest030:
+  - bug detected by trying to reach ".bar" TLD in URL string
+  - bug detected by inclusion of query in URL string
+  - same as bugs in unitTest029 and unitTest007?
+
+unitTest034:
+  - bug detected when including user/pass in URL string
+  - see unitTest009
+  
+unitTest062:
+  - bug detected when including 2 or more hyphens in a row in the hostname
+  - this may or may not be a bug, RFC952 doesn't explicitly outlaw multple hyphens
+  - i think it's actually okay (http://marc.info/?t=93301829800003&r=1&w=2) because
+    GoDaddy tells me it's a valid URL for registration
+
+unitTestReservedIPAddresses:
+  - any IP address between 0.0.0.0 and 999.999.999.999 is coming back valid
+  - that's all IP addresses with <= 3 digits per block
+  - no evaluation of proper range or reserved addresses is being given
+    (https://en.wikipedia.org/wiki/Reserved_IP_addresses)
+    
+unitTestPortNumbers:
+  - bug detected - no port numbers > 999 come back valid
+  - should be valid up to 65535
+  - see unitTest009
+  
+unitTestFragments:
+  - http://tools.ietf.org/html/rfc3986
+  - this link (http://stackoverflow.com/questions/2849756/list-of-valid-characters-for-the-fragment-identifier-in-an-url)
+    would have me believe that some of my assertions should fail, for example #^ and #\
+  - i believe #% is also a bug because % is only allowed as an escape character (must be followed by two more chars)
+  
+  - this is definitely a bug, the code only bases fragment validity on whether or not NO_FRAGMENTS is used in
+    the UrlValidator instantiation, but doesn't do any checking of what's actually in the fragment
+    
+unitTestLocal:
+  - even with ALLOW_LOCAL_URLS - localhost is not accepted as a valid URL
