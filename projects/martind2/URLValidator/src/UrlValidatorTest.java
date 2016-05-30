@@ -342,21 +342,25 @@ public class UrlValidatorTest extends TestCase {
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   
+	   // not in scheme
 	   String testedUrl = "http://www.amazon.com";
 	   boolean validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(true, validatorResult);
 	   
+	   // not in scheme
 	   testedUrl = "https://amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(true, validatorResult);
 	   
+	   // not in scheme
 	   testedUrl = "ftp://amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(true, validatorResult);
 	   
+	   // not in scheme
 	   testedUrl = "blahblahblah://amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
@@ -373,7 +377,14 @@ public class UrlValidatorTest extends TestCase {
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(false, validatorResult);
 	   
+	   // starts with number 
 	   testedUrl = "123://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no domain, no scheme
+	   testedUrl = "//amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(false, validatorResult);
@@ -381,30 +392,228 @@ public class UrlValidatorTest extends TestCase {
 	   String[] schemes = {"http","https"};
 	   urlVal = new UrlValidator(schemes);
 	   
+	   // in scheme
 	   testedUrl = "https://amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(true, validatorResult);
 	   
+	   // in scheme
 	   testedUrl = "http://amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(true, validatorResult);
 	   
+	   // not in schemes
 	   testedUrl = "ftp://amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(false, validatorResult);
 	   
+	   // not in schemes
 	   testedUrl = "ssh://amazon.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no domain
+	   testedUrl = "//amazon.com";
 	   validatorResult = urlVal.isValid(testedUrl);
 	   printTestResults(testedUrl, validatorResult);
 	   Assert.assertEquals(false, validatorResult);
 	   
    }
    
-   public void testYourSecondPartition(){
+   public void testPartitionAuthorities() 
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
 	   
+	   // correct
+	   String testedUrl = "http://dave:password@dave.com";
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // unallowed char in password
+	   testedUrl = "http://dave:password$@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // unallowed char in user
+	   testedUrl = "http://dave$:password@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no user
+	   testedUrl = "http://password@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank user
+	   testedUrl = "http://:password@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no password
+	   testedUrl = "http://dave@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // blank password
+	   testedUrl = "http://dave:@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // host only
+	   testedUrl = "http://@dave.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank host
+	   testedUrl = "http://dave:password@.com";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no host extension
+	   testedUrl = "http://dave:password@dave";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank host, blank extension
+	   testedUrl = "http://dave:password@.";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no host
+	   testedUrl = "http://dave:password";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+   }
+   
+   public void testPartitionHostnameAndTopLevelDomain() 
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   // correct
+	   String testedUrl = "http://oregonstate.edu";
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // bad characters in host
+	   testedUrl = "http://!oregonstate.edu";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // bad chars in domain
+	   testedUrl = "http://oregonstate.e@du";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // not long enough hostname
+	   testedUrl = "http://a.edu";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // not long enough domain
+	   testedUrl = "http://oregonstate.e";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank host
+	   testedUrl = "http://.edu";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank domain
+	   testedUrl = "http://oregonstate.";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // digits ok in host
+	   testedUrl = "http://oregonstate123.edu";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // dashes okay in host
+	   testedUrl = "http://oregon-state.edu";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // dashes okay in domain
+	   testedUrl = "http://oregonstate.ed-u";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+
+   }
+   
+   public void testPartitionIPAddress() 
+   {
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   
+	   // correct
+	   String testedUrl = "http://192.168.0.1";
+	   boolean validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(true, validatorResult);
+	   
+	   // not enough fields
+	   testedUrl = "http://192.168.0";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank field
+	   testedUrl = "http://192.168..1";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // no scheme
+	   testedUrl = "192.168.0.1";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // blank scheme
+	   testedUrl = "//192.168.0.1";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // bad character
+	   testedUrl = "http://192.168.0.L";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	   
+	   // allowed char in IPv6, not IPv4
+	   testedUrl = "http://192.168.0.ABC";
+	   validatorResult = urlVal.isValid(testedUrl);
+	   printTestResults(testedUrl, validatorResult);
+	   Assert.assertEquals(false, validatorResult);
+	      
    }
    
    

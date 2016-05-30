@@ -1,0 +1,223 @@
+Notes to share with the team:
+ONLY stramelm SHOULD EDIT THIS FILE
+--------------------------------------
+
+tutorial on JUnit testing in Eclipse:
+https://www.youtube.com/watch?v=I8XXfgF9GSc
+
+explanation on order (or lackthereof) of tests:
+http://stackoverflow.com/questions/9528581/specifying-order-of-execution-in-junit-test-case
+
+other useful pages:
+https://en.wikipedia.org/wiki/Manual_testing
+https://en.wikipedia.org/wiki/Equivalence_partitioning
+https://en.wikipedia.org/wiki/Uniform_Resource_Locator
+https://www.ietf.org/rfc/rfc952.txt
+https://www.ietf.org/rfc/rfc1738.txt
+https://www.ietf.org/rfc/rfc1918.txt
+https://www.ietf.org/rfc/rfc2396.txt
+https://www.ietf.org/rfc/rfc3986.txt
+https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+http://www.gilliganondata.com/index.php/2012/05/22/the-anatomy-of-a-url-protocol-hostname-path-and-parameters/
+http://www.skorks.com/2010/05/what-every-developer-should-know-about-urls/
+http://stackoverflow.com/questions/2742852/unicode-characters-in-urls
+https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+
+really helpful:
+http://www.freeformatter.com/url-parser-query-string-splitter.html (this site is awesome)
+
+regex help:
+https://regex101.com/
+
+code coverage plugin for Java in Eclipse:
+http://eclemma.org/
+
+manual test cases source:
+http://formvalidation.io/validators/uri/
+
+coverage %'s with each additional test:
+no test:        1.5%
+manualTest001:  9.9%
+manualTest002: 74.1%
+manualTest003: 74.4%
+manualTest004: 74.7%
+manualTest005: 75.0%
+manualTest006: 75.9% (FAILED ASSERTION)
+manualTest007: 76.1% (FAILED ASSERTION)
+manualTest008: 76.8% (FAILED ASSERTION)
+manualTest009: 79.7% (FAILED ASSERTION)
+manualTest010: 79.8% (FAILED ASSERTION)
+manualTest011: 80.0% (FAILED ASSERTION)
+manualTest012: 80.1% (FAILED ASSERTION)
+manualTest013: 80.3% (FAILED ASSERTION)
+manualTest014: 80.5% (FAILED ASSERTION)
+manualTest015: 80.6% (FAILED ASSERTION)
+manualTest016: 80.8% (FAILED ASSERTION)
+manualTest017: 82.6%
+manualTest018: 83.1% (FAILED ASSERTION)
+manualTest019: 83.3% (FAILED ASSERTION)
+manualTest020: 83.4% (FAILED ASSERTION)
+manualTest021: 83.5% (FAILED ASSERTION)
+manualTest022: 83.9%
+manualTest023: 84.1%
+manualTest024: 84.2% (FAILED ASSERTION)
+manualTest025: 84.3% (FAILED ASSERTION)
+manualTest026: 84.4% (FAILED ASSERTION)
+manualTest027: 84.6%
+manualTest028: 85.4% (FAILED ASSERTION)
+manualTest029: 85.5% (FAILED ASSERTION)
+manualTest030: 85.6% (FAILED ASSERTION)
+manualTest031: 85.7% (FAILED ASSERTION)
+manualTest032: 85.8% (FAILED ASSERTION)
+manualTest033: 85.9% (FAILED ASSERTION)
+manualTest034: 86.0% (FAILED ASSERTION)
+manualTest035: 86.1%
+manualTest036: 86.3%
+manualTest037: 86.4%
+manualTest038: 86.5%
+manualTest039: 86.6%
+manualTest040: 86.8%
+manualTest041: 86.9%
+manualTest042: 87.0%
+manualTest043: 87.1%
+manualTest044: 87.2%
+manualTest045: 87.3%
+manualTest046: 87.4%
+manualTest047: 87.5%
+manualTest048: 87.6%
+manualTest049: 87.9%
+manualTest050: 88.0%
+manualTest051: 88.1%
+manualTest052: 88.2%
+manualTest053: 88.3%
+manualTest054: 88.4%
+manualTest055: 88.5%
+manualTest056: 88.6%
+manualTest057: 88.7%
+manualTest058: 88.8%
+manualTest059: 88.8% (NO COVERAGE ADDED BY THIS TEST)
+manualTest060: 88.9%
+manualTest061: 89.0%
+manualTest062: 89.1% (FAILED ASSERTION)
+manualTest063: 89.2%
+manualTest064: 89.2% (NO COVERAGE ADDED BY THIS TEST)
+manualTest065: 89.3% (FAILED ASSERTION)
+manualTest066: 89.3% (FAILED ASSERTION) (NO COVERAGE ADDED BY THIS TEST)
+manualTest067: 89.4% (FAILED ASSERTION)
+manualTest068: 89.5% (FAILED ASSERTION)
+manualTest069: 89.5% (NO COVERAGE ADDED BY THIS TEST)
+manualTest070: 89.6%
+manualTest071: 89.7%
+manualTest072: 89.8%
+manualTest073: 89.8% (NO COVERAGE ADDED BY THIS TEST)
+manualTest074: 89.9%
+manualTest075: 89.9% (FAILED ASSERTION) (NO COVERAGE ADDED BY THIS TEST)
+manualTest076: 90.0% (FAILED ASSERTION)
+
+unit tests were focused on uncovering the sources of failed assertions in the manual tests
+so manual tests first, then unit tests second
+
+after the unit tests I'm @ 93.8% code coverage
+
+unitTest006:
+  - bug detected by inclusion of query in URL string
+  
+unitTest007:
+  - bug detected by inclusion of query in URL string
+  
+unitTest008:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  - separate bug detected by trying to reach ".ws" TLD in URL string
+  
+unitTest009:
+  - bug detected when passing port number >= 4 digits
+  - separate bug detected when including user/pass in URL string
+  
+unitTest010:
+  - see unitTest009
+  
+unitTest011:
+  - bug detected when including user in URL string
+  - see unitTest009
+  
+unitTest012
+  - see unitTest011
+  
+unitTest018
+  - bug detected when passing port number >= 4 digits
+  - probably same bug as unitTest009
+  
+unitTest019:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  - separate bug detected by trying to reach ".ws" TLD in URL string
+  - probably same bug(s) as unitTest008
+  
+unitTest020:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  - separate bug detected by trying to reach ".ws" TLD in URL string
+  - probably same bug(s) as unitTest008
+  
+unitTest024:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  
+unitTest025:
+  - bug detected by inclusion of query in URL string
+  - probably same bug as unitTest007
+
+unitTest026:
+  - bug detected by inclusion of Unicode (non-ascii) character in URL string
+    - is this really a bug?  the non-ascii character is supposed to be legit but i'm not
+      sure this code was intended to handle non-ascii
+  
+unitTest028:
+  - bug detected by trying to reach ".mp" TLD in URL string
+  - same bug as unitTest008 (except it was trying to reach ".ws")?
+  
+unitTest029:
+  - bug detected by trying to reach ".bar" TLD in URL string
+  
+unitTest030:
+  - bug detected by trying to reach ".bar" TLD in URL string
+  - bug detected by inclusion of query in URL string
+  - same as bugs in unitTest029 and unitTest007?
+
+unitTest034:
+  - bug detected when including user/pass in URL string
+  - see unitTest009
+  
+unitTest062:
+  - bug detected when including 2 or more hyphens in a row in the hostname
+  - this may or may not be a bug, RFC952 doesn't explicitly outlaw multple hyphens
+  - i think it's actually okay (http://marc.info/?t=93301829800003&r=1&w=2) because
+    GoDaddy tells me it's a valid URL for registration
+
+unitTestReservedIPAddresses:
+  - any IP address between 0.0.0.0 and 999.999.999.999 is coming back valid
+  - that's all IP addresses with <= 3 digits per block
+  - no evaluation of proper range or reserved addresses is being given
+    (https://en.wikipedia.org/wiki/Reserved_IP_addresses)
+    
+unitTestPortNumbers:
+  - bug detected - no port numbers > 999 come back valid
+  - should be valid up to 65535
+  - see unitTest009
+  
+unitTestFragments:
+  - http://tools.ietf.org/html/rfc3986
+  - this link (http://stackoverflow.com/questions/2849756/list-of-valid-characters-for-the-fragment-identifier-in-an-url)
+    would have me believe that some of my assertions should fail, for example #^ and #\
+  - i believe #% is also a bug because % is only allowed as an escape character (must be followed by two more chars)
+  
+  - this is definitely a bug, the code only bases fragment validity on whether or not NO_FRAGMENTS is used in
+    the UrlValidator instantiation, but doesn't do any checking of what's actually in the fragment
+    
+unitTestLocal:
+  - even with ALLOW_LOCAL_URLS - localhost is not accepted as a valid URL
