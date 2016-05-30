@@ -16,6 +16,9 @@
  */
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import junit.framework.TestCase;
 
 
@@ -58,6 +61,9 @@ public class UrlValidatorTest extends TestCase {
 	   System.out.println(urlVal.isValid("http://10.50.50.158"));
 	   System.out.println(urlVal.isValid("http://10.50.50.158:3000"));
 	   System.out.println(urlVal.isValid("http://www.google.com:3000"));
+	   System.out.println(urlVal.isValid("http://www.-google.com"));
+	   System.out.println(urlVal.isValid("http://www.google-.com"));
+	   System.out.println(urlVal.isValid("http://www.goo-gle.com"));
    }
    
    
@@ -73,10 +79,41 @@ public class UrlValidatorTest extends TestCase {
    
    public void testIsValid()
    {
-	   for(int i = 0;i<10000;i++)
+	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
+	   //Unit test to test null url
+	   String url = null;
+	   boolean result;
+	   for(int i = 0;i<10;i++)
 	   {
-		   
+		   assertFalse(urlVal.isValid(url));
 	   }
+	   
+	 //Unit test to test legal ascii 
+	   List <ResultPair> ascii = new ArrayList <ResultPair>();
+	   String urlPart1 = "https://go";
+	   String urlPart2 = "ogle.com";
+	   for (char c = ' '; c <= '~'; c++){
+	       String ch = String.valueOf (c);
+	       StringBuilder sb = new StringBuilder(urlPart1);  
+	       sb.append(ch);
+	       sb.append(urlPart2);
+	       
+	       //Only a - z, A - Z, 0 - 9, . and - is allowed in hostname
+	       if (ch.matches(".*[a-z].*") || ch.matches(".*[A-Z].*") || ch.matches(".*[0-9].*") || ch.equals("-") || ch.equals(".")){
+	    	   ascii.add (new ResultPair(sb.toString(), true));
+	       }
+	       
+	       else{
+	    	   ascii.add (new ResultPair(sb.toString(), false));
+	       }
+	   }
+	   for (ResultPair uri : ascii) {
+		   result = urlVal.isValid(uri.item);
+		   if(result != uri.valid){
+			   System.out.println("Test failed for url: " + uri.item);
+		   }
+		   assertTrue(uri.valid == result);
+		}
    }
    
    public void testAnyOtherUnitTest()
