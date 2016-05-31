@@ -69,11 +69,44 @@ public class UrlValidatorTest extends TestCase {
    
    public void testYourFirstPartition()
    {
+	// Scheme + Path
+	   System.out.println("Testing VALID hosts:");
+	   System.out.println(urlVal.isValid("https:"));	// empty
+	   System.out.println(urlVal.isValid("https:/aPath")); // absolute
+	   System.out.println(urlVal.isValid("https:aPath")); // rootless
 	   
-   }
-   
-   public void testYourSecondPartition(){
+	   // Scheme + Authority options
+	   System.out.println("\n\nTesting VALID Scheme and Authority:");
+	   System.out.println("Host: " + urlVal.isValid("https://testing.com"));	//just host
+	   System.out.println("IP: " + urlVal.isValid("https://232.11.45.255"));	//just IP
+	   System.out.println("Host + Port: " + urlVal.isValid("https://testing.com:45602"));	// host + port
+	   System.out.println("User + Host: " + urlVal.isValid("https://myInfo@testing.com"));	//host + userinfo
+	   System.out.println("Host + Port: " + urlVal.isValid("https://myInfo@testing.com:45602"));	//host + userinfo + port
+	   System.out.println("IP + Port: " + urlVal.isValid("https://232.11.45.255:45602"));	// IP + port
+	   System.out.println("User + IP: " + urlVal.isValid("https://myInfo@232.11.45.255"));	// IP + userinfo
+	   System.out.println("User + IP + Port: " + urlVal.isValid("https://myInfo@232.11.45.255:45602"));	// IP + userinfo + port
 	   
+	   // Scheme + Authority + Path
+	   System.out.println("\n\nTesting VALID Scheme, Authority, Path:");
+	   System.out.println(urlVal.isValid("https://authority/"));
+	   System.out.println(urlVal.isValid("https://authority/path"));
+	   System.out.println(urlVal.isValid("https://authority/path/anotherPath"));
+	   
+	   // Scheme + Authority + Path + Query
+	   System.out.println("\n\nTesting VALID Scheme, Authority, Path:");
+	   System.out.println(urlVal.isValid("https://authority/path?query"));
+	   System.out.println(urlVal.isValid("https://authority/path?query/querystill?evenNow"));
+	   
+	   // Scheme + Authority + Path + Fragment
+	   System.out.println("\n\nTesting VALID Scheme, Authority, Path, Fragment:");
+	   System.out.println(urlVal.isValid("https://authority/path#fragment"));
+	   System.out.println(urlVal.isValid("https://authority/path#fragment?/fragmentStill?yesEvenNow")); 
+	   
+	   // Scheme + Authority + Path + Query + Fragment
+	   System.out.println("\n\nTesting VALID Scheme, Authority, Path, Query, Fragment:");
+	   System.out.println(urlVal.isValid("https://authority/path?query#fragment"));
+	   System.out.println(urlVal.isValid("https://authority/path?query#fragment?/fragmentStill?yesEvenNow"));
+	   System.out.println(urlVal.isValid("https://authority/path?query/querystill?evenNow#fragment"));
    }
    
    
