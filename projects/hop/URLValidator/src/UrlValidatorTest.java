@@ -41,12 +41,15 @@ public class UrlValidatorTest extends TestCase {
    public void testManualTest()
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   System.out.println(urlVal.isValid("http://www.amazon.com"));	   			// returns true
-	   System.out.println(urlVal.isValid("http://127.0.0.1"));					// returns true
-	   System.out.println(urlVal.isValid("www.google.com"));					// returns false
-	   System.out.println(urlVal.isValid("ftp://access.engr.oregonstate.edu"));	// returns true
-	   System.out.println(urlVal.isValid("http://12345.com"));					// returns true
-	   System.out.println(urlVal.isValid("http://127.0.0.1:8080"));				// returns false
+	   System.out.println(urlVal.isValid("http://www.amazon.com"));	   			// returns true, expected
+	   System.out.println(urlVal.isValid("www.google.com"));					// returns false, expected
+	   System.out.println(urlVal.isValid("ftp://access.engr.oregonstate.edu"));	// returns true, expected
+	   System.out.println(urlVal.isValid("http://12345.com"));					// returns true, expected
+	   System.out.println(urlVal.isValid("asdf"));								// returns false, expected
+	   System.out.println(urlVal.isValid("http://1234"));						// returns false, expected
+	   System.out.println(urlVal.isValid("http://books"));						// returns false, expected
+	   System.out.println(urlVal.isValid("http://127.0.0.1"));					// returns true, expected
+	   System.out.println(urlVal.isValid("http://127.0.0.1:8080/"));				// returns false, NOT expected
    }
    
    
