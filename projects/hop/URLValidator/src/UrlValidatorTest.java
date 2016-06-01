@@ -58,7 +58,7 @@ public class UrlValidatorTest extends TestCase {
 	   System.out.println("http://www.google.com:80 expected = true, actual = " + urlVal.isValid("http://www.google.com:80"));			
 	   assertTrue(urlVal.isValid("http://www.google.com:80"));
 	   System.out.println("http://127.0.0.1:8080 expected = true, actual = " + urlVal.isValid("http://127.0.0.1:8080/"));			// returns false, NOT expected
-	   //assertTrue(urlVal.isValid("http://127.0.0.1:8080")); //assertion fails
+	   //assertTrue(urlVal.isValid("http://127.0.0.1:8080")); //assertion fails, see bug report #1 on Google Doc.
    }
    
    
