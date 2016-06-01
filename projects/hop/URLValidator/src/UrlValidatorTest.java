@@ -41,15 +41,24 @@ public class UrlValidatorTest extends TestCase {
    public void testManualTest()
    {
 	   UrlValidator urlVal = new UrlValidator(null, null, UrlValidator.ALLOW_ALL_SCHEMES);
-	   System.out.println(urlVal.isValid("http://www.amazon.com"));	   			// returns true, expected
-	   System.out.println(urlVal.isValid("www.google.com"));					// returns false, expected
-	   System.out.println(urlVal.isValid("ftp://access.engr.oregonstate.edu"));	// returns true, expected
-	   System.out.println(urlVal.isValid("http://12345.com"));					// returns true, expected
-	   System.out.println(urlVal.isValid("asdf"));								// returns false, expected
-	   System.out.println(urlVal.isValid("http://1234"));						// returns false, expected
-	   System.out.println(urlVal.isValid("http://books"));						// returns false, expected
-	   System.out.println(urlVal.isValid("http://127.0.0.1"));					// returns true, expected
-	   System.out.println(urlVal.isValid("http://127.0.0.1:8080/"));				// returns false, NOT expected
+	   System.out.println("http://www.amazon.com expected = true, actual = " + urlVal.isValid("http://www.amazon.com"));	   			
+	   assertTrue(urlVal.isValid("http://www.amazon.com"));
+	   System.out.println("ftp://access.engr.oregonstate.edu expected = true, actual = " + urlVal.isValid("ftp://access.engr.oregonstate.edu"));
+	   assertTrue(urlVal.isValid("ftp://access.engr.oregonstate.edu"));
+	   System.out.println("http://12345.com expected = true, actual = " + urlVal.isValid("http://12345.com"));					
+	   assertTrue(urlVal.isValid("http://12345.com"));
+	   System.out.println("asdf expected = false, actual = " + urlVal.isValid("asdf"));								
+	   assertTrue(!urlVal.isValid("asdf"));
+	   System.out.println("http://1234 expected = false, actual = " + urlVal.isValid("http://1234"));						
+	   assertTrue(!urlVal.isValid("http://1234"));
+	   System.out.println("http://books expected = false, actual = " + urlVal.isValid("http://books"));						
+	   assertTrue(!urlVal.isValid("http://books"));
+	   System.out.println("http://127.0.0.1 expected = true, actual = " + urlVal.isValid("http://127.0.0.1"));					
+	   assertTrue(urlVal.isValid("http://127.0.0.1"));
+	   System.out.println("http://www.google.com:80 expected = true, actual = " + urlVal.isValid("http://www.google.com:80"));			
+	   assertTrue(urlVal.isValid("http://www.google.com:80"));
+	   System.out.println("http://127.0.0.1:8080 expected = true, actual = " + urlVal.isValid("http://127.0.0.1:8080/"));			// returns false, NOT expected
+	   //assertTrue(urlVal.isValid("http://127.0.0.1:8080")); //assertion fails
    }
    
    
