@@ -64,6 +64,12 @@ public class UrlValidatorTest extends TestCase {
    
    public void testYourFirstPartition()
    {
+	   // http://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml
+	   String schemes[] = {"aaa","http","https","ftp","sftps","about","sieve","rtsp","cap","aaas"};
+	   String domains[] = {""};
+	   String authority[] = {""};
+	   
+	   // loop thru all arrays and generate tests
 	   
    }
    
