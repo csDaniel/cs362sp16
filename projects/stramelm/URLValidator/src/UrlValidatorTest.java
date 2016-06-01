@@ -176,4 +176,21 @@ public class UrlValidatorTest extends TestCase {
 	   UnitTests.unitTest006();
    }
    
+   public void testPartition() {
+	   
+	   // all URLs starting with non-letter chars
+	   PartitionTests.partitionTestN1();
+	   
+	   // all URLs starting with letter chars that also contain ://
+	   PartitionTests.partitionTestN2a();
+	   
+	   // all URLs starting with letter chars that also contain :// followed by a .
+	   PartitionTests.partitionTestN2b1();
+	   
+	   // all URLs starting with letter chars that also contain :// followed by a . following by a letter/num char
+	   PartitionTests.partitionTestN2b2a();
+	   
+	   // all remaining URL's (not really equivalent but you get the point)
+	   PartitionTests.partitionTestN2b2b();
+   }
 }
