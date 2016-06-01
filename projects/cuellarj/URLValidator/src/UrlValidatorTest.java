@@ -74,6 +74,7 @@ public class UrlValidatorTest extends TestCase {
 	   System.out.println(urlVal.isValid("www.example.com/main.html"));
 	   System.out.println(urlVal.isValid("/main.html"));
 	   System.out.println(urlVal.isValid("wibble://www.bbc.co.uk"));
+	   System.out.println(urlVal.isValid("http://999.999.999.999"));
 
    }
    
